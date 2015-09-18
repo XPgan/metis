@@ -1,0 +1,11 @@
+1. 安装 node.js
+2. 项目目录下创建 package.json
+3. 全局安装 npm
+	sudo npm install -g yo
+4. 项目目录下安装 gulp
+	sudo npm install --save-dev gulp yo
+5. 安装插件
+	例：sudo npm install --save-dev gulp-uglify
+6. 创建 gulpfile.js
+7. 运行 ./gulp.js
+

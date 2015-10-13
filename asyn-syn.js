@@ -2,6 +2,7 @@
  * Created by sunmy on 15/10/9.
  */
 
+
 /** 同步 **/
 function fun1 () {
     setTimeout(function () {
@@ -60,87 +61,9 @@ function fun () {
 }
 
 
-/** 对象 **/
-
-// example1
-function fun () {
-    var price = 50;
-    return {
-        total: function (num) {
-            var totalPrice = price * num;
-
-            console.log(totalPrice);
-        },
-        setPrice: function (newPrice) {
-            price = newPrice
-        }
-    }
-}
-
-var self = fun();
-
-self.total(5);
-
-self.setPrice(30);
-self.total(6);
-
-// example2
-var object = {
-
-    price: 50,
-
-    total: function (num) {
-        var _this = this;
-        var totalPrice = _this.price * num;
-
-        console.log(totalPrice);
-    },
-    setPrice: function (newPrice) {
-        var _this = this;
-
-        _this.price = newPrice;
-    }
-};
-
-object.total(5);
-
-object.setPrice(30);
-object.total(6);
-
-// example3
-function fun (opt) {
-
-    var object = {
-
-        price: opt.initPrice,
-
-        total: function (num) {
-            var _this = this;
-            var totalPrice = _this.price * num;
-
-            console.log(totalPrice);
-        },
-        setPrice: function (newPrice) {
-            var _this = this;
-
-            _this.price = newPrice;
-        }
-    };
-
-    return object
-}
-
-var object = fun({
-    initPrice: 50
-});
-
-object.total(5);
-
-object.setPrice(30);
-object.total(6);
-
-
 /** 循环 **/
+
+// 循环: 同步
 
 // example1
 for (var i = 0;i < 5;i++)
@@ -230,3 +153,35 @@ function fun3 () {
 }
 
 $.when(fun1()).then(fun2).then(fun3);
+
+// example3
+function fun (txt, time) {
+    var dfd = $.Deferred();
+    setTimeout(function () {
+        console.log(txt);
+        dfd.resolve();
+    }, time);
+
+    return dfd.promise();
+}
+
+function fun1 () {
+    var promise = fun('fun1', 500);
+
+    return promise
+}
+
+function fun2 () {
+    var promise = fun('fun2', 300);
+
+    return promise
+}
+
+function fun3 () {
+    console.log('fun3');
+}
+
+$.when(fun1()).then(fun2).then(fun3);
+
+// error: $.when(fun1()).then(fun2()).then(fun3()); fun2 & fun3 立即执行
+

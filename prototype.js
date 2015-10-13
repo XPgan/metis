@@ -27,14 +27,14 @@ var obja = new A('attr1', 'attr2');
                                             this.attr1 = x;
                                             this.attr2 = y;
                                         }
-            2. __proto__ (原型链) -> A {}
+            2. __proto__ (原型链) -> A {} ...
 
 
     A {} -> 1. constructor (构造函数) -> function A(x, y) {
                                             this.attr1 = x;
                                             this.attr2 = y;
                                         }
-            2. __proto__ (原型链) -> Object {}
+            2. __proto__ (原型链) -> Object {} ...
 **/
 
 // example1
@@ -53,7 +53,7 @@ var obj = new Object();
 A.call(obj, 'a1', 'a2'); // A.apply(obj, ['a1', 'a2']);
 B.call(obj, 'b1', 'b2'); // B.apply(obj, ['b1', 'b2']);
 
-// obj.constructor -> function Function () { [code] }
+// obj.constructor -> function Object() { [native code] }
 // obj.constructor.prototype -> Object {}
 
 // example2

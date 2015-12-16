@@ -2,6 +2,10 @@
  * Created by sunmy on 15/12/15.
  */
 
+// 柯里化：固定异变参数 缩小适用范围（返回函数接受剩余参数）
+// 反柯里化：泛化参数 扩大适用范围
+// 例：this 指针
+
 // example1
 var curry = function (curried) {
     // 过滤 curried 中 function

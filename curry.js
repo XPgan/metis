@@ -2,14 +2,14 @@
  * Created by sunmy on 15/12/15.
  */
 
-// 函数柯里化：固定部分参数，返回一个接受剩余参数的函数，也称为部分计算函数，目的是为了缩小适用范围
-
+// example1
 var curry = function (curried) {
-    // 过滤 curried function
+    // 过滤 curried 中 function
     var params = Array.prototype.slice.call(arguments, 1);
     var returnFun = function () {
-        // 组装 params  触发 function
+        // arguments 转数组
         var sub_params = Array.prototype.slice.call(arguments, 0);
+        // 组装 params  触发 function
         curried.apply(this, params.concat(sub_params));
     };
 
@@ -22,7 +22,32 @@ var fun = function (msg, from, to) {
 };
 var curried = curry(fun, 'My name is smy');
 
-curried('smy', 'glf'); // -> 'My name is smy-smy-glf'
+curried('smy', 'yaq'); // -> 'My name is smy-smy-yaq'
+
+
+// example2
+var curry = function (curried) {
+    var params = Array.prototype.slice.call(arguments, 1);
+    curried.apply(this, params);
+
+    var returnFun = function () {
+        curried.apply(this, arguments);
+
+        return returnFun;
+    };
+
+    return returnFun;
+};
+
+
+var sum = 0;
+var add = function (num) {
+    sum += num;
+};
+var curried = curry(add, 1);
+
+curried(2)(3)(4); // -> sum = 10
+
 
 
 

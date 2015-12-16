@@ -21,7 +21,7 @@ var fun = function (x, y) {
     console.log(this);
 };
 
-// apply 及 call 的 参数1 改变了上下文
+// apply 及 call 的 参数一改变了上下文
 fun('a', 'b'); // -> 'a|b'
                // -> Window
 

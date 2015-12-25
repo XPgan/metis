@@ -1,0 +1,13 @@
+// container(padding-bottom) = li(width)
+// overflow: hidden 对 padding 无隐藏
+// ul(height) >> img(height) 触发 overflow: hidden
+
+<div class="container">
+    <ul><li><img src="" /></li></ul>
+</div>
+
+.container{overflow: hidden;height: 0;padding-bottom: 30%;}
+.container ul{margin-left: -3px;white-space: nowrap;overflow-x: auto;height: 400px;}
+.container ul::-webkit-scrollbar{opacity: 0;height: 0;}
+.container li{display: inline-block;margin: 0 3px;width: 30%;}
+.container img{display: block;width: 100%;}

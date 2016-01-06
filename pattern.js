@@ -1,49 +1,44 @@
 /**
- * Created by sunmy on 16/1/4.
+ * Created by sunmy on 16/1/5.
  */
 
-var str = 'sunmy age 16 birth 1992';
+/** 贪婪量词 default **/ // 右 -> 左  长 -> 短
+/** 惰性量词 ? **/ // 左 -> 右  短 -> 长
+/** 支配量词 + **/ // 仅尝试匹配整个字符串 支持度低
 
-/** exec pattern方法 **/
-var pattern = /\d{2}/;
-pattern.exec(str); // ['16']
-// T = 1 循环  无匹配结果返回 null
+// example1
+var str = 'aaxxxaaaxxxx';
 
-var pattern = /\d{2}/g;
-pattern.exec(str); // ['16']
-pattern.exec(str); // ['19']
-pattern.exec(str); // ['92']
+var pattern = /a[a-z]*a/;
+pattern.exec(str); // ['aaxxxaaa']
+
+var pattern = /a[a-z]*?a/;
+pattern.exec(str); // ['aa']
+
+// example2
+var str = 'abcd';
+var pattern = /[a-z]{1,3}/g;
+
+pattern.exec(str); // ['abc']
+pattern.exec(str); // ['d']
 pattern.exec(str); // null
-// T = 4 循环
+// T = 3 循环
 
-/** test pattern方法 **/
-var pattern = /\d{2}/;
-pattern.test(str); // true
-// /g 结果相同  无匹配结果返回 false
+var str = 'abcd';
+var pattern = /[a-z]{1,3}?/g;
 
-/** match str方法 **/
-var pattern = /\d{2}/;
-str.match(pattern); // ['16']
-// T = 1 循环  无匹配结果返回 null
-
-var pattern = /\d{2}/g;
-str.match(pattern); // ['16', '19', '92'] 返回所有匹配结果
-
-/** search str方法 **/
-var pattern = /\d{2}/;
-str.search(pattern); // 10
-// T = 1 循环  无匹配结果返回 -1  /g 结果相同
-
-/** replace **/
-var pattern = /\d{2}/;
-str.replace(pattern, 's'); // sunmy age s birth 1992
-
-var pattern = /\d{2}/g;
-str.replace(pattern, 's'); // sunmy age s birth ss
-
-/** split **/
-var pattern = /\d{2}/;
-str.split(pattern); // ['sunmy age ', ' birth ', '', '']
-// /g 结果相同
+pattern.exec(str); // ['a']
+pattern.exec(str); // ['b']
+pattern.exec(str); // ['c']
+pattern.exec(str); // ['d']
+pattern.exec(str); // null
+// T = 5 循环
 
 
+
+/** 子匹配 **/
+var str = 'my name is sunmy age 16 birth 1992 12 06';
+var pattern = /(\d+)\s(.+)(\d){2}/;
+
+pattern.exec(str); // /g 有 & 无 [匹配字符串, 子匹配...]
+str.match(pattern); // /g 有 [匹配字符串, 匹配字符串...]  /g 无 [匹配字符串, 子匹配...]

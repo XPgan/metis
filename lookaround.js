@@ -26,7 +26,3 @@ pattern.exec(str); // ['c'] ['3'] ['v'] null
 // (?=\D) 须匹配一个非数字字符
 
 
-var str = '3141fjnvi\ndsfa4234\nfwf4234\nerg4324';
-var pattern = /[a-z]\d/g;
-pattern.exec(str);
-

@@ -25,8 +25,8 @@
         });
 
         $inner.on('click', function (e) {
-            e.stopPropagation(); // 阻止事件向父级冒泡
-            e.stopImmediatePropagation(); // 阻止事件向父级冒泡 同时 阻止该元素同类型事件 callback 执行
+            e.stopPropagation(); // 阻止事件向父级冒泡(不影响当前节点事件监听)
+            e.stopImmediatePropagation(); // 阻止事件向父级冒泡 同时 阻止该元素同类型事件 callback 执行(影响当前节点事件监听)
             console.log('inner');
         });
 

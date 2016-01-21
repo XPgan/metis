@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AnimationFrame</title>
+    <style>
+        .progress, .percent, .time{margin: 50px;}
+        .progress{height: 20px;background-color: greenyellow;}
+        .percent, .time{font-size: 22px;color: #333;}
+    </style>
+</head>
+<body>
+    <div class="progress js_progress"></div>
+    <div class="percent"><span class="js_count">0</span>%</div>
+    <div class="time js_time"></div>
+    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+    <script>
+        function progress () {
+            var $count = $('.js_count');
+            var $progress = $('.js_progress');
+            var $time = $('.js_time');
+            var value = $count.text();
+            var result = parseInt(value) + 1;
+            var percent = result / 100;
+
+            $count.text(result);
+            $progress.width(500 * percent);
+
+            if (percent < 1) {
+                requestAnimationFrame(function (time) {
+                    $time.text(time);
+                    progress();
+                });
+            }
+        }
+
+        progress();
+    </script>
+</body>
+</html>

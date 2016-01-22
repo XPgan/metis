@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <title>AnimationFrame</title>
     <style>
-        .progress, .percent, .time{margin: 50px;}
-        .progress{height: 20px;background-color: greenyellow;}
-        .percent, .time{font-size: 22px;color: #333;}
+        .progress, .percent, .time, .btn{margin: 50px;}
+        .progress{width: 0;height: 20px;background-color: greenyellow;}
+        .percent, .time, .btn a{font-size: 22px;color: #333;}
+        .btn a{display: inline-block;border: 1px solid #666;border-radius: 3px;padding: 0 15px;line-height: 30px;text-decoration: none;}
     </style>
 </head>
 <body>
     <div class="progress js_progress"></div>
     <div class="percent"><span class="js_count">0</span>%</div>
     <div class="time js_time"></div>
+    <div class="btn"><a href="javascript:;" class="js_btn">control</a></div>
     <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
     <script>
+        var frame;
+        var flag = true;
+
         function progress () {
             var $count = $('.js_count');
             var $progress = $('.js_progress');
@@ -23,18 +28,26 @@
             var result = parseInt(value) + 1;
             var percent = result / 100;
 
-            $count.text(result);
-            $progress.width(500 * percent);
+            if (percent <= 1) {
+                $count.text(result);
+                $progress.width(500 * percent);
 
-            if (percent < 1) {
-                requestAnimationFrame(function (time) {
+                frame = requestAnimationFrame(function (time) {
                     $time.text(time);
                     progress();
                 });
             }
         }
 
-        progress();
+        $('.js_btn').on('click', function () {
+            if (flag) {
+                progress();
+            } else {
+                cancelAnimationFrame(frame);
+            }
+
+            flag = !flag;
+        });
     </script>
 </body>
 </html>

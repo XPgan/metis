@@ -31,7 +31,6 @@
             var width = canvas.offsetWidth;
             var height = canvas.offsetHeight;
 
-            // Retina
             canvas.width = width * ratio;
             canvas.height = height * ratio;
             context.scale(ratio, ratio);
@@ -60,7 +59,6 @@
             var endX = -startX;
             var endY = startY;
 
-            // 画布保存初始状态
             _this.context.save();
             // 坐标变换 中点变换
             _this.context.translate(x, y);
@@ -75,7 +73,6 @@
             }
             _this.context.closePath();
             _this.context.stroke();
-            // 画布恢复初始状态
             _this.context.restore();
         }
     };

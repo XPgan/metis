@@ -92,3 +92,5 @@ context.fillText(text, x, y, maxWidth);
 context.rotate(angle);
 context.translate(x, y);
 context.scale(num, num);
+context.transform(a, b, c, d, e, f);
+context.setTransform(a, b, c, d, e, f);

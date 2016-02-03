@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Composite</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .canvas{position: fixed;width: 100%;height: 100%;}
+    </style>
+</head>
+<body>
+<canvas class="canvas"></canvas>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script>
+    var sketch = {
+
+        canvas: null,
+        context: null,
+
+        init: function () {
+            var _this = this;
+
+            _this.initCanvas();
+            _this.initContext();
+            _this.mouseEvent();
+            _this.drawText();
+        },
+        initCanvas: function () {
+            var _this = this;
+            var canvas = $('.canvas').get(0);
+            var context = canvas.getContext('2d');
+            var ratio = window.devicePixelRatio || 1;
+            var width = canvas.offsetWidth;
+            var height = canvas.offsetHeight;
+
+            canvas.width = width * ratio;
+            canvas.height = height * ratio;
+            context.scale(ratio, ratio);
+
+            _this.canvas = canvas;
+            _this.context = context;
+        },
+        initContext: function () {
+            var _this = this;
+
+            _this.context.lineWidth = 2;
+            _this.context.font = '100px Arial';
+            _this.context.fillStyle = 'lightblue';
+            _this.context.strokeStyle = 'blueviolet';
+            _this.context.globalCompositeOperation = 'lighter';
+        },
+        mouseEvent: function () {
+            var _this = this;
+            var $canvas = $(_this.canvas);
+            var centerX = 0;
+            var centerY = 0;
+            var flag = false;
+
+            $canvas.on('mousedown', function (e) {
+                centerX = e.pageX;
+                centerY = e.pageY;
+                flag = true;
+            });
+
+            $canvas.on('mouseup', function () {
+                flag = false;
+            });
+
+            $canvas.on('mousemove', function (e) {
+                var pageX = e.pageX;
+                var pageY = e.pageY;
+                var dX = Math.abs(pageX - centerX);
+                var dY = Math.abs(pageY - centerY);
+                var radius = Math.sqrt(dX * dX + dY * dY);
+
+                if (flag) {
+                    _this.drawArc(centerX, centerY, radius);
+                }
+            });
+        },
+        drawArc: function (x, y, r) {
+            var _this = this;
+
+            _this.context.clearRect(0, 0, _this.canvas.width, _this.canvas.height);
+            _this.drawText();
+
+            _this.context.beginPath();
+            _this.context.arc(x, y, r, 0, 2 * Math.PI);
+            _this.context.stroke();
+            _this.context.fill();
+        },
+        drawText: function () {
+            var _this = this;
+
+            _this.context.fillText('CANVAS', 100, 200, 300);
+            _this.context.strokeText('CANVAS', 100, 200, 300);
+        }
+    };
+
+    sketch.init();
+</script>
+</body>
+</html>

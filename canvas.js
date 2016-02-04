@@ -52,6 +52,7 @@ gradient.addColorStop(point, color);
 
 /**
  * .globalAlpha
+ * .globalCompositeOperation 图像合成模式
  */
 
 
@@ -94,3 +95,8 @@ context.translate(x, y);
 context.scale(num, num);
 context.transform(a, b, c, d, e, f);
 context.setTransform(a, b, c, d, e, f);
+
+
+/** imageData **/
+context.getImageData(x, y, w, h);
+context.putImageData(data, x, y);

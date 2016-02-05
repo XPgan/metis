@@ -83,6 +83,10 @@ gradient.addColorStop(point, color);
  * .lineJoin
  * .lineCap
  * .miterLimit 斜接线
+ *
+ * .font
+ * .textAlign
+ * .textBaseline
  */
 
 
@@ -109,6 +113,7 @@ context.fillRect(x, y, w, h);
 /** text **/
 context.strokeText(text, x, y, maxWidth); // maxWidth 压缩 非 隐藏
 context.fillText(text, x, y, maxWidth);
+context.measureText(text); // 返回文本占位宽度
 
 
 /** coordinate **/

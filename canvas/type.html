@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Type</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .canvas{position: fixed;width: 100%;height: 100%;}
+    </style>
+</head>
+<body>
+<canvas class="canvas"></canvas>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script>
+    var sketch = {
+
+        canvas: null,
+        context: null,
+
+        init: function () {
+            var _this = this;
+
+            _this.initCanvas();
+            _this.initContext();
+        },
+        initCanvas: function () {
+            var _this = this;
+            var canvas = $('.canvas').get(0);
+            var context = canvas.getContext('2d');
+            var ratio = window.devicePixelRatio || 1;
+            var width = canvas.offsetWidth;
+            var height = canvas.offsetHeight;
+
+            canvas.width = width * ratio;
+            canvas.height = height * ratio;
+            context.scale(ratio, ratio);
+
+            _this.canvas = canvas;
+            _this.context = context;
+        },
+        initContext: function () {
+            var _this = this;
+
+            _this.context.lineWidth = 2;
+            _this.context.fillStyle = 'lightblue';
+            _this.context.strokeStyle = 'blueviolet';
+        }
+    };
+
+    sketch.init();
+</script>
+</body>
+</html>

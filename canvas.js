@@ -22,6 +22,27 @@ context.bezierCurveTo(cX1, cY1, cX2, cY2, endX, endY);
 
 
 
+/** clip **/
+// 存储画布未被裁切时状态
+context.save();
+
+// 按裁切路径 将画布进行裁切
+context.rect(95, 95, 105, 105);
+context.clip();
+
+// 绘制被裁切对象 (被裁切)
+context.beginPath();
+context.arc(200, 200, 100, 0, 2 * Math.PI);
+context.stroke();
+
+// 恢复画布未被裁切时状态
+context.restore();
+
+// 绘制新对象 (不被裁切)
+context.beginPath();
+context.arc(250, 250, 100, 0, 2 * Math.PI);
+context.stroke();
+
 
 
 
@@ -32,6 +53,7 @@ context.bezierCurveTo(cX1, cY1, cX2, cY2, endX, endY);
 
 
 /** gradient **/
+/** 注意渐变圆位置关系 **/
 var gradient = context.createLinearGradient(startX, startY, endX, endY);
 gradient.addColorStop(point, color);
 

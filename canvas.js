@@ -126,4 +126,6 @@ context.setTransform(a, b, c, d, e, f);
 
 /** imageData **/
 context.getImageData(x, y, w, h);
-context.putImageData(data, x, y);
+context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH); // 不受全局属性影响
+context.createImageData(w, h);
+context.drawImage(imageObj, sX, sY, sW, sH, dX, dY, dW, dH); // 须在图片加载完毕后 执行 受全局属性影响

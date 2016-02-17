@@ -24,7 +24,7 @@
             var isExist = localStorage.getItem('color');
 
             if (!isExist) {
-                // QUOTA_EXCEEDED_ERR(IOS) 解决：removeItem(key) 后 setItem(key, value)
+                // QUOTA_EXCEEDED_ERR(IOS) 解决: removeItem(key) 后 setItem(key, value)
                 localStorage.setItem('color', 1);
             } else {
                 $('.item').addClass('red');

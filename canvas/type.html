@@ -13,15 +13,36 @@
 <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
 <script>
     var sketch = {
-
+        /**
+         * width: 画布宽度
+         * height: 画布高度
+         * x: 当前光标 横坐标
+         * y: 当前光标 纵坐标
+         * text: 当前输入文本
+         * cursor: 光标属性
+         * item: 记录 输入文本及坐标
+         * lst: 输入文本历史记录
+         */
+        body: $('body'),
         canvas: null,
         context: null,
+        interval: null,
+        width: 0,
+        height: 0,
+        x: 0,
+        y: 0,
+        text: '',
+        cursor: {},
+        item: {},
+        lst: [],
 
         init: function () {
             var _this = this;
 
             _this.initCanvas();
             _this.initContext();
+            _this.clickEvent();
+            _this.keyEvent();
         },
         initCanvas: function () {
             var _this = this;
@@ -37,17 +58,100 @@
 
             _this.canvas = canvas;
             _this.context = context;
+            _this.width = canvas.width;
+            _this.height = canvas.height;
         },
-        initContext: function () {
+        initContext: function (fontSize, color) {
             var _this = this;
 
-            _this.context.lineWidth = 2;
-            _this.context.fillStyle = 'lightblue';
-            _this.context.strokeStyle = 'blueviolet';
+            _this.context.font = (fontSize || 16) + 'px Arial';
+            _this.context.fillStyle = color || '#000';
+            _this.cursor.height = 0.8 * fontSize;
+        },
+        clickEvent: function () {
+            var _this = this;
+
+            _this.body.on('click', function (e) {
+                // 记录历史数据
+                if (_this.item.text) {
+                    _this.lst.push(_this.item);
+                }
+
+                // 初始化数据
+                _this.x = e.pageX;
+                _this.y = e.pageY;
+                _this.text = '';
+                _this.item = {};
+
+                clearInterval(_this.interval);
+
+                _this.context.clearRect(0, 0, _this.width, _this.height);
+                _this.drawCursor(_this.x, _this.y - _this.cursor.height + 1);
+                _this.drawHistory();
+            });
+        },
+        keyEvent: function () {
+            var _this = this;
+            var x = 0;
+            var y = 0;
+
+            _this.body.on('keydown', function (e) {
+                var key = String.fromCharCode(e.which);
+
+                // 退格符
+                if (e.which == 8) {
+                    _this.text = _this.text.slice(0, -1);
+                } else {
+                    _this.text += key;
+                }
+
+                // 记录数据
+                _this.item.x = _this.x;
+                _this.item.y = _this.y;
+                _this.item.text = _this.text;
+
+                clearInterval(_this.interval);
+
+                // 光标位置重置
+                var textWidth = _this.context.measureText(_this.text).width;
+                x = _this.x + textWidth + 1;
+                y = _this.y - _this.cursor.height + 1;
+
+                _this.context.clearRect(0, 0, _this.width, _this.height);
+                _this.drawCursor(x, y);
+                _this.drawText();
+            });
+        },
+        drawCursor: function (x, y) {
+            var _this = this;
+
+            // 绘制光标
+            _this.context.fillRect(x, y, 2, _this.cursor.height);
+
+            // 闪动光标
+            _this.interval = setInterval(function () {
+                _this.drawText();
+                var timeout = setTimeout(function () {
+                    _this.context.fillRect(x, y, 2, _this.cursor.height);
+                }, 400);
+            }, 800);
+        },
+        drawText: function () {
+            var _this = this;
+            _this.context.clearRect(0, 0, _this.width, _this.height);
+            _this.context.fillText(_this.text, _this.x, _this.y);
+            _this.drawHistory();
+        },
+        drawHistory: function () {
+            var _this = this;
+            for (var i = 0;i < _this.lst.length;i++) {
+                _this.context.fillText(_this.lst[i].text, _this.lst[i].x, _this.lst[i].y);
+            }
         }
     };
 
     sketch.init();
+    sketch.initContext(16, 'blue');
 </script>
 </body>
 </html>

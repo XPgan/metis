@@ -83,9 +83,7 @@
                 _this.text = '';
                 _this.item = {};
 
-                clearInterval(_this.interval);
-
-                _this.context.clearRect(0, 0, _this.width, _this.height);
+                _this.clear();
                 _this.drawCursor(_this.x, _this.y - _this.cursor.height + 1);
                 _this.drawHistory();
             });
@@ -110,14 +108,12 @@
                 _this.item.y = _this.y;
                 _this.item.text = _this.text;
 
-                clearInterval(_this.interval);
-
                 // 光标位置重置
                 var textWidth = _this.context.measureText(_this.text).width;
                 x = _this.x + textWidth + 1;
                 y = _this.y - _this.cursor.height + 1;
 
-                _this.context.clearRect(0, 0, _this.width, _this.height);
+                _this.clear();
                 _this.drawCursor(x, y);
                 _this.drawText();
             });
@@ -147,6 +143,12 @@
             for (var i = 0;i < _this.lst.length;i++) {
                 _this.context.fillText(_this.lst[i].text, _this.lst[i].x, _this.lst[i].y);
             }
+        },
+        clear: function () {
+            var _this = this;
+
+            _this.context.clearRect(0, 0, _this.width, _this.height);
+            clearInterval(_this.interval);
         }
     };
 

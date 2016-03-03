@@ -49,7 +49,7 @@
 
             /** 相机 **/
             var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-            camera.position.set(0, -50, 50);
+            camera.position.set(0, -50, 100);
             camera.up.set(0, 1, 0);
             camera.lookAt({x: 0, y: 0, z: 0});
 
@@ -130,6 +130,31 @@
             });
             var ball = new THREE.Mesh(sphere, sphereMaterial);
 
+            /** 墙壁 **/
+            var wall = [];
+            for (var i = 0;i < 4;i++) {
+                var offset = i % 2 ? -25 : 25;
+                var plane = new THREE.CubeGeometry(50, 50, 1);
+                var planeMaterial = new THREE.MeshPhongMaterial({
+                    color: 0x58ACFA,
+                    opacity: 0.15
+                });
+
+                wall[i] = new THREE.Mesh(plane, planeMaterial);
+                wall[i].position.set(0, 0, 22.5);
+                wall[i].receiveShadow = true;
+
+                if (i < 2) {
+                    wall[i].rotation.x = Math.PI / 2;
+                    wall[i].position.y = offset;
+                } else {
+                    wall[i].rotation.y = Math.PI / 2;
+                    wall[i].position.x = offset;
+                }
+
+                _this.scene.add(wall[i]);
+            }
+
             // 阴影
             board.receiveShadow = true;
             ball.castShadow = true;
@@ -173,9 +198,10 @@
                     _this.camera.position.y -= dy * 0.5;
                 }
 
-                _this.ball.rotation.x += Math.PI / 180;
-                _this.ball.rotation.y += Math.PI / 180;
-                _this.ball.rotation.z += Math.PI / 180;
+                // 球体滚动
+                _this.ball.rotation.x += Math.PI / 90;
+                _this.ball.rotation.y += Math.PI / 90;
+                _this.ball.rotation.z += Math.PI / 90;
 
                 _this.renderScene();
             };

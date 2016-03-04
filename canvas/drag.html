@@ -16,9 +16,17 @@
 <script>
     var sketch = {
 
+        /**
+         * drag: 是否处于拖拽过程
+         * dragged: 被拖拽 item 索引值
+         */
+
         ratio: null,
         canvas: null,
         context: null,
+
+        drag: false,
+        dragged: null,
         item: [
             {x: 100, y: 100, r: 50, bR: 10, n: 5},
             {x: 180, y: 180, r: 60, bR: 20, n: 3},
@@ -32,7 +40,7 @@
 
             _this.initCanvas();
             _this.initContext();
-            _this.setItem();
+            _this.drawItem();
             _this.dragAction();
         },
         initCanvas: function () {
@@ -58,7 +66,7 @@
             _this.context.fillStyle = 'mediumslateblue';
             _this.context.strokeStyle = 'blueviolet';
         },
-        setItem: function (coo) {
+        drawItem: function (coo) {
             var _this = this;
             var length = _this.item.length;
 
@@ -67,18 +75,12 @@
                 var _self = _this.item[i];
                 _this.drawPolygon(_self);
 
-                // 拖拽重绘
+                // 拖拽判别
                 if (coo) {
                     var isInPath = _this.context.isPointInPath(_this.ratio * coo.x, _this.ratio * coo.y);
                     if (isInPath) {
-                        var newItem = {
-                            x: coo.x,
-                            y: coo.y,
-                            r: _self.r,
-                            bR: _self.bR,
-                            n: _self.n
-                        };
-                        _this.item.splice(i, 1, newItem);
+                        _this.drag = true;
+                        _this.dragged = i;
                     }
                 }
             }
@@ -90,28 +92,43 @@
             var width = _this.canvas.width;
             var height = _this.canvas.height;
             var progressFunc = function (e) {
+                if (flag && _this.drag) {
+                    var dragged = _this.item[_this.dragged];
+                    var newItem = {
+                        x: e.pageX,
+                        y: e.pageY,
+                        r: dragged.r,
+                        bR: dragged.bR,
+                        n: dragged.n
+                    };
+                    _this.item.splice(_this.dragged, 1, newItem);
+                    _this.context.clearRect(0, 0, width, height);
+                    _this.drawItem();
+                }
+            };
+            var dragJudge = function (e) {
                 var coo = {x: e.pageX, y: e.pageY};
 
-                if (flag) {
-                    _this.context.clearRect(0, 0, width, height);
-                    _this.setItem(coo);
-                }
+                flag = true;
+                _this.drawItem(coo);
             };
 
             $canvas.on({
-                'mousedown': function () {
-                    flag = true;
+                'mousedown': function (e) {
+                    dragJudge(e);
                 },
-                'touchstart': function () {
-                    flag = true;
+                'touchstart': function (e) {
+                    dragJudge(e.originalEvent.touches[0]);
                 }
             });
             $canvas.on({
                 'mouseup': function () {
                     flag = false;
+                    _this.drag = false;
                 },
                 'touchend': function () {
                     flag = false;
+                    _this.drag = false;
                 }
             });
             $canvas.on({

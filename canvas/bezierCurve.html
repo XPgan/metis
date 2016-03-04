@@ -16,9 +16,17 @@
 <script>
     var sketch = {
 
+        /**
+         * drag: 是否处于拖拽过程
+         * dragged: 被拖拽控制点
+         */
+
         canvas: null,
         context: null,
         ratio: null,
+
+        drag: false,
+        dragged: null,
         coordinate: {
             sX: 50,
             sY: 100,
@@ -75,8 +83,6 @@
             var x = 0;
             var y = 0;
             var index = 0;
-            var width = _this.canvas.width;
-            var height = _this.canvas.height;
 
             $.each(_this.coordinate, function (key, value) {
                 if (index % 2) {
@@ -91,16 +97,8 @@
                     if (coo) {
                         var isInPath = _this.context.isPointInPath(_this.ratio * coo.x, _this.ratio * coo.y);
                         if (isInPath) {
-                            // 选取点关键字
-                            var draggedX = key.replace('Y', 'X');
-                            var draggedY = key;
-
-                            // 重绘贝塞尔曲线及辅助点
-                            _this.coordinate[draggedX] = coo.x;
-                            _this.coordinate[draggedY] = coo.y;
-                            _this.context.clearRect(0, 0, width, height);
-                            _this.drawBezier();
-                            _this.drawPoint();
+                            _this.drag = true;
+                            _this.dragged = key;
                         }
                     }
                 } else {
@@ -115,27 +113,45 @@
             var _this = this;
             var flag = false;
             var $canvas = $(_this.canvas);
+            var width = _this.canvas.width;
+            var height = _this.canvas.height;
             var dragFunc = function (e) {
-                var coo = {x: e.pageX, y: e.pageY};
-                if (flag) {
-                    _this.drawPoint(coo);
+                if (flag && _this.drag) {
+                    // 选取点关键字
+                    var draggedX = _this.dragged.replace('Y', 'X');
+                    var draggedY = _this.dragged;
+
+                    // 重绘贝塞尔曲线及辅助点
+                    _this.coordinate[draggedX] = e.pageX;
+                    _this.coordinate[draggedY] = e.pageY;
+                    _this.context.clearRect(0, 0, width, height);
+                    _this.drawBezier();
+                    _this.drawPoint();
                 }
+            };
+            var dragJudge = function (e) {
+                var coo = {x: e.pageX, y: e.pageY};
+
+                flag = true;
+                _this.drawPoint(coo);
             };
 
             $canvas.on({
-                'mousedown': function () {
-                    flag = true;
+                'mousedown': function (e) {
+                    dragJudge(e);
                 },
-                'touchstart': function () {
-                    flag = true;
+                'touchstart': function (e) {
+                    dragJudge(e.originalEvent.touches[0]);
                 }
             });
             $canvas.on({
                 'mouseup': function () {
                     flag = false;
+                    _this.drag = false;
                 },
                 'touchend': function () {
                     flag = false;
+                    _this.drag = false;
                 }
             });
             $canvas.on({

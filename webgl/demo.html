@@ -140,7 +140,7 @@
                 });
 
                 wall[i] = new THREE.Mesh(plane, planeMaterial);
-                wall[i].position.set(0, 0, 22.5);
+                wall[i].position.z = 22.5;
                 wall[i].receiveShadow = true;
 
                 if (i < 2) {

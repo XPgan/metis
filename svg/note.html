@@ -1,0 +1,84 @@
+/** 几何形状 **/
+
+文本      <text>
+             <tspan></tspan>     dx = "...", dy = "..." (可定义字符间距)
+         </text>
+
+
+矩形      <rect />                rx, ry (可定义圆角矩形)
+圆形      <circle />              cx, cy, r
+椭圆      <ellipse />             cx, xy, rx, ry
+直线      <line />                x1, y1, x2, y2
+折线      <polyline />            points = "x0,y0 x1,y1 ..."
+多边形    <polygon />             points = "x0,y0 x1,y1 ..."
+路径      <path />                d = "M|L|C|S|Q|T|A|Z"
+
+
+组合      <g></g>
+
+
+
+
+
+
+/** 属性 **/
+
+// 填充
+fill
+fill-opacity
+fill-rule = "nonezero|evenodd"
+
+.渐变
+stop-color
+stop-opacity
+
+
+// 线条
+stroke
+stroke-width
+stroke-linecap
+stroke-linejoin
+stroke-dasharray
+stroke-opacity
+
+
+// 其他
+rotate = "..."
+
+
+
+
+
+
+/** 特效 **/
+
+// 滤镜
+<defs>
+    <filter id="filterId">
+        <feGaussianBlur />
+    </filter>
+</defs>
+<rect filter="url(#filterId)" />
+
+
+// 渐变  radialGradient or linearGradient
+<defs>
+    <linearGradient id="linearId">         x1, y1, x2, y2 (渐变填充开始结束位置)
+        <stop />                           offset (渐变色位置)
+    </linearGradient>
+
+    <radialGradient id="linearId">         cx, cy, r, fx, fy
+        <stop />
+    </radialGradient>
+</defs>
+<ellipse fill="url(#linearId)" />
+
+
+// 图案
+<defs>
+    <pattern id="patternId">
+        <path />
+    </pattern>
+</defs>
+<rect filter="url(#patternId)" />
+

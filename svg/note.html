@@ -7,11 +7,13 @@
 
 矩形      <rect />                rx, ry (可定义圆角矩形)
 圆形      <circle />              cx, cy, r
-椭圆      <ellipse />             cx, xy, rx, ry
+椭圆      <ellipse />             cx, cy, rx, ry
 直线      <line />                x1, y1, x2, y2
 折线      <polyline />            points = "x0,y0 x1,y1 ..."
 多边形    <polygon />             points = "x0,y0 x1,y1 ..."
-路径      <path />                d = "M|L|C|S|Q|T|A|Z"
+路径      <path />                d = "M|L|H|V|C|S|Q|T|A|Z" (大写: 绝对位置  小写: 相对位置)
+                                    1. C(Q) & S(T): 对称控制点 保证平滑过渡即斜率一致
+                                    2. A: 轴半径 旋转角 角度范围(0/1) 弧线方向(0/1) 终点
 
 
 组合      <g></g>
@@ -28,6 +30,9 @@ fill
 fill-opacity
 fill-rule = "nonezero|evenodd"
 
+* 非零填充规则: 从左向右穿过区域射线 +1, 从右向左穿过区域射线 -1, 矢量和为 0 为图形外部, 否则为图形内部
+* 奇偶填充规则: 区域射线与图形路径交点个数为 偶数个为图形外部 奇数个为图形内部
+
 .渐变
 stop-color
 stop-opacity
@@ -38,12 +43,14 @@ stroke
 stroke-width
 stroke-linecap
 stroke-linejoin
-stroke-dasharray
+stroke-dasharray = "..."
+stroke-dashoffset (exp: 路径动画)
 stroke-opacity
 
 
 // 其他
-rotate = "..."
+x, y
+rotate = "..." (auto 延路径法向旋转)
 
 
 
@@ -76,9 +83,60 @@ rotate = "..."
 
 // 图案
 <defs>
-    <pattern id="patternId">
+    <pattern id="patternId">                patternUnits = "userSpaceOnUse|objectBoundingBox"
         <path />
     </pattern>
 </defs>
 <rect filter="url(#patternId)" />
 
+
+
+
+
+
+/** 动画 **/
+<circle id="ball" />
+<animate xlink:href="#ball" />
+
+attributeName
+from
+to(by) (to: 绝对值  by: 相对值)
+dur
+
+fill = "freeze|remove"
+calcMode = "discrete(离散)|linear(线性)|paced(踏步)|spline(样条) -> keySplines"
+
+restart = "always|whenNotActive|never"
+repeatCount = "次数|indefinite"
+repeatDur = "时间|indefinite"
+
+* 累积/附加 动画
+accumulate = "none|sum"
+additive = "replace|sum"
+
+* keyTimes & keySplines (范围 0 ~ 1)
+1. keyTimes & values (对应帧 & 属性值 一一对应)
+2. keyTimes & keySplines & values (贝塞尔控制点决定缓动形式)
+
+* begin/end = "单一表达式|;表达式" (动画触发/结束条件)
+1. offset-value (+/- time)
+2. syncbase-value (id.begin/end +/- time)
+3. event-value (id.event +/- time)
+4. repeat-value (id.repeat(int) +/- time)
+5. accessKey-value (character)
+6. wallclock-sync-value
+7. ("indefinite") -> a. elem.beginElement()
+                     b. <a xlink:href="#id"></a>
+
+
+<animateTransform attributeName="transform" type="scale" />
+<animateMotion path="..." />
+
+
+
+
+
+
+/** 方法 **/
+暂停 svg.pauseAnimations();
+重启 svg.unpauseAnimations();

@@ -43,14 +43,14 @@ stroke
 stroke-width
 stroke-linecap
 stroke-linejoin
-stroke-dasharray = "..."
+stroke-dasharray = "..." (exp: 路径动画)
 stroke-dashoffset (exp: 路径动画)
 stroke-opacity
 
 
 // 其他
 x, y
-rotate = "..." (auto 延路径法向旋转)
+rotate = "deg center" (auto 延路径法向旋转)
 
 
 
@@ -74,11 +74,11 @@ rotate = "..." (auto 延路径法向旋转)
         <stop />                           offset (渐变色位置)
     </linearGradient>
 
-    <radialGradient id="linearId">         cx, cy, r, fx, fy
-        <stop />
-    </radialGradient>
-</defs>
-<ellipse fill="url(#linearId)" />
+    <radialGradient id="radialId">         cx, cy, r, fx, fy (相对值 范围 0 ~ 1)
+        <stop />                           cx, cy -> 渐变中点位置
+    </radialGradient>                      fx, fy -> 渐变焦点位置
+</defs>                                    渐变焦点与渐变圆相切/相离时(c + r <= f) 会出现裁切效果
+<ellipse fill="url(#radialId)" />
 
 
 // 图案
@@ -89,36 +89,63 @@ rotate = "..." (auto 延路径法向旋转)
 </defs>
 <rect filter="url(#patternId)" />
 
+* userSpaceOnUse 绝对值 图案单位不缩放
+* objectBoundingBox 相对值 图案单位缩放
+
 
 
 
 
 
 /** 动画 **/
+
+// method 1
 <circle id="ball" />
 <animate xlink:href="#ball" />
+
+// method 2
+<circle>
+    <animate />
+</circle>
 
 attributeName
 from
 to(by) (to: 绝对值  by: 相对值)
 dur
 
+
 fill = "freeze|remove"
 calcMode = "discrete(离散)|linear(线性)|paced(踏步)|spline(样条) -> keySplines"
+
+* paced & linear
+paced -> 全局 linear  忽略 keyTimes (不同 keyTimes 间匀速)
+linear -> keyTimes 间 linear (不同 keyTimes 间不匀速)
+
 
 restart = "always|whenNotActive|never"
 repeatCount = "次数|indefinite"
 repeatDur = "时间|indefinite"
 
+
 * 累积/附加 动画
 accumulate = "none|sum"
 additive = "replace|sum"
 
+additive = "sum" -> 动画属性值相对于属性原始值 (相对值)
+additive = "replace" -> 动画属性值替换属性原始值 (绝对值)
+accumulate = "sum" -> 重复动画的动画属性值累积
+
+
 * keyTimes & keySplines (范围 0 ~ 1)
 1. keyTimes & values (对应帧 & 属性值 一一对应)
-2. keyTimes & keySplines & values (贝塞尔控制点决定缓动形式)
+2. keyTimes & keySplines & values (贝塞尔控制点决定缓动形式 keyTimes & keySplines 一一对应)
+
 
 * begin/end = "单一表达式|;表达式" (动画触发/结束条件)
+
+;表达式 -> 动画 repeat 的时间点
+          begin/end 为对应关系
+
 1. offset-value (+/- time)
 2. syncbase-value (id.begin/end +/- time)
 3. event-value (id.event +/- time)

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>PathAnimate</title>
+    <title>Cat</title>
     <style>
         *{margin: 0;padding: 0;}
         a{text-decoration: none;}
@@ -10,7 +10,7 @@
         .btn a{display: inline-block;line-height: 30px;font-size: 22px;color: #333;border: 1px solid #333;border-radius: 3px;padding: 0 15px;margin-left: 20px;}
 
         svg{position: fixed;top: 0;left: 0;width: 100%;height: 100%;}
-        path{fill: none;stroke: orange;stroke-width: 5;stroke-dasharray: 2000;}
+        path{fill: none;stroke: orange;stroke-width: 5;stroke-dasharray: 1194;}
         line{stroke: #FF5722;stroke-width: 2;stroke-dasharray: 5;}
         circle{fill: #772E00;}
         circle.point-ctrl{fill: #FF5722;}
@@ -22,7 +22,7 @@
         <!-- 起点 300 300 -> 左耳 -> 头顶 -> 右耳 -> 脸 -->
         <path id="cat" d="M 300 300 q 40 -150 80 0 q 60 -10 120 0 q 40 -150 80 0 t 0 200 t -140 50 t -140 -50 t 0 -200 Z" />
         <!-- 路径动画 -->
-        <animate xlink:href="#cat" attributeName="stroke-dashoffset" from="2000" to="0" dur="3s" begin="indefinite" restart="whenNotActive" />
+        <animate xlink:href="#cat" attributeName="stroke-dashoffset" from="1194" to="0" dur="3s" begin="indefinite" restart="whenNotActive" />
 
         <!-- 辅助点 -->
             <!-- 线上点 -->
@@ -50,6 +50,10 @@
     </svg>
     <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
     <script>
+        /**
+         * path.getTotalLength() 可获取路径长度
+         */
+
         var $assist = $('circle, line');
         // 辅助线
         $('.js_assist').on('click', function () {

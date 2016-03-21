@@ -1,7 +1,7 @@
 /** 几何形状 **/
 
 文本      <text>
-             <tspan></tspan>     dx = "...", dy = "..." (可定义字符间距)
+             <tspan></tspan>     dx = "...", dy = "..." (可定义字符间距)  baseline-shift = super|sub  *font-weight 有效
          </text>
 
 
@@ -9,14 +9,20 @@
 圆形      <circle />              cx, cy, r
 椭圆      <ellipse />             cx, cy, rx, ry
 直线      <line />                x1, y1, x2, y2
-折线      <polyline />            points = "x0,y0 x1,y1 ..."
-多边形    <polygon />             points = "x0,y0 x1,y1 ..."
+折线      <polyline />            points = "x0,y0 x1,y1 ..." (非自动闭合)
+多边形    <polygon />             points = "x0,y0 x1,y1 ..." (自动闭合)
 路径      <path />                d = "M|L|H|V|C|S|Q|T|A|Z" (大写: 绝对位置  小写: 相对位置)
                                     1. C(Q) & S(T): 对称控制点 保证平滑过渡即斜率一致
                                     2. A: 轴半径 旋转角 角度范围(0/1) 弧线方向(0/1) 终点
 
 
 组合      <g></g>
+元素      <symbol id="shapeId">   (<defs><g id="shapeId"></g></defs> 亦可)
+            <circle />
+         </symbol>
+         <use xlink:href="#shapeId" />
+         *symbol 为隐藏元素 需要 use 调用
+          use 可复用非 symbol 元素
 
 
 
@@ -50,7 +56,7 @@ stroke-opacity
 
 // 其他
 x, y
-rotate = "deg center" (auto 延路径法向旋转)
+rotate = "deg center" (auto/auto-reverse 延路径法向旋转)
 
 
 
@@ -79,6 +85,10 @@ rotate = "deg center" (auto 延路径法向旋转)
     </radialGradient>                      fx, fy -> 渐变焦点位置
 </defs>                                    渐变焦点与渐变圆相切/相离时(c + r <= f) 会出现裁切效果
 <ellipse fill="url(#radialId)" />
+*spreadMethod = "pad|repeat|reflect"
+pad -> 以开始/结束色平铺剩余区域
+repeat -> 重复平铺
+reflect -> 镜像平铺
 
 
 // 图案
@@ -91,6 +101,34 @@ rotate = "deg center" (auto 延路径法向旋转)
 
 * userSpaceOnUse 绝对值 图案单位不缩放
 * objectBoundingBox 相对值 图案单位缩放
+
+
+// 连接标记
+<defs>
+    <marker id="markerId">                  markerWidth & markerHeight, refX & refY (连接起始点), orient = "auto|deg" (旋转连接点), markerUnits = strokeWidth(适应路径描边)|userSpaceOnUse(原值)
+        <circle />
+    </marker>
+</defs>
+<path style="marker-start|mid|end: url(#markerId);" />
+
+
+// 文字路径
+<defs>
+    <path id="pathId" />
+</defs>
+<text>
+    <textPath xlink:href="#pathId">...</textPath>
+</text>
+
+
+// 裁剪路径
+<defs>
+    <clipPath id="clipPath">
+        <rect />
+    </clipPath>
+</defs>
+<circle style="clip-path: url(#clipPath);" />
+
 
 
 
@@ -156,8 +194,12 @@ accumulate = "sum" -> 重复动画的动画属性值累积
                      b. <a xlink:href="#id"></a>
 
 
-<animateTransform attributeName="transform" type="scale" />
-<animateMotion path="..." />
+<animateTransform attributeName="transform" />       type = "translate|scale|rotate|skewX|skewY"
+
+<animateMotion path="..." />                         keyTimes & keypoints(0 ~ 1) 一一对应  对应时间点移动对应距离
+<animateMotion>
+    <mpath />
+</animateMotion>
 
 
 

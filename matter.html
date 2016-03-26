@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matter</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        canvas{width: 100%;height: 100%;position: fixed;top: 0;left: 0;}
+    </style>
+</head>
+<body>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script src="../common/libs/matter.min.js"></script>
+<script>
+    /**
+     * width & height: 画布尺寸
+     * subject: 物理引擎
+     * object: 实体
+     */
+    var matter = {
+
+        engine: Matter.Engine,
+        world: Matter.World,
+        bodies: Matter.Bodies,
+
+        width: 0,
+        height: 0,
+        subject: null,
+        object: [],
+
+        do: function () {
+            var _this = this;
+            _this.initCanvas();
+            _this.setObject();
+            _this.runEngine();
+        },
+        initCanvas: function () {
+            var _this = this;
+            var subject = _this.engine.create(document.body);
+            var canvas = $('canvas').get(0);
+            var context = canvas.getContext('2d');
+            var width = canvas.offsetWidth;
+            var height = canvas.offsetHeight;
+            var ratio = window.devicePixelRatio || 1;
+
+            canvas.width = width * ratio;
+            canvas.height = height * ratio;
+            context.scale(ratio, ratio);
+
+            _this.width = width;
+            _this.height = height;
+            _this.subject = subject;
+        },
+        setObject: function () {
+            var _this = this;
+            var rectangle = _this.bodies.rectangle(_this.width / 2 - 50, 100, 100, 80);
+            var circle = _this.bodies.circle(_this.width / 2, 200, 50);
+            var polygon = _this.bodies.polygon(_this.width / 2 + 50, 50, 5, 80);
+            var ground = _this.bodies.rectangle(_this.width / 2, _this.height - 26, _this.width / 2, 50, {isStatic: true});
+
+            _this.object = [rectangle, circle, polygon, ground];
+        },
+        runEngine: function () {
+            var _this = this;
+            _this.world.add(_this.subject.world, _this.object);
+            _this.engine.run(_this.subject);
+        }
+    };
+
+    matter.do();
+</script>
+</body>
+</html>

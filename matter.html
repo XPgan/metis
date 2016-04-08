@@ -14,6 +14,7 @@
 <script>
     var matter = {
 
+        ratio: window.devicePixelRatio,
         object: [],
 
         do: function () {
@@ -39,18 +40,22 @@
         runEngine: function () {
             var _this = this;
             var subject = Matter.Engine.create(document.body);
+            var mouseConstraint = Matter.MouseConstraint.create(subject);
 
+            mouseConstraint.mouse.pixelRatio = _this.ratio;
+
+            Matter.World.add(subject.world, mouseConstraint);
             Matter.World.add(subject.world, _this.object);
             Matter.Engine.run(subject);
         },
         initCanvas: function () {
+            var _this = this;
             var canvas = $('canvas').get(0);
             var context = canvas.getContext('2d');
-            var ratio = window.devicePixelRatio || 1;
 
-            canvas.width = canvas.offsetWidth * ratio;
-            canvas.height = canvas.offsetHeight * ratio;
-            context.scale(ratio, ratio);
+            canvas.width = canvas.offsetWidth * _this.ratio;
+            canvas.height = canvas.offsetHeight * _this.ratio;
+            context.scale(_this.ratio, _this.ratio);
         }
     };
 

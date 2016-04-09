@@ -30,16 +30,22 @@
             var standY = $body.offsetHeight;
 
             // 实体
-            var rectangle = Matter.Bodies.rectangle(standX - 50, 100, 100, 80);
-            var circle = Matter.Bodies.circle(standX, 200, 50);
-            var polygon = Matter.Bodies.polygon(standX + 50, 50, 5, 80);
-            var ground = Matter.Bodies.rectangle(standX, standY - 26, standX * 1.5, 50, {isStatic: true});
+            var circle = Matter.Bodies.circle(standX, standY - 450, 50);
+            var ball = Matter.Bodies.circle(standX, standY - 200, 40, {density: 1.0});
+            var rectangle = Matter.Bodies.rectangle(standX - 50, standY - 400, 100, 80);
+            var polygon = Matter.Bodies.polygon(standX + 50, standY - 500, 5, 80);
+            var ground = Matter.Bodies.rectangle(standX, standY - 100, standX * 1.5, 20, {isStatic: true, friction: 0.8, angle: Math.PI * 0.04});
+            // 悬挂体
+            var ropeBall = Matter.Constraint.create({
+                pointA: {x: standX, y: 0},
+                bodyB: ball
+            });
 
-            _this.object = [rectangle, circle, polygon, ground];
+            _this.object = [circle, ball, rectangle, polygon, ground, ropeBall];
         },
         runEngine: function () {
             var _this = this;
-            var subject = Matter.Engine.create(document.body, {render: {options: {wireframes: false}}});
+            var subject = Matter.Engine.create(document.body, {render: {options: {wireframes: false, showAngleIndicator: true}}});
             var mouseConstraint = Matter.MouseConstraint.create(subject);
 
             mouseConstraint.mouse.pixelRatio = _this.ratio;

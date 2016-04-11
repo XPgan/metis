@@ -26,23 +26,26 @@
         setObject: function () {
             var _this = this;
             var group = Matter.Body.nextGroup(true);
-            var particleOptions = {
+            var options = {
                 friction: 0.00001,
-                collisionFilter: {group: group},
-                render: {visible: false}
+                collisionFilter: {
+                    group: group
+                },
+                render: {
+                    visible: false
+                }
             };
-            var cloth = Matter.Composites.softBody(200, 200, 20, 12, 5, 5, false, 8, particleOptions);
+            var cloth = Matter.Composites.softBody(0, 0, 20, 12, 5, 5, false, 8, options);
 
             for (var i = 0; i < 20; i++) {
                 cloth.bodies[i].isStatic = true;
             }
 
             _this.cloth = cloth;
-
         },
         runEngine: function () {
             var _this = this;
-            var subject = Matter.Engine.create(document.body, {render: {options: {wireframes: false}}});
+            var subject = Matter.Engine.create(document.body);
             var mouseConstraint = Matter.MouseConstraint.create(subject);
 
             mouseConstraint.mouse.pixelRatio = _this.ratio;

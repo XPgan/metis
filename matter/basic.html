@@ -45,7 +45,15 @@
         },
         runEngine: function () {
             var _this = this;
-            var subject = Matter.Engine.create(document.body, {render: {options: {wireframes: false, showAngleIndicator: true}}});
+            var options = {
+                render: {
+                    options: {
+                        wireframes: false,
+                        showAngleIndicator: true
+                    }
+                }
+            };
+            var subject = Matter.Engine.create(document.body, options);
             var mouseConstraint = Matter.MouseConstraint.create(subject);
 
             mouseConstraint.mouse.pixelRatio = _this.ratio;

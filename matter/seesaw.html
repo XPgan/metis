@@ -30,7 +30,7 @@
 
             var ground = Matter.Bodies.rectangle(width / 2, height - 5, width, 10, {isStatic: true});
             var ball = Matter.Bodies.circle(width / 4 + 15, -200, 30, {density: 1.0});
-            var stack = Matter.Composites.stack(width / 2, height - 170, 2, 2, 0, 0, function(x, y) {
+            var stack = Matter.Composites.stack(width / 2, height - 170, 5, 2, 0, 0, function(x, y) {
                 return Matter.Bodies.rectangle(x, y, 30, 30);
             });
             _this.object.push(ground, ball, stack);

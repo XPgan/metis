@@ -89,3 +89,16 @@
 /* fs.open(path, flags, [mode], [callback(err, fd)]) */
 /* fs.read(fd, buffer, offset, length, position, [callback(err, bytesRead, buffer)]) */
 
+
+
+/** http **/
+// 请求对象 req    响应对象 res
+
+var http = require('http');
+http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('hello world');
+    res.end();
+}).listen(3000);
+
+

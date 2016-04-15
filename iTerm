@@ -1,0 +1,12 @@
+** 结束进程
+lsof -i:端口号
+kill 进程id
+
+** 卸载
+sudo make uninstall
+
+** 搜索
+find . -name '正则表达式'
+
+** 安装
+npm: curl -L https://npmjs.com/install.sh | sh

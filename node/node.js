@@ -83,13 +83,42 @@ fs.readFile('content', 'utf-8', function(err, data) {
 
 
 /** http **/
-// 请求对象 req    响应对象 res
 
-var http = require('http');
-http.createServer(function (req, res) {
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write('hello world');
-    res.end();
-}).listen(3000);
+/**
+ * 1. 服务器对象 http.Server()
+ *     request 事件: 服务器接收到客户端请求时触发    参数: res(http.ServerResponse) & req(http.ServerRequest)
+ *     connection 事件: TCP 连接建立时触发    参数: socket
+ *     close: 服务器关闭时触发
+ * 2. 客户端对象 http.request(options, callback)
+ *     * 返回值 req(http.ClientRequest)
+ *     * 回调参数 res(http.ClientResponse)
+ *
+ *     注: http.get(options, callback) [简化版] [无须 req.end()]
+ *
+ *
+ *
+ * http.ServerRequest (客户端 请求信息)
+ *     请求头 (立即读取)
+ *     请求体
+ *         data 事件: 接收到请求数据时触发    参数: chunk
+ *         end 事件: 数据传输结束时触发
+ *         close 事件: 用户当前请求结束时触发
+ *
+ * http.ServerResponse (服务器 返回信息)
+ *     .writeHead(statusCode, [headers])
+ *     .write(data, [encoding])
+ *     .end([data], [encoding]) 须结束响应 否则客户端一直处于等待状态
+ *
+ * http.ClientRequest (已产生的 进行中的 请求)
+ *     .write(data, [encoding])
+ *     .end([data], [encoding]) 须结束请求 否则服务器无法接收信息
+ *     .abort() 终止正在发送的请求
+ *     .setTimeout(timeout, [callback])
+ *
+ * http.ClientResponse
+ *     data 事件: 数据到达时触发    参数: chunk
+ *     end 事件: 数据传输结束时触发
+ *     close 事件: 用户当前请求结束时触发
+ */
 
 

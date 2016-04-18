@@ -88,7 +88,7 @@ fs.readFile('content', 'utf-8', function(err, data) {
  * 1. 服务器对象 http.Server()
  *     request 事件: 服务器接收到客户端请求时触发    参数: res(http.ServerResponse) & req(http.ServerRequest)
  *     connection 事件: TCP 连接建立时触发    参数: socket
- *     close: 服务器关闭时触发
+ *     close 事件: 服务器关闭时触发
  * 2. 客户端对象 http.request(options, callback)
  *     * 返回值 req(http.ClientRequest)
  *     * 回调参数 res(http.ClientResponse)

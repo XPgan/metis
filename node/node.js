@@ -11,6 +11,9 @@
  * 全局变量(全局对象属性)
  *     process 描述进程状态
  *     console
+ *
+ * # 建立工程
+ * express -e filename
  **/
 
 
@@ -120,5 +123,7 @@ fs.readFile('content', 'utf-8', function(err, data) {
  *     end 事件: 数据传输结束时触发
  *     close 事件: 用户当前请求结束时触发
  */
+
+
 
 

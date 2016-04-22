@@ -1,0 +1,10 @@
+1. 安装 mongodb
+2. cd mongodb
+3. mkdir -p data/db
+4. cd mongodb/bin
+5. ./mongod --dbpath ../data/db
+6. ./mongo
+
+
+
+

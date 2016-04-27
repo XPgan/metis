@@ -14,3 +14,8 @@ find . -name '正则表达式'
 ** 安装
 npm: curl -L https://npmjs.com/install.sh | sh
 express: npm install -g express-generator
+
+
+
+** git
+git merge --no-ff [branch_name]

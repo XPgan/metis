@@ -8,7 +8,7 @@ var upload = require('./modules/upload');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-    res.render('index');
+    res.render('main');
 });
 
 // 登录

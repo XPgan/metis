@@ -8,6 +8,8 @@
     "dependencies": {
         "ejs": "~2.3.3",
         "express": "~4.13.1",
-        "formidable": "latest"
+        "mongoose": "~4.4.14",
+        "formidable": "~1.0.17",
+        "body-parser": "~1.15.0"
     }
 }

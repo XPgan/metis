@@ -8,21 +8,24 @@ var upload = require('./modules/upload');
 var router = express.Router();
 
 router.get('/', function (req, res) {
-    res.render('main');
+    var is_login = req.cookies.is_login;
+
+    if (is_login) {
+        res.render('upload');
+    } else {
+        res.render('login');
+    }
+});
+router.get(/^\/(login|upload)\/?$/, function (req, res) {
+    res.redirect('/');
 });
 
 // 登录
-router.get('/login', function (req, res) {
-    res.render('templates/login');
-});
 router.post('/login', function (req, res) {
     login(req, res);
 });
 
 // 文件上传
-router.get('/upload', function (req, res) {
-    res.render('templates/upload');
-});
 router.post('/upload', function (req, res) {
     upload(req, res);
 });

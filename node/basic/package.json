@@ -10,6 +10,7 @@
         "express": "~4.13.1",
         "mongoose": "~4.4.14",
         "formidable": "~1.0.17",
-        "body-parser": "~1.15.0"
+        "body-parser": "~1.15.0",
+        "cookie-parser": "~1.4.1"
     }
 }

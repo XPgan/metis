@@ -15,9 +15,10 @@ var login = function (req, res) {
 
     users.count(query_doc, function (err, doc) {
         if (doc) {
-            res.render('templates/upload');
+            res.cookie('is_login', 1);
+            res.render('upload');
         } else {
-            res.render('message', {message: '登录失败'});
+            res.render('../message', {message: '登录失败'});
         }
     });
 };

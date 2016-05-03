@@ -3,21 +3,20 @@
  */
 
 var mongoose = require('mongoose');
-var users = require('../models').users;
-
-mongoose.connect('mongodb://localhost/user_info');
+var User = require('../models').User;
 
 var login = function (req, res) {
-    var query_doc = {
+    var user = {
         user_name: req.body.user_name,
         password: req.body.password
     };
 
-    users.count(query_doc, function (err, doc) {
+    User.count(user, function (err, doc) {
         if (doc) {
-            res.cookie('is_login', 1);
-            res.render('upload');
+            res.cookie('user', user.user_name);
+            res.render('upload', {username: user.user_name});
         } else {
+            res.cookie('user', '');
             res.render('../message', {message: '登录失败'});
         }
     });

@@ -15,14 +15,16 @@ var upldPortrait = function (req, res) {
                 status: 0
             }));
         } else {
+            var file_name = files.portrait.name;
             var tmp_path = files.portrait.path;
-            var target_path = '../upload/portrait/' + files.portrait.name;
+            var target_path = '../public/upload/portrait/' + file_name;
 
             fs.renameSync(tmp_path, target_path);
 
             res.end(JSON.stringify({
                 message: '上传成功',
-                status: 1
+                status: 1,
+                url: '/upload/portrait/' + file_name
             }));
         }
     });

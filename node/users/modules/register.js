@@ -7,7 +7,8 @@ var User = require('../models').User;
 var register = function (req, res) {
     var user = new User({
         user_name: req.body.user_name,
-        password: req.body.password
+        password: req.body.password,
+        portrait: '/upload/portrait/default_portrait.jpg'
     });
 
     user.save(function (err) {

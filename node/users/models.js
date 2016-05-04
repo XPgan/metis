@@ -8,7 +8,8 @@ var db = mongoose.connect('mongodb://localhost/users');
 
 var userSchema = new Schema({
     user_name: String,
-    password: String
+    password: String,
+    portrait: String
 });
 
 exports.User = db.model('infos', userSchema);

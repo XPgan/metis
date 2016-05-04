@@ -4,6 +4,7 @@
 
 var fs = require('fs');
 var formidable = require('formidable');
+var User = require('../models').User;
 
 var upldPortrait = function (req, res) {
     var form = new formidable.IncomingForm();
@@ -15,17 +16,31 @@ var upldPortrait = function (req, res) {
                 status: 0
             }));
         } else {
-            var file_name = files.portrait.name;
+            // upload
+            var url = '/upload/portrait/' + files.portrait.name;
             var tmp_path = files.portrait.path;
-            var target_path = '../public/upload/portrait/' + file_name;
+            var target_path = '../public' + url;
 
             fs.renameSync(tmp_path, target_path);
 
-            res.end(JSON.stringify({
-                message: '上传成功',
-                status: 1,
-                url: '/upload/portrait/' + file_name
-            }));
+            // insert
+            var record = {user_name: req.cookies.user};
+            var update = {portrait: url};
+
+            User.update(record, update, {}, function (err) {
+                if (err) {
+                    res.end(JSON.stringify({
+                        message: '上传失败',
+                        status: 0
+                    }));
+                } else {
+                    res.end(JSON.stringify({
+                        message: '上传成功',
+                        status: 1,
+                        url: url
+                    }));
+                }
+            });
         }
     });
 };

@@ -1,0 +1,10 @@
+<%- include ../header %>
+<h3><%= username %></h3>
+<form enctype="multipart/form-data" id="form_portrait">
+    <input type="file" id="portrait" name="portrait" />
+    <input type="button" value="upload" class="js_portrait" />
+</form>
+<div>
+    <a href="javascript:;" class="js_logout">注销</a>
+</div>
+<%- include ../footer %>

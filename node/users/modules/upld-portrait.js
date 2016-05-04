@@ -19,6 +19,7 @@ var upldPortrait = function (req, res) {
             var target_path = '../upload/portrait/' + files.portrait.name;
 
             fs.renameSync(tmp_path, target_path);
+
             res.end(JSON.stringify({
                 message: '上传成功',
                 status: 1

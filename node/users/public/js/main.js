@@ -32,12 +32,7 @@ var main = {
 
         // 失败
         if (!status) {
-            _this.showDialog({
-                message: message,
-                href: null,
-                btnClass: 'js_close',
-                btnTxt: '关闭'
-            });
+            _this.showDialog({message: message});
         }
 
         // 成功
@@ -46,8 +41,7 @@ var main = {
                 _this.showDialog({
                     message: message,
                     href: url,
-                    btnClass: 'js_goto',
-                    btnTxt: '确定'
+                    btnClass: 'js_goto'
                 });
             } else {
                 location.href = url;
@@ -57,9 +51,8 @@ var main = {
     showDialog: function (opt) {
         var $dialog = dialogModule
             .replace('$message', opt.message)
-            .replace('$href', opt.href)
-            .replace('$btnClass', opt.btnClass)
-            .replace('$btnTxt', opt.btnTxt);
+            .replace('$href', opt.href || null)
+            .replace('$btnClass', opt.btnClass || 'js_close');
         $body.append($dialog);
     },
     login: function () {
@@ -71,6 +64,9 @@ var main = {
                 data: $('#form_login').serialize(),
                 success: function (data) {
                     _this.showResult(data, '/profile');
+                },
+                error: function () {
+                    _this.showDialog({message: '登录失败'});
                 }
             });
         });
@@ -83,6 +79,9 @@ var main = {
                 type: 'POST',
                 success: function (data) {
                     _this.showResult(data, '/login', 1);
+                },
+                error: function () {
+                    _this.showDialog({message: '注销失败'});
                 }
             });
         });
@@ -90,30 +89,46 @@ var main = {
     register: function () {
         var _this = this;
         $body.on('click', '.js_register', function () {
-            $.ajax({
-                url: "/register",
-                type: 'POST',
-                data: $('#form_register').serialize(),
-                success: function (data) {
-                    _this.showResult(data, '/login');
-                }
-            });
+            var judge = $('#user_name').val() && $('#password').val();
+            if (judge) {
+                $.ajax({
+                    url: "/register",
+                    type: 'POST',
+                    data: $('#form_register').serialize(),
+                    success: function (data) {
+                        _this.showResult(data, '/login');
+                    },
+                    error: function () {
+                        _this.showDialog({message: '注册失败'});
+                    }
+                });
+            } else {
+                _this.showDialog({message: '用户名 & 密码 ~ 非空'});
+            }
         });
     },
     upldPortrait: function () {
         var _this = this;
         $body.on('click', '.js_portrait', function () {
+            var judge = $('#portrait')[0].files.length;
             var formData = new FormData($('#form_portrait')[0]);
-            $.ajax({
-                url: "/upload/portrait",
-                type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (data) {
-                    _this.showResult(data, null, 1);
-                }
-            });
+            if (judge) {
+                $.ajax({
+                    url: "/upload/portrait",
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        _this.showResult(data, '/profile', 1);
+                    },
+                    error: function () {
+                        _this.showDialog({message: '上传失败'});
+                    }
+                });
+            } else {
+                _this.showDialog({message: '请选择头像 ~'});
+            }
         });
     }
 };

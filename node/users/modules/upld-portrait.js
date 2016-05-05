@@ -16,17 +16,26 @@ var upldPortrait = function (req, res) {
                 status: 0
             }));
         } else {
-            // upload
+            var user = req.cookies.user;
+            var record = {user_name: user};
             var url = '/upload/portrait/' + files.portrait.name;
+
+            // 上传新头像
             var tmp_path = files.portrait.path;
             var target_path = '../public' + url;
-
             fs.renameSync(tmp_path, target_path);
 
-            // insert
-            var record = {user_name: req.cookies.user};
-            var update = {portrait: url};
+            // 删除旧头像
+            var returns = {portrait: 1};
+            User.find(record, returns, {}, function (err, result) {
+                var portrait = result[0].portrait;
+                if (portrait) {
+                    fs.unlink('../public' + result[0].portrait);
+                }
+            });
 
+            // 更新记录
+            var update = {portrait: url};
             User.update(record, update, {}, function (err) {
                 if (err) {
                     res.end(JSON.stringify({

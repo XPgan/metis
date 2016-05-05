@@ -7,19 +7,18 @@ var login = require('./modules/login');
 var register = require('./modules/register');
 var logout = require('./modules/logout');
 var upldPortrait = require('./modules/upld-portrait');
-var User = require('./models').User;
+var find = require('./modules/find-record');
 var router = express.Router();
+var DEFAULTP = '/upload/portrait/default_portrait.jpg';
 
 router.get('/', function (req, res) {
-    var portrait = '';
     var user = req.cookies.user;
-    var record = {user_name: user};
-    var returns = {portrait: 1};
+
+    find.do(req);
 
     if (user) {
-        User.find(record, returns, {}, function (err, result) {
-            portrait = result[0].portrait || '/upload/portrait/default_portrait.jpg';
-            res.render('profile', {username: user, portrait: portrait});
+        find.portrait(function (portrait) {
+            res.render('profile', {username: user, portrait: portrait || DEFAULTP});
         });
     } else {
         res.render('login');

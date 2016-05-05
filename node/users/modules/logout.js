@@ -3,24 +3,20 @@
  */
 
 var fs = require('fs');
+var find = require('./find-record');
 var User = require('../models').User;
 
 var logout = function (req, res) {
-    var user = req.cookies.user;
-    var record = {user_name: user};
 
-    // 删除头像
-    var returns = {portrait: 1};
-    User.find(record, returns, {}, function (err, result) {
-        var portrait = result[0].portrait;
+    find.do(req);
+    find.portrait(function (portrait) {
         if (portrait) {
-            fs.unlink('../public' + result[0].portrait);
+            fs.unlink('../public' + portrait);
         }
     });
 
-    // 删除记录
     var t = setTimeout(function () {
-        User.remove(record, function (err) {
+        User.remove(find.record, function (err) {
             if (err) {
                 res.end(JSON.stringify({
                     message: '注销失败',

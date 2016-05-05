@@ -7,12 +7,20 @@ var login = require('./modules/login');
 var register = require('./modules/register');
 var logout = require('./modules/logout');
 var upldPortrait = require('./modules/upld-portrait');
+var User = require('./models').User;
 var router = express.Router();
 
 router.get('/', function (req, res) {
+    var portrait = '';
     var user = req.cookies.user;
+    var record = {user_name: user};
+    var returns = {portrait: 1};
+
     if (user) {
-        res.render('profile', {username: user});
+        User.find(record, returns, {}, function (err, result) {
+            portrait = result[0].portrait || '/upload/portrait/default_portrait.jpg';
+            res.render('profile', {username: user, portrait: portrait});
+        });
     } else {
         res.render('login');
     }

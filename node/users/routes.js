@@ -12,25 +12,24 @@ var router = express.Router();
 var DEFAULTP = '/upload/portrait/default_portrait.jpg';
 
 router.get('/', function (req, res) {
+    res.render('index');
+});
+router.get('/profile', function (req, res) {
+    res.redirect('/login');
+});
+
+// 登录
+router.get('/login', function (req, res) {
     var user = req.cookies.user;
 
     find.do(req);
-
     if (user) {
         find.portrait(function (portrait) {
             res.render('profile', {username: user, portrait: portrait || DEFAULTP});
         });
     } else {
-        res.render('login');
+        res.render('index');
     }
-});
-router.get('/profile', function (req, res) {
-    res.redirect('/');
-});
-
-// 登录
-router.get('/login', function (req, res) {
-    res.render('login');
 });
 router.post('/login', function (req, res) {
     login(req, res);

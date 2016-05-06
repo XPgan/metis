@@ -1,0 +1,28 @@
+<%- include ../header %>
+<section class="banner c-fix users-bg">
+    <span class="c-block">WELCOME</span>
+    <div class="login users-card">
+        <form id="form_login" class="users-form">
+            <input type="text" id="user_name" name="user_name" placeholder="用户名" />
+            <input type="text" id="password" name="password" placeholder="密码" />
+        </form>
+        <button class="js_login users-btn">login</button><a href="/register">register</a>
+    </div>
+</section>
+<section class="profile-lst">
+    <ul>
+        <li>
+            <div class="user-title">
+                <img src="" class="c-block" />
+                <span>用户名</span>
+            </div>
+            <div class="user-info">
+                <span>性别: 女</span>
+                <span>电话: 18810377637</span>
+                <span>QQ: 493108053</span>
+            </div>
+            <div class="user-intro">这是一段介绍这是一段介绍这是一段介绍这是一段介绍这是一段介绍</div>
+        </li>
+    </ul>
+</section>
+<%- include ../footer %>

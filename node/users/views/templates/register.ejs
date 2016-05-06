@@ -1,7 +1,13 @@
 <%- include ../header %>
-<form id="form_register">
-    <input type="text" id="user_name" name="user_name" placeholder="用户名" />
-    <input type="text" id="password" name="password" placeholder="密码" />
-    <input type="button" value="register" class="js_register" />
-</form>
+<section class="register users-card users-bg">
+    <form id="form_register" class="users-form">
+        <input type="text" id="user_name" name="user_name" placeholder="用户名" />
+        <input type="text" id="password" name="password" placeholder="密码" />
+        <input type="text" id="sex" name="sex" placeholder="性别" />
+        <input type="text" id="tel" name="tel" placeholder="电话" />
+        <input type="text" id="qq" name="qq" placeholder="QQ" />
+        <textarea id="intro" name="intro" placeholder="描述一下自己~"></textarea>
+    </form>
+    <button class="js_register users-btn">register</button>
+</section>
 <%- include ../footer %>

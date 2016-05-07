@@ -8,6 +8,10 @@ var register = function (req, res) {
     var user = new User({
         user_name: req.body.user_name,
         password: req.body.password,
+        sex: req.body.sex,
+        tel: req.body.tel,
+        qq: req.body.qq,
+        intro: req.body.intro,
         portrait: ''
     });
 

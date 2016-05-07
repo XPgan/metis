@@ -1,22 +1,20 @@
 <%- include ../header %>
 <section class="profile-info users-bg">
-    <img src="<%= portrait %>" class="c-block" />
+    <img src="<%= portrait %>" class="c-block c-mgn0" />
     <!-- portrait -->
     <form enctype="multipart/form-data" id="form_portrait" class="c-horizontal">
         <input type="file" id="portrait" name="portrait" class="portrait-file" />
-        <input type="button" value="upload" class="js_portrait portrait-btn c-horizontal" />
     </form>
     <h3><%= username %></h3>
-    <div class="profile-bio"><span>女</span><span>18810377637</span><span>493108053</span></div>
+    <div class="profile-bio"><span><%= sex %></span><span><%= tel %></span><span><%= qq %></span></div>
+    <a href="javascript:;" class="js_logout">注销</a>
 </section>
-<section class="profile-intro">这里是介绍这里是介绍这里是介绍这里是介绍这里是介绍这里是介绍</section>
-<section class="profile-ctrl">
-    <form id="form_change">
-        <input type="text" id="tel" name="tel" placeholder="电话" />
-        <input type="text" id="qq" name="qq" placeholder="QQ" />
-        <input type="text" id="intro" name="intro" placeholder="个人描述" />
+<section class="profile-intro c-bgw"><%= intro %><span class="js_change c-vertical">修改</span></section>
+<div class="c-bottom change-info c-bgw js_edit">
+    <form id="form_info">
+        <input type="text" id="intro" name="intro" placeholder="<%= intro %>" />
     </form>
-    <button class="users-btn js_change">修改</button>
-    <button class="users-btn js_logout">注销</button>
-</section>
+    <button class="js_info">提交</button>
+</div>
+<script src="/js/profile.js"></script>
 <%- include ../footer %>

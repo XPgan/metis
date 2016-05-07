@@ -9,10 +9,6 @@ var main = {
     do: function () {
         var _this = this;
         _this.commonCtrl();
-        _this.login();
-        _this.logout();
-        _this.register();
-        _this.upldPortrait();
     },
     commonCtrl: function () {
         $body.on('click', '.js_close', function (e) {
@@ -54,82 +50,6 @@ var main = {
             .replace('$href', opt.href || null)
             .replace('$btnClass', opt.btnClass || 'js_close');
         $body.append($dialog);
-    },
-    login: function () {
-        var _this = this;
-        $body.on('click', '.js_login', function () {
-            $.ajax({
-                url: '/login',
-                type: 'POST',
-                data: $('#form_login').serialize(),
-                success: function (data) {
-                    _this.showResult(data, '/profile');
-                },
-                error: function () {
-                    _this.showDialog({message: '登录失败'});
-                }
-            });
-        });
-    },
-    logout: function () {
-        var _this = this;
-        $body.on('click', '.js_logout', function () {
-            $.ajax({
-                url: "/logout",
-                type: 'POST',
-                success: function (data) {
-                    _this.showResult(data, '/login', 1);
-                },
-                error: function () {
-                    _this.showDialog({message: '注销失败'});
-                }
-            });
-        });
-    },
-    register: function () {
-        var _this = this;
-        $body.on('click', '.js_register', function () {
-            var judge = $('#user_name').val() && $('#password').val();
-            if (judge) {
-                $.ajax({
-                    url: "/register",
-                    type: 'POST',
-                    data: $('#form_register').serialize(),
-                    success: function (data) {
-                        _this.showResult(data, '/login');
-                    },
-                    error: function () {
-                        _this.showDialog({message: '注册失败'});
-                    }
-                });
-            } else {
-                _this.showDialog({message: '用户名 & 密码 ~ 非空'});
-            }
-        });
-    },
-    upldPortrait: function () {
-        var _this = this;
-        $body.on('click', '.js_portrait', function () {
-            var judge = $('#portrait')[0].files.length;
-            var formData = new FormData($('#form_portrait')[0]);
-            if (judge) {
-                $.ajax({
-                    url: "/upload/portrait",
-                    type: 'POST',
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    success: function (data) {
-                        _this.showResult(data, '/profile', 1);
-                    },
-                    error: function () {
-                        _this.showDialog({message: '上传失败'});
-                    }
-                });
-            } else {
-                _this.showDialog({message: '请选择头像 ~'});
-            }
-        });
     }
 };
 

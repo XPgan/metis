@@ -9,7 +9,11 @@ var db = mongoose.connect('mongodb://localhost/users');
 var userSchema = new Schema({
     user_name: String,
     password: String,
-    portrait: String
+    portrait: String,
+    sex: String,
+    tel: String,
+    qq: String,
+    intro: String
 });
 
 exports.User = db.model('infos', userSchema);

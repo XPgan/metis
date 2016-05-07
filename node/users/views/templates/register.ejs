@@ -1,13 +1,16 @@
 <%- include ../header %>
-<section class="register users-card users-bg">
-    <form id="form_register" class="users-form">
-        <input type="text" id="user_name" name="user_name" placeholder="用户名" />
-        <input type="text" id="password" name="password" placeholder="密码" />
-        <input type="text" id="sex" name="sex" placeholder="性别" />
-        <input type="text" id="tel" name="tel" placeholder="电话" />
-        <input type="text" id="qq" name="qq" placeholder="QQ" />
-        <textarea id="intro" name="intro" placeholder="描述一下自己~"></textarea>
-    </form>
-    <button class="js_register users-btn">register</button>
+<section class="register users-bg">
+    <div class="users-card">
+        <form id="form_register" class="users-form">
+            <input type="text" id="user_name" name="user_name" placeholder="用户名" />
+            <input type="text" id="password" name="password" placeholder="密码" />
+            <input type="text" id="sex" name="sex" placeholder="性别" />
+            <input type="text" id="tel" name="tel" placeholder="电话" />
+            <input type="text" id="qq" name="qq" placeholder="QQ" />
+            <textarea id="intro" name="intro" placeholder="描述一下自己~"></textarea>
+        </form>
+        <button class="js_register users-btn">register</button>
+    </div>
 </section>
+<script src="/js/register.js"></script>
 <%- include ../footer %>

@@ -18,6 +18,20 @@ var find = {
         User.find(_this.record, returns, {}, function (err, result) {
             callback(result[0].portrait);
         });
+    },
+    info: function (callback) {
+        var _this = this;
+        var returns = {
+            portrait: 1,
+            sex: 1,
+            tel: 1,
+            qq: 1,
+            intro: 1
+        };
+
+        User.find(_this.record, returns, {}, function (err, result) {
+            callback(result[0]);
+        });
     }
 };
 

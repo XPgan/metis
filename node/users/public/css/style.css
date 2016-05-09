@@ -39,12 +39,13 @@ a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px da
 .profile-info h3{font-size: 20px;margin: 20px 0;}
 .profile-info form{position: absolute;top: 30px;overflow: hidden;}
 .profile-info input{opacity: 0;}
-.profile-info a{color: #fff;position: absolute;right: 10px;top: 10px;}
+.profile-ctrl{position: absolute;right: 10px;top: 10px;}
+.profile-ctrl a{color: #fff;margin-left: 15px;}
 
 .profile-bio{margin: 20px 0;}
 .profile-bio span{font-size: 13px;margin: 0 7px;}
 .profile-intro{font-size: 14px;padding: 20px 50px 20px 20px;color: #717070;line-height: 20px;position: relative;}
-.profile-intro span{position: absolute;color: #005d50;right: 10px;}
+.profile-intro a{position: absolute;color: #005d50;right: 10px;}
 /* board */
 .edit-info{box-shadow: 0 0 2px #ccc;padding: 20px 30px;text-align: center;display: none;}
 .edit-info input{display: block;font-size: 16px;line-height: 16px;padding: 7px 0;border-bottom: 1px solid #eee;color: #999;width: 100%;}

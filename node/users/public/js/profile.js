@@ -7,6 +7,7 @@ var profile = {
         var _this = this;
         _this.edit();
         _this.logout();
+        _this.exit();
     },
     edit: function () {
         var _this = this;
@@ -70,6 +71,12 @@ var profile = {
                     main.showDialog({message: '注销失败'});
                 }
             });
+        });
+    },
+    exit: function () {
+        var $btn = $('.js_exit');
+        $btn.on('click', function () {
+            $.cookie('user', '');
         });
     }
 };

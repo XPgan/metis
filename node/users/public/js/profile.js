@@ -5,28 +5,56 @@
 var profile = {
     do: function () {
         var _this = this;
-        _this.upldPortrait();
+        _this.edit();
         _this.logout();
-        _this.change();
     },
-    upldPortrait: function () {
-        var $form = $('#form_portrait');
-        var $file = $('#portrait');
-        $file.on('change', function () {
-            var formData = new FormData($form[0]);
+    edit: function () {
+        var _this = this;
+
+        // 编辑面板
+        var $board = $('.js_board');
+        $('.js_edit').on('click', function () {
+            $board.slideDown();
+        });
+        $('.js_cancel').on('click', function () {
+            $board.slideUp();
+        });
+        // 修改头像
+        $('.js_portrait').on('change', function () {
+            _this.upldPortrait();
+        });
+
+        var $btn = $('.js_info');
+        var $form = $('#form_info');
+        $btn.on('click', function () {
             $.ajax({
-                url: "/upload/portrait",
+                url: "/edit",
                 type: 'POST',
-                data: formData,
-                contentType: false,
-                processData: false,
+                data: $form.serialize(),
                 success: function (data) {
                     main.showResult(data, '/profile');
                 },
                 error: function () {
-                    main.showDialog({message: '上传失败'});
+                    main.showDialog({message: '提交失败'});
                 }
             });
+        });
+    },
+    upldPortrait: function () {
+        var $form = $('#form_portrait');
+        var formData = new FormData($form[0]);
+        $.ajax({
+            url: "/edit/portrait",
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {
+                main.showResult(data, '/profile');
+            },
+            error: function () {
+                main.showDialog({message: '上传失败'});
+            }
         });
     },
     logout: function () {
@@ -40,29 +68,6 @@ var profile = {
                 },
                 error: function () {
                     main.showDialog({message: '注销失败'});
-                }
-            });
-        });
-    },
-    change: function () {
-        var $change = $('.js_change');
-        var $edit = $('.js_edit');
-        var $submit = $('.js_info');
-        var $form = $('#form_info');
-
-        $change.on('click', function () {
-            $edit.show();
-        });
-        $submit.on('click', function () {
-            $.ajax({
-                url: "/change/info",
-                type: 'POST',
-                data: $form.serialize(),
-                success: function (data) {
-                    main.showResult(data, '/profile');
-                },
-                error: function () {
-                    main.showDialog({message: '提交失败'});
                 }
             });
         });

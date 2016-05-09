@@ -15,7 +15,6 @@ var main = {
             e.preventDefault();
             $(this).parents('.js_dialog').hide();
         });
-
         $body.on('click', '.js_goto', function (e) {
             e.preventDefault();
             location.href = e.target.href;

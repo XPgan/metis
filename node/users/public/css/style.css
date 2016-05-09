@@ -2,7 +2,7 @@
 .users-btn{color: #fff;padding: 0 10px;background-color: #007d6c;line-height: 26px;font-size: 16px;cursor: pointer;}
 .users-btn:hover{background-color: #f1570e;}
 .users-card{background-color: rgba(255, 255, 255, 0.4);border-radius: 10px;text-align: center;}
-.users-form input, .users-form textarea{line-height: 16px;padding: 7px 10px;width: 220px;font-size: 16px;display: block;box-shadow: inset 1px 1px 2px #999;color: #666;}
+.users-form input, .users-form textarea{line-height: 16px;padding: 7px 10px;width: 220px;font-size: 16px;display: block;box-shadow: inset 1px 1px 2px #999;color: #666;background-color: #fff;}
 .users-bg{background: #09b39c url('/images/svg/banner.svg') no-repeat 0 0;background-size: cover;}
 
 /* dialog */
@@ -34,19 +34,21 @@ a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px da
 .register button{margin-bottom: 10px;line-height: 36px;border-radius: 15px/50%;padding: 0 20px;}
 
 /* profile */
-.profile-info img, .profile-info form, .portrait-file{width: 100px;height: 100px;border-radius: 50%;}
+.profile-info img, .profile-info form, .profile-info input{width: 100px;height: 100px;border-radius: 50%;}
 .profile-info{text-align: center;color: #fff;font-size: 14px;padding: 30px 0 20px;background-position: -200px 0;position: relative;}
 .profile-info h3{font-size: 20px;margin: 20px 0;}
 .profile-info form{position: absolute;top: 30px;overflow: hidden;}
+.profile-info input{opacity: 0;}
 .profile-info a{color: #fff;position: absolute;right: 10px;top: 10px;}
+
 .profile-bio{margin: 20px 0;}
 .profile-bio span{font-size: 13px;margin: 0 7px;}
 .profile-intro{font-size: 14px;padding: 20px 50px 20px 20px;color: #717070;line-height: 20px;position: relative;}
 .profile-intro span{position: absolute;color: #005d50;right: 10px;}
-.portrait-file{opacity: 0;}
-.change-info{box-shadow: 0 0 2px #ccc;padding: 20px 30px;text-align: center;display: none;}
-.change-info input{display: block;font-size: 16px;line-height: 16px;padding: 7px 0;border-bottom: 1px solid #eee;color: #999;width: 100%;}
-.change-info button{margin-top: 20px;color: #005d50;font-size: 16px;}
+/* board */
+.edit-info{box-shadow: 0 0 2px #ccc;padding: 20px 30px;text-align: center;display: none;}
+.edit-info input{display: block;font-size: 16px;line-height: 16px;padding: 7px 0;border-bottom: 1px solid #eee;color: #999;width: 100%;}
+.edit-info button, .edit-info a{margin: 20px 15px 0;color: #005d50;font-size: 16px;}
 
 @media screen and (max-width: 1020px) {
     .banner{padding: 50px 0;background-position: -200px 0;}

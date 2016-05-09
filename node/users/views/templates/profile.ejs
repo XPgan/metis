@@ -3,18 +3,19 @@
     <img src="<%= portrait %>" class="c-block c-mgn0" />
     <!-- portrait -->
     <form enctype="multipart/form-data" id="form_portrait" class="c-horizontal">
-        <input type="file" id="portrait" name="portrait" class="portrait-file" />
+        <input type="file" id="portrait" name="portrait" class="js_portrait" />
     </form>
     <h3><%= username %></h3>
     <div class="profile-bio"><span><%= sex %></span><span><%= tel %></span><span><%= qq %></span></div>
     <a href="javascript:;" class="js_logout">注销</a>
 </section>
-<section class="profile-intro c-bgw"><%= intro %><span class="js_change c-vertical">修改</span></section>
-<div class="c-bottom change-info c-bgw js_edit">
+<section class="profile-intro c-bgw"><%= intro %><span class="js_edit c-vertical">编辑</span></section>
+<div class="c-bottom edit-info c-bgw js_board">
     <form id="form_info">
         <input type="text" id="intro" name="intro" placeholder="<%= intro %>" />
     </form>
     <button class="js_info">提交</button>
+    <a href="javascript:;" class="js_cancel">取消</a>
 </div>
 <script src="/js/profile.js"></script>
 <%- include ../footer %>

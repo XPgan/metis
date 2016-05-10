@@ -76,7 +76,16 @@ var profile = {
     exit: function () {
         var $btn = $('.js_exit');
         $btn.on('click', function () {
-            $.cookie('user', '');
+            $.ajax({
+                url: "/exit",
+                type: 'POST',
+                success: function (data) {
+                    main.showResult(data, '/login');
+                },
+                error: function () {
+                    main.showDialog({message: '无法退出登录'});
+                }
+            });
         });
     }
 };

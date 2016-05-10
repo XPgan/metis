@@ -24,7 +24,9 @@ router.get('/profile', function (req, res) {
             res.render('profile', info);
         });
     } else {
-        res.render('index');
+        find.all(function (users) {
+            res.render('index', {users: users});
+        });
     }
 });
 // 注册
@@ -41,6 +43,9 @@ router.post('/logout', function (req, res) {
 });
 router.post('/register', function (req, res) {
     log.register(req, res);
+});
+router.post('/exit', function (req, res) {
+    log.exit(req, res);
 });
 // 修改信息
 router.post('/edit', function (req, res) {

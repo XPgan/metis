@@ -61,12 +61,20 @@ var log = {
                     status: 0
                 }));
             } else {
+                res.cookie('user', '');
                 res.end(JSON.stringify({
                     message: '注册成功',
                     status: 1
                 }));
             }
         });
+    },
+    exit: function (req, res) {
+        res.cookie('user', '');
+        res.end(JSON.stringify({
+            message: '退出登录成功',
+            status: 1
+        }));
     }
 };
 

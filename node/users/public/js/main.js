@@ -40,6 +40,8 @@ var main = {
                 });
             } else {
                 location.href = url;
+
+                console.log(url);
             }
         }
     },

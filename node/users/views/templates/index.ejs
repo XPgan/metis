@@ -15,18 +15,20 @@
     <ul>
         <% users.forEach(function (user) { %>
         <li class="c-bgw">
-            <div class="user-title">
-                <img src="<%= user.portrait || '/upload/portrait/default_portrait.jpg' %>" class="c-block" />
-                <span><%= user.user_name %></span>
-            </div>
-            <div class="user-info">
-                <span>性别: <%= user.sex %></span>
-                <span>电话: <%= user.tel %></span>
-                <span>QQ: <%= user.qq %></span>
-            </div>
-            <% if (user.intro) { %>
-            <div class="user-intro"><%= user.intro %></div>
-            <% } %>
+            <a href="/profile/<%= user.id %>" class="c-block">
+                <div class="user-title">
+                    <img src="<%= user.portrait || '/upload/portrait/default_portrait.jpg' %>" class="c-block" />
+                    <span><%= user.user_name %></span>
+                </div>
+                <div class="user-info">
+                    <span>性别: <%= user.sex %></span>
+                    <span>电话: <%= user.tel %></span>
+                    <span>QQ: <%= user.qq %></span>
+                </div>
+                <% if (user.intro) { %>
+                <div class="user-intro"><%= user.intro %></div>
+                <% } %>
+            </a>
         </li>
         <% }) %>
     </ul>

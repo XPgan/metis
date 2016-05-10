@@ -1,18 +1,18 @@
 <%- include ../header %>
 <section class="profile-info users-bg">
-    <img src="<%= portrait %>" class="c-block c-mgn0" />
+    <img src="<%= portrait || '/upload/portrait/default_portrait.jpg' %>" class="c-block c-mgn0" />
     <!-- portrait -->
     <form enctype="multipart/form-data" id="form_portrait" class="c-horizontal">
         <input type="file" id="portrait" name="portrait" class="js_portrait" />
     </form>
-    <h3><%= username %></h3>
+    <h3><%= user_name %></h3>
     <div class="profile-bio"><span><%= sex %></span><span><%= tel %></span><span><%= qq %></span></div>
     <div class="profile-ctrl"><a href="/" class="js_exit">退出</a><a href="javascript:;" class="js_logout">注销</a></div>
 </section>
-<section class="profile-intro c-bgw"><%= intro %><a href="javascript:;" class="js_edit c-vertical">编辑</a></section>
+<section class="profile-intro c-bgw"><%= intro || '还咩有自我评价哦~' %><a href="javascript:;" class="js_edit c-vertical">编辑</a></section>
 <div class="c-bottom edit-info c-bgw js_board">
     <form id="form_info">
-        <input type="text" id="intro" name="intro" placeholder="<%= intro %>" />
+        <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= intro %>" />
     </form>
     <button class="js_info">提交</button>
     <a href="javascript:;" class="js_cancel">取消</a>

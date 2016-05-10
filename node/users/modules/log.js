@@ -8,11 +8,7 @@ var User = require('../models').User;
 
 var log = {
     login: function (req, res) {
-        var user = {
-            user_name: req.body.user_name,
-            password: req.body.password
-        };
-
+        var user = req.body;
         User.count(user, function (err, doc) {
             if (doc) {
                 res.cookie('user', user.user_name);
@@ -55,16 +51,9 @@ var log = {
         }, 0);
     },
     register: function (req, res) {
-        var user = new User({
-            user_name: req.body.user_name,
-            password: req.body.password,
-            sex: req.body.sex,
-            tel: req.body.tel,
-            qq: req.body.qq,
-            intro: req.body.intro,
-            portrait: ''
-        });
+        req.body.portrait = '';
 
+        var user = new User(req.body);
         user.save(function (err) {
             if (err) {
                 res.end(JSON.stringify({

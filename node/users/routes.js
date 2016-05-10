@@ -8,12 +8,11 @@ var edit = require('./modules/edit-info');
 var find = require('./modules/find-record');
 var router = express.Router();
 
-var DEF_PORTRAIT = '/upload/portrait/default_portrait.jpg';
-var DEF_INTRO = '还咩有自我评价哦~';
-
 // 主页
 router.get(/^\/(login)?$/, function (req, res) {
-    res.render('index');
+    find.all(function (users) {
+        res.render('index', {users: users});
+    });
 });
 // 个人页
 router.get('/profile', function (req, res) {
@@ -22,14 +21,7 @@ router.get('/profile', function (req, res) {
 
     if (req.cookies.user) {
         find.info(function (info) {
-            res.render('profile', {
-                username: req.cookies.user,
-                portrait: info.portrait || DEF_PORTRAIT,
-                sex: info.sex,
-                tel: info.tel,
-                qq: info.qq,
-                intro: info.intro || DEF_INTRO
-            });
+            res.render('profile', info);
         });
     } else {
         res.render('index');

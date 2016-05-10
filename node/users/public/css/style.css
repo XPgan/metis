@@ -22,9 +22,9 @@ a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px da
 .user-title{position: relative;padding-left: 65px;}
 .user-title img{width: 50px;height: 50px;border-radius: 50%;position: absolute;left: 0;top: 0;}
 .user-title span{display: inline-block;line-height: 50px;color: #999;font-size: 16px;}
-.user-info{font-size: 12px;color: #999;margin: 15px 0;}
+.user-info{font-size: 12px;color: #999;margin-top: 15px;}
 .user-info span{padding-right: 10px;}
-.user-intro{font-size: 16px;color: #717070;line-height: 22px;}
+.user-intro{font-size: 16px;color: #717070;line-height: 22px;margin-top: 15px;}
 
 /* register */
 .register{background-position: -1500px 0;height: 100%;width: 100%;position: fixed;top: 0;left: 0;}

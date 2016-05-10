@@ -21,16 +21,14 @@ var find = {
     },
     info: function (callback) {
         var _this = this;
-        var returns = {
-            portrait: 1,
-            sex: 1,
-            tel: 1,
-            qq: 1,
-            intro: 1
-        };
 
-        User.find(_this.record, returns, {}, function (err, result) {
+        User.find(_this.record, {}, {}, function (err, result) {
             callback(result[0]);
+        });
+    },
+    all: function (callback) {
+        User.find({}, {}, {}, function (err, result) {
+            callback(result);
         });
     }
 };

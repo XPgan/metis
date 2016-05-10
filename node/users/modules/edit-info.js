@@ -9,7 +9,7 @@ var User = require('../models').User;
 
 var edit = {
     do: function (req, res) {
-        var update = {intro: req.body.intro};
+        var update = req.body;
         var record = {user_name: req.cookies.user};
 
         User.update(record, update, {}, function (err) {

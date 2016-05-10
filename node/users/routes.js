@@ -15,18 +15,23 @@ router.get(/^\/(login)?$/, function (req, res) {
     });
 });
 // 个人页
-router.get('/profile', function (req, res) {
-    find.do(log.user);
+router.get('/profile/:user', function (req, res) {
+    var user = req.params.user;
 
-    if (log.user) {
-        find.info(function (info) {
-            res.render('profile', info);
-        });
-    } else {
-        find.all(function (users) {
-            res.render('index', {users: users});
-        });
-    }
+    find.do(user);
+    find.info(function (info) {
+        if (info) {
+            res.render('profile', {
+                is_author: (user == log.user),
+                info: info
+            });
+        } else {
+            res.render('../message', {
+                code: 404,
+                message: '用户' + user + '不存在~'
+            });
+        }
+    });
 });
 // 注册
 router.get('/register', function (req, res) {

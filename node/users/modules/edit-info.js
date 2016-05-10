@@ -13,12 +13,12 @@ var edit = {
         User.update(find.record, req.body, {}, function (err) {
             if (err) {
                 res.end(JSON.stringify({
-                    message: '上传失败',
+                    message: '提交失败',
                     status: 0
                 }));
             } else {
                 res.end(JSON.stringify({
-                    message: '上传成功',
+                    message: '提交成功',
                     status: 1
                 }));
             }

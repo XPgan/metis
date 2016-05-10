@@ -33,7 +33,7 @@ var profile = {
                 type: 'POST',
                 data: $form.serialize(),
                 success: function (data) {
-                    main.showResult(data, '/profile');
+                    main.showResult(data, location.href);
                 },
                 error: function () {
                     main.showDialog({message: '提交失败'});
@@ -51,7 +51,7 @@ var profile = {
             contentType: false,
             processData: false,
             success: function (data) {
-                main.showResult(data, '/profile');
+                main.showResult(data, location.href);
             },
             error: function () {
                 main.showDialog({message: '上传失败'});

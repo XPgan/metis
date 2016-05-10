@@ -17,7 +17,8 @@ var log = {
             if (doc) {
                 res.end(JSON.stringify({
                     message: '登录成功',
-                    status: 1
+                    status: 1,
+                    user: user.user_name
                 }));
                 _this.user = user.user_name;
             } else {

@@ -46,9 +46,9 @@ var edit = {
                 fs.renameSync(tmp_path, target_path);
 
                 // 删除旧头像
-                find.portrait(function (portrait) {
-                    if (portrait) {
-                        fs.unlink('../public' + portrait);
+                find.info(function (info) {
+                    if (info.portrait) {
+                        fs.unlink('../public' + info.portrait);
                     }
                 });
 

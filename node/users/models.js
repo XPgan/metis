@@ -13,7 +13,8 @@ var userSchema = new Schema({
     sex: String,
     tel: String,
     qq: String,
-    intro: String
+    intro: String,
+    id: String
 });
 
 exports.User = db.model('infos', userSchema);

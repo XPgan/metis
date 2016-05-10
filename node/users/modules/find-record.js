@@ -8,16 +8,9 @@ var find = {
 
     record: null,
 
-    do: function (log_user) {
+    do: function (user_id) {
         var _this = this;
-        _this.record = {user_name: log_user};
-    },
-    portrait: function (callback) {
-        var _this = this;
-        var returns = {portrait: 1};
-        User.find(_this.record, returns, {}, function (err, result) {
-            callback(result[0].portrait);
-        });
+        _this.record = {id: user_id};
     },
     info: function (callback) {
         var _this = this;

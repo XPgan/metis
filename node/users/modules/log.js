@@ -13,14 +13,22 @@ var log = {
     login: function (req, res) {
         var _this = this;
         var user = req.body;
+
         User.count(user, function (err, doc) {
             if (doc) {
-                res.end(JSON.stringify({
-                    message: '登录成功',
-                    status: 1,
-                    user: user.user_name
-                }));
-                _this.user = user.user_name;
+                var record = {user_name: user.user_name};
+                var returns = {id: 1};
+
+                User.find(record, returns, {}, function (err, result) {
+                    var id = result[0].id;
+
+                    res.end(JSON.stringify({
+                        message: '登录成功',
+                        status: 1,
+                        user_id: id
+                    }));
+                    _this.user = id;
+                });
             } else {
                 res.end(JSON.stringify({
                     message: '登录失败',
@@ -34,9 +42,9 @@ var log = {
         var _this = this;
 
         find.do(_this.user);
-        find.portrait(function (portrait) {
-            if (portrait) {
-                fs.unlink('../public' + portrait);
+        find.info(function (info) {
+            if (info.portrait) {
+                fs.unlink('../public' + info.portrait);
             }
         });
 
@@ -59,6 +67,7 @@ var log = {
     },
     register: function (req, res) {
         req.body.portrait = '';
+        req.body.id = (new Date()).valueOf();
 
         var _this = this;
         var user = new User(req.body);

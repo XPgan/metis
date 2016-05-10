@@ -15,20 +15,20 @@ router.get(/^\/(login)?$/, function (req, res) {
     });
 });
 // 个人页
-router.get('/profile/:user', function (req, res) {
-    var user = req.params.user;
+router.get('/profile/:id', function (req, res) {
+    var id = req.params.id;
 
-    find.do(user);
+    find.do(id);
     find.info(function (info) {
         if (info) {
             res.render('profile', {
-                is_author: (user == log.user),
+                is_author: (id == log.user),
                 info: info
             });
         } else {
             res.render('../message', {
                 code: 404,
-                message: '用户' + user + '不存在~'
+                message: '该用户不存在'
             });
         }
     });

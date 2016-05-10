@@ -16,7 +16,8 @@ var index = {
                 type: 'POST',
                 data: $form.serialize(),
                 success: function (data) {
-                    main.showResult(data, '/profile/' + JSON.parse(data).user);
+                    var id = JSON.parse(data).user_id;
+                    main.showResult(data, '/profile/' + id);
                 },
                 error: function () {
                     main.showDialog({message: '登录失败'});

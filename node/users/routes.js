@@ -28,7 +28,7 @@ router.get('/profile/:id', function (req, res) {
         } else {
             res.render('../message', {
                 code: 404,
-                message: '该用户不存在'
+                message: '这枚用户还未注册本站'
             });
         }
     });

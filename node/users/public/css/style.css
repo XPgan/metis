@@ -10,6 +10,11 @@
 .dialog-message{padding: 30px 0;font-size: 16px;color: #666;}
 a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px dashed #dad7d7;}
 
+/* message */
+.mes-code, .mes-arr{color: #eee;text-align: center;margin: 30px 0;padding: 0 20px;text-shadow: 1px 1px 2px #999;}
+.mes-code{font-size: 30px;line-height: 40px;margin-top: 50px;}
+.mes-arr{font-size: 20px;}
+
 /* index */
 .banner{min-height: 181px;padding: 50px;}
 .banner span{font-size: 100px;color: rgba(255, 255, 255, 0.6);line-height: 181px;float: left;}

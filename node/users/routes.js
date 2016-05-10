@@ -16,10 +16,9 @@ router.get(/^\/(login)?$/, function (req, res) {
 });
 // 个人页
 router.get('/profile', function (req, res) {
-    // 查询记录
-    find.do(req);
+    find.do(log.user);
 
-    if (req.cookies.user) {
+    if (log.user) {
         find.info(function (info) {
             res.render('profile', info);
         });
@@ -49,10 +48,10 @@ router.post('/exit', function (req, res) {
 });
 // 修改信息
 router.post('/edit', function (req, res) {
-    edit.do(req, res);
+    edit.do(req, res, log.user);
 });
 router.post('/edit/portrait', function (req, res) {
-    edit.portrait(req, res);
+    edit.portrait(req, res, log.user);
 });
 
 

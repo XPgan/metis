@@ -8,11 +8,9 @@ var find = require('./find-record');
 var User = require('../models').User;
 
 var edit = {
-    do: function (req, res) {
-        var update = req.body;
-        var record = {user_name: req.cookies.user};
-
-        User.update(record, update, {}, function (err) {
+    do: function (req, res, log_user) {
+        find.do(log_user);
+        User.update(find.record, req.body, {}, function (err) {
             if (err) {
                 res.end(JSON.stringify({
                     message: '上传失败',
@@ -26,7 +24,7 @@ var edit = {
             }
         });
     },
-    portrait: function (req, res) {
+    portrait: function (req, res, log_user) {
         var form = new formidable.IncomingForm();
 
         form.parse(req, function (err, fields, files) {
@@ -37,7 +35,7 @@ var edit = {
                 }));
             } else {
 
-                find.do(req);
+                find.do(log_user);
 
                 // 上传新头像
                 var timestamp = (new Date()).valueOf();

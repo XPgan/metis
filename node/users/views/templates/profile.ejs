@@ -10,7 +10,7 @@
     <h3><%= info.user_name %></h3>
     <div class="profile-bio"><span><%= info.sex %></span><span><%= info.tel %></span><span><%= info.qq %></span></div>
 </section>
-<section class="profile-intro c-bgw"><%= info.intro || '还咩有自我评价哦~' %><% if (is_author) { %><a href="javascript:;" class="js_edit c-vertical">编辑</a><% } %></section>
+<section class="profile-intro <% if (is_author) { %>c-author<% } %> c-bgw"><%= info.intro || '还咩有自我评价哦~' %><% if (is_author) { %><a href="javascript:;" class="js_edit c-vertical">编辑</a><% } %></section>
 <div class="c-bottom edit-info c-bgw js_board">
     <form id="form_info">
         <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= info.intro %>" />
@@ -18,5 +18,6 @@
     <button class="js_info">提交</button>
     <a href="javascript:;" class="js_cancel">取消</a>
 </div>
+<a href="javascript:;" class="js_back users-back c-block"><</a>
 <script src="/js/profile.js"></script>
 <%- include ../footer %>

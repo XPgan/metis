@@ -19,6 +19,9 @@ var main = {
             e.preventDefault();
             location.href = e.target.href;
         });
+        $body.on('click', '.js_back', function () {
+            history.back();
+        });
     },
     showResult: function (data, url, show_suc) {
         var _this = this;

@@ -24,8 +24,7 @@ var log = {
 
                     res.end(JSON.stringify({
                         message: '登录成功',
-                        status: 1,
-                        user_id: id
+                        status: 1
                     }));
                     _this.user = id;
                 });

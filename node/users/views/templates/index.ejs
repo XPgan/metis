@@ -1,6 +1,12 @@
 <%- include ../header %>
 <section class="banner c-fix users-bg">
     <span class="c-block">WELCOME</span>
+    <% if (log_user) { %>
+    <div class="about users-card">
+        <p><strong>本品由<a href="https://github.com/sunmengyuan"> 呆恋小喵 </a>制作</strong><br /><a href="https://github.com/sunmengyuan/note/tree/master/node/users">https://github.com/sunmengyuan/note/tree/master/node/users</a><br />前端开发初学者一枚 欢迎大神前来批评指教 ~</p>
+        <a href="javascript:;" class="js_switch">切换账号</a><a href="/profile/<%= log_user %>">个人主页</a>
+    </div>
+    <% } else { %>
     <div class="login users-card">
         <form id="form_login" class="users-form">
             <input type="text" id="user_name" name="user_name" placeholder="用户名" />
@@ -8,6 +14,7 @@
         </form>
         <button class="js_login users-btn">login</button><a href="/register">register</a>
     </div>
+    <% } %>
 </section>
 
 <% if (users) { %>

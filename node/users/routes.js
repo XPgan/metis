@@ -11,7 +11,10 @@ var router = express.Router();
 // 主页
 router.get(/^\/(login)?$/, function (req, res) {
     find.all(function (users) {
-        res.render('index', {users: users});
+        res.render('index', {
+            log_user: log.user,
+            users: users
+        });
     });
 });
 // 个人页

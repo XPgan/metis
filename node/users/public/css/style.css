@@ -20,10 +20,16 @@ a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px da
 .banner{min-height: 181px;padding: 50px;}
 .banner span{font-size: 100px;color: rgba(255, 255, 255, 0.6);line-height: 181px;float: left;}
 /* login */
-.login{padding: 20px 30px;width: 240px;float: right;}
+.login, .about{padding: 20px 30px;width: 240px;float: right;}
 .login input, .login button, .login a{font-size: 16px;margin: 10px 0;}
-.login a, .register a{color: #005d50;display: inline-block;}
+.login a, .register a, .about a{color: #005d50;display: inline-block;}
 .login a{line-height: 26px;text-decoration: underline;margin-left: 40px;}
+/* about */
+.about{text-align: center;font-size: 14px;line-height: 26px;color: #005d50;}
+.about strong{font-size: 16px;line-height: 32px;}
+.about p{text-align: left;}
+.about p a{color: #fff;}
+.about > a{text-decoration: underline;font-weight: bold;margin: 20px 25px 0;}
 /* lst */
 .profile-lst li{margin-bottom: 15px;padding: 20px;}
 .user-title{position: relative;padding-left: 65px;}
@@ -63,5 +69,5 @@ a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px da
 @media screen and (max-width: 1020px) {
     .banner{padding: 50px 0;background-position: -200px 0;}
     .banner span{display: none;}
-    .login{margin: 0 auto;float: none;}
+    .login, .about{margin: 0 auto;float: none;}
 }

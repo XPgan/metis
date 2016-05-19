@@ -1,1 +1,29 @@
-1. 首页登录后 已登录视角
+<h3>结构</h3>
+<ul>
+    <li>
+        <h4>首页&nbsp;<strong>'/'</strong></h4>
+        <ul>
+            <li>用户列表</li>
+            <li>作者信息</li>
+            <li>登录&nbsp;<em>[user_name][password]</em></li>
+        </ul>
+        <span>注册入口&nbsp;<strong>'/register'</strong></span>
+        <span>个人页入口(已登录)&nbsp;<strong>'/profile/:id'</strong></span>
+        <span>切换账号(已登录)</span>
+    </li>
+    <li>
+        <h4>注册页&nbsp;<strong>'/register'</strong></h4>
+        <ul>
+            <li>注册&nbsp;<em>[user_name][password][sex][tel][qq][intro]</em></li>
+        </ul>
+    </li>
+    <li>
+        <h4>用户主页&nbsp;<strong>'/profile/:id'</strong></h4>
+        <ul>
+            <li>个人信息</li>
+        </ul>
+        <span>注销(个人视角)</span>
+        <span>退出登录(个人视角)</span>
+        <span>信息修改(个人视角)</span>
+    </li>
+</ul>

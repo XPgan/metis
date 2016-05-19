@@ -1,29 +1,29 @@
 <h3>结构</h3>
 <ul>
     <li>
-        <h4>首页&nbsp;<strong>'/'</strong></h4>
+        <h4>首页&nbsp;&nbsp;<strong>'/'</strong></h4>
         <ul>
-            <li>用户列表</li>
-            <li>作者信息</li>
-            <li>登录&nbsp;<em>[user_name][password]</em></li>
+            <li><h5>用户列表</h5></li>
+            <li><h5>作者信息</h5></li>
+            <li><h5>登录</h5>&nbsp;&nbsp;<em>[user_name][password]</em></li>
         </ul>
-        <span>注册入口&nbsp;<strong>'/register'</strong></span>
-        <span>个人页入口(已登录)&nbsp;<strong>'/profile/:id'</strong></span>
-        <span>切换账号(已登录)</span>
+        <div>注册入口&nbsp;&nbsp;<strong>'/register'</strong></div>
+        <div>个人页入口(已登录)&nbsp;&nbsp;<strong>'/profile/:id'</strong></div>
+        <div>切换账号(已登录)</div>
     </li>
     <li>
-        <h4>注册页&nbsp;<strong>'/register'</strong></h4>
+        <h4>注册页&nbsp;&nbsp;<strong>'/register'</strong></h4>
         <ul>
-            <li>注册&nbsp;<em>[user_name][password][sex][tel][qq][intro]</em></li>
+            <li><h5>注册</h5>&nbsp;&nbsp;<em>[user_name][password][sex][tel][qq][intro]</em></li>
         </ul>
     </li>
     <li>
-        <h4>用户主页&nbsp;<strong>'/profile/:id'</strong></h4>
+        <h4>用户主页&nbsp;&nbsp;<strong>'/profile/:id'</strong></h4>
         <ul>
-            <li>个人信息</li>
+            <li><h5>个人信息<h5></li>
         </ul>
-        <span>注销(个人视角)</span>
-        <span>退出登录(个人视角)</span>
-        <span>信息修改(个人视角)</span>
+        <div>注销(个人视角)</div>
+        <div>退出登录(个人视角)</div>
+        <div>信息修改(个人视角)</div>
     </li>
 </ul>

@@ -3,9 +3,9 @@
     <li>
         <h4>首页&nbsp;&nbsp;<strong>'/'</strong></h4>
         <ul>
-            <li><h5>用户列表</h5></li>
-            <li><h5>作者信息</h5></li>
-            <li><h5>登录</h5>&nbsp;&nbsp;<em>[user_name][password]</em></li>
+            <li><b>用户列表</b></li>
+            <li><b>作者信息</b></li>
+            <li><b>登录</b>&nbsp;&nbsp;<em>[user_name][password]</em></li>
         </ul>
         <div>注册入口&nbsp;&nbsp;<strong>'/register'</strong></div>
         <div>个人页入口(已登录)&nbsp;&nbsp;<strong>'/profile/:id'</strong></div>
@@ -14,13 +14,13 @@
     <li>
         <h4>注册页&nbsp;&nbsp;<strong>'/register'</strong></h4>
         <ul>
-            <li><h5>注册</h5>&nbsp;&nbsp;<em>[user_name][password][sex][tel][qq][intro]</em></li>
+            <li><b>注册</b>&nbsp;&nbsp;<em>[user_name][password][sex][tel][qq][intro]</em></li>
         </ul>
     </li>
     <li>
         <h4>用户主页&nbsp;&nbsp;<strong>'/profile/:id'</strong></h4>
         <ul>
-            <li><h5>个人信息<h5></li>
+            <li><b>个人信息</b></li>
         </ul>
         <div>注销(个人视角)</div>
         <div>退出登录(个人视角)</div>

@@ -5,16 +5,16 @@
         <ul>
             <li><b>用户列表</b></li>
             <li><b>作者信息</b></li>
-            <li><b>登录</b>&nbsp;&nbsp;<em>[user_name][password]</em></li>
+            <li><b>登录</b>&nbsp;&nbsp;<em>[user_name] [password]</em></li>
         </ul>
-        <div>注册入口&nbsp;&nbsp;<strong>'/register'</strong></div>
-        <div>个人页入口(已登录)&nbsp;&nbsp;<strong>'/profile/:id'</strong></div>
-        <div>切换账号(已登录)</div>
+        <h6>注册入口&nbsp;&nbsp;<strong>'/register'</strong></h6>
+        <h6>个人页入口(已登录)&nbsp;&nbsp;<strong>'/profile/:id'</strong></h6>
+        <h6>切换账号(已登录)</h6>
     </li>
     <li>
         <h4>注册页&nbsp;&nbsp;<strong>'/register'</strong></h4>
         <ul>
-            <li><b>注册</b>&nbsp;&nbsp;<em>[user_name][password][sex][tel][qq][intro]</em></li>
+            <li><b>注册</b>&nbsp;&nbsp;<em>[user_name] [password] [sex] [tel] [qq] [intro]</em></li>
         </ul>
     </li>
     <li>
@@ -22,8 +22,8 @@
         <ul>
             <li><b>个人信息</b></li>
         </ul>
-        <div>注销(个人视角)</div>
-        <div>退出登录(个人视角)</div>
-        <div>信息修改(个人视角)</div>
+        <h6>注销(个人视角)</h6>
+        <h6>退出登录(个人视角)</h6>
+        <h6>信息修改(个人视角)</h6>
     </li>
 </ul>

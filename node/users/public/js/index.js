@@ -6,7 +6,7 @@ var index = {
     do: function () {
         var _this = this;
         _this.login();
-        _this.cardAction();
+        _this.switch();
     },
     login: function () {
         var $btn = $('.js_login');
@@ -25,7 +25,7 @@ var index = {
             });
         });
     },
-    cardAction: function () {
+    switch: function () {
         $('.js_switch').on('click', function () {
             $.ajax({
                 url: "/exit",

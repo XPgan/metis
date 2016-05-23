@@ -11,6 +11,15 @@
     <div class="profile-bio"><span><%= info.sex %></span><span><%= info.tel %></span><span><%= info.qq %></span></div>
 </section>
 <section class="profile-intro <% if (is_author) { %>c-author<% } %> c-bgw"><%= info.intro || '还咩有自我评价哦~' %><% if (is_author) { %><a href="javascript:;" class="js_edit c-vertical">编辑</a><% } %></section>
+<section class="profile-diaries">
+    <ul>
+        <li class="c-bgw">
+            <h4><span>标题</span><a href="javascript:;" class="c-vertical c-block js_fav"><em>22</em><em class="ico-fav"></em></a></h4>
+            <div class="diary-content ellipsis-row2">这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容</div>
+            <a href="javascript:;" class="c-block js_more">阅读全部</a>
+        </li>
+    </ul>
+</section>
 <div class="c-bottom edit-info c-bgw js_board">
     <form id="form_info">
         <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= info.intro %>" />

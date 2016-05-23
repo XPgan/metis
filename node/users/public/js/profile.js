@@ -5,9 +5,34 @@
 var profile = {
     do: function () {
         var _this = this;
+        _this.commonCtrl();
+        _this.favour();
         _this.edit();
         _this.logout();
         _this.exit();
+    },
+    commonCtrl: function () {
+        $('.js_more').on('click', function () {
+            $(this).prev().toggleClass('ellipsis-row2');
+        });
+    },
+    favour: function () {
+        $('.js_fav').on('click', function () {
+            var $child = $(this).find('em');
+            var $num = $child.first();
+            var $ico = $child.last();
+
+            var count = $num.text() >> 0;
+            var is_faved = $ico.hasClass('ico-faved');
+
+            if (is_faved) {
+                $num.text(count - 1);
+                $ico.addClass('ico-fav').removeClass('ico-faved');
+            } else {
+                $num.text(count + 1);
+                $ico.addClass('ico-faved').removeClass('ico-fav');
+            }
+        });
     },
     edit: function () {
         var _this = this;

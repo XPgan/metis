@@ -2,48 +2,29 @@
  * Created by sunmy on 16/5/6.
  */
 
-var profile = {
+var profile = {};
+
+profile.user = {
     do: function () {
         var _this = this;
-        _this.commonCtrl();
-        _this.favour();
-        _this.edit();
+        _this.editInfo();
         _this.logout();
         _this.exit();
     },
-    commonCtrl: function () {
-        $('.js_more').on('click', function () {
-            $(this).prev().toggleClass('ellipsis-row2');
-        });
-    },
-    favour: function () {
-        $('.js_fav').on('click', function () {
-            var $child = $(this).find('em');
-            var $num = $child.first();
-            var $ico = $child.last();
-
-            var count = $num.text() >> 0;
-            var is_faved = $ico.hasClass('ico-faved');
-
-            if (is_faved) {
-                $num.text(count - 1);
-                $ico.addClass('ico-fav').removeClass('ico-faved');
-            } else {
-                $num.text(count + 1);
-                $ico.addClass('ico-faved').removeClass('ico-fav');
-            }
-        });
-    },
-    edit: function () {
+    editInfo: function () {
         var _this = this;
 
         // 编辑面板
         var $board = $('.js_board');
         $('.js_edit').on('click', function () {
-            $board.slideDown();
+            $board.fadeIn('fast', function () {
+                $board.find('div').slideDown('fast');
+            });
         });
         $('.js_cancel').on('click', function () {
-            $board.slideUp();
+            $board.find('div').slideUp('fast', function () {
+                $board.fadeOut('fast');
+            });
         });
         // 修改头像
         $('.js_portrait').on('change', function () {
@@ -115,4 +96,34 @@ var profile = {
     }
 };
 
-profile.do();
+profile.diary = {
+    do: function () {
+        var _this = this;
+        _this.favour();
+
+        $('.js_more').on('click', function () {
+            $(this).prev().toggleClass('ellipsis-row2');
+        });
+    },
+    favour: function () {
+        $('.js_fav').on('click', function () {
+            var $child = $(this).find('em');
+            var $num = $child.first();
+            var $ico = $child.last();
+
+            var count = $num.text() >> 0;
+            var is_faved = $ico.hasClass('ico-faved');
+
+            if (is_faved) {
+                $num.text(count - 1);
+                $ico.addClass('ico-fav').removeClass('ico-faved');
+            } else {
+                $num.text(count + 1);
+                $ico.addClass('ico-faved').removeClass('ico-fav');
+            }
+        });
+    }
+};
+
+profile.user.do();
+profile.diary.do();

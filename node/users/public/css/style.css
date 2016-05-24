@@ -22,7 +22,7 @@ a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px da
 /* login */
 .login, .about{padding: 20px 30px;width: 240px;float: right;}
 .login input, .login button, .login a{font-size: 16px;margin: 10px 0;}
-.login a, .register a, .about a{color: #005d50;display: inline-block;}
+.login a, .register a, .about a{display: inline-block;}
 .login a{line-height: 26px;text-decoration: underline;margin-left: 40px;}
 /* about */
 .about{text-align: center;font-size: 14px;line-height: 26px;color: #005d50;}
@@ -57,25 +57,31 @@ a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px da
 .profile-ctrl a{color: #fff;margin-left: 15px;line-height: 28px;}
 .profile-bio{margin: 20px 0;}
 .profile-bio span{font-size: 13px;margin: 0 7px;}
-.profile-intro{font-size: 14px;padding: 20px;color: #717070;line-height: 20px;position: relative;}
+.profile-intro{font-size: 14px;padding: 20px;color: #717070;line-height: 20px;position: relative;margin-bottom: 10px;}
 .profile-intro.c-author{padding-right: 50px;}
-.profile-intro a{position: absolute;color: #005d50;right: 10px;}
+.profile-intro a{position: absolute;right: 10px;}
 /* board */
-.edit-info{box-shadow: 0 0 2px #ccc;padding: 20px 30px;text-align: center;display: none;}
+.edit-info{display: none;}
+.edit-info > div{padding: 20px 30px;text-align: center;}
 .edit-info input{display: block;font-size: 16px;line-height: 16px;padding: 7px 0;border-bottom: 1px solid #eee;color: #999;width: 100%;}
 .edit-info button, .edit-info a{margin: 20px 15px 0;color: #005d50;font-size: 16px;}
 /* diaries */
-.profile-diaries li{margin-top: 10px;padding: 0 20px 10px;}
-.profile-diaries li > a{font-size: 13px;line-height: 26px;color: #005d50;text-align: center;margin-top: 10px;}
+.profile-diaries li{padding: 0 20px 10px;border-top: 1px solid #F0F0F0;}
+.profile-diaries li:first-child{border-top: none;}
+.profile-diaries li > a{font-size: 13px;line-height: 26px;text-align: center;margin-top: 10px;}
 .profile-diaries h4{font-size: 15px;line-height: 23px;color: #717070;padding: 15px 0;border-bottom: 1px solid #F0F0F0;position: relative;}
 .profile-diaries h4 span{display: block;padding-right: 60px;}
 .diary-content{font-size: 14px;line-height: 22px;color: #333;margin-top: 10px;}
+/* create */
+a.diary-create{text-align: center;padding: 10px 0;background-color: #effffb;}
+a.diary-create span{display: inline-block;font-size: 20px;color: #13c5bb;line-height: 26px;width: 26px;border: 2px solid #13c5bb;border-radius: 50%;}
 /* fav */
 .profile-diaries h4 a{position: absolute;right: 0;font-size: 12px;color: #9B9B9B;}
 .profile-diaries h4 em{display: inline-block;vertical-align: middle;}
 .profile-diaries h4 em:last-child{width: 20px;height: 16px;background-size: auto 22px;margin: -1px 0 0 4px;}
 em.ico-fav{background: url('/images/svg/ico_fav.svg') no-repeat 0 0;}
 em.ico-faved{background: url('/images/svg/ico_faved.svg') no-repeat 0 0;}
+
 
 @media screen and (max-width: 1020px) {
     .banner{padding: 50px 0;background-position: -200px 0;}

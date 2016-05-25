@@ -1,9 +1,12 @@
 /* common */
 .users-btn{color: #fff;padding: 0 10px;background-color: #007d6c;line-height: 26px;font-size: 16px;cursor: pointer;}
 .users-btn:hover{background-color: #f1570e;}
+.users-btn + a{margin-left: 40px;line-height: 26px;display: inline-block;}
 .users-back{width: 30px;line-height: 30px;text-align: center;font-size: 16px;color: #fff;background-color: #000;opacity: 0.4;border-radius: 50%;position: fixed;top: 10px;left: 10px;}
 .users-card{background-color: rgba(255, 255, 255, 0.4);border-radius: 10px;text-align: center;}
-.users-form input, .users-form textarea{line-height: 16px;padding: 7px 10px;width: 220px;font-size: 16px;display: block;box-shadow: inset 1px 1px 2px #999;color: #666;background-color: #fff;}
+.users-form input, .users-form textarea{padding: 7px 10px;width: 240px;font-size: 16px;display: block;box-shadow: inset 1px 1px 2px #999;color: #666;background-color: #fff;box-sizing: border-box;}
+.users-form input{line-height: 16px;}
+.users-form textarea{line-height: 22px;}
 .users-bg{background: #09b39c url('/images/svg/banner.svg') no-repeat 0 0;background-size: cover;}
 
 /* dialog */
@@ -21,15 +24,14 @@ a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px da
 .banner span{font-size: 100px;color: rgba(255, 255, 255, 0.6);line-height: 181px;float: left;}
 /* login */
 .login, .about{padding: 20px 30px;width: 240px;float: right;}
-.login input, .login button, .login a{font-size: 16px;margin: 10px 0;}
-.login a, .register a, .about a{display: inline-block;}
-.login a{line-height: 26px;text-decoration: underline;margin-left: 40px;}
+.login input, .login button{font-size: 16px;margin: 10px 0;}
+.login a{text-decoration: underline;}
 /* about */
 .about{text-align: center;font-size: 14px;line-height: 26px;color: #005d50;}
 .about strong{font-size: 16px;line-height: 32px;}
 .about p{text-align: left;}
 .about p a{color: #fff;}
-.about > a{text-decoration: underline;font-weight: bold;margin: 20px 25px 0;}
+.about > a{text-decoration: underline;font-weight: bold;margin: 20px 25px 0;display: inline-block;}
 /* lst */
 .profile-lst li{margin-bottom: 15px;padding: 20px;}
 .user-title{position: relative;padding-left: 65px;}
@@ -43,7 +45,7 @@ a.dialog-btn{line-height: 40px;font-size: 14px;color: #0aab94;border-top: 1px da
 .register{background-position: -1500px 0;height: 100%;width: 100%;position: fixed;top: 0;left: 0;}
 .register div{padding: 10px 30px;width: 240px;margin: 40px auto;background-color: rgba(255, 255, 255, 0.4);}
 .register input, .register textarea{margin: 20px 0;}
-.register textarea{height: 100px;line-height: 22px;}
+.register textarea{height: 100px;}
 .register button{margin-bottom: 10px;line-height: 36px;border-radius: 15px/50%;padding: 0 20px;}
 .register a{line-height: 36px;margin-left: 20px;}
 
@@ -82,6 +84,10 @@ a.diary-add span{display: inline-block;font-size: 20px;color: #13c5bb;line-heigh
 em.ico-fav{background: url('/images/svg/ico_fav.svg') no-repeat 0 0;}
 em.ico-faved{background: url('/images/svg/ico_faved.svg') no-repeat 0 0;}
 
+/* publish */
+.publish{padding: 20px;text-align: center;}
+.publish input, .publish textarea{width: 100%;margin: 20px 0;}
+.publish textarea{height: 300px;}
 
 @media screen and (max-width: 1020px) {
     .banner{padding: 50px 0;background-position: -200px 0;}

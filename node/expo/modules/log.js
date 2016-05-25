@@ -3,9 +3,13 @@
  */
 
 var fs = require('fs');
-var find = require('./find-record');
+var find = require('./find');
 var User = require('../models').User;
 
+/** log
+ * 描述: [登录] [注销] [注册] [退出登录]
+ * 模块: [log.login] [log.logout] [log.register] [log.exit]
+ */
 var log = {
 
     user: null,
@@ -20,13 +24,11 @@ var log = {
                 var returns = {id: 1};
 
                 User.find(record, returns, {}, function (err, result) {
-                    var id = result[0].id;
-
                     res.end(JSON.stringify({
                         message: '登录成功',
                         status: 1
                     }));
-                    _this.user = id;
+                    _this.user = result[0].id;
                 });
             } else {
                 res.end(JSON.stringify({
@@ -40,7 +42,7 @@ var log = {
     logout: function (req, res) {
         var _this = this;
 
-        find.do(_this.user);
+        find.do('user', _this.user);
         find.info(function (info) {
             if (info.portrait) {
                 fs.unlink('../public' + info.portrait);
@@ -65,7 +67,6 @@ var log = {
         }, 0);
     },
     register: function (req, res) {
-        req.body.portrait = '';
         req.body.id = (new Date()).valueOf();
 
         var _this = this;

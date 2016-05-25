@@ -23,27 +23,15 @@ var main = {
             history.back();
         });
     },
-    showResult: function (data, url, show_suc) {
+    showResult: function (data, callback) {
         var _this = this;
         var status = JSON.parse(data).status;
         var message = JSON.parse(data).message;
 
-        // 失败
-        if (!status) {
-            _this.showDialog({message: message});
-        }
-
-        // 成功
         if (status) {
-            if (show_suc) {
-                _this.showDialog({
-                    message: message,
-                    href: url,
-                    btnClass: 'js_goto'
-                });
-            } else {
-                location.href = url;
-            }
+            callback(message);
+        } else {
+            _this.showDialog({message: message});
         }
     },
     showDialog: function (opt) {

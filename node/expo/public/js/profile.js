@@ -2,16 +2,25 @@
  * Created by sunmy on 16/5/6.
  */
 
+/** profile
+ * 描述: [用户相关] [日记相关]
+ * 模块: [profile.user] [profile.diary]
+ */
 var profile = {};
 
+/** profile.user
+ * 描述: [编辑用户信息] [注销] [退出登录] [关注用户]
+ * 模块: [profile.user.reform] [profile.user.logout] [profile.user.exit]
+ */
 profile.user = {
     do: function () {
         var _this = this;
-        _this.editInfo();
+        _this.reform();
         _this.logout();
         _this.exit();
+        _this.attention();
     },
-    editInfo: function () {
+    reform: function () {
         var _this = this;
 
         // 编辑面板
@@ -35,11 +44,13 @@ profile.user = {
         var $form = $('#form_info');
         $btn.on('click', function () {
             $.ajax({
-                url: "/edit",
+                url: "/edit/info",
                 type: 'POST',
                 data: $form.serialize(),
                 success: function (data) {
-                    main.showResult(data, location.href);
+                    main.showResult(data, function () {
+                        location.reload();
+                    });
                 },
                 error: function () {
                     main.showDialog({message: '提交失败'});
@@ -57,7 +68,9 @@ profile.user = {
             contentType: false,
             processData: false,
             success: function (data) {
-                main.showResult(data, location.href);
+                main.showResult(data, function () {
+                    location.reload();
+                });
             },
             error: function () {
                 main.showDialog({message: '上传失败'});
@@ -71,7 +84,13 @@ profile.user = {
                 url: "/logout",
                 type: 'POST',
                 success: function (data) {
-                    main.showResult(data, '/login', 1);
+                    main.showResult(data, function (message) {
+                        main.showDialog({
+                            message: message,
+                            href: '/',
+                            btnClass: 'js_goto'
+                        });
+                    });
                 },
                 error: function () {
                     main.showDialog({message: '注销失败'});
@@ -86,20 +105,30 @@ profile.user = {
                 url: "/exit",
                 type: 'POST',
                 success: function (data) {
-                    main.showResult(data, '/login');
+                    main.showResult(data, function () {
+                        location.href = '/';
+                    });
                 },
                 error: function () {
                     main.showDialog({message: '无法退出登录'});
                 }
             });
         });
+    },
+    attention: function () {
+
     }
 };
 
+/** profile.diary
+ * 描述: [收藏日记] [删除日记]
+ * 模块: [profile.diary.favour] [profile.diary.remove]
+ */
 profile.diary = {
     do: function () {
         var _this = this;
         _this.favour();
+        _this.remove();
 
         $('.js_more').on('click', function () {
             $(this).prev().toggleClass('ellipsis-row2');
@@ -122,6 +151,9 @@ profile.diary = {
                 $ico.addClass('ico-faved').removeClass('ico-fav');
             }
         });
+    },
+    remove: function () {
+
     }
 };
 

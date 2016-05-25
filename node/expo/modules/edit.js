@@ -4,12 +4,22 @@
 
 var fs = require('fs');
 var formidable = require('formidable');
-var find = require('./find-record');
+var find = require('./find');
 var User = require('../models').User;
 
-var edit = {
-    do: function (req, res, log_user) {
-        find.do(log_user);
+/** edit
+ * 描述: [编辑用户信息] [编辑日记]
+ * 模块: [edit.user] [edit.diary]
+ */
+var edit = {};
+
+/** edit.user
+ * 描述: [编辑基本信息] [编辑头像]
+ * 模块: [edit.user.info] [edit.user.portrait]
+ */
+edit.user = {
+    info: function (req, res, log_user) {
+        find.do('user', log_user);
         User.update(find.record, req.body, {}, function (err) {
             if (err) {
                 res.end(JSON.stringify({
@@ -26,7 +36,6 @@ var edit = {
     },
     portrait: function (req, res, log_user) {
         var form = new formidable.IncomingForm();
-
         form.parse(req, function (err, fields, files) {
             if (err) {
                 res.end(JSON.stringify({
@@ -35,7 +44,7 @@ var edit = {
                 }));
             } else {
 
-                find.do(log_user);
+                find.do('user', log_user);
 
                 // 上传新头像
                 var timestamp = (new Date()).valueOf();
@@ -53,8 +62,7 @@ var edit = {
                 });
 
                 // 更新记录
-                var update = {portrait: url};
-                User.update(find.record, update, {}, function (err) {
+                User.update(find.record, {portrait: url}, {}, function (err) {
                     if (err) {
                         res.end(JSON.stringify({
                             message: '上传失败',
@@ -70,6 +78,15 @@ var edit = {
                 });
             }
         });
+    }
+};
+
+/** edit.diary
+ * 模块: [edit.diary.do]
+ */
+edit.diary = {
+    do: function () {
+
     }
 };
 

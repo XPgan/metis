@@ -21,7 +21,9 @@ var register = {
                     type: 'POST',
                     data: $form.serialize(),
                     success: function (data) {
-                        main.showResult(data, '/login');
+                        main.showResult(data, function () {
+                            location.href = '/';
+                        });
                     },
                     error: function () {
                         main.showDialog({message: '注册失败'});

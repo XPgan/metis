@@ -17,7 +17,9 @@ var index = {
                 type: 'POST',
                 data: $form.serialize(),
                 success: function (data) {
-                    main.showResult(data, '/');
+                    main.showResult(data, function () {
+                        location.href = '/';
+                    });
                 },
                 error: function () {
                     main.showDialog({message: '登录失败'});
@@ -31,7 +33,9 @@ var index = {
                 url: "/exit",
                 type: 'POST',
                 success: function (data) {
-                    main.showResult(data, '/login');
+                    main.showResult(data, function () {
+                        location.href = '/';
+                    });
                 },
                 error: function () {
                     main.showDialog({message: '报错啦'});

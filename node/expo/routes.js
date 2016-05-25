@@ -4,12 +4,14 @@
 
 var express = require('express');
 var log = require('./modules/log');
-var edit = require('./modules/edit-info');
-var find = require('./modules/find-record');
+var crease = require('./modules/crease');
+var edit = require('./modules/edit');
+var find = require('./modules/find');
 var router = express.Router();
 
 // 主页
 router.get(/^\/(login)?$/, function (req, res) {
+    find.do('user');
     find.all(function (users) {
         res.render('index', {
             log_user: log.user,
@@ -21,7 +23,7 @@ router.get(/^\/(login)?$/, function (req, res) {
 router.get('/profile/:id', function (req, res) {
     var id = req.params.id;
 
-    find.do(id);
+    find.do('user', id);
     find.info(function (info) {
         if (info) {
             res.render('profile', {
@@ -40,6 +42,14 @@ router.get('/profile/:id', function (req, res) {
 router.get('/register', function (req, res) {
     res.render('register');
 });
+// 创建日记
+router.get('/publish/diary', function (req, res) {
+    if (log.user) {
+        res.render('publish');
+    } else {
+        res.redirect('/');
+    }
+});
 
 
 router.post('/login', function (req, res) {
@@ -55,12 +65,15 @@ router.post('/exit', function (req, res) {
     log.exit(req, res);
 });
 // 修改信息
-router.post('/edit', function (req, res) {
-    edit.do(req, res, log.user);
+router.post('/edit/info', function (req, res) {
+    edit.user.info(req, res, log.user);
 });
 router.post('/edit/portrait', function (req, res) {
-    edit.portrait(req, res, log.user);
+    edit.user.portrait(req, res, log.user);
 });
-
+// 发布日记
+router.post('/publish/diary', function (req, res) {
+    crease.publish.diary(req, res, log.user);
+});
 
 module.exports = router;

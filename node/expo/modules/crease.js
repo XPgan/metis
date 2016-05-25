@@ -3,13 +3,12 @@
  */
 
 /** crease
- * 描述: [增] [删]
  * 模块: [crease.publish] [crease.remove]
  */
 var crease = {};
 
 /** crease.publish
- * 描述: [发布日记] [发布评论]
+ * 描述: [发布日记] [发表评论]
  * 模块: [crease.publish.diary] [crease.publish.comment]
  */
 crease.publish = {

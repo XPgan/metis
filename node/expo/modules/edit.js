@@ -8,13 +8,12 @@ var find = require('./find');
 var User = require('../models').User;
 
 /** edit
- * 描述: [编辑用户信息] [编辑日记]
  * 模块: [edit.user] [edit.diary]
  */
 var edit = {};
 
 /** edit.user
- * 描述: [编辑基本信息] [编辑头像]
+ * 描述: [编辑用户基本信息] [编辑用户头像]
  * 模块: [edit.user.info] [edit.user.portrait]
  */
 edit.user = {

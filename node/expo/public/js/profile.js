@@ -2,16 +2,8 @@
  * Created by sunmy on 16/5/6.
  */
 
-/** profile
- * 描述: [用户相关] [日记相关]
- * 模块: [profile.user] [profile.diary]
- */
 var profile = {};
 
-/** profile.user
- * 描述: [编辑用户信息] [注销] [退出登录] [关注用户]
- * 模块: [profile.user.reform] [profile.user.logout] [profile.user.exit]
- */
 profile.user = {
     do: function () {
         var _this = this;
@@ -120,10 +112,6 @@ profile.user = {
     }
 };
 
-/** profile.diary
- * 描述: [收藏日记] [删除日记]
- * 模块: [profile.diary.favour] [profile.diary.remove]
- */
 profile.diary = {
     do: function () {
         var _this = this;

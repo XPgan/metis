@@ -5,52 +5,14 @@
     <title>Matrix</title>
     <style>
         *{margin: 0;padding: 0;}
-        a{text-decoration: none;}
-
         .img{width: 500px;margin: 50px auto;}
         .img img{width: 100%;}
-        .btn{position: fixed;top: 50px;left: 40px;}
-        .btn a{display: inline-block;font-size: 18px;line-height: 26px;padding: 0 15px;border-radius: 5px;border: 1px solid #666;color: #333;}
 
         /* matrix(a, b, c, d, e, f)  x = ax + cy + e, y = bx + dy + f */
         img.mirrorY{-webkit-transform: matrix(-1, 0, 0, 1, 0, 0);transform: matrix(-1, 0, 0, 1, 0, 0);}
     </style>
 </head>
 <body>
-    <div class="btn"><a href="javascript:;" class="y-axis">y-axis</a></div>
-    <div class="img"><img src="http://7d9qwy.com2.z0.glb.qiniucdn.com/2015/08/21/d3c6029346" /></div>
-    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
-    <script>
-        var $img = $('.img').find('img');
-        var mirror = {
-            init: function () {
-                var _this = this;
-                _this.clickEvent();
-            },
-            clickEvent: function () {
-                var _this = this;
-                var $btnY = $('.y-axis');
-
-                $btnY.on('click', function () {
-                    var _self = $(this);
-
-                    $img.toggleClass('mirrorY');
-                    _this.toggleText(_self);
-                });
-            },
-            toggleText: function (_self) {
-                var btnText = _self.attr('class');
-                var isReset = _self.text().indexOf('reset');
-
-                if (!isReset) {
-                    _self.text(btnText);
-                } else {
-                    _self.text('reset');
-                }
-            }
-        };
-
-        mirror.init();
-    </script>
+    <div class="img"><img src="http://7d9qwy.com2.z0.glb.qiniucdn.com/2015/08/21/d3c6029346" class="mirrorY" /></div>
 </body>
 </html>

@@ -4,7 +4,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var db = mongoose.connect('mongodb://localhost/expo');
+var db = mongoose.connect('mongodb://localhost/contact');
 
 var userSchema = new Schema({
     id: String,

@@ -9,15 +9,15 @@
 // example1
 var curry = function (curried) {
     // 过滤 curried 中 function
-    var params = Array.prototype.slice.call(arguments, 1);
-    var returnFun = function () {
+    var tmp = Array.prototype.slice.call(arguments, 1);
+    var method = function () {
         // arguments 转数组
-        var sub_params = Array.prototype.slice.call(arguments, 0);
+        var params = Array.prototype.slice.call(arguments, 0);
         // 组装 params  触发 function
-        curried.apply(this, params.concat(sub_params));
+        curried.apply(this, tmp.concat(params));
     };
 
-    return returnFun;
+    return method;
 };
 
 
@@ -34,13 +34,13 @@ var curry = function (curried) {
     var params = Array.prototype.slice.call(arguments, 1);
     curried.apply(this, params);
 
-    var returnFun = function () {
+    var method = function () {
         curried.apply(this, arguments);
 
-        return returnFun;
+        return method;
     };
 
-    return returnFun;
+    return method;
 };
 
 

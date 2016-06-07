@@ -11,11 +11,11 @@ function outer () {
     inner();
 }
 
-function parent () {
+function trigger () {
     outer();
 }
 
-parent();
+trigger();
 /*
    调用当前函数的函数
    function outer() {

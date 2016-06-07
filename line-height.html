@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <title>LineHeight</title>
     <style>
-        .outer{margin: 50px auto;text-align: center;}
+        .outer{margin: 50px auto;text-align: center;font-size: 16px;}
         .inner{font-size: 12px;}
-        .outerSize{font-size: 16px;}
 
         /* outer 未定义 font-size 时  inner 父级 font-size: 16px */
         /* 含单位的 line-height 具有父级继承性 */
@@ -17,7 +16,7 @@
     </style>
 </head>
 <body>
-    <div class="outer outerSize">
+    <div class="outer">
         <div class="inner">这里是一段文字</div>
     </div>
 </body>

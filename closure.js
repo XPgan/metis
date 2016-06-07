@@ -29,31 +29,31 @@ self.run2();
 /* 返回函数 */
 function fun1 (x) {
     var a = 'a';
-    var innerFun = function fun2 (y) {
+    var method = function fun2 (y) {
         console.log(a + ',' + x + ',' + y);
     };
 
-    return innerFun; // return fun2;
+    return method; // return fun2;
 }
 
-var getFun = fun1('b');
+var method = fun1('b');
 
-getFun('c');
+method('c');
 
 // error: fun2 非返回函数 且 (直接调用 || 继父级函数调用)
 
 function fun1 (x) {
     var a = 'a';
-    var innerFun = function fun2 (y) {
+    var method = function fun2 (y) {
         console.log(a + ',' + x + ',' + y);
     };
 
-    return innerFun; // return fun2;
+    return method; // return fun2;
 }
 
 function fun () {
-    var getFun = fun1('b');
-    getFun('c');
+    var method = fun1('b');
+    method('c');
 }
 
 fun();

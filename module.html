@@ -48,10 +48,10 @@
 
         // create
         for (var i = 0;i < swipeTitle.length;i++) {
-            var newModule = module.replace('$title', swipeTitle[i]).replace('$content', swipeContent[i]);
+            var substance = module.replace('$title', swipeTitle[i]).replace('$content', swipeContent[i]);
             var liElem = document.createElement('li');
 
-            liElem.innerHTML = newModule;
+            liElem.innerHTML = substance;
             container.appendChild(liElem);
         }
     </script>

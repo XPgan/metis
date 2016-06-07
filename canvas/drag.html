@@ -27,7 +27,7 @@
 
         drag: false,
         dragged: null,
-        item: [
+        items: [
             {x: 100, y: 100, r: 50, bR: 10, n: 5},
             {x: 180, y: 180, r: 60, bR: 20, n: 3},
             {x: 200, y: 80, r: 30, bR: 5, n: 7},
@@ -48,11 +48,9 @@
             var canvas = $('.canvas').get(0);
             var context = canvas.getContext('2d');
             var ratio = window.devicePixelRatio || 1;
-            var width = canvas.offsetWidth;
-            var height = canvas.offsetHeight;
 
-            canvas.width = width * ratio;
-            canvas.height = height * ratio;
+            canvas.width = canvas.offsetWidth * ratio;
+            canvas.height = canvas.offsetHeight * ratio;
             context.scale(ratio, ratio);
 
             _this.ratio = ratio;
@@ -68,11 +66,11 @@
         },
         drawItem: function (coo) {
             var _this = this;
-            var length = _this.item.length;
+            var length = _this.items.length;
 
             // 重绘
             for (var i = 0;i < length;i++) {
-                var _self = _this.item[i];
+                var _self = _this.items[i];
                 _this.drawPolygon(_self);
 
                 // 拖拽判别
@@ -91,9 +89,9 @@
             var $canvas = $(_this.canvas);
             var width = _this.canvas.width;
             var height = _this.canvas.height;
-            var progressFunc = function (e) {
+            var redraw = function (e) {
                 if (flag && _this.drag) {
-                    var dragged = _this.item[_this.dragged];
+                    var dragged = _this.items[_this.dragged];
                     var newItem = {
                         x: e.pageX,
                         y: e.pageY,
@@ -101,12 +99,12 @@
                         bR: dragged.bR,
                         n: dragged.n
                     };
-                    _this.item.splice(_this.dragged, 1, newItem);
+                    _this.items.splice(_this.dragged, 1, newItem);
                     _this.context.clearRect(0, 0, width, height);
                     _this.drawItem();
                 }
             };
-            var dragJudge = function (e) {
+            var trigger = function (e) {
                 var coo = {x: e.pageX, y: e.pageY};
 
                 flag = true;
@@ -115,10 +113,10 @@
 
             $canvas.on({
                 'mousedown': function (e) {
-                    dragJudge(e);
+                    trigger(e);
                 },
                 'touchstart': function (e) {
-                    dragJudge(e.originalEvent.touches[0]);
+                    trigger(e.originalEvent.touches[0]);
                 }
             });
             $canvas.on({
@@ -133,10 +131,10 @@
             });
             $canvas.on({
                 'mousemove': function (e) {
-                    progressFunc(e);
+                    redraw(e);
                 },
                 'touchmove': function (e) {
-                    progressFunc(e.originalEvent.touches[0]);
+                    redraw(e.originalEvent.touches[0]);
                 }
             });
         },

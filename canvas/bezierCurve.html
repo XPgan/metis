@@ -51,11 +51,9 @@
             var canvas = $('.canvas').get(0);
             var context = canvas.getContext('2d');
             var ratio = window.devicePixelRatio || 1;
-            var width = canvas.offsetWidth;
-            var height = canvas.offsetHeight;
 
-            canvas.width = width * ratio;
-            canvas.height = height * ratio;
+            canvas.width = canvas.offsetWidth * ratio;
+            canvas.height = canvas.offsetHeight * ratio;
             context.scale(ratio, ratio);
 
             _this.ratio = ratio;
@@ -115,7 +113,7 @@
             var $canvas = $(_this.canvas);
             var width = _this.canvas.width;
             var height = _this.canvas.height;
-            var dragFunc = function (e) {
+            var redraw = function (e) {
                 if (flag && _this.drag) {
                     // 选取点关键字
                     var draggedX = _this.dragged.replace('Y', 'X');
@@ -129,7 +127,7 @@
                     _this.drawPoint();
                 }
             };
-            var dragJudge = function (e) {
+            var trigger = function (e) {
                 var coo = {x: e.pageX, y: e.pageY};
 
                 flag = true;
@@ -138,10 +136,10 @@
 
             $canvas.on({
                 'mousedown': function (e) {
-                    dragJudge(e);
+                    trigger(e);
                 },
                 'touchstart': function (e) {
-                    dragJudge(e.originalEvent.touches[0]);
+                    trigger(e.originalEvent.touches[0]);
                 }
             });
             $canvas.on({
@@ -156,10 +154,10 @@
             });
             $canvas.on({
                 'mousemove': function (e) {
-                    dragFunc(e);
+                    redraw(e);
                 },
                 'touchmove': function (e) {
-                    dragFunc(e.originalEvent.touches[0]);
+                    redraw(e.originalEvent.touches[0]);
                 }
             });
         }

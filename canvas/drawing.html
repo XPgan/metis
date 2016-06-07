@@ -72,7 +72,7 @@
             _this.initCanvas();
             _this.initContext();
             _this.ctrlBoard();
-            _this.ctrlSelect();
+            _this.ctrlOptions();
             _this.drawingEvent();
         },
         initCanvas: function () {
@@ -80,12 +80,10 @@
             var canvas = $('.canvas').get(0);
             var context = canvas.getContext('2d');
             var ratio = window.devicePixelRatio || 1;
-            var width = canvas.offsetWidth;
-            var height = canvas.offsetHeight;
 
             /** 按设备像素密度缩放绘图区 **/
-            canvas.width = width * ratio;
-            canvas.height = height * ratio;
+            canvas.width = canvas.offsetWidth * ratio;
+            canvas.height = canvas.offsetHeight * ratio;
             context.scale(ratio, ratio);
 
             _this.canvas = canvas;
@@ -122,7 +120,7 @@
                 }
             });
         },
-        ctrlSelect: function () {
+        ctrlOptions: function () {
             var _this = this;
             var $btn = $('.js_btn');
 
@@ -146,7 +144,7 @@
             var height = _this.canvas.height;
 
             /** 控键类型所对应绘图函数 **/
-            var typeFunc = {
+            var types = {
                 js_solid: _this.drawSolid,
                 js_arc: _this.drawArc,
                 js_rect: _this.drawRect,
@@ -154,7 +152,7 @@
             };
 
             /** 事件函数 **/
-            var startFunc = function (e) {
+            var trigger = function (e) {
                 _this.coordinate.startX = e.pageX;
                 _this.coordinate.startY = e.pageY;
                 flag = true;
@@ -162,13 +160,13 @@
                 _this.initContext();
                 _this.context.beginPath();
             };
-            var endFunc = function () {
+            var ending = function () {
                 flag = false;
 
                 // 存储绘画历史
                 _this.canvasData = _this.context.getImageData(0, 0, width, height);
             };
-            var progressFunc = function (e) {
+            var progress = function (e) {
                 _this.coordinate.endX = e.pageX;
                 _this.coordinate.endY = e.pageY;
 
@@ -183,7 +181,7 @@
                     }
 
                     // 执行绘画函数
-                    typeFunc[_this.type](_this.coordinate, _this);
+                    types[_this.type](_this.coordinate, _this);
                     _this.context.stroke();
                 }
             };
@@ -191,26 +189,26 @@
             /** 事件函数触发 **/
             $canvas.on({
                 'mousedown': function (e) {
-                    startFunc(e);
+                    trigger(e);
                 },
                 'touchstart': function (e) {
-                    startFunc(e.originalEvent.touches[0]);
+                    trigger(e.originalEvent.touches[0]);
                 }
             });
             $canvas.on({
                 'mouseup': function () {
-                    endFunc();
+                    ending();
                 },
                 'touchend': function () {
-                    endFunc();
+                    ending();
                 }
             });
             $canvas.on({
                 'mousemove': function (e) {
-                    progressFunc(e);
+                    progress(e);
                 },
                 'touchmove': function (e) {
-                    progressFunc(e.originalEvent.touches[0]);
+                    progress(e.originalEvent.touches[0]);
                 }
             });
         },

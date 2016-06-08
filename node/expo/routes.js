@@ -3,14 +3,14 @@
  */
 
 var express = require('express');
-var log = require('./modules/log');
-var crease = require('./modules/crease');
-var edit = require('./modules/edit');
 var find = require('./modules/find');
+var log = require('./modules/log');
+var user = require('./modules/user');
+var diary = require('./modules/diary');
 var router = express.Router();
 
 // 主页
-router.get(/^\/(login)?$/, function (req, res) {
+router.get('/', function (req, res) {
     find.do('user');
     find.all(function (users) {
         res.render('index', {
@@ -28,7 +28,7 @@ router.get('/profile/:id', function (req, res) {
         if (info) {
             res.render('profile', {
                 is_author: (id == log.user),
-                info: info
+                userinfo: info
             });
         } else {
             res.render('../message', {
@@ -38,12 +38,12 @@ router.get('/profile/:id', function (req, res) {
         }
     });
 });
-// 注册
+// 注册页
 router.get('/register', function (req, res) {
     res.render('register');
 });
-// 创建日记
-router.get('/publish/diary', function (req, res) {
+// 发布页
+router.get('/diary/publish', function (req, res) {
     if (log.user) {
         res.render('publish');
     } else {
@@ -64,16 +64,16 @@ router.post('/register', function (req, res) {
 router.post('/exit', function (req, res) {
     log.exit(req, res);
 });
-// 修改信息
-router.post('/edit/info', function (req, res) {
-    edit.user.info(req, res, log.user);
+
+router.post('/user/edit/info', function (req, res) {
+    user.edit.info(req, res, log.user);
 });
-router.post('/edit/portrait', function (req, res) {
-    edit.user.portrait(req, res, log.user);
+router.post('/user/edit/portrait', function (req, res) {
+    user.edit.portrait(req, res, log.user);
 });
-// 发布日记
-router.post('/publish/diary', function (req, res) {
-    crease.publish.diary(req, res, log.user);
+
+router.post('/diary/publish', function (req, res) {
+    diary.publish(req, res, log.user);
 });
 
 module.exports = router;

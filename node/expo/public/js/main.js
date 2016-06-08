@@ -3,7 +3,6 @@
  */
 
 var $body = $('body');
-var dialogModule = $('#module_dialog').html();
 
 var main = {
     do: function () {
@@ -13,7 +12,7 @@ var main = {
     commonCtrl: function () {
         $body.on('click', '.js_close', function (e) {
             e.preventDefault();
-            $(this).parents('.js_dialog').hide();
+            $(this).parents('.js_mask').hide();
         });
         $body.on('click', '.js_goto', function (e) {
             e.preventDefault();
@@ -35,7 +34,7 @@ var main = {
         }
     },
     showDialog: function (opt) {
-        var $dialog = dialogModule
+        var $dialog = $('#module_dialog').html()
             .replace('$message', opt.message)
             .replace('$href', opt.href || null)
             .replace('$btnClass', opt.btnClass || 'js_close');

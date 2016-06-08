@@ -7,67 +7,54 @@ var profile = {};
 profile.user = {
     do: function () {
         var _this = this;
-        _this.reform();
+        _this.edit.info();
+        _this.edit.portrait();
         _this.logout();
         _this.exit();
         _this.attention();
     },
-    reform: function () {
-        var _this = this;
-
-        // 编辑面板
-        var $board = $('.js_board');
-        $('.js_edit').on('click', function () {
-            $board.fadeIn('fast', function () {
-                $board.find('div').slideDown('fast');
-            });
-        });
-        $('.js_cancel').on('click', function () {
-            $board.find('div').slideUp('fast', function () {
-                $board.fadeOut('fast');
-            });
-        });
-        // 修改头像
-        $('.js_portrait').on('change', function () {
-            _this.upldPortrait();
-        });
-
-        var $btn = $('.js_info');
-        var $form = $('#form_info');
-        $btn.on('click', function () {
-            $.ajax({
-                url: "/edit/info",
-                type: 'POST',
-                data: $form.serialize(),
-                success: function (data) {
-                    main.showResult(data, function () {
-                        location.reload();
-                    });
-                },
-                error: function () {
-                    main.showDialog({message: '提交失败'});
-                }
-            });
-        });
-    },
-    upldPortrait: function () {
-        var $form = $('#form_portrait');
-        var formData = new FormData($form[0]);
-        $.ajax({
-            url: "/edit/portrait",
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function (data) {
-                main.showResult(data, function () {
-                    location.reload();
+    edit: {
+        info: function () {
+            var $btn = $('.js_userinfo');
+            var $form = $('#form_userinfo');
+            $btn.on('click', function () {
+                $.ajax({
+                    url: "/user/edit/info",
+                    type: 'POST',
+                    data: $form.serialize(),
+                    success: function (data) {
+                        main.showResult(data, function () {
+                            location.reload();
+                        });
+                    },
+                    error: function () {
+                        main.showDialog({message: '提交失败'});
+                    }
                 });
-            },
-            error: function () {
-                main.showDialog({message: '上传失败'});
-            }
-        });
+            });
+        },
+        portrait: function () {
+            var $btn = $('.js_portrait');
+            var $form = $('#form_portrait');
+            $btn.on('change', function () {
+                var formData = new FormData($form[0]);
+                $.ajax({
+                    url: "/user/edit/portrait",
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        main.showResult(data, function () {
+                            location.reload();
+                        });
+                    },
+                    error: function () {
+                        main.showDialog({message: '上传失败'});
+                    }
+                });
+            });
+        }
     },
     logout: function () {
         var $btn = $('.js_logout');
@@ -115,32 +102,17 @@ profile.user = {
 profile.diary = {
     do: function () {
         var _this = this;
-        _this.favour();
+        _this.edit();
         _this.remove();
-
-        $('.js_more').on('click', function () {
-            $(this).prev().toggleClass('ellipsis-row2');
-        });
+        _this.favour();
     },
-    favour: function () {
-        $('.js_fav').on('click', function () {
-            var $child = $(this).find('em');
-            var $num = $child.first();
-            var $ico = $child.last();
+    edit: function () {
 
-            var count = $num.text() >> 0;
-            var is_faved = $ico.hasClass('ico-faved');
-
-            if (is_faved) {
-                $num.text(count - 1);
-                $ico.addClass('ico-fav').removeClass('ico-faved');
-            } else {
-                $num.text(count + 1);
-                $ico.addClass('ico-faved').removeClass('ico-fav');
-            }
-        });
     },
     remove: function () {
+
+    },
+    favour: function () {
 
     }
 };

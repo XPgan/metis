@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 
 // 静态文件
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'upload')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

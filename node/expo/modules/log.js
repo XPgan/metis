@@ -45,7 +45,7 @@ var log = {
         find.do('user', _this.user);
         find.info(function (info) {
             if (info.portrait) {
-                fs.unlink('../public' + info.portrait);
+                fs.unlink('../upload' + info.portrait);
             }
         });
 

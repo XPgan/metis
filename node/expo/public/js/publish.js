@@ -4,12 +4,8 @@
 
 var publish = {
     do: function () {
-        var _this = this;
-        _this.diary();
-    },
-    diary: function () {
-        var $btn = $('.js_diary');
-        var $form = $('#form_diary');
+        var $btn = $('.js_publish');
+        var $form = $('#form_publish');
         $btn.on('click', function () {
             var title = $('#diary_title').val();
             var content = $('#diary_content').val();
@@ -17,7 +13,7 @@ var publish = {
             var judge = title && content;
             if (judge) {
                 $.ajax({
-                    url: "/publish/diary",
+                    url: "/diary/publish",
                     type: 'POST',
                     data: $form.serialize(),
                     success: function () {

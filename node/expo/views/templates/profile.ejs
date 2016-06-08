@@ -1,35 +1,38 @@
 <%- include ../header %>
-<section class="profile-info users-bg">
-    <img src="<%= info.portrait || '/upload/portrait/default_portrait.jpg' %>" class="c-block c-mgn0" />
+<section class="profile-info expo-bg">
     <% if (is_author) { %>
-    <form enctype="multipart/form-data" id="form_portrait" class="c-horizontal">
+    <form enctype="multipart/form-data" id="form_portrait">
         <input type="file" id="portrait" name="portrait" class="js_portrait" />
     </form>
-    <div class="profile-ctrl"><a href="javascript:;" class="js_exit">退出</a><a href="javascript:;" class="js_logout">注销</a></div>
+    <a href="javascript:;" class="js_exit">退出</a><a href="javascript:;" class="js_logout">注销</a>
     <% } %>
-    <h3><%= info.user_name %></h3>
-    <div class="profile-bio"><span><%= info.sex %></span><span><%= info.tel %></span><span><%= info.qq %></span></div>
+
+    <img src="<%= userinfo.portrait || '/portrait/default_portrait.jpg' %>" class="c-block" />
+    <h3><%= userinfo.user_name %></h3>
+    <span><%= userinfo.sex %></span><span><%= userinfo.tel %></span><span><%= userinfo.qq %></span>
+    <div class="profile-intro"><%= userinfo.intro || '还咩有自我评价哦~' %></div>
 </section>
-<section class="profile-intro <% if (is_author) { %>c-author<% } %> c-bgw"><%= info.intro || '还咩有自我评价哦~' %><% if (is_author) { %><a href="javascript:;" class="js_edit c-vertical">编辑</a><% } %></section>
 <section class="profile-diaries">
-    <a href="/publish/diary" class="diary-add c-block c-bgw"><span>+</span></a>
     <ul>
-        <li class="c-bgw">
-            <h4><span>标题</span><a href="javascript:;" class="c-vertical c-block js_fav"><em>22</em><em class="ico-fav"></em></a></h4>
-            <div class="diary-content ellipsis-row2">这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容这里是内容内容内容</div>
-            <a href="javascript:;" class="c-block js_more">阅读全部</a>
+        <li>
+            <h4>标题</h4>
+            <div class="diary-content ellipsis-row2">这里是内容</div>
+            <a href="javascript:;" class="c-block js_read_more">阅读全部</a>
         </li>
     </ul>
 </section>
-<div class="edit-info c-mask js_board">
-    <div class="c-bottom c-bgw">
-        <form id="form_info">
-            <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= info.intro %>" />
+
+<div class="c-mask js_mask">
+    <div class="edit-userinfo c-bottom">
+        <form id="form_userinfo">
+            <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= userinfo.intro %>" />
         </form>
-        <button class="js_info">提交</button>
-        <a href="javascript:;" class="js_cancel">取消</a>
+        <button class="js_userinfo">提交</button>
+        <a href="javascript:;" class="js_close">取消</a>
     </div>
 </div>
-<a href="javascript:;" class="js_back users-back c-block"><</a>
+
+<a href="javascript:;" class="expo-back c-block js_back"><</a>
+
 <script src="/js/profile.js"></script>
 <%- include ../footer %>

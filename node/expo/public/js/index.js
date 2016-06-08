@@ -6,7 +6,7 @@ var index = {
     do: function () {
         var _this = this;
         _this.login();
-        _this.switch();
+        _this.switch(); // 切换账号
     },
     login: function () {
         var $btn = $('.js_login');

@@ -4,7 +4,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var db = mongoose.connect('mongodb://localhost/contact');
+var db = mongoose.connect('mongodb://localhost/expo');
 
 var userSchema = new Schema({
     id: String,
@@ -15,13 +15,14 @@ var userSchema = new Schema({
     qq: String,
     intro: String,
     portrait: String,
-    diaries: []
+    diaries: [],
+    followers: []
 });
 var diarySchema = new Schema({
     id: String,
     title: String,
     content: String,
-    vote_num: String
+    voters: []
 });
 
 exports.User = db.model('users', userSchema);

@@ -1,37 +1,31 @@
 <%- include ../header %>
-<section class="banner c-fix users-bg">
+<section class="idx-banner expo-bg">
     <span class="c-block">WELCOME</span>
     <% if (log_user) { %>
-    <div class="about users-card">
-        <p><strong>本品由<a href="https://github.com/sunmengyuan"> 呆恋小喵 </a>制作</strong><br /><a href="https://github.com/sunmengyuan/note/tree/master/node/users">https://github.com/sunmengyuan/note/tree/master/node/users</a><br />前端开发初学者一枚 欢迎大神前来批评指教 ~</p>
+    <div class="idx-about expo-card">
+        <p><strong>本品由<a href="https://github.com/sunmengyuan">&nbsp;呆恋小喵&nbsp;</a>制作</strong><br /><a href="https://github.com/sunmengyuan/note/tree/master/node/expo">https://github.com/sunmengyuan/note/tree/master/node/expo</a><br />前端开发初学者一枚&nbsp;欢迎大神前来批评指教&nbsp;~</p>
         <a href="javascript:;" class="js_switch">切换账号</a><a href="/profile/<%= log_user %>">个人主页</a>
     </div>
     <% } else { %>
-    <div class="login users-card">
-        <form id="form_login" class="users-form">
+    <div class="idx-login expo-card">
+        <form id="form_login" class="expo-form">
             <input type="text" id="user_name" name="user_name" placeholder="用户名" />
             <input type="password" id="password" name="password" placeholder="密码" />
         </form>
-        <button class="js_login users-btn">login</button><a href="/register">register</a>
+        <button class="js_login expo-btn">login</button><a href="/register">register</a>
     </div>
     <% } %>
 </section>
 
 <% if (users) { %>
-<section class="profile-lst">
+<section class="users-lst">
     <ul>
         <% users.forEach(function (user) { %>
-        <li class="c-bgw">
+        <li>
             <a href="/profile/<%= user.id %>" class="c-block">
-                <div class="user-title">
-                    <img src="<%= user.portrait || '/upload/portrait/default_portrait.jpg' %>" class="c-block" />
-                    <span><%= user.user_name %></span>
-                </div>
-                <div class="user-info">
-                    <span>性别: <%= user.sex %></span>
-                    <span>电话: <%= user.tel %></span>
-                    <span>QQ: <%= user.qq %></span>
-                </div>
+                <img src="<%= user.portrait || '/portrait/default_portrait.jpg' %>" class="c-block" />
+                <h4><%= user.user_name %></h4>
+                <span>性别: <%= user.sex %></span><span>电话: <%= user.tel %></span><span>QQ: <%= user.qq %></span>
                 <% if (user.intro) { %>
                 <div class="user-intro"><%= user.intro %></div>
                 <% } %>

@@ -7,13 +7,21 @@ var profile = {};
 profile.user = {
     do: function () {
         var _this = this;
-        _this.edit.info();
-        _this.edit.portrait();
+        _this.edit.do();
         _this.logout();
         _this.exit();
         _this.attention();
     },
     edit: {
+        do: function () {
+            var _this = this;
+            _this.info();
+            _this.portrait();
+
+            $('.js_edit_userinfo').on('click', function () {
+                $('.js_edit_board').parent().show();
+            });
+        },
         info: function () {
             var $btn = $('.js_userinfo');
             var $form = $('#form_userinfo');

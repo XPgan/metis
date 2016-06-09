@@ -22,8 +22,8 @@
     </ul>
 </section>
 
-<div class="c-mask js_mask">
-    <div class="edit-userinfo c-bottom">
+<div class="c-hidden c-mask js_mask">
+    <div class="edit-board c-bottom js_edit_board">
         <form id="form_userinfo">
             <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= userinfo.intro %>" />
         </form>
@@ -31,6 +31,11 @@
         <a href="javascript:;" class="js_close">取消</a>
     </div>
 </div>
+
+<% if (is_author) { %>
+<a href="/diary/publish" class="c-block">发布日记</a>
+<a href="javascript:;" class="c-block js_edit_userinfo">编辑用户信息</a>
+<% } %>
 
 <a href="javascript:;" class="expo-back c-block js_back"><</a>
 

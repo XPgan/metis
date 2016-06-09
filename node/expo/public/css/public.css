@@ -18,11 +18,12 @@ img{display: block;width: 100%;}
 /* display */
 .c-block{display: block;}
 .c-inline{display: inline-block;}
+.c-hidden{display: none;}
 .c-table{display: table}
 .c-table > div{display: table-cell;vertical-align: middle;}
 
 /* layer */
-.c-mask{position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: 100;background-color: rgba(0, 0, 0, 0.5);display: none;}
+.c-mask{position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: 100;background-color: rgba(0, 0, 0, 0.5);}
 .c-header{position: fixed;left: 0;top: 0;width: 100%;z-index: 10;}
 .c-footer{position: fixed;left: 0;bottom: 0;width: 100%;z-index: 10;}
 

@@ -8,8 +8,7 @@ profile.user = {
     do: function () {
         var _this = this;
         _this.edit.do();
-        _this.logout();
-        _this.exit();
+        _this.log.do();
         _this.attention();
     },
     edit: {
@@ -64,43 +63,50 @@ profile.user = {
             });
         }
     },
-    logout: function () {
-        var $btn = $('.js_logout');
-        $btn.on('click', function () {
-            $.ajax({
-                url: "/logout",
-                type: 'POST',
-                success: function (data) {
-                    main.showResult(data, function (message) {
-                        main.showDialog({
-                            message: message,
-                            href: '/',
-                            btnClass: 'js_goto'
+    log: {
+        do: function () {
+            var _this = this;
+            _this.logout();
+            _this.exit();
+        },
+        logout: function () {
+            var $btn = $('.js_logout');
+            $btn.on('click', function () {
+                $.ajax({
+                    url: "/logout",
+                    type: 'POST',
+                    success: function (data) {
+                        main.showResult(data, function (message) {
+                            main.showDialog({
+                                message: message,
+                                href: '/',
+                                btnClass: 'js_goto'
+                            });
                         });
-                    });
-                },
-                error: function () {
-                    main.showDialog({message: '注销失败'});
-                }
+                    },
+                    error: function () {
+                        main.showDialog({message: '注销失败'});
+                    }
+                });
             });
-        });
-    },
-    exit: function () {
-        var $btn = $('.js_exit');
-        $btn.on('click', function () {
-            $.ajax({
-                url: "/exit",
-                type: 'POST',
-                success: function (data) {
-                    main.showResult(data, function () {
-                        location.href = '/';
-                    });
-                },
-                error: function () {
-                    main.showDialog({message: '无法退出登录'});
-                }
+        },
+        exit: function () {
+            var $btn = $('.js_exit');
+            $btn.on('click', function () {
+                $.ajax({
+                    url: "/exit",
+                    type: 'POST',
+                    success: function (data) {
+                        main.showResult(data, function () {
+                            location.href = '/';
+                        });
+                    },
+                    error: function () {
+                        main.showDialog({message: '无法退出登录'});
+                    }
+                });
             });
-        });
+        }
     },
     attention: function () {
 

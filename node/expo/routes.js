@@ -28,18 +28,24 @@ router.get('/profile/:id', function (req, res) {
         if (user_info) {
             var diaries = [];
             var tmp = user_info.diaries;
+            var count = tmp.length;
 
             for (var i = 0;i < tmp.length;i++) {
                 find.do('diary', tmp[i]);
                 find.info(function (diary_info) {
                     diaries.push(diary_info);
+
+                    // 计数器: 查询完毕后 执行渲染
+                    count --;
+                    if (!count) {
+                        res.render('profile', {
+                            is_author: (id == log.user),
+                            userinfo: user_info,
+                            diaries: diaries
+                        });
+                    }
                 });
             }
-            res.render('profile', {
-                is_author: (id == log.user),
-                userinfo: user_info,
-                diaries: diaries
-            });
         } else {
             res.render('../message', {
                 code: 404,

@@ -20,8 +20,8 @@
     <ul>
         <% diaries.forEach(function (diary) { %>
         <li>
-            <h4>标题<a href="javascript:;" class="js_fav"><em>0</em><em class="ico-fav"></em></a></h4>
-            <div class="diary-content">这里是内容</div>
+            <h4><%= diary.title %><a href="javascript:;" class="js_fav"><em>0</em><em class="ico-fav"></em></a></h4>
+            <div class="diary-content"><%= diary.content %></div>
             <a href="javascript:;" class="c-block js_read_more">阅读全部</a>
         </li>
         <% }) %>

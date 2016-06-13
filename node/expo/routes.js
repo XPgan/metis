@@ -22,13 +22,22 @@ router.get('/', function (req, res) {
 // 个人页
 router.get('/profile/:id', function (req, res) {
     var id = req.params.id;
+    var diaries = [];
 
     find.do('user', id);
-    find.info(function (info) {
-        if (info) {
+    find.info(function (user_info) {
+        if (user_info) {
+            var tmp = user_info.diaries;
+            for (var i = 0;i < tmp.length;i++) {
+                find.do('diary', tmp[i]);
+                find.info(function (diary_info) {
+                    diaries.push(diary_info);
+                });
+            }
             res.render('profile', {
                 is_author: (id == log.user),
-                userinfo: info
+                userinfo: user_info,
+                diaries: diaries
             });
         } else {
             res.render('../message', {

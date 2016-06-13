@@ -1,5 +1,5 @@
 /* common */
-.expo-btn{display: inline-block;font-size: 16px;line-height: 26px;color: #fff;background-color: #005d50;padding: 0 10px;cursor: pointer;}
+.expo-btn{display: inline-block;font-size: 16px;line-height: 26px;color: #fff;background-color: #057b6b;padding: 0 10px;cursor: pointer;}
 .expo-btn:hover{background-color: #f1570e;}
 .expo-btn + a{display: inline-block;font-size: 16px;line-height: 26px;color: #005d50;margin-left: 40px;}
 .expo-back{display: block;font-size: 16px;line-height: 30px;width: 30px;text-align: center;color: #fff;background-color: #000;opacity: 0.4;border-radius: 50%;position: fixed;top: 10px;left: 10px;}
@@ -60,14 +60,14 @@ a.dialog-btn{font-size: 14px;line-height: 40px;color: #0aab94;border-top: 1px da
 .profile-intro{font-size: 14px;line-height: 22px;padding: 10px 20px;background-color: rgba(255, 255, 255, 0.4);}
 .log-ctrl{position: absolute;top: 10px;right: 10px;}
 .log-ctrl a{line-height: 30px;color: #fff;margin-left: 15px;}
-a.btn-publish, a.btn-edit{font-size: 30px;font-weight: bold;line-height: 50px;text-align: center;color: #fff;background-color: rgba(0, 125, 108, 0.8);width: 50px;border-radius: 50%;position: fixed;left: 10px;bottom: 20px;}
-a.btn-edit{bottom: 90px;}
+a.btn-publish, a.btn-edit{font-size: 24px;font-weight: bold;line-height: 34px;text-align: center;color: #fff;background-color: rgba(0, 93, 80, 0.6);width: 34px;border-radius: 50%;position: fixed;left: 10px;bottom: 20px;}
+a.btn-edit{bottom: 70px;}
 /* board */
 .edit-board{padding: 20px 30px;text-align: center;background-color: #fff;}
 .edit-board input{display: block;font-size: 16px;line-height: 16px;color: #999;padding: 7px 0;border-bottom: 1px solid #eee;width: 100%;}
 .edit-board button, .edit-board a{font-size: 16px;color: #005d50;margin: 20px 15px 0;}
 /* diaries */
-.profile-diaries li{padding: 0 20px 10px;margin-bottom: 20px;background-color: #fff;}
+.profile-diaries li{padding: 0 20px 10px;margin: 10px 0;background-color: #fff;}
 .profile-diaries li > a{font-size: 13px;line-height: 26px;text-align: center;margin-top: 10px;}
 .profile-diaries h4{font-size: 15px;line-height: 23px;color: #717070;padding: 10px 0;border-bottom: 1px solid #F0F0F0;position: relative;}
 .diary-content{font-size: 14px;line-height: 22px;color: #333;margin-top: 10px;}

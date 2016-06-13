@@ -9,10 +9,10 @@ var register = {
         $btn.on('click', function () {
             // 表单项
             var user_name = $('#user_name').val();
-            var password = $('#password').val();
-            var sex = $('#sex').val();
-            var tel = $('#tel').val();
-            var qq = $('#qq').val();
+            var password = $('#user_password').val();
+            var sex = $('#user_sex').val();
+            var tel = $('#user_tel').val();
+            var qq = $('#user_qq').val();
 
             var judge = user_name && password && sex && tel && qq;
             if (judge) {

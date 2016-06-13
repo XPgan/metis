@@ -7,27 +7,32 @@
 
     <% if (is_author) { %>
     <form enctype="multipart/form-data" id="form_portrait" class="c-horizontal">
-        <input type="file" id="portrait" name="portrait" class="js_portrait" />
+        <input type="file" id="user_portrait" name="portrait" class="js_portrait" />
     </form>
     <div class="log-ctrl">
         <a href="javascript:;" class="js_exit">退出</a><a href="javascript:;" class="js_logout">注销</a>
     </div>
     <% } %>
 </section>
+
+<% if (diaries) { %>
 <section class="profile-diaries">
     <ul>
+        <% diaries.forEach(function (diary) { %>
         <li>
             <h4>标题<a href="javascript:;" class="js_fav"><em>0</em><em class="ico-fav"></em></a></h4>
             <div class="diary-content">这里是内容</div>
             <a href="javascript:;" class="c-block js_read_more">阅读全部</a>
         </li>
+        <% }) %>
     </ul>
 </section>
+<% } %>
 
 <div class="c-hidden c-mask js_mask">
     <div class="edit-board c-footer js_edit_board">
         <form id="form_userinfo">
-            <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= userinfo.intro %>" />
+            <input type="text" id="user_intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= userinfo.intro %>" />
         </form>
         <button class="js_userinfo">提交</button>
         <a href="javascript:;" class="js_close">取消</a>

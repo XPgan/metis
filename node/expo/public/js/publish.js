@@ -16,7 +16,7 @@ var publish = {
                     url: "/diary/publish",
                     type: 'POST',
                     data: $form.serialize(),
-                    success: function () {
+                    success: function (data) {
                         main.showResult(data, function () {
                             history.back();
                         });

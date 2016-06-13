@@ -7,7 +7,7 @@ var Schema = mongoose.Schema;
 var db = mongoose.connect('mongodb://localhost/expo');
 
 var userSchema = new Schema({
-    id: String,
+    id: Number,
     user_name: String,
     password: String,
     sex: String,
@@ -19,7 +19,7 @@ var userSchema = new Schema({
     followers: []
 });
 var diarySchema = new Schema({
-    id: String,
+    id: Number,
     title: String,
     content: String,
     voters: []

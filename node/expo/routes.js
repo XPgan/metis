@@ -22,12 +22,13 @@ router.get('/', function (req, res) {
 // 个人页
 router.get('/profile/:id', function (req, res) {
     var id = req.params.id;
-    var diaries = [];
 
     find.do('user', id);
     find.info(function (user_info) {
         if (user_info) {
+            var diaries = [];
             var tmp = user_info.diaries;
+
             for (var i = 0;i < tmp.length;i++) {
                 find.do('diary', tmp[i]);
                 find.info(function (diary_info) {

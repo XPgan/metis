@@ -119,10 +119,6 @@ profile.diary = {
         _this.edit();
         _this.remove();
         _this.favour();
-
-        $('.js_read_more').on('click', function () {
-
-        });
     },
     edit: function () {
 

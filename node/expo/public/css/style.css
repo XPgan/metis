@@ -68,9 +68,8 @@ a.btn-edit{bottom: 70px;}
 .edit-board button, .edit-board a{font-size: 16px;color: #005d50;margin: 20px 15px 0;}
 /* diaries */
 .profile-diaries li{padding: 0 20px 10px;margin: 10px 0;background-color: #fff;}
-.profile-diaries li > a{font-size: 13px;line-height: 26px;text-align: center;margin-top: 10px;}
 .profile-diaries h4{font-size: 15px;line-height: 23px;color: #717070;padding: 10px 0;border-bottom: 1px solid #F0F0F0;position: relative;}
-.diary-content{font-size: 14px;line-height: 22px;color: #333;margin-top: 10px;}
+.diary-content{font-size: 13px;line-height: 22px;color: #333;margin-top: 10px;}
 /* fav */
 .profile-diaries h4 a{font-size: 12px;color: #9B9B9B;position: absolute;right: 0;}
 .profile-diaries h4 em{display: inline-block;vertical-align: middle;line-height: 20px;}

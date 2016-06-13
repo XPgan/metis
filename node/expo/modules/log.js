@@ -5,6 +5,7 @@
 var fs = require('fs');
 var find = require('./find');
 var User = require('../models').User;
+var Diary = require('../models').Diary;
 
 /** log
  * 描述: [登录] [注销] [注册] [退出登录]
@@ -41,15 +42,15 @@ var log = {
     },
     logout: function (req, res) {
         var _this = this;
+        var rmRecords = function (info) {
 
-        find.do('user', _this.user);
-        find.info(function (info) {
-            if (info.portrait) {
-                fs.unlink('../upload' + info.portrait);
+            // 删除用户日记
+            var diaries = info.diaries;
+            for (var i = 0;i < diaries.length;i++) {
+                Diary.remove({id: diaries[i]}, function (err) {});
             }
-        });
 
-        var t = setTimeout(function () {
+            // 删除用户记录
             User.remove(find.record, function (err) {
                 if (err) {
                     res.end(JSON.stringify({
@@ -64,7 +65,18 @@ var log = {
                     _this.user = '';
                 }
             });
-        }, 0);
+        };
+
+        find.do('user', _this.user);
+        find.info(function (info) {
+            if (info.portrait) {
+                fs.unlink('../upload' + info.portrait, function () {
+                    rmRecords(info);
+                });
+            } else {
+                rmRecords(info);
+            }
+        });
     },
     register: function (req, res) {
         req.body.id = (new Date()).valueOf();

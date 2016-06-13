@@ -26,25 +26,27 @@ router.get('/profile/:id', function (req, res) {
     find.do('user', id);
     find.info(function (user_info) {
         if (user_info) {
-            var diaries = [];
-            var tmp = user_info.diaries;
-            var count = tmp.length;
+            var diaries = user_info.diaries;
+            var count = diaries.length;
+            var data = {
+                is_author: (id == log.user),
+                userinfo: user_info,
+                diaries: []
+            };
 
-            for (var i = tmp.length;i > 0;i--) {
-                find.do('diary', tmp[i - 1]);
-                find.info(function (diary_info) {
-                    diaries.push(diary_info);
+            if (count) {
+                for (var i = count;i > 0;i--) {
+                    find.do('diary', diaries[i - 1]);
+                    find.info(function (diary_info) {
+                        data.diaries.push(diary_info);
 
-                    // 计数器: 查询完毕后 执行渲染
-                    count --;
-                    if (!count) {
-                        res.render('profile', {
-                            is_author: (id == log.user),
-                            userinfo: user_info,
-                            diaries: diaries
-                        });
-                    }
-                });
+                        // 计数器: 查询完毕时 渲染数据
+                        count --;
+                        !count && res.render('profile', data);
+                    });
+                }
+            } else {
+                res.render('profile', data);
             }
         } else {
             res.render('../message', {

@@ -69,13 +69,8 @@ var log = {
 
         find.do('user', _this.user);
         find.info(function (info) {
-            if (info.portrait) {
-                fs.unlink('../upload' + info.portrait, function () {
-                    rmRecords(info);
-                });
-            } else {
-                rmRecords(info);
-            }
+            info.portrait && fs.unlink('../upload' + info.portrait);
+            rmRecords(info);
         });
     },
     register: function (req, res) {

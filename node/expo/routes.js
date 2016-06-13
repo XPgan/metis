@@ -30,8 +30,8 @@ router.get('/profile/:id', function (req, res) {
             var tmp = user_info.diaries;
             var count = tmp.length;
 
-            for (var i = 0;i < tmp.length;i++) {
-                find.do('diary', tmp[i]);
+            for (var i = tmp.length;i > 0;i--) {
+                find.do('diary', tmp[i - 1]);
                 find.info(function (diary_info) {
                     diaries.push(diary_info);
 

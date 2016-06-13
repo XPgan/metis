@@ -121,7 +121,7 @@ profile.diary = {
         _this.favour();
 
         $('.js_read_more').on('click', function () {
-            $(this).prev().toggleClass('ellipsis-row2');
+
         });
     },
     edit: function () {

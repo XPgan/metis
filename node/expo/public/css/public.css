@@ -10,7 +10,7 @@ table{border-collapse: collapse;border-spacing: 0;}
 input, textarea, button{border: none;resize: none;outline: none;}
 button{background-color: transparent;}
 em, i{font-style: normal;}
-a{text-decoration: none;color: #007d6c;word-break: break-all;}
+a{text-decoration: none;color: #005d50;word-break: break-all;}
 img{display: block;width: 100%;}
 
 /* clear */

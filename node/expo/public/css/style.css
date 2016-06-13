@@ -1,14 +1,12 @@
 /* common */
-.expo-btn{display: inline-block;font-size: 16px;line-height: 26px;color: #fff;background-color: #007d6c;padding: 0 10px;cursor: pointer;}
+.expo-btn{display: inline-block;font-size: 16px;line-height: 26px;color: #fff;background-color: #005d50;padding: 0 10px;cursor: pointer;}
 .expo-btn:hover{background-color: #f1570e;}
-.expo-btn + a{display: inline-block;font-size: 16px;line-height: 26px;color: #007d6c;margin-left: 40px;}
+.expo-btn + a{display: inline-block;font-size: 16px;line-height: 26px;color: #005d50;margin-left: 40px;}
 .expo-back{display: block;font-size: 16px;line-height: 30px;width: 30px;text-align: center;color: #fff;background-color: #000;opacity: 0.4;border-radius: 50%;position: fixed;top: 10px;left: 10px;}
 .expo-card{background-color: rgba(255, 255, 255, 0.4);border-radius: 10px;text-align: center;}
-.expo-form input, .expo-form textarea{display: block;font-size: 16px;color: #666;width: 240px;padding: 7px 10px;box-sizing: border-box;box-shadow: inset 1px 1px 2px #999;}
-.expo-form input{line-height: 16px;}
+.expo-form input, .expo-form textarea{display: block;font-size: 16px;line-height: 16px;color: #666;width: 240px;padding: 7px 10px;box-sizing: border-box;box-shadow: inset 1px 1px 2px #999;}
 .expo-form textarea{line-height: 22px;}
-/*.expo-bg{background: #09b39c url('/images/svg/banner.svg') no-repeat 0 0;background-size: cover;}*/
-.expo-bg{background-color: #333;}
+.expo-bg{background: #09b39c url('/images/svg/banner.svg') no-repeat 0 0;background-size: cover;}
 
 /* dialog */
 .dialog{position: fixed;width: 260px;text-align: center;background-color: #fff;border-radius: 5px;}
@@ -16,9 +14,8 @@
 a.dialog-btn{font-size: 14px;line-height: 40px;color: #0aab94;border-top: 1px dashed #dad7d7;}
 
 /* message */
-.mes-code, .mes-arr{color: #eee;text-align: center;padding: 40px 20px;text-shadow: 1px 1px 2px #999;}
+.mes-code, .mes-arr{font-size: 20px;color: #eee;text-align: center;padding: 40px 20px;text-shadow: 1px 1px 2px #999;}
 .mes-code{font-size: 30px;line-height: 40px;margin-top: 50px;}
-.mes-arr{font-size: 20px;}
 
 /* index */
 .idx-banner{min-height: 180px;padding: 50px;}
@@ -63,8 +60,7 @@ a.dialog-btn{font-size: 14px;line-height: 40px;color: #0aab94;border-top: 1px da
 .profile-intro{font-size: 14px;line-height: 22px;padding: 10px 20px;background-color: rgba(255, 255, 255, 0.4);}
 .log-ctrl{position: absolute;top: 10px;right: 10px;}
 .log-ctrl a{line-height: 30px;color: #fff;margin-left: 15px;}
-a.btn-publish, a.btn-edit{font-size: 30px;font-weight: bold;line-height: 50px;text-align: center;color: #fff;background-color: rgba(0, 125, 108, 0.8);width: 50px;border-radius: 50%;position: fixed;left: 10px;}
-a.btn-publish{bottom: 20px;}
+a.btn-publish, a.btn-edit{font-size: 30px;font-weight: bold;line-height: 50px;text-align: center;color: #fff;background-color: rgba(0, 125, 108, 0.8);width: 50px;border-radius: 50%;position: fixed;left: 10px;bottom: 20px;}
 a.btn-edit{bottom: 90px;}
 /* board */
 .edit-board{padding: 20px 30px;text-align: center;background-color: #fff;}
@@ -84,6 +80,7 @@ em.ico-faved{background-position: 0 -20px;}
 
 
 @media screen and (max-width: 1020px) {
+    .idx-banner{background-position: -400px 0;}
     .idx-banner span{display: none;}
     .idx-login, .idx-about{margin: 0 auto;float: none;}
 }

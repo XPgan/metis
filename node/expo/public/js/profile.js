@@ -119,6 +119,10 @@ profile.diary = {
         _this.edit();
         _this.remove();
         _this.favour();
+
+        $('.js_read_more').on('click', function () {
+            $(this).prev().toggleClass('ellipsis-row2');
+        });
     },
     edit: function () {
 
@@ -127,7 +131,19 @@ profile.diary = {
 
     },
     favour: function () {
+        $('.js_fav').on('click', function () {
+            var $children = $(this).find('em');
+            var $count = $children.first();
+            var $ico = $children.last();
 
+            var count = $count.text() >> 0;
+            var is_faved = $ico.hasClass('ico-faved');
+
+            is_faved ? count-- : count ++;
+
+            $count.text(count);
+            $ico.toggleClass('ico-faved');
+        });
     }
 };
 

@@ -1,29 +1,31 @@
 <%- include ../header %>
 <section class="profile-info expo-bg">
-    <% if (is_author) { %>
-    <form enctype="multipart/form-data" id="form_portrait">
-        <input type="file" id="portrait" name="portrait" class="js_portrait" />
-    </form>
-    <a href="javascript:;" class="js_exit">退出</a><a href="javascript:;" class="js_logout">注销</a>
-    <% } %>
-
     <img src="<%= userinfo.portrait || '/portrait/default_portrait.jpg' %>" class="c-block" />
     <h3><%= userinfo.user_name %></h3>
     <span><%= userinfo.sex %></span><span><%= userinfo.tel %></span><span><%= userinfo.qq %></span>
     <div class="profile-intro"><%= userinfo.intro || '还咩有自我评价哦~' %></div>
+
+    <% if (is_author) { %>
+    <form enctype="multipart/form-data" id="form_portrait" class="c-horizontal">
+        <input type="file" id="portrait" name="portrait" class="js_portrait" />
+    </form>
+    <div class="log-ctrl">
+        <a href="javascript:;" class="js_exit">退出</a><a href="javascript:;" class="js_logout">注销</a>
+    </div>
+    <% } %>
 </section>
 <section class="profile-diaries">
     <ul>
         <li>
-            <h4>标题</h4>
-            <div class="diary-content ellipsis-row2">这里是内容</div>
+            <h4>标题<a href="javascript:;" class="js_fav"><em>0</em><em class="ico-fav"></em></a></h4>
+            <div class="diary-content ellipsis-row2 js_diary_content">这里是内容</div>
             <a href="javascript:;" class="c-block js_read_more">阅读全部</a>
         </li>
     </ul>
 </section>
 
 <div class="c-hidden c-mask js_mask">
-    <div class="edit-board c-bottom js_edit_board">
+    <div class="edit-board c-footer js_edit_board">
         <form id="form_userinfo">
             <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= userinfo.intro %>" />
         </form>
@@ -33,8 +35,8 @@
 </div>
 
 <% if (is_author) { %>
-<a href="/diary/publish" class="c-block">发布日记</a>
-<a href="javascript:;" class="c-block js_edit_userinfo">编辑用户信息</a>
+<a href="/diary/publish" class="btn-publish c-block">+</a>
+<a href="javascript:;" class="btn-edit c-block js_edit_userinfo">✎</a>
 <% } %>
 
 <a href="javascript:;" class="expo-back c-block js_back"><</a>

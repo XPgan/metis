@@ -79,7 +79,7 @@ em.ico-faved{background-position: 0 -20px;}
 
 
 @media screen and (max-width: 1020px) {
-    .idx-banner{background-position: -400px 0;}
+    .idx-banner{background-position: -400px 0;padding: 50px 0;}
     .idx-banner span{display: none;}
     .idx-login, .idx-about{margin: 0 auto;float: none;}
 }

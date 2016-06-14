@@ -51,9 +51,7 @@ var user = {
 
                     // 删除旧头像
                     find.info(function (info) {
-                        if (info.portrait) {
-                            fs.unlink('../upload' + info.portrait);
-                        }
+                        info.portrait && fs.unlink('../upload' + info.portrait);
                     });
 
                     // 更新记录

@@ -13,20 +13,20 @@ var Diary = require('../models').Diary;
 var diary = {
     publish: function (req, res, log_user) {
         var diary_id = (new Date()).valueOf();
-        req.body.id = diary_id;
 
         find.do('user', log_user);
         find.info(function (info) {
-            var diaries = info.diaries;
-            diaries.push(diary_id);
+            info.diaries.push(diary_id);
 
-            User.update(find.record, {diaries: diaries}, {}, function (err) {
+            User.update(find.record, {diaries: info.diaries}, {}, function (err) {
                 if (err) {
                     res.end(JSON.stringify({
                         message: '发布失败',
                         status: 0
                     }));
                 } else {
+                    req.body.id = diary_id;
+
                     var diary = new Diary(req.body);
                     diary.save(function (err) {
                         if (err) {

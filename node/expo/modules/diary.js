@@ -26,6 +26,7 @@ var diary = {
                     }));
                 } else {
                     req.body.id = diary_id;
+                    req.body.author = log_user;
 
                     var diary = new Diary(req.body);
                     diary.save(function (err) {

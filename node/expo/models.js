@@ -20,6 +20,7 @@ var userSchema = new Schema({
 });
 var diarySchema = new Schema({
     id: Number,
+    author: Number,
     title: String,
     content: String,
     voters: []

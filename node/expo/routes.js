@@ -35,6 +35,7 @@ router.get('/profile/:id', function (req, res) {
             };
 
             if (count) {
+                // 这里的循环是不是可以去掉
                 for (var i = count;i > 0;i--) {
                     find.do('diary', diaries[i - 1]);
                     find.info(function (diary_info) {

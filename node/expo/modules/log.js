@@ -43,14 +43,7 @@ var log = {
     logout: function (req, res) {
         var _this = this;
         var rmRecords = function (info) {
-
-            // 删除用户日记
-            var diaries = info.diaries;
-            for (var i = 0;i < diaries.length;i++) {
-                Diary.remove({id: diaries[i]}, function (err) {});
-            }
-
-            // 删除用户记录
+            Diary.remove({id: {$in: info.diaries}}, function (err) {});
             User.remove(find.record, function (err) {
                 if (err) {
                     res.end(JSON.stringify({

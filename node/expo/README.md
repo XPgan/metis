@@ -2,7 +2,7 @@
 <h5>express + mongodb + fs (node.js 实例)</h5>
 <h6>呆恋小喵&nbsp;&nbsp;&nbsp;&nbsp;qq: 493108053&nbsp;&nbsp;&nbsp;&nbsp;欢迎参观: www.miaomie.tech</h6>
 
-<h2>用户注册本站后即可发布个人日记，并可粉丝他人、收藏他人日记帖。</h2>
+<h2>用户注册本站后即可发布个人日记，并可粉丝他人、收藏他人日记帖</h2>
 <h5>后续功能: 评论 关注 点赞 推荐</h5>
 
 <h3>结构</h3>
@@ -128,9 +128,9 @@
             <li>
                 <h5>js</h5>
                 <ul>
-                    <li>main.js (公用脚本)<li>
+                    <li>main.js (公用脚本)</li>
                     <li>index.js</li>
-                    <li>register.js<li>
+                    <li>register.js</li>
                     <li>profile.js</li>
                     <li>diary.js</li>
                     <li>publish.js</li>

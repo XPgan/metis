@@ -52,8 +52,32 @@ var diary = {
     remove: function () {
 
     },
-    favour: function () {
+    favour: function (req, res, log_user, id) {
+        find.do('diary', id);
+        find.info(function (info) {
+            if (log_user) {
+                info.voters.push(log_user);
 
+                Diary.update(find.record, {voters: info.voters}, {}, function (err) {
+                    if (err) {
+                        res.end(JSON.stringify({
+                            message: '点赞失败',
+                            status: 0
+                        }));
+                    } else {
+                        res.end(JSON.stringify({
+                            message: '点赞成功',
+                            status: 1
+                        }));
+                    }
+                });
+            } else {
+                res.end(JSON.stringify({
+                    message: '请登录',
+                    status: 1001
+                }));
+            }
+        });
     }
 };
 

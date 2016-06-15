@@ -95,5 +95,8 @@ router.post('/user/edit/portrait', function (req, res) {
 router.post('/diary/publish', function (req, res) {
     diary.publish(req, res, log.user);
 });
+router.post('/diary/favour/:id', function (req, res) {
+    diary.favour(req, res, log.user, req.params.id);
+});
 
 module.exports = router;

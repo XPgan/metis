@@ -27,10 +27,20 @@ var main = {
         var status = JSON.parse(data).status;
         var message = JSON.parse(data).message;
 
-        if (status) {
-            callback(message);
-        } else {
-            _this.showDialog({message: message});
+        switch (status) {
+            case 0:
+                _this.showDialog({message: message});
+                break;
+            case 1:
+                callback(message);
+                break;
+            case 1001:
+                _this.showDialog({
+                    message: message,
+                    href: '/',
+                    btnClass: 'js_goto'
+                });
+                break;
         }
     },
     showDialog: function (opt) {

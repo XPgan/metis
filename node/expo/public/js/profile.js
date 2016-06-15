@@ -128,17 +128,25 @@ profile.diary = {
     },
     favour: function () {
         $('.js_fav').on('click', function () {
-            var $children = $(this).find('em');
-            var $count = $children.first();
-            var $ico = $children.last();
+            var id = $(this).data('id');
+            var $count = $(this.firstChild);
+            var $icon = $(this.lastChild);
 
-            var count = $count.text() >> 0;
-            var is_faved = $ico.hasClass('ico-faved');
+            $.ajax({
+                url: "/diary/favour/" + id,
+                type: 'POST',
+                success: function (data) {
+                    main.showResult(data, function () {
+                        var count = $count.text() >> 0;
+                        var faved = $icon.hasClass('ico-faved');
 
-            is_faved ? count-- : count ++;
+                        faved ? count-- : count ++;
 
-            $count.text(count);
-            $ico.toggleClass('ico-faved');
+                        $count.text(count);
+                        $icon.toggleClass('ico-faved');
+                    });
+                }
+            });
         });
     }
 };

@@ -20,7 +20,7 @@
     <ul>
         <% diaries.forEach(function (diary) { %>
         <li>
-            <h4><%= diary.title %><a href="javascript:;" class="js_fav"><em>0</em><em class="ico-fav"></em></a></h4>
+            <h4><%= diary.title %><a href="javascript:;" class="js_fav" data-id="<%= diary.id %>"><em>0</em><em class="ico-fav"></em></a></h4>
             <div class="diary-content"><%= diary.content %></div>
         </li>
         <% }) %>

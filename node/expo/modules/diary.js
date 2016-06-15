@@ -53,31 +53,38 @@ var diary = {
 
     },
     favour: function (req, res, log_user, id) {
-        find.do('diary', id);
-        find.info(function (info) {
-            if (log_user) {
-                info.voters.push(log_user);
-
-                Diary.update(find.record, {voters: info.voters}, {}, function (err) {
-                    if (err) {
-                        res.end(JSON.stringify({
-                            message: '点赞失败',
-                            status: 0
-                        }));
-                    } else {
-                        res.end(JSON.stringify({
-                            message: '点赞成功',
-                            status: 1
-                        }));
-                    }
+        if (log_user) {
+            // 用户: 记录点赞日记
+            var rcFavours = function (callback) {
+                find.do('user', log_user);
+                find.info(function (info) {
+                    info.favours.push(id >> 0);
+                    User.update(find.record, {favours: info.favours}, {}, function (err) {
+                        callback();
+                    });
                 });
-            } else {
-                res.end(JSON.stringify({
-                    message: '请登录',
-                    status: 1001
-                }));
-            }
-        });
+            };
+            // 日记: 记录点赞用户
+            var rcVoters = function () {
+                find.do('diary', id);
+                find.info(function (info) {
+                    info.voters.push(log_user);
+                    Diary.update(find.record, {voters: info.voters}, {}, function (err) {});
+                });
+            };
+
+            rcFavours(rcVoters);
+
+            res.end(JSON.stringify({
+                message: '点赞成功',
+                status: 1
+            }));
+        } else {
+            res.end(JSON.stringify({
+                message: '请登录',
+                status: 1001
+            }));
+        }
     }
 };
 

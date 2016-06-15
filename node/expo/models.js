@@ -16,7 +16,9 @@ var userSchema = new Schema({
     intro: String,
     portrait: String,
     diaries: [],
-    followers: []
+    followers: [],
+    concerns: [],
+    favours: []
 });
 var diarySchema = new Schema({
     id: Number,

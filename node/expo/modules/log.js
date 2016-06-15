@@ -13,7 +13,7 @@ var Diary = require('../models').Diary;
  */
 var log = {
 
-    user: null,
+    user: 0, // 0 表示未登录状态
 
     login: function (req, res) {
         var _this = this;
@@ -36,7 +36,7 @@ var log = {
                     message: '登录失败',
                     status: 0
                 }));
-                _this.user = '';
+                _this.user = 0;
             }
         });
     },
@@ -55,7 +55,7 @@ var log = {
                         message: '注销成功',
                         status: 1
                     }));
-                    _this.user = '';
+                    _this.user = 0;
                 }
             });
         };
@@ -82,7 +82,7 @@ var log = {
                     message: '注册成功',
                     status: 1
                 }));
-                _this.user = '';
+                _this.user = 0;
             }
         });
     },
@@ -92,7 +92,7 @@ var log = {
             message: '退出登录成功',
             status: 1
         }));
-        _this.user = '';
+        _this.user = 0;
     }
 };
 

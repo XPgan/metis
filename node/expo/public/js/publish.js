@@ -18,7 +18,7 @@ var publish = {
                     data: $form.serialize(),
                     success: function (data) {
                         main.showResult(data, function () {
-                            history.back();
+                            location.href = '/profile/' + page.log_user;
                         });
                     },
                     error: function () {

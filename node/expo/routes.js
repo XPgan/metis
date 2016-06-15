@@ -29,6 +29,7 @@ router.get('/profile/:id', function (req, res) {
             var diaries = user_info.diaries;
             var count = diaries.length;
             var data = {
+                log_user: log.user,
                 is_author: (id == log.user),
                 userinfo: user_info,
                 diaries: []
@@ -50,6 +51,7 @@ router.get('/profile/:id', function (req, res) {
             }
         } else {
             res.render('../message', {
+                log_user: log.user,
                 code: 404,
                 message: '这枚用户还未注册本站'
             });
@@ -58,12 +60,12 @@ router.get('/profile/:id', function (req, res) {
 });
 // 注册页
 router.get('/register', function (req, res) {
-    res.render('register');
+    res.render('register', {log_user: log.user});
 });
 // 发布页
 router.get('/diary/publish', function (req, res) {
     if (log.user) {
-        res.render('publish');
+        res.render('publish', {log_user: log.user});
     } else {
         res.redirect('/');
     }

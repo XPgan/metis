@@ -53,7 +53,7 @@ var log = {
         var _this = this;
 
         find.do('user', _this.user);
-        find.info(function (info) {
+        find.info(res, function (info) {
             if (info.portrait) {
                 fs.unlink('../upload' + info.portrait, function (err) {
                     if (err) {

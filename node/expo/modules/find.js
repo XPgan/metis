@@ -29,16 +29,30 @@ var find = {
         }
         _this.record = {id: id};
     },
-    info: function (callback) {
+    info: function (res, callback) {
         var _this = this;
         _this.model.find(_this.record, {}, {}, function (err, result) {
-            callback(result[0]);
+            if (err) {
+                res.end(JSON.stringify({
+                    message: '数据查询失败',
+                    status: 0
+                }));
+            } else {
+                callback(result[0]);
+            }
         });
     },
-    all: function (callback) {
+    all: function (res, callback) {
         var _this = this;
         _this.model.find({}, {}, {}, function (err, result) {
-            callback(result);
+            if (err) {
+                res.end(JSON.stringify({
+                    message: '数据查询失败',
+                    status: 0
+                }));
+            } else {
+                callback(result);
+            }
         });
     }
 };

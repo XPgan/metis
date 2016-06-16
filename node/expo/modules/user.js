@@ -14,8 +14,7 @@ var User = require('../models').User;
 var user = {
     edit: {
         info: function (req, res, log_user) {
-            find.do('user', log_user);
-            User.update(find.record, req.body, {}, function (err) {
+            User.update({id: log_user}, req.body, {}, function (err) {
                 if (err) {
                     res.end(JSON.stringify({
                         message: '提交失败',
@@ -50,7 +49,7 @@ var user = {
                     fs.renameSync(tmp_path, target_path);
 
                     // 删除旧头像
-                    find.info(function (info) {
+                    find.info(res, function (info) {
                         if (info.portrait) {
                             fs.unlink('../upload' + info.portrait, function (err) {
                                 if (err) {

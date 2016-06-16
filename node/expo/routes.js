@@ -12,7 +12,7 @@ var router = express.Router();
 // 主页
 router.get('/', function (req, res) {
     find.do('user');
-    find.all(function (users) {
+    find.all(res, function (users) {
         res.render('index', {
             log_user: log.user,
             users: users
@@ -24,7 +24,7 @@ router.get('/profile/:id', function (req, res) {
     var id = req.params.id;
 
     find.do('user', id);
-    find.info(function (user_info) {
+    find.info(res, function (user_info) {
         if (user_info) {
             var diaries = user_info.diaries;
             var count = diaries.length;
@@ -38,7 +38,7 @@ router.get('/profile/:id', function (req, res) {
             if (count) {
                 for (var i = count;i > 0;i--) {
                     find.do('diary', diaries[i - 1]);
-                    find.info(function (diary_info) {
+                    find.info(res, function (diary_info) {
                         data.diaries.push(diary_info);
 
                         // 计数器: 数据查询完毕时渲染页面

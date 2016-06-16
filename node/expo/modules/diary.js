@@ -37,7 +37,7 @@ var diary = {
          * 字段: diaries
          */
         find.do('user', log_user);
-        find.info(function (info) {
+        find.info(res, function (info) {
             info.diaries.push(diary_id);
             User.update(find.record, {diaries: info.diaries}, {}, function (err) {
                 if (err) {
@@ -68,7 +68,7 @@ var diary = {
              * 字段: favours
              */
             find.do('user', log_user);
-            find.info(function (info) {
+            find.info(res, function (info) {
                 info.favours.push(id);
                 User.update({id: log_user}, {favours: info.favours}, {}, function (err) {
                     if (err) {
@@ -86,7 +86,7 @@ var diary = {
              * 字段: voters
              */
             find.do('diary', id);
-            find.info(function (info) {
+            find.info(res, function (info) {
                 info.voters.push(log_user);
                 Diary.update({id: id}, {voters: info.voters}, {}, function (err) {
                     if (err) {

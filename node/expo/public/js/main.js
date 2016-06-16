@@ -28,13 +28,13 @@ var main = {
         var message = JSON.parse(data).message;
 
         switch (status) {
-            case 0:
+            case 0: // 操作失败
                 _this.showDialog({message: message});
                 break;
-            case 1:
+            case 1: // 操作成功
                 callback(message);
                 break;
-            case 1001:
+            case 1001: // 未登录
                 _this.showDialog({
                     message: message,
                     href: '/',

@@ -41,7 +41,7 @@ router.get('/profile/:id', function (req, res) {
                     find.info(function (diary_info) {
                         data.diaries.push(diary_info);
 
-                        // 计数器: 查询完毕时 渲染数据
+                        // 计数器: 数据查询完毕时渲染页面
                         count --;
                         !count && res.render('profile', data);
                     });

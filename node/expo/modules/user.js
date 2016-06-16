@@ -51,10 +51,23 @@ var user = {
 
                     // 删除旧头像
                     find.info(function (info) {
-                        info.portrait && fs.unlink('../upload' + info.portrait);
+                        if (info.portrait) {
+                            fs.unlink('../upload' + info.portrait, function (err) {
+                                if (err) {
+                                    res.end(JSON.stringify({
+                                        message: '上传失败',
+                                        status: 0
+                                    }));
+                                }
+                            });
+                        }
                     });
 
-                    // 更新记录
+                    /**
+                     * 操作: 修改记录
+                     * 数据表: users
+                     * 字段: portrait
+                     */
                     User.update(find.record, {portrait: url}, {}, function (err) {
                         if (err) {
                             res.end(JSON.stringify({

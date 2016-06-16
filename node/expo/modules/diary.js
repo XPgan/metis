@@ -12,12 +12,33 @@ var Diary = require('../models').Diary;
  */
 var diary = {
     publish: function (req, res, log_user) {
-        var diary_id = (new Date()).valueOf();
+        var diary_id = (new Date()).valueOf().toString();
 
+        /**
+         * 操作: 添加记录
+         * 数据表: diaries
+         */
+        req.body.id = diary_id;
+        req.body.author = log_user;
+
+        var diary = new Diary(req.body);
+        diary.save(function (err) {
+            if (err) {
+                res.end(JSON.stringify({
+                    message: '发布失败',
+                    status: 0
+                }));
+            }
+        });
+
+        /**
+         * 操作: 记录 日记 [id]
+         * 数据表: users
+         * 字段: diaries
+         */
         find.do('user', log_user);
         find.info(function (info) {
             info.diaries.push(diary_id);
-
             User.update(find.record, {diaries: info.diaries}, {}, function (err) {
                 if (err) {
                     res.end(JSON.stringify({
@@ -25,23 +46,10 @@ var diary = {
                         status: 0
                     }));
                 } else {
-                    req.body.id = diary_id;
-                    req.body.author = log_user;
-
-                    var diary = new Diary(req.body);
-                    diary.save(function (err) {
-                        if (err) {
-                            res.end(JSON.stringify({
-                                message: '发布失败',
-                                status: 0
-                            }));
-                        } else {
-                            res.end(JSON.stringify({
-                                message: '发布成功',
-                                status: 1
-                            }));
-                        }
-                    });
+                    res.end(JSON.stringify({
+                        message: '发布成功',
+                        status: 1
+                    }));
                 }
             });
         });
@@ -54,31 +62,46 @@ var diary = {
     },
     favour: function (req, res, log_user, id) {
         if (log_user) {
-            // 用户: 记录点赞日记
-            var rcFavours = function (callback) {
-                find.do('user', log_user);
-                find.info(function (info) {
-                    info.favours.push(id >> 0);
-                    User.update(find.record, {favours: info.favours}, {}, function (err) {
-                        callback();
-                    });
+            /**
+             * 操作: 记录 日记 [id]
+             * 数据表: users
+             * 字段: favours
+             */
+            find.do('user', log_user);
+            find.info(function (info) {
+                info.favours.push(id);
+                User.update({id: log_user}, {favours: info.favours}, {}, function (err) {
+                    if (err) {
+                        res.end(JSON.stringify({
+                            message: '点赞失败',
+                            status: 0
+                        }));
+                    }
                 });
-            };
-            // 日记: 记录点赞用户
-            var rcVoters = function () {
-                find.do('diary', id);
-                find.info(function (info) {
-                    info.voters.push(log_user);
-                    Diary.update(find.record, {voters: info.voters}, {}, function (err) {});
+            });
+
+            /**
+             * 操作: 记录 用户 [id]
+             * 数据表: diaries
+             * 字段: voters
+             */
+            find.do('diary', id);
+            find.info(function (info) {
+                info.voters.push(log_user);
+                Diary.update({id: id}, {voters: info.voters}, {}, function (err) {
+                    if (err) {
+                        res.end(JSON.stringify({
+                            message: '点赞失败',
+                            status: 0
+                        }));
+                    } else {
+                        res.end(JSON.stringify({
+                            message: '点赞成功',
+                            status: 1
+                        }));
+                    }
                 });
-            };
-
-            rcFavours(rcVoters);
-
-            res.end(JSON.stringify({
-                message: '点赞成功',
-                status: 1
-            }));
+            });
         } else {
             res.end(JSON.stringify({
                 message: '请登录',

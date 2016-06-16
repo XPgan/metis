@@ -7,7 +7,6 @@ var register = {
         var $btn = $('.js_register');
         var $form = $('#form_register');
         $btn.on('click', function () {
-            // 表单项
             var user_name = $('#user_name').val();
             var password = $('#user_password').val();
             var sex = $('#user_sex').val();

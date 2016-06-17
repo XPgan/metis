@@ -3,7 +3,10 @@
 <h6>呆恋小喵&nbsp;&nbsp;&nbsp;&nbsp;qq: 493108053&nbsp;&nbsp;&nbsp;&nbsp;欢迎参观: www.miaomie.tech</h6>
 
 <h2>用户注册本站后即可发布个人日记，并可粉丝他人、收藏他人日记帖</h2>
-<h5>后续功能: 评论 关注 点赞 推荐</h5>
+<h5>后续功能: 评论 关注 推荐</h5>
+
+<h6>数据库: expo</h6>
+<h6>数据表: users diaries</h6>
 
 <h3>结构</h3>
 <ul>

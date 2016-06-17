@@ -33,7 +33,6 @@ router.get('/profile/:id', function (req, res) {
         find.info(res, function (info) {
             info.is_faved = 0;
             info.voter_num = info.voters.length;
-
             if (log.user) {
                 var voters = info.voters;
                 for (var j = 0;j < voters.length;j++) {
@@ -43,7 +42,6 @@ router.get('/profile/:id', function (req, res) {
                     }
                 }
             }
-
             data.diaries.push(info);
             !count && res.render('profile', data);
         });
@@ -100,6 +98,7 @@ router.post('/exit', function (req, res) {
     log.exit(req, res);
 });
 
+// user
 router.post('/user/edit/info', function (req, res) {
     user.edit.info(req, res, log.user);
 });
@@ -107,6 +106,7 @@ router.post('/user/edit/portrait', function (req, res) {
     user.edit.portrait(req, res, log.user);
 });
 
+// diary
 router.post('/diary/publish', function (req, res) {
     diary.publish(req, res, log.user);
 });
@@ -116,5 +116,6 @@ router.post('/diary/favour/verify/:id', function (req, res) {
 router.post('/diary/favour/cancel/:id', function (req, res) {
     diary.favour.cancel(req, res, log.user, req.params.id);
 });
+
 
 module.exports = router;

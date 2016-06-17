@@ -135,7 +135,7 @@ profile.diary = {
             var is_faved = _self.data('is_faved');
             var count = $count.text() >> 0;
 
-            if (is_faved) {
+            var cancelFavour = function () {
                 $.ajax({
                     url: "/diary/favour/cancel/" + id,
                     type: 'POST',
@@ -146,11 +146,15 @@ profile.diary = {
                             $count.text(count);
                             $icon.removeClass('ico-faved');
                         });
+                    },
+                    error: function () {
+                        main.showDialog({message: '取消点赞失败'});
                     }
                 });
-            } else {
+            };
+            var verifyFavour = function () {
                 $.ajax({
-                    url: "/diary/favour/" + id,
+                    url: "/diary/favour/verify/" + id,
                     type: 'POST',
                     success: function (data) {
                         main.showResult(data, function () {
@@ -159,9 +163,14 @@ profile.diary = {
                             $count.text(count);
                             $icon.addClass('ico-faved');
                         });
+                    },
+                    error: function () {
+                        main.showDialog({message: '点赞失败'});
                     }
                 });
-            }
+            };
+
+            is_faved ? cancelFavour() : verifyFavour();
         });
     }
 };

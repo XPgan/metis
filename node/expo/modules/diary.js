@@ -60,8 +60,65 @@ var diary = {
     remove: function () {
 
     },
-    favour: function (req, res, log_user, id) {
-        if (log_user) {
+    favour: {
+        verify: function (req, res, log_user, id) {
+            if (log_user) {
+                /**
+                 * 操作: 记录 日记 [id]
+                 * 数据表: users
+                 * 字段: favours
+                 */
+                find.do('user', log_user);
+                find.info(res, function (info) {
+                    info.favours.push(id);
+                    User.update({id: log_user}, {favours: info.favours}, {}, function (err) {
+                        if (err) {
+                            res.end(JSON.stringify({
+                                message: '点赞失败',
+                                status: 0
+                            }));
+                        }
+                    });
+                });
+
+                /**
+                 * 操作: 记录 用户 [id]
+                 * 数据表: diaries
+                 * 字段: voters
+                 */
+                find.do('diary', id);
+                find.info(res, function (info) {
+                    info.voters.push(log_user);
+                    Diary.update({id: id}, {voters: info.voters}, {}, function (err) {
+                        if (err) {
+                            res.end(JSON.stringify({
+                                message: '点赞失败',
+                                status: 0
+                            }));
+                        } else {
+                            res.end(JSON.stringify({
+                                message: '点赞成功',
+                                status: 1
+                            }));
+                        }
+                    });
+                });
+            } else {
+                res.end(JSON.stringify({
+                    message: '请登录',
+                    status: 1001
+                }));
+            }
+        },
+        cancel: function (req, res, log_user, id) {
+            var rmItem = function (lst, id) {
+                for (var i = 0;i < lst.length;i++) {
+                    if (id == lst[i]) {
+                        lst.splice(i, 1);
+                    }
+                }
+            };
+
             /**
              * 操作: 记录 日记 [id]
              * 数据表: users
@@ -69,7 +126,7 @@ var diary = {
              */
             find.do('user', log_user);
             find.info(res, function (info) {
-                info.favours.push(id);
+                rmItem(info.favours, id);
                 User.update({id: log_user}, {favours: info.favours}, {}, function (err) {
                     if (err) {
                         res.end(JSON.stringify({
@@ -87,7 +144,7 @@ var diary = {
              */
             find.do('diary', id);
             find.info(res, function (info) {
-                info.voters.push(log_user);
+                rmItem(info.voters, log_user);
                 Diary.update({id: id}, {voters: info.voters}, {}, function (err) {
                     if (err) {
                         res.end(JSON.stringify({
@@ -102,11 +159,6 @@ var diary = {
                     }
                 });
             });
-        } else {
-            res.end(JSON.stringify({
-                message: '请登录',
-                status: 1001
-            }));
         }
     }
 };

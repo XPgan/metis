@@ -30,21 +30,21 @@ router.get('/profile/:id', function (req, res) {
     };
     var getDiaryInfo = function (id, count) {
         find.do('diary', id);
-        find.info(res, function (diary) {
-            diary.is_faved = 0;
-            diary.voter_num = diary.voters.length;
+        find.info(res, function (info) {
+            info.is_faved = 0;
+            info.voter_num = info.voters.length;
 
             if (log.user) {
-                var voters = diary.voters;
+                var voters = info.voters;
                 for (var j = 0;j < voters.length;j++) {
                     if (log.user == voters[j]) {
-                        diary.is_faved = 1;
+                        info.is_faved = 1;
                         break;
                     }
                 }
             }
 
-            data.diaries.push(diary);
+            data.diaries.push(info);
             !count && res.render('profile', data);
         });
     };
@@ -110,8 +110,11 @@ router.post('/user/edit/portrait', function (req, res) {
 router.post('/diary/publish', function (req, res) {
     diary.publish(req, res, log.user);
 });
-router.post('/diary/favour/:id', function (req, res) {
-    diary.favour(req, res, log.user, req.params.id);
+router.post('/diary/favour/verify/:id', function (req, res) {
+    diary.favour.verify(req, res, log.user, req.params.id);
+});
+router.post('/diary/favour/cancel/:id', function (req, res) {
+    diary.favour.cancel(req, res, log.user, req.params.id);
 });
 
 module.exports = router;

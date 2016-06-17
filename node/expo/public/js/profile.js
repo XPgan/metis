@@ -128,25 +128,40 @@ profile.diary = {
     },
     favour: function () {
         $('.js_fav').on('click', function () {
-            var id = $(this).data('id');
-            var $count = $(this.firstChild);
-            var $icon = $(this.lastChild);
+            var _self = $(this);
+            var $count = _self.children(':first');
+            var $icon = _self.children(':last');
+            var id = _self.data('id');
+            var is_faved = _self.data('is_faved');
+            var count = $count.text() >> 0;
 
-            $.ajax({
-                url: "/diary/favour/" + id,
-                type: 'POST',
-                success: function (data) {
-                    main.showResult(data, function () {
-                        var count = $count.text() >> 0;
-                        var faved = $icon.hasClass('ico-faved');
-
-                        faved ? count-- : count ++;
-
-                        $count.text(count);
-                        $icon.toggleClass('ico-faved');
-                    });
-                }
-            });
+            if (is_faved) {
+                $.ajax({
+                    url: "/diary/favour/cancel/" + id,
+                    type: 'POST',
+                    success: function (data) {
+                        main.showResult(data, function () {
+                            _self.data('is_faved', 0);
+                            count--;
+                            $count.text(count);
+                            $icon.removeClass('ico-faved');
+                        });
+                    }
+                });
+            } else {
+                $.ajax({
+                    url: "/diary/favour/" + id,
+                    type: 'POST',
+                    success: function (data) {
+                        main.showResult(data, function () {
+                            _self.data('is_faved', 1);
+                            count++;
+                            $count.text(count);
+                            $icon.addClass('ico-faved');
+                        });
+                    }
+                });
+            }
         });
     }
 };

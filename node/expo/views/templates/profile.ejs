@@ -20,7 +20,7 @@
     <ul>
         <% diaries.forEach(function (diary) { %>
         <li>
-            <h4><%= diary.title %><a href="javascript:;" class="js_fav" data-id="<%= diary.id %>"><em>0</em><em class="ico-fav"></em></a></h4>
+            <h4><%= diary.title %><a href="javascript:;" class="js_fav" data-id="<%= diary.id %>" data-is_faved="<%= diary.is_faved %>"><em><%= diary.voter_num %></em><em class="ico-fav <% if (diary.is_faved) { %>ico-faved<% } %>"></em></a></h4>
             <div class="diary-content"><%= diary.content %></div>
         </li>
         <% }) %>

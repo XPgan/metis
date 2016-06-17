@@ -21,30 +21,53 @@ router.get('/', function (req, res) {
 });
 // 个人页
 router.get('/profile/:id', function (req, res) {
-    var id = req.params.id;
+    var visited = req.params.id;
+    var data = {
+        log_user: log.user,
+        is_author: (visited == log.user),
+        userinfo: {},
+        diaries: []
+    };
+    var getDiaryInfo = function (id, count) {
+        find.do('diary', id);
+        find.info(res, function (info) {
+            info.is_faved = 0;
+            info.voter_num = info.voters.length;
 
-    find.do('user', id);
-    find.info(res, function (user_info) {
-        if (user_info) {
-            var diaries = user_info.diaries;
+            if (log.user) {
+                getFavStatus(info, count);
+            } else {
+                data.diaries.push(info);
+                !count && res.render('profile', data);
+            }
+        });
+    };
+    var getFavStatus = function (diary, count) {
+        find.do('user', log.user);
+        find.info(res, function (info) {
+            var favours = info.favours;
+            for (var j = 0;j < favours.length;j++) {
+                if (diary.id == favours[j]) {
+                    diary.is_faved = 1;
+                    break;
+                }
+            }
+            data.diaries.push(diary);
+            !count && res.render('profile', data);
+        });
+    };
+
+    find.do('user', visited);
+    find.info(res, function (info) {
+        if (info) {
+            data.userinfo = info;
+
+            var diaries = info.diaries;
             var count = diaries.length;
-            var data = {
-                log_user: log.user,
-                is_author: (id == log.user),
-                userinfo: user_info,
-                diaries: []
-            };
-
-            if (count) {
-                for (var i = count;i > 0;i--) {
-                    find.do('diary', diaries[i - 1]);
-                    find.info(res, function (diary_info) {
-                        data.diaries.push(diary_info);
-
-                        // 计数器: 数据查询完毕时渲染页面
-                        count --;
-                        !count && res.render('profile', data);
-                    });
+            if (diaries.length) {
+                for (var i = diaries.length;i > 0;i--) {
+                    count--;
+                    getDiaryInfo(diaries[i - 1], count);
                 }
             } else {
                 res.render('profile', data);

@@ -30,28 +30,20 @@ router.get('/profile/:id', function (req, res) {
     };
     var getDiaryInfo = function (id, count) {
         find.do('diary', id);
-        find.info(res, function (info) {
-            info.is_faved = 0;
-            info.voter_num = info.voters.length;
+        find.info(res, function (diary) {
+            diary.is_faved = 0;
+            diary.voter_num = diary.voters.length;
 
             if (log.user) {
-                getFavStatus(info, count);
-            } else {
-                data.diaries.push(info);
-                !count && res.render('profile', data);
-            }
-        });
-    };
-    var getFavStatus = function (diary, count) {
-        find.do('user', log.user);
-        find.info(res, function (info) {
-            var favours = info.favours;
-            for (var j = 0;j < favours.length;j++) {
-                if (diary.id == favours[j]) {
-                    diary.is_faved = 1;
-                    break;
+                var voters = diary.voters;
+                for (var j = 0;j < voters.length;j++) {
+                    if (log.user == voters[j]) {
+                        diary.is_faved = 1;
+                        break;
+                    }
                 }
             }
+
             data.diaries.push(diary);
             !count && res.render('profile', data);
         });

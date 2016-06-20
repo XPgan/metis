@@ -15,18 +15,10 @@
     <% } %>
 </section>
 
-<% if (diaries) { %>
-<section class="profile-diaries">
-    <ul>
-        <% diaries.forEach(function (diary) { %>
-        <li>
-            <h4><%= diary.title %><a href="javascript:;" class="js_fav" data-id="<%= diary.id %>" data-is_faved="<%= diary.is_faved %>"><em><%= diary.voter_num %></em><em class="ico-fav <% if (diary.is_faved) { %>ico-faved<% } %>"></em></a></h4>
-            <div class="diary-content"><%= diary.content %></div>
-        </li>
-        <% }) %>
-    </ul>
+<section class="diaries-lst">
+    <ul class="js_diaries"></ul>
 </section>
-<% } %>
+<%- include modules/m-diary.ejs %>
 
 <div class="c-hidden c-mask js_mask">
     <div class="edit-board c-footer js_edit_board">
@@ -45,5 +37,10 @@
 
 <a href="javascript:;" class="expo-back c-block js_back"><</a>
 
+<script>
+    global.page = {
+        cur_user: <%= cur_user %>
+    };
+</script>
 <script src="/js/profile.js"></script>
 <%- include ../footer %>

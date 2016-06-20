@@ -17,6 +17,25 @@ a.dialog-btn{font-size: 14px;line-height: 40px;color: #0aab94;border-top: 1px da
 .mes-code, .mes-arr{font-size: 20px;color: #eee;text-align: center;padding: 40px 20px;text-shadow: 1px 1px 2px #999;}
 .mes-code{font-size: 30px;line-height: 40px;margin-top: 50px;}
 
+/* diaries */
+.diaries-lst li{padding: 0 20px 10px;margin: 10px 0;background-color: #fff;}
+.diaries-lst h4{font-size: 15px;line-height: 23px;color: #717070;padding: 10px 0;border-bottom: 1px solid #F0F0F0;position: relative;}
+.diary-content{font-size: 13px;line-height: 22px;color: #333;margin-top: 10px;}
+/* fav */
+.diaries-lst h4 a{font-size: 12px;color: #9B9B9B;position: absolute;right: 0;}
+.diaries-lst h4 em{display: inline-block;vertical-align: middle;line-height: 20px;}
+.diaries-lst h4 em:last-child{width: 22px;height: 20px;background-size: auto 40px;margin-left: 4px;}
+em.ico-fav{background: url('/images/svg/ico_fav.svg') no-repeat 0 0;}
+em.ico-faved{background-position: 0 -20px;}
+
+/* users */
+.users-lst li{margin-bottom: 15px;padding: 20px;background-color: #fff;}
+.users-lst h4{position: relative;padding-left: 65px;font-size: 16px;line-height: 50px;color: #999;}
+.users-lst img{width: 50px;height: 50px;border-radius: 50%;position: absolute;top: 0;left: 0;}
+.users-lst span{display: inline-block;font-size: 12px;color: #999;margin: 15px 10px 0 0;}
+.user-intro{font-size: 16px;line-height: 22px;color: #717070;margin-top: 15px;}
+
+
 /* index */
 .idx-banner{min-height: 180px;padding: 50px;}
 .idx-banner span{font-size: 100px;line-height: 222px;color: rgba(255, 255, 255, 0.6);float: left;}
@@ -30,12 +49,6 @@ a.dialog-btn{font-size: 14px;line-height: 40px;color: #0aab94;border-top: 1px da
 .idx-about p{text-align: left;}
 .idx-about p a{color: #fff;}
 .idx-about > a{display: inline-block;text-decoration: underline;font-weight: bold;margin: 20px 25px 0;}
-/* lst */
-.users-lst li{margin-bottom: 15px;padding: 20px;background-color: #fff;}
-.users-lst h4{position: relative;padding-left: 65px;font-size: 16px;line-height: 50px;color: #999;}
-.users-lst img{width: 50px;height: 50px;border-radius: 50%;position: absolute;top: 0;left: 0;}
-.users-lst span{display: inline-block;font-size: 12px;color: #999;margin: 15px 10px 0 0;}
-.user-intro{font-size: 16px;line-height: 22px;color: #717070;margin-top: 15px;}
 
 /* register */
 .register{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background-position: -1500px 0;}
@@ -66,16 +79,6 @@ a.btn-edit{bottom: 70px;}
 .edit-board{padding: 20px 30px;text-align: center;background-color: #fff;}
 .edit-board input{display: block;font-size: 16px;line-height: 16px;color: #999;padding: 7px 0;border-bottom: 1px solid #eee;width: 100%;}
 .edit-board button, .edit-board a{font-size: 16px;color: #005d50;margin: 20px 15px 0;}
-/* diaries */
-.profile-diaries li{padding: 0 20px 10px;margin: 10px 0;background-color: #fff;}
-.profile-diaries h4{font-size: 15px;line-height: 23px;color: #717070;padding: 10px 0;border-bottom: 1px solid #F0F0F0;position: relative;}
-.diary-content{font-size: 13px;line-height: 22px;color: #333;margin-top: 10px;}
-/* fav */
-.profile-diaries h4 a{font-size: 12px;color: #9B9B9B;position: absolute;right: 0;}
-.profile-diaries h4 em{display: inline-block;vertical-align: middle;line-height: 20px;}
-.profile-diaries h4 em:last-child{width: 22px;height: 20px;background-size: auto 40px;margin-left: 4px;}
-em.ico-fav{background: url('/images/svg/ico_fav.svg') no-repeat 0 0;}
-em.ico-faved{background-position: 0 -20px;}
 
 
 @media screen and (max-width: 1020px) {

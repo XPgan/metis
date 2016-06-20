@@ -4,6 +4,27 @@
 
 var profile = {};
 
+profile.init = {
+    do: function () {
+        var _this = this;
+        _this.renderDiaries();
+    },
+    renderDiaries: function () {
+        $.ajax({
+            url: '/diaries?user=' + global.page.cur_user + '&page=0',
+            type: 'POST',
+            success: function (data) {
+                $('#tmpl_diary')
+                    .tmpl(JSON.parse(data))
+                    .appendTo('.js_diaries');
+            },
+            error: function () {
+                main.showDialog({message: '网络错误'});
+            }
+        });
+    }
+};
+
 profile.user = {
     do: function () {
         var _this = this;
@@ -127,7 +148,7 @@ profile.diary = {
 
     },
     favour: function () {
-        $('.js_fav').on('click', function () {
+        $('body').on('click', '.js_fav', function () {
             var _self = $(this);
             var $count = _self.children(':first');
             var $icon = _self.children(':last');
@@ -175,5 +196,6 @@ profile.diary = {
     }
 };
 
+profile.init.do();
 profile.user.do();
 profile.diary.do();

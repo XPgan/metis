@@ -21,47 +21,17 @@ router.get('/', function (req, res) {
 });
 // 个人页
 router.get('/profile/:id', function (req, res) {
-    var visited = req.params.id;
-    var data = {
-        log_user: log.user,
-        is_author: (visited == log.user),
-        userinfo: {},
-        diaries: []
-    };
-    var getDiaryInfo = function (id, count) {
-        find.do('diary', id);
-        find.info(res, function (info) {
-            info.is_faved = 0;
-            info.voter_num = info.voters.length;
-            if (log.user) {
-                var voters = info.voters;
-                for (var j = 0;j < voters.length;j++) {
-                    if (log.user == voters[j]) {
-                        info.is_faved = 1;
-                        break;
-                    }
-                }
-            }
-            data.diaries.push(info);
-            !count && res.render('profile', data);
-        });
-    };
+    var id = req.params.id;
 
-    find.do('user', visited);
+    find.do('user', id);
     find.info(res, function (info) {
         if (info) {
-            data.userinfo = info;
-
-            var diaries = info.diaries;
-            var count = diaries.length;
-            if (diaries.length) {
-                for (var i = diaries.length;i > 0;i--) {
-                    count--;
-                    getDiaryInfo(diaries[i - 1], count);
-                }
-            } else {
-                res.render('profile', data);
-            }
+            res.render('profile', {
+                log_user: log.user,
+                cur_user: id,
+                is_author: (id == log.user),
+                userinfo: info
+            });
         } else {
             res.render('../message', {
                 log_user: log.user,
@@ -82,6 +52,59 @@ router.get('/diary/publish', function (req, res) {
     } else {
         res.redirect('/');
     }
+});
+
+
+router.post('/diaries', function (req, res) {
+    var num = 5; // 分页单位
+    var user = req.query.user;
+    var page = req.query.page;
+    var data = {
+        status: 0,
+        diaries: []
+    };
+    var getDiaryInfo = function (id, count) {
+        find.do('diary', id);
+        find.info(res, function (info) {
+            info.is_faved = 0;
+            info.voter_num = info.voters.length;
+            if (log.user) {
+                var voters = info.voters;
+                for (var j = 0;j < voters.length;j++) {
+                    if (log.user == voters[j]) {
+                        info.is_faved = 1;
+                        break;
+                    }
+                }
+            }
+            data.diaries.push(info);
+            !count && res.end(JSON.stringify(data));
+        });
+    };
+
+    find.do('user', user);
+    find.info(res, function (info) {
+        var diaries = info.diaries;
+        var start = page * num;
+        var end = (page + 1) * num;
+
+        // 最末分页
+        if (diaries.length - start <= num) {
+            data.status = 1;
+            end = diaries.length;
+        }
+
+        var count = end - start; // 计数器
+
+        if (diaries.length) {
+            for (var i = start;i < end;i++) {
+                count--;
+                getDiaryInfo(diaries[i], count);
+            }
+        } else {
+            res.end(JSON.stringify(data));
+        }
+    });
 });
 
 

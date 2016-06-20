@@ -38,7 +38,7 @@ var find = {
                     status: 0
                 }));
             } else {
-                callback(result[0]);
+                callback(JSON.parse(JSON.stringify(result[0])));
             }
         });
     },

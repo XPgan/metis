@@ -56,7 +56,7 @@ var main = {
         var page = 1;
         var $loadmore = $('.js_loadmore');
         var $loading = $('.js_loading');
-        var request = function (opt, page) {
+        var request = function (page) {
             $.ajax({
                 url: opt.url + '&page=' + page,
                 type: 'POST',
@@ -91,10 +91,10 @@ var main = {
         };
 
         // 渲染首分页
-        request(opt, 0);
+        request(0);
 
         $loadmore.on('click', function () {
-            request(opt, page);
+            request(page);
         });
 
         $(window).on('scroll', function () {

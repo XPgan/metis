@@ -13,7 +13,7 @@
     <li>
         <h4>首页&nbsp;&nbsp;<strong>'/'</strong></h4>
         <ul>
-            <li>达人列表</li>
+            <li>最新注册用户列表</li>
             <li>精选日记列表</li>
             <li>作者信息</li>
             <li>登录&nbsp;&nbsp;<em>[user_name] [password]</em></li>

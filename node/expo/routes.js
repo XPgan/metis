@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
     find.all(res, function (users) {
         res.render('index', {
             log_user: log.user,
-            users: users
+            users: users.reverse().splice(0, 5)
         });
     });
 });
@@ -60,7 +60,7 @@ router.post('/diaries', function (req, res) {
     var user = req.query.user;
     var page = req.query.page >> 0;
     var data = {
-        status: 0,
+        status: 1,
         data: []
     };
     var getDiaryInfo = function (id, count) {
@@ -89,11 +89,9 @@ router.post('/diaries', function (req, res) {
             var start = page * num;
             var end = (page + 1) * num;
 
-            // 最末分页
-            if (diaries.length - start <= num) {
-                data.status = 1;
-                end = diaries.length;
-            }
+            (diaries.length - start <= num)
+                ? (end = diaries.length)
+                : (data.status = 0);
 
             if (end > start) {
                 var count = end - start; // 计数器
@@ -103,7 +101,6 @@ router.post('/diaries', function (req, res) {
                 }
             }
         } else {
-            data.status = 1;
             res.end(JSON.stringify(data));
         }
     });

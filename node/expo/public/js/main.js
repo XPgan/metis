@@ -49,6 +49,27 @@ var main = {
             .replace('$href', opt.href || null)
             .replace('$btnClass', opt.btnClass || 'js_close');
         $body.append($dialog);
+    },
+    loadmore: function (callback) {
+        callback(0);
+
+        var t = null;
+        var page = 1;
+        $(window).on('scroll', function () {
+            if (t == null) {
+                t = setTimeout(function () {
+                    var scrollTop = $body.scrollTop();
+                    var totalHeight = $body.height();
+                    var screenHeight = window.innerHeight;
+
+                    if (totalHeight - scrollTop < screenHeight) {
+                        callback(page);
+                        page++;
+                    }
+                    t = null;
+                }, 500);
+            }
+        });
     }
 };
 

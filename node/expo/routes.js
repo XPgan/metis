@@ -58,7 +58,7 @@ router.get('/diary/publish', function (req, res) {
 router.post('/diaries', function (req, res) {
     var num = 5; // 分页单位
     var user = req.query.user;
-    var page = req.query.page;
+    var page = req.query.page >> 0;
     var data = {
         status: 0,
         diaries: []
@@ -85,21 +85,22 @@ router.post('/diaries', function (req, res) {
     find.do('user', user);
     find.info(res, function (info) {
         var diaries = info.diaries;
-        var start = page * num;
-        var end = (page + 1) * num;
-
-        // 最末分页
-        if (diaries.length - start <= num) {
-            data.status = 1;
-            end = diaries.length;
-        }
-
-        var count = end - start; // 计数器
-
         if (diaries.length) {
-            for (var i = start;i < end;i++) {
-                count--;
-                getDiaryInfo(diaries[i], count);
+            var start = page * num;
+            var end = (page + 1) * num;
+
+            // 最末分页
+            if (diaries.length - start <= num) {
+                data.status = 1;
+                end = diaries.length;
+            }
+
+            if (end > start) {
+                var count = end - start; // 计数器
+                for (var i = start;i < end;i++) {
+                    count--;
+                    getDiaryInfo(diaries[i], count);
+                }
             }
         } else {
             res.end(JSON.stringify(data));

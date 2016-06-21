@@ -7,11 +7,11 @@ var profile = {};
 profile.init = {
     do: function () {
         var _this = this;
-        _this.renderDiaries();
+        main.loadmore(_this.renderDiaries);
     },
-    renderDiaries: function () {
+    renderDiaries: function (page) {
         $.ajax({
-            url: '/diaries?user=' + global.page.cur_user + '&page=0',
+            url: '/diaries?user=' + global.page.cur_user + '&page=' + page,
             type: 'POST',
             success: function (data) {
                 $('#tmpl_diary')

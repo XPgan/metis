@@ -61,7 +61,7 @@ router.post('/diaries', function (req, res) {
     var page = req.query.page >> 0;
     var data = {
         status: 0,
-        diaries: []
+        data: []
     };
     var getDiaryInfo = function (id, count) {
         find.do('diary', id);
@@ -77,7 +77,7 @@ router.post('/diaries', function (req, res) {
                     }
                 }
             }
-            data.diaries.push(info);
+            data.data.push(info);
             !count && res.end(JSON.stringify(data));
         });
     };
@@ -103,6 +103,7 @@ router.post('/diaries', function (req, res) {
                 }
             }
         } else {
+            data.status = 1;
             res.end(JSON.stringify(data));
         }
     });

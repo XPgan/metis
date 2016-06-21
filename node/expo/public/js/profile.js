@@ -7,19 +7,19 @@ var profile = {};
 profile.init = {
     do: function () {
         var _this = this;
-        main.loadmore(_this.renderDiaries);
+        _this.renderDiaries();
     },
-    renderDiaries: function (page) {
-        $.ajax({
-            url: '/diaries?user=' + global.page.cur_user + '&page=' + page,
-            type: 'POST',
-            success: function (data) {
-                $('#tmpl_diary')
-                    .tmpl(JSON.parse(data))
-                    .appendTo('.js_diaries');
+    renderDiaries: function () {
+        main.loadmore({
+            url: '/diaries?user=' + global.page.cur_user,
+            to: '.js_diaries',
+            tmpl: 'tmpl_diary',
+
+            empty: function () {
+                console.log('empty');
             },
-            error: function () {
-                main.showDialog({message: '网络错误'});
+            complete: function () {
+                console.log('complete');
             }
         });
     }

@@ -50,11 +50,43 @@ var main = {
             .replace('$btnClass', opt.btnClass || 'js_close');
         $body.append($dialog);
     },
-    loadmore: function (callback) {
-        callback(0);
-
-        var t = null;
+    loadmore: function (opt) {
+        var $loadmore = $('.js_loadmore');
+        var $loading = $('.js_loading');
         var page = 1;
+        var t = null;
+        var request = function (opt, page) {
+            $.ajax({
+                url: opt.url + '&page=' + page,
+                type: 'POST',
+                success: function (res) {
+                    var data = JSON.parse(res);
+                    $('#' + opt.tmpl)
+                        .tmpl(data)
+                        .appendTo(opt.to);
+
+                    switch (data.status) {
+                        case 0:
+                            break;
+                        case 1:
+                            $loadmore.unbind('click');
+                            data.data.length ? opt.complete() : opt.empty();
+                            break;
+                    }
+                },
+                error: function () {
+                    main.showDialog({message: '网络错误'});
+                }
+            });
+        };
+
+        // 渲染首分页
+        request(opt, 0);
+
+        $loadmore.on('click', function () {
+            request(opt, page);
+        });
+
         $(window).on('scroll', function () {
             if (t == null) {
                 t = setTimeout(function () {
@@ -62,8 +94,9 @@ var main = {
                     var totalHeight = $body.height();
                     var screenHeight = window.innerHeight;
 
-                    if (totalHeight - scrollTop < screenHeight) {
-                        callback(page);
+                    // 上拉至底
+                    if (totalHeight - scrollTop < screenHeight + 20) {
+                        $loadmore.trigger('click');
                         page++;
                     }
                     t = null;

@@ -56,7 +56,7 @@ router.get('/diary/publish', function (req, res) {
 
 
 router.post('/diaries', function (req, res) {
-    var num = 5; // 分页单位
+    var num = 10; // 分页单位
     var user = req.query.user;
     var page = req.query.page >> 0;
     var data = {

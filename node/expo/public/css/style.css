@@ -7,6 +7,8 @@
 .expo-form input, .expo-form textarea{display: block;font-size: 16px;line-height: 16px;color: #666;width: 240px;padding: 7px 10px;box-sizing: border-box;box-shadow: inset 1px 1px 2px #999;}
 .expo-form textarea{line-height: 22px;}
 .expo-bg{background: #09b39c url('/images/svg/banner.svg') no-repeat 0 0;background-size: cover;}
+.expo-loading{display: block;font-size: 14px;line-height: 22px;color: #999;text-align: center;}
+.expo-empty{font-size: 16px;line-height: 28px;color: #999;text-align: center;margin-top: 50px;}
 
 /* dialog */
 .dialog{position: fixed;width: 260px;text-align: center;background-color: #fff;border-radius: 5px;}

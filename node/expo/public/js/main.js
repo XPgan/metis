@@ -51,10 +51,11 @@ var main = {
         $body.append($dialog);
     },
     loadmore: function (opt) {
+        var _this = this;
+        var t = null;
+        var page = 1;
         var $loadmore = $('.js_loadmore');
         var $loading = $('.js_loading');
-        var page = 1;
-        var t = null;
         var request = function (opt, page) {
             $.ajax({
                 url: opt.url + '&page=' + page,
@@ -69,13 +70,22 @@ var main = {
                         case 0:
                             break;
                         case 1:
+                            var length = data.data.length;
+                            (length <= 10 && !page) && $loading.hide();
+
+                            if (length) {
+                                $loading.text('没有更多了');
+                                opt.complete && opt.complete();
+                            } else {
+                                $loading.hide();
+                                opt.empty && opt.empty();
+                            }
                             $loadmore.unbind('click');
-                            data.data.length ? opt.complete() : opt.empty();
                             break;
                     }
                 },
                 error: function () {
-                    main.showDialog({message: '网络错误'});
+                    _this.showDialog({message: '网络错误'});
                 }
             });
         };

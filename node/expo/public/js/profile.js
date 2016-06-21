@@ -16,10 +16,7 @@ profile.init = {
             tmpl: 'tmpl_diary',
 
             empty: function () {
-                console.log('empty');
-            },
-            complete: function () {
-                console.log('complete');
+                $('.js_diaries').append($('#module_empty').html());
             }
         });
     }

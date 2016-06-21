@@ -17,8 +17,8 @@
 
 <section class="diaries-lst">
     <ul class="js_diaries"></ul>
+    <span class="expo-loading js_loading">正在加载...</span>
     <button class="js_loadmore"></button>
-    <span class="c-block js_loading">正在加载...</span>
 </section>
 <%- include modules/m-diary.ejs %>
 
@@ -39,6 +39,9 @@
 
 <a href="javascript:;" class="expo-back c-block js_back"><</a>
 
+<script id="module_empty" type="text/x-module">
+    <div class="expo-empty">日记本空空的哒~</div>
+</script>
 <script>
     global.page = {
         cur_user: <%= cur_user %>

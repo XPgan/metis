@@ -84,7 +84,7 @@ router.post('/diaries', function (req, res) {
 
     find.do('user', user);
     find.info(res, function (info) {
-        var diaries = info.diaries;
+        var diaries = info.diaries.reverse();
         if (diaries.length) {
             var start = page * num;
             var end = (page + 1) * num;

@@ -9,6 +9,8 @@
  * for if while 不是作用域的划分标准
  */
 
+/* 函数作用域: 其声明时所处作用域 */
+
 /** example1 **/
 function test () {
     console.log(a);

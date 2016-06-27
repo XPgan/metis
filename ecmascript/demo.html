@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+    <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
+    <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
+    <script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
+    <script type="module">
+        function tco (f) {
+            var value;
+            var active = false;
+            var accumulated = [];
+
+            return function accumulator () {
+                accumulated.push(arguments);
+                if (!active) {
+                    active = true;
+                    while (accumulated.length) {
+                        value = f.apply(this, accumulated.shift());
+                    }
+                    active = false;
+                    return value;
+                }
+            };
+        }
+
+        var sum = tco(function (x, y) {
+            if (y > 0) {
+                return sum(x + 1, y - 1)
+            }
+            else {
+                return x
+            }
+        });
+
+        var result = sum(1, 100000);
+
+        console.log(result);
+    </script>
+</body>
+</html>

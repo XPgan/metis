@@ -97,3 +97,16 @@ function Timer (x, y) {
 }
 
 var timer = new Timer('x', 'y');
+
+
+/** Set
+ * 1. 无重复值
+ * 2. 方法:
+ *    .add(value) .delete(value) .has(value) .clear()
+ *    .keys() .values() .entries() .forEach()
+ *
+ * 注意:
+ * 1. (NAN === NAN) ({} !== {})
+ */
+var result = new Set([1, 2, 3, 3, 4, 4, 4, 5]); // -> Set {1, 2, 3, 4, 5}
+var result = new Set([1, 2, 3, 4, 5].filter(x => (x % 2) == 0)); // -> Set {2, 4}

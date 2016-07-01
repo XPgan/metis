@@ -19,3 +19,6 @@ express: npm install -g express-generator
 
 ** git
 git merge --no-ff [branch_name]
+
+git fetch --all
+git reset --hard origin/[branch_name]

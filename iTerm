@@ -22,3 +22,9 @@ git merge --no-ff [branch_name]
 
 git fetch --all
 git reset --hard origin/[branch_name]
+
+** redis
+1. redis-cli
+2. shutdown
+3. exit
+4. redis-server

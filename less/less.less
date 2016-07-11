@@ -1,6 +1,13 @@
 /* 转码
- * <link rel="stylesheet/less" href="[].less" />
- * <script src="http://cdn.bootcss.com/less.js/1.7.0/less.min.js"></script>
+ * <link type="text/css" rel="stylesheet/less" href="[].less" />
+ * <script type="text/javascript" src="http://cdn.bootcss.com/less.js/1.7.0/less.min.js"></script>
+ */
+
+/* 特性
+ * 1. 变量
+ * 2. 运算
+ * 3. 嵌套
+ * 4. 函数
  */
 
 
@@ -31,7 +38,7 @@
 // example
 .border-style (@color: red, @radius: 10px) {
     border: 1px solid @color;
-    border-radius: @radius;
+    border-radius: @radius * 2;
 }
 .tip-style (@color: pink) {
     &:before {

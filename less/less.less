@@ -1,0 +1,74 @@
+/* 转码
+ * <link rel="stylesheet/less" href="[].less" />
+ * <script src="http://cdn.bootcss.com/less.js/1.7.0/less.min.js"></script>
+ */
+
+
+/* 变量 */
+@变量名: 变量值;
+
+/* 混合 */
+父级 {
+    属性名: 属性值;
+    ...
+
+    函数(参数值);
+    ...
+
+    &:伪类 {
+        属性名: 属性值;
+        ...
+    }
+    ...
+
+    子集 {
+        属性名: 属性值;
+        ...
+    }
+    ...
+}
+
+// example
+.border-style (@color: red, @radius: 10px) {
+    border: 1px solid @color;
+    border-radius: @radius;
+}
+.tip-style (@color: pink) {
+    &:before {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: @color;
+    }
+}
+
+.l-hd {
+    .border-style;
+    .tip-style;
+
+    padding: 15px 0;
+
+    span {
+        font-size: 14px;
+        color: red;
+    }
+}
+
+.l-ft {
+    .border-style(green, 20px);
+    .tip-style(blue);
+
+    margin: 15px 0;
+
+    span {
+        font-size: 24px;
+        color: green;
+    }
+
+    &:after {
+        content: 'after 伪类';
+        display: block;
+        color: #005d50;
+    }
+}

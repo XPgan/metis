@@ -2,7 +2,7 @@
  * 1. 变量
  * 2. 运算
  * 3. 嵌套
- * 4. 函数
+ * 4. 属性集合
  */
 
 
@@ -14,7 +14,7 @@
     属性名: 属性值;
     ...
 
-    函数(参数值);
+    属性集合(参数);
     ...
 
     &:伪类 {
@@ -23,7 +23,7 @@
     }
     ...
 
-    子集 {
+    子级 {
         属性名: 属性值;
         ...
     }
@@ -35,7 +35,10 @@
     border: 1px solid @color;
     border-radius: @radius * 2;
 }
-.tip-style (@color: pink) {
+.shadow-style (@x, @y, @blur, @color) {
+    box-shadow: @arguments;
+}
+.tag-style (@color: pink) {
     &:before {
         content: '';
         display: block;
@@ -47,7 +50,7 @@
 
 .l-hd {
     .border-style;
-    .tip-style;
+    .tag-style;
 
     padding: 15px 0;
 
@@ -59,7 +62,8 @@
 
 .l-ft {
     .border-style(green, 20px);
-    .tip-style(blue);
+    .shadow-style(2px, 2px, 5px, #000);
+    .tag-style(blue);
 
     margin: 15px 0;
 

@@ -2,22 +2,29 @@
  * 1. 变量
  * 2. 运算
  * 3. 嵌套
- * 4. 属性集合
+ * 4. 属性集
  */
 
 
 /* 变量 */
 @变量名: 变量值;
 
+
 /* 混合 */
 父级 {
     属性名: 属性值;
     ...
 
-    属性集合(参数);
+    属性集(参数);
     ...
 
     &:伪类 {
+        属性名: 属性值;
+        ...
+    }
+    ...
+
+    &.类名 {
         属性名: 属性值;
         ...
     }
@@ -59,7 +66,6 @@
         color: red;
     }
 }
-
 .l-ft {
     .border-style(green, 20px);
     .shadow-style(2px, 2px, 5px, #000);
@@ -77,4 +83,48 @@
         display: block;
         color: #005d50;
     }
+}
+
+
+/* 匹配 */
+// example
+.style (lighter, @color) {
+    opacity: 0.2;
+}
+.style(darker, @color) {
+    opacity: 0.8;
+}
+.style (@_, @color) {
+    background-color: @color;
+    border: 1px solid @color;
+    border-radius: 10px;
+    height: 20px;
+}
+
+.l-hd {
+    .style(lighter, red);
+}
+.l-ft {
+    .style(darker, red);
+}
+
+
+/* 导引 */
+when (表达式)
+1. > >= = =< <
+2. not and ,(or)
+
+// example
+.style (@x, @y) when (@x > @y){
+    border: 1px solid red;
+}
+.style (@x, @y) when (@x < @y) {
+    border: 2px solid green;
+}
+
+.l-hd {
+    .style(1, 0);
+}
+.l-ft {
+    .style(0, 1);
 }

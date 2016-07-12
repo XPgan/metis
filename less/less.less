@@ -3,6 +3,7 @@
  * 2. 运算
  * 3. 嵌套
  * 4. 属性集
+ * 5. 函数
  */
 
 
@@ -38,14 +39,14 @@
 }
 
 // example
-.border-style (@color: red, @radius: 10px) {
+.border (@color: red, @radius: 10px) {
     border: 1px solid @color;
     border-radius: @radius * 2;
 }
-.shadow-style (@x, @y, @blur, @color) {
+.shadow (@x, @y, @blur, @color) {
     box-shadow: @arguments;
 }
-.tag-style (@color: pink) {
+.tag (@color: pink) {
     &:before {
         content: '';
         display: block;
@@ -56,8 +57,8 @@
 }
 
 .l-hd {
-    .border-style;
-    .tag-style;
+    .border;
+    .tag;
 
     padding: 15px 0;
 
@@ -67,9 +68,9 @@
     }
 }
 .l-ft {
-    .border-style(green, 20px);
-    .shadow-style(2px, 2px, 5px, #000);
-    .tag-style(blue);
+    .border(green, 20px);
+    .shadow(2px, 2px, 5px, #000);
+    .tag(blue);
 
     margin: 15px 0;
 
@@ -128,3 +129,48 @@ when (表达式)
 .l-ft {
     .style(0, 1);
 }
+
+
+/* 函数 */
+1. Color 函数
+2. Math 函数
+
+
+/* 命名空间 */
+// example
+ #control {
+     .form {
+         font-size: 14px;
+         line-height: 16px;
+         padding: 5px;
+         border: 1px solid #666;
+     }
+     .btn (@color: #333) {
+         font-size: 14px;
+         line-height: 26px;
+         color: #fff;
+         padding: 0 15px;
+         border-radius: 5px;
+         background-color: @color;
+     }
+     .input (@width: 200px) {
+         .form;
+
+         width: @width;
+     }
+     .textarea (@width: 300px, @height: 200px) {
+         .form;
+
+         width: @width;
+         height: @height;
+     }
+ }
+
+.btn {#control > .btn(green)}
+.input {#control > .input(220px)}
+.textarea {#control > .textarea(200px, 100px)}
+
+
+/* 其他 */
+1. '...@{变量名}...'
+2. `javascript 表达式`

@@ -2,6 +2,11 @@
 lsof -i:端口号
 kill 进程id
 
+** 关闭 redis
+redis-cli
+shutdown
+exit
+
 ** 卸载
 sudo make uninstall
 
@@ -22,9 +27,3 @@ git merge --no-ff [branch_name]
 
 git fetch --all
 git reset --hard origin/[branch_name]
-
-** redis
-1. redis-cli
-2. shutdown
-3. exit
-4. redis-server

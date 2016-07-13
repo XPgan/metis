@@ -137,33 +137,25 @@ http://www.lesscss.net/functions/
 
 /* 命名空间 */
 // example
- #control {
-     .form {
-         font-size: 14px;
-         line-height: 16px;
-         padding: 5px;
-         border: 1px solid #666;
-     }
-     .btn (@color: #333) {
-         font-size: 14px;
-         line-height: 26px;
-         color: #fff;
-         padding: 0 15px;
-         border-radius: 5px;
-         background-color: @color;
-     }
-     .input (@width: 200px) {
-         .form;
-
-         width: @width;
-     }
-     .textarea (@width: 300px, @height: 200px) {
-         .form;
-
-         width: @width;
-         height: @height;
-     }
- }
+#control {
+    .btn (@color: #333) {
+        font-size: 14px;
+        line-height: 26px;
+        text-decoration: none;
+        color: #fff;
+        background-color: @color;
+        padding: 0 15px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+    .input (@width: 200px) {
+        width: @width;
+    }
+    .textarea (@width: 300px, @height: 200px) {
+        width: @width;
+        height: @height;
+    }
+}
 
 .btn {#control > .btn(green)}
 .input {#control > .input(220px)}

@@ -12,8 +12,6 @@ $ lessc 文件名.less > 目标文件名.css
 
 /* 变量 */
 @变量名: 变量值;
-1. less变量为常量
-2. less变量作用域与js变量作用域相仿
 
 
 /* 混合 */
@@ -159,6 +157,22 @@ http://www.lesscss.net/functions/
 .btn {#control > .btn(green)}
 .input {#control > .input(220px)}
 .textarea {#control > .textarea(200px, 100px)}
+
+
+/* 作用域 */
+// example
+@color: red;
+
+.item {
+    color: @color; //green
+
+    span {
+        @color: blue;
+        color: @color; // yellow
+        @color: yellow;
+    }
+    @color: green;
+}
 
 
 /* 其他 */

@@ -24,5 +24,3 @@ var pattern = /\w(?=\D)/g;
 pattern.exec(str); // ['c'] ['3'] ['v'] null
 // (?!\d) 与 (?=\D) 不等价
 // (?=\D) 须匹配一个非数字字符
-
-

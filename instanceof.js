@@ -18,4 +18,3 @@ Function instanceof Object // true
 Number instanceof Number // false
 Number instanceof Object // true
 String instanceof Object // true
-

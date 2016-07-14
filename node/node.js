@@ -123,7 +123,3 @@ fs.readFile('content', 'utf-8', function(err, data) {
  *     end 事件: 数据传输结束时触发
  *     close 事件: 用户当前请求结束时触发
  */
-
-
-
-

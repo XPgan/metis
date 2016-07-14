@@ -57,4 +57,3 @@ var obj3 = {name: 'y', age: 23};
 var newObj = $.extend({}, obj1, obj2, obj3); // -> Object {name: 'y', age: 23, object: {A: 'Science', C: 'PE'}, from: 'TJ'} 说明：obj1 & obj2 & obj3 不变
 var newObj = $.extend(obj1, obj2, obj3); // -> Object {name: 'y', age: 23, object: {A: 'Science', C: 'PE'}, from: 'TJ'} 说明：newObj = obj1, obj2 & obj3 不变
 var newObj = $.extend(true, {}, obj1, obj2, obj3); // -> Object {name: 'y', age: 23, object: {A: 'Science', B: 'Chinese', C: 'PE'}, from: 'TJ'} 说明：深度拷贝
-

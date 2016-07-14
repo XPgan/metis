@@ -51,7 +51,3 @@ var add = function (num) {
 var curried = curry(add, 1);
 
 curried(2)(3)(4); // -> sum = 10
-
-
-
-

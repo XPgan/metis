@@ -58,6 +58,3 @@ try {
 }
 // -> Error、finally
 // try 代码有误 不执行 -> throw error 不执行 -> catch 被执行 捕获默认 error
-
-
-

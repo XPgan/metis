@@ -184,4 +184,3 @@ function fun3 () {
 $.when(fun1()).then(fun2).then(fun3);
 
 // error: $.when(fun1()).then(fun2()).then(fun3()); fun2 & fun3 立即执行
-

@@ -119,19 +119,3 @@ context.measureText(text); // 返回文本占位宽度
  * .textAlign
  * .textBaseline
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

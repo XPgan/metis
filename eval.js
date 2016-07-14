@@ -15,4 +15,3 @@ myEval('1 + 2'); // 可能抛出 EvalError 异常
 var jsonStr = '{name: "sunmy", password: "123"}';
 var result = eval('(' + jsonStr + ')'); // result -> {name: "sunmy", password: "123"}
 // JSON.stringify() 逆向操作
-

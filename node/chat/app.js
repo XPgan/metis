@@ -6,7 +6,7 @@ var routes = require('./routes');
 var app = express();
 
 // 模板
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/templates'));
 app.set('view engine', 'ejs');
 
 // 静态文件

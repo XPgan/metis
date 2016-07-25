@@ -17,4 +17,5 @@ var userSchema = new Schema({
     portrait: String
 });
 
+
 exports.User = db.model('users', userSchema);

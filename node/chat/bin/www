@@ -5,8 +5,10 @@
  */
 
 var app = require('../app');
+var communicate = require('../communicate');
 var debug = require('debug')('chat:server');
 var http = require('http');
+var socketio = require('socket.io');
 
 /**
  * Get port from environment and store in Express.
@@ -20,6 +22,8 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+var io = socketio(server);
+communicate.do(io);
 
 /**
  * Listen on provided port, on all network interfaces.

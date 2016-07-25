@@ -1,13 +1,23 @@
 <%- include ../header %>
-<div class="m-log">
-    <div class="chat-login">
+<section class="m-login">
+    <div>
         <form id="form_login" autocomplete="off">
-            <input type="text" id="user_name" name="user_name" placeholder="昵称" />
-            <input type="password" id="password" name="password" placeholder="密码" />
+            <input type="text" name="user_name" placeholder="昵称" />
+            <input type="password" name="password" placeholder="密码" />
         </form>
-        <div class="log-btn">
+        <div>
             <a href="javascript:;" class="js_login">登录</a><a href="javascript:;">快速注册</a>
         </div>
     </div>
-</div>
+    <div>
+        <form id="form_register" autocomplete="off">
+            <input type="text" id="user_name" name="user_name" placeholder="昵称" />
+            <input type="password" id="password" name="password" placeholder="密码" />
+        </form>
+        <div>
+            <a href="javascript:;" class="js_register">注册</a><a href="javascript:;">取消</a>
+        </div>
+    </div>
+</section>
+<script src="/js/login.js"></script>
 <%- include ../footer %>

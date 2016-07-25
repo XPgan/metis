@@ -7,6 +7,16 @@ var login = {
         var _this = this;
         _this.login();
         _this.register();
+
+        $('.js_overturn').on('click', function () {
+            var _self = $(this);
+            var $current = _self.parents('.js_area');
+
+            $current.addClass('overturn');
+            $current[0].addEventListener('webkitAnimationEnd', function () {
+                $current.hide().removeClass('overturn').siblings().show();
+            });
+        });
     },
     login: function () {
         var $btn = $('.js_login');

@@ -66,5 +66,23 @@
                 background-color: transparent;
             }
         }
+        &.overturn {
+            @animate: rolling 0.8s ease-in forwards;
+
+            -webkit-animation: @animate;
+                    animation: @animate;
+        }
     }
 }
+
+
+/* animate */
+.rolling {
+    to {
+        -webkit-transform: rotateY(100deg);
+                transform: rotateY(100deg);
+    }
+}
+
+@-webkit-keyframes rolling { .rolling }
+        @keyframes rolling { .rolling }

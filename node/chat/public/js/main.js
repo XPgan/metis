@@ -33,6 +33,17 @@ var main = {
             .replace('$message', opt.message)
             .replace('$btnClass', opt.btnClass || 'js_close');
         $body.append($dialog);
+    },
+    getUrlParam: function (key) {
+        var search = location.search;
+        var tmp = search && search.substr(1).split('&');
+        for (var i = 0;i < tmp.length;i++) {
+            if (tmp[i].substring(0, tmp[i].indexOf('=')) === key) {
+                var value = tmp[i].substr(tmp[i].indexOf('=') + 1);
+                break;
+            }
+        }
+        return value;
     }
 };
 

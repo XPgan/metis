@@ -27,8 +27,9 @@ var login = {
                 type: 'POST',
                 data: $form.serialize(),
                 success: function (data) {
+                    var firstime = main.getUrlParam('firstime') >> 0;
                     main.showResult(data, function () {
-                        location.href = '/chatroom';
+                        location.href = firstime ? '/userinfo' : '/chatroom';
                     });
                 },
                 error: function () {
@@ -52,7 +53,8 @@ var login = {
                     data: $form.serialize(),
                     success: function (data) {
                         main.showResult(data, function () {
-                            location.href = '/';
+                            // 首次登录
+                            location.href = '/login?firstime=1';
                         });
                     },
                     error: function () {

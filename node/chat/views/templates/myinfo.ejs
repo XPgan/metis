@@ -1,5 +1,16 @@
 <%- include ../header %>
-<section class="m-myinfo">
-
+<section class="m-myinfo card">
+    <div>
+        <form id="form_myinfo" autocomplete="off">
+            <input type="text" id="user_name" name="user_name" placeholder="昵称" />
+            <input type="text" id="sex" name="sex" placeholder="性别" />
+            <input type="text" id="tel" name="tel" placeholder="电话" />
+            <input type="text" id="qq" name="qq" placeholder="QQ" />
+            <input type="text" id="intro" name="intro" placeholder="一句话描述自己" />
+        </form>
+        <div>
+            <a href="javascript:;" class="js_myinfo">提交</a><a href="javascript:;">跳过</a>
+        </div>
+    </div>
 </section>
 <%- include ../footer %>

@@ -2,8 +2,10 @@
 
 @light: #f9ebb1;
 @dark: #8f692e;
+@middle: #bea97c;
 
 .btn {
+    display: inline-block;
     font-size: 14px;
     line-height: 30px;
     color: @dark;
@@ -17,23 +19,43 @@
         background-color: transparent;
     }
 }
+.btnAttached {
+    margin: 20px 2px 10px;
+
+    &:first-child {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+    &:last-child {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+}
 .input {
     font-size: 18px;
     line-height: 36px;
     text-align: center;
     color: @light;
+    width: 80%;
+    margin: 10px 0;
     border-bottom: 1px solid @light;
     background-color: transparent;
 
     &::-webkit-input-placeholder {
-        color: @dark;
+        color: @middle;
     }
 }
-
-
+.card {
+    text-align: center;
+    width: 380px;
+    margin: 100px auto 50px;
+    padding: 10px 0;
+    border: 2px solid @light;
+    border-radius: 10px;
+}
 .dialog {
     position: fixed;
-    width: 250px;
+    width: 300px;
     text-align: center;
     padding: 25px 0 15px;
     border: 1px solid @light;
@@ -51,37 +73,12 @@
     }
 }
 
+
 .m-log {
-    width: 300px;
-    margin: 100px auto 0;
-
     & > div {
-        text-align: center;
-        padding: 10px 0;
-        border: 2px solid @light;
-        border-radius: 10px;
+        input { .input; }
+        a { .btn; .btnAttached; }
 
-        input {
-            .input;
-
-            width: 200px;
-            margin: 10px 0;
-        }
-        a {
-            .btn;
-
-            display: inline-block;
-            margin: 20px 2px 10px;
-
-            &:first-child {
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
-            }
-            &:last-child {
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
-            }
-        }
         &.overturn {
             @animate: rolling 0.8s ease-in forwards;
 
@@ -89,6 +86,15 @@
                     animation: @animate;
         }
     }
+}
+.m-myinfo {
+    input {
+        .input;
+
+        font-size: 14px;
+        text-align: left;
+    }
+    a { .btn; .btnAttached; }
 }
 
 
@@ -102,3 +108,9 @@
 
 @-webkit-keyframes rolling { .rolling }
         @keyframes rolling { .rolling }
+
+
+/* media */
+@media screen and (max-width: 600px) {
+    .card { width: 80%; }
+}

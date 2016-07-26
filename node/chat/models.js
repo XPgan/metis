@@ -13,8 +13,7 @@ var userSchema = new Schema({
     sex: String,
     tel: String,
     qq: String,
-    intro: String,
-    portrait: String
+    intro: String
 });
 
 

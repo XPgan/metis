@@ -12,8 +12,8 @@ router.get(/^\/(login)?$/, function (req, res) {
 router.get('/chatroom', function (req, res) {
     res.render('chatroom');
 });
-router.get('/userinfo', function (req, res) {
-    res.render('userinfo');
+router.get('/edit/myinfo', function (req, res) {
+    res.render('myinfo');
 });
 
 

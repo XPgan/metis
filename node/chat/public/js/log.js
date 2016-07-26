@@ -29,7 +29,7 @@ var log = {
                 success: function (data) {
                     var firstime = main.getUrlParam('firstime') >> 0;
                     main.showResult(data, function () {
-                        location.href = firstime ? '/userinfo' : '/chatroom';
+                        location.href = firstime ? '/edit/myinfo' : '/chatroom';
                     });
                 },
                 error: function () {

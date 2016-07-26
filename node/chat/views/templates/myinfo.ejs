@@ -2,11 +2,11 @@
 <section class="m-myinfo card">
     <div>
         <form id="form_myinfo" autocomplete="off">
-            <input type="text" id="user_name" name="user_name" placeholder="昵称" />
-            <input type="text" id="sex" name="sex" placeholder="性别" />
-            <input type="text" id="tel" name="tel" placeholder="电话" />
-            <input type="text" id="qq" name="qq" placeholder="QQ" />
-            <input type="text" id="intro" name="intro" placeholder="一句话描述自己" />
+            <input type="text" id="user_name" name="user_name" placeholder="昵称" value="<%= info.user_name %>" />
+            <input type="text" id="sex" name="sex" placeholder="性别" value="<%= info.sex %>" />
+            <input type="text" id="tel" name="tel" placeholder="电话" value="<%= info.tel %>" />
+            <input type="text" id="qq" name="qq" placeholder="QQ" value="<%= info.qq %>" />
+            <input type="text" id="intro" name="intro" placeholder="一句话描述自己" value="<%= info.intro %>" />
         </form>
         <div>
             <a href="javascript:;" class="js_myinfo">提交</a><a href="/chatroom">跳过</a>

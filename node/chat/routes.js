@@ -3,6 +3,7 @@
  */
 
 var express = require('express');
+var find = require('./modules/find');
 var log = require('./modules/log');
 var edit = require('./modules/edit');
 var router = express.Router();
@@ -14,7 +15,14 @@ router.get('/chatroom', function (req, res) {
     res.render('chatroom');
 });
 router.get('/edit/myinfo', function (req, res) {
-    res.render('myinfo');
+    if (log.user) {
+        find.do(log.user);
+        find.info(res, function (info) {
+            res.render('myinfo', {info: info});
+        });
+    } else {
+        res.redirect('/');
+    }
 });
 
 

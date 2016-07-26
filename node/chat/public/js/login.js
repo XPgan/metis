@@ -14,8 +14,8 @@ var login = {
 
             $current.addClass('overturn');
             $current[0].addEventListener('webkitAnimationEnd', function () {
-                $current.hide().removeClass('overturn').siblings().show();
-            });
+                $(this).hide().removeClass('overturn').siblings().show();
+            }, false);
         });
     },
     login: function () {

@@ -2,7 +2,6 @@
  * Created by sunmy on 16/7/25.
  */
 
-var fs = require('fs');
 var User = require('../models').User;
 
 var log = {

@@ -7,10 +7,13 @@ var log = require('./modules/log');
 var router = express.Router();
 
 router.get(/^\/(login)?$/, function (req, res) {
-    res.render('login');
+    res.render('index');
 });
 router.get('/chatroom', function (req, res) {
     res.render('chatroom');
+});
+router.get('/userinfo', function (req, res) {
+    res.render('userinfo');
 });
 
 

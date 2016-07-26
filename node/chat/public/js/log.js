@@ -2,7 +2,7 @@
  * Created by sunmy on 16/7/25.
  */
 
-var login = {
+var log = {
     do: function () {
         var _this = this;
         _this.login();
@@ -68,4 +68,4 @@ var login = {
     }
 };
 
-login.do();
+log.do();

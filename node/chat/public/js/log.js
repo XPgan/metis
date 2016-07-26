@@ -28,6 +28,8 @@ var log = {
                 data: $form.serialize(),
                 success: function (data) {
                     var firstime = main.getUrlParam('firstime') >> 0;
+
+                    socket.emit('online');
                     main.showResult(data, function () {
                         location.href = firstime ? '/edit/myinfo' : '/chatroom';
                     });

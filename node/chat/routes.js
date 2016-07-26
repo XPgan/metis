@@ -12,7 +12,11 @@ router.get(/^\/(login)?$/, function (req, res) {
     res.render('index');
 });
 router.get('/chatroom', function (req, res) {
-    res.render('chatroom');
+    if (log.user) {
+        res.render('chatroom');
+    } else {
+        res.redirect('/');
+    }
 });
 router.get('/edit/myinfo', function (req, res) {
     if (log.user) {

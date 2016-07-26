@@ -2,6 +2,7 @@
  * Created by sunmy on 16/7/14.
  */
 
+var socket = io.connect('http://localhost:8000');
 var $body = $('body');
 
 var main = {

@@ -10,7 +10,7 @@ var communicate = {
         io.on('connection', function (socket) {
             socket.on('online', function () {
                 User.find({id: log.user}, {}, {}, function (err, result) {
-                    io.sockets.emit('online', result[0].user_name);
+                    io.sockets.emit('online', result[0]);
                 });
             });
         });

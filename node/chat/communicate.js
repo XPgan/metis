@@ -16,6 +16,8 @@ var communicate = {
                         user: result[0],
                         message: data.message
                     });
+
+                    // error 处理
                 });
             });
         });

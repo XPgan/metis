@@ -37,21 +37,37 @@ var log = {
         });
     },
     register: function (req, res) {
-        req.body.id = (new Date()).valueOf().toString();
-
-        var user = new User(req.body);
-        user.save(function (err) {
+        User.find({user_name: req.body.user_name}, {}, {}, function (err, result) {
             if (err) {
                 res.end(JSON.stringify({
                     message: '注册失败',
                     status: 0
                 }));
             } else {
-                res.cookie('user', 0);
-                res.end(JSON.stringify({
-                    message: '注册成功',
-                    status: 1
-                }));
+                if (result.length) {
+                    res.end(JSON.stringify({
+                        message: '该昵称已被使用',
+                        status: 0
+                    }));
+                } else {
+                    req.body.id = (new Date()).valueOf().toString();
+
+                    var user = new User(req.body);
+                    user.save(function (err) {
+                        if (err) {
+                            res.end(JSON.stringify({
+                                message: '注册失败',
+                                status: 0
+                            }));
+                        } else {
+                            res.cookie('user', 0);
+                            res.end(JSON.stringify({
+                                message: '注册成功',
+                                status: 1
+                            }));
+                        }
+                    });
+                }
             }
         });
     }

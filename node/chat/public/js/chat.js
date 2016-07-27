@@ -18,9 +18,6 @@ var chat = {
             _this.news.append($item);
         });
         socket.on('message', function (data) {
-            console.log(pageData.cur_user);
-            console.log(data.user.id);
-
             if (pageData.cur_user != data.user.id) {
                 var $item = $('#module_message').html()
                     .replace('$view', 'other')

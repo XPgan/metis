@@ -21,7 +21,7 @@ var log = {
     login: function () {
         var $btn = $('.js_login');
         var $form = $('#form_login');
-        var firstime = main.getUrlParam('firstime') >> 0;
+        var firstime = main.getUrlParam('firstime');
 
         $btn.on('click', function () {
             $.ajax({
@@ -29,7 +29,9 @@ var log = {
                 type: 'POST',
                 data: $form.serialize(),
                 success: function (data) {
-                    socket.emit('online', {cur_user: $('#log_user').val()});
+                    socket.emit('online', {
+                        cur_user: $('#log_user').val()
+                    });
                     main.showResult(data, function () {
                         location.href = firstime ? '/edit/myinfo' : '/chatroom';
                     });

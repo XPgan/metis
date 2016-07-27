@@ -14,25 +14,25 @@ var log = {
                 var record = {user_name: user.user_name};
                 User.find(record, {id: 1}, {}, function (err, result) {
                     if (err) {
+                        res.cookie('user', 0);
                         res.end(JSON.stringify({
                             message: '登录失败',
                             status: 0
                         }));
-                        res.cookie.user = 0;
                     } else {
+                        res.cookie('user', result[0].id);
                         res.end(JSON.stringify({
                             message: '登录成功',
                             status: 1
                         }));
-                        res.cookie.user = result[0].id;
                     }
                 });
             } else {
+                res.cookie('user', 0);
                 res.end(JSON.stringify({
                     message: '登录失败',
                     status: 0
                 }));
-                res.cookie.user = 0;
             }
         });
     },
@@ -47,11 +47,11 @@ var log = {
                     status: 0
                 }));
             } else {
+                res.cookie('user', 0);
                 res.end(JSON.stringify({
                     message: '注册成功',
                     status: 1
                 }));
-                res.cookie.user = 0;
             }
         });
     }

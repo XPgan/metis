@@ -26,6 +26,10 @@ var chat = {
                 _this.message.append($item);
             }
         });
+        socket.on('failed', function () {
+            _this.message.find('li').last().find('p').addClass('failed');
+            main.showDialog({message: '消息发送失败'});
+        });
     },
     bulletNews: function () {
         var _this = this;

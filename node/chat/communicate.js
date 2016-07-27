@@ -12,12 +12,14 @@ var communicate = {
             });
             socket.on('message', function (data) {
                 User.find({id: data.cur_user}, {}, {}, function (err, result) {
-                    io.sockets.emit('message', {
-                        user: result[0],
-                        message: data.message
-                    });
-
-                    // error 处理
+                    if (err) {
+                        socket.emit('failed');
+                    } else {
+                        io.sockets.emit('message', {
+                            user: result[0],
+                            message: data.message
+                        });
+                    }
                 });
             });
         });

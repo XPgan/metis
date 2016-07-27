@@ -157,7 +157,14 @@
                 .style(#15b9a3, right);
 
                 span { padding-left: 20px; }
-                p { color: #f0f0f0; }
+                p {
+                    color: #f0f0f0;
+
+                    &.failed {
+                        color: red;
+                        text-decoration: line-through;
+                    }
+                }
                 em {
                     right: -6px;
                     border-top-color: transparent;

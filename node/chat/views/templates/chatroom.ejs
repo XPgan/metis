@@ -1,17 +1,9 @@
 <%- include ../header %>
 <div class="lst-news c-header">
-    <ul class="js_news">
-        <li><span>孙梦园</span>进入聊天室</li>
-        <li><span>孙梦园</span>进入聊天室</li>
-        <li><span>孙梦园</span>进入聊天室</li>
-        <li><span>孙梦园</span>进入聊天室</li>
-    </ul>
+    <ul class="js_news"></ul>
 </div>
 <section class="m-chat">
-    <ul class="js_message">
-        <li class="other c-fix"><span>孙梦园</span><p>这里是我发的消息<em></em></p></li>
-        <li class="self c-fix"><span>孙梦园</span><p>这里是我发的消息<em></em></p></li>
-    </ul>
+    <ul class="js_message"></ul>
     <div class="c-footer">
         <input type="text" />
         <a href="javascript:;" class="c-frt js_send">发送</a>
@@ -19,6 +11,14 @@
 </section>
 <script id="module_news" type="text/x-module">
     <li><span>$userName</span>进入聊天室</li>
+</script>
+<script id="module_message" type="text/x-module">
+    <li class="$view c-fix"><span>$userName</span><p>$message<em></em></p></li>
+</script>
+<script>
+    var pageData = {
+        cur_user: <%= cur_user %>
+    };
 </script>
 <script src="/js/chat.js"></script>
 <%- include ../footer %>

@@ -2,20 +2,24 @@
  * Created by sunmy on 16/7/25.
  */
 
-var log = require('./modules/log');
 var User = require('./models').User;
 
 var communicate = {
     do: function (io) {
         io.on('connection', function (socket) {
-            socket.on('online', function () {
-                User.find({id: log.user}, {}, {}, function (err, result) {
-                    io.sockets.emit('online', result[0]);
+            socket.on('online', function (data) {
+                io.sockets.emit('online', {user_name: data.cur_user});
+            });
+            socket.on('message', function (data) {
+                User.find({id: data.cur_user}, {}, {}, function (err, result) {
+                    io.sockets.emit('message', {
+                        user: result[0],
+                        message: data.message
+                    });
                 });
             });
         });
     }
 };
-
 
 module.exports = communicate;

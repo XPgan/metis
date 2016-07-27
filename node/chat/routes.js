@@ -12,15 +12,15 @@ router.get(/^\/(login)?$/, function (req, res) {
     res.render('index');
 });
 router.get('/chatroom', function (req, res) {
-    if (log.user) {
-        res.render('chatroom');
+    if (res.cookie.user) {
+        res.render('chatroom', {cur_user: res.cookie.user});
     } else {
         res.redirect('/');
     }
 });
 router.get('/edit/myinfo', function (req, res) {
-    if (log.user) {
-        find.do(log.user);
+    if (res.cookie.user) {
+        find.do(res.cookie.user);
         find.info(res, function (info) {
             res.render('myinfo', {info: info});
         });
@@ -37,7 +37,7 @@ router.post('/register', function (req, res) {
     log.register(req, res);
 });
 router.post('/edit/user/info', function (req, res) {
-    edit.user.info(req, res, log.user);
+    edit.user.info(req, res, res.cookie.user);
 });
 
 

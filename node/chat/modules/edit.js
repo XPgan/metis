@@ -6,8 +6,8 @@ var User = require('../models').User;
 
 var edit = {
     user: {
-        info: function (req, res, log_user) {
-            User.update({id: log_user}, req.body, {}, function (err) {
+        info: function (req, res, cur_user) {
+            User.update({id: cur_user}, req.body, {}, function (err) {
                 if (err) {
                     res.end(JSON.stringify({
                         message: '提交失败',

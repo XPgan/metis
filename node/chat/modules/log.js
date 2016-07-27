@@ -6,10 +6,7 @@ var User = require('../models').User;
 
 var log = {
 
-    user: 0,
-
     login: function (req, res) {
-        var _this = this;
         var user = req.body;
 
         User.count(user, function (err, doc) {
@@ -21,13 +18,13 @@ var log = {
                             message: '登录失败',
                             status: 0
                         }));
-                        _this.user = 0;
+                        res.cookie.user = 0;
                     } else {
                         res.end(JSON.stringify({
                             message: '登录成功',
                             status: 1
                         }));
-                        _this.user = result[0].id;
+                        res.cookie.user = result[0].id;
                     }
                 });
             } else {
@@ -35,14 +32,13 @@ var log = {
                     message: '登录失败',
                     status: 0
                 }));
-                _this.user = 0;
+                res.cookie.user = 0;
             }
         });
     },
     register: function (req, res) {
         req.body.id = (new Date()).valueOf().toString();
 
-        var _this = this;
         var user = new User(req.body);
         user.save(function (err) {
             if (err) {
@@ -55,7 +51,7 @@ var log = {
                     message: '注册成功',
                     status: 1
                 }));
-                _this.user = 0;
+                res.cookie.user = 0;
             }
         });
     }

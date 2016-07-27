@@ -9,7 +9,7 @@ var chat = {
 
     do: function () {
         var _this = this;
-        //_this.bulletNews();
+        _this.bulletNews();
         _this.sendMessage();
 
         socket.on('online', function (data) {
@@ -33,18 +33,20 @@ var chat = {
             _this.news.find('li').first().slideUp(function () {
                 $(this).remove();
             });
-        }, 30000);
+        }, 5000);
     },
     sendMessage: function () {
         var _this = this;
         var $btn = $('.js_send');
-        $btn.on('click', function () {
-            var value = $(this).prev().val();
+        var $input = $('.js_input');
+        var method = function () {
+            var value = $input.val();
             if (value) {
                 socket.emit('message', {
                     cur_user: pageData.cur_user,
                     message: value
                 });
+                $input.val('');
 
                 var $item = $('#module_message').html()
                     .replace('$view', 'self')
@@ -52,6 +54,13 @@ var chat = {
                     .replace('$message', value);
                 _this.message.append($item);
             }
+        };
+
+        $btn.on('click', function () {
+            method();
+        });
+        $input.on('keypress', function (e) {
+            (e.keyCode == '13') && method();
         });
     }
 };

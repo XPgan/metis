@@ -21,14 +21,14 @@ var log = {
     login: function () {
         var $btn = $('.js_login');
         var $form = $('#form_login');
+        var firstime = main.getUrlParam('firstime') >> 0;
+
         $btn.on('click', function () {
             $.ajax({
                 url: '/login',
                 type: 'POST',
                 data: $form.serialize(),
                 success: function (data) {
-                    var firstime = main.getUrlParam('firstime') >> 0;
-
                     socket.emit('online');
                     main.showResult(data, function () {
                         location.href = firstime ? '/edit/myinfo' : '/chatroom';

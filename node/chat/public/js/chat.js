@@ -8,7 +8,7 @@ var chat = {
 
     do: function () {
         var _this = this;
-        _this.bulletNews();
+        //_this.bulletNews();
 
         socket.on('online', function (data) {
             var $item = $('#module_news').html()

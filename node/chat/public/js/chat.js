@@ -11,6 +11,10 @@ var chat = {
         var _this = this;
         _this.bulletNews();
         _this.sendMessage();
+        _this.handleEvents();
+    },
+    handleEvents: function () {
+        var _this = this;
 
         socket.on('online', function (data) {
             var $item = $('#module_news').html()
@@ -27,8 +31,8 @@ var chat = {
             }
         });
         socket.on('failed', function () {
-            _this.message.find('li').last().find('p').addClass('failed');
-            main.showDialog({message: '消息发送失败'});
+            _this.message.find('li').last().addClass('failed');
+            main.showTips('消息发送失败 点击消息重新发送');
         });
     },
     bulletNews: function () {

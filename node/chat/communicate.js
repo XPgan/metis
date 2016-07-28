@@ -15,10 +15,12 @@ var communicate = {
                     if (err) {
                         socket.emit('failed');
                     } else {
-                        io.sockets.emit('message', {
-                            user: result[0],
-                            message: data.message
-                        });
+                        //io.sockets.emit('message', {
+                        //    user: result[0],
+                        //    message: data.message
+                        //});
+
+                        socket.emit('failed');
                     }
                 });
             });

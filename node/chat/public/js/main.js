@@ -35,6 +35,17 @@ var main = {
             .replace('$btnClass', opt.btnClass || 'js_close');
         $body.append($dialog);
     },
+    showTips: function (message) {
+        var $tips = $('#module_tips').html()
+            .replace('$message', message);
+        $body.append($tips);
+
+        var t = setTimeout(function () {
+            $('.js_tips').fadeOut(function () {
+                $(this).remove();
+            });
+        }, 3000);
+    },
     getUrlParam: function (key) {
         var search = location.search;
         var tmp = search && search.substr(1).split('&');

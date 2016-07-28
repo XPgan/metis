@@ -29,8 +29,10 @@ var log = {
                 type: 'POST',
                 data: $form.serialize(),
                 success: function (data) {
+                    var user_name = $form.find('input[name="user_name"]').val();
+
                     socket.emit('online', {
-                        user_name: $('#log_user').val()
+                        user_name: user_name
                     });
                     main.showResult(data, function () {
                         location.href = firstime ? '/edit/myinfo' : '/chatroom';

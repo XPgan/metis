@@ -34,7 +34,6 @@
 .input {
     font-size: 18px;
     line-height: 36px;
-    text-align: center;
     color: @light;
     width: 80%;
     margin: 10px 0;
@@ -102,14 +101,14 @@
         .input;
 
         font-size: 14px;
-        text-align: left;
     }
     a { .btn; .btnAttached; }
 }
 .m-chat {
     padding: 90px 20px 60px;
 
-    div {
+    .m-send {
+        position: relative;
         padding-right: 74px;
 
         input {
@@ -122,7 +121,11 @@
             background-color: transparent;
             box-sizing: border-box;
         }
-        a { .btn; }
+        a {
+            .btn;
+
+            position: absolute;
+        }
     }
     ul {
         li {

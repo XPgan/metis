@@ -9,9 +9,9 @@ var chat = {
 
     do: function () {
         var _this = this;
+        _this.handleEvents();
         _this.bulletNews();
         _this.sendMessage();
-        _this.handleEvents();
     },
     handleEvents: function () {
         var _this = this;
@@ -51,7 +51,7 @@ var chat = {
             var value = $input.val();
             if (value) {
                 socket.emit('message', {
-                    user_name: pageData.cur_user,
+                    user_id: pageData.cur_user,
                     message: value
                 });
                 $input.val('');
@@ -67,7 +67,7 @@ var chat = {
         $btn.on('click', function () {
             method();
         });
-        $input.on('keypress', function (e) {
+        $input.on('keydown', function (e) {
             (e.keyCode == '13') && method();
         });
     }

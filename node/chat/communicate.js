@@ -11,16 +11,14 @@ var communicate = {
                 io.sockets.emit('online', {user_name: data.user_name});
             });
             socket.on('message', function (data) {
-                User.find({id: data.user_name}, {}, {}, function (err, result) {
+                User.find({id: data.user_id}, {}, {}, function (err, result) {
                     if (err) {
                         socket.emit('failed');
                     } else {
-                        //io.sockets.emit('message', {
-                        //    user: result[0],
-                        //    message: data.message
-                        //});
-
-                        socket.emit('failed');
+                        io.sockets.emit('message', {
+                            user: result[0],
+                            message: data.message
+                        });
                     }
                 });
             });

@@ -12,6 +12,7 @@ var chat = {
         _this.handleEvents();
         _this.bulletNews();
         _this.sendMessage();
+        _this.resendMessage();
     },
     handleEvents: function () {
         var _this = this;
@@ -31,7 +32,8 @@ var chat = {
             }
         });
         socket.on('failed', function () {
-            _this.message.find('li').last().addClass('failed');
+            _this.message.find('li').last().addClass('failed')
+                         .find('p').addClass('js_resend');
             main.showTips('消息发送失败 点击消息重新发送');
         });
     },
@@ -69,6 +71,15 @@ var chat = {
         });
         $input.on('keydown', function (e) {
             (e.keyCode == '13') && method();
+        });
+    },
+    resendMessage: function () {
+        $body.on('click', '.js_resend', function () {
+            var value = $(this).text();
+            socket.emit('message', {
+                user_id: pageData.cur_user,
+                message: value
+            });
         });
     }
 };

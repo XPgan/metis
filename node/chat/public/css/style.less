@@ -194,22 +194,44 @@
         }
     }
 }
-.lst-news {
+.chatroom-header {
     padding: 10px 20px;
 
-    ul {
-        max-height: 78px;
-        overflow: hidden;
+    & > div {
+        position: relative;
+        padding-left: 104px;
 
-        li {
-            font-size: 14px;
-            line-height: 26px;
-            text-align: right;
-            color: @middle;
+        .ctrls {
+            position: absolute;
+            margin-top: 6px;
 
-            span {
-                color: @light;
-                padding-right: 10px;
+            a {
+                float: left;
+                width: 32px;
+                height: 32px;
+                margin-right: 20px;
+                background: url('../images/ctrls.png') no-repeat 0 0;
+                background-size: 32px auto;
+
+                &:last-child {
+                    background-position: 0 -37px;
+                }
+            }
+        }
+        ul {
+            max-height: 78px;
+            overflow: hidden;
+
+            li {
+                font-size: 14px;
+                line-height: 26px;
+                text-align: right;
+                color: @middle;
+
+                span {
+                    color: @light;
+                    padding-right: 10px;
+                }
             }
         }
     }

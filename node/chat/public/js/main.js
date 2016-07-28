@@ -30,12 +30,16 @@ var main = {
         }
     },
     showDialog: function (opt) {
+        $('.js_dialog').remove();
+
         var $dialog = $('#module_dialog').html()
             .replace('$message', opt.message)
             .replace('$btnClass', opt.btnClass || 'js_close');
         $body.append($dialog);
     },
     showTips: function (message) {
+        $('.js_tips').remove();
+
         var $tips = $('#module_tips').html()
             .replace('$message', message);
         $body.append($tips);

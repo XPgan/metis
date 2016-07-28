@@ -23,6 +23,8 @@ var chat = {
             _this.news.append($item);
         });
         socket.on('message', function (data) {
+            $('.js_active').removeClass('failed').find('p').removeClass('js_resend');
+
             if (pageData.cur_user != data.user.id) {
                 var $item = $('#module_message').html()
                     .replace('$view', 'other')
@@ -32,8 +34,11 @@ var chat = {
             }
         });
         socket.on('failed', function () {
-            _this.message.find('li').last().addClass('failed')
-                         .find('p').addClass('js_resend');
+            var judge = $('.js_active').length;
+            if (!judge) {
+                _this.message.find('li').last().addClass('failed')
+                             .find('p').addClass('js_resend');
+            }
             main.showTips('消息发送失败 点击消息重新发送');
         });
     },
@@ -52,6 +57,8 @@ var chat = {
         var method = function () {
             var value = $input.val();
             if (value) {
+                $('.js_active').removeClass('js_active');
+
                 socket.emit('message', {
                     user_id: pageData.cur_user,
                     message: value
@@ -75,7 +82,10 @@ var chat = {
     },
     resendMessage: function () {
         $body.on('click', '.js_resend', function () {
-            var value = $(this).text();
+            var _self = $(this);
+            var value = _self.text();
+
+            _self.parents('li').addClass('js_active').siblings().removeClass('js_active');
             socket.emit('message', {
                 user_id: pageData.cur_user,
                 message: value

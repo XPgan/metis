@@ -18,14 +18,14 @@ var chat = {
 
         socket.on('online', function (data) {
             var $item = $('#module_news').html()
-                .replace('$userName', data.user_name);
+                .replace('$username', data.user_name);
             _this.news.append($item);
         });
         socket.on('message', function (data) {
             if (pageData.cur_user != data.user.id) {
                 var $item = $('#module_message').html()
                     .replace('$view', 'other')
-                    .replace('$userName', data.user.user_name)
+                    .replace('$username', data.user.user_name)
                     .replace('$message', data.message);
                 _this.message.append($item);
             }
@@ -51,14 +51,14 @@ var chat = {
             var value = $input.val();
             if (value) {
                 socket.emit('message', {
-                    cur_user: pageData.cur_user,
+                    user_name: pageData.cur_user,
                     message: value
                 });
                 $input.val('');
 
                 var $item = $('#module_message').html()
                     .replace('$view', 'self')
-                    .replace('$userName', '我')
+                    .replace('$username', '我')
                     .replace('$message', value);
                 _this.message.append($item);
             }

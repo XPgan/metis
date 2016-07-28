@@ -12,15 +12,19 @@ router.get(/^\/(login)?$/, function (req, res) {
     res.render('index');
 });
 router.get('/chatroom', function (req, res) {
-    if (req.cookies.user) {
-        res.render('chatroom', {cur_user: req.cookies.user});
+    var cur_user = req.cookies.user;
+
+    if (cur_user) {
+        res.render('chatroom', {cur_user: cur_user});
     } else {
         res.redirect('/');
     }
 });
 router.get('/edit/myinfo', function (req, res) {
-    if (req.cookies.user) {
-        find.do(req.cookies.user);
+    var cur_user = req.cookies.user;
+
+    if (cur_user) {
+        find.do(cur_user);
         find.info(res, function (info) {
             res.render('myinfo', {info: info});
         });
@@ -28,7 +32,6 @@ router.get('/edit/myinfo', function (req, res) {
         res.redirect('/');
     }
 });
-
 
 router.post('/login', function (req, res) {
     log.login(req, res);
@@ -39,6 +42,5 @@ router.post('/register', function (req, res) {
 router.post('/edit/user/info', function (req, res) {
     edit.user.info(req, res, req.cookies.user);
 });
-
 
 module.exports = router;

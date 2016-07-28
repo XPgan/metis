@@ -30,7 +30,7 @@ var log = {
                 data: $form.serialize(),
                 success: function (data) {
                     socket.emit('online', {
-                        cur_user: $('#log_user').val()
+                        user_name: $('#log_user').val()
                     });
                     main.showResult(data, function () {
                         location.href = firstime ? '/edit/myinfo' : '/chatroom';

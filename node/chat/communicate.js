@@ -8,10 +8,10 @@ var communicate = {
     do: function (io) {
         io.on('connection', function (socket) {
             socket.on('online', function (data) {
-                io.sockets.emit('online', {user_name: data.cur_user});
+                io.sockets.emit('online', {user_name: data.user_name});
             });
             socket.on('message', function (data) {
-                User.find({id: data.cur_user}, {}, {}, function (err, result) {
+                User.find({id: data.user_name}, {}, {}, function (err, result) {
                     if (err) {
                         socket.emit('failed');
                     } else {

@@ -8,6 +8,22 @@ var edit = {
     user: {
         info: function (req, res) {
             var cur_user = req.cookies.user;
+            var updateData = function () {
+                User.update({id: cur_user}, req.body, {}, function (err) {
+                    if (err) {
+                        res.end(JSON.stringify({
+                            message: '提交失败',
+                            status: 0
+                        }));
+                    } else {
+                        res.end(JSON.stringify({
+                            message: '提交成功',
+                            status: 1
+                        }));
+                    }
+                });
+            };
+
             User.find({user_name: req.body.user_name}, {}, {}, function (err, result) {
                 if (err) {
                     res.end(JSON.stringify({
@@ -15,26 +31,24 @@ var edit = {
                         status: 0
                     }));
                 } else {
-                    var judge = result.length && (result[0].id != cur_user);
-                    if (judge) {
+                    if (result.length && (result[0].id != cur_user)) {
                         res.end(JSON.stringify({
                             message: '该昵称已被使用',
                             status: 0
                         }));
                     } else {
-                        User.update({id: cur_user}, req.body, {}, function (err) {
-                            if (err) {
-                                res.end(JSON.stringify({
-                                    message: '提交失败',
-                                    status: 0
-                                }));
+                        if (!req.body.password) {
+                            updateData();
+                        } else {
+                            if (req.body.password_old == result[0].password) {
+                                updateData();
                             } else {
                                 res.end(JSON.stringify({
-                                    message: '提交成功',
-                                    status: 1
+                                    message: '原密码填写错误',
+                                    status: 0
                                 }));
                             }
-                        });
+                        }
                     }
                 }
             });

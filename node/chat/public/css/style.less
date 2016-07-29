@@ -102,7 +102,37 @@
 
         font-size: 14px;
     }
-    a { .btn; .btnAttached; }
+    & > div a { .btn; .btnAttached; }
+
+    .m-password {
+        a {
+            position: relative;
+            font-size: 14px;
+            line-height: 20px;
+            color: @dark;
+            margin: 10px 0;
+            padding-right: 10px;
+
+            .rotate (@deg) {
+                -webkit-transform: rotate(@deg);
+                        transform: rotate(@deg);
+            }
+
+            &:before, &:after {
+                content: '';
+                display: block;
+                width: 7px;
+                height: 1px;
+                background-color: @dark;
+                position: absolute;
+                top: 10px;
+            }
+            &:before { right: -4px;.rotate(130deg); }
+            &:after { right: 0;.rotate(-130deg); }
+            &.up:before { .rotate(50deg); }
+            &.up:after { .rotate(-50deg); }
+        }
+    }
 }
 .m-chat {
     padding: 90px 20px 60px;

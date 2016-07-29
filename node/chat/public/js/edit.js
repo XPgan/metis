@@ -7,6 +7,11 @@ var edit = {
         do: function () {
             var _this = this;
             _this.info();
+
+            $('.js_password').on('click', function () {
+                $(this).toggleClass('up');
+                $(this).next().slideToggle();
+            });
         },
         info: function () {
             var $btn = $('.js_myinfo');

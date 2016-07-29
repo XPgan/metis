@@ -81,6 +81,20 @@
     border-radius: 5px;
     background-color: rgba(255, 123, 123, 0.8);
 }
+.hex {
+    position: fixed;
+    top: 100px;
+    width: 80%;
+
+    img {
+        transform-origin: center;
+
+        @animate: rotation 20s linear infinite forwards;
+
+        -webkit-animation: @animate;
+                animation: @animate;
+    }
+}
 
 
 .m-log {
@@ -279,9 +293,18 @@
                 transform: rotateY(100deg);
     }
 }
+.rotation {
+    to {
+        -webkit-transform: rotateZ(360deg);
+                transform: rotateZ(360deg);
+    }
+}
 
 @-webkit-keyframes rolling { .rolling }
         @keyframes rolling { .rolling }
+
+@-webkit-keyframes rotation { .rotation }
+        @keyframes rotation { .rotation }
 
 
 /* media */

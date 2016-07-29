@@ -38,6 +38,7 @@ var chat = {
                     .replace('$username', data.user.user_name)
                     .replace('$message', data.message);
                 _this.message.append($item);
+                _this.scrollTop();
             }
         });
         socket.on('failed', function () {
@@ -56,6 +57,13 @@ var chat = {
                 $(this).remove();
             });
         }, 5000);
+    },
+    scrollTop: function () {
+        var totalHeight = $body.height();
+        var winHeight = window.innerHeight;
+        var scrollTop = totalHeight - winHeight;
+
+        $body.scrollTop(scrollTop);
     },
     sendMessage: function () {
         var _this = this;
@@ -77,6 +85,7 @@ var chat = {
                     .replace('$username', '我')
                     .replace('$message', value);
                 _this.message.append($item);
+                _this.scrollTop();
             }
         };
 

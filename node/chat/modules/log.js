@@ -14,7 +14,7 @@ var log = {
                 var record = {user_name: user.user_name};
                 User.find(record, {id: 1}, {}, function (err, result) {
                     if (err) {
-                        res.cookie('user', 0);
+                        res.cookie('user', '0');
                         res.end(JSON.stringify({
                             message: '登录失败',
                             status: 0
@@ -28,7 +28,7 @@ var log = {
                     }
                 });
             } else {
-                res.cookie('user', 0);
+                res.cookie('user', '0');
                 res.end(JSON.stringify({
                     message: '登录失败',
                     status: 0
@@ -60,7 +60,7 @@ var log = {
                                 status: 0
                             }));
                         } else {
-                            res.cookie('user', 0);
+                            res.cookie('user', '0');
                             res.end(JSON.stringify({
                                 message: '注册成功',
                                 status: 1
@@ -70,6 +70,13 @@ var log = {
                 }
             }
         });
+    },
+    exit: function (req, res) {
+        res.cookie('user', '0');
+        res.end(JSON.stringify({
+            message: '退出登录成功',
+            status: 1
+        }));
     }
 };
 

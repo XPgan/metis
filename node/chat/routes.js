@@ -13,21 +13,21 @@ router.get(/^\/(login)?$/, function (req, res) {
 });
 router.get('/chatroom', function (req, res) {
     var cur_user = req.cookies.user;
-    if (cur_user) {
-        res.render('chatroom', {cur_user: cur_user});
-    } else {
+    if (cur_user == '0') {
         res.redirect('/');
+    } else {
+        res.render('chatroom', {cur_user: cur_user});
     }
 });
 router.get('/edit/myinfo', function (req, res) {
     var cur_user = req.cookies.user;
-    if (cur_user) {
+    if (cur_user == '0') {
+        res.redirect('/');
+    } else {
         find.do(cur_user);
         find.info(res, function (info) {
             res.render('myinfo', {info: info});
         });
-    } else {
-        res.redirect('/');
     }
 });
 
@@ -36,6 +36,9 @@ router.post('/login', function (req, res) {
 });
 router.post('/register', function (req, res) {
     log.register(req, res);
+});
+router.post('/exit', function (req, res) {
+    log.exit(req, res);
 });
 router.post('/edit/user/info', function (req, res) {
     edit.user.info(req, res, req.cookies.user);

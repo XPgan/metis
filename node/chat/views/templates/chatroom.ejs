@@ -1,7 +1,7 @@
 <%- include ../header %>
 <div class="chatroom-header c-header">
     <div>
-        <div class="ctrls c-hlt c-fix"><a href="javascript:;"></a><a href="javascript:;"></a></div>
+        <div class="ctrls c-hlt c-fix"><a href="javascript:;" class="js_exit"></a><a href="javascript:;"></a></div>
         <ul class="js_news"></ul>
     </div>
 </div>
@@ -25,5 +25,6 @@
         cur_user: <%= cur_user %>
     };
 </script>
+<script src="/js/log.js"></script>
 <script src="/js/chat.js"></script>
 <%- include ../footer %>

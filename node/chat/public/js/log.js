@@ -7,6 +7,7 @@ var log = {
         var _this = this;
         _this.login();
         _this.register();
+        _this.exit();
 
         $('.js_overturn').on('click', function () {
             var _self = $(this);
@@ -70,6 +71,23 @@ var log = {
             } else {
                 main.showDialog({message: '用户名或密码不得为空'});
             }
+        });
+    },
+    exit: function () {
+        var $btn = $('.js_exit');
+        $btn.on('click', function () {
+            $.ajax({
+                url: "/exit",
+                type: 'POST',
+                success: function (data) {
+                    main.showResult(data, function () {
+                        location.href = '/';
+                    });
+                },
+                error: function () {
+                    main.showDialog({message: '无法退出登录'});
+                }
+            });
         });
     }
 };

@@ -13,7 +13,6 @@ router.get(/^\/(login)?$/, function (req, res) {
 });
 router.get('/chatroom', function (req, res) {
     var cur_user = req.cookies.user;
-
     if (cur_user) {
         res.render('chatroom', {cur_user: cur_user});
     } else {
@@ -22,7 +21,6 @@ router.get('/chatroom', function (req, res) {
 });
 router.get('/edit/myinfo', function (req, res) {
     var cur_user = req.cookies.user;
-
     if (cur_user) {
         find.do(cur_user);
         find.info(res, function (info) {

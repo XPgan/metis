@@ -28,28 +28,34 @@ var edit = {
                     $oldPassword.attr('name', 'password_old');
                     $newPassword.attr('name', 'password');
                 }
-                if ($('#user_name').val()) {
-                    $.ajax({
-                        url: "/edit/user/info",
-                        type: 'POST',
-                        data: $form.serialize(),
-                        success: function (data) {
-                            !JSON.parse(data).status && reset();
-
-                            main.showResult(data, function () {
-                                location.href = '/chatroom';
-                            });
-                        },
-                        error: function () {
-                            reset();
-
-                            main.showDialog({message: '提交失败'});
-                        }
-                    });
-                } else {
+                if (Boolean($oldPassword.val()) ^ Boolean($newPassword.val())) {
                     reset();
 
-                    main.showDialog({message: '用户名不得为空'});
+                    main.showDialog({message: '原密码 & 新密码 均不能为空'});
+                } else {
+                    if ($('#user_name').val()) {
+                        $.ajax({
+                            url: "/edit/user/info",
+                            type: 'POST',
+                            data: $form.serialize(),
+                            success: function (data) {
+                                !JSON.parse(data).status && reset();
+
+                                main.showResult(data, function () {
+                                    location.href = '/chatroom';
+                                });
+                            },
+                            error: function () {
+                                reset();
+
+                                main.showDialog({message: '提交失败'});
+                            }
+                        });
+                    } else {
+                        reset();
+
+                        main.showDialog({message: '用户名不得为空'});
+                    }
                 }
             });
         }

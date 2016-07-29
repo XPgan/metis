@@ -72,11 +72,21 @@ var log = {
         });
     },
     exit: function (req, res) {
-        res.cookie('user', '0');
-        res.end(JSON.stringify({
-            message: '退出登录成功',
-            status: 1
-        }));
+        User.find({id: req.body.user_id}, {user_name: 1}, {}, function (err, result) {
+            if (err) {
+                res.end(JSON.stringify({
+                    message: '退出登录失败',
+                    status: 0
+                }));
+            } else {
+                res.cookie('user', '0');
+                res.end(JSON.stringify({
+                    message: '退出登录成功',
+                    status: 1,
+                    user_name: result[0].user_name
+                }));
+            }
+        });
     }
 };
 

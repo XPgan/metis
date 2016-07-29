@@ -10,6 +10,9 @@ var communicate = {
             socket.on('online', function (data) {
                 io.sockets.emit('online', {user_name: data.user_name});
             });
+            socket.on('offline', function (data) {
+                io.sockets.emit('offline', {user_name: data.user_name});
+            });
             socket.on('message', function (data) {
                 User.find({id: data.user_id}, {}, {}, function (err, result) {
                     if (err) {

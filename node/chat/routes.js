@@ -41,7 +41,7 @@ router.post('/exit', function (req, res) {
     log.exit(req, res);
 });
 router.post('/edit/user/info', function (req, res) {
-    edit.user.info(req, res, req.cookies.user);
+    edit.user.info(req, res);
 });
 
 module.exports = router;

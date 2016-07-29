@@ -19,7 +19,14 @@ var chat = {
 
         socket.on('online', function (data) {
             var $item = $('#module_news').html()
-                .replace('$username', data.user_name);
+                .replace('$username', data.user_name)
+                .replace('$message', '进入聊天室');
+            _this.news.append($item);
+        });
+        socket.on('offline', function (data) {
+            var $item = $('#module_news').html()
+                .replace('$username', data.user_name)
+                .replace('$message', '离开聊天室');
             _this.news.append($item);
         });
         socket.on('message', function (data) {

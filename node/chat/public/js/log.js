@@ -3,6 +3,7 @@
  */
 
 var log = {
+
     do: function () {
         var _this = this;
         _this.login();
@@ -31,11 +32,11 @@ var log = {
                 data: $form.serialize(),
                 success: function (data) {
                     var user_name = $form.find('input[name="user_name"]').val();
-
-                    socket.emit('online', {
-                        user_name: user_name
-                    });
                     main.showResult(data, function () {
+                        socket.emit('online', {
+                            user_name: user_name
+                        });
+
                         location.href = firstime ? '/edit/myinfo' : '/chatroom';
                     });
                 },
@@ -79,8 +80,15 @@ var log = {
             $.ajax({
                 url: "/exit",
                 type: 'POST',
+                data: {
+                    user_id: pageData.cur_user
+                },
                 success: function (data) {
                     main.showResult(data, function () {
+                        socket.emit('offline', {
+                            user_name: JSON.parse(data).user_name
+                        });
+
                         location.href = '/';
                     });
                 },

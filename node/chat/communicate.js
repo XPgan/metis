@@ -16,6 +16,9 @@ var method = {
     }
 };
 var communicate = {
+
+    userLst: {},
+
     do: function (io) {
         io.on('connection', function (socket) {
             socket.on('online', function (data) {

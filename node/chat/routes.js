@@ -3,9 +3,9 @@
  */
 
 var express = require('express');
-var find = require('./modules/find');
 var log = require('./modules/log');
 var edit = require('./modules/edit');
+var User = require('./models').User;
 var router = express.Router();
 
 router.get(/^\/(login)?$/, function (req, res) {
@@ -22,9 +22,12 @@ router.get('/chatroom', function (req, res) {
 router.get('/edit/myinfo', function (req, res) {
     var cur_user = req.cookies.user;
     if (cur_user >> 0) {
-        find.do(cur_user);
-        find.info(res, function (info) {
-            res.render('myinfo', {info: info});
+        User.find({id: cur_user}, {}, {}, function (err, result) {
+            if (err) {
+                res.redirect('/');
+            } else {
+                res.render('myinfo', {info: result[0]});
+            }
         });
     } else {
         res.redirect('/');

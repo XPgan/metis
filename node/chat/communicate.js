@@ -4,6 +4,17 @@
 
 var User = require('./models').User;
 
+var method = {
+    getCookie: function (cookie, key) {
+        var lst = cookie.split(';');
+        for (var i = 0;i < lst.length;i++) {
+            var kvp = lst[i].split('=');
+            if (key == kvp[0].trim()) {
+                return kvp[1];
+            }
+        }
+    }
+};
 var communicate = {
     do: function (io) {
         io.on('connection', function (socket) {
@@ -24,6 +35,13 @@ var communicate = {
                         });
                     }
                 });
+            });
+
+            socket.on('disconnect', function () {
+                var cookie = socket.handshake.headers.cookie;
+                var cur_user = method.getCookie(cookie, 'user');
+
+                console.log(cur_user);
             });
         });
     }

@@ -23,8 +23,6 @@ var log = {
     login: function () {
         var $btn = $('.js_login');
         var $form = $('#form_login');
-        var firstime = main.getUrlParam('firstime');
-
         $btn.on('click', function () {
             $.ajax({
                 url: '/login',
@@ -36,8 +34,7 @@ var log = {
                         socket.emit('online', {
                             user_name: user_name
                         });
-
-                        location.href = firstime ? '/edit/myinfo' : '/chatroom';
+                        location.href = '/chatroom';
                     });
                 },
                 error: function () {
@@ -61,8 +58,7 @@ var log = {
                     data: $form.serialize(),
                     success: function (data) {
                         main.showResult(data, function () {
-                            // 首次登录
-                            location.href = '/login?firstime=1';
+                            location.href = '/edit/myinfo';
                         });
                     },
                     error: function () {

@@ -14,7 +14,7 @@ router.get('/', function (req, res) {
     find.do('user');
     find.all(res, function (users) {
         res.render('index', {
-            log_user: log.user,
+            log_user: req.cookies.user,
             users: users.reverse().splice(0, 5)
         });
     });
@@ -22,19 +22,20 @@ router.get('/', function (req, res) {
 // 个人页
 router.get('/profile/:id', function (req, res) {
     var id = req.params.id;
+    var log_user = req.cookies.user;
 
     find.do('user', id);
     find.info(res, function (info) {
         if (info) {
             res.render('profile', {
-                log_user: log.user,
+                log_user: log_user,
                 cur_user: id,
-                is_author: (id == log.user),
+                is_author: (id == log_user),
                 userinfo: info
             });
         } else {
             res.render('../message', {
-                log_user: log.user,
+                log_user: log_user,
                 code: 404,
                 message: '这枚用户还未注册本站'
             });
@@ -43,12 +44,13 @@ router.get('/profile/:id', function (req, res) {
 });
 // 注册页
 router.get('/register', function (req, res) {
-    res.render('register', {log_user: log.user});
+    res.render('register', {log_user: req.cookies.user});
 });
 // 发布页
 router.get('/diary/publish', function (req, res) {
-    if (log.user) {
-        res.render('publish', {log_user: log.user});
+    var log_user = req.cookies.user;
+    if (log_user) {
+        res.render('publish', {log_user: log_user});
     } else {
         res.redirect('/');
     }
@@ -59,6 +61,7 @@ router.post('/diaries', function (req, res) {
     var num = 10; // 分页单位
     var user = req.query.user;
     var page = req.query.page >> 0;
+    var log_user = req.cookies.user;
     var data = {
         status: 1,
         data: []
@@ -68,10 +71,10 @@ router.post('/diaries', function (req, res) {
         find.info(res, function (info) {
             info.is_faved = 0;
             info.voter_num = info.voters.length;
-            if (log.user) {
+            if (log_user) {
                 var voters = info.voters;
                 for (var j = 0;j < voters.length;j++) {
-                    if (log.user == voters[j]) {
+                    if (log_user == voters[j]) {
                         info.is_faved = 1;
                         break;
                     }
@@ -122,21 +125,21 @@ router.post('/exit', function (req, res) {
 
 // user
 router.post('/user/edit/info', function (req, res) {
-    user.edit.info(req, res, log.user);
+    user.edit.info(req, res);
 });
 router.post('/user/edit/portrait', function (req, res) {
-    user.edit.portrait(req, res, log.user);
+    user.edit.portrait(req, res);
 });
 
 // diary
 router.post('/diary/publish', function (req, res) {
-    diary.publish(req, res, log.user);
+    diary.publish(req, res);
 });
 router.post('/diary/favour/verify/:id', function (req, res) {
-    diary.favour.verify(req, res, log.user, req.params.id);
+    diary.favour.verify(req, res);
 });
 router.post('/diary/favour/cancel/:id', function (req, res) {
-    diary.favour.cancel(req, res, log.user, req.params.id);
+    diary.favour.cancel(req, res);
 });
 
 

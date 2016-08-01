@@ -13,8 +13,8 @@ var User = require('../models').User;
  */
 var user = {
     edit: {
-        info: function (req, res, log_user) {
-            User.update({id: log_user}, req.body, {}, function (err) {
+        info: function (req, res) {
+            User.update({id: req.cookies.user}, req.body, {}, function (err) {
                 if (err) {
                     res.end(JSON.stringify({
                         message: '提交失败',
@@ -28,7 +28,7 @@ var user = {
                 }
             });
         },
-        portrait: function (req, res, log_user) {
+        portrait: function (req, res) {
             var form = new formidable.IncomingForm();
             form.parse(req, function (err, fields, files) {
                 if (err) {
@@ -38,7 +38,7 @@ var user = {
                     }));
                 } else {
 
-                    find.do('user', log_user);
+                    find.do('user', req.cookies.user);
 
                     // 上传新头像
                     var timestamp = (new Date()).valueOf();

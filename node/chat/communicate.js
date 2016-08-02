@@ -16,9 +16,6 @@ var method = {
     }
 };
 var communicate = {
-
-    userLst: {},
-
     do: function (io) {
         io.on('connection', function (socket) {
             socket.on('online', function (data) {
@@ -38,13 +35,6 @@ var communicate = {
                         });
                     }
                 });
-            });
-
-            socket.on('disconnect', function () {
-                var cookie = socket.handshake.headers.cookie;
-                var cur_user = method.getCookie(cookie, 'user');
-
-                console.log(cur_user);
             });
         });
     }

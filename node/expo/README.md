@@ -1,156 +1,93 @@
-<h1>简易微博系统</h1>
-<h5>express + mongodb + fs (node.js 实例)</h5>
-<h6>呆恋小喵&nbsp;&nbsp;&nbsp;&nbsp;qq: 493108053&nbsp;&nbsp;&nbsp;&nbsp;欢迎参观: www.miaomie.tech</h6>
+# 简易微博系统 #
+##### express + mongodb + fs #####
 
-<h2>用户注册本站后即可发布个人日记，并可粉丝他人、收藏他人日记帖</h2>
-<h5>后续功能: 评论 关注 推荐</h5>
+作者: 呆恋小喵
 
-<h6>数据库: expo</h6>
-<h6>数据表: users diaries</h6>
+欢迎参观: <http://www.miaomie.tech>
 
-<h3>结构</h3>
-<ul>
-    <li>
-        <h4>首页&nbsp;&nbsp;<strong>'/'</strong></h4>
-        <ul>
-            <li>最新注册用户列表</li>
-            <li>精选日记列表</li>
-            <li>作者信息</li>
-            <li>登录&nbsp;&nbsp;<em>[user_name] [password]</em></li>
-        </ul>
-    </li>
-    <li>
-        <h4>注册页&nbsp;&nbsp;<strong>'/register'</strong></h4>
-        <ul>
-            <li>注册&nbsp;&nbsp;<em>[user_name] [password] [sex] [tel] [qq] [intro]</em></li>
-        </ul>
-    </li>
-    <li>
-        <h4>用户主页&nbsp;&nbsp;<strong>'/profile/:id'</strong></h4>
-        <ul>
-            <li>用户信息</li>
-            <li>用户日记列表</li>
-        </ul>
-    </li>
-    <li>
-        <h4>发布日记页&nbsp;&nbsp;<strong>'/diary/publish'</strong></h4>
-        <ul>
-            <li>发布日记&nbsp;&nbsp;<em>[title] [content]</em></li>
-        </ul>
-    </li>
-    <li>
-        <h4>日记详情页&nbsp;&nbsp;<strong>'/diary/:id'</strong></h4>
-        <ul>
-            <li>作者信息</li>
-            <li>日记详情</li>
-        </ul>
-    </li>
-</ul>
+__用户注册本站后即可发布个人日记，并可粉丝他人、收藏他人日记帖__
 
-<h3>模块</h3>
-<ul>
-    <li>
-        <h4>log&nbsp;&nbsp;<strong>'modules/log.js'</strong></h4>
-        <ul>
-            <li>登录&nbsp;&nbsp;<strong>log.login()</strong></li>
-            <li>注册&nbsp;&nbsp;<strong>log.register()</strong></li>
-            <li>注销&nbsp;&nbsp;<strong>log.logout()</strong></li>
-            <li>退出登录&nbsp;&nbsp;<strong>log.exit()</strong></li>
-        </ul>
-    </li>
-    <li>
-        <h4>find&nbsp;&nbsp;<strong>'modules/find.js'</strong></h4>
-        <ul>
-            <li>查询当前记录&nbsp;&nbsp;<strong>find.info()</strong></li>
-            <li>查询所有记录&nbsp;&nbsp;<strong>find.all()</strong></li>
-        </ul>
-    </li>
-    <li>
-        <h4>diary&nbsp;&nbsp;<strong>'modules/diary.js'</strong></h4>
-        <ul>
-            <li>发布日记&nbsp;&nbsp;<strong>diary.publish()</strong></li>
-            <li>编辑日记&nbsp;&nbsp;<strong>diary.edit()</strong></li>
-            <li>移除日记&nbsp;&nbsp;<strong>diary.remove()</strong></li>
-            <li>点赞日记&nbsp;&nbsp;<strong>diary.favour()</strong></li>
-        </ul>
-    </li>
-    <li>
-        <h4>user&nbsp;&nbsp;<strong>'modules/user.js'</strong></h4>
-        <ul>
-            <li>编辑用户信息&nbsp;&nbsp;<strong>user.edit()</strong></li>
-            <li>关注用户&nbsp;&nbsp;<strong>user.attention()</strong></li>
-        </ul>
-    </li>
-</ul>
+后续功能: 评论 关注 推荐
 
-<h3>目录</h3>
-<ul>
-    <li><h4>bin</h4></li>
-    <li><h4>node_modules</h4></li>
-    <li><h4>package.json</h4></li>
-    <li><h4>app.js</h4></li>
-    <li><h4>routes.js (路由)</h4></li>
-    <li><h4>models.js (数据模型)</h4></li>
-    <li>
-        <h4>modules</h4>
-        <ul>
-            <li><h5>diary.js</h5></li>
-            <li><h5>user.js</h5></li>
-            <li><h5>log.js</h5></li>
-            <li><h5>find.js (查询记录)</h5></li>
-        </ul>
-    </li>
-    <li>
-        <h4>views</h4>
-        <ul>
-            <li>
-                <h5>templates</h5>
-                <ul>
-                    <li>index.ejs (首页)</li>
-                    <li>register.ejs (注册页)</li>
-                    <li>profile.ejs (用户主页)</li>
-                    <li>diary.ejs (日记详情页)</li>
-                    <li>publish.ejs (发布日记页)</li>                 
-                </ul>
-            </li>
-            <li><h5>header.ejs</h5></li>
-            <li><h5>footer.ejs</h5></li>
-            <li><h5>message.ejs (信息页)</h5></li>
-        </ul>
-    </li>
-    <li>
-        <h4>public</h4>
-        <ul>
-            <li>
-                <h5>css</h5>
-                <ul>
-                    <li>public.css (公用样式)</li>
-                    <li>style.css</li>
-                </ul>
-            </li>
-            <li>
-                <h5>js</h5>
-                <ul>
-                    <li>main.js (公用脚本)</li>
-                    <li>index.js</li>
-                    <li>register.js</li>
-                    <li>profile.js</li>
-                    <li>diary.js</li>
-                    <li>publish.js</li>
-                </ul>
-            </li>
-            <li>
-                <h5>images</h5>
-                <ul>
-                    <li>svg (矢量贴图)</li>
-                </ul>
-            </li>
-        </ul>
-    </li>
-    <li>
-        <h4>upload (上传文件)</h4>
-        <ul>
-            <li><h5>portrait</h5></li>
-        </ul>
-    </li>
-</ul>
+_数据库: expo_
+
+_数据表: users diaries_
+
+#### 结构 ####
++ __首页 '/'__
+	+ 最新注册用户列表
+	+ 精选日记列表
+	+ 作者信息
+	+ 登录 _[user_name]_ _[password]_
++ __注册页 '/register'__
+	+ 注册 _[user_name]_ _[password]_ _[sex]_ _[tel]_ _[qq]_ _[intro]_
++ __用户主页 '/profile/:id'__
+	+ 用户信息
+	+ 用户日记列表
++ __发布日记页 '/diary/publish'__
+	+ 发布日记 _[title]_ _[content]_
++ __日记详情页 '/diary/:id'__
+	+ 作者信息
+	+ 日记详情
+
+#### 模块 ####
++ __log 'modules/log.js'__	
+	+ 登录 __log.login()__
+	+ 注册 __log.register()__
+	+ 注销 __log.logout()__
+	+ 退出登录 __log.exit()__
++ __find 'modules/find.js'__
+	+ 查询当前记录 __find.info()__
+	+ 查询所有记录 __find.all()__
++ __diary 'modules/diary.js'__
+	+ 发布日记 __diary.publish()__
+	+ 编辑日记 __diary.edit()__
+	+ 移除日记 __diary.remove()__
+	+ 点赞日记 __diary.favour()__
++ __user 'modules/user.js'__
+	+ 编辑用户信息 __user.edit()__
+	+ 关注用户 __user.attention()__
+	
+#### 目录 ####
++ bin
++ node_modules
++ package.json
++ app.js
++ routes.js (路由)
++ models.js (数据模型)
++ modules
+	+ diary.js
+	+ user.js
+	+ log.js
+	+ find.js (查询记录)
++ views
+	+ templates
+		+ index.ejs (首页)
+		+ register.ejs (注册页)
+		+ profile.ejs (用户主页)
+		+ diary.ejs (日记详情页)
+		+ publish.ejs (发布日记页)
+	+ header.ejs
+	+ footer.ejs
+	+ message.ejs (信息页)
++ public
+	+ css
+		+ public.css (公用样式)
+		+ style.css
+	+ js
+		+ main.js (公用脚本)
+		+ index.js
+		+ register.js
+		+ profile.js
+		+ diary.js
+		+ publish.js
+	+ images
+		+ svg (矢量贴图)
++ upload (上传文件)
+	+ portrait
+
+		
+
+
+
+

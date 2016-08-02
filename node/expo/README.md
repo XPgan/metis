@@ -22,6 +22,9 @@ _数据表：users、diaries_
 	+ 最新注册用户列表
 	+ 精选日记列表
 	+ 登录 _[user_name]_ _[password]_
+	
+    ![Alt expo index](http://www.miaomie.tech/materials/index.jpg)
+
 + 注册页 __'/register'__
 	+ 注册 _[user_name]_ _[password]_ _[sex]_ _[tel]_ _[qq]_ _[intro]_
 + 用户主页 __'/profile/:id'__

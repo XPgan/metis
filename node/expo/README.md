@@ -21,22 +21,22 @@ _数据表：users、diaries_
 + 首页 __'/'__
 	+ 最新注册用户列表
 	+ 精选日记列表
-	+ 登录 _[user_name]_ _[password]_
+	+ 登录
 + 注册页 __'/register'__
-	+ 注册 _[user_name]_ _[password]_ _[sex]_ _[tel]_ _[qq]_ _[intro]_	
+	+ 注册
 + 用户主页 __'/profile/:id'__
 	+ 用户信息
 	+ 用户日记列表	
 + 发布日记页 __'/diary/publish'__
-	+ 发布日记 _[title]_ _[content]_	
+	+ 发布日记
 + 日记详情页 __'/diary/:id'__
 	+ 作者信息
 	+ 日记详情
 	
-<img src="http://www.miaomie.tech/materials/index.png" width="215" height="315" />
-<img src="http://www.miaomie.tech/materials/register.png" width="215" height="315" />
-<img src="http://www.miaomie.tech/materials/profile.png" width="215" height="315" />
-<img src="http://www.miaomie.tech/materials/publish.png" width="215" height="315" />
+<img src="http://www.miaomie.tech/materials/index.jpg" width="215" height="315" />
+<img src="http://www.miaomie.tech/materials/register.jpg" width="215" height="315" />
+<img src="http://www.miaomie.tech/materials/profile.jpg" width="215" height="315" />
+<img src="http://www.miaomie.tech/materials/publish.jpg" width="215" height="315" />
 
 ### modules ###
 + 'modules/log.js'	

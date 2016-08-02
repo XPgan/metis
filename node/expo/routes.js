@@ -49,7 +49,7 @@ router.get('/register', function (req, res) {
 // 发布页
 router.get('/diary/publish', function (req, res) {
     var log_user = req.cookies.user;
-    if (log_user) {
+    if (log_user >> 0) {
         res.render('publish', {log_user: log_user});
     } else {
         res.redirect('/');
@@ -71,7 +71,7 @@ router.post('/diaries', function (req, res) {
         find.info(res, function (info) {
             info.is_faved = 0;
             info.voter_num = info.voters.length;
-            if (log_user) {
+            if (log_user >> 0) {
                 var voters = info.voters;
                 for (var j = 0;j < voters.length;j++) {
                     if (log_user == voters[j]) {

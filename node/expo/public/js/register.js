@@ -21,7 +21,11 @@ var register = {
                     data: $form.serialize(),
                     success: function (data) {
                         main.showResult(data, function () {
-                            location.href = '/';
+                            main.showDialog({
+                                message: '注册成功',
+                                href: '/profile/' + JSON.parse(data).user_id,
+                                btnClass: 'js_goto'
+                            });
                         });
                     },
                     error: function () {

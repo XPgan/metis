@@ -94,7 +94,8 @@ var log = {
         });
     },
     register: function (req, res) {
-        req.body.id = (new Date()).valueOf().toString();
+        var id = (new Date()).valueOf().toString();
+        req.body.id = id;
 
         var user = new User(req.body);
         user.save(function (err) {
@@ -104,10 +105,11 @@ var log = {
                     status: 0
                 }));
             } else {
-                res.cookie('user', '0');
+                res.cookie('user', id);
                 res.end(JSON.stringify({
                     message: '注册成功',
-                    status: 1
+                    status: 1,
+                    user_id: id
                 }));
             }
         });

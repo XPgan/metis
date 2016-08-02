@@ -1,13 +1,13 @@
 # 简易微博系统 #
 ### express + mongodb + fs ###
 
-__用户注册本站后即可发布个人日记，并可粉丝他人、收藏他人日记帖__
+__用户注册本站后即可发布个人日记，并可粉丝他人、收藏他人日记__
 
-后续功能：评论、关注、推荐
+后续功能：评论日记、关注用户
 
 _数据库：expo_
 
-_数据表：users & diaries_
+_数据表：users、diaries_
 
 *****
 
@@ -17,11 +17,10 @@ _数据表：users & diaries_
 
 *****
 
-### 结构 ###
+### pages ###
 + 首页 __'/'__
 	+ 最新注册用户列表
 	+ 精选日记列表
-	+ 作者信息
 	+ 登录 _[user_name]_ _[password]_
 + 注册页 __'/register'__
 	+ 注册 _[user_name]_ _[password]_ _[sex]_ _[tel]_ _[qq]_ _[intro]_
@@ -34,7 +33,7 @@ _数据表：users & diaries_
 	+ 作者信息
 	+ 日记详情
 
-### 模块 ###
+### modules ###
 + 'modules/log.js'	
 	+ 登录 __log.login()__
 	+ 注册 __log.register()__

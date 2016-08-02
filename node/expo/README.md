@@ -23,15 +23,24 @@ _数据表：users、diaries_
 	+ 精选日记列表
 	+ 登录 _[user_name]_ _[password]_
 	
-    ![Alt expo index](http://www.miaomie.tech/materials/index.png)
+	<img src="http://www.miaomie.tech/materials/index.png" width="430" height="630" />
 
 + 注册页 __'/register'__
 	+ 注册 _[user_name]_ _[password]_ _[sex]_ _[tel]_ _[qq]_ _[intro]_
+	
+	<img src="http://www.miaomie.tech/materials/register.png" width="430" height="630" />
+	
 + 用户主页 __'/profile/:id'__
 	+ 用户信息
 	+ 用户日记列表
+	
+	<img src="http://www.miaomie.tech/materials/profile.png" width="430" height="630" />
+	
 + 发布日记页 __'/diary/publish'__
 	+ 发布日记 _[title]_ _[content]_
+	
+	<img src="http://www.miaomie.tech/materials/publish.png" width="430" height="630" />
+	
 + 日记详情页 __'/diary/:id'__
 	+ 作者信息
 	+ 日记详情

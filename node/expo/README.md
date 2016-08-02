@@ -33,10 +33,10 @@ _数据表：users、diaries_
 	+ 作者信息
 	+ 日记详情
 	
-<img src="http://www.miaomie.tech/materials/index.jpg" width="215" height="315" />
-<img src="http://www.miaomie.tech/materials/register.jpg" width="215" height="315" />
-<img src="http://www.miaomie.tech/materials/profile.jpg" width="215" height="315" />
-<img src="http://www.miaomie.tech/materials/publish.jpg" width="215" height="315" />
+<img src="http://www.miaomie.tech/materials/index.png" width="215" height="315" />
+<img src="http://www.miaomie.tech/materials/register.png" width="215" height="315" />
+<img src="http://www.miaomie.tech/materials/profile.png" width="215" height="315" />
+<img src="http://www.miaomie.tech/materials/publish.png" width="215" height="315" />
 
 ### modules ###
 + 'modules/log.js'	

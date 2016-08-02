@@ -32,11 +32,8 @@ _数据表：users、diaries_
 + 日记详情页 __'/diary/:id'__
 	+ 作者信息
 	+ 日记详情
-	
-<img src="http://www.miaomie.tech/materials/index.jpg" width="215" height="315" />
-<img src="http://www.miaomie.tech/materials/register.jpg" width="215" height="315" />
-<img src="http://www.miaomie.tech/materials/profile.jpg" width="215" height="315" />
-<img src="http://www.miaomie.tech/materials/publish.jpg" width="215" height="315" />
+
+![](./materials/index.jpg) ![](./materials/register.jpg) ![](./materials/profile.jpg) ![](./materials/publish.jpg)
 
 ### modules ###
 + 'modules/log.js'	

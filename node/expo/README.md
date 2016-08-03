@@ -11,6 +11,7 @@ _数据库：expo_
 
 _数据表：users、diaries_
 
+```javascript
     var userSchema = new Schema({
         id: String,
         user_name: String,
@@ -32,7 +33,8 @@ _数据表：users、diaries_
         title: String,
         content: String,
         voters: []
-    });
+    });    
+```
 
 *****
 

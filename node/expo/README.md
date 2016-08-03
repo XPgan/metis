@@ -45,16 +45,16 @@ var diarySchema = new Schema({
 *****
 
 ### pages ###
-+ __/__ (首页)
++ __/__ (首页) [效果图](./materials/index.png)
 	+ 最新注册用户列表
 	+ 精选日记列表
 	+ 登录
-+ __/register__ (注册页)
++ __/register__ (注册页) [效果图](./materials/register.png)
 	+ 注册
-+ __/profile/:id__ (用户主页)
++ __/profile/:id__ (用户主页) [效果图](./materials/profile.png)
 	+ 用户信息
 	+ 用户日记列表
-+ __/diary/publish__ (发布日记页)
++ __/diary/publish__ (发布日记页) [效果图](./materials/publish.png)
 	+ 发布日记
 + __/diary/:id__ (日记详情页)
 	+ 作者信息

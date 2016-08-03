@@ -7,10 +7,17 @@ var edit = {
         do: function () {
             var _this = this;
             _this.info();
+            _this.user_name = $('#user_name').val();
 
             $('.js_password').on('click', function () {
                 $(this).toggleClass('up');
                 $(this).next().slideToggle();
+            });
+            $('.js_enter').on('click', function () {
+                socket.emit('online', {
+                    user_id: pageData.cur_user,
+                    user_name: _this.user_name
+                });
             });
         },
         info: function () {
@@ -33,7 +40,8 @@ var edit = {
 
                     main.showDialog({message: '原密码 & 新密码 均不能为空'});
                 } else {
-                    if ($('#user_name').val()) {
+                    var user_name = $('#user_name').val();
+                    if (user_name) {
                         $.ajax({
                             url: "/edit/user/info",
                             type: 'POST',
@@ -42,6 +50,10 @@ var edit = {
                                 !JSON.parse(data).status && reset();
 
                                 main.showResult(data, function () {
+                                    socket.emit('online', {
+                                        user_id: pageData.cur_user,
+                                        user_name: user_name
+                                    });
                                     location.href = '/chatroom';
                                 });
                             },

@@ -32,6 +32,7 @@ var log = {
                     var user_name = $form.find('input[name="user_name"]').val();
                     main.showResult(data, function () {
                         socket.emit('online', {
+                            user_id: JSON.parse(data).user_id,
                             user_name: user_name
                         });
                         location.href = '/chatroom';
@@ -73,15 +74,17 @@ var log = {
     exit: function () {
         var $btn = $('.js_exit');
         $btn.on('click', function () {
+            var cur_user = pageData.cur_user;
             $.ajax({
                 url: "/exit",
                 type: 'POST',
                 data: {
-                    user_id: pageData.cur_user
+                    user_id: cur_user
                 },
                 success: function (data) {
                     main.showResult(data, function () {
                         socket.emit('offline', {
+                            user_id: cur_user,
                             user_name: JSON.parse(data).user_name
                         });
 

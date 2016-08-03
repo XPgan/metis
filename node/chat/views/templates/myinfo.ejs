@@ -15,8 +15,13 @@
         </div>
     </form>
     <div>
-        <a href="javascript:;" class="js_myinfo">提交</a><a href="/chatroom">跳过</a>
+        <a href="javascript:;" class="js_myinfo">提交</a><a href="/chatroom" class="js_enter">跳过</a>
     </div>
 </section>
+<script>
+    var pageData = {
+        cur_user: <%= cur_user %>
+    };
+</script>
 <script src="/js/edit.js"></script>
 <%- include ../footer %>

@@ -26,7 +26,10 @@ router.get('/edit/myinfo', function (req, res) {
             if (err) {
                 res.redirect('/');
             } else {
-                res.render('myinfo', {info: result[0]});
+                res.render('myinfo', {
+                    cur_user: cur_user,
+                    info: result[0]
+                });
             }
         });
     } else {

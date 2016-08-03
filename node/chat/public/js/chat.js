@@ -35,7 +35,7 @@ var chat = {
             if (pageData.cur_user != data.user.id) {
                 var $item = $('#module_message').html()
                     .replace('$view', 'other')
-                    .replace('$username', data.user.user_name)
+                    .replace('$username', data.user_name)
                     .replace('$message', data.message);
                 _this.message.append($item);
                 _this.scrolling();

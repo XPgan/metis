@@ -12,28 +12,28 @@ _数据库：expo_
 _数据表：users、diaries_
 
 ```javascript
-    var userSchema = new Schema({
-        id: String,
-        user_name: String,
-        password: String,
-        sex: String,
-        tel: String,
-        qq: String,
-        intro: String,
-        portrait: String,
-        diaries: [],
-        followers: [],
-        concerns: [],
-        favours: []
-    });
- 
-    var diarySchema = new Schema({
-        id: String,
-        author: String,
-        title: String,
-        content: String,
-        voters: []
-    });    
+var userSchema = new Schema({
+    id: String,
+    user_name: String,
+    password: String,
+    sex: String,
+    tel: String,
+    qq: String,
+    intro: String,
+    portrait: String,
+    diaries: [],
+    followers: [],
+    concerns: [],
+    favours: []
+});
+
+var diarySchema = new Schema({
+    id: String,
+    author: String,
+    title: String,
+    content: String,
+    voters: []
+}); 
 ```
 
 *****

@@ -22,9 +22,9 @@ var log = {
                     } else {
                         res.cookie('user', result[0].id);
                         res.end(JSON.stringify({
-                            user_id: result[0].id,
                             message: '登录成功',
-                            status: 1
+                            status: 1,
+                            user_id: result[0].id
                         }));
                     }
                 });

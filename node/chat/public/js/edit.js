@@ -6,7 +6,8 @@ var edit = {
     user: {
         do: function () {
             var _this = this;
-            _this.info();
+
+            _this.user_id = pageData.cur_user;
             _this.user_name = $('#user_name').val();
 
             $('.js_password').on('click', function () {
@@ -15,12 +16,15 @@ var edit = {
             });
             $('.js_enter').on('click', function () {
                 socket.emit('online', {
-                    user_id: pageData.cur_user,
+                    user_id: _this.user_id,
                     user_name: _this.user_name
                 });
             });
+
+            _this.info();
         },
         info: function () {
+            var _this = this;
             var $btn = $('.js_myinfo');
             var $form = $('#form_myinfo');
             $btn.on('click', function () {
@@ -51,7 +55,7 @@ var edit = {
 
                                 main.showResult(data, function () {
                                     socket.emit('online', {
-                                        user_id: pageData.cur_user,
+                                        user_id: _this.user_id,
                                         user_name: user_name
                                     });
                                     location.href = '/chatroom';

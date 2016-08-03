@@ -72,9 +72,9 @@ var log = {
         });
     },
     exit: function () {
+        var cur_user = pageData.cur_user;
         var $btn = $('.js_exit');
         $btn.on('click', function () {
-            var cur_user = pageData.cur_user;
             $.ajax({
                 url: "/exit",
                 type: 'POST',
@@ -87,7 +87,6 @@ var log = {
                             user_id: cur_user,
                             user_name: JSON.parse(data).user_name
                         });
-
                         location.href = '/';
                     });
                 },

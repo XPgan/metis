@@ -77,3 +77,5 @@ var diarySchema = new Schema({
 + `require('user')`
 	+ 编辑用户信息 __user.edit()__
 	+ 关注用户 __user.attention()__
+
+![](./materials/index.png =320)

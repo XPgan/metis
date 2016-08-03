@@ -5,6 +5,8 @@ __用户注册本站后即可发布个人日记，并可粉丝他人、收藏他
 
 后续功能：评论日记、关注用户
 
+*****
+
 _数据库：expo_
 
 _数据表：users、diaries_
@@ -18,37 +20,37 @@ _数据表：users、diaries_
 *****
 
 ### pages ###
-+ 首页 __'/'__
++ 首页 __/__
 	+ 最新注册用户列表
 	+ 精选日记列表
 	+ 登录
-+ 注册页 __'/register'__
++ 注册页 __/register__
 	+ 注册
-+ 用户主页 __'/profile/:id'__
++ 用户主页 __/profile/:id__
 	+ 用户信息
 	+ 用户日记列表	
-+ 发布日记页 __'/diary/publish'__
++ 发布日记页 __/diary/publish__
 	+ 发布日记
-+ 日记详情页 __'/diary/:id'__
++ 日记详情页 __/diary/:id__
 	+ 作者信息
 	+ 日记详情
 
 ![](./materials/index.jpg) ![](./materials/register.jpg) ![](./materials/profile.jpg) ![](./materials/publish.jpg)
 
 ### modules ###
-+ 'modules/log.js'	
++ `require('log')`	
 	+ 登录 __log.login()__	
 	+ 注册 __log.register()__	
 	+ 注销 __log.logout()__	
 	+ 退出登录 __log.exit()__	
-+ 'modules/find.js'
++ `require('find')`
 	+ 查询当前记录 __find.info()__	
 	+ 查询所有记录 __find.all()__	
-+ 'modules/diary.js'
++ `require('diary')`
 	+ 发布日记 __diary.publish()__	
 	+ 编辑日记 __diary.edit()__	
 	+ 移除日记 __diary.remove()__
 	+ 点赞日记 __diary.favour()__			
-+ 'modules/user.js'
++ `require('user')`
 	+ 编辑用户信息 __user.edit()__		
 	+ 关注用户 __user.attention()__

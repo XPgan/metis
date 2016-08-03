@@ -63,6 +63,7 @@ var diarySchema = new Schema({
 ### modules ###
 + `require('log')`
 	+ 登录 __log.login()__
+	
         ```javascript
         $.ajax({
             url: '/login',
@@ -72,7 +73,9 @@ var diarySchema = new Schema({
             error: function () {}
         });
         ```
+        
 	+ 注册 __log.register()__
+	
         ```javascript
         $.ajax({
             url: '/register',
@@ -82,7 +85,9 @@ var diarySchema = new Schema({
             error: function () {}
         });
         ```
+        
 	+ 注销 __log.logout()__
+	
 	    ```javascript
 	    $.ajax({
             url: '/logout',
@@ -91,7 +96,9 @@ var diarySchema = new Schema({
             error: function () {}
         });
         ```
+        
 	+ 退出登录 __log.exit()__	
+	
 	    ```javascript
 	    $.ajax({
             url: '/exit',
@@ -100,11 +107,13 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
+	    
 + `require('find')`
 	+ 查询当前记录 __find.info()__
 	+ 查询所有记录 __find.all()__	
 + `require('diary')`
 	+ 发布日记 __diary.publish()__
+	
 	    ```javascript
 	    $.ajax({
             url: '/diary/publish',
@@ -114,9 +123,11 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
+	    
 	+ 编辑日记 __diary.edit()__
 	+ 移除日记 __diary.remove()__
 	+ 点赞日记 __diary.favour()__	
+	
 	    ```javascript
 	    $.ajax({
             url: '/diary/favour/verify/:id',
@@ -125,6 +136,7 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
+	    
 	    ```javascript
 	    $.ajax({
             url: '/diary/favour/cancel/:id',
@@ -133,8 +145,10 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
+	    
 + `require('user')`
 	+ 编辑用户信息 __user.edit()__
+	
 	    ```javascript
 	    $.ajax({
             url: '/user/edit/info',
@@ -144,6 +158,7 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
+	    
 	    ```javascript
 	    $.ajax({
             url: '/user/edit/portrait',
@@ -155,4 +170,5 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
+	    
 	+ 关注用户 __user.attention()__

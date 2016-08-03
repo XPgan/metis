@@ -63,19 +63,96 @@ var diarySchema = new Schema({
 ### modules ###
 + `require('log')`
 	+ 登录 __log.login()__
+        ```javascript
+        $.ajax({
+            url: '/login',
+            type: 'POST',
+            data: $form.serialize(),
+            success: function (data) {},
+            error: function () {}
+        });
+        ```
 	+ 注册 __log.register()__
+        ```javascript
+        $.ajax({
+            url: '/register',
+            type: 'POST',
+            data: $form.serialize(),
+            success: function (data) {},
+            error: function () {}
+        });
+        ```
 	+ 注销 __log.logout()__
+	    ```javascript
+	    $.ajax({
+            url: '/logout',
+            type: 'POST',
+            success: function (data) {},
+            error: function () {}
+        });
+        ```
 	+ 退出登录 __log.exit()__	
+	    ```javascript
+	    $.ajax({
+            url: '/exit',
+            type: 'POST',
+            success: function (data) {},
+            error: function () {}
+        });
+	    ```
 + `require('find')`
 	+ 查询当前记录 __find.info()__
 	+ 查询所有记录 __find.all()__	
 + `require('diary')`
 	+ 发布日记 __diary.publish()__
+	    ```javascript
+	    $.ajax({
+            url: '/diary/publish',
+            type: 'POST',
+            data: $form.serialize(),
+            success: function (data) {},
+            error: function () {}
+        });
+	    ```
 	+ 编辑日记 __diary.edit()__
 	+ 移除日记 __diary.remove()__
-	+ 点赞日记 __diary.favour()__			
+	+ 点赞日记 __diary.favour()__	
+	    ```javascript
+	    $.ajax({
+            url: '/diary/favour/verify/:id',
+            type: 'POST',
+            success: function (data) {},
+            error: function () {}
+        });
+	    ```
+	    ```javascript
+	    $.ajax({
+            url: '/diary/favour/cancel/:id',
+            type: 'POST',
+            success: function (data) {},
+            error: function () {}
+        });
+	    ```
 + `require('user')`
 	+ 编辑用户信息 __user.edit()__
+	    ```javascript
+	    $.ajax({
+            url: '/user/edit/info',
+            type: 'POST',
+            data: $form.serialize(),
+            success: function (data) {},
+            error: function () {}
+        });
+	    ```
+	    ```javascript
+	    $.ajax({
+            url: '/user/edit/portrait',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function (data) {},
+            error: function () {}
+        });
+	    ```
 	+ 关注用户 __user.attention()__
-
-![](./materials/index.png =320)

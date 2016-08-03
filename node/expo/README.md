@@ -34,9 +34,7 @@ _数据表：users、diaries_
 + __/diary/:id__ (日记详情页)
 	+ 作者信息
 	+ 日记详情
-
-![](./materials/index@2x.png) ![](./materials/register@2x.png) ![](./materials/profile@2x.png) ![](./materials/publish@2x.png)
-
+	
 ### modules ###
 + `require('log')`	
 	+ 登录 __log.login()__	

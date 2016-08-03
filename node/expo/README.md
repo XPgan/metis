@@ -35,7 +35,7 @@ _数据表：users、diaries_
 	+ 作者信息
 	+ 日记详情
 
-![](./materials/index.jpg) ![](./materials/register.jpg) ![](./materials/profile.jpg) ![](./materials/publish.jpg)
+![](./materials/index@2x.png) ![](./materials/register.jpg) ![](./materials/profile.jpg) ![](./materials/publish.jpg)
 
 ### modules ###
 + `require('log')`	

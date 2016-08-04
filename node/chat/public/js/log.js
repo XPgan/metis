@@ -29,11 +29,11 @@ var log = {
                 type: 'POST',
                 data: $form.serialize(),
                 success: function (data) {
-                    var user_name = $form.find('input[name="user_name"]').val();
                     main.showResult(data, function () {
+                        var user = JSON.parse(data).user;
                         socket.emit('online', {
-                            user_id: JSON.parse(data).user_id,
-                            user_name: user_name
+                            id: user.id,
+                            nickname: user.nickname
                         });
                         location.href = '/chatroom';
                     });
@@ -48,11 +48,10 @@ var log = {
         var $btn = $('.js_register');
         var $form = $('#form_register');
         $btn.on('click', function () {
-            var user_name = $('#user_name').val();
+            var nickname = $('#nickname').val();
             var password = $('#password').val();
 
-            var judge = user_name && password;
-            if (judge) {
+            if (nickname && password) {
                 $.ajax({
                     url: "/register",
                     type: 'POST',
@@ -72,20 +71,17 @@ var log = {
         });
     },
     exit: function () {
-        var cur_user = pageData.cur_user;
         var $btn = $('.js_exit');
         $btn.on('click', function () {
+            var cur_user = global.cur_user;
             $.ajax({
                 url: "/exit",
                 type: 'POST',
-                data: {
-                    user_id: cur_user
-                },
                 success: function (data) {
                     main.showResult(data, function () {
                         socket.emit('offline', {
-                            user_id: cur_user,
-                            user_name: JSON.parse(data).user_name
+                            id: cur_user.id,
+                            nickname: cur_user.nickname
                         });
                         location.href = '/';
                     });

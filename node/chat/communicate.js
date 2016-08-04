@@ -2,8 +2,6 @@
  * Created by sunmy on 16/7/25.
  */
 
-var User = require('./models').User;
-
 var method = {
     getCookie: function (cookie, key) {
         var lst = cookie.split(';');
@@ -26,9 +24,17 @@ var communicate = {
             var cookie = socket.handshake.headers.cookie;
             var cur_user = method.getCookie(cookie, 'user');
 
-            (cur_user >> 0) && (_this.activers[cur_user] = true);
+            if (cur_user) {
+                _this.activers[cur_user.id] = {
+                    status: true,
+                    nickname: cur_user.nickname
+                };
+            }
+
             socket.on('disconnect', function () {
-                (cur_user >> 0) && (_this.activers[cur_user] = false);
+                if (cur_user) {
+                    _this.activers[cur_user.id].status = false;
+                }
             });
 
             _this.handleEvents(socket, io);
@@ -38,26 +44,23 @@ var communicate = {
     handleEvents: function (socket, io) {
         socket.on('online', function (data) {
             io.sockets.emit('online', {
-                user_id: data.user_id,
-                user_name: data.user_name
+                id: data.id,
+                nickname: data.nickname
             });
         });
         socket.on('offline', function (data) {
             io.sockets.emit('offline', {
-                user_id: data.user_id,
-                user_name: data.user_name
+                id: data.id,
+                nickname: data.nickname
             });
         });
         socket.on('message', function (data) {
-            User.find({id: data.user_id}, {user_name: 1}, {}, function (err, result) {
-                if (err) {
-                    socket.emit('failed');
-                } else {
-                    io.sockets.emit('message', {
-                        user_name: result[0].user_name,
-                        message: data.message
-                    });
-                }
+            io.sockets.emit('message', {
+                user: {
+                    id: data.id,
+                    nickname: data.nickname
+                },
+                message: data.message
             });
         });
     },
@@ -65,15 +68,15 @@ var communicate = {
         var _this = this;
         var t = setInterval(function () {
             for (var key in _this.activers) {
-                if (!_this.activers[key]) {
-                    User.find({id: key}, {user_name: 1}, {}, function (err, result) {
-                        io.sockets.emit('offline', {
-                            user_id: key,
-                            user_name: result[0].user_name
-                        });
+                var _loop = _this.activers[key];
 
-                        delete _this.activers[key];
+                if (!_loop.status) {
+                    io.sockets.emit('offline', {
+                        id: key,
+                        nickname: _loop.nickname
                     });
+
+                    delete _this.activers[key];
                 }
             }
         }, 4000);

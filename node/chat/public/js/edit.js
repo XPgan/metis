@@ -6,9 +6,7 @@ var edit = {
     user: {
         do: function () {
             var _this = this;
-
-            _this.user_id = pageData.cur_user;
-            _this.user_name = $('#user_name').val();
+            var cur_user = global.cur_user;
 
             $('.js_password').on('click', function () {
                 $(this).toggleClass('up');
@@ -16,15 +14,14 @@ var edit = {
             });
             $('.js_enter').on('click', function () {
                 socket.emit('online', {
-                    user_id: _this.user_id,
-                    user_name: _this.user_name
+                    id: cur_user.id,
+                    nickname: cur_user.nickname
                 });
             });
 
             _this.info();
         },
         info: function () {
-            var _this = this;
             var $btn = $('.js_myinfo');
             var $form = $('#form_myinfo');
             $btn.on('click', function () {
@@ -44,8 +41,8 @@ var edit = {
 
                     main.showDialog({message: '原密码 & 新密码 均不能为空'});
                 } else {
-                    var user_name = $('#user_name').val();
-                    if (user_name) {
+                    var nickname = $('#nickname').val();
+                    if (nickname) {
                         $.ajax({
                             url: "/edit/user/info",
                             type: 'POST',
@@ -55,8 +52,8 @@ var edit = {
 
                                 main.showResult(data, function () {
                                     socket.emit('online', {
-                                        user_id: _this.user_id,
-                                        user_name: user_name
+                                        id: global.cur_user.id,
+                                        nickname: nickname
                                     });
                                     location.href = '/chatroom';
                                 });

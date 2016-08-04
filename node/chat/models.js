@@ -8,7 +8,7 @@ var db = mongoose.connect('mongodb://localhost/chat');
 
 var userSchema = new Schema({
     id: String,
-    user_name: String,
+    nickname: String,
     password: String,
     sex: String,
     tel: String,

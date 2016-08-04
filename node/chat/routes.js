@@ -9,11 +9,11 @@ var User = require('./models').User;
 var router = express.Router();
 
 router.get(/^\/(login)?$/, function (req, res) {
-    res.render('index');
+    res.render('index', {cur_user: req.cookies.user});
 });
 router.get('/chatroom', function (req, res) {
     var cur_user = req.cookies.user;
-    if (cur_user >> 0) {
+    if (cur_user) {
         res.render('chatroom', {cur_user: cur_user});
     } else {
         res.redirect('/');
@@ -21,8 +21,8 @@ router.get('/chatroom', function (req, res) {
 });
 router.get('/edit/myinfo', function (req, res) {
     var cur_user = req.cookies.user;
-    if (cur_user >> 0) {
-        User.find({id: cur_user}, {}, {}, function (err, result) {
+    if (cur_user) {
+        User.find({id: cur_user.id}, {}, {}, function (err, result) {
             if (err) {
                 res.redirect('/');
             } else {

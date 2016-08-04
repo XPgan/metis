@@ -1,7 +1,7 @@
 <%- include ../header %>
 <section class="m-myinfo card">
     <form id="form_myinfo" autocomplete="off">
-        <input type="text" id="user_name" name="user_name" placeholder="昵称" value="<%= info.user_name %>" />
+        <input type="text" id="nickname" name="nickname" placeholder="昵称" value="<%= info.nickname %>" />
         <input type="text" id="sex" name="sex" placeholder="性别" value="<%= info.sex %>" />
         <input type="text" id="tel" name="tel" placeholder="电话" value="<%= info.tel %>" />
         <input type="text" id="qq" name="qq" placeholder="QQ" value="<%= info.qq %>" />
@@ -18,10 +18,5 @@
         <a href="javascript:;" class="js_myinfo">提交</a><a href="/chatroom" class="js_enter">跳过</a>
     </div>
 </section>
-<script>
-    var pageData = {
-        cur_user: <%= cur_user %>
-    };
-</script>
 <script src="/js/edit.js"></script>
 <%- include ../footer %>

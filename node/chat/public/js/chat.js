@@ -19,23 +19,23 @@ var chat = {
 
         socket.on('online', function (data) {
             var $item = $('#module_news').html()
-                .replace('$username', data.user_name)
+                .replace('$nickname', data.nickname)
                 .replace('$message', '进入聊天室');
             _this.news.append($item);
         });
         socket.on('offline', function (data) {
             var $item = $('#module_news').html()
-                .replace('$username', data.user_name)
+                .replace('$nickname', data.nickname)
                 .replace('$message', '离开聊天室');
             _this.news.append($item);
         });
         socket.on('message', function (data) {
             $('.js_active').removeClass('failed').find('p').removeClass('js_resend');
 
-            if (pageData.cur_user != data.user.id) {
+            if (global.cur_user.id != data.user.id) {
                 var $item = $('#module_message').html()
                     .replace('$view', 'other')
-                    .replace('$username', data.user_name)
+                    .replace('$nickname', data.user.nickname)
                     .replace('$message', data.message);
                 _this.message.append($item);
                 _this.scrolling();
@@ -69,20 +69,24 @@ var chat = {
         var _this = this;
         var $btn = $('.js_send');
         var $input = $('.js_input');
+        var cur_user = global.cur_user;
         var method = function () {
             var value = $input.val();
             if (value) {
                 $('.js_active').removeClass('js_active');
 
                 socket.emit('message', {
-                    user_id: pageData.cur_user,
+                    user: {
+                        id: cur_user.id,
+                        nickname: cur_user.nickname
+                    },
                     message: value
                 });
                 $input.val('');
 
                 var $item = $('#module_message').html()
                     .replace('$view', 'self')
-                    .replace('$username', '我')
+                    .replace('$nickname', '我')
                     .replace('$message', value);
                 _this.message.append($item);
                 _this.scrolling();
@@ -100,10 +104,14 @@ var chat = {
         $body.on('click', '.js_resend', function () {
             var _self = $(this);
             var value = _self.text();
+            var cur_user = global.cur_user;
 
             _self.parents('li').addClass('js_active').siblings().removeClass('js_active');
             socket.emit('message', {
-                user_id: pageData.cur_user,
+                user: {
+                    id: cur_user.id,
+                    nickname: cur_user.nickname
+                },
                 message: value
             });
         });

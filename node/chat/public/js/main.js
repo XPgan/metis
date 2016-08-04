@@ -30,7 +30,7 @@ var main = {
         }
     },
     showDialog: function (opt) {
-        $('.js_dialog').remove();
+        $('.js_dialog').parent().remove();
 
         var $dialog = $('#module_dialog').html()
             .replace('$message', opt.message)

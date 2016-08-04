@@ -7,29 +7,32 @@ var User = require('../models').User;
 var log = {
 
     login: function (req, res) {
-        var user = req.body;
-
-        User.count(user, function (err, doc) {
+        User.count(req.body, function (err, doc) {
             if (doc && !err) {
-                var record = {user_name: user.user_name};
+                var record = {nickname: req.body.nickname};
                 User.find(record, {id: 1}, {}, function (err, result) {
                     if (err) {
-                        res.cookie('user', '0');
+                        res.cookie('user', '');
                         res.end(JSON.stringify({
                             message: '登录失败',
                             status: 0
                         }));
                     } else {
-                        res.cookie('user', result[0].id);
+                        var user = {
+                            id: result[0].id,
+                            nickname: req.body.nickname
+                        };
+
+                        res.cookie('user', user);
                         res.end(JSON.stringify({
                             message: '登录成功',
                             status: 1,
-                            user_id: result[0].id
+                            user: user
                         }));
                     }
                 });
             } else {
-                res.cookie('user', '0');
+                res.cookie('user', '');
                 res.end(JSON.stringify({
                     message: '登录失败',
                     status: 0
@@ -38,7 +41,7 @@ var log = {
         });
     },
     register: function (req, res) {
-        User.find({user_name: req.body.user_name}, {}, {}, function (err, result) {
+        User.find({nickname: req.body.nickname}, {}, {}, function (err, result) {
             if (err) {
                 res.end(JSON.stringify({
                     message: '注册失败',
@@ -62,7 +65,10 @@ var log = {
                                 status: 0
                             }));
                         } else {
-                            res.cookie('user', id);
+                            res.cookie('user', {
+                                id: id,
+                                nickname: req.body.nickname
+                            });
                             res.end(JSON.stringify({
                                 message: '注册成功',
                                 status: 1
@@ -74,21 +80,11 @@ var log = {
         });
     },
     exit: function (req, res) {
-        User.find({id: req.body.user_id}, {user_name: 1}, {}, function (err, result) {
-            if (err) {
-                res.end(JSON.stringify({
-                    message: '退出登录失败',
-                    status: 0
-                }));
-            } else {
-                res.cookie('user', '0');
-                res.end(JSON.stringify({
-                    message: '退出登录成功',
-                    status: 1,
-                    user_name: result[0].user_name
-                }));
-            }
-        });
+        res.cookie('user', '');
+        res.end(JSON.stringify({
+            message: '退出登录成功',
+            status: 1
+        }));
     }
 };
 

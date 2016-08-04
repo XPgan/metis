@@ -9,7 +9,7 @@ var edit = {
         info: function (req, res) {
             var cur_user = req.cookies.user;
             var updateData = function () {
-                User.update({id: cur_user}, req.body, {}, function (err) {
+                User.update({id: cur_user.id}, req.body, {}, function (err) {
                     if (err) {
                         res.end(JSON.stringify({
                             message: '提交失败',
@@ -24,14 +24,14 @@ var edit = {
                 });
             };
 
-            User.find({user_name: req.body.user_name}, {}, {}, function (err, result) {
+            User.find({nickname: req.body.nickname}, {}, {}, function (err, result) {
                 if (err) {
                     res.end(JSON.stringify({
                         message: '提交失败',
                         status: 0
                     }));
                 } else {
-                    if (result.length && (result[0].id != cur_user)) {
+                    if (result.length && (result[0].id != cur_user.id)) {
                         res.end(JSON.stringify({
                             message: '该昵称已被使用',
                             status: 0

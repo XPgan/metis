@@ -15,15 +15,10 @@
     </div>
 </section>
 <script id="module_news" type="text/x-module">
-    <li><span>$username</span>$message</li>
+    <li><span>$nickname</span>$message</li>
 </script>
 <script id="module_message" type="text/x-module">
-    <li class="$view c-fix"><span>$username</span><p>$message<em></em></p></li>
-</script>
-<script>
-    var pageData = {
-        cur_user: <%= cur_user %>
-    };
+    <li class="$view c-fix"><span>$nickname</span><p>$message<em></em></p></li>
 </script>
 <script src="/js/log.js"></script>
 <script src="/js/chat.js"></script>

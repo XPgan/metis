@@ -101,7 +101,15 @@
 .m-log {
     & > div {
         input { .input; }
-        a { .btn; .btnAttached; }
+        div a { .btn; .btnAttached; }
+        p {
+            font-size: 16px;
+            line-height: 28px;
+            color: @middle;
+            padding: 10px 20px 0;
+
+            a { color: @light; }
+        }
 
         &.overturn {
             @animate: rolling 0.8s ease-in forwards;

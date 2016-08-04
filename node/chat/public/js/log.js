@@ -58,7 +58,7 @@ var log = {
                     data: $form.serialize(),
                     success: function (data) {
                         main.showResult(data, function () {
-                            location.href = '/edit/myinfo';
+                            location.href = '/edit/myinfo?firstime=1';
                         });
                     },
                     error: function () {

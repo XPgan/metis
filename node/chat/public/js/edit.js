@@ -8,20 +8,24 @@ var edit = {
             var _this = this;
             var cur_user = global.cur_user;
 
+            _this.firstime = main.getUrlParam('firstime');
+
             $('.js_password').on('click', function () {
                 $(this).toggleClass('up');
                 $(this).next().slideToggle();
             });
             $('.js_enter').on('click', function () {
-                socket.emit('online', {
-                    id: cur_user.id,
-                    nickname: cur_user.nickname
-                });
+                if (_this.firstime) {
+                    socket.emit('online', {
+                        id: cur_user.id,
+                        nickname: cur_user.nickname
+                    });
+                }
             });
-
             _this.info();
         },
         info: function () {
+            var _this = this;
             var $btn = $('.js_myinfo');
             var $form = $('#form_myinfo');
             $btn.on('click', function () {
@@ -51,10 +55,12 @@ var edit = {
                                 !JSON.parse(data).status && reset();
 
                                 main.showResult(data, function () {
-                                    socket.emit('online', {
-                                        id: global.cur_user.id,
-                                        nickname: nickname
-                                    });
+                                    if (_this.firstime) {
+                                        socket.emit('online', {
+                                            id: global.cur_user.id,
+                                            nickname: nickname
+                                        });
+                                    }
                                     location.href = '/chatroom';
                                 });
                             },

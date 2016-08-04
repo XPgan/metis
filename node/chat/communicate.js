@@ -21,24 +21,24 @@ var communicate = {
         var _this = this;
 
         io.on('connection', function (socket) {
-            var cookie = socket.handshake.headers.cookie;
-            var cur_user = method.getCookie(cookie, 'user');
+            //var cookie = socket.handshake.headers.cookie;
+            //var cur_user = method.getCookie(cookie, 'user');
 
-            if (cur_user) {
-                _this.activers[cur_user.id] = {
-                    status: true,
-                    nickname: cur_user.nickname
-                };
-            }
-
-            socket.on('disconnect', function () {
-                if (cur_user) {
-                    _this.activers[cur_user.id].status = false;
-                }
-            });
+            //if (cur_user) {
+            //    _this.activers[cur_user.id] = {
+            //        status: true,
+            //        nickname: cur_user.nickname
+            //    };
+            //}
+            //
+            //socket.on('disconnect', function () {
+            //    if (cur_user) {
+            //        _this.activers[cur_user.id].status = false;
+            //    }
+            //});
 
             _this.handleEvents(socket, io);
-            _this.checkActivers(io);
+            //_this.checkActivers(io);
         });
     },
     handleEvents: function (socket, io) {
@@ -57,8 +57,8 @@ var communicate = {
         socket.on('message', function (data) {
             io.sockets.emit('message', {
                 user: {
-                    id: data.id,
-                    nickname: data.nickname
+                    id: data.user.id,
+                    nickname: data.user.nickname
                 },
                 message: data.message
             });

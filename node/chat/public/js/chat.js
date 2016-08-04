@@ -69,9 +69,10 @@ var chat = {
         var _this = this;
         var $btn = $('.js_send');
         var $input = $('.js_input');
-        var cur_user = global.cur_user;
         var method = function () {
             var value = $input.val();
+            var cur_user = global.cur_user;
+
             if (value) {
                 $('.js_active').removeClass('js_active');
 

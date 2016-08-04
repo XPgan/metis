@@ -73,16 +73,11 @@ var log = {
     exit: function () {
         var $btn = $('.js_exit');
         $btn.on('click', function () {
-            var cur_user = global.cur_user;
             $.ajax({
                 url: "/exit",
                 type: 'POST',
                 success: function (data) {
                     main.showResult(data, function () {
-                        socket.emit('offline', {
-                            id: cur_user.id,
-                            nickname: cur_user.nickname
-                        });
                         location.href = '/';
                     });
                 },

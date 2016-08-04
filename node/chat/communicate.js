@@ -10,8 +10,8 @@ var method = {
             var kvp = lst[i].split('=');
             if (key == kvp[0].trim() && kvp[1]) {
                 var pattern = /\{.*\}/;
-                var str = pattern.exec(decodeURIComponent(kvp[1]))[0];
-                return JSON.parse(str);
+                var jsonStr = pattern.exec(decodeURIComponent(kvp[1]))[0];
+                return JSON.parse(jsonStr);
             }
         }
     }
@@ -70,7 +70,6 @@ var communicate = {
                         id: key,
                         nickname: _loop.nickname
                     });
-
                     delete _this.activers[key];
                 }
             }

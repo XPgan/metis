@@ -4,6 +4,7 @@
 
 var chat = {
 
+    interval: null,
     news: $('.js_news'),
     message: $('.js_message'),
 
@@ -52,7 +53,8 @@ var chat = {
     },
     bulletNews: function () {
         var _this = this;
-        var t = setInterval(function () {
+        _this.interval && clearInterval(_this.interval);
+        _this.interval = setInterval(function () {
             _this.news.find('li').first().slideUp(function () {
                 $(this).remove();
             });

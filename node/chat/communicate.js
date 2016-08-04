@@ -3,56 +3,51 @@
  */
 
 var method = {
-    getCookie: function (cookie, key) {
+    getCookie: function (socket, key) {
+        var cookie = socket.handshake.headers.cookie;
         var lst = cookie.split(';');
         for (var i = 0;i < lst.length;i++) {
             var kvp = lst[i].split('=');
-            if (key == kvp[0].trim()) {
-                return kvp[1];
+            if (key == kvp[0].trim() && kvp[1]) {
+                var pattern = /\{.*\}/;
+                var str = pattern.exec(decodeURIComponent(kvp[1]))[0];
+                return JSON.parse(str);
             }
         }
     }
 };
 var communicate = {
 
+    interval: null,
     activers: {},
 
     do: function (io) {
         var _this = this;
-
         io.on('connection', function (socket) {
-            //var cookie = socket.handshake.headers.cookie;
-            //var cur_user = method.getCookie(cookie, 'user');
-
-            //if (cur_user) {
-            //    _this.activers[cur_user.id] = {
-            //        status: true,
-            //        nickname: cur_user.nickname
-            //    };
-            //}
-            //
-            //socket.on('disconnect', function () {
-            //    if (cur_user) {
-            //        _this.activers[cur_user.id].status = false;
-            //    }
-            //});
-
             _this.handleEvents(socket, io);
-            //_this.checkActivers(io);
+            _this.setActivers(socket, true);
+            _this.checkActivers(io);
+
+            socket.on('disconnect', function () {
+                _this.setActivers(socket, false);
+            });
         });
     },
     handleEvents: function (socket, io) {
+        var _this = this;
         socket.on('online', function (data) {
             io.sockets.emit('online', {
                 id: data.id,
                 nickname: data.nickname
             });
+            _this.setActivers(socket, true);
         });
         socket.on('offline', function (data) {
             io.sockets.emit('offline', {
                 id: data.id,
                 nickname: data.nickname
             });
+            delete _this.activers[data.id];
         });
         socket.on('message', function (data) {
             io.sockets.emit('message', {
@@ -66,10 +61,10 @@ var communicate = {
     },
     checkActivers: function (io) {
         var _this = this;
-        var t = setInterval(function () {
+        _this.interval && clearInterval(_this.interval);
+        _this.interval = setInterval(function () {
             for (var key in _this.activers) {
                 var _loop = _this.activers[key];
-
                 if (!_loop.status) {
                     io.sockets.emit('offline', {
                         id: key,
@@ -79,7 +74,17 @@ var communicate = {
                     delete _this.activers[key];
                 }
             }
-        }, 4000);
+        }, 5000);
+    },
+    setActivers: function (socket, status) {
+        var _this = this;
+        var cur_user = method.getCookie(socket, 'user');
+        if (cur_user) {
+            _this.activers[cur_user.id] = {
+                status: status,
+                nickname: cur_user.nickname
+            }
+        }
     }
 };
 

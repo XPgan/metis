@@ -64,6 +64,8 @@ var diarySchema = new Schema({
 + `require('log')`
 	+ 登录 __log.login()__
 	
+	    客户端
+	
 	    ```html
 	    <form id="form_login">
             <input type="text" name="username" placeholder="用户名" />
@@ -86,6 +88,8 @@ var diarySchema = new Schema({
         ```
         
 	+ 注册 __log.register()__
+	
+	    客户端
 	
 	    ```html
 	    <form id="form_register">
@@ -115,6 +119,8 @@ var diarySchema = new Schema({
         
 	+ 注销 __log.logout()__
 	
+	    客户端
+	
 	    ```javascript
 	    $.ajax({
             url: '/logout',
@@ -128,6 +134,8 @@ var diarySchema = new Schema({
         ```
         
 	+ 退出登录 __log.exit()__	
+	
+	    客户端
 	
 	    ```javascript
 	    $.ajax({
@@ -143,9 +151,27 @@ var diarySchema = new Schema({
 	    
 + `require('find')`
 	+ 查询当前记录 __find.info()__
+	
+	    服务端
+	    
+	    ```javascript
+	    find.do(type, id);
+	    find.info(res, function (info) {});
+	    ```
+	
 	+ 查询所有记录 __find.all()__	
+	
+	    服务端
+	    
+	    ```javascript
+	    find.do(type);
+	    find.all(res, function (info) {});
+	    ```
+	
 + `require('diary')`
 	+ 发布日记 __diary.publish()__
+	
+	    客户端
 	
 	    ```html
 	    <form id="form_publish">
@@ -172,6 +198,8 @@ var diarySchema = new Schema({
 	+ 移除日记 __diary.remove()__
 	+ 点赞日记 __diary.favour__	
 	    + __diary.favour.verify()__
+	    
+	        客户端
 	
             ```javascript
             $.ajax({
@@ -186,6 +214,8 @@ var diarySchema = new Schema({
             ```
 	    
 	    + __diary.favour.cancel()__
+	    
+	        客户端
 	    
             ```javascript
             $.ajax({
@@ -202,6 +232,8 @@ var diarySchema = new Schema({
 + `require('user')`
 	+ 编辑用户信息 __user.edit__
 	    + __user.edit.info()__
+	    
+	        客户端
 	    
             ```html
             <form id="form_userinfo">
@@ -224,6 +256,8 @@ var diarySchema = new Schema({
             ```
 	    
 	    + __user.edit.portrait()__
+	    
+	        客户端
 	    
             ```html
             <form enctype="multipart/form-data" id="form_portrait">

@@ -4,31 +4,22 @@
 
 var chat = {
 
-    interval: null,
     news: $('.js_news'),
     message: $('.js_message'),
 
     do: function () {
         var _this = this;
         _this.handleEvents();
-        _this.bulletNews();
         _this.sendMessage();
         _this.resendMessage();
     },
     handleEvents: function () {
         var _this = this;
-
         socket.on('online', function (data) {
-            var $item = $('#module_news').html()
-                .replace('$nickname', data.nickname)
-                .replace('$message', '进入聊天室');
-            _this.news.append($item);
+            _this.sendNews(data, '进入聊天室')
         });
         socket.on('offline', function (data) {
-            var $item = $('#module_news').html()
-                .replace('$nickname', data.nickname)
-                .replace('$message', '离开聊天室');
-            _this.news.append($item);
+            _this.sendNews(data, '离开聊天室');
         });
         socket.on('message', function (data) {
             $('.js_active').removeClass('failed').find('p').removeClass('js_resend');
@@ -51,21 +42,27 @@ var chat = {
             main.showTips('消息发送失败 点击消息重新发送');
         });
     },
-    bulletNews: function () {
-        var _this = this;
-        _this.interval && clearInterval(_this.interval);
-        _this.interval = setInterval(function () {
-            _this.news.find('li').first().slideUp(function () {
-                $(this).remove();
-            });
-        }, 5000);
-    },
     scrolling: function () {
         var totalHeight = $body.height();
         var winHeight = window.innerHeight;
         var distance = totalHeight - winHeight;
 
         $body.scrollTop(distance);
+    },
+    sendNews: function (data, news) {
+        var _this = this;
+        var id = (new Date()).valueOf().toString();
+        var $item = $('#module_news').html()
+            .replace('$id', id)
+            .replace('$nickname', data.nickname)
+            .replace('$news', news);
+        _this.news.append($item);
+
+        var t = setTimeout(function () {
+            $('#' + id).slideUp(function () {
+                $(this).remove();
+            });
+        }, 5000);
     },
     sendMessage: function () {
         var _this = this;

@@ -8,7 +8,7 @@ var db = mongoose.connect('mongodb://localhost/expo');
 
 var userSchema = new Schema({
     id: String,
-    user_name: String,
+    username: String,
     password: String,
     sex: String,
     tel: String,

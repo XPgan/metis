@@ -10,9 +10,6 @@ var Diary = require('../models').Diary;
 /** log
  * 描述: [登录] [注销] [注册] [退出登录]
  * 模块: [log.login] [log.logout] [log.register] [log.exit]
- * 备注: log.user
- *      未登录状态: 0
- *      登录状态: 登录用户 id
  */
 var log = {
 
@@ -21,10 +18,10 @@ var log = {
 
         User.count(user, function (err, doc) {
             if (doc && !err) {
-                var record = {user_name: user.user_name};
+                var record = {username: user.username};
                 User.find(record, {id: 1}, {}, function (err, result) {
                     if (err) {
-                        res.cookie('user', '0');
+                        res.cookie('user', '');
                         res.end(JSON.stringify({
                             message: '登录失败',
                             status: 0
@@ -38,7 +35,7 @@ var log = {
                     }
                 });
             } else {
-                res.cookie('user', '0');
+                res.cookie('user', '');
                 res.end(JSON.stringify({
                     message: '登录失败',
                     status: 0
@@ -84,7 +81,7 @@ var log = {
                         status: 0
                     }));
                 } else {
-                    res.cookie('user', '0');
+                    res.cookie('user', '');
                     res.end(JSON.stringify({
                         message: '注销成功',
                         status: 1
@@ -109,13 +106,16 @@ var log = {
                 res.end(JSON.stringify({
                     message: '注册成功',
                     status: 1,
-                    user_id: id
+                    user: {
+                        id: id,
+                        username: req.body.username
+                    }
                 }));
             }
         });
     },
     exit: function (req, res) {
-        res.cookie('user', '0');
+        res.cookie('user', '');
         res.end(JSON.stringify({
             message: '退出登录成功',
             status: 1

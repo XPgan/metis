@@ -1,13 +1,13 @@
 <%- include ../header %>
 <section class="profile-info expo-bg">
     <img src="<%= userinfo.portrait || '/portrait/default_portrait.jpg' %>" class="c-block" />
-    <h3><%= userinfo.user_name %></h3>
+    <h3><%= userinfo.username %></h3>
     <span><%= userinfo.sex %></span><span><%= userinfo.tel %></span><span><%= userinfo.qq %></span>
     <div class="profile-intro"><%= userinfo.intro || '还咩有自我评价哦~' %></div>
 
     <% if (is_author) { %>
     <form enctype="multipart/form-data" id="form_portrait" class="c-horizontal">
-        <input type="file" id="user_portrait" name="portrait" class="js_portrait" />
+        <input type="file" id="portrait" name="portrait" class="js_portrait" />
     </form>
     <div class="log-ctrl">
         <a href="javascript:;" class="js_exit">退出</a><a href="javascript:;" class="js_logout">注销</a>
@@ -25,7 +25,7 @@
 <div class="c-hidden c-mask js_mask">
     <div class="edit-board c-footer js_edit_board">
         <form id="form_userinfo">
-            <input type="text" id="user_intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= userinfo.intro %>" />
+            <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= userinfo.intro %>" />
         </form>
         <button class="js_userinfo">提交</button>
         <a href="javascript:;" class="js_close">取消</a>
@@ -44,7 +44,7 @@
 </script>
 <script>
     global.page = {
-        cur_user: <%= cur_user %>
+        cur_user: "<%= cur_user %>"
     };
 </script>
 <script src="/js/profile.js"></script>

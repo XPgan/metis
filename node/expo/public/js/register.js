@@ -7,13 +7,13 @@ var register = {
         var $btn = $('.js_register');
         var $form = $('#form_register');
         $btn.on('click', function () {
-            var user_name = $('#user_name').val();
-            var password = $('#user_password').val();
-            var sex = $('#user_sex').val();
-            var tel = $('#user_tel').val();
-            var qq = $('#user_qq').val();
+            var username = $('#username').val();
+            var password = $('#password').val();
+            var sex = $('#sex').val();
+            var tel = $('#tel').val();
+            var qq = $('#qq').val();
 
-            var judge = user_name && password && sex && tel && qq;
+            var judge = username && password && sex && tel && qq;
             if (judge) {
                 $.ajax({
                     url: "/register",
@@ -23,7 +23,7 @@ var register = {
                         main.showResult(data, function () {
                             main.showDialog({
                                 message: '注册成功',
-                                href: '/profile/' + JSON.parse(data).user_id,
+                                href: '/profile/' + JSON.parse(data).user.id,
                                 btnClass: 'js_goto'
                             });
                         });

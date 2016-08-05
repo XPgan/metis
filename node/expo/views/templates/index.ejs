@@ -1,7 +1,7 @@
 <%- include ../header %>
 <section class="idx-banner expo-bg c-fix">
     <span class="c-block">WELCOME</span>
-    <% if (log_user >> 0) { %>
+    <% if (log_user) { %>
     <div class="idx-about expo-card">
         <p><strong>本品由<a href="https://github.com/sunmengyuan"> 呆恋小喵 </a>制作</strong><br /><a href="https://github.com/sunmengyuan/note/tree/master/node/expo">https://github.com/sunmengyuan/note/tree/master/node/expo</a><br />前端开发初学者一枚 欢迎大神前来批评指教 ~</p>
         <a href="javascript:;" class="js_switch">切换账号</a><a href="/profile/<%= log_user %>">个人主页</a>
@@ -9,8 +9,8 @@
     <% } else { %>
     <div class="idx-login expo-card">
         <form id="form_login" class="expo-form">
-            <input type="text" id="user_name" name="user_name" placeholder="用户名" />
-            <input type="password" id="user_password" name="password" placeholder="密码" />
+            <input type="text" id="username" name="username" placeholder="用户名" />
+            <input type="password" id="password" name="password" placeholder="密码" />
         </form>
         <button class="js_login expo-btn">login</button><a href="/register">register</a>
     </div>
@@ -26,7 +26,7 @@
             <a href="/profile/<%= user.id %>" class="c-block">
                 <h4>
                     <img src="<%= user.portrait || '/portrait/default_portrait.jpg' %>" class="c-block" />
-                    <%= user.user_name %>
+                    <%= user.username %>
                 </h4>
                 <span>性别: <%= user.sex %></span><span>电话: <%= user.tel %></span><span>QQ: <%= user.qq %></span>
                 <% if (user.intro) { %>

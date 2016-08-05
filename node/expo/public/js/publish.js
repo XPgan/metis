@@ -7,8 +7,8 @@ var publish = {
         var $btn = $('.js_publish');
         var $form = $('#form_publish');
         $btn.on('click', function () {
-            var title = $('#diary_title').val();
-            var content = $('#diary_content').val();
+            var title = $('#title').val();
+            var content = $('#content').val();
 
             var judge = title && content;
             if (judge) {

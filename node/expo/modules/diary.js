@@ -64,7 +64,7 @@ var diary = {
         verify: function (req, res) {
             var id = req.params.id;
             var log_user = req.cookies.user;
-            if (log_user >> 0) {
+            if (log_user) {
                 /**
                  * 操作: 记录 日记 [id]
                  * 数据表: users

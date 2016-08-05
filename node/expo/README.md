@@ -20,7 +20,7 @@ _数据表：users、diaries_
 ```javascript
 var userSchema = new Schema({
     id: String,
-    user_name: String,
+    username: String,
     password: String,
     sex: String,
     tel: String,
@@ -64,24 +64,51 @@ var diarySchema = new Schema({
 + `require('log')`
 	+ 登录 __log.login()__
 	
+	    ```html
+	    <form id="form_login">
+            <input type="text" name="username" placeholder="用户名" />
+            <input type="password" name="password" placeholder="密码" />
+        </form>
+	    ```
+	    
         ```javascript
+        var $form = $('#form_login');
         $.ajax({
             url: '/login',
             type: 'POST',
             data: $form.serialize(),
-            success: function (data) {},
+            success: function (data) {
+                var status = JSON.parse(data).status;
+                var message = JSON.parse(data).message;
+            },
             error: function () {}
         });
         ```
         
 	+ 注册 __log.register()__
 	
+	    ```html
+	    <form id="form_register">
+            <input type="text" name="username" placeholder="用户名" />
+            <input type="password" name="password" placeholder="密码" />
+            <input type="text" name="sex" placeholder="性别" />
+            <input type="text" name="tel" placeholder="电话" />
+            <input type="text" name="qq" placeholder="QQ" />
+            <textarea name="intro" placeholder="描述一下自己"></textarea>
+        </form>
+	    ```
+	    
         ```javascript
+        var $form = $('#form_register');
         $.ajax({
             url: '/register',
             type: 'POST',
             data: $form.serialize(),
-            success: function (data) {},
+            success: function (data) {
+                var status = JSON.parse(data).status;
+                var message = JSON.parse(data).message;
+                var user = JSON.parse(data).user;
+            },
             error: function () {}
         });
         ```
@@ -92,7 +119,10 @@ var diarySchema = new Schema({
 	    $.ajax({
             url: '/logout',
             type: 'POST',
-            success: function (data) {},
+            success: function (data) {
+                var status = JSON.parse(data).status;
+                var message = JSON.parse(data).message;
+            },
             error: function () {}
         });
         ```
@@ -103,7 +133,10 @@ var diarySchema = new Schema({
 	    $.ajax({
             url: '/exit',
             type: 'POST',
-            success: function (data) {},
+            success: function (data) {
+                var status = JSON.parse(data).status;
+                var message = JSON.parse(data).message;
+            },
             error: function () {}
         });
 	    ```
@@ -114,61 +147,106 @@ var diarySchema = new Schema({
 + `require('diary')`
 	+ 发布日记 __diary.publish()__
 	
+	    ```html
+	    <form id="form_publish">
+            <input type="text" name="title" placeholder="简明扼要哒标题" />
+            <textarea name="content" placeholder="美源于生活点滴"></textarea>
+        </form>
+	    ```
+	    
 	    ```javascript
+	    var $form = $('#form_publish');
 	    $.ajax({
             url: '/diary/publish',
             type: 'POST',
             data: $form.serialize(),
-            success: function (data) {},
+            success: function (data) {
+                var status = JSON.parse(data).status;
+                var message = JSON.parse(data).message;
+            },
             error: function () {}
         });
 	    ```
 	    
 	+ 编辑日记 __diary.edit()__
 	+ 移除日记 __diary.remove()__
-	+ 点赞日记 __diary.favour()__	
+	+ 点赞日记 __diary.favour__	
+	    + __diary.favour.verify()__
 	
-	    ```javascript
-	    $.ajax({
-            url: '/diary/favour/verify/:id',
-            type: 'POST',
-            success: function (data) {},
-            error: function () {}
-        });
-	    ```
+            ```javascript
+            $.ajax({
+                url: '/diary/favour/verify/:id',
+                type: 'POST',
+                success: function (data) {
+                    var status = JSON.parse(data).status;
+                    var message = JSON.parse(data).message;
+                },
+                error: function () {}
+            });
+            ```
 	    
-	    ```javascript
-	    $.ajax({
-            url: '/diary/favour/cancel/:id',
-            type: 'POST',
-            success: function (data) {},
-            error: function () {}
-        });
-	    ```
+	    + __diary.favour.cancel()__
+	    
+            ```javascript
+            $.ajax({
+                url: '/diary/favour/cancel/:id',
+                type: 'POST',
+                success: function (data) {
+                    var status = JSON.parse(data).status;
+                    var message = JSON.parse(data).message;
+                },
+                error: function () {}
+            });
+            ```
 	    
 + `require('user')`
-	+ 编辑用户信息 __user.edit()__
-	
-	    ```javascript
-	    $.ajax({
-            url: '/user/edit/info',
-            type: 'POST',
-            data: $form.serialize(),
-            success: function (data) {},
-            error: function () {}
-        });
-	    ```
+	+ 编辑用户信息 __user.edit__
+	    + __user.edit.info()__
 	    
-	    ```javascript
-	    $.ajax({
-            url: '/user/edit/portrait',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function (data) {},
-            error: function () {}
-        });
-	    ```
+            ```html
+            <form id="form_userinfo">
+                <input type="text" name="intro" placeholder="还咩有自我评价哦" value="<%= userinfo.intro %>" />
+            </form>
+            ```
+    
+            ```javascript
+            var $form = $('#form_userinfo');
+            $.ajax({
+                url: '/user/edit/info',
+                type: 'POST',
+                data: $form.serialize(),
+                success: function (data) {
+                    var status = JSON.parse(data).status;
+                    var message = JSON.parse(data).message;
+                },
+                error: function () {}
+            });
+            ```
+	    
+	    + __user.edit.portrait()__
+	    
+            ```html
+            <form enctype="multipart/form-data" id="form_portrait">
+                <input type="file" name="portrait" />
+            </form>
+            ```
+            
+            ```javascript
+            var $form = $('#form_portrait');
+            var formData = new FormData($form[0]);
+            $.ajax({
+                url: '/user/edit/portrait',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    var status = JSON.parse(data).status;
+                    var message = JSON.parse(data).message;
+                    var url = JSON.parse(data).url;
+                },
+                error: function () {}
+            });
+            ```
 	    
 	+ 关注用户 __user.attention()__

@@ -9,7 +9,10 @@ var User = require('./models').User;
 var router = express.Router();
 
 router.get(/^\/(login)?$/, function (req, res) {
-    res.render('index', {cur_user: req.cookies.user});
+    var cur_user = req.cookies.user;
+    res.render('index', {
+        cur_user: cur_user && {id: '', nickname: ''}
+    });
 });
 router.get('/chatroom', function (req, res) {
     var cur_user = req.cookies.user;

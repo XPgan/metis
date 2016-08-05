@@ -1,15 +1,7 @@
 <%- include ../header %>
 <section class="m-log">
     <div class="card js_area">
-        <% if (!cur_user) { %>
-        <form id="form_login" autocomplete="off">
-            <input type="text" name="nickname" placeholder="昵称" />
-            <input type="password" name="password" placeholder="密码" />
-        </form>
-        <div>
-            <a href="javascript:;" class="js_login">登录</a><a href="javascript:;" class="js_overturn">快速注册</a>
-        </div>
-        <% } else { %>
+        <% if (cur_user.id) { %>
         <p>
             本品由<a href="https://github.com/sunmengyuan"> 呆恋小喵 </a>制作
             <br />
@@ -19,6 +11,14 @@
         </p>
         <div>
             <a href="javascript:;" class="js_exit">切换账号</a><a href="/chatroom">进入聊天室</a>
+        </div>
+        <% } else { %>
+        <form id="form_login" autocomplete="off">
+            <input type="text" name="nickname" placeholder="昵称" />
+            <input type="password" name="password" placeholder="密码" />
+        </form>
+        <div>
+            <a href="javascript:;" class="js_login">登录</a><a href="javascript:;" class="js_overturn">快速注册</a>
         </div>
         <% } %>
     </div>

@@ -6,9 +6,9 @@
 #### [笔记](https://github.com/sunmengyuan/note/blob/master/canvas/canvas.js) ####
 
 #### 示例 ####
-+ [画板](https://github.com/sunmengyuan/note/blob/master/canvas/drawing.html) [(demo)](http://www.miaomie.tech/demos/canvas/drawing.html)
-+ [贝塞尔曲线](https://github.com/sunmengyuan/note/blob/master/canvas/bezierCurve.html) [(demo)](http://www.miaomie.tech/demos/canvas/bezierCurve.html)
-+ [多边形 + 拖拽](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](http://www.miaomie.tech/demos/canvas/drag.html)
++ 画板 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drawing.html) [(demo)](http://www.miaomie.tech/demos/canvas/drawing.html)
++ 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/bezierCurve.html) [(demo)](http://www.miaomie.tech/demos/canvas/bezierCurve.html)
++ 多边形 + 拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](http://www.miaomie.tech/demos/canvas/drag.html)
 
 *****
 
@@ -17,9 +17,9 @@
 #### [笔记](https://github.com/sunmengyuan/note/blob/master/svg/svg.html) ####
 
 #### 示例 ####
-+ [路径动画](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](http://www.miaomie.tech/demos/svg/cat.html)
-+ [路径动画 + 蒙版](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](http://www.miaomie.tech/demos/svg/paint.html)
-+ [Loading 动画](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](http://www.miaomie.tech/demos/svg/loading.html)
++ 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](http://www.miaomie.tech/demos/svg/cat.html)
++ 路径动画 + 蒙版 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](http://www.miaomie.tech/demos/svg/paint.html)
++ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](http://www.miaomie.tech/demos/svg/loading.html)
 
 *****
 
@@ -31,7 +31,7 @@
 #### [笔记](https://github.com/sunmengyuan/note/blob/master/webgl/webgl.js) ####
 
 #### 示例 ####
-+ [三维旋转钟](https://github.com/sunmengyuan/note/blob/master/webgl/clock.html) [(demo)](http://www.miaomie.tech/demos/webgl/clock.html)
++ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/webgl/clock.html) [(demo)](http://www.miaomie.tech/demos/webgl/clock.html)
 
 *****
 
@@ -41,7 +41,7 @@
 + [Matter.js官网](http://brm.io/matter-js/)
 
 #### 示例 ####
-+ [跷跷板](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](http://www.miaomie.tech/demos/matter/seesaw.html)
++ 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](http://www.miaomie.tech/demos/matter/seesaw.html)
 
 *****
 
@@ -54,8 +54,8 @@
 #### [笔记](https://github.com/sunmengyuan/note/blob/master/node/node.js) ####
 
 #### 示例 ####
-+ [简易微博系统](https://github.com/sunmengyuan/note/tree/master/node/expo)
-+ [多人聊天室](https://github.com/sunmengyuan/note/tree/master/node/chat)
++ 简易微博系统 [(code)](https://github.com/sunmengyuan/note/tree/master/node/expo)
++ 多人聊天室 [(code)](https://github.com/sunmengyuan/note/tree/master/node/chat)
 
 *****
 

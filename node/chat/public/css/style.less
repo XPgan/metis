@@ -111,7 +111,6 @@
 
             a { color: @light; }
         }
-
         &.overturn {
             @animate: rolling 0.8s ease-in forwards;
 
@@ -128,7 +127,7 @@
     }
     & > div a { .btn; .btnAttached; }
 
-    .m-password {
+    .myinfo-password {
         a {
             position: relative;
             font-size: 14px;
@@ -158,10 +157,49 @@
         }
     }
 }
-.m-chat {
-    padding: 90px 270px 60px 20px;
+.m-members {
+    ul {
+        position: fixed;
+        right: 0;
+        top: 110px;
+        width: 200px;
+        max-height: 320px;
+        padding: 5px 10px;
+        overflow-y: auto;
 
-    .m-send {
+        li {
+            font-size: 14px;
+            line-height: 24px;
+
+            span {
+                width: 4px;
+                height: 4px;
+                vertical-align: middle;
+                margin-right: 2px;
+                border-radius: 50%;
+            }
+            &.online {
+                color: @light;
+
+                span { background-color: #a2ff14; }
+            }
+            &.offline {
+                color: #999;
+
+                span { background-color: transparent; }
+            }
+        }
+        &::-webkit-scrollbar {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+    }
+}
+.m-chat {
+    padding: 90px 260px 60px 20px;
+
+    .chat-send {
         position: relative;
         padding-right: 74px;
 
@@ -181,7 +219,7 @@
             position: absolute;
         }
     }
-    .m-message {
+    .chat-message {
         li {
             margin: 20px 0;
 
@@ -247,38 +285,6 @@
             }
         }
     }
-    .m-users {
-        position: fixed;
-        right: 20px;
-        top: 110px;
-        width: 200px;
-        max-height: 300px;
-        padding: 5px 10px;
-        border: 1px solid @light;
-
-        li {
-            font-size: 14px;
-            line-height: 24px;
-
-            span {
-                width: 4px;
-                height: 4px;
-                vertical-align: middle;
-                margin-right: 2px;
-                border-radius: 50%;
-            }
-            &.online {
-                color: @light;
-
-                span { background-color: #a2ff14; }
-            }
-            &.offline {
-                color: #999;
-
-                span { background-color: transparent; }
-            }
-        }
-    }
 }
 .chatroom-header {
     padding: 10px 20px;
@@ -286,7 +292,7 @@
 
     & > div {
         position: relative;
-        padding-left: 156px;
+        padding-left: 208px;
 
         .ctrls {
             position: absolute;
@@ -355,4 +361,6 @@
 /* media */
 @media screen and (max-width: 600px) {
     .card { width: 80%; }
+    .m-chat { padding: 90px 90px 60px 20px; }
+    .m-members ul { width: 50px; }
 }

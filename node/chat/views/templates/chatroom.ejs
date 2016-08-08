@@ -5,17 +5,19 @@
         <ul class="js_news"></ul>
     </div>
 </div>
-<section class="m-chat">
-    <ul class="m-message js_message"></ul>
-    <% if (users.length) { %>
-    <ul class="m-users js_users">
+<% if (users.length) { %>
+<section class="m-members">
+    <ul class="js_members">
         <% users.forEach(function (user) { %>
         <li id="user_<%= user.id %>" class="<%= user.status %> ellipsis-row1"><span class="c-inline"></span><%= user.nickname %></li>
         <% }) %>
     </ul>
-    <% } %>
+</section>
+<% } %>
+<section class="m-chat">
+    <ul class="chat-message js_message"></ul>
     <div class="c-footer">
-        <div class="m-send">
+        <div class="chat-send">
             <input type="text" class="js_input" />
             <a href="javascript:;" class="c-frt js_send">发送</a>
         </div>
@@ -27,7 +29,7 @@
 <script id="module_message" type="text/x-module">
     <li class="$view c-fix"><span>$nickname</span><p>$message<em></em></p></li>
 </script>
-<script id="module_user" type="text/x-module">
+<script id="module_member" type="text/x-module">
     <li id="user_$id" class="$status ellipsis-row1"><span class="c-inline"></span>$nickname</li>
 </script>
 <script src="/js/log.js"></script>

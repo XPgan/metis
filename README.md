@@ -38,7 +38,7 @@
 ### Matter.js ###
 
 #### 参考资料 ####
-+ [Matter.js官网](http://brm.io/matter-js/)
++ [Matter.js - a 2D rigid body JavaScript physics engine](http://brm.io/matter-js/)
 
 #### 示例 ####
 + 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](http://www.miaomie.tech/demos/matter/seesaw.html)

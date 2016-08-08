@@ -7,7 +7,13 @@
 </div>
 <section class="m-chat">
     <ul class="m-message js_message"></ul>
-    <ul class="m-users js_users"></ul>
+    <% if (users.length) { %>
+    <ul class="m-users js_users">
+        <% users.forEach(function (user) { %>
+        <li class="$status ellipsis-row1"><span class="c-inline"></span><%= user.nickname %></li>
+        <% }) %>
+    </ul>
+    <% } %>
     <div class="c-footer">
         <div class="m-send">
             <input type="text" class="js_input" />

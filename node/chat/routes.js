@@ -17,7 +17,16 @@ router.get(/^\/(login)?$/, function (req, res) {
 router.get('/chatroom', function (req, res) {
     var cur_user = req.cookies.user;
     if (cur_user) {
-        res.render('chatroom', {cur_user: cur_user});
+        User.find({}, {}, {}, function (err, result) {
+            if (err) {
+                res.redirect('/');
+            } else {
+                res.render('chatroom', {
+                    cur_user: cur_user,
+                    users: result
+                });
+            }
+        });
     } else {
         res.redirect('/');
     }

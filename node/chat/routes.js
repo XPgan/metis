@@ -5,6 +5,7 @@
 var express = require('express');
 var log = require('./modules/log');
 var edit = require('./modules/edit');
+var communicate = require('./communicate');
 var User = require('./models').User;
 var router = express.Router();
 
@@ -15,12 +16,19 @@ router.get(/^\/(login)?$/, function (req, res) {
     });
 });
 router.get('/chatroom', function (req, res) {
+    var onlines = communicate.onlines;
     var cur_user = req.cookies.user;
     if (cur_user) {
         User.find({}, {}, {}, function (err, result) {
             if (err) {
                 res.redirect('/');
             } else {
+                for (var i = 0;i < result.length;i++) {
+                    result[i].status = 'offline';
+                    for (var j = 0;j < onlines.length;j++) {
+                        (result[i].id == onlines[j]) && (result[i].status = 'online');
+                    }
+                }
                 res.render('chatroom', {
                     cur_user: cur_user,
                     users: result

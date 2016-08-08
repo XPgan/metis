@@ -16,11 +16,17 @@ var method = {
                 return JSON.parse(jsonStr);
             }
         }
+    },
+    rmArrElem: function (arr, elem) {
+        for (var i = 0;i < arr.length;i++) {
+            (arr[i] == elem) && arr.splice(i, 1);
+        }
     }
 };
 var communicate = {
 
     activers: {},
+    onlines: [],
 
     do: function (io) {
         var _this = this;
@@ -30,17 +36,22 @@ var communicate = {
         });
     },
     handleEvents: function (socket, io) {
+        var _this = this;
         socket.on('online', function (data) {
             io.sockets.emit('online', {
                 id: data.id,
                 nickname: data.nickname
             });
+            _this.onlines.push(data.id);
         });
         socket.on('offline', function (data) {
             io.sockets.emit('offline', {
                 id: data.id,
                 nickname: data.nickname
             });
+            method.rmArrElem(_this.onlines, data.id);
+
+            delete _this.activers[data.id];
         });
         socket.on('message', function (data) {
             io.sockets.emit('message', {
@@ -69,6 +80,7 @@ var communicate = {
                             id: cur_user.id,
                             nickname: cur_user.nickname
                         });
+                        method.rmArrElem(_this.onlines, cur_user.id);
 
                         delete _this.activers[cur_user.id];
                     }

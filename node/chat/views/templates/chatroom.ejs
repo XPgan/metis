@@ -10,7 +10,7 @@
     <% if (users.length) { %>
     <ul class="m-users js_users">
         <% users.forEach(function (user) { %>
-        <li class="$status ellipsis-row1"><span class="c-inline"></span><%= user.nickname %></li>
+        <li id="user_<%= user.id %>" class="<%= user.status %> ellipsis-row1"><span class="c-inline"></span><%= user.nickname %></li>
         <% }) %>
     </ul>
     <% } %>
@@ -28,7 +28,7 @@
     <li class="$view c-fix"><span>$nickname</span><p>$message<em></em></p></li>
 </script>
 <script id="module_user" type="text/x-module">
-    <li class="$status ellipsis-row1"><span class="c-inline"></span>$nickname</li>
+    <li id="user_$id" class="$status ellipsis-row1"><span class="c-inline"></span>$nickname</li>
 </script>
 <script src="/js/log.js"></script>
 <script src="/js/chat.js"></script>

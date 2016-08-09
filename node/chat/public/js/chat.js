@@ -139,7 +139,7 @@ var chat = {
     showMemberInfo: function () {
         var _this = this;
         _this.members.on('click', 'a', function () {
-            $('.js_userinfo').remove();
+            $('.js_mask').remove();
 
             var _self = $(this);
             var info = _self.parent().data('info');
@@ -152,7 +152,7 @@ var chat = {
             $body.append($item);
         });
         $body.on('click', function (e) {
-            $(e.target).parent().hasClass('js_user') || $('.js_userinfo').remove();
+            $(e.target).parent().hasClass('js_user') || $('.js_mask').remove();
         });
     }
 };

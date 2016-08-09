@@ -52,7 +52,7 @@
     border: 2px solid @light;
     border-radius: 10px;
 }
-.dialog {
+.dialog > div {
     position: fixed;
     width: 300px;
     text-align: center;
@@ -97,16 +97,14 @@
                 animation: @animate;
     }
 }
-.userinfo {
+.userinfo > div {
     position: fixed;
-    z-index: 10;
     width: 300px;
     font-size: 13px;
     line-height: 27px;
     color: @light;
     padding: 15px 20px;
     border: 1px solid @middle;
-    background-color: rgba(0, 0, 0, 0.5);
 
     h3 {
         font-size: 20px;

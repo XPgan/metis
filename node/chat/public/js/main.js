@@ -12,7 +12,7 @@ var main = {
     },
     commonCtrl: function () {
         $body.on('click', '.js_close', function () {
-            $(this).parents('.js_mask').hide();
+            $(this).parents('.js_mask').remove();
         });
     },
     showResult: function (data, callback) {
@@ -30,7 +30,7 @@ var main = {
         }
     },
     showDialog: function (opt) {
-        $('.js_dialog').parent().remove();
+        $('.js_mask').remove();
 
         var $dialog = $('#module_dialog').html()
             .replace('$message', opt.message)

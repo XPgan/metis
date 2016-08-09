@@ -48,7 +48,7 @@ var edit = {
                     var nickname = $('#nickname').val();
                     if (nickname) {
                         $.ajax({
-                            url: "/edit/user/info",
+                            url: '/edit/user/info',
                             type: 'POST',
                             data: $form.serialize(),
                             success: function (data) {

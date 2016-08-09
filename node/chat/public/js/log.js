@@ -59,7 +59,7 @@ var log = {
 
             if (nickname && password) {
                 $.ajax({
-                    url: "/register",
+                    url: '/register',
                     type: 'POST',
                     data: $form.serialize(),
                     success: function (data) {
@@ -80,7 +80,7 @@ var log = {
         var $btn = $('.js_exit');
         $btn.on('click', function () {
             $.ajax({
-                url: "/exit",
+                url: '/exit',
                 type: 'POST',
                 success: function (data) {
                     main.showResult(data, function () {

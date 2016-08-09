@@ -111,8 +111,17 @@
 
             a { color: @light; }
         }
-        &.overturn {
-            @animate: rolling 0.8s ease-in forwards;
+
+        transform-origin: center;
+
+        &.magnify {
+            @animate: magnify 0.5s ease-in forwards;
+
+            -webkit-animation: @animate;
+                    animation: @animate;
+        }
+        &.shrink {
+            @animate: shrink 0.5s ease-in forwards;
 
             -webkit-animation: @animate;
                     animation: @animate;
@@ -135,11 +144,6 @@
             color: @dark;
             margin: 10px 0;
             padding-right: 10px;
-
-            .rotateZ (@deg) {
-                -webkit-transform: rotateZ(@deg);
-                        transform: rotateZ(@deg);
-            }
 
             &:before, &:after {
                 content: '';
@@ -347,25 +351,38 @@
 }
 
 
-/* animate */
-.rolling {
-    to {
-        -webkit-transform: rotateY(100deg);
-                transform: rotateY(100deg);
-    }
+/* transform */
+.rotateZ (@deg) {
+    -webkit-transform: rotateZ(@deg);
+            transform: rotateZ(@deg);
 }
-.rotation {
-    to {
-        -webkit-transform: rotateZ(360deg);
-                transform: rotateZ(360deg);
-    }
+.scale (@scale) {
+    -webkit-transform: scale(@scale);
+            transform: scale(@scale);
 }
 
-@-webkit-keyframes rolling { .rolling }
-        @keyframes rolling { .rolling }
+
+/* animate */
+.rotation {
+    to { .rotateZ(360deg); }
+}
+.magnify {
+    from { .scale(0); }
+    to { .scale(1.0); }
+}
+.shrink {
+    from { .scale(1.0); }
+    to { .scale(0); }
+}
 
 @-webkit-keyframes rotation { .rotation }
         @keyframes rotation { .rotation }
+
+@-webkit-keyframes magnify { .magnify }
+        @keyframes magnify { .magnify }
+
+@-webkit-keyframes shrink { .shrink }
+        @keyframes shrink { .shrink }
 
 
 /* media */

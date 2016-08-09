@@ -10,13 +10,19 @@ var log = {
         _this.register();
         _this.exit();
 
-        $('.js_overturn').on('click', function () {
+        $('.js_switch').on('click', function () {
             var _self = $(this);
             var $current = _self.parents('.js_area');
+            var $noncurrent = $current.siblings();
 
-            $current.addClass('overturn');
+            $current.addClass('shrink');
             $current[0].addEventListener('webkitAnimationEnd', function () {
-                $(this).hide().removeClass('overturn').siblings().show();
+                $(this).removeClass('shrink').hide()
+                    .siblings().addClass('magnify').show();
+            }, false);
+            $noncurrent[0].addEventListener('webkitAnimationEnd', function () {
+                $(this).removeClass('magnify').show()
+                    .siblings().hide();
             }, false);
         });
     },

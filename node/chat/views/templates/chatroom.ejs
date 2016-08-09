@@ -9,7 +9,7 @@
 <section class="m-members">
     <ul class="js_members">
         <% users.forEach(function (user) { %>
-        <li id="user_<%= user.id %>" class="<%= user.status %> ellipsis-row1 js_user" data-info="<%= user %>"><span class="c-inline"></span><a href="javascript:;"><%= user.nickname %></a></li>
+        <li id="user_<%= user.id %>" class="<%= user.status %> ellipsis-row1 js_user" data-info="<%= JSON.stringify(user) %>"><span class="c-inline"></span><a href="javascript:;"><%= user.nickname %></a></li>
         <% }) %>
     </ul>
 </section>
@@ -30,7 +30,7 @@
     <li class="$view c-fix"><span>$nickname</span><p>$message<em></em></p></li>
 </script>
 <script id="module_member" type="text/x-module">
-    <li id="user_$id" class="$status ellipsis-row1 js_user" data-info="$info"><span class="c-inline"></span><a href="javascript:;">$nickname</a></li>
+    <li id="user_$id" class="$status ellipsis-row1 js_user" data-info='$info'><span class="c-inline"></span><a href="javascript:;">$nickname</a></li>
 </script>
 <script id="module_userinfo" type="text/x-module">
     <div class="userinfo c-center js_userinfo">

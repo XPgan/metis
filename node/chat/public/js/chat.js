@@ -28,7 +28,7 @@ var chat = {
                     .replace('$id', data.id)
                     .replace('$status', 'online')
                     .replace('$nickname', data.nickname)
-                    .replace('$info', data);
+                    .replace('$info', JSON.stringify(data));
             }
             _this.members.prepend($user);
         });

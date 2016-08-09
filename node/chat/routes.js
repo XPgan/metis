@@ -26,7 +26,13 @@ router.get('/chatroom', function (req, res) {
                 for (var i = 0;i < result.length;i++) {
                     result[i].status = 'offline';
                     for (var j = 0;j < onlines.length;j++) {
-                        (result[i].id == onlines[j]) && (result[i].status = 'online');
+                        if (result[i].id == onlines[j]) {
+                            var tmp = result[i];
+                            tmp.status = 'online';
+
+                            result.splice(i, 1);
+                            result.unshift(tmp);
+                        }
                     }
                 }
                 res.render('chatroom', {

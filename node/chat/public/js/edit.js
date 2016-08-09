@@ -81,7 +81,7 @@ var edit = {
                 method();
             });
             $body.on('keydown', function (e) {
-                (e.keyCode == '13') && method();
+                $('.js_mask').length || (e.keyCode == '13') && method();
             });
         }
     }

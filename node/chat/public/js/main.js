@@ -12,7 +12,7 @@ var main = {
     },
     commonCtrl: function () {
         $body.on('click', '.js_close', function () {
-            $(this).parents('.js_mask').remove();
+            $('.js_mask').remove();
         });
     },
     showResult: function (data, callback) {

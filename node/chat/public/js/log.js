@@ -53,8 +53,8 @@ var log = {
             method();
         });
         $body.on('keydown', function (e) {
-            if (!$form.parent().is(':hidden') && $form.length) {
-                (e.keyCode == '13') && method();
+            if ($form.length && $form.parent().is(':visible')) {
+                $('.js_mask').length || (e.keyCode == '13') && method();
             }
         });
     },
@@ -87,8 +87,8 @@ var log = {
             method();
         });
         $body.on('keydown', function (e) {
-            if (!$form.parent().is(':hidden') && $form.length) {
-                (e.keyCode == '13') && method();
+            if ($form.length && $form.parent().is(':visible')) {
+                $('.js_mask').length || (e.keyCode == '13') && method();
             }
         });
     },

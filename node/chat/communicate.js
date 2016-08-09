@@ -2,6 +2,8 @@
  * Created by sunmy on 16/7/25.
  */
 
+var User = require('./models').User;
+
 var method = {
     getCookie: function (socket, key) {
         var cookie = socket.handshake.headers.cookie;
@@ -38,20 +40,22 @@ var communicate = {
     handleEvents: function (socket, io) {
         var _this = this;
         socket.on('online', function (data) {
-            io.sockets.emit('online', {
-                id: data.id,
-                nickname: data.nickname
+            User.find({id: data.id}, {}, {}, function (err, result) {
+                if (!err) {
+                    io.sockets.emit('online', result[0]);
+                    _this.onlines.push(data.id);
+                }
             });
-            _this.onlines.push(data.id);
         });
         socket.on('offline', function (data) {
-            io.sockets.emit('offline', {
-                id: data.id,
-                nickname: data.nickname
-            });
-            method.rmArrElem(_this.onlines, data.id);
+            User.find({id: data.id}, {}, {}, function (err, result) {
+                if (!err) {
+                    io.sockets.emit('offline', result[0]);
+                    method.rmArrElem(_this.onlines, data.id);
 
-            delete _this.activers[data.id];
+                    delete _this.activers[data.id];
+                }
+            });
         });
         socket.on('message', function (data) {
             io.sockets.emit('message', {

@@ -13,6 +13,7 @@ var chat = {
         _this.handleEvents();
         _this.sendMessage();
         _this.resendMessage();
+        _this.showMemberInfo();
     },
     handleEvents: function () {
         var _this = this;
@@ -26,7 +27,12 @@ var chat = {
                 $user = $('#module_member').html()
                     .replace('$id', data.id)
                     .replace('$status', 'online')
-                    .replace('$nickname', data.nickname);
+                    .replace('$nickname', data.nickname)
+                    .replace('$nickname', data.nickname)
+                    .replace('$sex', data.sex || '保密')
+                    .replace('$tel', data.tel || '保密')
+                    .replace('$qq', data.qq || '保密')
+                    .replace('$intro', data.intro || data.nickname + '没有留下自我评价');
             }
             _this.members.prepend($user);
         });
@@ -132,6 +138,18 @@ var chat = {
                 },
                 message: value
             });
+        });
+    },
+    showMemberInfo: function () {
+        var _this = this;
+        var elem = '.js_userinfo';
+        _this.members.on('click', '.js_user', function () {
+            var _self = $(this);
+            _self.find(elem).show();
+            _self.siblings().find(elem).hide();
+        });
+        $body.on('click', function (e) {
+            $(e.target).hasClass('js_user') || $(elem).hide();
         });
     }
 };

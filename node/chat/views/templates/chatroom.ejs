@@ -9,7 +9,16 @@
 <section class="m-members">
     <ul class="js_members">
         <% users.forEach(function (user) { %>
-        <li id="user_<%= user.id %>" class="<%= user.status %> ellipsis-row1"><span class="c-inline"></span><%= user.nickname %></li>
+        <li id="user_<%= user.id %>" class="<%= user.status %> ellipsis-row1 js_user">
+            <span class="c-inline"></span><%= user.nickname %>
+            <div class="userinfo c-center c-hidden js_userinfo">
+                <h3><%= user.nickname %></h3>
+                <div>性别：<%= user.sex || '保密' %></div>
+                <div>TEL：<%= user.tel || '保密' %></div>
+                <div>QQ：<%= user.qq || '保密' %></div>
+                <p><%= user.intro || user.nickname + '没有留下自我评价' %></p>
+            </div>
+        </li>
         <% }) %>
     </ul>
 </section>
@@ -30,7 +39,16 @@
     <li class="$view c-fix"><span>$nickname</span><p>$message<em></em></p></li>
 </script>
 <script id="module_member" type="text/x-module">
-    <li id="user_$id" class="$status ellipsis-row1"><span class="c-inline"></span>$nickname</li>
+    <li id="user_$id" class="$status ellipsis-row1 js_user">
+        <span class="c-inline"></span>$nickname
+        <div class="userinfo c-center c-hidden js_userinfo">
+            <h3>$nickname</h3>
+            <div>性别：$sex</div>
+            <div>TEL：$tel</div>
+            <div>QQ：$qq</div>
+            <p>$intro</p>
+        </div>
+    </li>
 </script>
 <script src="/js/log.js"></script>
 <script src="/js/chat.js"></script>

@@ -6,6 +6,7 @@ var chat = {
 
     news: $('.js_news'),
     message: $('.js_message'),
+    members: $('.js_members'),
 
     do: function () {
         var _this = this;
@@ -16,10 +17,27 @@ var chat = {
     handleEvents: function () {
         var _this = this;
         socket.on('online', function (data) {
-            _this.sendNews(data, '进入聊天室')
+            _this.sendNews(data, '进入聊天室');
+
+            var $user = $('#user_' + data.id);
+            if ($user.length) {
+                $user.removeClass('offline').addClass('online');
+            } else {
+                $user = $('#module_member').html()
+                    .replace('$id', data.id)
+                    .replace('$status', 'online')
+                    .replace('$nickname', data.nickname);
+            }
+            _this.members.prepend($user);
         });
         socket.on('offline', function (data) {
             _this.sendNews(data, '离开聊天室');
+
+            var $user = $('#user_' + data.id);
+            if ($user.length) {
+                $user.removeClass('online').addClass('offline');
+            }
+            _this.members.append($user);
         });
         socket.on('message', function (data) {
             $('.js_active').removeClass('failed').find('p').removeClass('js_resend');

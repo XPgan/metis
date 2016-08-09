@@ -97,6 +97,26 @@
                 animation: @animate;
     }
 }
+.userinfo {
+    position: fixed;
+    z-index: 10;
+    width: 300px;
+    font-size: 13px;
+    line-height: 27px;
+    color: @light;
+    padding: 15px 20px;
+    border: 1px solid @middle;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    p {
+        color: @middle;
+        margin-top: 10px;
+    }
+}
 
 
 .m-log {
@@ -187,33 +207,14 @@
             &.online {
                 color: @light;
 
+                a { color: @light; }
                 span { background-color: #a2ff14; }
             }
             &.offline {
                 color: #999;
 
+                a { color: #999; }
                 span { background-color: transparent; }
-            }
-            .userinfo {
-                position: fixed;
-                z-index: 10;
-                width: 300px;
-                font-size: 13px;
-                line-height: 27px;
-                color: @light;
-                white-space: normal;
-                padding: 15px 20px;
-                border: 1px solid @middle;
-                background-color: rgba(0, 0, 0, 0.5);
-
-                h3 {
-                    font-size: 20px;
-                    margin-bottom: 10px;
-                }
-                p {
-                    color: @middle;
-                    margin-top: 10px;
-                }
             }
         }
         &::-webkit-scrollbar {

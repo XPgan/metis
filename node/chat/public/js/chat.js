@@ -28,11 +28,7 @@ var chat = {
                     .replace('$id', data.id)
                     .replace('$status', 'online')
                     .replace('$nickname', data.nickname)
-                    .replace('$nickname', data.nickname)
-                    .replace('$sex', data.sex || '保密')
-                    .replace('$tel', data.tel || '保密')
-                    .replace('$qq', data.qq || '保密')
-                    .replace('$intro', data.intro || data.nickname + '没有留下自我评价');
+                    .replace('$info', data);
             }
             _this.members.prepend($user);
         });
@@ -142,14 +138,21 @@ var chat = {
     },
     showMemberInfo: function () {
         var _this = this;
-        var elem = '.js_userinfo';
-        _this.members.on('click', '.js_user', function () {
+        _this.members.on('click', 'a', function () {
+            $('.js_userinfo').remove();
+
             var _self = $(this);
-            _self.find(elem).show();
-            _self.siblings().find(elem).hide();
+            var info = _self.parent().data('info');
+            var $item = $('#module_userinfo').html()
+                .replace('$nickname', info.nickname)
+                .replace('$sex', info.sex || '保密')
+                .replace('$tel', info.tel || '保密')
+                .replace('$qq', info.qq || '保密')
+                .replace('$intro', info.intro || info.nickname + '没有留下个人描述');
+            $body.append($item);
         });
         $body.on('click', function (e) {
-            $(e.target).hasClass('js_user') || $(elem).hide();
+            $(e.target).parent().hasClass('js_user') || $('.js_userinfo').remove();
         });
     }
 };

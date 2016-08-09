@@ -29,7 +29,7 @@ var log = {
     login: function () {
         var $btn = $('.js_login');
         var $form = $('#form_login');
-        $btn.on('click', function () {
+        var method = function () {
             $.ajax({
                 url: '/login',
                 type: 'POST',
@@ -48,12 +48,20 @@ var log = {
                     main.showDialog({message: '登录失败'});
                 }
             });
+        };
+        $btn.on('click', function () {
+            method();
+        });
+        $body.on('keydown', function (e) {
+            if (!$form.parent().is(':hidden') && $form.length) {
+                (e.keyCode == '13') && method();
+            }
         });
     },
     register: function () {
         var $btn = $('.js_register');
         var $form = $('#form_register');
-        $btn.on('click', function () {
+        var method = function () {
             var nickname = $('#nickname').val();
             var password = $('#password').val();
 
@@ -73,6 +81,14 @@ var log = {
                 });
             } else {
                 main.showDialog({message: '用户名或密码不得为空'});
+            }
+        };
+        $btn.on('click', function () {
+            method();
+        });
+        $body.on('keydown', function (e) {
+            if (!$form.parent().is(':hidden') && $form.length) {
+                (e.keyCode == '13') && method();
             }
         });
     },

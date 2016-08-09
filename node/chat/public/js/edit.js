@@ -28,7 +28,7 @@ var edit = {
             var _this = this;
             var $btn = $('.js_myinfo');
             var $form = $('#form_myinfo');
-            $btn.on('click', function () {
+            var method = function () {
                 var $newPassword = $('#password_new');
                 var $oldPassword = $('#password_old');
                 var reset = function () {
@@ -76,6 +76,12 @@ var edit = {
                         main.showDialog({message: '用户名不得为空'});
                     }
                 }
+            };
+            $btn.on('click', function () {
+                method();
+            });
+            $body.on('keydown', function (e) {
+                (e.keyCode == '13') && method();
             });
         }
     }

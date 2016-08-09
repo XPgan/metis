@@ -64,6 +64,7 @@
         line-height: 24px;
         color: @light;
         margin-bottom: 20px;
+        padding: 0 20px;
     }
     a {
         .btn;
@@ -100,6 +101,8 @@
 .userinfo > div {
     position: fixed;
     width: 260px;
+    max-height: 320px;
+    overflow-y: auto;
     font-size: 13px;
     line-height: 27px;
     color: @light;
@@ -113,6 +116,11 @@
     p {
         color: @middle;
         margin-top: 10px;
+    }
+    &::-webkit-scrollbar {
+        opacity: 0;
+        width: 0;
+        height: 0;
     }
 }
 

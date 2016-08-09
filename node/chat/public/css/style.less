@@ -136,9 +136,9 @@
             margin: 10px 0;
             padding-right: 10px;
 
-            .rotate (@deg) {
-                -webkit-transform: rotate(@deg);
-                        transform: rotate(@deg);
+            .rotateZ (@deg) {
+                -webkit-transform: rotateZ(@deg);
+                        transform: rotateZ(@deg);
             }
 
             &:before, &:after {
@@ -150,10 +150,10 @@
                 position: absolute;
                 top: 10px;
             }
-            &:before { right: -4px;.rotate(130deg); }
-            &:after { right: 0;.rotate(-130deg); }
-            &.up:before { .rotate(50deg); }
-            &.up:after { .rotate(-50deg); }
+            &:before { right: -4px;.rotateZ(130deg); }
+            &:after { right: 0;.rotateZ(-130deg); }
+            &.up:before { .rotateZ(50deg); }
+            &.up:after { .rotateZ(-50deg); }
         }
     }
 }
@@ -254,7 +254,7 @@
                 position: absolute;
                 top: 50%;
 
-                @transform: rotate(-45deg) translate(0, -50%);
+                @transform: rotateZ(-45deg) translate(0, -50%);
 
                 -webkit-transform: @transform;
                         transform: @transform;

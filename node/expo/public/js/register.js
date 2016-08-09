@@ -16,7 +16,7 @@ var register = {
             var judge = username && password && sex && tel && qq;
             if (judge) {
                 $.ajax({
-                    url: "/register",
+                    url: '/register',
                     type: 'POST',
                     data: $form.serialize(),
                     success: function (data) {

@@ -13,7 +13,7 @@ var publish = {
             var judge = title && content;
             if (judge) {
                 $.ajax({
-                    url: "/diary/publish",
+                    url: '/diary/publish',
                     type: 'POST',
                     data: $form.serialize(),
                     success: function (data) {

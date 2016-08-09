@@ -44,7 +44,7 @@ profile.user = {
             var $form = $('#form_userinfo');
             $btn.on('click', function () {
                 $.ajax({
-                    url: "/user/edit/info",
+                    url: '/user/edit/info',
                     type: 'POST',
                     data: $form.serialize(),
                     success: function (data) {
@@ -64,7 +64,7 @@ profile.user = {
             $btn.on('change', function () {
                 var formData = new FormData($form[0]);
                 $.ajax({
-                    url: "/user/edit/portrait",
+                    url: '/user/edit/portrait',
                     type: 'POST',
                     data: formData,
                     contentType: false,
@@ -91,7 +91,7 @@ profile.user = {
             var $btn = $('.js_logout');
             $btn.on('click', function () {
                 $.ajax({
-                    url: "/logout",
+                    url: '/logout',
                     type: 'POST',
                     success: function (data) {
                         main.showResult(data, function (message) {
@@ -112,7 +112,7 @@ profile.user = {
             var $btn = $('.js_exit');
             $btn.on('click', function () {
                 $.ajax({
-                    url: "/exit",
+                    url: '/exit',
                     type: 'POST',
                     success: function (data) {
                         main.showResult(data, function () {
@@ -155,7 +155,7 @@ profile.diary = {
 
             var cancelFavour = function () {
                 $.ajax({
-                    url: "/diary/favour/cancel/" + id,
+                    url: '/diary/favour/cancel/' + id,
                     type: 'POST',
                     success: function (data) {
                         main.showResult(data, function () {
@@ -172,7 +172,7 @@ profile.diary = {
             };
             var verifyFavour = function () {
                 $.ajax({
-                    url: "/diary/favour/verify/" + id,
+                    url: '/diary/favour/verify/' + id,
                     type: 'POST',
                     success: function (data) {
                         main.showResult(data, function () {

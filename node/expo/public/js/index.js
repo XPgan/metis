@@ -30,7 +30,7 @@ var index = {
     switch: function () {
         $('.js_switch').on('click', function () {
             $.ajax({
-                url: "/exit",
+                url: '/exit',
                 type: 'POST',
                 success: function (data) {
                     main.showResult(data, function () {

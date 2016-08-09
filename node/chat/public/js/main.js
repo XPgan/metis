@@ -14,6 +14,13 @@ var main = {
         $body.on('click', '.js_close', function () {
             $('.js_mask').remove();
         });
+        $body.on('keydown', function (e) {
+            if ($('.js_mask').length && (e.keyCode == '13')) {
+                var t = setTimeout(function () {
+                    $('.js_close').trigger('click');
+                }, 0);
+            }
+        });
     },
     showResult: function (data, callback) {
         var _this = this;

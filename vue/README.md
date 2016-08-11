@@ -3,6 +3,37 @@ __数据驱动__ __组件系统__
 ### 指令 ###
 + v-model
 + v-bind:attr.modifiers / :attr.modifiers
+    + class __[class & v-bind:class 共存]__
+    + style
+        ```html
+        <div id="el" v-bind:style="[fontStyle, borderStyle]"></div>
+        ```
+        ```javascript
+        var vm = new Vue({
+            el: '#el',
+            data: {
+                fontStyle: {
+                    fontSize: '14px',
+                    lineHeight: '20px',
+                    color: 'red'
+                },
+                borderStyle: {
+                    border: '1px solid #000',
+                    borderRadius: '10px'
+                }
+            }
+        });
+        ```
+        ```css
+        /* 等效于 */
+        #el {
+            font-size: 14px;
+            line-height: 20px;
+            color: red;
+            border: 1px solid #000;
+            border-radius: 10px;
+        }
+        ```
 + v-if
 + v-for
 + v-on:event / @event
@@ -20,17 +51,13 @@ __数据驱动__ __组件系统__
 
 ### 实例 ###
 + 构造器
-
     ```javascript
     var vm = new Vue({});
     ```
-
-    _组件_
     ```javascript
     var Component = Vue.extend({});
     var instance = new Component();
     ```
-
 + 属性及方法
     + vm.$data
     + vm.$el
@@ -69,6 +96,7 @@ __数据驱动__ __组件系统__
             }
         }
     });
+
     console.log(vm.fullName); // -> 'Sun Mengyuan'
  
     vm.fullName = 'Sun My';

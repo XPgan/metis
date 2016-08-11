@@ -19,10 +19,13 @@ __数据驱动__ __组件系统__
     var Component = Vue.extend({});
     var instance = new Component();
     ```
+
 + 属性及方法
+
     + vm.$data
     + vm.$el
     + vm.$watch
+
 + 生命周期
 
     ```javascript

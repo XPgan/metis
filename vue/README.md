@@ -2,10 +2,21 @@ __数据驱动__ __组件系统__
 
 ### 指令 ###
 + v-model
-+ v-bind
++ v-bind:attr.modifiers / :attr.modifiers
 + v-if
 + v-for
-+ v-on:event
++ v-on:event / @event
+
+***
+
+### 数据绑定 ###
++ {{_}}
++ {{*_}} (单次插值)
++ {{{_}}}
+
+    _过滤器_
+
+***
 
 ### 实例 ###
 + 构造器
@@ -14,20 +25,18 @@ __数据驱动__ __组件系统__
     var vm = new Vue({});
     ```
 
-    组件
+    _组件_
     ```javascript
     var Component = Vue.extend({});
     var instance = new Component();
     ```
 
 + 属性及方法
-
     + vm.$data
     + vm.$el
     + vm.$watch
 
-+ 生命周期
-
+    _生命周期_
     ```javascript
     var vm = new Vue({
         data: {},

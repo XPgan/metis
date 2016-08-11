@@ -53,7 +53,6 @@ __数据驱动__ __组件系统__
             <p>{{ item.paragraph }}</p>
         </template>
         ```
-
     + 遍历对象 [$index, $key]
     
         ```html

@@ -3,8 +3,8 @@ __数据驱动__ __组件系统__
 ### 指令 ###
 + v-model
 + v-bind:attr.modifiers / :attr.modifiers
-    + class __[class & v-bind:class 共存]__
-    + style
+    + v-bind:class __<class & v-bind:class 共存>__
+    + v-bind:style
 
         ```html
         <div id="el" v-bind:style="[fontStyle, borderStyle]"></div>
@@ -36,7 +36,9 @@ __数据驱动__ __组件系统__
             border-radius: 10px;
         }
         ```
-+ v-if, v-else __[v-show, v-else 适用于频繁切换]__
++
+  + v-if, v-else
+  + v-show, v-else (适用于频繁切换)
 
     ```html
     <template v-if="judge">
@@ -45,7 +47,7 @@ __数据驱动__ __组件系统__
     </template>
     ```
 + v-for
-    + 遍历数组 [$index]
+    + 遍历数组 <$index>
     
         ```html
         <template v-for="item in items">
@@ -53,17 +55,23 @@ __数据驱动__ __组件系统__
             <p>{{ item.paragraph }}</p>
         </template>
         ```
-    + 遍历对象 [$index, $key]
-    
+    + 遍历对象 <$index, $key>
+
         ```html
         <ul>
             <li v-for="val in obj">{{ $key }}:{{ val }}</li>
         </ul>
         ```
 
-    `this.[items/obj].$set(index/key, value);`(待检验)
+    `this.items.$set(index, value);`
+    
+    `this.obj.$set(key, value);`(待检验)
  
-    `this.[items/obj].$remove([index/key]/value);`(待检验)
+    `this.items.$remove(index);`(待检验)
+    
+    `this.items.$remove(key);`(待检验)
+    
+    `this.items.$remove(value);`(待检验)
 
     __track-by="$index"__
     + 优点
@@ -72,7 +80,7 @@ __数据驱动__ __组件系统__
     + 缺点
         + 不映射数据项顺序调整
         + 不同步临时状态及组件私有状态 
-+ v-on:event / @event
++ v-on:event(param, $event) / @event(param, $event)
 
 ***
 

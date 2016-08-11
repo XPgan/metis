@@ -5,6 +5,7 @@ __数据驱动__ __组件系统__
 + v-bind:attr.modifiers / :attr.modifiers
     + class __[class & v-bind:class 共存]__
     + style
+
         ```html
         <div id="el" v-bind:style="[fontStyle, borderStyle]"></div>
         ```
@@ -24,8 +25,9 @@ __数据驱动__ __组件系统__
             }
         });
         ```
+
+        -> 等效于
         ```css
-        /* 等效于 */
         #el {
             font-size: 14px;
             line-height: 20px;
@@ -34,6 +36,7 @@ __数据驱动__ __组件系统__
             border-radius: 10px;
         }
         ```
+
 + v-if
 + v-for
 + v-on:event / @event
@@ -51,6 +54,7 @@ __数据驱动__ __组件系统__
 
 ### 实例 ###
 + 构造器
+
     ```javascript
     var vm = new Vue({});
     ```
@@ -58,6 +62,7 @@ __数据驱动__ __组件系统__
     var Component = Vue.extend({});
     var instance = new Component();
     ```
+
 + 属性及方法
     + vm.$data
     + vm.$el

@@ -40,12 +40,18 @@ __数据驱动__ __组件系统__
 
     ```html
     <template v-if="judge">
-        <h3>Title</h3>
-        <p>Paragraph 1</p>
-        <p>Paragraph 2</p>
+        <h3>title</h3>
+        <p>paragraph</p>
     </template>
     ```
-+ v-for
++ v-for [$index 变量]
+
+    ```html
+    <template v-for="item in items">
+        <h3>{{ $index }}.{{ item.title }}</h3>
+        <p>{{ item.paragraph }}</p>
+    </template>
+    ```
 + v-on:event / @event
 
 ***

@@ -3,7 +3,7 @@ __数据驱动__ __组件系统__
 ### 指令 ###
 + v-model
 + v-bind:attr.modifiers / :attr.modifiers
-    + v-bind:class __<class & v-bind:class 共存>__
+    + v-bind:class __[class & v-bind:class 共存]__
     + v-bind:style
 
         ```html
@@ -60,24 +60,26 @@ __数据驱动__ __组件系统__
             <li v-for="val in obj">{{ $key }}:{{ val }}</li>
         </ul>
         ```
-
-    `this.items.$set(index, value);`
-    
-    `this.obj.$set(key, value);`(待检验)
- 
-    `this.items.$remove(index);`(待检验)
-    
-    `this.items.$remove(key);`(待检验)
-    
-    `this.items.$remove(value);`(待检验)
-
+        
     __track-by="$index"__
     + 优点
         + 高效数据刷新
         + 处理重复数据项
     + 缺点
         + 不映射数据项顺序调整
-        + 不同步临时状态及组件私有状态 
+        + 不同步临时状态及组件私有状态
+
+    `this.items.$set(index, value);`
+
+    `this.obj.$set(key, value);`(待检验)
+
+    `this.items.$remove(index);`(待检验)
+
+    `this.obj.$remove(key);`(待检验)
+ 
+    `this.items.$remove(value);`(待检验)
+
+    `this.obj.$remove(value);`(待检验)
 + v-on:event(param, $event) / @event(param, $event)
 
 ***

@@ -45,7 +45,8 @@ __数据驱动__ __组件系统__
     </template>
     ```
 + v-for
-
+    + 遍历数组 [$index]
+    
     ```html
     <template v-for="item in items">
         <h3>{{ $index }}.{{ item.title }}</h3>
@@ -53,13 +54,25 @@ __数据驱动__ __组件系统__
     </template>
     ```
 
+    + 遍历对象 [$index, $key]
+    
+    ```html
+    <ul>
+        <li v-for="val in obj">{{ $key }}:{{ val }}</li>
+    </ul>
+    ```
+
+    `this.[items/obj].$set(index/key, value);`(待检验)
+ 
+    `this.[items/obj].$remove([index/key]/value);`(待检验)
+
     __track-by="$index"__
     + 优点
         + 高效数据刷新
         + 处理重复数据项
     + 缺点
         + 不映射数据项顺序调整
-        + 不同步临时状态及组件私有状态
+        + 不同步临时状态及组件私有状态 
 + v-on:event / @event
 
 ***

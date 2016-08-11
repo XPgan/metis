@@ -36,7 +36,7 @@ __数据驱动__ __组件系统__
             border-radius: 10px;
         }
         ```
-+ v-if, v-else __[频繁切换使用 v-show, v-else]__
++ v-if, v-else __[v-show, v-else 适用于频繁切换]__
 
     ```html
     <template v-if="judge">
@@ -44,7 +44,7 @@ __数据驱动__ __组件系统__
         <p>paragraph</p>
     </template>
     ```
-+ v-for [$index 变量]
++ v-for
 
     ```html
     <template v-for="item in items">
@@ -52,6 +52,14 @@ __数据驱动__ __组件系统__
         <p>{{ item.paragraph }}</p>
     </template>
     ```
+
+    __track-by="$index"__
+    + 优点
+        + 高效数据刷新
+        + 处理重复数据项
+    + 缺点
+        + 不映射数据项顺序调整
+        + 不同步临时状态及组件私有状态
 + v-on:event / @event
 
 ***

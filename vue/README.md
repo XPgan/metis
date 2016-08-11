@@ -36,7 +36,6 @@ __数据驱动__ __组件系统__
             border-radius: 10px;
         }
         ```
-
 + v-if
 + v-for
 + v-on:event / @event
@@ -62,7 +61,6 @@ __数据驱动__ __组件系统__
     var Component = Vue.extend({});
     var instance = new Component();
     ```
-
 + 属性及方法
     + vm.$data
     + vm.$el

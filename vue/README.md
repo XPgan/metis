@@ -36,7 +36,15 @@ __数据驱动__ __组件系统__
             border-radius: 10px;
         }
         ```
-+ v-if
++ v-if, v-else __[频繁切换使用 v-show, v-else]__
+
+    ```html
+    <template v-if="judge">
+        <h3>Title</h3>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+    </template>
+    ```
 + v-for
 + v-on:event / @event
 

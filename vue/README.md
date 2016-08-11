@@ -9,11 +9,13 @@ __数据驱动__ __组件系统__
 
 ### 实例 ###
 + 构造器
+
     ```javascript
     var vm = new Vue({});
     ```
 
     组件
+
     ```javascript
     var Component = Vue.extend({});
     var instance = new Component();
@@ -22,12 +24,14 @@ __数据驱动__ __组件系统__
     + vm.$data
     + vm.$el
     + vm.$watch
+
         ```javascript
         vm.$watch('$data', function (newVal, oldVal) {
             // 该回调将在 'vm.$data' 改变后执行
         });
         ```
 + 生命周期
+
     ```javascript
     var vm = new Vue({
         data: {},

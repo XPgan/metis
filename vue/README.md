@@ -36,9 +36,7 @@ __数据驱动__ __组件系统__
             border-radius: 10px;
         }
         ```
-+
-  + v-if, v-else
-  + v-show, v-else (适用于频繁切换)
++ v-if + v-else, v-show + v-else (适用于频繁切换)
 
     ```html
     <template v-if="judge">

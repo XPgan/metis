@@ -47,20 +47,20 @@ __数据驱动__ __组件系统__
 + v-for
     + 遍历数组 [$index]
     
-    ```html
-    <template v-for="item in items">
-        <h3>{{ $index }}.{{ item.title }}</h3>
-        <p>{{ item.paragraph }}</p>
-    </template>
-    ```
+        ```html
+        <template v-for="item in items">
+            <h3>{{ $index }}.{{ item.title }}</h3>
+            <p>{{ item.paragraph }}</p>
+        </template>
+        ```
 
     + 遍历对象 [$index, $key]
     
-    ```html
-    <ul>
-        <li v-for="val in obj">{{ $key }}:{{ val }}</li>
-    </ul>
-    ```
+        ```html
+        <ul>
+            <li v-for="val in obj">{{ $key }}:{{ val }}</li>
+        </ul>
+        ```
 
     `this.[items/obj].$set(index/key, value);`(待检验)
  

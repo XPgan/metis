@@ -14,7 +14,7 @@ __数据驱动__ __组件系统__
 + {{*_}} (单次插值)
 + {{{_}}}
 
-#### 过滤器 ####    
+#### 过滤器 ####
 
 ***
 
@@ -39,10 +39,39 @@ __数据驱动__ __组件系统__
     _生命周期_
     ```javascript
     var vm = new Vue({
+        el: '#id',
         data: {},
         created: function () {},
         compiled: function () {},
         ready: function () {},
         destroyed: function () {}
     });
+    ```
+
+    _计算属性_
+    ```javascript
+    var vm = new Vue({
+        el: '#id',
+        data: {
+            firstName: 'Sun',
+            lastName: 'Mengyuan'
+        },
+        computed: {
+            fullName: {
+                get: function () {
+                    return this.firstime + ' ' + this.lastName;
+                },
+                set: function (value) {
+                    var tmp = value.split(' ');
+                    this.firstName = tmp[0];
+                    this.lastName = tmp[1];
+                }
+            }
+        }
+    });
+    console.log(vm.fullName); // -> 'Sun Mengyuan'
+ 
+    vm.fullName = 'Sun My';
+    console.log(vm.firstName); // -> 'Sun'
+    console.log(vm.lastName); // -> 'My'
     ```

@@ -76,6 +76,7 @@ __数据驱动__ __组件系统__
     + `this.obj.$remove(key);`(待检验)
     + `this.items.$remove(value);`(待检验)
     + `this.obj.$remove(value);`(待检验)
+
 + __v-on:event(param, $event) / @event(param, $event)__
 
 ***

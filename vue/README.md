@@ -137,8 +137,11 @@ __数据驱动__ __组件系统__
     console.log(vm.lastName); // -> 'My'
     ```
 
+***
+
 ### 其它 ###
 + .$set(), .$remove()
+
     + `this.items.$set(index, value);`
     + `this.obj.$set(key, value);`(待检验)
     + `this.items.$remove(index);`(待检验)

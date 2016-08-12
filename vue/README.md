@@ -7,28 +7,29 @@ __数据驱动__ __组件系统__
     + v-bind:style
 
         ```html
-        <div id="el" v-bind:style="[fontStyle, borderStyle]"></div>
+        <div class="elem" v-bind:style="[fontStyle, borderStyle]"></div>
         ```
         ```javascript
-        var vm = new Vue({
-            el: '#el',
-            data: {
-                fontStyle: {
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: 'red'
-                },
-                borderStyle: {
-                    border: '1px solid #000',
-                    borderRadius: '10px'
+        export default {
+            data () {
+                return {
+                    fontStyle: {
+                        fontSize: '14px',
+                        lineHeight: '20px',
+                        color: 'red'
+                    },
+                    borderStyle: {
+                        border: '1px solid #000',
+                        borderRadius: '10px'
+                    }
                 }
             }
-        });
+        }
         ```
 
         -> 等效于
         ```css
-        #el {
+        .elem {
             font-size: 14px;
             line-height: 20px;
             color: red;
@@ -85,11 +86,11 @@ __数据驱动__ __组件系统__
 + 构造器
 
     ```javascript
-    var vm = new Vue({});
+    var vm = new Vue({})
     ```
     ```javascript
-    var Component = Vue.extend({});
-    var instance = new Component();
+    var Component = Vue.extend({})
+    var instance = new Component()
     ```
 + 属性及方法
     + vm.$data
@@ -105,7 +106,7 @@ __数据驱动__ __组件系统__
         compiled: function () {},
         ready: function () {},
         destroyed: function () {}
-    });
+    })
     ```
 
     _计算属性_
@@ -128,23 +129,15 @@ __数据驱动__ __组件系统__
                 }
             }
         }
-    });
+    })
 
-    console.log(vm.fullName); // -> 'Sun Mengyuan'
+    console.log(vm.fullName) // -> 'Sun Mengyuan'
  
-    vm.fullName = 'Sun My';
-    console.log(vm.firstName); // -> 'Sun'
-    console.log(vm.lastName); // -> 'My'
+    vm.fullName = 'Sun My'
+    console.log(vm.firstName) // -> 'Sun'
+    console.log(vm.lastName) // -> 'My'
     ```
 
 ***
 
 ### 其它 ###
-+ .$set(), .$remove()
-
-    + `this.items.$set(index, value);`
-    + `this.obj.$set(key, value);`(待检验)
-    + `this.items.$remove(index);`(待检验)
-    + `this.obj.$remove(key);`(待检验)
-    + `this.items.$remove(value);`(待检验)
-    + `this.obj.$remove(value);`(待检验)

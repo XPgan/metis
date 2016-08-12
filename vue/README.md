@@ -68,15 +68,6 @@ __数据驱动__ __组件系统__
     + 缺点
         + 不映射数据项顺序调整
         + 不同步临时状态及组件私有状态
-
-    ___.$set(), .$remove()___
-    + `this.items.$set(index, value);`
-    + `this.obj.$set(key, value);`(待检验)
-    + `this.items.$remove(index);`(待检验)
-    + `this.obj.$remove(key);`(待检验)
-    + `this.items.$remove(value);`(待检验)
-    + `this.obj.$remove(value);`(待检验)
-
 + __v-on:event(param, $event) / @event(param, $event)__
 
 ***
@@ -145,3 +136,12 @@ __数据驱动__ __组件系统__
     console.log(vm.firstName); // -> 'Sun'
     console.log(vm.lastName); // -> 'My'
     ```
+
+### 其它 ###
++ .$set(), .$remove()
+    + `this.items.$set(index, value);`
+    + `this.obj.$set(key, value);`(待检验)
+    + `this.items.$remove(index);`(待检验)
+    + `this.obj.$remove(key);`(待检验)
+    + `this.items.$remove(value);`(待检验)
+    + `this.obj.$remove(value);`(待检验)

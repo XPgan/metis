@@ -1,7 +1,5 @@
 __数据驱动__ __组件系统__
 
-***
-
 ## 指令 ##
 + __v-model__
 + __v-bind:attr.modifiers / :attr.modifiers__

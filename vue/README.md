@@ -1,83 +1,88 @@
 __数据驱动__ __组件系统__
 
-### 指令 ###
-+ __v-model__
-+ __v-bind:attr.modifiers / :attr.modifiers__
-    + v-bind:class (class & v-bind:class 共存)
-    + v-bind:style
+## 指令 ##
++ v-model
++ v-bind:attr.modifiers / :attr.modifiers
++ v-if + v-else, v-show + v-else
++ v-for
++ v-on:event(param, $event) / @event(param, $event)
 
-        ```html
-        <div id="el" v-bind:style="[fontStyle, borderStyle]"></div>
-        ```
-        ```javascript
-        var vm = new Vue({
-            el: '#el',
-            data: {
-                fontStyle: {
-                    fontSize: '14px',
-                    lineHeight: '20px',
-                    color: 'red'
-                },
-                borderStyle: {
-                    border: '1px solid #000',
-                    borderRadius: '10px'
-                }
-            }
-        });
-        ```
-
-        -> 等效于
-        ```css
-        #el {
-            font-size: 14px;
-            line-height: 20px;
-            color: red;
-            border: 1px solid #000;
-            border-radius: 10px;
-        }
-        ```
-+ __v-if + v-else, v-show + v-else__
+__v-bind:attr.modifiers / :attr.modifiers__
+- v-bind:class (class & v-bind:class 共存)
+- v-bind:style
 
     ```html
-    <template v-if="judge">
-        <h3>title</h3>
-        <p>paragraph</p>
+    <div id="el" v-bind:style="[fontStyle, borderStyle]"></div>
+    ```
+    ```javascript
+    var vm = new Vue({
+        el: '#el',
+        data: {
+            fontStyle: {
+                fontSize: '14px',
+                lineHeight: '20px',
+                color: 'red'
+            },
+            borderStyle: {
+                border: '1px solid #000',
+                borderRadius: '10px'
+            }
+        }
+    });
+    ```
+
+    -> 等效于
+    ```css
+    #el {
+        font-size: 14px;
+        line-height: 20px;
+        color: red;
+        border: 1px solid #000;
+        border-radius: 10px;
+    }
+    ```
+__v-if + v-else, v-show + v-else__
+
+```html
+<template v-if="judge">
+    <h3>title</h3>
+    <p>paragraph</p>
+</template>
+```
+__v-for__
+- 遍历数组 <$index>
+
+    ```html
+    <template v-for="item in items">
+        <h3>{{ $index }}.{{ item.title }}</h3>
+        <p>{{ item.paragraph }}</p>
     </template>
     ```
-+ __v-for__
-    + 遍历数组 <$index>
+- 遍历对象 <$index, $key>
 
-        ```html
-        <template v-for="item in items">
-            <h3>{{ $index }}.{{ item.title }}</h3>
-            <p>{{ item.paragraph }}</p>
-        </template>
-        ```
-    + 遍历对象 <$index, $key>
+    ```html
+    <ul>
+        <li v-for="val in obj">{{ $key }}:{{ val }}</li>
+    </ul>
+    ```
 
-        ```html
-        <ul>
-            <li v-for="val in obj">{{ $key }}:{{ val }}</li>
-        </ul>
-        ```
+___track-by=""___
+* 优点
+    * 高效数据刷新
+    * 处理重复数据项
+* 缺点
+    * 不映射数据项顺序调整
+    * 不同步临时状态及组件私有状态
 
-    ___track-by="$index"___
-    + 优点
-        + 高效数据刷新
-        + 处理重复数据项
-    + 缺点
-        + 不映射数据项顺序调整
-        + 不同步临时状态及组件私有状态
+___.$set(), .$remove()___
+* `this.items.$set(index, value);`
+* `this.obj.$set(key, value);`(待检验)
+* `this.items.$remove(index);`(待检验)
+* `this.obj.$remove(key);`(待检验)
+* `this.items.$remove(value);`(待检验)
+* `this.obj.$remove(value);`(待检验)
 
-    ___.$set(), .$remove()___
-    + `this.items.$set(index, value);`
-    + `this.obj.$set(key, value);`(待检验)
-    + `this.items.$remove(index);`(待检验)
-    + `this.obj.$remove(key);`(待检验)
-    + `this.items.$remove(value);`(待检验)
-    + `this.obj.$remove(value);`(待检验)
-
-+ __v-on:event(param, $event) / @event(param, $event)__
+__v-on:event(param, $event) / @event(param, $event)__
 
 ***
 

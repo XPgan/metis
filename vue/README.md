@@ -1,9 +1,9 @@
 __数据驱动__ __组件系统__
 
 ### 指令 ###
-+ v-model
-+ v-bind:attr.modifiers / :attr.modifiers
-    + v-bind:class __[class & v-bind:class 共存]__
++ __v-model__
++ __v-bind:attr.modifiers / :attr.modifiers__
+    + v-bind:class (class & v-bind:class 共存)
     + v-bind:style
 
         ```html
@@ -36,7 +36,7 @@ __数据驱动__ __组件系统__
             border-radius: 10px;
         }
         ```
-+ v-if + v-else, v-show + v-else (适用于频繁切换)
++ __v-if + v-else, v-show + v-else__
 
     ```html
     <template v-if="judge">
@@ -44,7 +44,7 @@ __数据驱动__ __组件系统__
         <p>paragraph</p>
     </template>
     ```
-+ v-for
++ __v-for__
     + 遍历数组 <$index>
 
         ```html
@@ -60,8 +60,8 @@ __数据驱动__ __组件系统__
             <li v-for="val in obj">{{ $key }}:{{ val }}</li>
         </ul>
         ```
-        
-    __track-by="$index"__
+
+    ___track-by="$index"___
     + 优点
         + 高效数据刷新
         + 处理重复数据项
@@ -69,14 +69,14 @@ __数据驱动__ __组件系统__
         + 不映射数据项顺序调整
         + 不同步临时状态及组件私有状态
 
-    __.$set(), .$remove()__    
+    ___.$set(), .$remove()___
     + `this.items.$set(index, value);`
     + `this.obj.$set(key, value);`(待检验)
     + `this.items.$remove(index);`(待检验)
     + `this.obj.$remove(key);`(待检验)
     + `this.items.$remove(value);`(待检验)
     + `this.obj.$remove(value);`(待检验)
-+ v-on:event(param, $event) / @event(param, $event)
++ __v-on:event(param, $event) / @event(param, $event)__
 
 ***
 

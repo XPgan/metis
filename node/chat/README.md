@@ -1,6 +1,8 @@
 # 多人聊天室 #
 ### express + mongodb + websocket ###
 
+![](./materials/chatroom.png)
+
 *****
 
 参考资料
@@ -40,14 +42,6 @@ var userSchema = new Schema({
 *****
 
 ### pages ###
-+ __/__ (首页)
-
-![](./materials/index.png)
-
-+ __/edit/myinfo__ (个人设置页)
-
-![](./materials/settings.png)
-
-+ __/chatroom__ (聊天室)
-
-![](./materials/chatroom.png)
++ __/__ (首页) [效果图](./materials/index.png)
++ __/edit/myinfo__ (个人设置页) [效果图](./materials/settings.png)
++ __/chatroom__ (聊天室) [效果图](./materials/chatroom.png)

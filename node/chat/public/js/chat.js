@@ -117,7 +117,7 @@ var chat = {
             method();
         });
         $input.on('keydown', function (e) {
-            $('.js_mask').length || (e.keyCode == '13') && method();
+            $('.js_dialog').length || (e.keyCode == '13') && method();
         });
     },
     resendMessage: function () {

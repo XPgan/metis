@@ -12,10 +12,10 @@ var main = {
     },
     commonCtrl: function () {
         $body.on('click', '.js_close', function () {
-            $('.js_mask').remove();
+            $('.js_dialog').remove();
         });
         $body.on('keydown', function (e) {
-            if ($('.js_mask').length && (e.keyCode == '13')) {
+            if ($('.js_dialog').length && (e.keyCode == '13')) {
                 var t = setTimeout(function () {
                     $('.js_close').trigger('click');
                 }, 0);
@@ -37,7 +37,7 @@ var main = {
         }
     },
     showDialog: function (opt) {
-        $('.js_mask').remove();
+        $('.js_dialog').remove();
 
         var $dialog = $('#module_dialog').html()
             .replace('$message', opt.message)

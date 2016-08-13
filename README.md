@@ -1,3 +1,26 @@
+### Node.js ###
+
+#### 参考资料 ####
++ [Node.js开发指南](https://github.com/sunmengyuan/book/blob/master/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
++ [深入浅出Node.js](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
+
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/node/node.js) ####
+
+#### 示例 ####
++ 简易微博系统 [(code)](https://github.com/sunmengyuan/note/tree/master/node/expo)
++ 多人聊天室 [(code)](https://github.com/sunmengyuan/note/tree/master/node/chat)
+
+*****
+
+### Vue.js ###
+
+#### 参考资料 ####
++ [vue.js](http://cn.vuejs.org/)
+
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/vue/README.md) ####
+
+***
+
 ### Canvas ###
 
 #### 参考资料 ####
@@ -42,20 +65,6 @@
 
 #### 示例 ####
 + 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](http://www.miaomie.tech/demos/matter/seesaw.html)
-
-*****
-
-### Node.js ###
-
-#### 参考资料 ####
-+ [Node.js开发指南](https://github.com/sunmengyuan/book/blob/master/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
-+ [深入浅出Node.js](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
-
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/node/node.js) ####
-
-#### 示例 ####
-+ 简易微博系统 [(code)](https://github.com/sunmengyuan/note/tree/master/node/expo)
-+ 多人聊天室 [(code)](https://github.com/sunmengyuan/note/tree/master/node/chat)
 
 *****
 

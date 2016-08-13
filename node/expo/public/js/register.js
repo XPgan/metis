@@ -6,7 +6,7 @@ var register = {
     do: function () {
         var $btn = $('.js_register');
         var $form = $('#form_register');
-        $btn.on('click', function () {
+        var method = function () {
             var username = $('#username').val();
             var password = $('#password').val();
             var sex = $('#sex').val();
@@ -35,6 +35,12 @@ var register = {
             } else {
                 main.showDialog({message: '含空必填项~'});
             }
+        };
+        $btn.on('click', function () {
+            method();
+        });
+        $body.on('keydown', function (e) {
+            $('.js_dialog').length || (e.keyCode == '13') && method();
         });
     }
 };

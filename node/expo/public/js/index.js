@@ -11,7 +11,7 @@ var index = {
     login: function () {
         var $btn = $('.js_login');
         var $form = $('#form_login');
-        $btn.on('click', function () {
+        var method = function () {
             $.ajax({
                 url: '/login',
                 type: 'POST',
@@ -25,6 +25,14 @@ var index = {
                     main.showDialog({message: '登录失败'});
                 }
             });
+        };
+        $btn.on('click', function () {
+            method();
+        });
+        $body.on('keydown', function (e) {
+            if ($form.find('input').val()) {
+                $('.js_dialog').length || (e.keyCode == '13') && method();
+            }
         });
     },
     switch: function () {

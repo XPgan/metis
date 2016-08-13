@@ -11,7 +11,6 @@ var main = {
     },
     commonCtrl: function () {
         $body.on('click', '.js_close', function (e) {
-            e.preventDefault();
             $('.js_dialog').remove();
         });
         $body.on('click', '.js_goto', function (e) {
@@ -20,6 +19,13 @@ var main = {
         });
         $body.on('click', '.js_back', function () {
             history.back();
+        });
+        $body.on('keydown', function (e) {
+            if ($('.js_dialog').length && (e.keyCode == '13')) {
+                var t = setTimeout(function () {
+                    $('.js_dialog').find('a').trigger('click');
+                }, 0);
+            }
         });
     },
     showResult: function (data, callback) {
@@ -46,7 +52,7 @@ var main = {
     showDialog: function (opt) {
         var $dialog = $('#module_dialog').html()
             .replace('$message', opt.message)
-            .replace('$href', opt.href || null)
+            .replace('$href', opt.href || 'javascript:;')
             .replace('$btnClass', opt.btnClass || 'js_close');
         $body.append($dialog);
     },

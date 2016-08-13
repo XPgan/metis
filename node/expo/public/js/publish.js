@@ -6,7 +6,7 @@ var publish = {
     do: function () {
         var $btn = $('.js_publish');
         var $form = $('#form_publish');
-        $btn.on('click', function () {
+        var method = function () {
             var title = $('#title').val();
             var content = $('#content').val();
 
@@ -28,6 +28,12 @@ var publish = {
             } else {
                 main.showDialog({message: '标题 or 正文 呐~'});
             }
+        };
+        $btn.on('click', function () {
+            method();
+        });
+        $body.on('keydown', function (e) {
+            $('.js_dialog').length || (e.keyCode == '13') && method();
         });
     }
 };

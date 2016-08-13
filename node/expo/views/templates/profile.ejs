@@ -22,13 +22,13 @@
 </section>
 <%- include modules/m-diary.ejs %>
 
-<div class="c-hidden c-mask js_mask">
+<div class="c-hidden c-mask">
     <div class="edit-board c-footer js_edit_board">
         <form id="form_userinfo" autocomplete="off">
             <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= userinfo.intro %>" />
         </form>
         <button class="js_userinfo">提交</button>
-        <a href="javascript:;" class="js_close">取消</a>
+        <a href="javascript:;" class="js_cancel">取消</a>
     </div>
 </div>
 

@@ -38,6 +38,9 @@ profile.user = {
             $('.js_edit_userinfo').on('click', function () {
                 $('.js_edit_board').parent().show();
             });
+            $('.js_cancel').on('click', function () {
+                $('.js_edit_board').parent().hide();
+            });
         },
         info: function () {
             var $btn = $('.js_userinfo');

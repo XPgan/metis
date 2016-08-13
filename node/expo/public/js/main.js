@@ -12,7 +12,7 @@ var main = {
     commonCtrl: function () {
         $body.on('click', '.js_close', function (e) {
             e.preventDefault();
-            $(this).parents('.js_mask').hide();
+            $('.js_dialog').remove();
         });
         $body.on('click', '.js_goto', function (e) {
             e.preventDefault();

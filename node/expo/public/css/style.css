@@ -13,7 +13,7 @@
 .expo-tips{font-size: 14px;line-height: 24px;padding: 0 20px;text-align: center;}
 
 /* dialog */
-.dialog{position: fixed;width: 260px;text-align: center;background-color: #fff;border-radius: 5px;}
+.dialog > div{position: fixed;width: 260px;text-align: center;background-color: #fff;border-radius: 5px;}
 .dialog-message{font-size: 16px;color: #666;padding: 30px 0;}
 a.dialog-btn{font-size: 14px;line-height: 40px;color: #0aab94;border-top: 1px dashed #dad7d7;}
 

@@ -137,7 +137,3 @@ __数据驱动__ __组件系统__
     console.log(vm.firstName) // -> 'Sun'
     console.log(vm.lastName) // -> 'My'
     ```
-
-***
-
-### 其它 ###

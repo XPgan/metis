@@ -49,7 +49,7 @@ var userSchema = new Schema({
 *****
 
 ### emphasis ###
-+ 用户上线
++ __用户上线__
 
     服务端
 
@@ -91,7 +91,7 @@ var userSchema = new Schema({
     });
     ```
 
-+ 用户下线
++ __用户下线__
 
     服务端
     
@@ -130,7 +130,7 @@ var userSchema = new Schema({
     });
     ```
 
-+ 用户发送信息
++ __用户发送信息__
 
     服务端
     

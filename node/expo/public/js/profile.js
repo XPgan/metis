@@ -45,20 +45,37 @@ profile.user = {
         info: function () {
             var $btn = $('.js_userinfo');
             var $form = $('#form_userinfo');
+            var method = function () {
+                var username = $('#username').val();
+                var sex = $('#sex').val();
+                var tel = $('#tel').val();
+                var qq = $('#qq').val();
+                var judge = username && sex && tel && qq;
+                if (judge) {
+                    $.ajax({
+                        url: '/user/edit/info',
+                        type: 'POST',
+                        data: $form.serialize(),
+                        success: function (data) {
+                            main.showResult(data, function () {
+                                location.reload();
+                            });
+                        },
+                        error: function () {
+                            main.showDialog({message: '提交失败'});
+                        }
+                    });
+                } else {
+                    main.showDialog({message: '含空必填项~'});
+                }
+            };
             $btn.on('click', function () {
-                $.ajax({
-                    url: '/user/edit/info',
-                    type: 'POST',
-                    data: $form.serialize(),
-                    success: function (data) {
-                        main.showResult(data, function () {
-                            location.reload();
-                        });
-                    },
-                    error: function () {
-                        main.showDialog({message: '提交失败'});
-                    }
-                });
+                method();
+            });
+            $body.on('keydown', function (e) {
+                if ($('.js_edit_board').parent().is(':visible')) {
+                    $('.js_dialog').length || (e.keyCode == '13') && method();
+                }
             });
         },
         portrait: function () {

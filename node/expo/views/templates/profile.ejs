@@ -25,6 +25,10 @@
 <div class="c-hidden c-mask">
     <div class="edit-board c-footer js_edit_board">
         <form id="form_userinfo" autocomplete="off">
+            <input type="text" id="username" name="username" placeholder="*用户名" value="<%= userinfo.username %>" />
+            <input type="text" id="sex" name="sex" placeholder="*性别" value="<%= userinfo.sex %>" />
+            <input type="text" id="tel" name="tel" placeholder="*电话" value="<%= userinfo.tel %>" />
+            <input type="text" id="qq" name="qq" placeholder="*QQ" value="<%= userinfo.qq %>" />
             <input type="text" id="intro" name="intro" placeholder="还咩有自我评价哦~" value="<%= userinfo.intro %>" />
         </form>
         <button class="js_userinfo">提交</button>

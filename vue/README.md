@@ -69,7 +69,8 @@ __数据驱动__ __组件系统__
     + 缺点
         + 不映射数据项顺序调整
         + 不同步临时状态及组件私有状态
-+ __v-on:event(param, $event) / @event(param, $event)__
+
++ __v-on:event(param, $event).modifier / @event(param, $event).modifier__
 
 *****
 

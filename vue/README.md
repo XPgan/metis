@@ -143,44 +143,53 @@ __数据驱动__ __组件系统__
 
 ### 过渡 ###
 
-```html
-<div v-if="show" transition="expand"></div>
-```
-```css
-.expand-transition {
-    transition: all 5s ease;
-    height: 100px;
-    background-color: #999;
-}
++ css 过渡
 
-/* enter 起始状态 */
-.expand-enter {
-    height: 0;
-    background-color: red;
-}
-/* leave 结束状态 */
-.expand-leave {
-    height: 0;
-    background-color: green;
-}
-```
+    ```html
+    <div v-if="show" transition="expand"></div>
+    ```
 
-#### 自定义过渡 ####
+    默认
 
-```javascript
-Vue.transition('bounce', {    
-    type: 'animation', // animation, transition
+    ```css
+    .expand-transition {
+        transition: all 5s ease;
+        height: 100px;
+        background-color: #999;
+    }
 
-    enterClass: 'bounceEnter',
-    leaveClass: 'bounceLeave',
+    /* enter 起始状态 */
+    .expand-enter {
+        height: 0;
+        background-color: red;
+    }
+    /* leave 结束状态 */
+    .expand-leave {
+        height: 0;
+        background-color: green;
+    }
+    ```
 
-    beforeEnter: function (el) {},
-    enter: function (el) {},
-    afterEnter: function (el) {},
-    enterCancelled: function (el) {},
-    beforeLeave: function (el) {},
-    leave: function (el) {},
-    afterLeave: function (el) {},
-    leaveCancelled: function (el) {}
-})
-```
+    自定义
+
+    ```javascript
+    Vue.transition('bounce', {
+        enterClass: 'bounceEnter',
+        leaveClass: 'bounceLeave'
+    })
+    ```
+
++ javascript 过渡
+
+    ```javascript
+    Vue.transition('bounce', {
+        beforeEnter: function (el) {},
+        enter: function (el, done) {},
+        afterEnter: function (el) {},
+        enterCancelled: function (el) {},
+        beforeLeave: function (el) {},
+        leave: function (el, done) {},
+        afterLeave: function (el) {},
+        leaveCancelled: function (el) {}
+    })
+    ```

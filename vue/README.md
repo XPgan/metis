@@ -173,9 +173,9 @@ __数据驱动__ __组件系统__
     自定义
 
     ```javascript
-    Vue.transition('bounce', {
-        enterClass: 'bounceEnter',
-        leaveClass: 'bounceLeave'
+    Vue.transition('expand', {
+        enterClass: 'expandEnter',
+        leaveClass: 'expandLeave'
     })
     ```
 

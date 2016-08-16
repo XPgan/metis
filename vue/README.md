@@ -71,7 +71,18 @@ __数据驱动__ __组件系统__
         + 不同步临时状态及组件私有状态
 
 + __v-on:event(param, $event).modifier / @event(param, $event).modifier__
++ __v-ref:id__
 
+    ```html
+    <div id="parent">
+      <profile v-ref:profile></profile>
+    </div>
+    ```
+    ```javascript
+    var parent = new Vue({ el: '#parent' })
+    var child = parent.$refs.profile
+    ```
+    
 *****
 
 ### 数据绑定 ###
@@ -230,4 +241,8 @@ __数据驱动__ __组件系统__
         }
     }
     ```
-    
+
+### 组件 ###
++ 数据传递
++ 事件触发
++ 内容分发

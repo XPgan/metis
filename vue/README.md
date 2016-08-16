@@ -183,6 +183,8 @@ __数据驱动__ __组件系统__
 
     ```javascript
     Vue.transition('bounce', {
+        css: false,
+
         beforeEnter: function (el) {},
         enter: function (el, done) {},
         afterEnter: function (el) {},

@@ -143,28 +143,28 @@ __数据驱动__ __组件系统__
 
 ### 过渡 ###
 
-+ css 过渡
++ __css 过渡__
 
     ```html
-    <div v-if="show" transition="expand"></div>
+    <div v-if="show" transition="trans"></div>
     ```
 
     默认
 
     ```css
-    .expand-transition {
+    .trans-transition {
         transition: all 5s ease;
         height: 100px;
         background-color: #999;
     }
 
     /* enter 起始状态 */
-    .expand-enter {
+    .trans-enter {
         height: 0;
         background-color: red;
     }
     /* leave 结束状态 */
-    .expand-leave {
+    .trans-leave {
         height: 0;
         background-color: green;
     }
@@ -173,13 +173,13 @@ __数据驱动__ __组件系统__
     自定义
 
     ```javascript
-    Vue.transition('expand', {
-        enterClass: 'expandEnter',
-        leaveClass: 'expandLeave'
+    Vue.transition('trans', {
+        enterClass: 'transEnter',
+        leaveClass: 'transLeave'
     })
     ```
 
-+ javascript 过渡
++ __javascript 过渡__
 
     ```javascript
     Vue.transition('bounce', {
@@ -195,3 +195,39 @@ __数据驱动__ __组件系统__
         leaveCancelled: function (el) {}
     })
     ```
+
++ __渐近过渡__
+
+    ```html
+    <input v-model="filter">
+    <ul>
+        <li v-for="item in items | filterBy filter" transition="trans" stagger="100">{{ item.user }}</li>
+    </ul>
+    ```
+    ```css
+    .trans-transition {
+        transition: all .5s ease;
+        opacity: 1.0;
+        height: 20px;
+    }
+    .trans-enter, .trans-leave {
+        opacity: 0;
+        height: 0;
+    }
+    ```
+    ```javascript
+    export default {
+        data () {
+            return {
+                filter: '',
+                items: [
+                    { user: 'Bruce Lee' },
+                    { user: 'Jackie Chan' },
+                    { user: 'Chuck Norris' },
+                    { user: 'Jet Li' }
+                ]
+            }
+        }
+    }
+    ```
+    

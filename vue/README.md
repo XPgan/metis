@@ -375,3 +375,27 @@ __数据驱动__ __组件系统__
     }
     ```
 + __内容分发__
+
+    父级
+
+    ```html
+    <child>
+        <div slot="first">first</div>
+        <div slot="second">second</div>
+    </child>
+    ```
+
+    子级
+
+    ```html
+    <slot name="first"></slot>
+    <slot name="second"></slot>
+    <slot>default</slot>
+    ```
+
+    -> 等效于
+    ```html
+    <div slot="first">first</div>
+    <div slot="second">second</div>
+    "default"
+    ```

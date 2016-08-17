@@ -205,40 +205,40 @@ __数据驱动__ __组件系统__
         leaveCancelled: function (el) {}
     })
     ```
-+ __渐近过渡__
 
-    ```html
-    <input v-model="filter">
-    <ul>
-        <li v-for="item in items | filterBy filter" transition="trans" stagger="100">{{ item.user }}</li>
-    </ul>
-    ```
-    ```css
-    .trans-transition {
-        transition: all .5s ease;
-        opacity: 1.0;
-        height: 20px;
-    }
-    .trans-enter, .trans-leave {
-        opacity: 0;
-        height: 0;
-    }
-    ```
-    ```javascript
-    export default {
-        data () {
-            return {
-                filter: '',
-                items: [
-                    { user: 'Bruce Lee' },
-                    { user: 'Jackie Chan' },
-                    { user: 'Chuck Norris' },
-                    { user: 'Jet Li' }
-                ]
-            }
+_渐近过渡_
+```html
+<input v-model="filter">
+<ul>
+    <li v-for="item in items | filterBy filter" transition="trans" stagger="100">{{ item.user }}</li>
+</ul>
+```
+```css
+.trans-transition {
+    transition: all .5s ease;
+    opacity: 1.0;
+    height: 20px;
+}
+.trans-enter, .trans-leave {
+    opacity: 0;
+    height: 0;
+}
+```
+```javascript
+export default {
+    data () {
+        return {
+            filter: '',
+            items: [
+                { user: 'Bruce Lee' },
+                { user: 'Jackie Chan' },
+                { user: 'Chuck Norris' },
+                { user: 'Jet Li' }
+            ]
         }
     }
-    ```
+}
+```
 
 *****
 
@@ -314,7 +314,7 @@ __数据驱动__ __组件系统__
         }
     }
     ```
-+ __组件通信__
++ __通信__
 
     + $on() 监听事件
     + $emit() 触发事件
@@ -399,3 +399,5 @@ __数据驱动__ __组件系统__
     <div slot="second">second</div>
     "default"
     ```
+    
+#### 动态组件 ####

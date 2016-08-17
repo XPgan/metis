@@ -243,7 +243,7 @@ __数据驱动__ __组件系统__
 *****
 
 ### 组件 ###
-+ 数据传递
++ __数据传递__
 
     父级
     
@@ -314,5 +314,64 @@ __数据驱动__ __组件系统__
         }
     }
     ```
-+ 事件触发
-+ 内容分发
++ __组件通信__
+
+    + $on() 监听事件
+    + $emit() 触发事件
+    + $dispatch() 派发事件
+    + $broadcast() 广播事件
+
+    父级
+
+    ```html
+    <ul>
+        <li
+            is="child"
+            v-for="item in news"
+            :news="item"
+            @news="publish">
+        </li>
+    </ul>
+    ```
+    ```javascript
+    import Child from './Child'
+
+    export default {
+        data () {
+            return {
+                news: [
+                    'news 1',
+                    'news 2',
+                    'news 3'
+                ]
+            }
+        },
+        components: {
+            Child
+        },
+        methods: {
+            publish: function (news) {
+                console.log(news)
+            }
+        }
+    }
+    ```
+    
+    子级
+    
+    ```html
+    <li @click="sendnews(news)">{{ news }}</li>
+    ```
+    ```javascript
+    export default {
+        props: {
+            news: 'news'
+        },
+        methods: {
+            sendnews: function (news) {
+                this.$dispatch('news', news)
+            }
+        }
+    }
+    ```
++ __内容分发__

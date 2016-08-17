@@ -421,7 +421,7 @@ export default {
 }
 ```
 
-___.$activate___
+___$activate___
 ```javascript
 Vue.component('example', {
     activate: function (done) {

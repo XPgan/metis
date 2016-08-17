@@ -82,7 +82,7 @@ __数据驱动__ __组件系统__
     var parent = new Vue({ el: '#parent' })
     var child = parent.$refs.profile
     ```
-    
+
 *****
 
 ### 数据绑定 ###
@@ -132,12 +132,12 @@ __数据驱动__ __组件系统__
         computed: {
             fullName: {
                 get: function () {
-                    return this.firstime + ' ' + this.lastName;
+                    return this.firstime + ' ' + this.lastName
                 },
                 set: function (value) {
-                    var tmp = value.split(' ');
-                    this.firstName = tmp[0];
-                    this.lastName = tmp[1];
+                    var tmp = value.split(' ')
+                    this.firstName = tmp[0]
+                    this.lastName = tmp[1]
                 }
             }
         }
@@ -189,7 +189,6 @@ __数据驱动__ __组件系统__
         leaveClass: 'transLeave'
     })
     ```
-
 + __javascript 过渡__
 
     ```javascript
@@ -206,7 +205,6 @@ __数据驱动__ __组件系统__
         leaveCancelled: function (el) {}
     })
     ```
-
 + __渐近过渡__
 
     ```html
@@ -242,7 +240,79 @@ __数据驱动__ __组件系统__
     }
     ```
 
+*****
+
 ### 组件 ###
 + 数据传递
+
+    父级
+    
+    ```html
+    <ul>
+        <li is="child" v-for="user in users" :user="user"></li>
+    </ul>
+    ```
+    ```javascript
+    import Child from './Child'
+
+    export default {
+        data () {
+            return {
+                users: [
+                    {
+                        skills: [
+                            {
+                                name: 'svg',
+                                level: 3
+                            },
+                            {
+                                name: 'canvas',
+                                level: 5
+                            }
+                        ],
+                        seniority: 1
+                    },
+                    {
+                        skills: [
+                            {
+                                name: 'node.js',
+                                level: 4
+                            },
+                            {
+                                name: 'vue.js',
+                                level: 3
+                            }
+                        ],
+                        seniority: 3
+                    }
+                ]
+            }
+        },
+        components: {
+            Child
+        }
+    }
+    ```
+
+    子级
+
+    ```html
+    <ul>
+        <template v-for="skill in user.skills">
+            <li>
+                <div>{{ skill.name }}</div>
+                <div>{{ skill.level }}</div>
+            </li>
+        </template>
+    </ul>
+    <div>{{ user.seniority }}</div>
+    ```
+    ```javascript
+    export default {
+        props: {
+            user: 'user'
+        }
+    }
+    ```
 + 事件触发
 + 内容分发

@@ -420,3 +420,15 @@ export default {
     }
 }
 ```
+
+___.$activate___
+```javascript
+Vue.component('example', {
+    activate: function (done) {
+        loadDataAsync(function (data) {
+            this.$data = data
+            done()
+        })
+    }
+})
+```

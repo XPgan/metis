@@ -315,7 +315,6 @@ export default {
     }
     ```
 + __通信__
-
     + $on() 监听事件
     + $emit() 触发事件
     + $dispatch() 派发事件
@@ -401,3 +400,23 @@ export default {
     ```
     
 #### 动态组件 ####
+
+```html
+<component :is="current"></component>
+```
+```javascript
+import Home from './components/Home'
+import Profile from './components/Profile'
+
+export default {
+    data () {
+        return {
+            current: 'Home'
+        }
+    },
+    components: {
+        Home,
+        Profile
+    }
+}
+```

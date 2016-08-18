@@ -85,7 +85,12 @@ __数据驱动__ __组件系统__
 
 *****
 
-### 数据绑定 ###
+### 数据响应 ###
++ vm.$set(key, value)
++ vm.$watch(key, callback)
++ vm.$nextTick(callback)
+
+#### 插值 ####
 + {{_}}
 + {{*_}} (单次插值)
 + {{{_}}}
@@ -107,7 +112,35 @@ __数据驱动__ __组件系统__
 + 属性及方法
     + vm.$data
     + vm.$el
-    + vm.$watch
+    + vm.$computed
+
+        ```javascript
+        var vm = new Vue({
+                el: '#id',
+                data: {
+                    firstName: 'Sun',
+                    lastName: 'Mengyuan'
+                },
+                computed: {
+                    fullName: {
+                        get: function () {
+                            return this.firstime + ' ' + this.lastName
+                        },
+                        set: function (value) {
+                            var tmp = value.split(' ')
+                            this.firstName = tmp[0]
+                            this.lastName = tmp[1]
+                        }
+                    }
+                }
+            })
+        
+            console.log(vm.fullName) // -> 'Sun Mengyuan'
+         
+            vm.fullName = 'Sun My'
+            console.log(vm.firstName) // -> 'Sun'
+            console.log(vm.lastName) // -> 'My'
+        ```
 
     _生命周期_
     ```javascript
@@ -119,35 +152,6 @@ __数据驱动__ __组件系统__
         ready: function () {},
         destroyed: function () {}
     })
-    ```
-
-    _计算属性_
-    ```javascript
-    var vm = new Vue({
-        el: '#id',
-        data: {
-            firstName: 'Sun',
-            lastName: 'Mengyuan'
-        },
-        computed: {
-            fullName: {
-                get: function () {
-                    return this.firstime + ' ' + this.lastName
-                },
-                set: function (value) {
-                    var tmp = value.split(' ')
-                    this.firstName = tmp[0]
-                    this.lastName = tmp[1]
-                }
-            }
-        }
-    })
-
-    console.log(vm.fullName) // -> 'Sun Mengyuan'
- 
-    vm.fullName = 'Sun My'
-    console.log(vm.firstName) // -> 'Sun'
-    console.log(vm.lastName) // -> 'My'
     ```
 
 *****
@@ -315,10 +319,10 @@ export default {
     }
     ```
 + __通信__
-    + $on() 监听事件
-    + $emit() 触发事件
-    + $dispatch() 派发事件
-    + $broadcast() 广播事件
+    + vm.$on() 监听事件
+    + vm.$emit() 触发事件
+    + vm.$dispatch() 派发事件
+    + vm.$broadcast() 广播事件
 
     父级
 
@@ -421,7 +425,7 @@ export default {
 }
 ```
 
-___$activate___
+异步操作
 ```javascript
 Vue.component('example', {
     activate: function (done) {
@@ -431,4 +435,4 @@ Vue.component('example', {
         })
     }
 })
-```
+````

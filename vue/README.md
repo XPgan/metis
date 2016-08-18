@@ -1,6 +1,6 @@
 __数据驱动__ __组件系统__
 
-### *指令 ###
+### #指令 ###
 + __v-model__
 + __v-bind:attr.modifiers / :attr.modifiers__
     + v-bind:class (class & v-bind:class 共存)
@@ -85,7 +85,7 @@ __数据驱动__ __组件系统__
 
 *****
 
-### *数据响应 ###
+### #响应 ###
 + vm.$set(key, value)
 + vm.$watch(key, callback)
 + vm.$nextTick(callback)
@@ -105,7 +105,7 @@ Vue.filter('reverse', function (value) {
 
 *****
 
-### *实例 ###
+### #实例 ###
 + 构造器
 
     ```javascript
@@ -161,7 +161,7 @@ Vue.filter('reverse', function (value) {
 
 *****
 
-### *过渡 ###
+### #过渡 ###
 
 + __css 过渡__
 
@@ -251,7 +251,7 @@ export default {
 
 *****
 
-### *组件 ###
+### #组件 ###
 + __数据传递__
 
     父级
@@ -441,3 +441,10 @@ Vue.component('example', {
     }
 })
 ````
+
+*****
+
+### #插件 ###
++ [vue-router](http://router.vuejs.org/zh-cn/index.html)
++ [vue-resource](https://github.com/vuejs/vue-resource)
++ [vue-touch](https://github.com/vuejs/vue-touch)

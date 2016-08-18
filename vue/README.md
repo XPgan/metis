@@ -1,6 +1,6 @@
 __数据驱动__ __组件系统__
 
-### 指令 ###
+### *指令 ###
 + __v-model__
 + __v-bind:attr.modifiers / :attr.modifiers__
     + v-bind:class (class & v-bind:class 共存)
@@ -85,21 +85,21 @@ __数据驱动__ __组件系统__
 
 *****
 
-### 数据响应 ###
+### *数据响应 ###
 + vm.$set(key, value)
 + vm.$watch(key, callback)
 + vm.$nextTick(callback)
 
-#### 插值 ####
+#### *插值 ####
 + {{_}}
 + {{*_}} (单次插值)
 + {{{_}}}
 
-#### 过滤器 ####
+#### *过滤器 ####
 
 *****
 
-### 实例 ###
+### *实例 ###
 + 构造器
 
     ```javascript
@@ -111,9 +111,8 @@ __数据驱动__ __组件系统__
     ```
 + 属性及方法
     + vm.$data
-    + vm.$el
     + vm.$computed
-
+    
         ```javascript
         var vm = new Vue({
                 el: '#id',
@@ -156,7 +155,7 @@ __数据驱动__ __组件系统__
 
 *****
 
-### 过渡 ###
+### *过渡 ###
 
 + __css 过渡__
 
@@ -246,7 +245,7 @@ export default {
 
 *****
 
-### 组件 ###
+### *组件 ###
 + __数据传递__
 
     父级
@@ -402,8 +401,8 @@ export default {
     <div slot="second">second</div>
     "default"
     ```
-    
-#### 动态组件 ####
+
+#### *动态组件 ####
 
 ```html
 <component :is="current"></component>

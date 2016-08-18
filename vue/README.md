@@ -97,6 +97,12 @@ __数据驱动__ __组件系统__
 
 #### *过滤器 ####
 
+```javascript
+Vue.filter('reverse', function (value) {
+    return value.split('').reverse().join('')
+})
+```
+
 *****
 
 ### *实例 ###

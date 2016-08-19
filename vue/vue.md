@@ -280,6 +280,7 @@ Vue.component('example', {
 
 ### #响应 ###
 + vm.$set(key, value)
++ vm.$delete(key)
 + vm.$watch(key, callback)
 + vm.$nextTick(callback)
 

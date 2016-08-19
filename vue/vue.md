@@ -82,6 +82,7 @@ __数据驱动__ __组件系统__
     var parent = new Vue({ el: '#parent' })
     var child = parent.$refs.profile
     ```
++ __v-el:id__
 
 *****
 

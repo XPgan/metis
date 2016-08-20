@@ -12,21 +12,16 @@ __transcoding__
 ```
 
 __improvement__
-- 函数默认值: function foo (x = 0, y = 0) {}
-- 扩展运算符: ...
-- 函数绑定运算符: ::
+- 函数默认值：function foo (x = 0, y = 0) {}
+- 扩展运算符：...
+- 函数绑定运算符：::
 
 __tips__
-- 默认值生效: === undefined
+- 默认值生效：=== undefined
 
 *****
 
 ### #变量 ###
-
-注意
-- 块级作用域
-- 重复声明报错
-
 + __let__
 + __const__ (只读常量)
 
@@ -38,16 +33,13 @@ __tips__
     a = ['hello world']; // 报错
     ```
 
+注意
+- 块级作用域
+- 重复声明报错
+
 *****
 
 ### #解构赋值 ###
-
-适用于
-- 数组
-- 对象
-- 字符串
-- 数值
-- 布尔值
 
 ```javascript
 function method () {
@@ -76,6 +68,13 @@ console.log(name); // -> 'sunmy'
 console.log(age); // -> '23'
 ```
 
+适用于
+- 数组
+- 对象
+- 字符串
+- 数值
+- 布尔值
+
 *****
 
 ### #模板 ###
@@ -88,14 +87,6 @@ var module = `My name is ${name}`;
 *****
 
 ### #箭头函数 ###
-
-形式
-- var 函数名 = (参数) => 返回值;
-- var 函数名 = (参数) => {函数体};
-
-注意
-- 无 this
-- 无 arguments
 
 ```javascript
 var foo = (param1, param2) => param1 + param2;
@@ -115,3 +106,11 @@ function Timer (x, y) {
 
 var timer = new Timer('x', 'y');
 ```
+
+形式
+- var 函数名 = (参数) => 返回值;
+- var 函数名 = (参数) => {函数体};
+
+注意
+- 无 this
+- 无 arguments

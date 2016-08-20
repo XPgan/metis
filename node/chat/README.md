@@ -6,7 +6,6 @@
 *****
 
 参考资料
-
 + [Node.js开发指南](https://github.com/sunmengyuan/book/blob/master/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
 + [深入浅出Node.js](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
 + [深入学习MongoDB](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0MongoDB.pdf)
@@ -41,18 +40,17 @@ var userSchema = new Schema({
 
 *****
 
-### pages ###
+### #pages ###
 + __/__ (首页) [效果图](./materials/index.png)
 + __/edit/myinfo__ (个人设置页) [效果图](./materials/settings.png)
 + __/chatroom__ (聊天室) [效果图](./materials/chatroom.png)
 
 *****
 
-### emphasis ###
+### #emphasis ###
 + __用户上线__
 
     服务端
-
     ```javascript
     socket.on('online', function (data) {
         User.find({id: data.id}, {}, {}, function (err, result) {
@@ -65,14 +63,12 @@ var userSchema = new Schema({
     ```
 
     客户端
-
     ```javascript
     socket.emit('online', {
         id: user.id,
         nickname: user.nickname
     });
     ```
-
     ```javascript
     socket.on('online', function (data) {
         _this.sendNews(data, '进入聊天室');
@@ -90,11 +86,9 @@ var userSchema = new Schema({
         _this.members.prepend($user);
     });
     ```
-
 + __用户下线__
 
     服务端
-    
     ```javascript
     socket.on('disconnect', function () {
         if (cur_user) {
@@ -116,8 +110,7 @@ var userSchema = new Schema({
     });
     ```
 
-    客户端
-    
+    客户端   
     ```javascript
     socket.on('offline', function (data) {
         _this.sendNews(data, '离开聊天室');
@@ -129,11 +122,9 @@ var userSchema = new Schema({
         _this.members.append($user);
     });
     ```
-
 + __用户发送信息__
 
     服务端
-    
     ```javascript
     socket.on('message', function (data) {
         io.sockets.emit('message', {
@@ -147,7 +138,6 @@ var userSchema = new Schema({
     ```
 
     客户端
-
     ```javascript
     var $btn = $('.js_send');
     var $input = $('.js_input');
@@ -182,7 +172,6 @@ var userSchema = new Schema({
         $('.js_dialog').length || (e.keyCode == '13') && method();
     });
     ```
-
     ```javascript
     socket.on('message', function (data) {
         $('.js_active').removeClass('failed').find('p').removeClass('js_resend');

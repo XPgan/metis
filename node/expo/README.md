@@ -8,7 +8,6 @@ __用户注册本站后即可发布个人日记，并可粉丝他人、收藏他
 *****
 
 参考资料
-
 + [Node.js开发指南](https://github.com/sunmengyuan/book/blob/master/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
 + [深入浅出Node.js](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
 + [深入学习MongoDB](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0MongoDB.pdf)
@@ -55,7 +54,7 @@ var diarySchema = new Schema({
 
 *****
 
-### pages ###
+### #pages ###
 + __/__ (首页) [效果图](./materials/index.png)
 	+ 最新注册用户列表
 	+ 精选日记列表
@@ -71,19 +70,17 @@ var diarySchema = new Schema({
 	+ 作者信息
 	+ 日记详情
 
-### modules ###
+### #modules ###
 + `require('log')`
 	+ 登录 __log.login()__
 	
 	    客户端
-	
 	    ```html
 	    <form id="form_login">
             <input type="text" name="username" placeholder="用户名" />
             <input type="password" name="password" placeholder="密码" />
         </form>
-	    ```
-	    
+	    ```	    
         ```javascript
         var $form = $('#form_login');
         $.ajax({
@@ -97,11 +94,9 @@ var diarySchema = new Schema({
             error: function () {}
         });
         ```
-        
 	+ 注册 __log.register()__
 	
 	    客户端
-	
 	    ```html
 	    <form id="form_register">
             <input type="text" name="username" placeholder="用户名" />
@@ -111,8 +106,7 @@ var diarySchema = new Schema({
             <input type="text" name="qq" placeholder="QQ" />
             <textarea name="intro" placeholder="描述一下自己"></textarea>
         </form>
-	    ```
-	    
+	    ``` 
         ```javascript
         var $form = $('#form_register');
         $.ajax({
@@ -126,12 +120,10 @@ var diarySchema = new Schema({
             },
             error: function () {}
         });
-        ```
-        
+        ``` 
 	+ 注销 __log.logout()__
 	
 	    客户端
-	
 	    ```javascript
 	    $.ajax({
             url: '/logout',
@@ -143,11 +135,9 @@ var diarySchema = new Schema({
             error: function () {}
         });
         ```
-        
 	+ 退出登录 __log.exit()__	
 	
 	    客户端
-	
 	    ```javascript
 	    $.ajax({
             url: '/exit',
@@ -159,38 +149,31 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
-	    
 + `require('find')`
 	+ 查询当前记录 __find.info()__
 	
 	    服务端
-	    
 	    ```javascript
 	    find.do(type, id);
 	    find.info(res, function (info) {});
 	    ```
-	
 	+ 查询所有记录 __find.all()__	
 	
-	    服务端
-	    
+	    服务端 
 	    ```javascript
 	    find.do(type);
 	    find.all(res, function (info) {});
 	    ```
-	
 + `require('diary')`
 	+ 发布日记 __diary.publish()__
 	
 	    客户端
-	
 	    ```html
 	    <form id="form_publish">
             <input type="text" name="title" placeholder="简明扼要哒标题" />
             <textarea name="content" placeholder="美源于生活点滴"></textarea>
         </form>
 	    ```
-	    
 	    ```javascript
 	    var $form = $('#form_publish');
 	    $.ajax({
@@ -204,14 +187,12 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
-	    
 	+ 编辑日记 __diary.edit()__
 	+ 移除日记 __diary.remove()__
 	+ 点赞日记 __diary.favour__	
 	    + __diary.favour.verify()__
 	    
 	        客户端
-	
             ```javascript
             $.ajax({
                 url: '/diary/favour/verify/:id',
@@ -223,11 +204,9 @@ var diarySchema = new Schema({
                 error: function () {}
             });
             ```
-	    
 	    + __diary.favour.cancel()__
 	    
 	        客户端
-	    
             ```javascript
             $.ajax({
                 url: '/diary/favour/cancel/:id',
@@ -239,19 +218,16 @@ var diarySchema = new Schema({
                 error: function () {}
             });
             ```
-	    
 + `require('user')`
 	+ 编辑用户信息 __user.edit__
 	    + __user.edit.info()__
 	    
 	        客户端
-	    
             ```html
             <form id="form_userinfo">
                 <input type="text" name="intro" placeholder="还咩有自我评价哦" value="<%= userinfo.intro %>" />
             </form>
             ```
-    
             ```javascript
             var $form = $('#form_userinfo');
             $.ajax({
@@ -265,17 +241,14 @@ var diarySchema = new Schema({
                 error: function () {}
             });
             ```
-	    
 	    + __user.edit.portrait()__
 	    
 	        客户端
-	    
             ```html
             <form enctype="multipart/form-data" id="form_portrait">
                 <input type="file" name="portrait" />
             </form>
             ```
-            
             ```javascript
             var $form = $('#form_portrait');
             var formData = new FormData($form[0]);
@@ -293,5 +266,4 @@ var diarySchema = new Schema({
                 error: function () {}
             });
             ```
-	    
 	+ 关注用户 __user.attention()__

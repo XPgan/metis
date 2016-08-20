@@ -81,7 +81,7 @@
 ### #填充 ###
 + __gradient__
 
-> 注意渐变圆位置关系
+    > 注意渐变圆位置关系
 
     ```javascript
     var gradient = context.createLinearGradient(startX, startY, endX, endY);
@@ -125,19 +125,19 @@ context.fill();
 
 ### #属性 ###
 + 全局
-    + .globalAlpha
-    + .globalCompositeOperation 图像合成模式
+    + globalAlpha
+    + globalCompositeOperation 图像合成模式
 + 阴影
-    + .shadowColor
-    + .shadowOffsetX
-    + .shadowOffsetY
-    + .shadowBlur
+    + shadowColor
+    + shadowOffsetX
+    + shadowOffsetY
+    + shadowBlur
 + 线
-    + .lineWidth
-    + .lineJoin
-    + .lineCap
-    + .miterLimit 斜接线
+    + lineWidth
+    + lineJoin
+    + lineCap
+    + miterLimit 斜接线
 + 文本
-    + .font
-    + .textAlign
-    + .textBaseline
+    + font
+    + textAlign
+    + textBaseline

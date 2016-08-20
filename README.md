@@ -4,8 +4,6 @@
 + [Node.js开发指南](https://github.com/sunmengyuan/book/blob/master/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
 + [深入浅出Node.js](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/node/node.js) ####
-
 #### 示例 ####
 + 简易微博系统 [(code)](https://github.com/sunmengyuan/note/tree/master/node/expo)
 + 多人聊天室 [(code)](https://github.com/sunmengyuan/note/tree/master/node/chat)
@@ -26,7 +24,7 @@
 #### 参考资料 ####
 + [HTML5 Canvas核心技术](https://github.com/sunmengyuan/book/blob/master/HTML5%20Canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.pdf)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/canvas/canvas.js) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/canvas/README.md) ####
 
 #### 示例 ####
 + 画板 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drawing.html) [(demo)](http://www.miaomie.tech/demos/canvas/drawing.html)
@@ -37,7 +35,7 @@
 
 ### Svg ###
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/svg/svg.html) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/svg/README.md) ####
 
 #### 示例 ####
 + 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](http://www.miaomie.tech/demos/svg/cat.html)
@@ -51,10 +49,10 @@
 #### 参考资料 ####
 + [Three.js入门指南](https://read.douban.com/reader/ebook/7412854/)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/webgl/webgl.js) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/three/README.md) ####
 
 #### 示例 ####
-+ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/webgl/clock.html) [(demo)](http://www.miaomie.tech/demos/webgl/clock.html)
++ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/three/clock.html) [(demo)](http://www.miaomie.tech/demos/three/clock.html)
 
 *****
 
@@ -73,7 +71,7 @@
 #### 参考资料 ###
 + [Less中文网](http://lesscss.cn/)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/less.less) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/less.md) ####
 
 *****
 

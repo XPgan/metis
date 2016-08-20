@@ -1,4 +1,4 @@
-# ECMAScript6 #
+# ECMAScript 6 #
 
 __transcoding__
 ```html

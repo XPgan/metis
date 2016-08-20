@@ -1,3 +1,5 @@
+# Vue.js #
+
 __数据驱动__ __组件系统__
 
 ### #指令 ###
@@ -63,12 +65,12 @@ __数据驱动__ __组件系统__
         ```
 
     ___track-by=""___
-    + 优点
-        + 高效数据刷新
-        + 处理重复数据项
-    + 缺点
-        + 不映射数据项顺序调整
-        + 不同步临时状态及组件私有状态
+    - 优点
+        - 高效数据刷新
+        - 处理重复数据项
+    - 缺点
+        - 不映射数据项顺序调整
+        - 不同步临时状态及组件私有状态
 
 + __v-on:event(param, $event).modifier / @event(param, $event).modifier__
 + __v-ref:id__
@@ -301,7 +303,7 @@ Vue.filter('reverse', function (value) {
 *****
 
 ### #实例 ###
-+ 构造器
++ __构造器__
 
     ```javascript
     var vm = new Vue({})
@@ -310,7 +312,7 @@ Vue.filter('reverse', function (value) {
     var Component = Vue.extend({})
     var instance = new Component()
     ```
-+ 属性及方法
++ __属性及方法__
     + vm.$data
     + vm.$computed
     

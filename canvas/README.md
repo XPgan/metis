@@ -1,6 +1,6 @@
 # canvas #
 
-### 路径 ###
+### #路径 ###
 + __path__
 
     ```javascript
@@ -34,7 +34,7 @@
 
 *****
 
-### 画布 ###
+### #画布 ###
 + __clip__
 
     ```javascript
@@ -78,8 +78,10 @@
 
 *****
 
-### 填充 ###
-+ __gradient__ (注意渐变圆位置关系)
+### #填充 ###
++ __gradient__
+
+> 注意渐变圆位置关系
 
     ```javascript
     var gradient = context.createLinearGradient(startX, startY, endX, endY);
@@ -90,7 +92,10 @@
     gradient.addColorStop(point, color);
     ```
 
-___非零环绕规则___ (区域校验线段 通过路径 方向矢量和 为 0 不填充)
+#### *非零环绕规则 ####
+
+> 区域校验线段 通过路径 方向矢量和 为 0 不填充
+
 ```javascript
 context.beginPath();
 context.arc(100, 100, 70, 0, 2 * Math.PI, false);
@@ -100,7 +105,7 @@ context.fill();
 
 *****
 
-### 绘制 ###
+### #绘制 ###
 + __rectangle__
 
     ```javascript
@@ -118,7 +123,7 @@ context.fill();
 
 *****
 
-### 属性 ###
+### #属性 ###
 + 全局
     + .globalAlpha
     + .globalCompositeOperation 图像合成模式

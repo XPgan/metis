@@ -92,7 +92,6 @@ __数据驱动__ __组件系统__
 + __数据传递__
 
     父级
-    
     ```html
     <ul>
         <li is="child" v-for="user in users" :user="user"></li>
@@ -141,7 +140,6 @@ __数据驱动__ __组件系统__
     ```
 
     子级
-
     ```html
     <ul>
         <template v-for="skill in user.skills">
@@ -167,7 +165,6 @@ __数据驱动__ __组件系统__
     + vm.$broadcast() 广播事件
 
     父级
-
     ```html
     <ul>
         <li
@@ -203,7 +200,6 @@ __数据驱动__ __组件系统__
     ```
     
     子级
-    
     ```html
     <li @click="sendnews(news)">{{ news }}</li>
     ```
@@ -222,7 +218,6 @@ __数据驱动__ __组件系统__
 + __内容分发__
 
     父级
-
     ```html
     <child>
         <div slot="first">first</div>
@@ -231,7 +226,6 @@ __数据驱动__ __组件系统__
     ```
 
     子级
-
     ```html
     <slot name="first"></slot>
     <slot name="second"></slot>
@@ -367,7 +361,6 @@ Vue.filter('reverse', function (value) {
     ```
 
     默认
-
     ```css
     .trans-transition {
         transition: all 5s ease;
@@ -388,7 +381,6 @@ Vue.filter('reverse', function (value) {
     ```
 
     自定义
-
     ```javascript
     Vue.transition('trans', {
         enterClass: 'transEnter',

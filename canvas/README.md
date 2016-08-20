@@ -1,4 +1,4 @@
-# canvas #
+# Canvas #
 
 ### #路径 ###
 + __path__
@@ -126,20 +126,20 @@ context.fill();
 *****
 
 ### #属性 ###
-+ 全局
++ __全局__
     + globalAlpha
     + globalCompositeOperation 图像合成模式
-+ 阴影
++ __阴影__
     + shadowColor
     + shadowOffsetX
     + shadowOffsetY
     + shadowBlur
-+ 线
++ __线__
     + lineWidth
     + lineJoin
     + lineCap
     + miterLimit 斜接线
-+ 文本
++ __文本__
     + font
     + textAlign
     + textBaseline

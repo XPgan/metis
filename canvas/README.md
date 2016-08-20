@@ -80,17 +80,19 @@
 
 ### #填充 ###
 + __gradient__
-
-    > 注意渐变圆位置关系
-
-    ```javascript
-    var gradient = context.createLinearGradient(startX, startY, endX, endY);
-    gradient.addColorStop(point, color);
-    ```
-    ```javascript
-    var gradient = context.createRadialGradient(startX, startY, startR, endX, endY, endR);
-    gradient.addColorStop(point, color);
-    ```
+    + 线性渐变
+        
+        ```javascript
+        var gradient = context.createLinearGradient(startX, startY, endX, endY);
+        gradient.addColorStop(point, color);
+        ```
+    + 放射渐变
+    
+        ```javascript
+        // 注意渐变圆位置关系
+        var gradient = context.createRadialGradient(startX, startY, startR, endX, endY, endR);
+        gradient.addColorStop(point, color);
+        ```
 
 #### *非零环绕规则 ####
 

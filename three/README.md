@@ -42,22 +42,22 @@ renderer.render(params);
     var light = new THREE.Light(color);
     ```
 + 派生类
-    + __环境光__ (方向：无)
+    + __环境光__
     
         ```javascript
         var light = new THREE.AmbientLight(params);
         ```
-    + __点光源__ (方向：无)
+    + __点光源__
     
         ```javascript
         var light = new THREE.PointLight(params);
         ```
-    + __聚光灯__ (方向：光源位置 指向 target 位置)
+    + __聚光灯__ (光源位置 指向 target 位置)
         
         ```javascript
         var light = new THREE.SpotLight(params);
         ```
-    + __平行光__ (方向：光源位置 指向 原点位置)
+    + __平行光__ (光源位置 指向 原点位置)
     
         ```javascript
         var light = new THREE.DirectionalLight(params);
@@ -120,7 +120,6 @@ light.shadowCameraBottom = value;
 
     ```javascript
     var geometry = new THREE.Geometry();
-    
     geometry.vertices.push(point);
     geometry.faces.push(face);
     geometry.colors.push(color);
@@ -193,7 +192,6 @@ var text = new THREE.TextGeometry(text, object);
 var texture = THREE.ImageUtils.loadTexture(image, {}, function () {
     renderer.render(params);
 });
-
 texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.set(m, n);

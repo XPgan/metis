@@ -187,8 +187,6 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
-	+ 编辑日记 __diary.edit()__
-	+ 移除日记 __diary.remove()__
 	+ 点赞日记 __diary.favour__	
 	    + __diary.favour.verify()__
 	    
@@ -218,6 +216,8 @@ var diarySchema = new Schema({
                 error: function () {}
             });
             ```
+    + 编辑日记 __diary.edit()__
+    + 移除日记 __diary.remove()__
 + `require('user')`
 	+ 编辑用户信息 __user.edit__
 	    + __user.edit.info()__

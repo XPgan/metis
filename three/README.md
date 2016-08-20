@@ -8,6 +8,13 @@ scene.add(item);
 ```
 
 ### #相机 ###
+
+```javascript
+camera.position.set(x, y, z);
+camera.up.set(x, y, z);
+camera.lookAt({x: _, y: _, z: _});
+```
+
 + __正投影相机__
 
     ```javascript
@@ -18,12 +25,6 @@ scene.add(item);
     ```javascript
     var camera = new THREE.PerspectiveCamera(params);
     ```
-
-```javascript
-camera.position.set(x, y, z);
-camera.up.set(x, y, z);
-camera.lookAt({x: _, y: _, z: _});
-```
 
 ### #渲染器 ###
 
@@ -103,7 +104,7 @@ light.shadowCameraBottom = value;
     ```javascript
     var material = new THREE.MeshLambertMaterial(object);
     ```
-+ __Phong材质__
++ __Phong 材质__
 
     ```javascript
     var material = new THREE.MeshPhongMaterial(object);

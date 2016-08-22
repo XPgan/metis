@@ -3,7 +3,7 @@
 ### #路径 ###
 + __path__
 
-    + `context.beginPath(); // 若未开启新路径 路径首尾相接`
+    + `context.beginPath();` (若未开启新路径 路径首尾相接)
     + `context.closePath();`
 + __arc__
 
@@ -58,9 +58,9 @@
 + __imageData__
 
     + `context.getImageData(x, y, w, h);`
-    + `context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH); // 不受全局属性影响`
+    + `context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH);` (不受全局属性影响)
     + `context.createImageData(w, h);`
-    + `context.drawImage(imageObj, sX, sY, sW, sH, dX, dY, dW, dH); // 须在图片加载完毕后执行 受全局属性影响`
+    + `context.drawImage(imageObj, sX, sY, sW, sH, dX, dY, dW, dH);` (须在图片加载完毕后执行 受全局属性影响)
 
 *****
 
@@ -72,7 +72,7 @@
 
 #### *非零环绕规则 ####
 
-> 区域校验线段所通过的所有路径的方向矢量和：为 0 不填充；为 1 填充。
+> 区域校验线段所通过的所有路径的方向矢量和：为 0 不填充；非 0 填充。
 
 ```javascript
 context.beginPath();

@@ -88,9 +88,6 @@ var module = `My name is ${name}`;
 ### #箭头函数 ###
 
 ```javascript
-var foo = (param1, param2) => param1 + param2;
-```
-```javascript
 function Timer (x, y) {
     this.x = x;
     this.y = y;

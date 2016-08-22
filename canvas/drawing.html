@@ -151,7 +151,6 @@
                 js_random: _this.drawRandom
             };
 
-            /** 事件函数 **/
             var trigger = function (e) {
                 _this.coordinate.startX = e.pageX;
                 _this.coordinate.startY = e.pageY;
@@ -186,7 +185,6 @@
                 }
             };
 
-            /** 事件函数触发 **/
             $canvas.on({
                 'mousedown': function (e) {
                     trigger(e);

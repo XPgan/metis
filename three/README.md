@@ -52,7 +52,7 @@ renderer.render(params);
         ```javascript
         var light = new THREE.PointLight(params);
         ```
-    + __聚光灯__ (光源位置 指向 target 位置)
+    + __聚光灯__ (光源位置 指向 target)
         
         ```javascript
         var light = new THREE.SpotLight(params);
@@ -68,10 +68,12 @@ renderer.render(params);
 ```javascript
 renderer.shadowMapEnabled = true;
 renderer.shadowMapSoft = true;
-
+```
+```javascript
 xxx.castShadow = true;
 xxx.receiveShadow = true;
-
+```
+```javascript
 light.shadowCameraVisible = true;
 light.shadowDarkness = value;
 ```

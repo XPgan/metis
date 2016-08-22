@@ -1,20 +1,34 @@
-/* 特性 */
-1. 变量  2. 运算  3. 嵌套  4. 属性集  5. 函数
+# Less #
 
-/* 解析 */
+__特性__
+- 变量
+- 运算
+- 嵌套
+- 属性集
+- 函数
+
+__解析__
+```
 $ lessc 文件名.less > 目标文件名.css
-* 压缩: -x / --clean-css (npm install -g less-plugin-clean-css)
+```
 
+压缩
++ -x
++ --clean-css __[npm install -g less-plugin-clean-css]__
 
+*****
 
+### #变量 ###
 
-/************ 语法 ************/
-
-/* 变量 */
+```
 @变量名: 变量值;
+```
 
+*****
 
-/* 混合 */
+### #层级 ###
+
+```
 父级 {
     属性名: 属性值;
     ...
@@ -34,8 +48,8 @@ $ lessc 文件名.less > 目标文件名.css
     }
     ...
 }
-
-// example
+```
+```css
 .border (@color: red, @radius: 10px) {
     border: 1px solid @color;
     border-radius: @radius * 2;
@@ -82,10 +96,13 @@ $ lessc 文件名.less > 目标文件名.css
         color: #005d50;
     }
 }
+```
 
+*****
 
-/* 匹配 */
-// example
+### #匹配 ###
+
+```css
 .style (lighter, @color) {
     opacity: 0.2;
 }
@@ -105,14 +122,17 @@ $ lessc 文件名.less > 目标文件名.css
 .l-ft {
     .style(darker, red);
 }
+```
 
+*****
 
-/* 导引 */
+### #导引 ###
+
 when (表达式)
-1. > >= = =< <
-2. not and ,(or)
++ \> \>= = =< <
++ not and ,(or)
 
-// example
+```css
 .style (@x, @y) when (@x > @y){
     border: 1px solid red;
 }
@@ -126,14 +146,19 @@ when (表达式)
 .l-ft {
     .style(0, 1);
 }
+```
 
+*****
 
-/* 函数 */
-http://www.lesscss.net/functions/
+### #函数 ###
 
+<http://www.lesscss.net/functions/>
 
-/* 命名空间 */
-// example
+*****
+
+### #命名空间 ###
+
+```css
 #control {
     .btn (@color: #333) {
         font-size: 14px;
@@ -157,14 +182,17 @@ http://www.lesscss.net/functions/
 .btn {#control > .btn(green)}
 .input {#control > .input(220px)}
 .textarea {#control > .textarea(200px, 100px)}
+```
 
+*****
 
-/* 作用域 */
-// example
+### #作用域 ###
+
+```css
 @color: red;
 
 .item {
-    color: @color; //green
+    color: @color; // green
 
     span {
         @color: blue;
@@ -173,8 +201,10 @@ http://www.lesscss.net/functions/
     }
     @color: green;
 }
+```
 
+*****
 
-/* 其他 */
-1. '...@{变量名}...'
-2. `javascript 表达式`
+### #其他 ###
++ '...@{变量名}...'
++ \`javascript 表达式\`

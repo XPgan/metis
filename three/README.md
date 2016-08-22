@@ -7,6 +7,8 @@ var scene = new THREE.Scene();
 scene.add(item);
 ```
 
+*****
+
 ### #相机 ###
 
 ```javascript
@@ -25,6 +27,8 @@ camera.lookAt({x: _, y: _, z: _});
     ```javascript
     var camera = new THREE.PerspectiveCamera(params);
     ```
+    
+*****    
 
 ### #渲染器 ###
 
@@ -34,6 +38,8 @@ renderer.setSize(width, height);
 renderer.setClearColor(color);
 renderer.render(params);
 ```
+
+*****
 
 ### #光照 ###
 + 基类
@@ -62,6 +68,8 @@ renderer.render(params);
         ```javascript
         var light = new THREE.DirectionalLight(params);
         ```
+
+*****
 
 ### #阴影 ###
 
@@ -95,6 +103,8 @@ light.shadowCameraTop = value;
 light.shadowCameraBottom = value;
 ```
 
+*****
+
 ### #材质 ###
 + __基础材质__ (无光照效果 无阴影效果)
 
@@ -117,6 +127,8 @@ light.shadowCameraBottom = value;
     var material = new THREE.MeshNormalMaterial();
     ```
 
+*****
+
 ### #模型 ###
 + 基类
 
@@ -127,47 +139,47 @@ light.shadowCameraBottom = value;
     geometry.colors.push(color);
     ```
 + 派生类
-    + 立方体
+    + __立方体__
     
         ```javascript
         var geometry = new THREE.CubeGeometry(params);
         ```
-    + 球体
+    + __球体__
     
         ```javascript
         var geometry = new THREE.SphereGeometry(params);
         ```
-    + 柱体 / 椎体
+    + __柱体 / 椎体__
         
         ```javascript
         var geometry = new THREE.CylinderGeometry(params);
         ```
-    + 管道
+    + __管道__
     
         ```javascript
         var geometry = new THREE.TorusGeometry(params);
         ```
-    + 正四面体
+    + __正四面体__
     
         ```javascript
         var geometry = new THREE.TetrahedronGeometry(params);
         ```
-    + 正八面体
+    + __正八面体__
     
         ```javascript
         var geometry = new THREE.OctahedronGeometry(params);
         ```
-    + 正十二面体
+    + __正十二面体__
         
         ```javascript
         var geometry = new THREE.IcosahedronGeometry(params);
         ```
-    + 矩面
+    + __矩面__
     
         ```javascript
         var geometry = new THREE.PlaneGeometry(params);
         ```
-    + 圆面
+    + __圆面__
     
         ```javascript
         var geometry = new THREE.CircleGeometry(params);
@@ -178,6 +190,8 @@ _三维文本_
 var text = new THREE.TextGeometry(text, object);
 ```
 
+*****
+
 ### #构造 ###
 + __网格__
 
@@ -187,6 +201,8 @@ var text = new THREE.TextGeometry(text, object);
     mesh.scale.set(l, m, n);
     mesh.rotation.set(angle1, angle2, angle3);
     ```
+
+*****
 
 ### #纹理贴图 ###
 
@@ -199,6 +215,8 @@ texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.set(m, n);
 ```
 
+*****
+
 ### #性能 ###
 
 ```javascript
@@ -206,6 +224,8 @@ var stats = new Stats();
 stats.begin();
 stats.end();
 ```
+
+*****
 
 ### #其他 ###
 + __点__

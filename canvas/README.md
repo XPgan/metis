@@ -3,22 +3,38 @@
 ### #路径 ###
 + __path__
 
-    + `context.beginPath();` (若未开启新路径 路径首尾相接)
-    + `context.closePath();`
+    ```javascript
+    context.beginPath(); //若未开启新路径 路径首尾相接
+    ```
+    ```javascript
+    context.closePath();
+    ```
 + __arc__
 
-    + `context.arc(x, y, r, sAngle, eAngle, clockwise);` 
+    ```javascript
+    context.arc(x, y, r, sAngle, eAngle, clockwise);
+    ```
 + __rect__
 
-    + `context.rect(x, y, w, h);`
+    ```javascript
+    context.rect(x, y, w, h);
+    ```
 + __line__
 
-    + `context.moveTo(x, y);`
-    + `context.lineTo(x, y);`
+    ```javascript
+    context.moveTo(x, y);
+    ```
+    ```javascript
+    context.lineTo(x, y);
+    ```
 + __bezierCurve__
 
-    + `context.quadraticCurveTo(cX, cY, endX, endY);`
-    + `context.bezierCurveTo(cX1, cY1, cX2, cY2, endX, endY);`
+    ```javascript
+    context.quadraticCurveTo(cX, cY, endX, endY);
+    ```
+    ```javascript
+    context.bezierCurveTo(cX1, cY1, cX2, cY2, endX, endY);
+    ```
 
 *****
 
@@ -48,27 +64,49 @@
     ```
 + __transform__
 
-    + `context.rotate(angle);`
-    + `context.translate(x, y);`
-    + `context.scale(num, num);`
+    ```javascript
+    context.rotate(angle);
+    ```
+    ```javascript
+    context.translate(x, y);
+    ```
+    ```javascript
+    context.scale(num, num);
+    ```
 
     _矩阵变换_
-    + `context.transform(a, b, c, d, e, f);`
-    + `context.setTransform(a, b, c, d, e, f);`
+    ```javascript
+    context.transform(a, b, c, d, e, f);
+    ```
+    ```javascript
+    context.setTransform(a, b, c, d, e, f);
+    ```
 + __imageData__
 
-    + `context.getImageData(x, y, w, h);`
-    + `context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH);` (不受全局属性影响)
-    + `context.createImageData(w, h);`
-    + `context.drawImage(imageObj, sX, sY, sW, sH, dX, dY, dW, dH);` (须在图片加载完毕后执行 受全局属性影响)
+    ```javascript
+    context.getImageData(x, y, w, h);
+    ```
+    ```javascript  
+    context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH); //不受全局属性影响
+    ```
+    ```javascript
+    context.createImageData(w, h);
+    ```
+    ```javascript
+    context.drawImage(imageObj, sX, sY, sW, sH, dX, dY, dW, dH); // 须在图片加载完毕后执行 受全局属性影响
+    ```
 
 *****
 
 ### #填充 ###
 + __gradient__
 
-    + `context.createLinearGradient(startX, startY, endX, endY);`
-    + `context.createRadialGradient(startX, startY, startR, endX, endY, endR);`
+    ```javascript
+    context.createLinearGradient(startX, startY, endX, endY);
+    ```
+    ```javascript
+    context.createRadialGradient(startX, startY, startR, endX, endY, endR);
+    ```
 
 #### *非零环绕规则 ####
 
@@ -86,14 +124,26 @@ context.fill();
 ### #绘制 ###
 + __rect__
 
-    + `context.strokeRect(x, y, w, h);`
-    + `context.fillRect(x, y, w, h);`
-    + `context.clearRect(x, y, w, h);`
+    ```javascript
+    context.strokeRect(x, y, w, h);
+    ```
+    ```javascript
+    context.fillRect(x, y, w, h);
+    ```
+    ```javascript
+    context.clearRect(x, y, w, h);
+    ```
 + __text__
 
-    + `context.strokeText(text, x, y, maxWidth);`
-    + `context.fillText(text, x, y, maxWidth);`
-    + `context.measureText(text);`
+    ```javascript
+    context.strokeText(text, x, y, maxWidth);
+    ```
+    ```javascript
+    context.fillText(text, x, y, maxWidth);
+    ```
+    ```javascript
+    context.measureText(text);
+    ```
 
 *****
 

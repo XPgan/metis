@@ -338,17 +338,17 @@ Vue.filter('reverse', function (value) {
             console.log(vm.lastName) // -> 'My'
         ```
 
-    _生命周期_
-    ```javascript
-    var vm = new Vue({
-        el: '#id',
-        data: {},
-        created: function () {},
-        compiled: function () {},
-        ready: function () {},
-        destroyed: function () {}
-    })
-    ```
+        _生命周期_
+        ```javascript
+        var vm = new Vue({
+            el: '#id',
+            data: {},
+            created: function () {},
+            compiled: function () {},
+            ready: function () {},
+            destroyed: function () {}
+        })
+        ```
 
 *****
 
@@ -404,39 +404,39 @@ Vue.filter('reverse', function (value) {
     })
     ```
 
-_渐近过渡_
-```html
-<input v-model="filter">
-<ul>
-    <li v-for="item in items | filterBy filter" transition="trans" stagger="100">{{ item.user }}</li>
-</ul>
-```
-```css
-.trans-transition {
-    transition: all .5s ease;
-    opacity: 1.0;
-    height: 20px;
-}
-.trans-enter, .trans-leave {
-    opacity: 0;
-    height: 0;
-}
-```
-```javascript
-export default {
-    data () {
-        return {
-            filter: '',
-            items: [
-                { user: 'Bruce Lee' },
-                { user: 'Jackie Chan' },
-                { user: 'Chuck Norris' },
-                { user: 'Jet Li' }
-            ]
+    _渐近过渡_
+    ```html
+    <input v-model="filter">
+    <ul>
+        <li v-for="item in items | filterBy filter" transition="trans" stagger="100">{{ item.user }}</li>
+    </ul>
+    ```
+    ```css
+    .trans-transition {
+        transition: all .5s ease;
+        opacity: 1.0;
+        height: 20px;
+    }
+    .trans-enter, .trans-leave {
+        opacity: 0;
+        height: 0;
+    }
+    ```
+    ```javascript
+    export default {
+        data () {
+            return {
+                filter: '',
+                items: [
+                    { user: 'Bruce Lee' },
+                    { user: 'Jackie Chan' },
+                    { user: 'Chuck Norris' },
+                    { user: 'Jet Li' }
+                ]
+            }
         }
     }
-}
-```
+    ```
 
 *****
 

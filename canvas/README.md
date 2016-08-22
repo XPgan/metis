@@ -4,7 +4,7 @@
 + __path__
 
     ```javascript
-    context.beginPath(); //若未开启新路径 路径首尾相接
+    context.beginPath(); // 若未开启新路径 路径首尾相接
     ```
     ```javascript
     context.closePath();

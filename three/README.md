@@ -184,11 +184,11 @@ light.shadowCameraBottom = value;
         ```javascript
         var geometry = new THREE.CircleGeometry(params);
         ```
-    
-_三维文本_
-```javascript
-var text = new THREE.TextGeometry(text, object);
-```
+
+        _三维文本_
+        ```javascript
+        var text = new THREE.TextGeometry(text, object);
+        ```
 
 *****
 

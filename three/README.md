@@ -52,12 +52,12 @@ renderer.render(params);
         ```javascript
         var light = new THREE.PointLight(params);
         ```
-    + __聚光灯__ (光源位置 指向 target)
+    + __聚光灯__ (光源 指向 target)
         
         ```javascript
         var light = new THREE.SpotLight(params);
         ```
-    + __平行光__ (光源位置 指向 原点位置)
+    + __平行光__ (光源 指向 原点)
     
         ```javascript
         var light = new THREE.DirectionalLight(params);
@@ -137,7 +137,7 @@ light.shadowCameraBottom = value;
         ```javascript
         var geometry = new THREE.SphereGeometry(params);
         ```
-    + 柱体/椎体
+    + 柱体 / 椎体
         
         ```javascript
         var geometry = new THREE.CylinderGeometry(params);

@@ -80,17 +80,17 @@
     + stroke-opacity
 + __填充__
     + fill
-    + fill-opacity
     + fill-rule
-        + nonezero
-            #### *非零填充规则 ####
-            
+        + nonezero 非零填充规则 
+                   
             > 从左向右穿过区域射线 +1，从右向左穿过区域射线 -1。矢量和：为 0 为图形外部；非 0 为图形内部。
-        + evenodd
-            #### *奇偶填充规则 ####
             
+        + evenodd 奇偶填充规则
+                    
             > 区域射线与图形路径交点个数：偶数个为图形外部；奇数个为图形内部。
 
+    + fill-opacity
+    
     #### *渐变 ####
     + stop-color
     + stop-opacity
@@ -227,6 +227,8 @@ ___type = "translate | scale | rotate | skewX | skewY"___
 
 ```html
 <animateMotion path="" />
+```
+```html
 <animateMotion>
     <mpath />
 </animateMotion>
@@ -235,5 +237,13 @@ ___type = "translate | scale | rotate | skewX | skewY"___
 *****
 
 ### #方法 ###
-+ svg.pauseAnimations() 暂停
-+ svg.unpauseAnimations() 重启
++ __暂停__
+
+    ```javascript
+    svg.pauseAnimations();
+    ```
++ __重启__
+
+    ```javascript
+    svg.unpauseAnimations();
+    ```

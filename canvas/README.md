@@ -2,16 +2,21 @@
 
 ### #路径 ###
 + __path__
+
     + `context.beginPath(); // 若未开启新路径 路径首尾相接`
     + `context.closePath();`
 + __arc__
-    + `context.arc(x, y, r, sAngle, eAngle, clockwise);`
+
+    + `context.arc(x, y, r, sAngle, eAngle, clockwise);` 
 + __rect__
+
     + `context.rect(x, y, w, h);`
 + __line__
+
     + `context.moveTo(x, y);`
     + `context.lineTo(x, y);`
 + __bezierCurve__
+
     + `context.quadraticCurveTo(cX, cY, endX, endY);`
     + `context.bezierCurveTo(cX1, cY1, cX2, cY2, endX, endY);`
 
@@ -42,6 +47,7 @@
     context.stroke();
     ```
 + __transform__
+
     + `context.rotate(angle);`
     + `context.translate(x, y);`
     + `context.scale(num, num);`
@@ -50,6 +56,7 @@
     + `context.transform(a, b, c, d, e, f);`
     + `context.setTransform(a, b, c, d, e, f);`
 + __imageData__
+
     + `context.getImageData(x, y, w, h);`
     + `context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH); // 不受全局属性影响`
     + `context.createImageData(w, h);`
@@ -59,12 +66,13 @@
 
 ### #填充 ###
 + __gradient__
+
     + `context.createLinearGradient(startX, startY, endX, endY);`
     + `context.createRadialGradient(startX, startY, startR, endX, endY, endR);`
 
 #### *非零环绕规则 ####
 
-> 区域校验线段所通过的所有路径的方向矢量和为 0 则不填充
+> 区域校验线段所通过的所有路径的方向矢量和：为 0 不填充；为 1 填充。
 
 ```javascript
 context.beginPath();
@@ -77,20 +85,22 @@ context.fill();
 
 ### #绘制 ###
 + __rect__
+
     + `context.strokeRect(x, y, w, h);`
     + `context.fillRect(x, y, w, h);`
     + `context.clearRect(x, y, w, h);`
 + __text__
-    + `context.strokeText(text, x, y, maxWidth); // 压缩 非隐藏`
+
+    + `context.strokeText(text, x, y, maxWidth);`
     + `context.fillText(text, x, y, maxWidth);`
-    + `context.measureText(text); // 返回文本占位宽度`
+    + `context.measureText(text);`
 
 *****
 
 ### #属性 ###
 + __全局__
     + globalAlpha
-    + globalCompositeOperation (图像合成模式)
+    + globalCompositeOperation
 + __阴影__
     + shadowColor
     + shadowOffsetX
@@ -100,7 +110,7 @@ context.fill();
     + lineWidth
     + lineJoin
     + lineCap
-    + miterLimit (斜接线)
+    + miterLimit
 + __文本__
     + font
     + textAlign

@@ -200,8 +200,21 @@
     <animate attributeName="" from="" to="" dur="" />
 </circle>
 ```
+```html
+<animateTransform attributeName="transform" />
+```
+```html
+<animateMotion path="" />
+```
+```html
+<animateMotion>
+    <mpath />
+</animateMotion>
+```
 
 ___fill = "freeze | remove"___
+
+___type = "translate | scale | rotate | skewX | skewY"___
 
 ___restart = "always | whenNotActive | never"___
 
@@ -218,21 +231,6 @@ ___calcMode = "discrete | linear | paced |spline"___
 + linear 线性 (不同 keyTimes 间不匀速)
 + paced 踏步 (不同 keyTimes 间匀速)
 + spline 样条
-
-```html
-<animateTransform attributeName="transform" />
-```
-
-___type = "translate | scale | rotate | skewX | skewY"___
-
-```html
-<animateMotion path="" />
-```
-```html
-<animateMotion>
-    <mpath />
-</animateMotion>
-```
 
 *****
 

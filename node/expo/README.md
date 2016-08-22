@@ -42,7 +42,8 @@ var userSchema = new Schema({
     concerns: [],
     favours: []
 });
-
+```
+```javascript
 var diarySchema = new Schema({
     id: String,
     author: String,

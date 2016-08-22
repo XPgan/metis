@@ -87,7 +87,7 @@
     context.getImageData(x, y, w, h);
     ```
     ```javascript  
-    context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH); //不受全局属性影响
+    context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH); // 不受全局属性影响
     ```
     ```javascript
     context.createImageData(w, h);

@@ -59,7 +59,7 @@ $ lessc 文件名.less > 目标文件名.css
 }
 .tag (@color: pink) {
     &:before {
-        content: '';
+        content: "";
         display: block;
         width: 10px;
         height: 10px;
@@ -91,7 +91,7 @@ $ lessc 文件名.less > 目标文件名.css
     }
 
     &:after {
-        content: 'after 伪类';
+        content: "after 伪类";
         display: block;
         color: #005d50;
     }
@@ -206,5 +206,5 @@ when (表达式)
 *****
 
 ### #其他 ###
-+ '...@{变量名}...'
++ "...@{变量名}..."
 + \`javascript 表达式\`

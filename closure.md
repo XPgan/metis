@@ -137,6 +137,8 @@ object.setPrice(30);
 object.total(6);
 ```
 
+*****
+
 ___循环 + 闭包___
 
 ```javascript

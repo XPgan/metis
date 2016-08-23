@@ -26,6 +26,9 @@
     ```
     git reset --hard origin/$branch_name
     ```
+
+*****    
+    
 + _插件安装_
-    + npm: `curl -L https://npmjs.com/install.sh | sh`
-    + express: `npm install -g express-generator`
+    + npm：`curl -L https://npmjs.com/install.sh | sh`
+    + express：`npm install -g express-generator`

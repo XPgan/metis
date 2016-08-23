@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>Transform3D</title>
     <style>
-        /* scale 不影响元素占位 */
-
         .outer{width: 200px;margin: 50px auto;border: 1px solid #999;}
         .outer img{width: 100%;display: block;}
 
         .lst{margin: 100px 0;padding: 0 10px;text-align: center;}
         .lst img{width: 200px;margin: 0 15px;}
 
+        /* scale 不影响元素占位 */
         .preserve3d{-webkit-transform-style: preserve-3d;transform-style: preserve-3d;}
         .perspective{-webkit-transform: perspective(200px);transform: perspective(200px);}
         .rotateX{-webkit-transform: rotateX(30deg);transform: rotateX(30deg);}
@@ -22,7 +21,6 @@
          * perspective：子元素父级视点
          * perspective()：子元素自视点
          */
-
         .rotateY-perspective{-webkit-transform: perspective(200px) rotateY(30deg);transform: perspective(200px) rotateY(30deg);}
     </style>
 </head>

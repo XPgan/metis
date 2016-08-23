@@ -62,6 +62,8 @@ function fun () {
 }
 ```
 
+*****
+
 #### *循环 ####
 
 ```javascript

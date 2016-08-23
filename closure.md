@@ -48,6 +48,8 @@ object.setPrice(30);
 object.total(6);
 ```
 
+*****
+
 #### *返回函数 ####
 
 ```javascript

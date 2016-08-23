@@ -5,19 +5,14 @@
     lsof -i: $port
     kill $id
     ```
-+ __redis__
-
-    shut
-    ```
-    redis-cli
-    shutdown
-    exit
-    ```
 + __search__    
 
     ```
     find . -name $pattern
     ```
+    
+*****    
+    
 + __git__
 
     ```
@@ -25,6 +20,14 @@
     ```
     ```
     git reset --hard origin/$branch_name
+    ```
++ __redis__
+
+    shut
+    ```
+    redis-cli
+    shutdown
+    exit
     ```
 
 *****    

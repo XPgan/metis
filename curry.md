@@ -8,6 +8,8 @@
 
     > 泛化参数 扩大适用范围
 
+*****
+
 ```javascript
 var curry = function (curried) {
     // 过滤 curried 中 function

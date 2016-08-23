@@ -1,11 +1,11 @@
 + __shut__
-    + process
+    + __process__
     
         ```
         lsof -i: $port
         kill $id
         ```
-    + redis
+    + __redis__
     
         ```
         redis-cli
@@ -32,5 +32,13 @@
 *****    
     
 + _插件安装_
-    + npm：`curl -L https://npmjs.com/install.sh | sh`
-    + express：`npm install -g express-generator`
+    + __npm__
+    
+        ```
+        curl -L https://npmjs.com/install.sh | sh
+        ```
+    + __express__
+    
+        ```
+        npm install -g express-generator
+        ```

@@ -46,6 +46,8 @@
     ```
 
     注意：i++ 于 continue 后为死循环 其后代码不执行 变量 i 无法 累加
+    
+*****    
 
 ```javascript
 var a = 1;

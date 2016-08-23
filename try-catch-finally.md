@@ -19,6 +19,8 @@ try {
 3. catch 抛出 error
 4. try 代码执行 报错
 
+*****
+
 ```javascript
 function MyError(msg) {
     this.name = 'MyError';
@@ -45,6 +47,8 @@ try {
 2. throw error 被执行
 3. catch 被执行 捕获所抛出自定义 error
 
+*****
+
 ```javascript
 try {
     console.lg('success');
@@ -63,6 +67,8 @@ try {
 2. throw error 不执行
 3. catch 被执行 捕获默认 error
 
+*****
+
 ```javascript
 try {
     console.log('success');
@@ -74,6 +80,9 @@ try {
 // -> success
 // -> finally
 ```
+
+*****
+
 ```javascript
 try {
     console.lg('success');

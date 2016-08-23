@@ -11,6 +11,8 @@
     var call = Array.prototype.slice.call(string, params);
     ```
 
+*****
+
 ```javascript
 var obj = {
     pro1: 'pro1',

@@ -22,7 +22,7 @@ var fun = function (x, y) {
 };
 
 fun('a', 'b'); // -> 'a|b'
-               // -> Window
+               // -> window
 
 fun.apply(obj, ['a', 'b']); // -> 'a|b'
                             // -> Object {pro1: 'pro1', pro2: 'pro2'}

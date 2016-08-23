@@ -20,5 +20,5 @@ trigger();
 ```
 
 备注
-+ 形参长度：arguments.callee.length
-+ 实参长度：arguments.length
+- 形参长度：arguments.callee.length
+- 实参长度：arguments.length

@@ -1,44 +1,45 @@
-/**
- * Created by sunmy on 16/1/14.
- */
+# Scope #
 
-/**
- * 变量/函数声明提升
- * 变量/函数定义及初始化 分配存储空间
- *
- * for if while 不是作用域的划分标准
- */
+__变量 / 函数声明提升__
 
-/* 函数作用域: 其声明时所处作用域 */
+__变量 / 函数定义及初始化时分配存储空间__
 
-/** example1 **/
+注意
+- for, if, while 不是作用域的划分标准
+
+概念
++ 函数作用域：其声明时所处作用域
+
+```javascript
 function test () {
     console.log(a);
     var a = 2;
     console.log(a);
 }
-
-test(); // -> undefined 2
-
-/** example2 **/
+test();
+// -> undefined
+// -> 2
+```
+```javascript
 var a = 1;
 function test () {
     console.log(a);
     var a = 2;
-    console.log(a);
+    console.log(a); 
 }
-
-test(); // -> undefined 2
-
-/** example3 **/
+test();
+// -> undefined 
+// -> 2
+```
+```javascript
 var a = 1;
 function test () {
-    console.log(a);
+    console.log(a); 
 }
-
-test(); // -> 1
-
-/** example4 **/
+test();
+// -> 1
+```
+```javascript
 function test () {
     fun1(); // error
     fun2(); // 执行
@@ -56,3 +57,4 @@ function test () {
 test();
 fun1(); // error
 fun2(); // error
+```

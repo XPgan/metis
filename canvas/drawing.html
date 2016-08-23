@@ -81,7 +81,7 @@
             var context = canvas.getContext('2d');
             var ratio = window.devicePixelRatio || 1;
 
-            /** 按设备像素密度缩放绘图区 **/
+            // 按设备像素密度缩放绘图区
             canvas.width = canvas.offsetWidth * ratio;
             canvas.height = canvas.offsetHeight * ratio;
             context.scale(ratio, ratio);
@@ -100,10 +100,6 @@
             _this.context.strokeStyle = strokeStyle;
         },
         ctrlBoard: function () {
-            /**
-             * 点击屏幕顶部 滑出绘图控制面板
-             * 点击屏幕除顶部外任意非控键区域 隐藏绘图控制面板
-             */
             var $body = $('body');
             var $control = $('.js_control');
 
@@ -143,7 +139,7 @@
             var width = _this.canvas.width;
             var height = _this.canvas.height;
 
-            /** 控键类型所对应绘图函数 **/
+            // 控键类型所对应绘图函数
             var types = {
                 js_solid: _this.drawSolid,
                 js_arc: _this.drawArc,

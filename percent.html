@@ -8,15 +8,15 @@
         .outer{width: 200px;height: 100px;background-color: yellow;}
         .inner{width: 50%;height: 50%;background-color: lightblue;}
 
+        /**
+         * 标准文档流：宽高为父级百分比
+         * absolute 定位流：宽高为定位父级百分比
+         * fixed 定位流：宽高为窗口百分比
+         */
+
         .relative{position: relative;}
         .absolute{position: absolute;left: 0;top: 0;}
         .fixed{position: fixed;left: 0;top: 0;}
-
-        /* 标准文档流 父级定宽高
-            宽：父级宽百分比  高：父级高百分比 */
-        /* absolute 定位流 宽高为定位父级百分比 */
-        /* fixed 定位流 宽高为窗口百分比 */
-        /* em 单位相对于字体  百分比单位相对于父级 */
     </style>
 </head>
 <body>

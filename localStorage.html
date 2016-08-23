@@ -14,17 +14,16 @@
     <div class="btn">clear</div>
     <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
     <script>
-        // sessionStorage 会话级本地存储 以顶级页面为单位进行数据划分
-        // localStorage 持久化本地存储 以域名为单位进行数据划分
-        // .clear() .setItem(key, value) .getItem(key) removeItem(key)
+        /**
+         * sessionStorage：会话级本地存储 以顶级页面为单位进行数据划分
+         * localStorage：持久化本地存储 以域名为单位进行数据划分
+         */
 
         // example1
-        // 判断浏览器是否支持 localStorage
         if (window.localStorage) {
             var isExist = localStorage.getItem('color');
 
             if (!isExist) {
-                // QUOTA_EXCEEDED_ERR(IOS) 解决: removeItem(key) 后 setItem(key, value)
                 localStorage.setItem('color', 1);
             } else {
                 $('.item').addClass('red');
@@ -32,7 +31,6 @@
         }
 
         // example2
-        // storage 遍历 .key(index)
         var storage = window.localStorage;
         for (var i = 0;i < storage.length;i++) {
             var key = storage.key(i);
@@ -42,10 +40,9 @@
         }
 
         // example3
-        // storage 事件  键值 change or clear or remove 触发  需要在同一域下的不同页面监听
+        // storage 事件 需要在同一域下的不同页面监听
         window.addEventListener('storage', showEvent, false);
         function showEvent (e) {
-            // key newValue oldValue url
             console.log(e);
         }
 

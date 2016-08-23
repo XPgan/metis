@@ -14,9 +14,8 @@
 
     > 尾调用自身
 
-    非严格模式下 尾递归优化
-
     ``` javascript
+    // 非严格模式下 尾递归优化
     function tco (f) {
         var value;
         var active = false;

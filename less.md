@@ -8,7 +8,7 @@ __特性__
 - 函数
 
 __解析__
-```
+```linux
 $ lessc 文件名.less > 目标文件名.css
 ```
 
@@ -49,6 +49,7 @@ $ lessc 文件名.less > 目标文件名.css
     ...
 }
 ```
+
 ```css
 .border (@color: red, @radius: 10px) {
     border: 1px solid @color;

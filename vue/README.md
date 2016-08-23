@@ -337,8 +337,8 @@ Vue.filter('reverse', function (value) {
             console.log(vm.firstName) // -> 'Sun'
             console.log(vm.lastName) // -> 'My'
         ```
-
-        _生命周期_
+    + _生命周期_
+    
         ```javascript
         var vm = new Vue({
             el: '#id',
@@ -403,8 +403,8 @@ Vue.filter('reverse', function (value) {
         leaveCancelled: function (el) {}
     })
     ```
++ _渐近过渡_
 
-    _渐近过渡_
     ```html
     <input v-model="filter">
     <ul>

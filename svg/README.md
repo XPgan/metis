@@ -38,13 +38,13 @@
     ```html
     <polygon points="" />
     ```
++ _组合_
 
-    _组合_
     ```html
     <g></g>
     ```
-    
-    _模块_
++ _模块_
+
     ```html
     <symbol id="shapeId">
         <circle />
@@ -57,15 +57,15 @@
     </defs>
     <use xlink:href="#shapeId" />
     ```
-    
-    _路径_
++ _路径_
+
     ```html
     <path d="" />
     ```
-    
+
     ___d = "M | l | h | v | c | s | q | t | a | Z"___
     + c + q, s + t (使控制点对称以保证平滑过渡即斜率一致)
-    + a <轴半径 旋转角 角度范围 弧线方向 终点>
+    + a 轴半径 旋转角 角度范围 弧线方向 终点
 
 *****
 
@@ -139,6 +139,7 @@
     + reflect 镜像平铺
 
 + __图案__
+
     ```html
     <defs>
         <pattern id="patternId">
@@ -153,6 +154,7 @@
     + objectBoundingBox 图案单位缩放
 
 + __连接标记__
+
     ```html
     <defs>
         <marker id="markerId" markerWidth="" markerHeight="" refX="" refY="" orient="">
@@ -163,7 +165,7 @@
 
     ___markerUnits = "strokeWidth | userSpaceOnUse"___
     + strokeWidth 适应路径描边
-    + userSpaceOnUse 不适应路径描边
+    + userSpaceOnUse
 
 + __文字路径__
 

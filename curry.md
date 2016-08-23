@@ -1,12 +1,14 @@
-/**
- * Created by sunmy on 15/12/15.
- */
+# Curry #
 
-// 柯里化：固定异变参数 缩小适用范围（返回函数接受剩余参数）
-// 反柯里化：泛化参数 扩大适用范围
-// 例：this 指针
++ __柯里化__
 
-// example1
+    > 固定异变参数 缩小适用范围 返回函数接受剩余参数
+    
++ __反柯里化__    
+
+    > 泛化参数 扩大适用范围
+
+```javascript
 var curry = function (curried) {
     // 过滤 curried 中 function
     var tmp = Array.prototype.slice.call(arguments, 1);
@@ -19,17 +21,14 @@ var curry = function (curried) {
 
     return method;
 };
-
-
 var fun = function (msg, from, to) {
     console.log(msg + '-' + from + '-' + to);
 };
 var curried = curry(fun, 'My name is smy');
 
 curried('smy', 'yaq'); // -> 'My name is smy-smy-yaq'
-
-
-// example2
+```
+```javascript
 var curry = function (curried) {
     var params = Array.prototype.slice.call(arguments, 1);
     curried.apply(this, params);
@@ -43,11 +42,11 @@ var curry = function (curried) {
     return method;
 };
 
-
 var sum = 0;
 var add = function (num) {
     sum += num;
 };
 var curried = curry(add, 1);
 
-curried(2)(3)(4); // -> sum = 10
+curried(2)(3)(4);
+```

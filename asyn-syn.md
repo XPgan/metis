@@ -62,7 +62,7 @@ function fun () {
 }
 ```
 
-### _#Promise_ ###
+### _Promise_ ###
 
 ```javascript
 $.when($.ajax('html.html'), $.ajax('new.html'))

@@ -1,25 +1,23 @@
 ### #概念 ###
 
-+ [闭包](https://github.com/sunmengyuan/note/blob/master/content/javascript/closure.md)
-
-+ [原型继承](https://github.com/sunmengyuan/note/blob/master/content/javascript/prototype.md)
-
-+ [事件冒泡](https://github.com/sunmengyuan/note/blob/master/content/javascript/propagation.html)
-
-+ [变量提升](https://github.com/sunmengyuan/note/blob/master/content/javascript/scope.md)
-
-+ [异步编程](https://github.com/sunmengyuan/note/blob/master/content/javascript/asyn-syn.md)    
-    
-    + [promise](https://github.com/sunmengyuan/note/blob/master/content/javascript/promise.md)
-    
-    + [setTimeout](https://github.com/sunmengyuan/note/blob/master/content/javascript/setTimeout.md)
-
-=> extending
-
 + __concept__
     
+    + [闭包](https://github.com/sunmengyuan/note/blob/master/content/javascript/closure.md)
+    
+    + [原型继承](https://github.com/sunmengyuan/note/blob/master/content/javascript/prototype.md)
+    
+    + [事件冒泡](https://github.com/sunmengyuan/note/blob/master/content/javascript/propagation.html)
+    
+    + [变量提升](https://github.com/sunmengyuan/note/blob/master/content/javascript/scope.md)
+    
+    + [异步编程](https://github.com/sunmengyuan/note/blob/master/content/javascript/asyn-syn.md)    
+        
+        + [promise](https://github.com/sunmengyuan/note/blob/master/content/javascript/promise.md)
+        
+        + [setTimeout](https://github.com/sunmengyuan/note/blob/master/content/javascript/setTimeout.md)
+    
     + [柯里化](https://github.com/sunmengyuan/note/blob/master/content/javascript/curry.md)
-
+    
     + [尾调用及尾递归](https://github.com/sunmengyuan/note/blob/master/content/javascript/tco.md)
 
 + __application__
@@ -68,7 +66,7 @@
     
     + [map - each](https://github.com/sunmengyuan/note/blob/master/content/javascript/map-each.md)
 
-    => comparison
+    <================ comparison ================>
 
     + [string - array](https://github.com/sunmengyuan/note/blob/master/content/javascript/string-array.md)
     

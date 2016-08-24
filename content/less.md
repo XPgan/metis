@@ -12,7 +12,7 @@ __解析__
 $ lessc 文件名.less > 目标文件名.css
 ```
 
-=> 压缩
+压缩
 + -x
 + --clean-css __[npm install -g less-plugin-clean-css]__
 

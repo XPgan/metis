@@ -66,7 +66,7 @@
     
     + [map - each](https://github.com/sunmengyuan/note/blob/master/content/javascript/map-each.md)
 
-    <================ comparison ================>
+    <= comparison =>
 
     + [string - array](https://github.com/sunmengyuan/note/blob/master/content/javascript/string-array.md)
     

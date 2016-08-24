@@ -4,7 +4,7 @@
 + __path__
 
     ```javascript
-    context.beginPath(); // 若未开启新路径 路径首尾相接
+    context.beginPath(); // 若未开启新路径，路径首尾相接
     ```
     ```javascript
     context.closePath();
@@ -93,7 +93,7 @@
     context.createImageData(w, h);
     ```
     ```javascript
-    context.drawImage(imageObj, sX, sY, sW, sH, dX, dY, dW, dH); // 须在图片加载完毕后执行 受全局属性影响
+    context.drawImage(imageObj, sX, sY, sW, sH, dX, dY, dW, dH); // 须在图片加载完毕后执行，受全局属性影响
     ```
 
 *****

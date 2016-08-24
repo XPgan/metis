@@ -8,8 +8,8 @@ var User = require('../models').User;
 var Diary = require('../models').Diary;
 
 /** log
- * 描述: [登录] [注销] [注册] [退出登录]
- * 模块: [log.login] [log.logout] [log.register] [log.exit]
+ * 描述：[登录] [注销] [注册] [退出登录]
+ * 模块：[log.login] [log.logout] [log.register] [log.exit]
  */
 var log = {
 
@@ -58,8 +58,8 @@ var log = {
             }
 
             /**
-             * 操作: 删除记录
-             * 数据表: users
+             * 操作：删除记录
+             * 数据表：users
              */
             User.remove(find.record, function (err) {
                 if (err) {
@@ -71,8 +71,8 @@ var log = {
             });
 
             /**
-             * 操作: 删除记录
-             * 数据表: diaries
+             * 操作：删除记录
+             * 数据表：diaries
              */
             Diary.remove({id: {$in: info.diaries}}, function (err) {
                 if (err) {

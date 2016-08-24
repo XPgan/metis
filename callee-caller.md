@@ -22,5 +22,5 @@ trigger();
 ```
 
 备注
-- 形参：arguments.callee
-- 实参：arguments
+- 形参 arguments.callee
+- 实参 arguments

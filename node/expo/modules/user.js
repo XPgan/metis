@@ -8,8 +8,8 @@ var find = require('./find');
 var User = require('../models').User;
 
 /** user
- * 描述: [编辑用户信息] [关注用户]
- * 模块: [user.edit] [user.attention]
+ * 描述：[编辑用户信息] [关注用户]
+ * 模块：[user.edit] [user.attention]
  */
 var user = {
     edit: {
@@ -63,9 +63,9 @@ var user = {
                     });
 
                     /**
-                     * 操作: 修改记录
-                     * 数据表: users
-                     * 字段: portrait
+                     * 操作：修改记录
+                     * 数据表：users
+                     * 字段：portrait
                      */
                     User.update(find.record, {portrait: url}, {}, function (err) {
                         if (err) {

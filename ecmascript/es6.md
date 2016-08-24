@@ -93,10 +93,10 @@ function Timer (x, y) {
     this.y = y;
 
     var t1 = setTimeout(() => {
-        console.log(this); // this -> timer
+        console.log(this); // -> Timer
     }, 1000);
     var t2 = setTimeout(function () {
-        console.log(this); // this -> window
+        console.log(this); // -> Window
     }, 1000);
 }
 

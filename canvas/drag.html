@@ -17,8 +17,8 @@
     var sketch = {
 
         /**
-         * drag: 是否处于拖拽过程
-         * dragged: 被拖拽 item 索引值
+         * drag 是否处于拖拽过程
+         * dragged 被拖拽 item 索引值
          */
 
         ratio: null,
@@ -153,7 +153,7 @@
             var endY = startY;
 
             _this.context.save();
-            // 坐标变换 中点变换
+            // 中点变换
             _this.context.translate(opt.x, opt.y);
 
             _this.context.beginPath();

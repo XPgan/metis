@@ -58,12 +58,12 @@ renderer.render(params);
         ```javascript
         var light = new THREE.PointLight(params);
         ```
-    + __聚光灯__ (光源 指向 target)
+    + __聚光灯__ (方向：光源指向 target)
         
         ```javascript
         var light = new THREE.SpotLight(params);
         ```
-    + __平行光__ (光源 指向 原点)
+    + __平行光__ (方向：光源指向原点)
     
         ```javascript
         var light = new THREE.DirectionalLight(params);
@@ -106,7 +106,7 @@ light.shadowCameraBottom = value;
 *****
 
 ### #材质 ###
-+ __基础材质__ (无光照效果 无阴影效果)
++ __基础材质__ (无光照效果，无阴影效果)
 
     ```javascript
     var material = new THREE.MeshBasicMaterial(object);

@@ -13,8 +13,8 @@ var call = $type.prototype.$method.call(obj, params);
 ```
 
 说明
-- $type：变量类型
-- $method：方法
+- $type 变量类型
+- $method 方法
 
 *****
 

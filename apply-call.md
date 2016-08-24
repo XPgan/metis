@@ -1,15 +1,19 @@
 # Apply - Call #
 
-+ __apply__
+### apply ###
 
-    ```javascript
-    var apply = Array.prototype.slice.apply(string, [params]);
-    ```
-+ __call__
+```javascript
+var apply = $type.prototype.$method.apply(obj, [params]);
+```
+### call ###
 
-    ```javascript
-    var call = Array.prototype.slice.call(string, params);
-    ```
+```javascript
+var call = $type.prototype.$method.call(obj, params);
+```
+
+说明
+- $type：变量类型
+- $method：方法
 
 *****
 
@@ -19,13 +23,13 @@ var obj = {
     pro2: 'pro2'
 };
 var fun = function (x, y) {
-    console.log(x + '|' + y);
+    console.log(x + ' | ' + y);
     console.log(this);
 };
 
-fun('a', 'b'); // -> 'a|b'
-               // -> window
+fun('a', 'b'); // -> 'a | b'
+               // -> Window
 
-fun.apply(obj, ['a', 'b']); // -> 'a|b'
+fun.apply(obj, ['a', 'b']); // -> 'a | b'
                             // -> Object {pro1: 'pro1', pro2: 'pro2'}
 ```

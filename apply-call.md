@@ -27,9 +27,11 @@ var fun = function (x, y) {
     console.log(this);
 };
 
-fun('a', 'b'); // -> 'a | b'
-               // -> Window
+fun('a', 'b'); 
+// -> 'a | b'
+// -> Window
 
-fun.apply(obj, ['a', 'b']); // -> 'a | b'
-                            // -> Object {pro1: 'pro1', pro2: 'pro2'}
+fun.apply(obj, ['a', 'b']); 
+// -> 'a | b'
+// -> Object {pro1: 'pro1', pro2: 'pro2'}
 ```

@@ -2,20 +2,20 @@
 
 ```javascript
 /**
- * obja.constructor (构造函数) -> function A(x, y) {this.attr1 = x;this.attr2 = y;}
- * obja.constructor.prototype (构造函数原型) -> A {}
+ * obja.constructor (构造函数) <=> function A(x, y) {this.attr1 = x;this.attr2 = y;}
+ * obja.constructor.prototype (构造函数原型) <=> A {}
  * obja.constructor.prototype.constructor -...>
  *
- * A.constructor -> function Function () {}
- * A.constructor.prototype -> function () {}
+ * A.constructor <=> function Function () {}
+ * A.constructor.prototype <=> function () {}
  */
 
 /**
- * obja -> 1. constructor (构造函数) -> function A(x, y) {this.attr1 = x;this.attr2 = y;}
- *         2. __proto__ (原型链) -> A {} ...
+ * obja => 1. constructor (构造函数) <=> function A(x, y) {this.attr1 = x;this.attr2 = y;}
+ *         2. __proto__ (原型链) <=> A {} ...
  *
- * A {} -> 1. constructor (构造函数) -> function A(x, y) {this.attr1 = x;this.attr2 = y;}
- *         2. __proto__ (原型链) -> Object {} ...
+ * A {} => 1. constructor (构造函数) <=> function A(x, y) {this.attr1 = x;this.attr2 = y;}
+ *         2. __proto__ (原型链) <=> Object {} ...
  */
 
 function A(x, y) {

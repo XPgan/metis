@@ -18,7 +18,7 @@
     <script>
         new FastClick(document.body); // 防止点透
 
-        // click 事件滞后 上层元素消失 底层元素绑定事件触发
+        // click 事件滞后，上层元素消失，底层元素绑定事件触发
         $('.inner').on('tap', function () {
             console.log('inner');
             $(this).hide();

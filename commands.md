@@ -1,4 +1,33 @@
-+ __shut__
+### git ###
++ __merge__
+
+    ```
+    git merge --no-ff $branch_name
+    ```
++ __reset__
+
+    ```
+    git reset --hard origin/$branch_name
+    ```
+
+*****    
+  
+### 插件安装 ###
++ __npm__
+
+    ```
+    curl -L https://npmjs.com/install.sh | sh
+    ```
++ __express__
+
+    ```
+    npm install -g express-generator
+    ```
+
+*****
+   
+### 常用操作 ###    
++ shut
     + __process__
     
         ```
@@ -12,33 +41,8 @@
         shutdown
         exit
         ```   
-+ __search__    
++ search
 
     ```
     find . -name $pattern
-    ```
-
-*****
-
-+ __git__
-
-    ```
-    git merge --no-ff $branch_name
-    ```
-    ```
-    git reset --hard origin / $branch_name
-    ```
-
-*****    
-    
-+ _插件安装_
-    + __npm__
-    
-        ```
-        curl -L https://npmjs.com/install.sh | sh
-        ```
-    + __express__
-    
-        ```
-        npm install -g express-generator
-        ```
+    ```   

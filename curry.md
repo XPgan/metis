@@ -1,12 +1,12 @@
 # Curry #
 
-+ __柯里化__
+### 柯里化 ###
 
-    > 固定异变参数 缩小适用范围 返回函数接受剩余参数
+> 固定异变参数，缩小适用范围。
     
-+ __反柯里化__    
+### 反柯里化 ###
 
-    > 泛化参数 扩大适用范围
+> 泛化参数，扩大适用范围。
 
 *****
 
@@ -17,7 +17,7 @@ var curry = function (curried) {
     var method = function () {
         // arguments 转数组
         var params = Array.prototype.slice.call(arguments, 0);
-        // 组装 params  触发 function
+        // 组装 params，触发 function
         curried.apply(this, tmp.concat(params));
     };
 
@@ -43,7 +43,6 @@ var curry = function (curried) {
 
     return method;
 };
-
 var sum = 0;
 var add = function (num) {
     sum += num;
@@ -51,4 +50,6 @@ var add = function (num) {
 var curried = curry(add, 1);
 
 curried(2)(3)(4);
+
+console.log(sum); // -> 10
 ```

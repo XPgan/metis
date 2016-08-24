@@ -17,8 +17,10 @@ function trigger () {
 }
 
 trigger();
+// -> function outer () {}
+// -> function inner () {}
 ```
 
 备注
-- 形参长度：arguments.callee.length
-- 实参长度：arguments.length
+- 形参：arguments.callee
+- 实参：arguments

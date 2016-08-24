@@ -1,6 +1,10 @@
 # Promise #
 
 ```javascript
+function fun () {
+    console.log('fun');
+}
+
 $.when($.ajax('html.html'), $.ajax('new.html'))
     .done(function () {
         console.log('请求成功');
@@ -11,10 +15,8 @@ $.when($.ajax('html.html'), $.ajax('new.html'))
     .done(function () {
         fun();
     });
-
-function fun () {
-    console.log('fun');
-}
+// -> '请求成功'
+// -> 'fun'    
 ```
 ```javascript
 function fun (txt, time, dfd) {
@@ -40,6 +42,9 @@ function fun3 () {
 }
 
 $.when(fun1()).then(fun2).then(fun3);
+// -> 'fun1'
+// -> 'fun2'
+// -> 'fun3'
 ```
 ```javascript
 function fun (txt, time) {
@@ -65,5 +70,8 @@ function fun3 () {
     console.log('fun3');
 }
 
-$.when(fun1()).then(fun2).then(fun3); // error: fun2, fun3 立即执行
+$.when(fun1()).then(fun2).then(fun3);
+// -> 'fun1'
+// -> 'fun2'
+// -> 'fun3' 
 ```

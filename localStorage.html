@@ -15,8 +15,8 @@
     <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
     <script>
         /**
-         * sessionStorage：会话级本地存储 以顶级页面为单位进行数据划分
-         * localStorage：持久化本地存储 以域名为单位进行数据划分
+         * sessionStorage：会话级本地存储，以顶级页面为单位进行数据划分。
+         * localStorage：持久化本地存储，以域名为单位进行数据划分。
          */
 
         // example1
@@ -40,12 +40,6 @@
         }
 
         // example3
-        // storage 事件 需要在同一域下的不同页面监听
-        window.addEventListener('storage', showEvent, false);
-        function showEvent (e) {
-            console.log(e);
-        }
-
         $('.btn').on('click', function () {
             var isExist = localStorage.getItem('color');
             if (isExist) {
@@ -54,6 +48,11 @@
                 localStorage.setItem('color', 1);
             }
         });
+        // storage 事件需要在同一域下的不同页面监听
+        window.addEventListener('storage', showEvent, false);
+        function showEvent (e) {
+            console.log(e);
+        }
     </script>
 </body>
 </html>

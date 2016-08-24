@@ -38,15 +38,14 @@ var a = 1;
 function test () {
     console.log(a); 
 }
-test();
-// -> 1
+test(); // -> 1
 ```
 ```javascript
 function test () {
     fun1(); // error
     fun2(); // 执行
 
-    // 变量声明提升 初始化未提升
+    // 变量声明提升，初始化未提升
     var fun1 = function () {
         console.log('function1');
     };

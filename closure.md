@@ -12,7 +12,6 @@ var self = (function () {
         a++;
         console.log(a);
     }
-
     function fun2 () {
         a++;
         console.log(a);
@@ -21,8 +20,8 @@ var self = (function () {
     return object
 })();
 
-self.run1();
-self.run2();
+self.run1(); // -> 2
+self.run2(); // -> 3
 ```
 ```javascript
 var object = {
@@ -42,10 +41,10 @@ var object = {
     }
 };
 
-object.total(5);
+object.total(5); // -> 250
 
 object.setPrice(30);
-object.total(6);
+object.total(6); // -> 180
 ```
 
 *****
@@ -56,7 +55,7 @@ object.total(6);
 function fun1 (x) {
     var a = 'a';
     var method = function fun2 (y) {
-        console.log(a + ',' + x + ',' + y);
+        console.log(a + ', ' + x + ', ' + y);
     };
 
     return method;
@@ -64,13 +63,13 @@ function fun1 (x) {
 
 var method = fun1('b');
 
-method('c'); // error: fun2 非返回函数
+method('c'); // -> 'a, b, c'
 ```
 ```javascript
 function fun1 (x) {
     var a = 'a';
     var method = function fun2 (y) {
-        console.log(a + ',' + x + ',' + y);
+        console.log(a + ', ' + x + ', ' + y);
     };
 
     return method;
@@ -80,7 +79,7 @@ function fun () {
     method('c');
 }
 
-fun();
+fun(); // -> 'a, b, c'
 ```
 
 #### *返回对象 ####
@@ -101,10 +100,10 @@ function fun () {
 
 var self = fun();
 
-self.total(5);
+self.total(5); // -> 250
 
 self.setPrice(30);
-self.total(6);
+self.total(6); // -> 180
 ```
 ```javascript
 function fun (opt) {
@@ -128,15 +127,14 @@ function fun (opt) {
 
     return object
 }
-
 var object = fun({
     initPrice: 50
 });
 
-object.total(5);
+object.total(5); // -> 250
 
 object.setPrice(30);
-object.total(6);
+object.total(6); // -> 180
 ```
 
 *****
@@ -154,9 +152,9 @@ function foo() {
 }
 
 foo();
-result[0]();
-result[1]();
-result[2]();
+result[0](); // -> 3
+result[1](); // -> 3
+result[2](); // -> 3
 ```
 ```javascript
 var result = [];
@@ -165,14 +163,13 @@ function foo(i) {
         console.log(i);
     }
 }
-
 for (var i = 0;i < 3;i++) {
     foo(i);
 }
 
-result[0]();
-result[1]();
-result[2]();
+result[0](); // -> 0
+result[1](); // -> 1
+result[2](); // -> 2
 ```
 ```javascript
 function foo() {
@@ -184,6 +181,9 @@ function foo() {
 }
 
 foo();
+// -> 0
+// -> 1
+// -> 2
 ```
 ```javascript
 var result = [];
@@ -198,7 +198,7 @@ function foo() {
 }
 
 foo();
-result[0]();
-result[1]();
-result[2]();
+result[0](); // -> 0
+result[1](); // -> 1
+result[2](); // -> 2
 ```

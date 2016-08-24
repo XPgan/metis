@@ -14,10 +14,10 @@ try {
 ```
 
 过程
-+ 1. try 代码有误 不执行
++ 1. try 代码有误，不执行
 + 2. catch 捕获 error
 + 3. catch 抛出 error
-+ 4. try 代码执行 报错
++ 4. try 代码执行，报错
 
 *****
 
@@ -43,9 +43,9 @@ try {
 ```
 
 过程
-+ 1. try 代码无误 被执行
++ 1. try 代码无误，被执行
 + 2. throw error 被执行
-+ 3. catch 被执行 捕获所抛出自定义 error
++ 3. catch 被执行，捕获所抛出自定义 error
 
 *****
 
@@ -63,9 +63,9 @@ try {
 ```
 
 过程
-+ 1. try 代码有误 不执行
++ 1. try 代码有误，不执行
 + 2. throw error 不执行
-+ 3. catch 被执行 捕获默认 error
++ 3. catch 被执行，捕获默认 error
 
 *****
 

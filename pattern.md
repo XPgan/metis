@@ -58,9 +58,9 @@
 *****
 
 ### #量词 ###
-+ __default__ 贪婪量词 (右 -> 左 长 -> 短)
-+ __?__ 惰性量词 (左 -> 右 短 -> 长)
-+ __+__ 支配量词 (仅尝试匹配整个字符串 支持度低)
++ __default__ 贪婪量词 (右 -> 左，长 -> 短)
++ __?__ 惰性量词 (左 -> 右，短 -> 长)
++ __+__ 支配量词 (仅尝试匹配整个字符串，支持度低)
 
 ```javascript
 var str = 'aaxxxaaaxxxx';
@@ -98,8 +98,8 @@ pattern.exec(str); // -> null
 ```javascript
 var str = 'my name is sunmy age 16 birth 1992 12 06';
 var pattern = /(\d+)\s(.+)(\d){2}/;
-pattern.exec(str);
-str.match(pattern);
+pattern.exec(str); // -> ['16 birth 1992 12 06', '16', 'birth 1992 12 ', '6']
+str.match(pattern); // -> ['16 birth 1992 12 06', '16', 'birth 1992 12 ', '6']
 ```
 
 *****
@@ -120,6 +120,7 @@ str.match(pattern);
 + __split__
 
     ```javascript
+    var str = 'sunmy age 16 birth 1992';
     var pattern = /\d{2}/;
     str.split(pattern); // -> ['sunmy age ', ' birth ', '', '']
     ```

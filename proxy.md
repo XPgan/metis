@@ -11,16 +11,18 @@ var obj = {
         console.log(this.pro);
     }
 };
-
 $(div).on('event1', obj.fun);
 $(div).on('event2', function () {
     obj.fun();
 });
 
-$(div).trigger('event1');  // -> div  
-                           // -> undefined
-$(div).trigger('event2');  // -> obj  
-                           // -> 'A TEST'
+$(div).trigger('event1');  
+// -> <div></div>
+// -> undefined
+
+$(div).trigger('event2');  
+// -> Object {pro: 'A TEST'}
+// -> 'A TEST'
 ```
 ```javascript
 var div = document.createElement('div');
@@ -34,6 +36,7 @@ var obj = {
 var proxy = $.proxy(obj.fun, obj);
 
 $(div).on('event3', proxy);
-$(div).trigger('event3');  // -> obj  
-                           // -> 'A TEST'
+$(div).trigger('event3');  
+// -> Object {pro: 'A TEST'}
+// -> 'A TEST'
 ```

@@ -5,6 +5,7 @@
 ```javascript
 var apply = $type.prototype.$method.apply(obj, [params]);
 ```
+
 ### call ###
 
 ```javascript

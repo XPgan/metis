@@ -5,10 +5,11 @@
 
 ```javascript
 console.log('first');
-
 var t = setTimeout(function () {
     console.log('setTimeout');
 }, 0);
-
 console.log('second');
+// -> 'first'
+// -> 'second'
+// -> 'setTimeout'
 ```

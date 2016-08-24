@@ -91,6 +91,35 @@ pattern.exec(str); // -> ['d']
 pattern.exec(str); // -> null
 ```
 
+#### *环视 ####
++ __?=expression__ 顺序肯定环视 (右侧匹配 expression)
++ __?!expression__ 顺序否定环视 (右侧不匹配 expression)
++ __?<=expression__ 逆序肯定环视 (左侧匹配 expression)
++ __?<!expression__ 逆序否定环视 (左侧不匹配 expression)
+
+```javascript
+var str = 'sunmy age 1992';
+var pattern = /\w{3}(?=\s\d)/g;
+pattern.exec(str); // -> ['age']
+```
+```javascript
+var str = 'bir1992th';
+var pattern = /\w(?!\d)/g;
+pattern.exec(str); // -> ['c']
+pattern.exec(str); // -> ['3']
+pattern.exec(str); // -> ['v']
+pattern.exec(str); // -> ['n']
+pattern.exec(str); // -> null
+```
+```javascript
+var str = 'bir1992th';
+var pattern = /\w(?=\D)/g;
+pattern.exec(str); // -> ['c']
+pattern.exec(str); // -> ['3']
+pattern.exec(str); // -> ['v']
+pattern.exec(str); // -> null
+```
+
 *****
 
 ### #子匹配 ###
@@ -110,12 +139,17 @@ str.match(pattern); // -> ['16 birth 1992 12 06', '16', 'birth 1992 12 ', '6']
     ```javascript
     var str = 'sunmy age 16 birth 1992';
     var pattern = /\d{2}/;
-    str.replace(pattern, 's'); // -> sunmy age s birth 1992
+    str.replace(pattern, 's'); // -> 'sunmy age s birth 1992'
     ```
     ```javascript
     var str = 'sunmy age 16 birth 1992';
     var pattern = /\d{2}/g;
-    str.replace(pattern, 's'); // -> sunmy age s birth ss
+    str.replace(pattern, 's'); // -> 'sunmy age s birth ss'
+    ```
+    ```javascript
+    var tel = '(010)12345678 (022)23456798 (011)12356895';
+    var pattern = /\((\d{3})\)(\d{8})/g;
+    tel.replace(pattern, '$1-$2'); // -> '010-12345678 022-23456798 011-12356895'
     ```
 + __split__
 

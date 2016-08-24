@@ -1,4 +1,4 @@
-### #概念 ###
+## 概念 ##
 
 + [闭包](https://github.com/sunmengyuan/note/blob/master/content/javascript/closure.md)
 
@@ -14,15 +14,15 @@
     
     + [setTimeout](https://github.com/sunmengyuan/note/blob/master/content/javascript/setTimeout.md)
 
-__=> extending__
+=> extending
 
-+ concept
++ __concept__
     
     + [柯里化](https://github.com/sunmengyuan/note/blob/master/content/javascript/curry.md)
 
     + [尾调用及尾递归](https://github.com/sunmengyuan/note/blob/master/content/javascript/tco.md)
 
-+ application
++ __application__
     
     + regExp
         
@@ -34,27 +34,15 @@ __=> extending__
 
         + [动画队列](https://github.com/sunmengyuan/note/blob/master/content/javascript/queue.html)
 
-+ phenomenon
++ __phenomenon__
     
     + [点透](https://github.com/sunmengyuan/note/blob/master/content/javascript/tap.html)
 
 *****
 
-### #关键字 ###
+## 属性及方法 ##
 
-+ [this](https://github.com/sunmengyuan/note/blob/master/content/javascript/this.md)
-
-+ [return](https://github.com/sunmengyuan/note/blob/master/content/javascript/return.html)
-
-+ [break - continue](https://github.com/sunmengyuan/note/blob/master/content/javascript/break-continue.md)
-
-+ [try + catch + finally](https://github.com/sunmengyuan/note/blob/master/content/javascript/try-catch-finally.md)
-
-*****
-
-### #属性及方法 ###
-
-+ property
++ __property__
     
     + [localStorage](https://github.com/sunmengyuan/note/blob/master/content/javascript/localStorage.html)
     
@@ -64,7 +52,7 @@ __=> extending__
     
     + [client - page - screen](https://github.com/sunmengyuan/note/blob/master/content/javascript/coordinate.html)
 
-+ method
++ __method__
     
     + [eval](https://github.com/sunmengyuan/note/blob/master/content/javascript/eval.md)
     
@@ -80,6 +68,18 @@ __=> extending__
     
     + [map - each](https://github.com/sunmengyuan/note/blob/master/content/javascript/map-each.md)
 
-    __=> comparison__
+    => comparison
 
     + [string - array](https://github.com/sunmengyuan/note/blob/master/content/javascript/string-array.md)
+    
+*****
+
+## 关键字 ##
+
++ [this](https://github.com/sunmengyuan/note/blob/master/content/javascript/this.md)
+
++ [return](https://github.com/sunmengyuan/note/blob/master/content/javascript/return.html)
+
++ [break - continue](https://github.com/sunmengyuan/note/blob/master/content/javascript/break-continue.md)
+
++ [try + catch + finally](https://github.com/sunmengyuan/note/blob/master/content/javascript/try-catch-finally.md)

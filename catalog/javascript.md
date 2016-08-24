@@ -14,7 +14,7 @@
     
     + [setTimeout](https://github.com/sunmengyuan/note/blob/master/content/javascript/setTimeout.md)
 
-__> extending__
+__=> extending__
 
 + concept
     
@@ -80,6 +80,6 @@ __> extending__
     
     + [map - each](https://github.com/sunmengyuan/note/blob/master/content/javascript/map-each.md)
 
-    __> comparison__
+    __=> comparison__
 
     + [string - array](https://github.com/sunmengyuan/note/blob/master/content/javascript/string-array.md)

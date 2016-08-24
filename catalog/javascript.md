@@ -1,4 +1,4 @@
-## 概念 ##
+### #概念 ###
 
 + [闭包](https://github.com/sunmengyuan/note/blob/master/content/javascript/closure.md)
 
@@ -40,7 +40,7 @@
 
 *****
 
-## 属性及方法 ##
+### #属性及方法 ###
 
 + __property__
     
@@ -74,7 +74,7 @@
     
 *****
 
-## 关键字 ##
+### #关键字 ###
 
 + [this](https://github.com/sunmengyuan/note/blob/master/content/javascript/this.md)
 

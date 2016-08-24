@@ -38,6 +38,8 @@
     
     + [点透](https://github.com/sunmengyuan/note/blob/master/content/javascript/tap.html)
 
+*****
+
 ## 属性及方法 ##
 
 + __property__
@@ -70,6 +72,8 @@
 
     + [string - array](https://github.com/sunmengyuan/note/blob/master/content/javascript/string-array.md)
     
+*****
+
 ## 关键字 ##
 
 + [this](https://github.com/sunmengyuan/note/blob/master/content/javascript/this.md)

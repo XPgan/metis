@@ -1,12 +1,12 @@
 ## #概念 ##
-+ [闭包](https://github.com/sunmengyuan/note/blob/master/content/javascript/closure.md)
-+ [原型继承](https://github.com/sunmengyuan/note/blob/master/content/javascript/prototype.md)
-+ [事件冒泡](https://github.com/sunmengyuan/note/blob/master/content/javascript/propagation.html)
-+ [变量提升](https://github.com/sunmengyuan/note/blob/master/content/javascript/scope.md)
 + [异步编程](https://github.com/sunmengyuan/note/blob/master/content/javascript/asyn-syn.md)
     
     + [promise](https://github.com/sunmengyuan/note/blob/master/content/javascript/promise.md)
     + [setTimeout](https://github.com/sunmengyuan/note/blob/master/content/javascript/setTimeout.md)
++ [闭包](https://github.com/sunmengyuan/note/blob/master/content/javascript/closure.md)
++ [原型继承](https://github.com/sunmengyuan/note/blob/master/content/javascript/prototype.md)
++ [事件冒泡](https://github.com/sunmengyuan/note/blob/master/content/javascript/propagation.html)
++ [变量提升](https://github.com/sunmengyuan/note/blob/master/content/javascript/scope.md)
 
 __extending__
 + concept

@@ -441,7 +441,7 @@ Vue.filter('reverse', function (value) {
 *****
 
 ### #插件 ###
-+ [vuex](https://github.com/sunmengyuan/note/blob/master/vue/vuex.md)
-+ [vue-router](https://github.com/sunmengyuan/note/blob/master/vue/router.md)
-+ [vue-resource](https://github.com/sunmengyuan/note/blob/master/vue/resource.md)
-+ [vue-touch](https://github.com/sunmengyuan/note/blob/master/vue/touch.md)
++ [vuex](https://github.com/sunmengyuan/note/blob/master/content/vue/vuex.md)
++ [vue-router](https://github.com/sunmengyuan/note/blob/master/content/vue/router.md)
++ [vue-resource](https://github.com/sunmengyuan/note/blob/master/content/vue/resource.md)
++ [vue-touch](https://github.com/sunmengyuan/note/blob/master/content/vue/touch.md)

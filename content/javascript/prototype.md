@@ -1,4 +1,4 @@
-# Prototype #
+# 原型继承 #
 
 ```javascript
 /**

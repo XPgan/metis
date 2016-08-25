@@ -1,3 +1,5 @@
+# Javascript #
+
 + [闭包](https://github.com/sunmengyuan/note/blob/master/content/javascript/closure.md)
 
 + [原型继承](https://github.com/sunmengyuan/note/blob/master/content/javascript/prototype.md)
@@ -16,7 +18,7 @@
 
 *****
 
-+ [正则](https://github.com/sunmengyuan/note/blob/master/content/javascript/pattern.md)
++ [正则](https://github.com/sunmengyuan/note/blob/master/content/javascript/regExp.md)
 
 *****
 

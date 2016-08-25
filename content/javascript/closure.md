@@ -1,4 +1,4 @@
-# Closure #
+# 闭包 #
 
 ```javascript
 var self = (function () {

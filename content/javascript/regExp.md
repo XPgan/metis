@@ -1,59 +1,57 @@
-# Pattern #
+# 正则 #
 
 ### #匹配函数 ###
-+ pattern 方法
-    + __exec__
-        
-        ```javascript
-        var str = 'sunmy age 16 birth 1992';
-        var pattern = /\d{2}/;
-        pattern.exec(str); // -> ['16']
-        ```
-        ```javascript
-        var str = 'sunmy age 16 birth 1992';
-        var pattern = /\d{2}/g;
-        pattern.exec(str); // -> ['16']
-        pattern.exec(str); // -> ['19']
-        pattern.exec(str); // -> ['92']
-        pattern.exec(str); // -> null
-        ```
-    + __test__
-        
-        ```javascript
-        var str = 'sunmy age 16 birth 1992';
-        var pattern = /\d{2}/;
-        pattern.test(str); // -> true
-        ```
-        ```javascript
-        var str = 'sunmy age 16 birth 1992';
-        var pattern = /\d{2}/g;
-        pattern.test(str); // -> true
-        ```
-+ string 方法
-    + __match__
++ __exec__
     
-        ```javascript
-        var str = 'sunmy age 16 birth 1992';
-        var pattern = /\d{2}/;
-        str.match(pattern); // -> ['16']
-        ```
-        ```javascript
-        var str = 'sunmy age 16 birth 1992';
-        var pattern = /\d{2}/g;
-        str.match(pattern); // -> ['16', '19', '92']
-        ```
-    + __search__
-        
-        ```javascript
-        var str = 'sunmy age 16 birth 1992';
-        var pattern = /\d{2}/;
-        str.search(pattern); // -> 10
-        ```
-        ```javascript
-        var str = 'sunmy age 16 birth 1992';
-        var pattern = /\d{2}/g;
-        str.search(pattern); // -> 10
-        ```
+    ```javascript
+    var str = 'sunmy age 16 birth 1992';
+    var pattern = /\d{2}/;
+    pattern.exec(str); // -> ['16']
+    ```
+    ```javascript
+    var str = 'sunmy age 16 birth 1992';
+    var pattern = /\d{2}/g;
+    pattern.exec(str); // -> ['16']
+    pattern.exec(str); // -> ['19']
+    pattern.exec(str); // -> ['92']
+    pattern.exec(str); // -> null
+    ```
++ __test__
+    
+    ```javascript
+    var str = 'sunmy age 16 birth 1992';
+    var pattern = /\d{2}/;
+    pattern.test(str); // -> true
+    ```
+    ```javascript
+    var str = 'sunmy age 16 birth 1992';
+    var pattern = /\d{2}/g;
+    pattern.test(str); // -> true
+    ```
++ __match__
+
+    ```javascript
+    var str = 'sunmy age 16 birth 1992';
+    var pattern = /\d{2}/;
+    str.match(pattern); // -> ['16']
+    ```
+    ```javascript
+    var str = 'sunmy age 16 birth 1992';
+    var pattern = /\d{2}/g;
+    str.match(pattern); // -> ['16', '19', '92']
+    ```
++ __search__
+    
+    ```javascript
+    var str = 'sunmy age 16 birth 1992';
+    var pattern = /\d{2}/;
+    str.search(pattern); // -> 10
+    ```
+    ```javascript
+    var str = 'sunmy age 16 birth 1992';
+    var pattern = /\d{2}/g;
+    str.search(pattern); // -> 10
+    ```
 
 *****
 

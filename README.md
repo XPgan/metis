@@ -81,11 +81,6 @@
 
 *****
 
-### 其它 ###
-+ [常用命令行](https://github.com/sunmengyuan/note/blob/master/content/commands.md)
-
-*****
-
 作者：呆恋小喵
 
 欢迎参观：<http://www.miaomie.tech>

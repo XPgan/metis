@@ -14,7 +14,7 @@
     
 + [柯里化](https://github.com/sunmengyuan/note/blob/master/content/javascript/curry.md)
 
-+ [尾调用及尾递归](https://github.com/sunmengyuan/note/blob/master/content/javascript/tco.md)
++ [尾调用](https://github.com/sunmengyuan/note/blob/master/content/javascript/tco.md)
 
 *****
 

@@ -33,6 +33,11 @@ router.go({name: 'user', params: {user_id: '1'}});
 <a v-link="{name: 'user', params: {user_id: '1'}}"></a>
 ```
 
+___v-link=""___
++ exact: true (路径完全匹配)
++ replace: true (不保留历史记录)
++ append: true (追加路径)
+
 *****
 
 ### #嵌套路由 ###

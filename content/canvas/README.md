@@ -1,14 +1,14 @@
 # Canvas #
 
 ### #路径 ###
-+ __path__
 
-    ```javascript
-    context.beginPath(); // 若未开启新路径，路径首尾相接
-    ```
-    ```javascript
-    context.closePath();
-    ```
+```javascript
+context.beginPath(); // 若未开启新路径，路径首尾相接
+```
+```javascript
+context.closePath();
+```
+
 + __arc__
 
     ```javascript

@@ -38,11 +38,6 @@
     ```html
     <polygon points="" />
     ```
-+ _组合_
-
-    ```html
-    <g></g>
-    ```
 + _模块_
 
     ```html

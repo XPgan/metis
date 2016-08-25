@@ -38,7 +38,6 @@ router.go({name: 'profile', params: {user_id: 1}});
 
 *****
 
-### #路由对象 ###
 + __$route.query__
 
     | 模式 | 路径 | 解析结果 |
@@ -51,3 +50,7 @@ router.go({name: 'profile', params: {user_id: 1}});
     | ------------------------------ | ------------------- | -------------------------- |
     | /user/:user_id/diary/:diary_id | /user/1/diary/10    | {user_id: 1, diary_id: 10} |
     | /diary/*key/publish            | /diary/1/10/publish | {key: 1/10}                |
+
+*****
+
++ __router.redirect()__ (重定向)

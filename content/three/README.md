@@ -192,18 +192,6 @@ light.shadowCameraBottom = value;
 
 *****
 
-### #构造 ###
-+ __网格__
-
-    ```javascript
-    var mesh = new THREE.Mesh(geometry, material);
-    mesh.position.set(x, y, z);
-    mesh.scale.set(l, m, n);
-    mesh.rotation.set(angle1, angle2, angle3);
-    ```
-
-*****
-
 ### #纹理贴图 ###
 
 ```javascript
@@ -238,6 +226,14 @@ stats.end();
     ```javascript
     var face = new THREE.Face3(index1, index2, index3);
     ```
++ __网格__
+
+    ```javascript
+    var mesh = new THREE.Mesh(geometry, material);
+    mesh.position.set(x, y, z);
+    mesh.scale.set(l, m, n);
+    mesh.rotation.set(angle1, angle2, angle3);
+    ```    
 + __色值__
 
     ```javascript

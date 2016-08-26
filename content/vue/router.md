@@ -53,4 +53,38 @@ router.go({name: 'profile', params: {user_id: 1}});
 
 *****
 
++ __router.go()__
+
 + __router.redirect()__ (重定向)
+
+*****
+
+### #钩子函数 ###
+
++ __全局钩子函数__
+
+    + beforeEach()
+    
+    + afterEach()
+
++ __组件钩子函数__
+
+    ```
+                    ---- canActivate ------ activate ---- data
+                   |      --------->         ------>
+    |-- canReuse --|     |                  |
+                   |      ----------         -------
+                    ---- canDeactivate ---- deactivate
+    ```
+
+#### *切换对象 ####
+
++ transition.to 
+
++ transition.from 
+
++ transition.next()
+
++ transition.abort()
+
++ transition.redirect()

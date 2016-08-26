@@ -2,7 +2,7 @@
 
 ### #匹配函数 ###
 
-+ __exec__
++ __exec()__
     
     ```javascript
     var str = 'sunmy age 16 birth 1992';
@@ -18,7 +18,7 @@
     pattern.exec(str); // -> null
     ```
     
-+ __test__
++ __test()__
     
     ```javascript
     var str = 'sunmy age 16 birth 1992';
@@ -31,7 +31,7 @@
     pattern.test(str); // -> true
     ```
     
-+ __match__
++ __match()__
 
     ```javascript
     var str = 'sunmy age 16 birth 1992';
@@ -44,7 +44,7 @@
     str.match(pattern); // -> ['16', '19', '92']
     ```
     
-+ __search__
++ __search()__
     
     ```javascript
     var str = 'sunmy age 16 birth 1992';
@@ -142,7 +142,7 @@ str.match(pattern); // -> ['16 birth 1992 12 06', '16', 'birth 1992 12 ', '6']
 
 *****
 
-+ __replace__
++ __replace()__
 
     ```javascript
     var str = 'sunmy age 16 birth 1992';
@@ -160,7 +160,7 @@ str.match(pattern); // -> ['16 birth 1992 12 06', '16', 'birth 1992 12 ', '6']
     tel.replace(pattern, '$1-$2'); // -> '010-12345678 022-23456798 011-12356895'
     ```
 
-+ __split__
++ __split()__
 
     ```javascript
     var str = 'sunmy age 16 birth 1992';

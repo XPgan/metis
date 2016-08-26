@@ -85,8 +85,8 @@ renderer.shadowMapEnabled = true;
 renderer.shadowMapSoft = true;
 ```
 ```javascript
-xxx.castShadow = true;
-xxx.receiveShadow = true;
+obj.castShadow = true;
+obj.receiveShadow = true;
 ```
 ```javascript
 light.shadowCameraVisible = true;

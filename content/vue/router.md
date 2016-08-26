@@ -57,6 +57,10 @@ router.go({name: 'profile', params: {user_id: 1}});
 
 + __router.redirect()__ (重定向)
 
++ __router.replace()__ (不产生历史记录)
+
++ __router.alias()__ (全局别名规则)
+
 *****
 
 ### #钩子函数 ###
@@ -77,11 +81,13 @@ router.go({name: 'profile', params: {user_id: 1}});
                     ---- canDeactivate ---- deactivate
     ```
 
+    ___$loadingRouteData___
+
 #### *切换对象 ####
 
-+ transition.to 
++ transition.to
 
-+ transition.from 
++ transition.from
 
 + transition.next()
 

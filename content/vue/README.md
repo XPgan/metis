@@ -3,9 +3,13 @@
 __数据驱动__ __组件系统__
 
 ### #指令 ###
+
 + __v-model__
+
 + __v-bind:attr.modifiers / :attr.modifiers__
+
     + v-bind:class (class & v-bind:class 共存)
+
     + v-bind:style
 
         ```html
@@ -39,6 +43,7 @@ __数据驱动__ __组件系统__
             border-radius: 10px;
         }
         ```
+
 + __v-if + v-else, v-show + v-else__
 
     ```html
@@ -47,7 +52,9 @@ __数据驱动__ __组件系统__
         <p>paragraph</p>
     </template>
     ```
+
 + __v-for__
+
     + 遍历数组 <$index>
 
         ```html
@@ -56,6 +63,7 @@ __数据驱动__ __组件系统__
             <p>{{ item.paragraph }}</p>
         </template>
         ```
+
     + 遍历对象 <$index, $key>
 
         ```html
@@ -67,12 +75,13 @@ __数据驱动__ __组件系统__
     ___track-by=""___
     - 优点
         - 高效数据刷新
-        - 处理重复数据项
-    - 缺点
-        - 不映射数据项顺序调整
+        - 处理重复数据项   
+    - 缺点    
+        - 不映射数据项顺序调整    
         - 不同步临时状态及组件私有状态
 
 + __v-on:event(param, $event).modifier / @event(param, $event).modifier__
+
 + __v-ref:id__
 
     ```html
@@ -84,11 +93,13 @@ __数据驱动__ __组件系统__
     var parent = new Vue({ el: '#parent' })
     var child = parent.$refs.profile
     ```
+
 + __v-el:id__
 
 *****
 
 ### #组件 ###
+
 + __数据传递__
 
     父级
@@ -158,10 +169,15 @@ __数据驱动__ __组件系统__
         }
     }
     ```
+
 + __通信__
+
     + vm.$on() 监听事件
+
     + vm.$emit() 触发事件
+
     + vm.$dispatch() 派发事件
+
     + vm.$broadcast() 广播事件
 
     父级
@@ -215,6 +231,7 @@ __数据驱动__ __组件系统__
         }
     }
     ```
+
 + __内容分发__
 
     父级
@@ -276,14 +293,21 @@ Vue.component('example', {
 *****
 
 ### #响应 ###
+
 + vm.$set(key, value)
+
 + vm.$delete(key)
+
 + vm.$watch(key, callback)
+
 + vm.$nextTick(callback)
 
 #### *插值 ####
+
 + {{_}}
+
 + {{*_}} (单次插值)
+
 + {{{_}}}
 
 #### *过滤器 ####
@@ -297,6 +321,7 @@ Vue.filter('reverse', function (value) {
 *****
 
 ### #实例 ###
+
 + __构造器__
 
     ```javascript
@@ -306,8 +331,11 @@ Vue.filter('reverse', function (value) {
     var Component = Vue.extend({})
     var instance = new Component()
     ```
+
 + __属性及方法__
+
     + vm.$data
+
     + vm.$computed
     
         ```javascript
@@ -337,6 +365,7 @@ Vue.filter('reverse', function (value) {
             console.log(vm.firstName) // -> 'Sun'
             console.log(vm.lastName) // -> 'My'
         ```
+    
     + _生命周期_
     
         ```javascript
@@ -387,6 +416,7 @@ Vue.filter('reverse', function (value) {
         leaveClass: 'transLeave'
     })
     ```
+
 + __javascript 过渡__
 
     ```javascript
@@ -403,6 +433,7 @@ Vue.filter('reverse', function (value) {
         leaveCancelled: function (el) {}
     })
     ```
+
 + _渐近过渡_
 
     ```html
@@ -441,7 +472,11 @@ Vue.filter('reverse', function (value) {
 *****
 
 ### #插件 ###
+
 + [vuex](https://github.com/sunmengyuan/note/blob/master/content/vue/vuex.md)
+
 + [vue-router](https://github.com/sunmengyuan/note/blob/master/content/vue/router.md)
+
 + [vue-resource](https://github.com/sunmengyuan/note/blob/master/content/vue/resource.md)
+
 + [vue-touch](https://github.com/sunmengyuan/note/blob/master/content/vue/touch.md)

@@ -1,6 +1,7 @@
 # Svg #
 
 ### #元素 ###
+
 + __文本__
 
     ```html
@@ -8,36 +9,43 @@
         <tspan dx="" dy=""></tspan>
     </text>
     ```
+    
 + __矩形__
 
     ```html
     <rect rx="" ry="" />
     ```
+    
 + __圆形__
     
     ```html
     <circle cx="" cy="" r="" /> 
     ```
+    
 + __椭圆__
 
     ```html
     <ellipse cx="" cy="" rx="" ry="" />
     ```
+    
 + __直线__
     
     ```html
     <line x1="" y1="" x2="" y2="" />
     ```
+    
 + __折线__ (非自动闭合)
 
     ```html
     <polyline points="" />
     ```
+    
 + __多边形__ (自动闭合)
 
     ```html
     <polygon points="" />
     ```
+    
 + _模块_
 
     ```html
@@ -52,6 +60,7 @@
     </defs>
     <use xlink:href="#shapeId" />
     ```
+    
 + _路径_
 
     ```html
@@ -59,23 +68,33 @@
     ```
 
     ___d = "M | l | h | v | c | s | q | t | a | Z"___
-    + c + q, s + t (使控制点对称以保证平滑过渡即斜率一致)
+    + c + q, s + t (使控制点对称以保证平滑过渡即斜率一致)  
     + a <-- 轴半径 旋转角 角度范围 弧线方向 终点 -->
 
 *****
 
-### #属性 ###
-+ __线条__
++ __边框属性__
+
     + stroke
+    
     + stroke-width
+    
     + stroke-linecap
+    
     + stroke-linejoin
+    
     + stroke-dasharray
+    
     + stroke-dashoffset
+    
     + stroke-opacity
-+ __填充__
+
++ __填充属性__
+    
     + fill
+    
     + fill-rule
+        
         + nonezero 非零填充规则 
                    
             > 从左向右穿过区域射线 +1，从右向左穿过区域射线 -1。矢量和：为 0 为图形外部；非 0 为图形内部。
@@ -87,12 +106,13 @@
     + fill-opacity
     
     #### *渐变 ####
+    
     + stop-color
+    
     + stop-opacity
 
 *****
 
-### #特效 ###
 + __滤镜__
 
     ```html
@@ -103,8 +123,10 @@
     </defs>
     <rect filter="url(#filterId)" />
     ```
+    
 + __渐变__
-    + radialGradient
+    
+    + 放射渐变
     
         ```html
         <defs> 
@@ -117,7 +139,7 @@
 
         备注：渐变焦点与渐变圆相切 / 相离时会出现裁切效果
             
-    + linearGradient
+    + 线性渐变
     
         ```html
         <defs>
@@ -129,11 +151,11 @@
         ```
 
     ___spreadMethod = "pad | repeat | reflect"___
-    + pad 剩余平铺
-    + repeat 重复平铺
+    + pad 剩余平铺    
+    + repeat 重复平铺   
     + reflect 镜像平铺
 
-+ __图案__
++ __贴图__
 
     ```html
     <defs>
@@ -144,11 +166,11 @@
     <rect filter="url(#patternId)" />
     ```
 
-    ___patternUnits = "userSpaceOnUse | objectBoundingBox"___
-    + userSpaceOnUse 图案单位不缩放
+    ___patternUnits = "userSpaceOnUse | objectBoundingBox"___    
+    + userSpaceOnUse 图案单位不缩放    
     + objectBoundingBox 图案单位缩放
 
-+ __连接标记__
++ __衔接点__
 
     ```html
     <defs>
@@ -158,8 +180,8 @@
     </defs>
     ```
 
-    ___markerUnits = "strokeWidth | userSpaceOnUse"___
-    + strokeWidth 适应路径描边
+    ___markerUnits = "strokeWidth | userSpaceOnUse"___   
+    + strokeWidth 适应路径描边   
     + userSpaceOnUse
 
 + __文字路径__
@@ -231,12 +253,12 @@ ___calcMode = "discrete | linear | paced |spline"___
 
 *****
 
-### #方法 ###
 + __暂停__
 
     ```javascript
     svg.pauseAnimations();
     ```
+    
 + __重启__
 
     ```javascript

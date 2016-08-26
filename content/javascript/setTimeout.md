@@ -1,6 +1,7 @@
 # SetTimeout #
 
 + __$(document).ready()__ (dom 加载完毕)
+
 + __$(window).load()__ (source 加载完毕)
 
 ```javascript

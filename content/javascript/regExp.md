@@ -1,6 +1,7 @@
 # 正则 #
 
 ### #匹配函数 ###
+
 + __exec__
     
     ```javascript
@@ -16,6 +17,7 @@
     pattern.exec(str); // -> ['92']
     pattern.exec(str); // -> null
     ```
+    
 + __test__
     
     ```javascript
@@ -28,6 +30,7 @@
     var pattern = /\d{2}/g;
     pattern.test(str); // -> true
     ```
+    
 + __match__
 
     ```javascript
@@ -40,6 +43,7 @@
     var pattern = /\d{2}/g;
     str.match(pattern); // -> ['16', '19', '92']
     ```
+    
 + __search__
     
     ```javascript
@@ -56,8 +60,11 @@
 *****
 
 ### #量词 ###
+
 + __default__ 贪婪量词 (右 -> 左，长 -> 短)
+
 + __?__ 惰性量词 (左 -> 右，短 -> 长)
+
 + __+__ 支配量词 (仅尝试匹配整个字符串，支持度低)
 
 ```javascript
@@ -90,9 +97,13 @@ pattern.exec(str); // -> null
 ```
 
 #### *环视 ####
+
 + __?=expression__ 顺序肯定环视 (右侧匹配 expression)
+
 + __?!expression__ 顺序否定环视 (右侧不匹配 expression)
+
 + __?<=expression__ 逆序肯定环视 (左侧匹配 expression)
+
 + __?<!expression__ 逆序否定环视 (左侧不匹配 expression)
 
 ```javascript
@@ -131,7 +142,6 @@ str.match(pattern); // -> ['16 birth 1992 12 06', '16', 'birth 1992 12 ', '6']
 
 *****
 
-### #应用 ###
 + __replace__
 
     ```javascript
@@ -149,6 +159,7 @@ str.match(pattern); // -> ['16 birth 1992 12 06', '16', 'birth 1992 12 ', '6']
     var pattern = /\((\d{3})\)(\d{8})/g;
     tel.replace(pattern, '$1-$2'); // -> '010-12345678 022-23456798 011-12356895'
     ```
+
 + __split__
 
     ```javascript

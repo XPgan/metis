@@ -16,17 +16,12 @@
 <script>
     var sketch = {
 
-        /**
-         * drag 是否处于拖拽过程
-         * dragged 被拖拽控制点
-         */
-
         canvas: null,
         context: null,
         ratio: null,
 
-        drag: false,
-        dragged: null,
+        isDragging: false,
+        draggedPoint: null,
         coordinate: {
             sX: 50,
             sY: 100,
@@ -95,8 +90,8 @@
                     if (coo) {
                         var isInPath = _this.context.isPointInPath(_this.ratio * coo.x, _this.ratio * coo.y);
                         if (isInPath) {
-                            _this.drag = true;
-                            _this.dragged = key;
+                            _this.isDragging = true;
+                            _this.draggedPoint = key;
                         }
                     }
                 } else {
@@ -114,10 +109,10 @@
             var width = _this.canvas.width;
             var height = _this.canvas.height;
             var redraw = function (e) {
-                if (flag && _this.drag) {
+                if (flag && _this.isDragging) {
                     // 选取点关键字
-                    var draggedX = _this.dragged.replace('Y', 'X');
-                    var draggedY = _this.dragged;
+                    var draggedX = _this.draggedPoint.replace('Y', 'X');
+                    var draggedY = _this.draggedPoint;
 
                     // 重绘贝塞尔曲线及辅助点
                     _this.coordinate[draggedX] = e.pageX;
@@ -145,11 +140,11 @@
             $canvas.on({
                 'mouseup': function () {
                     flag = false;
-                    _this.drag = false;
+                    _this.isDragging = false;
                 },
                 'touchend': function () {
                     flag = false;
-                    _this.drag = false;
+                    _this.isDragging = false;
                 }
             });
             $canvas.on({

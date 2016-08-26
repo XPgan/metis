@@ -139,7 +139,7 @@ object.total(6); // -> 180
 
 *****
 
-___循环 + 闭包___
+__循环 + 闭包__
 
 ```javascript
 var result = [];

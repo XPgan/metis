@@ -1,6 +1,14 @@
 # ECMAScript 6 #
 
-__transcoding__
+- 函数默认值：function foo (x = 0, y = 0) {}
+
+- 扩展运算符：...
+
+- 函数绑定运算符：::
+
+*****
+
+__转码__
 ```html
 <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
 <script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
@@ -10,18 +18,12 @@ __transcoding__
 </script>
 ```
 
-__improvement__
-- 函数默认值：function foo (x = 0, y = 0) {}
-- 扩展运算符：...
-- 函数绑定运算符：::
-
-__tips__
-- 默认值生效：=== undefined
-
 *****
 
 ### #变量 ###
+
 + __let__
+
 + __const__ (只读常量)
 
     ```javascript

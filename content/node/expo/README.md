@@ -1,4 +1,5 @@
 # 简易微博系统 #
+
 ### express + mongodb + fs ###
 
 __用户注册本站后即可发布个人日记，并可粉丝他人、收藏他人日记__
@@ -8,11 +9,17 @@ __用户注册本站后即可发布个人日记，并可粉丝他人、收藏他
 *****
 
 参考资料
+
 + [Node.js开发指南](https://github.com/sunmengyuan/book/blob/master/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
+
 + [深入浅出Node.js](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
+
 + [深入学习MongoDB](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0MongoDB.pdf)
+
 + [MongoDB for GIANT Ideas | MongoDB](https://www.mongodb.com/)
+
 + [mongoose文档](http://www.nodeclass.com/api/mongoose.html)
+
 + [Express - 基于Node.js平台的web应用开发框架](http://www.expressjs.com.cn/)
 
 *****
@@ -56,23 +63,39 @@ var diarySchema = new Schema({
 *****
 
 ### #pages ###
+
 + __/__ (首页) [效果图](./materials/index.png)
+	
 	+ 最新注册用户列表
+	
 	+ 精选日记列表
+	
 	+ 登录
+
 + __/register__ (注册页) [效果图](./materials/register.png)
+
 	+ 注册
+
 + __/profile/:id__ (用户主页) [效果图](./materials/profile.png)
+
 	+ 用户信息
+
 	+ 用户日记列表
+
 + __/diary/publish__ (发布日记页) [效果图](./materials/publish.png)
+
 	+ 发布日记
+
 + __/diary/:id__ (日记详情页)
+
 	+ 作者信息
+
 	+ 日记详情
 
 ### #modules ###
+
 + `require('log')`
+
 	+ 登录 __log.login()__
 	
 	    客户端
@@ -95,6 +118,7 @@ var diarySchema = new Schema({
             error: function () {}
         });
         ```
+	
 	+ 注册 __log.register()__
 	
 	    客户端
@@ -122,6 +146,7 @@ var diarySchema = new Schema({
             error: function () {}
         });
         ``` 
+	
 	+ 注销 __log.logout()__
 	
 	    客户端
@@ -136,6 +161,7 @@ var diarySchema = new Schema({
             error: function () {}
         });
         ```
+	
 	+ 退出登录 __log.exit()__	
 	
 	    客户端
@@ -150,7 +176,9 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
+
 + `require('find')`
+
 	+ 查询当前记录 __find.info()__
 	
 	    服务端
@@ -158,6 +186,7 @@ var diarySchema = new Schema({
 	    find.do(type, id);
 	    find.info(res, function (info) {});
 	    ```
+	
 	+ 查询所有记录 __find.all()__	
 	
 	    服务端 
@@ -165,7 +194,9 @@ var diarySchema = new Schema({
 	    find.do(type);
 	    find.all(res, function (info) {});
 	    ```
+
 + `require('diary')`
+
 	+ 发布日记 __diary.publish()__
 	
 	    客户端
@@ -188,7 +219,9 @@ var diarySchema = new Schema({
             error: function () {}
         });
 	    ```
+	
 	+ 点赞日记 __diary.favour__	
+
 	    + __diary.favour.verify()__
 	    
 	        客户端
@@ -203,6 +236,7 @@ var diarySchema = new Schema({
                 error: function () {}
             });
             ```
+	    
 	    + __diary.favour.cancel()__
 	    
 	        客户端
@@ -217,10 +251,15 @@ var diarySchema = new Schema({
                 error: function () {}
             });
             ```
+    
     + 编辑日记 __diary.edit()__
+    
     + 移除日记 __diary.remove()__
+
 + `require('user')`
+	
 	+ 编辑用户信息 __user.edit__
+	    
 	    + __user.edit.info()__
 	    
 	        客户端
@@ -242,6 +281,7 @@ var diarySchema = new Schema({
                 error: function () {}
             });
             ```
+	    
 	    + __user.edit.portrait()__
 	    
 	        客户端
@@ -267,4 +307,5 @@ var diarySchema = new Schema({
                 error: function () {}
             });
             ```
+	
 	+ 关注用户 __user.attention()__

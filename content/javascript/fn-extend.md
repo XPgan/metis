@@ -12,6 +12,7 @@
     $.fun(); // error
     $(div).fun(); // -> 'A TEST'
     ```
+    
 + __$.extend()__ (类级别)
 
     ```javascript
@@ -52,6 +53,7 @@
     var newObj = $.extend(true, {}, obj1, obj2, obj3);
     console.log(newObj); // -> Object {name: 'y', age: 23, object: {A: 'Science', B: 'Chinese', C: 'PE'}, from: 'TJ'}
     ```
+    
 + __$.fn.extend()__ (对象级别)
 
     ```javascript

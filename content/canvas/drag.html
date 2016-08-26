@@ -16,17 +16,12 @@
 <script>
     var sketch = {
 
-        /**
-         * drag 是否处于拖拽过程
-         * dragged 被拖拽 item 索引值
-         */
-
         ratio: null,
         canvas: null,
         context: null,
 
-        drag: false,
-        dragged: null,
+        isDragging: false,
+        draggedItem: null,
         items: [
             {x: 100, y: 100, r: 50, bR: 10, n: 5},
             {x: 180, y: 180, r: 60, bR: 20, n: 3},
@@ -77,8 +72,8 @@
                 if (coo) {
                     var isInPath = _this.context.isPointInPath(_this.ratio * coo.x, _this.ratio * coo.y);
                     if (isInPath) {
-                        _this.drag = true;
-                        _this.dragged = i;
+                        _this.isDragging = true;
+                        _this.draggedItem = i;
                     }
                 }
             }
@@ -90,8 +85,8 @@
             var width = _this.canvas.width;
             var height = _this.canvas.height;
             var redraw = function (e) {
-                if (flag && _this.drag) {
-                    var dragged = _this.items[_this.dragged];
+                if (flag && _this.isDragging) {
+                    var dragged = _this.items[_this.draggedItem];
                     var newItem = {
                         x: e.pageX,
                         y: e.pageY,
@@ -99,7 +94,7 @@
                         bR: dragged.bR,
                         n: dragged.n
                     };
-                    _this.items.splice(_this.dragged, 1, newItem);
+                    _this.items.splice(_this.draggedItem, 1, newItem);
                     _this.context.clearRect(0, 0, width, height);
                     _this.drawItem();
                 }
@@ -122,11 +117,11 @@
             $canvas.on({
                 'mouseup': function () {
                     flag = false;
-                    _this.drag = false;
+                    _this.isDragging = false;
                 },
                 'touchend': function () {
                     flag = false;
-                    _this.drag = false;
+                    _this.isDragging = false;
                 }
             });
             $canvas.on({

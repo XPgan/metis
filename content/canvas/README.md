@@ -3,31 +3,34 @@
 ### #路径 ###
 
 ```javascript
-context.beginPath(); // 若未开启新路径，路径首尾相接
+context.beginPath();
 ```
 ```javascript
 context.closePath();
 ```
 
-+ __arc__
+注意：若未开启新路径，原路径与新路径首尾相接
+
++ __圆弧__
 
     ```javascript
     context.arc(x, y, r, sAngle, eAngle, clockwise);
     ```
-+ __rect__
+    
++ __矩形__
 
     ```javascript
     context.rect(x, y, w, h);
     ```
-+ __line__
+    
++ __线段__
 
     ```javascript
-    context.moveTo(x, y);
+    context.moveTo(x1, y1);
+    context.lineTo(x2, y2);
     ```
-    ```javascript
-    context.lineTo(x, y);
-    ```
-+ __bezierCurve__
+    
++ __贝塞尔曲线__
 
     ```javascript
     context.quadraticCurveTo(cX, cY, endX, endY);
@@ -38,8 +41,31 @@ context.closePath();
 
 *****
 
-### #画布 ###
-+ __clip__
+### #填充 ###
+
++ __渐变填充__
+
+    ```javascript
+    context.createLinearGradient(startX, startY, endX, endY);
+    ```
+    ```javascript
+    context.createRadialGradient(startX, startY, startR, endX, endY, endR);
+    ```
+
+#### *非零环绕规则 ####
+
+> 区域校验线段所通过的所有路径的方向矢量和：为 0 不填充；非 0 填充。
+
+```javascript
+context.beginPath();
+context.arc(100, 100, 70, 0, 2 * Math.PI, false);
+context.arc(100, 100, 50, 0, 2 * Math.PI, true);
+context.fill();
+```
+
+*****
+
++ __画布裁切__
 
     ```javascript
     // 存储画布未被裁切时状态
@@ -62,7 +88,8 @@ context.closePath();
     context.arc(250, 250, 100, 0, 2 * Math.PI);
     context.stroke();
     ```
-+ __transform__
+    
++ __坐标变换__
 
     ```javascript
     context.rotate(angle);
@@ -74,55 +101,32 @@ context.closePath();
     context.scale(num, num);
     ```
 
-    _矩阵变换_
+    _混合变换_
     ```javascript
     context.transform(a, b, c, d, e, f);
     ```
     ```javascript
     context.setTransform(a, b, c, d, e, f);
     ```
-+ __imageData__
+    
++ __图像数据__
 
     ```javascript
     context.getImageData(x, y, w, h);
     ```
     ```javascript  
-    context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH); // 不受全局属性影响
+    context.putImageData(data, x, y, dirtyX, dirtyY, dirtyW, dirtyH);
     ```
     ```javascript
     context.createImageData(w, h);
     ```
     ```javascript
-    context.drawImage(imageObj, sX, sY, sW, sH, dX, dY, dW, dH); // 须在图片加载完毕后执行，受全局属性影响
+    context.drawImage(imageObj, sX, sY, sW, sH, dX, dY, dW, dH);
     ```
 
 *****
 
-### #填充 ###
-+ __gradient__
-
-    ```javascript
-    context.createLinearGradient(startX, startY, endX, endY);
-    ```
-    ```javascript
-    context.createRadialGradient(startX, startY, startR, endX, endY, endR);
-    ```
-
-#### *非零环绕规则 ####
-
-> 区域校验线段所通过的所有路径的方向矢量和：为 0 不填充；非 0 填充。
-
-```javascript
-context.beginPath();
-context.arc(100, 100, 70, 0, 2 * Math.PI, false);
-context.arc(100, 100, 50, 0, 2 * Math.PI, true);
-context.fill();
-```
-
-*****
-
-### #绘制 ###
-+ __rect__
++ __矩形__
 
     ```javascript
     context.strokeRect(x, y, w, h);
@@ -133,7 +137,8 @@ context.fill();
     ```javascript
     context.clearRect(x, y, w, h);
     ```
-+ __text__
+    
++ __文本__
 
     ```javascript
     context.strokeText(text, x, y, maxWidth);
@@ -147,21 +152,36 @@ context.fill();
 
 *****
 
-### #属性 ###
-+ __全局__
++ __全局属性__
+
     + globalAlpha
+    
     + globalCompositeOperation
-+ __阴影__
+    
++ __阴影属性__
+
     + shadowColor
+
     + shadowOffsetX
+
     + shadowOffsetY
+
     + shadowBlur
-+ __线__
+
++ __线段属性__
+
     + lineWidth
+
     + lineJoin
+
     + lineCap
+
     + miterLimit
-+ __文本__
+
++ __文本属性__
+
     + font
+
     + textAlign
+
     + textBaseline

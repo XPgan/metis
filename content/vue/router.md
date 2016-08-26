@@ -16,7 +16,7 @@ router.map({
             }
         }
     }
-});
+})
 ```
 
 #### *具名路径 ####
@@ -27,10 +27,10 @@ router.map({
         name: 'profile',
         component: Profile
     }
-});
+})
 ```
 ```javascript
-router.go({name: 'profile', params: {user_id: 1}});
+router.go({name: 'profile', params: {user_id: 1}})
 ```
 ```html
 <a v-link="{name: 'profile', params: {user_id: 1}}"></a>

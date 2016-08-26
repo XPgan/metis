@@ -294,13 +294,13 @@ Vue.component('example', {
 
 ### #响应 ###
 
-+ vm.$set(key, value)
++ vm.$set()
 
-+ vm.$delete(key)
++ vm.$delete()
 
-+ vm.$watch(key, callback)
++ vm.$watch()
 
-+ vm.$nextTick(callback)
++ vm.$nextTick()
 
 #### *插值 ####
 

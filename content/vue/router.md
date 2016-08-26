@@ -63,14 +63,14 @@ router.go({name: 'profile', params: {user_id: 1}});
 
 + __全局钩子函数__
 
-    + beforeEach()
-    
-    + afterEach()
+    + router.beforeEach()
+
+    + router.afterEach()
 
 + __组件钩子函数__
 
     ```
-                    ---- canActivate ------ activate ---- data
+                    ---- canActivate ------ activate ------ data
                    |      --------->         ------>
     |-- canReuse --|     |                  |
                    |      ----------         -------

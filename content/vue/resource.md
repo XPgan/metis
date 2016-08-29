@@ -1,24 +1,36 @@
 ## [vue-resource](https://github.com/vuejs/vue-resource) ##
 
 ```javascript
-this.$http.get(url, [options])
+this.$http.get(url, options)
     .then((response) => {
-        // success callback
+        // 请求成功回调
     }, (response) => {
-        // error callback
+        // 请求失败回调
     })
     .catch((response) => {
-        // catch callback
+        // 程序异常回调
     })
 ```
 ```javascript
-this.$http.post(url, data, [options])
+this.$http.post(url, body, options)
     .then((response) => {
-        // success callback
+        // 请求成功回调
     }, (response) => {
-        // error callback
+        // 请求失败回调
     })
     .catch((response) => {
-        // catch callback
+        // 程序异常回调
     })
+```
+
+### #拦截器 ###
+
+```javascript
+Vue.http.interceptors.push((request, next) => {
+		// 请求发送前回调
+	next((response) => {
+		// 请求发送后回调
+		return response
+	})
+})
 ```

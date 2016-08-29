@@ -57,7 +57,7 @@ router.go({name: 'profile', params: {user_id: 1}})
 
 + __router.redirect()__ (重定向)
 
-+ __router.replace()__ (不产生历史记录)
++ __router.replace()__ (无历史记录)
 
 + __router.alias()__ (全局别名规则)
 
@@ -80,8 +80,6 @@ router.go({name: 'profile', params: {user_id: 1}})
                    |      ----------         -------
                     ---- canDeactivate ---- deactivate
     ```
-
-    ___$loadingRouteData___
 
 #### *切换对象 ####
 

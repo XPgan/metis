@@ -74,11 +74,11 @@ router.go({name: 'profile', params: {user_id: 1}})
 + __组件钩子函数__
 
     ```
-                    ---- canActivate ------ activate ------ data
-                   |      --------->         ------>
-    |-- canReuse --|     |                  |
-                   |      ----------         -------
-                    ---- canDeactivate ---- deactivate
+                        ---- canActivate ------ activate ------ data
+                       |       ------>           ------>
+    |---- canReuse ----|      |                 |
+                       |       -------           -------
+                        ---- canDeactivate ---- deactivate
     ```
 
 #### *切换对象 ####

@@ -18,7 +18,7 @@
 
 #### 参考资料 ####
 
-+ [vue.js](http://cn.vuejs.org/)
++ [Vue.js](http://cn.vuejs.org/)
 
 #### [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue/README.md) ####
 

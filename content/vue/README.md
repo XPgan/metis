@@ -480,3 +480,7 @@ Vue.filter('reverse', function (value) {
 + [vue-resource](https://github.com/sunmengyuan/note/blob/master/content/vue/resource.md)
 
 + [vue-touch](https://github.com/sunmengyuan/note/blob/master/content/vue/touch.md)
+
+*****
+
+[github](https://github.com/vuejs)

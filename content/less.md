@@ -9,7 +9,7 @@ __特性__
 
 __解析__
 ```linux
-$ lessc 文件名.less > 目标文件名.css
+lessc $source.less > $target.css
 ```
 
 压缩
@@ -20,9 +20,7 @@ $ lessc 文件名.less > 目标文件名.css
 
 ### #变量 ###
 
-```
 @变量名: 变量值;
-```
 
 *****
 

@@ -22,6 +22,8 @@
         └── products.js
 ```
 
+*****
+
 Cart.vue
 ```html
 <template>

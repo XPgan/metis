@@ -6,9 +6,9 @@
 
     + add
 
-        + __push(...)__ (末位)
+        + __push(items)__ (末位)
 
-        + __unshift(...)__ (首位)
+        + __unshift(items)__ (首位)
 
     + remove
 
@@ -18,7 +18,7 @@
 
     + splice
 
-        + __splice(index, num, ...)__
+        + __splice(index, num, items)__
 
     + sort
 
@@ -30,7 +30,7 @@
 
     + __slice(start, end)__
 
-    + __concat(...)__
+    + __concat(items)__
 
     + __join(separator)__
         
@@ -40,7 +40,7 @@
 
     + concat
 
-        + __concat(...)__
+        + __concat(items)__
 
     + slice
 

@@ -68,7 +68,7 @@ actions.js
 import * as types from './mutation-types'
 
 export const checkout = ({dispatch, state}, item) => {
-    const items = state.products.all
+    var items = state.products.all
     items[item.id] || dispatch(types.ADD_PRODUCT, item)
 }
 ```

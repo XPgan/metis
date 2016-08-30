@@ -67,8 +67,8 @@ actions.js
 ```javascript
 import * as types from './mutation-types'
 
-export const checkout = ({dispatch, store}, item) => {
-    const items = store.products.all
+export const checkout = ({dispatch, state}, item) => {
+    const items = state.products.all
     items[item.id] || dispatch(types.ADD_PRODUCT, item)
 }
 ```

@@ -1,4 +1,4 @@
-# Vue.js #
+# [Vue.js](https://github.com/vuejs) #
 
 __数据驱动__ __组件系统__
 
@@ -473,14 +473,22 @@ Vue.filter('reverse', function (value) {
 
 ### #插件 ###
 
-+ [vuex](https://github.com/sunmengyuan/note/blob/master/content/vue/vuex.md)
++ vuex
 
-+ [vue-router](https://github.com/sunmengyuan/note/blob/master/content/vue/router.md)
+    + [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue/vuex.md)
+    
+    + [参考资料](http://vuex.vuejs.org/zh-cn/index.html)
 
-+ [vue-resource](https://github.com/sunmengyuan/note/blob/master/content/vue/resource.md)
++ vue-router
 
-+ [vue-touch](https://github.com/sunmengyuan/note/blob/master/content/vue/touch.md)
+    + [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue/router.md) 
+    
+    + [参考资料](http://router.vuejs.org/zh-cn/index.html)
 
-*****
++ vue-resource
 
-[github](https://github.com/vuejs)
+    + [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue/resource.md)
+
++ vue-touch
+
+    + [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue/touch.md)

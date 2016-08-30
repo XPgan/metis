@@ -1,4 +1,4 @@
-## [vue-router](http://router.vuejs.org/zh-cn/index.html) ##
+## [vue-router](https://github.com/vuejs/vue-router) ##
 
 ```javascript
 router.map({

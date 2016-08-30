@@ -1,2 +1,2 @@
-## [vuex](http://vuex.vuejs.org/zh-cn/index.html) ##
+## [vuex](https://github.com/vuejs/vuex) ##
 

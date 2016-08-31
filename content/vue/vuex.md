@@ -85,7 +85,6 @@ import {ADD_PRODUCT} from '../mutation-types'
 const state = {
     all: {}
 }
-
 const mutations = {
     [ADD_PRODUCT] (state, item) {
         state.all[item.id] = item

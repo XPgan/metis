@@ -7,7 +7,7 @@
 │
 ├── components
 │   │
-│   └── Cart.vue
+│   └── Component.vue
 │
 └── vuex
     │
@@ -19,12 +19,12 @@
     │
     └── modules
         │
-        └── products.js
+        └── module.js
 ```
 
 *****
 
-Cart.vue
+Component.vue
 ```html
 <template>
     <ul>
@@ -38,7 +38,7 @@ Cart.vue
     export default {
         vuex: {
             getters: {
-                items: ({products}) => products.all
+                items: ({module}) => module.items
             },
             actions: {
                 checkout
@@ -52,13 +52,13 @@ store.js
 ```javascript
 import Vue from 'vue'
 import Vuex from 'vuex'
-import products from './modules/products'
+import module from './modules/module'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     modules: {
-        products
+        module
     }
 })
 ```
@@ -68,26 +68,26 @@ actions.js
 import * as types from './mutation-types'
 
 export const checkout = ({dispatch, state}, item) => {
-    var items = state.products.all
-    items[item.id] || dispatch(types.ADD_PRODUCT, item)
+    var items = state.module.items
+    items[item.id] || dispatch(types.ADDITEM, item)
 }
 ```
 
 mutation-types.js
 ```javascript
-export const ADD_PRODUCT = 'ADD_PRODUCT'
+export const ADDITEM = 'ADDITEM'
 ```
 
-products.js
+module.js
 ```javascript
-import {ADD_PRODUCT} from '../mutation-types'
+import {ADDITEM} from '../mutation-types'
 
 const state = {
-    all: {}
+    items: {}
 }
 const mutations = {
-    [ADD_PRODUCT] (state, item) {
-        state.all[item.id] = item
+    [ADDITEM] (state, item) {
+        state.items[item.id] = item
     }
 }
 

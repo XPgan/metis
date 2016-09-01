@@ -159,6 +159,3 @@ ajax('url').then(function (data) {
     console.log(err);
 });
 ```
-
-### Generator 函数 ###
-

@@ -18,6 +18,8 @@
 - 块级作用域
 - 重复声明报错
 
+*****
+
 ### #解构赋值 ###
 
 ```javascript
@@ -56,77 +58,77 @@ console.log(age); // -> '23'
 
 *****
 
-### #字符串扩展 ###
++ __字符串扩展__
 
-+ __str.startsWith(), str.endsWith(), str.includes()__
+    + str.startsWith(), str.endsWith(), str.includes()
 
-#### *模板字符串 ####
-
-```javascript
-var name = 'sunmy';
-var module = `My name is ${name}`;
-```
-
-### #数值扩展 ###
-
-+ __Number.parseInt(), Number.parseFloat()__
-
-+ __Number.isInteger()__
-
-### #数组扩展 ###
-
-扩展运算符：...
-
-+ __Array.from(), Array.of()__
-
-+ __array.find(), array.findIndex()__ (返回首个查询结果)
-
-+ __array.entries(), array.keys(), array.values()__
-
-### #对象扩展 ###
-
-+ __Object.entries(), Object.keys(), Object.values()__
-
-+ __Object.assign()__ (浅拷贝)
-
+    #### *模板字符串 ####
+    
     ```javascript
-    var target = {a: 1};
-    var source1 = {b: 2};
-    var source2 = {c: 3};
-
-    Object.assign(target, source1, source2);
-    console.log(target); // -> {a: 1, b: 2, c: 3}
+    var name = 'sunmy';
+    var module = `My name is ${name}`;
     ```
 
-### #函数扩展 ###
++ __数值扩展__
 
-函数默认值：function fun (x = 0, y = 0) {}
+    + Number.parseInt(), Number.parseFloat()
+    
+    + Number.isInteger()
 
-#### *箭头函数 ####
++ __数组扩展__
 
-```javascript
-function Timer (x, y) {
-    this.x = x;
-    this.y = y;
+    扩展运算符：...
 
-    var t1 = setTimeout(() => {
-        console.log(this); // -> Timer
-    }, 1000);
-    var t2 = setTimeout(function () {
-        console.log(this); // -> Window
-    }, 1000);
-}
+    + Array.from(), Array.of()
+    
+    + array.find(), array.findIndex() (返回首个查询结果)
+    
+    + array.entries(), array.keys(), array.values()
 
-var timer = new Timer('x', 'y');
-```
++ __对象扩展__
 
-形式
-- var 函数名 = (参数) => 返回值;
-- var 函数名 = (参数) => {函数体};
+    + Object.entries(), Object.keys(), Object.values()
+    
+    + Object.assign() (浅拷贝)
 
-注意
-- 无 this
-- 无 arguments
+        ```javascript
+        var target = {a: 1};
+        var source1 = {b: 2};
+        var source2 = {c: 3};
+    
+        Object.assign(target, source1, source2);
+        console.log(target); // -> {a: 1, b: 2, c: 3}
+        ```
+
++ __函数扩展__
+
+    函数默认值：function fun (x = 0, y = 0) {}
+
+    #### *箭头函数 ####
+    
+    ```javascript
+    function Timer (x, y) {
+        this.x = x;
+        this.y = y;
+    
+        var t1 = setTimeout(() => {
+            console.log(this); // -> Timer
+        }, 1000);
+        var t2 = setTimeout(function () {
+            console.log(this); // -> Window
+        }, 1000);
+    }
+    
+    var timer = new Timer('x', 'y');
+    ```
+    
+    形式
+    - var 函数名 = (参数) => 返回值;
+    - var 函数名 = (参数) => {函数体};
+    
+    注意
+    - 无 this
+    - 无 arguments
 
 *****
 

@@ -1,6 +1,6 @@
 # Fn - Extend #
 
-+ __$.fn()__ (对象级别)
++ __$.fn__ (对象级别)
 
     ```javascript
     var div = document.createElement('div');

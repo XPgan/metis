@@ -7,9 +7,6 @@ this.$http.get(url, options)
     }, (response) => {
         // 请求失败回调
     })
-    .catch((response) => {
-        // 程序异常回调
-    })
 ```
 ```javascript
 this.$http.post(url, body, options)
@@ -17,9 +14,6 @@ this.$http.post(url, body, options)
         // 请求成功回调
     }, (response) => {
         // 请求失败回调
-    })
-    .catch((response) => {
-        // 程序异常回调
     })
 ```
 

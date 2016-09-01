@@ -104,3 +104,36 @@ var timer = new Timer('x', 'y');
 注意
 - 无 this
 - 无 arguments
+
+*****
+
+### promise ###
+
+```javascript
+var ajax = function (url) {
+    var promise = new Promise(function (resolve, reject) {
+        var req = new XMLHttpRequest();
+        req.open('POST', url);
+        req.onreadystatechange = handler;
+        req.send();
+        
+        function handler () {
+            if (this.status == 200) {
+                resolve(this.response);
+            } else {
+                reject(new Error(this.statusText));
+            }
+        }
+    });
+    
+    return promise;
+}
+
+ajax('url')
+.then(function (data) {
+    console.log(data);
+})
+.catch(function (err) {
+    console.log(err);
+});
+```

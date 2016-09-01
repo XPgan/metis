@@ -77,7 +77,7 @@ console.log(age); // -> '23'
 
 + __数组扩展__
 
-    扩展运算符：...
+    + _扩展运算符：..._
 
     + Array.from(), Array.of()
     
@@ -102,7 +102,7 @@ console.log(age); // -> '23'
 
 + __函数扩展__
 
-    函数默认值：function fun (x = 0, y = 0) {}
+    + _函数默认值：function fun (x = 0, y = 0) {}_
 
     #### *箭头函数 ####
     

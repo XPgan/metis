@@ -79,9 +79,24 @@ var module = `My name is ${name}`;
 
 + __Array.from(), Array.of()__
 
-+ __array.find(), array.findIndex()__ (查找首个符合条件的数组成员)
++ __array.find(), array.findIndex()__ (返回首个查询结果)
 
-+ __array.entries(), array.keys(), array.values()__ 
++ __array.entries(), array.keys(), array.values()__
+
+### #对象扩展 ###
+
++ __Object.entries(), Object.keys(), Object.values()__
+
++ __Object.assign()__ (浅拷贝)
+
+    ```javascript
+    var target = {a: 1};
+    var source1 = {b: 2};
+    var source2 = {c: 3};
+
+    Object.assign(target, source1, source2);
+    console.log(target); // -> {a: 1, b: 2, c: 3}
+    ```
 
 ### #函数扩展 ###
 

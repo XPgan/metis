@@ -1,13 +1,5 @@
 # ECMAScript 6 #
 
-- 函数默认值：function foo (x = 0, y = 0) {}
-
-- 扩展运算符：...
-
-- 函数绑定运算符：::
-
-*****
-
 __转码__
 ```html
 <script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
@@ -37,8 +29,6 @@ __转码__
 注意
 - 块级作用域
 - 重复声明报错
-
-*****
 
 ### #解构赋值 ###
 
@@ -78,16 +68,18 @@ console.log(age); // -> '23'
 
 *****
 
-### #模板 ###
+### #字符串拓展 ###
+
+#### *模板字符串 ####
 
 ```javascript
 var name = 'sunmy';
 var module = `My name is ${name}`;
 ```
 
-*****
+### #函数拓展 ###
 
-### #箭头函数 ###
+#### *箭头函数 ####
 
 ```javascript
 function Timer (x, y) {

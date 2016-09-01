@@ -70,6 +70,8 @@ console.log(age); // -> '23'
 
 ### #字符串拓展 ###
 
++ __str.startsWith(), str.endsWith(), str.includes()__
+
 #### *模板字符串 ####
 
 ```javascript

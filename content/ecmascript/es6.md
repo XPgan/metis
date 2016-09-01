@@ -130,7 +130,7 @@ var timer = new Timer('x', 'y');
 
 *****
 
-### promise ###
+### Promise 对象 ###
 
 ```javascript
 var ajax = function (url) {
@@ -159,3 +159,6 @@ ajax('url').then(function (data) {
     console.log(err);
 });
 ```
+
+### Generator 函数 ###
+

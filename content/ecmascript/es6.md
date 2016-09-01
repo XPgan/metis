@@ -1,17 +1,5 @@
 # ECMAScript 6 #
 
-__转码__
-```html
-<script src="https://google.github.io/traceur-compiler/bin/traceur.js"></script>
-<script src="https://google.github.io/traceur-compiler/bin/BrowserSystem.js"></script>
-<script src="https://google.github.io/traceur-compiler/src/bootstrap.js"></script>
-<script type="module">
-    // code
-</script>
-```
-
-*****
-
 ### #变量 ###
 
 + __let__
@@ -78,6 +66,12 @@ console.log(age); // -> '23'
 var name = 'sunmy';
 var module = `My name is ${name}`;
 ```
+
+### #数值拓展 ###
+
++ __Number.parseInt(), Number.parseFloat()__
+
++ __Number.isInteger()__
 
 ### #函数拓展 ###
 

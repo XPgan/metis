@@ -73,6 +73,14 @@ var module = `My name is ${name}`;
 
 + __Number.isInteger()__
 
+### #数组拓展 ###
+
++ __Array.from(), Array.of()__
+
++ __array.find(), array.findIndex()__ (查找首个符合条件的数组成员)
+
++ __array.entries(), array.keys(), array.values()__ 
+
 ### #函数拓展 ###
 
 #### *箭头函数 ####

@@ -129,8 +129,7 @@ var ajax = function (url) {
     return promise;
 }
 
-ajax('url')
-.then(function (data) {
+ajax('url').then(function (data) {
     console.log(data);
 })
 .catch(function (err) {

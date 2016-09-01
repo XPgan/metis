@@ -56,7 +56,7 @@ console.log(age); // -> '23'
 
 *****
 
-### #字符串拓展 ###
+### #字符串扩展 ###
 
 + __str.startsWith(), str.endsWith(), str.includes()__
 
@@ -67,13 +67,15 @@ var name = 'sunmy';
 var module = `My name is ${name}`;
 ```
 
-### #数值拓展 ###
+### #数值扩展 ###
 
 + __Number.parseInt(), Number.parseFloat()__
 
 + __Number.isInteger()__
 
-### #数组拓展 ###
+### #数组扩展 ###
+
+扩展运算符：...
 
 + __Array.from(), Array.of()__
 
@@ -81,7 +83,9 @@ var module = `My name is ${name}`;
 
 + __array.entries(), array.keys(), array.values()__ 
 
-### #函数拓展 ###
+### #函数扩展 ###
+
+函数默认值：function fun (x = 0, y = 0) {}
 
 #### *箭头函数 ####
 

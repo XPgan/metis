@@ -15,11 +15,11 @@
 ```javascript
 async function getStockPriceByName (name) {
     var symbol = await getStockSymbol(name);
-    var stockPrice = await getStockPrice(symbol);
-    return stockPrice;
+    var price = await getStockPrice(symbol);
+    return price;
 }
 
-getStockPriceByName('goog').then(function (result) {
-    console.log(result);
+getStockPriceByName('goo').then(function (price) {
+    console.log(price);
 });
 ```

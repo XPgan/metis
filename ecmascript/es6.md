@@ -102,16 +102,16 @@ console.log(age); // -> '23'
 
     + _函数默认值_
 
-    ```javascript
-    function fun (x = 0, y = 0) {
-        console.log(x);
-        console.log(y);
-    }
-
-    fun();
-    // -> 0
-    // -> 0
-    ```
+        ```javascript
+        function fun (x = 0, y = 0) {
+            console.log(x);
+            console.log(y);
+        }
+    
+        fun();
+        // -> 0
+        // -> 0
+        ```
 
     #### *箭头函数 ####
     

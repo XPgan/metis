@@ -20,7 +20,7 @@
 
 + [Vue.js](http://cn.vuejs.org/)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/vue) ####
+#### [笔记](https://github.com/sunmengyuan/note/tree/master/vue) ####
 
 *****
 
@@ -30,7 +30,7 @@
 
 + [HTML5 Canvas核心技术](https://github.com/sunmengyuan/book/blob/master/HTML5%20Canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.pdf)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/canvas) ####
+#### [笔记](https://github.com/sunmengyuan/note/tree/master/canvas) ####
 
 #### 示例 ####
 
@@ -44,7 +44,7 @@
 
 ### Svg ###
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/svg) ####
+#### [笔记](https://github.com/sunmengyuan/note/tree/master/svg) ####
 
 #### 示例 ####
 
@@ -62,7 +62,7 @@
 
 + [Three.js入门指南](https://read.douban.com/reader/ebook/7412854/)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/three) ####
+#### [笔记](https://github.com/sunmengyuan/note/tree/master/three) ####
 
 #### 示例 ####
 
@@ -98,15 +98,15 @@
 
 + [ECMAScript 6入门](http://es6.ruanyifeng.com/)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/ecmascript) ####
+#### [笔记](https://github.com/sunmengyuan/note/tree/master/ecmascript) ####
 
 *****
 
 ### 基础知识 ###
 
-+ [Javascript](https://github.com/sunmengyuan/note/blob/master/javascript)
++ [Javascript](https://github.com/sunmengyuan/note/tree/master/javascript)
 
-+ [Css](https://github.com/sunmengyuan/note/blob/master/css)
++ [Css](https://github.com/sunmengyuan/note/tree/master/css)
 
 *****
 

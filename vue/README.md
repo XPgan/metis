@@ -475,20 +475,20 @@ Vue.filter('reverse', function (value) {
 
 + __vuex__
 
-    + [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue/vuex.md)
+    + [笔记](https://github.com/sunmengyuan/note/blob/master/vue/vuex.md)
     
     + [参考资料](http://vuex.vuejs.org/zh-cn/index.html)
 
 + __vue-router__
 
-    + [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue/router.md) 
+    + [笔记](https://github.com/sunmengyuan/note/blob/master/vue/router.md) 
     
     + [参考资料](http://router.vuejs.org/zh-cn/index.html)
 
 + __vue-resource__
 
-    + [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue/resource.md)
+    + [笔记](https://github.com/sunmengyuan/note/blob/master/vue/resource.md)
 
 + __vue-touch__
 
-    + [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue/touch.md)
+    + [笔记](https://github.com/sunmengyuan/note/blob/master/vue/touch.md)

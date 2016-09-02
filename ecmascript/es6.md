@@ -1,5 +1,9 @@
 # ECMAScript 6 #
 
++ 扩展运算符：...
+
+*****
+
 ### #变量 ###
 
 + __let__
@@ -77,8 +81,6 @@ console.log(age); // -> '23'
 
 + __数组扩展__
 
-    + _扩展运算符：..._
-
     + Array.from(), Array.of()
     
     + array.find(), array.findIndex() (返回首个查询结果)
@@ -102,7 +104,18 @@ console.log(age); // -> '23'
 
 + __函数扩展__
 
-    + _函数默认值：function fun (x = 0, y = 0) {}_
+    + _函数默认值_
+
+    ```javascript
+    function fun (x = 0, y = 0) {
+        console.log(x);
+        console.log(y);
+    }
+
+    fun();
+    // -> 0
+    // -> 0
+    ```
 
     #### *箭头函数 ####
     

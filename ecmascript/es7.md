@@ -1,11 +1,5 @@
 # ECMAScript 7 #
 
-+ 指数运算符：**
-
-+ 函数绑定运算符：::
-
-*****
-
 ### Async 函数 ###
 
 ```javascript
@@ -19,3 +13,9 @@ getStockPriceByName('goo').then(function (price) {
     console.log(price);
 });
 ```
+
+*****
+
++ 指数运算符：**
+
++ 函数绑定运算符：::

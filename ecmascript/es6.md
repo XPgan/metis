@@ -1,9 +1,5 @@
 # ECMAScript 6 #
 
-+ 扩展运算符：...
-
-*****
-
 ### #变量 ###
 
 + __let__
@@ -174,3 +170,7 @@ ajax('url').then(function (data) {
     console.log(err);
 });
 ```
+
+*****
+
++ 扩展运算符：...

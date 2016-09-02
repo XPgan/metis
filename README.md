@@ -8,9 +8,9 @@
 
 #### 示例 ####
 
-+ 简易微博系统 [(code)](https://github.com/sunmengyuan/note/tree/master/content/node/expo)
++ 简易微博系统 [(code)](https://github.com/sunmengyuan/note/tree/master/node/expo)
 
-+ 多人聊天室 [(code)](https://github.com/sunmengyuan/note/tree/master/content/node/chat)
++ 多人聊天室 [(code)](https://github.com/sunmengyuan/note/tree/master/node/chat)
 
 *****
 
@@ -20,7 +20,7 @@
 
 + [Vue.js](http://cn.vuejs.org/)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/content/vue) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/vue) ####
 
 *****
 
@@ -30,29 +30,29 @@
 
 + [HTML5 Canvas核心技术](https://github.com/sunmengyuan/book/blob/master/HTML5%20Canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.pdf)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/content/canvas) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/canvas) ####
 
 #### 示例 ####
 
-+ 画板 [(code)](https://github.com/sunmengyuan/note/blob/master/content/canvas/drawing.html) [(demo)](http://www.miaomie.tech/demos/canvas/drawing.html)
++ 画板 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drawing.html) [(demo)](http://www.miaomie.tech/demos/canvas/drawing.html)
 
-+ 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/note/blob/master/content/canvas/bezierCurve.html) [(demo)](http://www.miaomie.tech/demos/canvas/bezierCurve.html)
++ 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/bezierCurve.html) [(demo)](http://www.miaomie.tech/demos/canvas/bezierCurve.html)
 
-+ 多边形 + 拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/content/canvas/drag.html) [(demo)](http://www.miaomie.tech/demos/canvas/drag.html)
++ 多边形 + 拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](http://www.miaomie.tech/demos/canvas/drag.html)
 
 *****
 
 ### Svg ###
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/content/svg) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/svg) ####
 
 #### 示例 ####
 
-+ 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/content/svg/cat.html) [(demo)](http://www.miaomie.tech/demos/svg/cat.html)
++ 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](http://www.miaomie.tech/demos/svg/cat.html)
 
-+ 路径动画 + 蒙版 [(code)](https://github.com/sunmengyuan/note/blob/master/content/svg/paint.html) [(demo)](http://www.miaomie.tech/demos/svg/paint.html)
++ 路径动画 + 蒙版 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](http://www.miaomie.tech/demos/svg/paint.html)
 
-+ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/content/svg/loading.html) [(demo)](http://www.miaomie.tech/demos/svg/loading.html)
++ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](http://www.miaomie.tech/demos/svg/loading.html)
 
 *****
 
@@ -62,11 +62,11 @@
 
 + [Three.js入门指南](https://read.douban.com/reader/ebook/7412854/)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/content/three) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/three) ####
 
 #### 示例 ####
 
-+ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/content/three/clock.html) [(demo)](http://www.miaomie.tech/demos/three/clock.html)
++ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/three/clock.html) [(demo)](http://www.miaomie.tech/demos/three/clock.html)
 
 *****
 
@@ -78,7 +78,7 @@
 
 #### 示例 ####
 
-+ 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/content/matter/seesaw.html) [(demo)](http://www.miaomie.tech/demos/matter/seesaw.html)
++ 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](http://www.miaomie.tech/demos/matter/seesaw.html)
 
 *****
 
@@ -88,7 +88,7 @@
 
 + [Less中文网](http://lesscss.cn/)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/content/less.md) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/less.md) ####
 
 *****
 
@@ -98,15 +98,15 @@
 
 + [ECMAScript 6入门](http://es6.ruanyifeng.com/)
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/content/ecmascript) ####
+#### [笔记](https://github.com/sunmengyuan/note/blob/master/ecmascript) ####
 
 *****
 
 ### 基础知识 ###
 
-+ [Javascript](https://github.com/sunmengyuan/note/blob/master/catalog/javascript.md)
++ [Javascript](https://github.com/sunmengyuan/note/blob/master/javascript)
 
-+ [Css](https://github.com/sunmengyuan/note/blob/master/catalog/css.md)
++ [Css](https://github.com/sunmengyuan/note/blob/master/css)
 
 *****
 

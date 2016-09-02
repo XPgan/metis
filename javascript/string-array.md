@@ -1,6 +1,6 @@
 # String - Array #
 
-### array ###
+### Array ###
 
 + 改变原数组
 
@@ -34,7 +34,7 @@
 
     + __join(separator)__
         
-### string ###
+### String ###
 
 + 不改变原字符串
 

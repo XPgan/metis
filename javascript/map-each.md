@@ -1,6 +1,6 @@
 # Map - Each #
 
-### map ###
++ __$.map()__
 
 ```javascript
 var array = [2, 4, 7, 11];
@@ -26,7 +26,7 @@ var newObj = $.map(obj, function (value, key) {
 });
 ```
 
-### each ###
++ __$.each()__
 
 ```javascript
 var array = [2, 4, 7, 11];

@@ -1,12 +1,12 @@
 # Apply - Call #
 
-### apply ###
+### Apply ###
 
 ```javascript
 var apply = $type.prototype.$method.apply(obj, [params]);
 ```
 
-### call ###
+### Call ###
 
 ```javascript
 var call = $type.prototype.$method.call(obj, params);

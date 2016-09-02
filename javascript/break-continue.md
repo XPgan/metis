@@ -1,6 +1,6 @@
 # Break - Continue #
 
-### break ###
+### Break ###
 
 跳出循环
 
@@ -29,7 +29,7 @@ while (i < 6) {
 // -> 2
 ```
 
-### continue ###
+### Continue ###
 
 跳出本次循环
 

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Base from './views/Base'
 import All from './views/All'
 import Active from './views/Active'
 import Completed from './views/Completed'
@@ -9,7 +10,8 @@ const router = new Router()
 
 router.map({
     '/': {
-        component: All,
+        component: Base,
+
         subRoutes: {
             '/all': {
                 component: All

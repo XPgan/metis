@@ -1,3 +1,31 @@
-/**
- * Created by sunmy on 16/9/8.
- */
+import Vue from 'vue'
+import Router from 'vue-router'
+import All from './views/All'
+import Active from './views/Active'
+import Completed from './views/Completed'
+
+Vue.use(Router)
+const router = new Router()
+
+router.map({
+    '/': {
+        component: All,
+        subRoutes: {
+            '/all': {
+                component: All
+            },
+            '/active': {
+                component: Active
+            },
+            '/completed': {
+                component: Completed
+            }
+        }
+    }
+})
+
+router.redirect({
+    '*': '/'
+})
+
+export default router

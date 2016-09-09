@@ -1,9 +1,15 @@
 <template>
-completed
+    <ul>
+        <issue class="completed"></issue>
+    </ul>
 </template>
 
 <script>
+    import Issue from '../components/Issue'
+
     export default {
-        name: 'Completed'
+        components: {
+            Issue
+        }
     }
 </script>

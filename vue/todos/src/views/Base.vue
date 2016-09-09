@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        name: 'Base'
+
     }
 </script>
 
@@ -34,6 +34,7 @@
         width: 500px;
         background-color: #fff;
         overflow: hidden;
+        box-shadow: 1px 1px 2px 2px @shadowGrey;
 
         .m-input {
             position: relative;
@@ -70,11 +71,12 @@
             a {
                 display: inline-block;
                 font-size: 16px;
-                line-height: 28px;
+                line-height: 24px;
                 color: @midGrey;
                 border: 1px solid transparent;
                 border-radius: 4px;
-                padding: 0 15px;
+                padding: 0 10px;
+                margin: 0 5px;
 
                 &.active {
                     color: @darkGrey;

@@ -6,7 +6,9 @@ import Active from './views/Active'
 import Completed from './views/Completed'
 
 Vue.use(Router)
-const router = new Router()
+const router = new Router({
+    linkActiveClass: 'active'
+})
 
 router.map({
     '/': {

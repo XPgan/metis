@@ -12,3 +12,5 @@
         store
     }
 </script>
+
+<style src="./App.less" lang="less"></style>

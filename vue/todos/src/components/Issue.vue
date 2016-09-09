@@ -39,7 +39,7 @@
 
         &.active { color: @darkGrey; }
         &.completed { color: @lightGrey;text-decoration: line-through; }
-        &.active span { border-color: @midGrey;background-color: transparent; }
+        &.active span { border-color: @midGrey; }
         &.completed span { border-color: @green;background-color: @green; }
     }
 </style>

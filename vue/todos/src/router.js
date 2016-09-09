@@ -13,6 +13,9 @@ router.map({
         component: Base,
 
         subRoutes: {
+            '/': {
+                component: All
+            },
             '/all': {
                 component: All
             },

@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 var app = require('../app');
-var debug = require('debug')('expo:server');
+var debug = require('debug')('zone:server');
 var http = require('http');
 
 /**

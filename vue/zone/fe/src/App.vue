@@ -28,6 +28,15 @@
     export default {
         components: {
             Hello
+        },
+        data () {
+            return {}
+        },
+        created: function () {
+            this.$http.get('http://localhost:3000').then(res => {
+                var data = res.json()
+                console.log(data)
+            })
         }
     }
 </script>

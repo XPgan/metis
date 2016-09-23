@@ -1,5 +1,7 @@
 <template>
-    <div class="m-banner" :style="{ backgroundImage: 'url(' + pattern + ')' }"></div>
+    <div class="m-banner">
+        <div :style="{ backgroundImage: 'url(' + pattern + ')' }"></div>
+    </div>
 </template>
 
 <script>
@@ -31,8 +33,11 @@
         left: 0;
         z-index: -1;
         width: 100%;
-        height: 250px;
-        background-position: 50% 50%;
-        background-size: cover;
+
+        div {
+            height: 250px;
+            background-position: 50% 50%;
+            background-size: cover;
+        }
     }
 </style>

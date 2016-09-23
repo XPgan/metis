@@ -35,6 +35,9 @@
         }
         .article-info {
             position: relative;
+            padding-bottom: 100%;
+            height: 0;
+            background-color: #eee;
 
             h4 {
                 position: absolute;

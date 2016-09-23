@@ -23,7 +23,7 @@
 
         a {
             color: #fff;
-            text-shadow: 1px 1px 3px #949494;
+            text-shadow: 0 0 1px #9c9c9c;
         }
         ul {
             float: left;

@@ -1,17 +1,20 @@
 <template>
     <navigation></navigation>
-    <personal-info></personal-info>
+    <user-info></user-info>
+    <banner></banner>
 </template>
 
 <script>
     import Navigation from '../components/Navigation.vue'
-    import PersonalInfo from '../components/PersonalInfo.vue'
+    import UserInfo from '../components/UserInfo.vue'
+    import Banner from '../components/Banner.vue'
 
     export default {
         name: 'Homepage',
         components: {
             Navigation,
-            PersonalInfo
+            UserInfo,
+            Banner
         }
     }
 </script>

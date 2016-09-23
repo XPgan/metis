@@ -1,5 +1,5 @@
 <template>
-    <div class="m-personal-info">
+    <div class="m-userinfo">
         <img src="https://avatars2.githubusercontent.com/u/13533886?v=3&s=466" />
         <div>
             呆恋小喵
@@ -11,12 +11,12 @@
 
 <script>
     export default {
-        name: 'PersonalInfo'
+        name: 'UserInfo'
     }
 </script>
 
 <style lang="less" scoped>
-    .m-personal-info {
+    .m-userinfo {
         text-align: center;
         max-width: 200px;
         margin: 170px auto 0;

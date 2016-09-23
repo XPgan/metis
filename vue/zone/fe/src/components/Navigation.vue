@@ -2,7 +2,7 @@
     <div class="m-nav c-fix c-header">
         <ul>
             <li><a v-link="{ path: '/' }">首页</a></li>
-            <li><a v-link="{ path: '/profile' }">个人页</a></li>
+            <li><a href="https://github.com/sunmengyuan/note/tree/master/vue/zone">源码</a></li>
         </ul>
         <div class="m-log">
             <a href="javascript:;">登录</a>

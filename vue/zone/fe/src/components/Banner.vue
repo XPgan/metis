@@ -1,5 +1,5 @@
 <template>
-    <div class="m-banner" style="background-image: url('{{ pattern }}')"></div>
+    <div class="m-banner" :style="{ backgroundImage: 'url(' + pattern + ')' }"></div>
 </template>
 
 <script>

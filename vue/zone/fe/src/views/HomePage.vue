@@ -4,9 +4,10 @@
             <img src="https://avatars2.githubusercontent.com/u/13533886?v=3&s=466" />
         </a>
     </h1>
-
-    <h3>推荐文章</h3>
-    <articles :articles="articles"></articles>
+    <section>
+        <h3 class="zone-title">推荐文章</h3>
+        <articles :articles="articles"></articles>
+    </section>
 </template>
 
 <script>
@@ -52,16 +53,5 @@
             height: 160px;
             border-radius: 50%;
         }
-    }
-    h3 {
-        font-size: 18px;
-        line-height: 30px;
-        color: #666;
-        margin: 10px 0;
-        padding: 0 50px;
-    }
-
-    @media screen and (max-width: 600px) {
-        h3 { padding: 0 15px; }
     }
 </style>

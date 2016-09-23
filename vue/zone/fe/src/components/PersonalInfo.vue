@@ -1,5 +1,5 @@
 <template>
-    <div class="m-personal-info c-horizontal">
+    <div class="m-personal-info">
         <img src="https://avatars2.githubusercontent.com/u/13533886?v=3&s=466" />
         <div>
             呆恋小喵
@@ -17,10 +17,9 @@
 
 <style lang="less" scoped>
     .m-personal-info {
-        position: fixed;
-        top: 170px;
-        max-width: 200px;
         text-align: center;
+        max-width: 200px;
+        margin: 170px auto 0;
 
         img {
             width: 160px;

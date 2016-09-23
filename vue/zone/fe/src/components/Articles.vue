@@ -1,0 +1,52 @@
+<template>
+    <div class="m-articles">
+        <ul class="c-fix">
+            <li v-for="item in articles">
+                <a href="javascript:;">
+                    <div class="article-info">
+                        <img :src="item.cover" />
+                        <h4>{{ item.title }}</h4>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</template>
+
+<script>
+    export default {
+        name: 'Articles',
+        props: {
+            articles: Array
+        }
+    }
+</script>
+
+<style lang="less" scoped>
+    .m-articles {
+        padding: 0 50px;
+
+        ul { margin: -20px; }
+        li {
+            float: left;
+            box-sizing: border-box;
+            width: 25%;
+            padding: 20px;
+        }
+        .article-info {
+            position: relative;
+
+            h4 {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                font-size: 14px;
+                line-height: 24px;
+                color: #fff;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+</style>

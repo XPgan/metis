@@ -20,11 +20,9 @@
     .m-nav {
         line-height: 22px;
         padding: 20px 15px;
+        background-color: rgba(0, 0, 0, 0.1);
 
-        a {
-            color: #fff;
-            text-shadow: 0 0 1px #9c9c9c;
-        }
+        a { color: #fff; }
         ul {
             float: left;
             margin: 0 -15px;

@@ -49,4 +49,10 @@
             }
         }
     }
+
+    @media screen and (max-width: 600px) {
+        .m-articles { padding: 0 15px; }
+        .m-articles ul { margin: -10px; }
+        .m-articles li { width: 50%;padding: 10px; }
+    }
 </style>

@@ -19,7 +19,7 @@
     .m-userinfo {
         text-align: center;
         max-width: 200px;
-        margin: 170px auto 0;
+        margin: -80px auto 0;
 
         img {
             width: 160px;

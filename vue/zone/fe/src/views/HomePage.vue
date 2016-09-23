@@ -46,7 +46,7 @@
 <style lang="less" scoped>
     h1 {
         width: 160px;
-        margin: 170px auto 0;
+        margin: -80px auto 0;
 
         img {
             height: 160px;
@@ -59,5 +59,9 @@
         color: #666;
         margin: 10px 0;
         padding: 0 50px;
+    }
+
+    @media screen and (max-width: 600px) {
+        h3 { padding: 0 15px; }
     }
 </style>

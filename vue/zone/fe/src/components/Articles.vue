@@ -24,7 +24,7 @@
 
 <style lang="less" scoped>
     .m-articles {
-        ul { margin: -20px; }
+        ul { margin: 0 -20px; }
         li {
             float: left;
             width: 25%;

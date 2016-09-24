@@ -7,6 +7,7 @@
     <section>
         <h3 class="zone-title">推荐文章</h3>
         <articles :articles="articles"></articles>
+        <a href="javascript:;" class="zone-more">查看更多</a>
     </section>
 </template>
 
@@ -53,5 +54,8 @@
             height: 160px;
             border-radius: 50%;
         }
+    }
+    h3.zone-title {
+        margin-bottom: -10px;
     }
 </style>

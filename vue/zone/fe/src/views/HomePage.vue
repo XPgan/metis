@@ -1,7 +1,7 @@
 <template>
     <h1>
         <a href="javascript:;" class="c-block">
-            <img src="https://avatars2.githubusercontent.com/u/13533886?v=3&s=466" />
+            <img src="../assets/logo.jpg" />
         </a>
     </h1>
     <section>

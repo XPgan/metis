@@ -7,7 +7,7 @@
     <section>
         <h3 class="zone-title">推荐文章</h3>
         <articles :articles="articles"></articles>
-        <a href="javascript:;" class="zone-more">查看更多</a>
+        <a href="javascript:;" class="zone-more">ore</a>
     </section>
 </template>
 
@@ -49,10 +49,5 @@
     h1 {
         width: 160px;
         margin: -80px auto 0;
-
-        img {
-            height: 160px;
-            border-radius: 50%;
-        }
     }
 </style>

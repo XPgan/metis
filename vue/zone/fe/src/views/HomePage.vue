@@ -55,7 +55,4 @@
             border-radius: 50%;
         }
     }
-    h3.zone-title {
-        margin-bottom: -10px;
-    }
 </style>

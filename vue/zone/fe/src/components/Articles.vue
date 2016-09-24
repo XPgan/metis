@@ -24,19 +24,17 @@
 
 <style lang="less" scoped>
     .m-articles {
-        padding: 0 50px;
-
         ul { margin: -20px; }
         li {
             float: left;
-            box-sizing: border-box;
             width: 25%;
+            box-sizing: border-box;
             padding: 20px;
         }
         .article-info {
             position: relative;
-            padding-bottom: 100%;
             height: 0;
+            padding-bottom: 100%;
             background-color: #eee;
 
             h4 {
@@ -52,9 +50,7 @@
             }
         }
     }
-
     @media screen and (max-width: 600px) {
-        .m-articles { padding: 0 15px; }
         .m-articles ul { margin: -10px; }
         .m-articles li { width: 50%;padding: 10px; }
     }

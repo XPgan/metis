@@ -18,7 +18,7 @@
         created () {
             var pattern = Trianglify({
                 width: 1500,
-                height: 250
+                height: 300
             }).png()
 
             this.$set('pattern', pattern)
@@ -28,7 +28,7 @@
 
 <style lang="less" scoped>
     .m-banner div {
-        height: 250px;
+        height: 300px;
         background-position: 50% 50%;
         background-size: cover;
     }

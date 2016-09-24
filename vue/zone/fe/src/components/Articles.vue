@@ -43,7 +43,7 @@
                 left: 0;
                 width: 100%;
                 font-size: 14px;
-                line-height: 24px;
+                line-height: 30px;
                 color: #fff;
                 text-align: center;
                 background-color: rgba(0, 0, 0, 0.5);

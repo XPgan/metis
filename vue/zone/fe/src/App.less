@@ -49,6 +49,7 @@ h3.zone-title {
 }
 div.zone-btn {
     text-align: center;
+    margin: 20px 0;
 
     a {
         display: inline-block;
@@ -57,7 +58,7 @@ div.zone-btn {
         color: #5c2b27;
         box-shadow: inset 0 0 10px #5c2b27;
         border-radius: 40px;
-        margin: 20px 10px;
+        margin: 0 10px;
         padding: 0 20px;
     }
 }
@@ -81,30 +82,31 @@ form.zone-form {
     }
     .form-info {
         width: 500px;
-        padding: 10px 30px;
+        padding: 0 30px;
         margin: 30px auto;
         border-radius: 10px;
         background-color: #f7f7f7;
+        overflow: hidden;
 
         h3 {
             font-size: 20px;
             line-height: 36px;
             text-align: center;
             color: #5c2b27;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         input, textarea {
             display: block;
             width: 100%;
             box-sizing: border-box;
             font-size: 16px;
-            color: #666;
+            color: #999;
             background-color: transparent;
-            padding: 5px 10px;
+            padding: 6px 10px;
             margin: 20px 0;
 
             &::-webkit-input-placeholder {
-                color: #999;
+                color: #ccc;
             }
         }
         input {
@@ -112,7 +114,7 @@ form.zone-form {
             border-bottom: 1px solid #e8e8e8;
         }
         textarea {
-            height: 200px;
+            height: 300px;
             line-height: 24px;
             border: 1px solid #e8e8e8;
         }

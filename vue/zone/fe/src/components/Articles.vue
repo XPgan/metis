@@ -35,7 +35,7 @@
             position: relative;
             height: 0;
             padding-bottom: 100%;
-            background-color: #eceaea;
+            background-color: #f7f7f7;
 
             h4 {
                 position: absolute;

@@ -31,8 +31,8 @@
         li {
             position: relative;
             padding: 20px 0 20px 100px;
-            border-bottom: 1px solid #eceaea;
-            min-height: 80px;
+            border-bottom: 1px solid #f7f7f7;
+            min-height: 82px;
 
             img {
                 width: 80px;

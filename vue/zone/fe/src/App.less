@@ -61,6 +61,64 @@ div.zone-btn {
         padding: 0 20px;
     }
 }
+form.zone-form {
+    .form-upload {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        margin: -80px auto 0;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img, input {
+            width: 160px;
+            height: 160px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        input { opacity: 0; }
+    }
+    .form-info {
+        width: 500px;
+        padding: 10px 30px;
+        margin: 30px auto;
+        border-radius: 10px;
+        background-color: #f7f7f7;
+
+        h3 {
+            font-size: 20px;
+            line-height: 36px;
+            text-align: center;
+            color: #5c2b27;
+            margin-top: 10px;
+        }
+        input, textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #666;
+            background-color: transparent;
+            padding: 5px 10px;
+            margin: 20px 0;
+
+            &::-webkit-input-placeholder {
+                color: #999;
+            }
+        }
+        input {
+            line-height: 22px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        textarea {
+            height: 200px;
+            line-height: 24px;
+            border: 1px solid #e8e8e8;
+        }
+    }
+}
 @media screen and (max-width: 600px) {
     section { padding: 0 15px; }
+    form.zone-form .form-info { width: 250px; }
 }

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import HomePage from './views/HomePage'
 import Register from './views/Register'
+import Publish from './views/Publish'
 import Profile from './views/Profile'
 import ArticleDetail from './views/ArticleDetail'
 
@@ -15,6 +16,9 @@ router.map({
     },
     '/register': {
         component: Register
+    },
+    '/publish': {
+        component: Publish
     },
     '/profile/:id': {
         component: Profile

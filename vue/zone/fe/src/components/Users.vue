@@ -31,7 +31,8 @@
         li {
             position: relative;
             padding: 20px 0 20px 100px;
-            border-bottom: 1px solid #f7f7f7;
+            border-top: 1px solid #f7f7f7;
+            border-bottom: 1px solid #e8e8e8;
             min-height: 82px;
 
             img {
@@ -53,6 +54,7 @@
                 color: #666;
                 margin: 10px 0;
             }
+            &:first-child { border-top: none; }
             &:last-child { border-bottom: none; }
         }
     }

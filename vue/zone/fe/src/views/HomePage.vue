@@ -8,7 +8,7 @@
         <h3 class="zone-title">推荐用户</h3>
         <users :users="users"></users>
     </section>
-    <section class="section-articles">
+    <section>
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>
         <div class="zone-btn">
@@ -133,5 +133,4 @@
         width: 168px;
         margin: -80px auto 0;
     }
-    .section-articles { margin-top: 50px; }
 </style>

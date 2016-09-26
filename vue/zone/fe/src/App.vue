@@ -32,4 +32,7 @@
         bottom: 0;
         z-index: -2;
     }
+    @media screen and (max-width: 600px) {
+        .pendant { display: none; }
+    }
 </style>

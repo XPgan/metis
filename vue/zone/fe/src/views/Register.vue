@@ -3,6 +3,7 @@
         <div class="form-upload">
             <img src="../assets/default_photo.jpg" />
             <input type="file" id="portrait" name="portrait" />
+            <span>上传头像</span>
         </div>
         <div class="form-info">
             <h3>注册</h3>

@@ -3,6 +3,7 @@
         <div class="form-upload">
             <img src="../assets/default_photo.jpg" />
             <input type="file" id="cover" name="cover" />
+            <span>上传封面</span>
         </div>
         <div class="form-info">
             <h3>发表</h3>

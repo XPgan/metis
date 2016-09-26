@@ -24,12 +24,15 @@
 
 <style lang="less" scoped>
     .m-articles {
-        ul { margin: 0 -20px; }
-        li {
-            float: left;
-            width: 25%;
-            box-sizing: border-box;
-            padding: 20px;
+        ul {
+            margin: 0 -20px;
+
+            li {
+                float: left;
+                width: 25%;
+                box-sizing: border-box;
+                padding: 20px;
+            }
         }
         .article-info {
             position: relative;
@@ -52,6 +55,6 @@
     }
     @media screen and (max-width: 600px) {
         .m-articles ul { margin: 0 -10px; }
-        .m-articles li { width: 50%;padding: 10px; }
+        .m-articles ul li { width: 50%;padding: 10px; }
     }
 </style>

@@ -1,7 +1,9 @@
 <template>
-    <form enctype="multipart/form-data" id="form_portrait">
-        <!--<img src="" />-->
-        <input type="file" id="portrait" name="portrait" />
+    <form enctype="multipart/form-data" id="form_register">
+        <div class="register-portrait">
+            <img src="../assets/default_portrait.jpg" />
+            <input type="file" id="portrait" name="portrait" />
+        </div>
     </form>
 </template>
 
@@ -12,25 +14,21 @@
 </script>
 
 <style lang="less" scoped>
-    #form_portrait {
+    .register-portrait {
         position: relative;
         width: 160px;
         height: 160px;
         margin: -80px auto 0;
         border-radius: 50%;
         overflow: hidden;
-        background: url("../assets/default_portrait.jpg") no-repeat 50% 50%;
-        background-size: 160px auto;
 
-        input, img {
+        img, input {
             width: 160px;
             height: 160px;
             position: absolute;
-            top: 0;
             left: 0;
+            top: 0;
         }
-        input {
-            opacity: 0;
-        }
+        input { opacity: 0; }
     }
 </style>

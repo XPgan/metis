@@ -27,35 +27,38 @@
     .m-users {
         margin: 20px 0;
 
-        ul { margin-top: -20px; }
-        li {
-            position: relative;
-            padding: 20px 0 20px 100px;
-            border-top: 1px solid #f7f7f7;
-            border-bottom: 1px solid #e8e8e8;
-            min-height: 82px;
+        ul {
+            margin-top: -20px;
 
-            img {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                position: absolute;
-                left: 0;
+            li {
+                position: relative;
+                padding: 20px 0 20px 100px;
+                border-top: 1px solid #f7f7f7;
+                border-bottom: 1px solid #e8e8e8;
+                min-height: 82px;
+
+                img {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                }
+                h4 {
+                    font-size: 16px;
+                    line-height: 22px;
+                    color: #333;
+                    margin: 10px 0;
+                }
+                p {
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #666;
+                    margin: 10px 0;
+                }
+                &:first-child { border-top: none; }
+                &:last-child { border-bottom: none; }
             }
-            h4 {
-                font-size: 16px;
-                line-height: 22px;
-                color: #333;
-                margin: 10px 0;
-            }
-            p {
-                font-size: 14px;
-                line-height: 20px;
-                color: #666;
-                margin: 10px 0;
-            }
-            &:first-child { border-top: none; }
-            &:last-child { border-bottom: none; }
         }
     }
 </style>

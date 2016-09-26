@@ -53,6 +53,7 @@
                 color: #666;
                 margin: 10px 0;
             }
+            &:last-child { border-bottom: none; }
         }
     }
 </style>

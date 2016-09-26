@@ -133,5 +133,5 @@
         width: 168px;
         margin: -80px auto 0;
     }
-    .section-articles { margin-top: 70px; }
+    .section-articles { margin-top: 50px; }
 </style>

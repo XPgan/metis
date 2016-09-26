@@ -1,13 +1,15 @@
 <template>
     <h1>
         <a href="javascript:;" class="c-block">
-            <img src="../assets/logo.jpg" />
+            <img src="../assets/logo.png" />
         </a>
     </h1>
     <section>
         <h3 class="zone-title">推荐文章</h3>
         <articles :articles="articles"></articles>
-        <a href="javascript:;" class="zone-more">ore</a>
+        <div class="zone-btn">
+            <a href="javascript:;" class="zone-more">more</a>
+        </div>
     </section>
 </template>
 
@@ -47,7 +49,7 @@
 
 <style lang="less" scoped>
     h1 {
-        width: 160px;
+        width: 168px;
         margin: -80px auto 0;
     }
 </style>

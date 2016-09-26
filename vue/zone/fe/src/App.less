@@ -35,29 +35,30 @@ img{display: block;width: 100%;}
 .ellipsis-row3{overflow: hidden;text-overflow: ellipsis;-webkit-line-clamp: 3;-webkit-box-orient: vertical;display: -webkit-box;}
 
 section {
-    padding: 0 100px;
+    padding: 0 120px 0 60px;
 }
 h3.zone-title {
     font-size: 18px;
     line-height: 30px;
-    color: #6b2a00;
+    color: #5c2b27;
     margin-top: 20px;
     background: url("./assets/ico_title.png") no-repeat 0 50%;
     background-size: auto 30px;
     padding-left: 40px;
 }
-a.zone-more {
-    display: block;
-    font-size: 18px;
-    line-height: 40px;
-    color: #6b2a00;
-    background: url("./assets/bg_more.png") no-repeat 20px 50%;
-    background-size: auto 20px;
-    box-shadow: inset 0 0 10px #6b2a00;
-    border-radius: 40px;
-    width: 26px;
-    margin: 20px auto 0;
-    padding: 0 20px 0 43px;
+div.zone-btn {
+    text-align: center;
+
+    a.zone-more {
+        display: inline-block;
+        font-size: 18px;
+        line-height: 40px;
+        color: #5c2b27;
+        box-shadow: inset 0 0 10px #5c2b27;
+        border-radius: 40px;
+        margin: 15px auto 0;
+        padding: 0 20px;
+    }
 }
 @media screen and (max-width: 600px) {
     section {padding: 0 15px;}

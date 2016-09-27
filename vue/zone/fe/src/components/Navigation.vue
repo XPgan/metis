@@ -8,7 +8,7 @@
             <a href="javascript:;">登录</a>
         </div>
     </div>
-    <div class="m-dialog c-mask">
+    <div class="c-mask">
         <form enctype="multipart/form-data" id="form_login" class="zone-form">
             <div class="form-info c-center">
                 <h3>登录</h3>

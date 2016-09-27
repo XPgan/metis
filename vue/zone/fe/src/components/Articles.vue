@@ -54,7 +54,13 @@
         }
     }
     @media screen and (max-width: 600px) {
-        .m-articles ul { margin: 0 -10px; }
-        .m-articles ul li { width: 50%;padding: 10px; }
+        .m-articles ul {
+            margin: 0 -10px;
+
+            li {
+                width: 50%;
+                padding: 10px;
+            }
+        }
     }
 </style>

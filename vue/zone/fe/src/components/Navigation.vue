@@ -9,9 +9,10 @@
     <div class="c-mask">
         <form enctype="multipart/form-data" id="form_login" class="zone-form">
             <div class="form-info c-center">
-                <h3>登录</h3>
+                <h3>登录<a v-link="{ path: '/register' }">注册</a></h3>
                 <input type="text" id="nickname" name="nickname" placeholder="昵称" />
                 <input type="password" id="password" name="password" placeholder="密码" />
+                <span>这里是提示信息</span>
                 <div class="zone-btn"><a href="javascript:;">确定</a><a href="javascript:;">取消</a></div>
             </div>
         </form>
@@ -59,5 +60,18 @@
     form.zone-form .form-info {
         width: 250px;
         position: fixed;
+
+        h3 {
+            position: relative;
+
+            a {
+                font-size: 12px;
+                color: #999;
+                text-decoration: underline;
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
     }
 </style>

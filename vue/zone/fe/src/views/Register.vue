@@ -1,7 +1,7 @@
 <template>
     <form enctype="multipart/form-data" id="form_register" class="zone-form">
         <div class="form-upload">
-            <img src="../assets/default_photo.jpg" />
+            <img src="../assets/default_photo.png" />
             <input type="file" id="portrait" name="portrait" />
             <span>上传头像</span>
         </div>

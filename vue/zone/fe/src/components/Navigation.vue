@@ -32,6 +32,11 @@
                 var status = this.showLogin
                 this.showLogin = status ? 0 : 1
             }
+        },
+        vuex: {
+            getters: {
+                serverHost: ({common}) => common.serverHost
+            }
         }
     }
 </script>

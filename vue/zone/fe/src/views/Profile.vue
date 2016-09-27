@@ -23,6 +23,10 @@
             </div>
         </form>
     </div>
+    <div class="zone-ctrl">
+        <a href="javascript:;" class="ctrl-publish"><span></span></a>
+        <a href="javascript:;" class="ctrl-edituser"><span></span></a>
+    </div>
 </template>
 
 <script>
@@ -126,5 +130,17 @@
             padding-top: 80px;
             margin: 50px auto;
         }
+    }
+    a.ctrl-publish {
+        left: 20px;
+        bottom: 100px;
+
+        span { background-position: 50% 0; }
+    }
+    a.ctrl-edituser{
+        left: 20px;
+        bottom: 30px;
+
+        span { background-position: 50% -24px; }
     }
 </style>

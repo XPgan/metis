@@ -5,6 +5,21 @@
         <div class="article-content">这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文</div>
         <div class="zone-btn"><a href="javascript:;">继续阅读</a></div>
     </section>
+    <div class="c-mask">
+        <form enctype="multipart/form-data" id="form_edit_article" class="zone-form form-edit c-center">
+            <div class="form-upload">
+                <img src="../assets/default_photo.png" />
+                <input type="file" id="cover" name="cover" />
+                <span>修改封面</span>
+            </div>
+            <div class="form-info">
+                <input type="text" id="title" name="title" placeholder="标题" />
+                <textarea id="content" name="content" placeholder="正文"></textarea>
+                <span>这里是提示信息</span>
+                <div class="zone-btn"><a href="javascript:;">提交</a><a href="javascript:;">取消</a></div>
+            </div>
+        </form>
+    </div>
 </template>
 
 <script>

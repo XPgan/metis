@@ -6,7 +6,7 @@
         <div class="zone-btn"><a href="javascript:;" class="zone-more">查看更多</a></div>
     </section>
     <div class="c-mask">
-        <form enctype="multipart/form-data" id="form_edituser" class="zone-form c-center">
+        <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
             <div class="form-upload">
                 <img src="../assets/default_photo.png" />
                 <input type="file" id="portrait" name="portrait" />
@@ -114,23 +114,6 @@
 </script>
 
 <style lang="less" scoped>
-    form.zone-form {
-        position: fixed;
-
-        .form-upload {
-            width: 100px;
-            margin: 50px auto -130px;
-
-            img, input {
-                width: 100px;
-                height: 100px;
-            }
-        }
-        .form-info {
-            padding-top: 80px;
-            margin: 50px auto;
-        }
-    }
     a.ctrl-publish {
         left: 20px;
         bottom: 100px;

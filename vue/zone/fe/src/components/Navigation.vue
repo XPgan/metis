@@ -4,9 +4,7 @@
             <li><a v-link="{ path: '/' }">首页</a></li>
             <li><a href="https://github.com/sunmengyuan/note/tree/master/vue/zone">源码</a></li>
         </ul>
-        <div class="m-log">
-            <a href="javascript:;">登录</a>
-        </div>
+        <div class="m-log"><a href="javascript:;">登录</a><a v-link="{ path: '/register' }">注册</a></div>
     </div>
     <div class="c-mask">
         <form enctype="multipart/form-data" id="form_login" class="zone-form">
@@ -49,8 +47,13 @@
         .m-log {
             float: right;
             font-size: 16px;
+            margin: 0 -5px;
 
-            a:hover { text-decoration: underline; }
+            a {
+                margin: 0 5px;
+
+                &:hover { text-decoration: underline; }
+            }
         }
     }
     form.zone-form .form-info {

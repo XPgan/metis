@@ -51,7 +51,7 @@
                     .then((res) => {
                         console.log('请求成功回调')
                     }, (res) => {
-                        this.login.message = '网络错误导致登录失败，请重试！'
+                        this.login.message = '网络错误导致登录失败'
                     })
             }
         }

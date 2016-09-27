@@ -1,11 +1,9 @@
 var express = require('express');
+var log = require('./modules/log');
 var router = express.Router();
 
-router.get('/', function (req, res) {
-    res.end(JSON.stringify({
-        message: 'message',
-        status: 1
-    }));
+router.post('/login', function (req, res) {
+    log.login(req, res);
 });
 
 module.exports = router;

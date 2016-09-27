@@ -4,16 +4,22 @@
             <li><a v-link="{ path: '/' }">首页</a></li>
             <li><a href="https://github.com/sunmengyuan/note/tree/master/vue/zone">源码</a></li>
         </ul>
-        <div class="m-log"><a href="javascript:;" @click="toggleLogin">登录</a><a v-link="{ path: '/register' }">注册</a></div>
+        <div class="m-log">
+            <a href="javascript:;" @click="toggleLogin">登录</a>
+            <a v-link="{ path: '/register' }">注册</a>
+        </div>
     </div>
-    <div class="c-mask" v-show="showLogin">
+    <div class="c-mask" v-show="login.show">
         <form enctype="multipart/form-data" id="form_login" class="zone-form">
             <div class="form-info c-center">
                 <h3>登录<a v-link="{ path: '/register' }">注册</a></h3>
                 <input type="text" id="nickname" name="nickname" placeholder="昵称" />
                 <input type="password" id="password" name="password" placeholder="密码" />
-                <span>这里是提示信息</span>
-                <div class="zone-btn"><a href="javascript:;">确定</a><a href="javascript:;" @click="toggleLogin">取消</a></div>
+                <span>{{ login.message }}</span>
+                <div class="zone-btn">
+                    <a href="javascript:;" @click="requestLogin">确定</a>
+                    <a href="javascript:;" @click="toggleLogin">取消</a>
+                </div>
             </div>
         </form>
     </div>
@@ -22,20 +28,31 @@
 <script>
     export default {
         name: 'Navigation',
+        vuex: {
+            getters: {
+                serverHostUrl: ({common}) => common.serverHostUrl
+            }
+        },
         data () {
             return {
-                showLogin: 0
+                login: {
+                    show: 0,
+                    message: ''
+                }
             }
         },
         methods: {
             toggleLogin () {
-                var status = this.showLogin
-                this.showLogin = status ? 0 : 1
-            }
-        },
-        vuex: {
-            getters: {
-                serverHost: ({common}) => common.serverHost
+                var status = this.login.show
+                this.login.show = status ? 0 : 1
+            },
+            requestLogin () {
+                this.$http.post(this.serverHostUrl + '/login', {})
+                    .then((res) => {
+                        console.log('请求成功回调')
+                    }, (res) => {
+                        this.login.message = '网络错误导致登录失败，请重试！'
+                    })
             }
         }
     }

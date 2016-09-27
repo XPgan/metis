@@ -11,7 +11,7 @@ var log = {
                     if (err) {
                         res.cookie('user', '');
                         res.end(JSON.stringify({
-                            message: '网络错误导致登录失败',
+                            message: '网络错误',
                             status: 0
                         }));
                     } else {

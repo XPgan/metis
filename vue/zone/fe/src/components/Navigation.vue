@@ -13,7 +13,7 @@
         <form enctype="multipart/form-data" id="form_login" class="zone-form">
             <div class="form-info c-center">
                 <h3>登录<a v-link="{ path: '/register' }">注册</a></h3>
-                <input type="text" id="nickname" name="nickname" placeholder="昵称" />
+                <input type="text" id="nickname" name="nickname" placeholder="用户名" />
                 <input type="password" id="password" name="password" placeholder="密码" />
                 <span>{{ login.message }}</span>
                 <div class="zone-btn">
@@ -44,14 +44,21 @@
         methods: {
             toggleLogin () {
                 var status = this.login.show
+
+                this.login.message = ''
                 this.login.show = status ? 0 : 1
             },
             requestLogin () {
                 this.$http.post(this.serverHostUrl + '/login', {})
                     .then((res) => {
-                        console.log('请求成功回调')
-                    }, (res) => {
-                        this.login.message = '网络错误导致登录失败'
+                        var data = JSON.parse(res.data)
+                        if (data.status) {
+                            this.login.show = 0
+                        } else {
+                            this.login.message = data.message
+                        }
+                    }, () => {
+                        this.login.message = '网络错误'
                     })
             }
         }

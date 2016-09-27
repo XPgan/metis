@@ -8,6 +8,16 @@
             <a href="javascript:;">登录</a>
         </div>
     </div>
+    <div class="m-dialog c-mask">
+        <form enctype="multipart/form-data" id="form_login" class="zone-form">
+            <div class="form-info c-center">
+                <h3>登录</h3>
+                <input type="text" id="nickname" name="nickname" placeholder="昵称" />
+                <input type="password" id="password" name="password" placeholder="密码" />
+                <div class="zone-btn"><a href="javascript:;">确定</a><a href="javascript:;">取消</a></div>
+            </div>
+        </form>
+    </div>
 </template>
 
 <script>
@@ -42,5 +52,9 @@
 
             a:hover { text-decoration: underline; }
         }
+    }
+    form.zone-form .form-info {
+        width: 250px;
+        position: fixed;
     }
 </style>

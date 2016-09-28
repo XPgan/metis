@@ -23,7 +23,7 @@
 </template>
 
 <script>
-    import UserInfo from '../components/UserInfo.vue'
+    import UserInfo from '../components/UserInfo'
 
     export default {
         name: 'ArticleDetail',

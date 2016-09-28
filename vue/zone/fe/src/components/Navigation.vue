@@ -26,6 +26,8 @@
 </template>
 
 <script>
+    import store from './vuex/store'
+
     export default {
         name: 'Navigation',
         vuex: {
@@ -42,12 +44,7 @@
             }
         },
         methods: {
-            toggleLogin () {
-                var status = this.login.show
-
-                this.login.message = ''
-                this.login.show = status ? 0 : 1
-            },
+            toggleLogin:
             requestLogin () {
                 this.$http.post(this.serverHostUrl + '/login', {})
                     .then((res) => {

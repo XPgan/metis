@@ -16,8 +16,8 @@
 </template>
 
 <script>
-    import Articles from '../components/Articles.vue'
-    import Users from '../components/Users.vue'
+    import Articles from '../components/Articles'
+    import Users from '../components/Users'
 
     export default {
         name: 'Homepage',

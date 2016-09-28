@@ -30,8 +30,8 @@
 </template>
 
 <script>
-    import Articles from '../components/Articles.vue'
-    import UserInfo from '../components/UserInfo.vue'
+    import Articles from '../components/Articles'
+    import UserInfo from '../components/UserInfo'
 
     export default {
         name: 'Profile',

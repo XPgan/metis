@@ -10,8 +10,8 @@
 
 <script>
     import store from './vuex/store'
-    import Navigation from './components/Navigation.vue'
-    import Banner from './components/Banner.vue'
+    import Navigation from './components/Navigation'
+    import Banner from './components/Banner'
 
     export default {
         name: 'App',

@@ -21,7 +21,7 @@
                 height: 300
             }).png()
 
-            this.$set('pattern', pattern)
+            this.pattern = pattern
         }
     }
 </script>

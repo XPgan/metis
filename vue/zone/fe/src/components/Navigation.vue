@@ -13,8 +13,8 @@
         <form enctype="multipart/form-data" id="form_login" class="zone-form form-login">
             <div class="form-info c-center">
                 <h3>登录<a v-link="{ path: '/register' }" @click="toggleLogin">注册</a></h3>
-                <input type="text" id="nickname" name="nickname" placeholder="用户名" />
-                <input type="password" id="password" name="password" placeholder="密码" />
+                <input type="text" id="nickname" name="nickname" placeholder="用户名" v-model="loginForm.nickname" />
+                <input type="password" id="password" name="password" placeholder="密码" v-model="loginForm.password" />
                 <span>{{ loginDialog.message }}</span>
                 <div class="zone-btns">
                     <a href="javascript:;" @click="requestLogin">确定</a>
@@ -40,6 +40,10 @@
                 loginDialog: {
                     show: 0,
                     message: ''
+                },
+                loginForm: {
+                    nickname: '',
+                    password: ''
                 }
             }
         },
@@ -48,7 +52,7 @@
                 publicMethods.toggleDialog(this.loginDialog)
             },
             requestLogin () {
-                this.$http.post(this.serverHostUrl + '/login', {})
+                this.$http.post(this.serverHostUrl + '/login', this.loginForm)
                     .then((res) => {
                         var data = JSON.parse(res.data)
                         if (data.status) {

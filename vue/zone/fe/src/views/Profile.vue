@@ -8,7 +8,7 @@
     <div class="c-mask">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
             <div class="form-upload">
-                <img src="../assets/default_upload.png" />
+                <img src="../assets/img/default_upload.png" />
                 <input type="file" id="portrait" name="portrait" />
                 <span>更改头像</span>
             </div>

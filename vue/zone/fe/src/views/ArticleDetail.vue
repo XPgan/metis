@@ -8,7 +8,7 @@
     <div class="c-mask">
         <form enctype="multipart/form-data" id="form_edit_article" class="zone-form form-edit c-center">
             <div class="form-upload">
-                <img src="../assets/default_upload.png" />
+                <img src="../assets/img/default_upload.png" />
                 <input type="file" id="cover" name="cover" />
                 <span>修改封面</span>
             </div>
@@ -44,7 +44,7 @@
             vertical-align: middle;
             width: 20px;
             height: 30px;
-            background: url("../assets/ico_edit.png") no-repeat 50% 2px;
+            background: url("../assets/img/ico_edit.png") no-repeat 50% 2px;
             background-size: 20px auto;
             margin-left: 10px;
         }

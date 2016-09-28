@@ -30,12 +30,12 @@
         name: 'Navigation',
         vuex: {
             getters: {
-                serverHostUrl: ({common}) => common.serverHostUrl
+                serverHostUrl: ({constant}) => constant.serverHostUrl
             }
         },
         data () {
             return {
-                login: {
+                loginDialog: {
                     show: 0,
                     message: ''
                 }

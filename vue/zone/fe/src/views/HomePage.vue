@@ -1,7 +1,7 @@
 <template>
     <h1>
         <a href="javascript:;" class="c-block">
-            <img src="../assets/logo.png" />
+            <img src="../assets/img/logo.png" />
         </a>
     </h1>
     <section>

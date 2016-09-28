@@ -1,11 +1,11 @@
 <template>
     <navigation></navigation>
     <banner></banner>
+    <router-view></router-view>
     <div class="pendant"></div>
     <div class="zone-ctrls">
         <a href="javascript:;" class="ctrl-gotop"><span></span></a>
     </div>
-    <router-view></router-view>
 </template>
 
 <script>
@@ -23,12 +23,14 @@
     }
 </script>
 
-<style src="./App.less" lang="less"></style>
+<style src="./assets/style/init.less" lang="less"></style>
+<style src="./assets/style/public.less" lang="less"></style>
+<style src="./assets/style/app.less" lang="less"></style>
 <style lang="less" scoped>
     .pendant {
         width: 89px;
         height: 310px;
-        background: url('./assets/pendant.png') no-repeat 0 50%;
+        background: url('./assets/img/pendant.png') no-repeat 0 50%;
         background-size: 89px auto;
         position: fixed;
         right: 0;

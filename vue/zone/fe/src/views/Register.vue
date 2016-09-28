@@ -9,10 +9,10 @@
             <h3>注册</h3>
             <input type="text" id="nickname" name="nickname" placeholder="昵称" v-model="registerForm.nickname" />
             <input type="password" id="password" name="password" placeholder="密码" v-model="registerForm.password" />
-            <input type="password" placeholder="确认密码" />
+            <input type="password" placeholder="确认密码" v-el:confirm-password />
             <input type="text" id="intro" name="intro" placeholder="一句话描述自己" v-model="registerForm.intro" />
-            <span>这里是提示信息</span>
-            <div class="zone-btns"><a href="javascript:;">提交</a><a href="javascript:;">取消</a></div>
+            <span>{{ registerMessage }}</span>
+            <div class="zone-btns"><a href="javascript:;" @click="requestRegister">提交</a><a href="javascript:;">取消</a></div>
         </div>
     </form>
 </template>
@@ -28,7 +28,8 @@
                     password: '',
                     intro: '',
                     portrait: ''
-                }
+                },
+                registerMessage: ''
             }
         },
         methods: {
@@ -37,14 +38,24 @@
                 var fileReader = new window.FileReader()
                 var file = e.target.files[0]
 
+                // 图片预览
                 fileReader.onload = function (e) {
                     var fileData = e.target.result
                     _this.portrait = fileData
                 }
                 fileReader.readAsDataURL(file)
+
+                _this.registerForm.portrait = file
             },
             requestRegister () {
+                var password = this.registerForm.password
+                var confirmPassword = this.$els.confirmPassword.value
 
+                if (password === confirmPassword) {
+                    console.log('发送请求')
+                } else {
+                    this.registerMessage = '密码或确认密码有误'
+                }
             }
         }
     }

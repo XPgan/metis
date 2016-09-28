@@ -6,6 +6,7 @@ import store from './vuex/store'
 import App from './App'
 
 Vue.use(VueResource)
+Vue.http.options.emulateJSON = true
 
 sync(store, router)
 

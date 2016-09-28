@@ -19,7 +19,13 @@
 
 <script>
     export default {
-        name: 'Register'
+        name: 'Register',
+        data () {
+
+        },
+        methods: {
+
+        }
     }
 </script>
 

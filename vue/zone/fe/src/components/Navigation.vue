@@ -16,7 +16,7 @@
                 <input type="text" id="nickname" name="nickname" placeholder="用户名" />
                 <input type="password" id="password" name="password" placeholder="密码" />
                 <span>{{ loginDialog.message }}</span>
-                <div class="zone-btn">
+                <div class="zone-btns">
                     <a href="javascript:;" @click="requestLogin">确定</a>
                     <a href="javascript:;" @click="toggleLogin">取消</a>
                 </div>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import publicMethod from '../assets/script/public'
+    import publicMethods from '../assets/script/public'
 
     export default {
         name: 'Navigation',
@@ -44,7 +44,9 @@
             }
         },
         methods: {
-            toggleLogin: publicMethod.toggleDialog(this.loginDialog),
+            toggleLogin () {
+                publicMethods.toggleDialog(this.loginDialog)
+            },
             requestLogin () {
                 this.$http.post(this.serverHostUrl + '/login', {})
                     .then((res) => {

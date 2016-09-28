@@ -9,13 +9,13 @@
             <a v-link="{ path: '/register' }">注册</a>
         </div>
     </div>
-    <div class="c-mask" v-show="login.show">
+    <div class="c-mask" v-show="loginDialog.show">
         <form enctype="multipart/form-data" id="form_login" class="zone-form form-login">
             <div class="form-info c-center">
                 <h3>登录<a v-link="{ path: '/register' }">注册</a></h3>
                 <input type="text" id="nickname" name="nickname" placeholder="用户名" />
                 <input type="password" id="password" name="password" placeholder="密码" />
-                <span>{{ login.message }}</span>
+                <span>{{ loginDialog.message }}</span>
                 <div class="zone-btn">
                     <a href="javascript:;" @click="requestLogin">确定</a>
                     <a href="javascript:;" @click="toggleLogin">取消</a>

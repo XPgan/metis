@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="c-mask" v-show="login.show">
-        <form enctype="multipart/form-data" id="form_login" class="zone-form">
+        <form enctype="multipart/form-data" id="form_login" class="zone-form form-login">
             <div class="form-info c-center">
                 <h3>登录<a v-link="{ path: '/register' }">注册</a></h3>
                 <input type="text" id="nickname" name="nickname" placeholder="用户名" />
@@ -97,20 +97,22 @@
             }
         }
     }
-    form.zone-form .form-info {
-        width: 250px;
-        position: fixed;
+    form.zone-form.form-login {
+        .form-info {
+            width: 250px;
+            position: fixed;
 
-        h3 {
-            position: relative;
+            h3 {
+                position: relative;
 
-            a {
-                font-size: 12px;
-                color: #999;
-                text-decoration: underline;
-                position: absolute;
-                top: 0;
-                right: 0;
+                a {
+                    font-size: 12px;
+                    color: #999;
+                    text-decoration: underline;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
             }
         }
     }

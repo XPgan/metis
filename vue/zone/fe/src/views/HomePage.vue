@@ -11,7 +11,7 @@
     <section>
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>
-        <div class="zone-btn"><a href="javascript:;">查看更多</a></div>
+        <div class="zone-btns"><a href="javascript:;">查看更多</a></div>
     </section>
 </template>
 

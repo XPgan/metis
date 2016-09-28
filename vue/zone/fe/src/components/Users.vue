@@ -56,6 +56,7 @@
                     font-size: 14px;
                     color: #666;
                 }
+
                 &:first-child { border-top: none; }
                 &:last-child { border-bottom: none; }
             }

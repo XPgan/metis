@@ -3,7 +3,7 @@
     <section>
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>
-        <div class="zone-btn"><a href="javascript:;" class="zone-more">查看更多</a></div>
+        <div class="zone-btns"><a href="javascript:;" class="zone-more">查看更多</a></div>
     </section>
     <div class="c-mask">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
@@ -19,11 +19,11 @@
                 <input type="password" placeholder="确认密码" />
                 <input type="text" id="intro" name="intro" placeholder="一句话描述自己" />
                 <span>这里是提示信息</span>
-                <div class="zone-btn"><a href="javascript:;">提交</a><a href="javascript:;">取消</a></div>
+                <div class="zone-btns"><a href="javascript:;">提交</a><a href="javascript:;">取消</a></div>
             </div>
         </form>
     </div>
-    <div class="zone-ctrl">
+    <div class="zone-ctrls">
         <a href="javascript:;" class="ctrl-publish"><span></span></a>
         <a href="javascript:;" class="ctrl-edituser"><span></span></a>
     </div>

@@ -27,7 +27,7 @@
             border-radius: 50%;
             margin: 0 auto;
         }
-        & > div {
+        div {
             font-size: 14px;
             line-height: 24px;
             color: #666;

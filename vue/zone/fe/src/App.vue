@@ -2,7 +2,7 @@
     <navigation></navigation>
     <banner></banner>
     <div class="pendant"></div>
-    <div class="zone-ctrl">
+    <div class="zone-ctrls">
         <a href="javascript:;" class="ctrl-gotop"><span></span></a>
     </div>
     <router-view></router-view>
@@ -41,6 +41,7 @@
 
         span { background-position: 50% -48px; }
     }
+
     @media screen and (max-width: 600px) {
         .pendant { display: none; }
     }

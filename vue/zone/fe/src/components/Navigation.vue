@@ -26,7 +26,7 @@
 </template>
 
 <script>
-    import store from './vuex/store'
+    import publicMethod from '../assets/script/public'
 
     export default {
         name: 'Navigation',
@@ -44,18 +44,18 @@
             }
         },
         methods: {
-            toggleLogin:
+            toggleLogin: publicMethod.toggleDialog(this.loginDialog),
             requestLogin () {
                 this.$http.post(this.serverHostUrl + '/login', {})
                     .then((res) => {
                         var data = JSON.parse(res.data)
                         if (data.status) {
-                            this.login.show = 0
+                            this.loginDialog.show = 0
                         } else {
-                            this.login.message = data.message
+                            this.loginDialog.message = data.message
                         }
                     }, () => {
-                        this.login.message = '网络错误'
+                        this.loginDialog.message = '网络错误'
                     })
             }
         }

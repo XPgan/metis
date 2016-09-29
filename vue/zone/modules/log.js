@@ -1,3 +1,5 @@
+var fs = require('fs');
+var formidable = require('formidable');
 var User = require('../models').User;
 
 var log = {
@@ -5,29 +7,74 @@ var log = {
         var user = req.body;
 
         User.count(user, function (err, doc) {
-            if (doc && !err) {
-                var record = {nickname: user.nickname};
-                User.find(record, {id: 1}, {}, function (err, result) {
+            if (err) {
+                res.end(JSON.stringify({
+                    message: '网络错误',
+                    status: 0
+                }));
+            } else {
+                if (doc) {
+                    var record = {nickname: user.nickname};
+                    User.find(record, {id: 1}, {}, function (err, result) {
+                        if (err) {
+                            res.end(JSON.stringify({
+                                message: '网络错误',
+                                status: 0
+                            }));
+                        } else {
+                            res.cookie('user', result[0].id);
+                            res.end(JSON.stringify({
+                                message: '登录成功',
+                                status: 1
+                            }));
+                        }
+                    });
+                } else {
+                    res.end(JSON.stringify({
+                        message: '用户名或密码有误',
+                        status: 0
+                    }));
+                }
+            }
+        });
+    },
+    register: function (req, res) {
+        var id = (new Date()).valueOf().toString();
+        var form = new formidable.IncomingForm();
+
+        req.body.id = id;
+
+        form.parse(req, function (err, fields, files) {
+            if (err) {
+                res.end(JSON.stringify({
+                    message: '网络错误',
+                    status: 0
+                }));
+            } else {
+                var url = '/portrait/' + id + '_' + files.portrait.name;
+                var tmp_path = files.portrait.path;
+                var target_path = '../upload' + url;
+
+                fs.renameSync(tmp_path, target_path);
+
+                req.body.portrait = url;
+
+                var user = new User(req.body);
+                user.save(function (err) {
                     if (err) {
-                        res.cookie('user', '');
                         res.end(JSON.stringify({
                             message: '网络错误',
                             status: 0
                         }));
                     } else {
-                        res.cookie('user', result[0].id);
+                        res.cookie('user', id);
                         res.end(JSON.stringify({
-                            message: '登录成功',
-                            status: 1
+                            message: '注册成功',
+                            status: 1,
+                            id: id
                         }));
                     }
                 });
-            } else {
-                res.cookie('user', '');
-                res.end(JSON.stringify({
-                    message: '用户名或密码有误',
-                    status: 0
-                }));
             }
         });
     }

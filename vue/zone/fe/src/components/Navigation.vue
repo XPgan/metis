@@ -63,6 +63,8 @@
                         if (data.status) {
                             _this.login.show = 0
                             _this.login.message = ''
+
+                            window.localStorage.setItem('user', data.id)
                         } else {
                             _this.login.message = data.message
                         }

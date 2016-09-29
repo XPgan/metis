@@ -92,6 +92,8 @@
                             var data = JSON.parse(res.data)
                             if (data.status) {
                                 _register.message = ''
+
+                                window.localStorage.setItem('user', data.id)
                                 window.location.href = '/'
                             } else {
                                 _register.message = data.message

@@ -20,8 +20,6 @@ var log = {
                             }));
                         } else {
                             var id = result[0].id;
-
-                            res.cookie('user', id);
                             res.end(JSON.stringify({
                                 message: '登录成功',
                                 status: 1,
@@ -50,7 +48,6 @@ var log = {
                     status: 0
                 }));
             } else {
-                res.cookie('user', id);
                 res.end(JSON.stringify({
                     message: '注册成功',
                     status: 1,

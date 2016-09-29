@@ -20,7 +20,7 @@ var log = {
                             }));
                         } else {
                             var id = result[0].id;
-                            
+
                             res.cookie('user', id);
                             res.end(JSON.stringify({
                                 message: '登录成功',

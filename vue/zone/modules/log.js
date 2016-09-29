@@ -19,10 +19,13 @@ var log = {
                                 status: 0
                             }));
                         } else {
-                            res.cookie('user', result[0].id);
+                            var id = result[0].id;
+                            
+                            res.cookie('user', id);
                             res.end(JSON.stringify({
                                 message: '登录成功',
-                                status: 1
+                                status: 1,
+                                id: id
                             }));
                         }
                     });

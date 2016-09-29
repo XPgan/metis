@@ -7,10 +7,10 @@
         </div>
         <div class="form-info">
             <h3>注册</h3>
-            <input type="text" id="nickname" name="nickname" placeholder="昵称" v-model="registerForm.nickname" />
-            <input type="password" id="password" name="password" placeholder="密码" v-model="registerForm.password" />
+            <input type="text" id="nickname" name="nickname" placeholder="昵称" v-model="registerForm.nickname" v-el:nickname />
+            <input type="password" id="password" name="password" placeholder="密码" v-model="registerForm.password" v-el:password />
             <input type="password" placeholder="确认密码" v-el:confirm-password />
-            <input type="text" id="intro" name="intro" placeholder="一句话描述自己" v-model="registerForm.intro" />
+            <input type="text" id="intro" name="intro" placeholder="一句话描述自己" v-model="registerForm.intro" v-el:intro />
             <span>{{ registerMessage }}</span>
             <div class="zone-btns"><a href="javascript:;" @click="requestRegister">提交</a><a href="javascript:;">取消</a></div>
         </div>
@@ -48,13 +48,20 @@
                 _this.registerForm.portrait = file
             },
             requestRegister () {
-                var password = this.registerForm.password
+                var nickname = this.$els.nickname.value
+                var password = this.$els.password.value
                 var confirmPassword = this.$els.confirmPassword.value
+                var intro = this.$els.intro.value
 
-                if (password === confirmPassword) {
-                    console.log('发送请求')
+                if (nickname && password && confirmPassword && intro) {
+                    if (password === confirmPassword) {
+                        this.registerMessage = ''
+                        console.log('发送请求')
+                    } else {
+                        this.registerMessage = '密码或确认密码有误'
+                    }
                 } else {
-                    this.registerMessage = '密码或确认密码有误'
+                    this.registerMessage = '信息填写不完整'
                 }
             }
         }

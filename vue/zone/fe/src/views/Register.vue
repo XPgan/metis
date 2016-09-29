@@ -27,7 +27,10 @@
                 v-model="register.body.intro"
                 v-el:intro />
             <span>{{ register.message }}</span>
-            <div class="zone-btns"><a href="javascript:;" @click="requestRegister">提交</a><a href="javascript:;">取消</a></div>
+            <div class="zone-btns">
+                <a href="javascript:;" @click="requestRegister">提交</a>
+                <a href="javascript:;">取消</a>
+            </div>
         </div>
     </form>
 </template>

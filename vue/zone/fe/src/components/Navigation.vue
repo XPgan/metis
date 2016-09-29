@@ -9,13 +9,17 @@
             <a v-link="{ path: '/register' }">注册</a>
         </div>
     </div>
-    <div class="c-mask" v-show="loginDialog.show">
+    <div class="c-mask" v-show="login.show">
         <form enctype="multipart/form-data" id="form_login" class="zone-form form-login">
             <div class="form-info c-center">
-                <h3>登录<a v-link="{ path: '/register' }" @click="toggleLogin">注册</a></h3>
-                <input type="text" id="nickname" name="nickname" placeholder="用户名" v-model="loginForm.nickname" />
-                <input type="password" id="password" name="password" placeholder="密码" v-model="loginForm.password" />
-                <span>{{ loginDialog.message }}</span>
+                <h3>登录<a v-link="{ path: '/register' }">注册</a></h3>
+                <input
+                    type="text" placeholder="用户名"
+                    v-model="login.body.nickname" />
+                <input
+                    type="password" placeholder="密码"
+                    v-model="login.body.password" />
+                <span>{{ login.message }}</span>
                 <div class="zone-btns">
                     <a href="javascript:;" @click="requestLogin">确定</a>
                     <a href="javascript:;" @click="toggleLogin">取消</a>
@@ -37,31 +41,33 @@
         },
         data () {
             return {
-                loginDialog: {
+                login: {
                     show: 0,
+                    body: {
+                        nickname: '',
+                        password: ''
+                    },
                     message: ''
-                },
-                loginForm: {
-                    nickname: '',
-                    password: ''
                 }
             }
         },
         methods: {
             toggleLogin () {
-                publicMethods.toggleDialog(this.loginDialog)
+                publicMethods.toggleDialog(this.login)
             },
             requestLogin () {
-                this.$http.post(this.serverHostUrl + '/login', this.loginForm)
+                var _this = this
+                _this.$http.post(_this.serverHostUrl + '/login', _this.login.body)
                     .then((res) => {
                         var data = JSON.parse(res.data)
                         if (data.status) {
-                            this.loginDialog.show = 0
+                            _this.login.show = 0
+                            _this.login.message = ''
                         } else {
-                            this.loginDialog.message = data.message
+                            _this.login.message = data.message
                         }
                     }, () => {
-                        this.loginDialog.message = '网络错误'
+                        _this.login.message = '网络错误'
                     })
             }
         }

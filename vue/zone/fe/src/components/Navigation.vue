@@ -6,7 +6,7 @@
         </ul>
         <div class="m-log" v-if="currentUser">
             <a v-link="{ path: '/profile/' + currentUser }">个人页</a>
-            <a href="javascript:;">退出</a>
+            <a href="javascript:;" @click="exitLogin">退出</a>
         </div>
         <div class="m-log" v-else>
             <a href="javascript:;" @click="toggleLogin">登录</a>
@@ -68,8 +68,8 @@
                         if (data.status) {
                             _this.login.show = 0
                             _this.login.message = ''
-                            _this.currentUser = data.id
 
+                            _this.currentUser = data.id
                             window.localStorage.setItem('user', data.id)
                         } else {
                             _this.login.message = data.message
@@ -77,6 +77,10 @@
                     }, () => {
                         _this.login.message = '网络错误'
                     })
+            },
+            exitLogin () {
+                this.currentUser = ''
+                window.localStorage.setItem('user', '')
             }
         }
     }

@@ -3,7 +3,6 @@ var User = require('../models').User;
 var log = {
     login: function (req, res) {
         var user = req.body;
-
         User.count(user, function (err, doc) {
             if (err) {
                 res.end(JSON.stringify({
@@ -57,6 +56,6 @@ var log = {
             }
         });
     }
-}
+};
 
 module.exports = log;

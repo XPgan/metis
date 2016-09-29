@@ -4,9 +4,7 @@
             <img :src="portrait" />
             <input
                 type="file"
-                id="portrait"
-                name="portrait"
-                @change="uploadPortrait($event)"
+                @change="fileAnalysis($event)"
                 v-model="register.body.portrait"
                 v-el:portrait />
             <span>上传头像</span>
@@ -14,28 +12,18 @@
         <div class="form-info">
             <h3>注册</h3>
             <input
-                type="text"
-                id="nickname"
-                name="nickname"
-                placeholder="昵称"
+                type="text" placeholder="用户名"
                 v-model="register.body.nickname"
                 v-el:nickname />
             <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="密码"
+                type="password" placeholder="密码"
                 v-model="register.body.password"
                 v-el:password />
             <input
-                type="password"
-                placeholder="确认密码"
+                type="password" placeholder="确认密码"
                 v-el:cfm-password />
             <input
-                type="text"
-                id="intro"
-                name="intro"
-                placeholder="一句话描述自己"
+                type="text" placeholder="个人简介"
                 v-model="register.body.intro"
                 v-el:intro />
             <span>{{ register.message }}</span>
@@ -68,60 +56,66 @@
             }
         },
         methods: {
-            uploadPortrait (e) {
+            fileAnalysis (e) {
                 var _this = this
                 var fileReader = new window.FileReader()
                 var file = e.target.files[0]
 
+                _this.register.formData.append('portrait', file)
+
+                // 上传图片预览
                 fileReader.onload = function (e) {
                     var fileData = e.target.result
                     _this.portrait = fileData
                 }
                 fileReader.readAsDataURL(file)
-
-                _this.register.formData.append('portrait', file)
             },
             requestRegister () {
-                var $els = this.$els
-                var _register = this.register
+                var _this = this
+                var _register = _this.register
                 var body = _register.body
                 var formData = _register.formData
 
+                var $els = _this.$els
                 var nickname = $els.nickname.value
                 var password = $els.password.value
                 var cfmPassword = $els.cfmPassword.value
                 var intro = $els.intro.value
                 var portrait = $els.portrait.value
 
-                var judge = nickname && password && cfmPassword && intro && portrait
+                var register = function () {
+                    _this.$http.post(_this.serverHostUrl + '/register', body)
+                        .then((res) => {
+                            var data = JSON.parse(res.data)
+                            if (data.status) {
+                                _register.message = ''
+                                window.location.href = '/'
+                            } else {
+                                _register.message = data.message
+                            }
+                        }, () => {
+                            _register.message = '网络错误'
+                        })
+                }
+                var upload = function () {
+                    _this.$http.post(_this.serverHostUrl + '/upload/portrait', formData)
+                        .then((res) => {
+                            var data = JSON.parse(res.data)
+                            if (data.status) {
+                                body.portrait = data.url
+                                register()
+                            } else {
+                                _register.message = data.message
+                            }
+                        }, () => {
+                            _register.message = '网络错误'
+                        })
+                }
 
-                if (judge) {
+                var hasEmpty = nickname && password && cfmPassword && intro && portrait
+                if (hasEmpty) {
                     if (password === cfmPassword) {
-                        this.$http.post(this.serverHostUrl + '/upload/portrait', formData)
-                            .then((res) => {
-                                var data = JSON.parse(res.data)
-                                if (data.status) {
-                                    body.portrait = data.url
-
-                                    this.$http.post(this.serverHostUrl + '/register', body)
-                                        .then((res) => {
-                                            var data = JSON.parse(res.data)
-                                            if (data.status) {
-                                                _register.message = ''
-
-                                                window.location.href = '/'
-                                            } else {
-                                                _register.message = data.message
-                                            }
-                                        }, () => {
-                                            _register.message = '网络错误'
-                                        })
-                                } else {
-                                    _register.message = data.message
-                                }
-                            }, () => {
-                                _register.message = '网络错误'
-                            })
+                        upload()
                     } else {
                         _register.message = '密码或确认密码有误'
                     }

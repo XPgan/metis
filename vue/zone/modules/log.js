@@ -1,5 +1,3 @@
-var fs = require('fs');
-var formidable = require('formidable');
 var User = require('../models').User;
 
 var log = {
@@ -40,41 +38,22 @@ var log = {
     },
     register: function (req, res) {
         var id = (new Date()).valueOf().toString();
-        var form = new formidable.IncomingForm();
-
         req.body.id = id;
 
-        form.parse(req, function (err, fields, files) {
+        var user = new User(req.body);
+        user.save(function (err) {
             if (err) {
                 res.end(JSON.stringify({
                     message: '网络错误',
                     status: 0
                 }));
             } else {
-                var url = '/portrait/' + id + '_' + files.portrait.name;
-                var tmp_path = files.portrait.path;
-                var target_path = '../upload' + url;
-
-                fs.renameSync(tmp_path, target_path);
-
-                req.body.portrait = url;
-
-                var user = new User(req.body);
-                user.save(function (err) {
-                    if (err) {
-                        res.end(JSON.stringify({
-                            message: '网络错误',
-                            status: 0
-                        }));
-                    } else {
-                        res.cookie('user', id);
-                        res.end(JSON.stringify({
-                            message: '注册成功',
-                            status: 1,
-                            id: id
-                        }));
-                    }
-                });
+                res.cookie('user', id);
+                res.end(JSON.stringify({
+                    message: '注册成功',
+                    status: 1,
+                    id: id
+                }));
             }
         });
     }

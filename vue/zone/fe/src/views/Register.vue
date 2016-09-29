@@ -52,8 +52,9 @@
                 var password = this.$els.password.value
                 var confirmPassword = this.$els.confirmPassword.value
                 var intro = this.$els.intro.value
+                var portrait = this.registerForm.portrait
 
-                if (nickname && password && confirmPassword && intro) {
+                if (nickname && password && confirmPassword && intro && portrait) {
                     if (password === confirmPassword) {
                         this.registerMessage = ''
                         console.log('发送请求')

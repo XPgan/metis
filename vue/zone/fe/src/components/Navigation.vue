@@ -4,7 +4,11 @@
             <li><a v-link="{ path: '/' }">首页</a></li>
             <li><a href="https://github.com/sunmengyuan/note/tree/master/vue/zone">源码</a></li>
         </ul>
-        <div class="m-log">
+        <div class="m-log" v-if="currentUser">
+            <a v-link="{ path: '/profile/' + currentUser }">个人页</a>
+            <a href="javascript:;">退出</a>
+        </div>
+        <div class="m-log" v-else>
             <a href="javascript:;" @click="toggleLogin">登录</a>
             <a v-link="{ path: '/register' }">注册</a>
         </div>
@@ -41,6 +45,7 @@
         },
         data () {
             return {
+                currentUser: window.localStorage.getItem('user'),
                 login: {
                     show: 0,
                     body: {
@@ -63,6 +68,7 @@
                         if (data.status) {
                             _this.login.show = 0
                             _this.login.message = ''
+                            _this.currentUser = data.id
 
                             window.localStorage.setItem('user', data.id)
                         } else {

@@ -12,7 +12,7 @@
     <div class="c-mask" v-show="login.show">
         <form enctype="multipart/form-data" id="form_login" class="zone-form form-login">
             <div class="form-info c-center">
-                <h3>登录<a v-link="{ path: '/register' }">注册</a></h3>
+                <h3>登录<a v-link="{ path: '/register' }" @click="toggleLogin">注册</a></h3>
                 <input
                     type="text" placeholder="用户名"
                     v-model="login.body.nickname" />

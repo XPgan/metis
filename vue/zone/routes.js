@@ -2,6 +2,7 @@ var express = require('express');
 var User = require('./models').User;
 var log = require('./modules/log');
 var upload = require('./modules/upload');
+var edit = require('./modules/edit');
 var router = express.Router();
 
 router.get('/profile/:id', function (req, res) {
@@ -37,6 +38,9 @@ router.post('/register', function (req, res) {
 });
 router.post('/upload/portrait', function (req, res) {
     upload.portrait(req, res);
+});
+router.post('/edit/user/:id', function (req, res) {
+    edit.user(req, res);
 });
 
 module.exports = router;

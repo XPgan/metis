@@ -139,6 +139,8 @@
                             _editUser.message = '密码或确认密码有误'
                         }
                     } else {
+                        _editUser.message = ''
+
                         upload()
                     }
                 }

@@ -1,5 +1,5 @@
 <template>
-    <user-info></user-info>
+    <user-info :user-info="userInfo"></user-info>
     <section>
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>

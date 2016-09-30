@@ -1,17 +1,25 @@
 <template>
     <div class="m-userinfo">
-        <img src="https://avatars2.githubusercontent.com/u/13533886?v=3&s=466" />
+        <img :src="serverHostUrl + userInfo.portrait" />
         <div>
-            呆恋小喵
+            {{ userInfo.nickname }}
             <br />
-            这里是个人简介这里是个人简介这里是个人简介这里是
+            {{ userInfo.intro }}
         </div>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'UserInfo'
+        name: 'UserInfo',
+        props: {
+            userInfo: Object
+        },
+        vuex: {
+            getters: {
+                serverHostUrl: ({constant}) => constant.serverHostUrl
+            }
+        }
     }
 </script>
 

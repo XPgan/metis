@@ -4,7 +4,7 @@
     <router-view></router-view>
     <div class="pendant"></div>
     <div class="zone-ctrls">
-        <a href="javascript:;" class="ctrl-gotop"><span></span></a>
+        <a href="javascript:;" class="ctrl-gotop" @click="gotop" v-show="showGotop"><span></span></a>
     </div>
 </template>
 
@@ -19,7 +19,24 @@
             Navigation,
             Banner
         },
-        store
+        store,
+        data () {
+            return {
+                showGotop: 0
+            }
+        },
+        created () {
+            var _this = this
+            window.onscroll = function () {
+                var scrollTop = window.document.body.scrollTop
+                _this.showGotop = (scrollTop > 1500) ? 1 : 0
+            }
+        },
+        methods: {
+            gotop () {
+                window.document.body.scrollTop = 0
+            }
+        }
     }
 </script>
 

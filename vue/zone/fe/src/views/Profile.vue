@@ -41,7 +41,10 @@
                     v-model="editUser.body.intro"
                     v-el:intro />
                 <span>{{ editUser.message }}</span>
-                <div class="zone-btns"><a href="javascript:;">提交</a><a href="javascript:;" @click="toggleEditUser">取消</a></div>
+                <div class="zone-btns">
+                    <a href="javascript:;" @click="requestEditUser">提交</a>
+                    <a href="javascript:;" @click="toggleEditUser">取消</a>
+                </div>
             </div>
         </form>
     </div>
@@ -113,7 +116,72 @@
                 publicMethods.toggleDialog(this.editUser)
             },
             requestEditUser () {
+                var _this = this
+                var _editUser = _this.editUser
+                var body = _editUser.body
+                var formData = _editUser.formData
 
+                var $els = _this.$els
+                var nickname = $els.nickname.value
+                var oldPassword = $els.oldPassword.value
+                var password = $els.password.value
+                var cfmPassword = $els.cfmPassword.value
+                var intro = $els.intro.value
+                var portrait = $els.portrait.value
+
+                var checkPassword = function () {
+                    if (password && (password === cfmPassword)) {
+                        body.oldPassword = oldPassword
+                        body.password = password
+                    } else {
+                        _editUser.message = '密码或确认密码有误'
+                    }
+                }
+                var upload = function () {
+                    if (portrait) {
+                        _this.$http.post(_this.serverHostUrl + '/upload/portrait', formData)
+                            .then((res) => {
+                                var data = JSON.parse(res.data)
+                                if (data.status) {
+                                    body.portrait = data.url
+                                    editUser()
+                                } else {
+                                    _editUser.message = data.message
+                                }
+                            }, () => {
+                                _editUser.message = '网络错误'
+                            })
+                    } else {
+                        editUser()
+                    }
+                }
+                var editUser = function () {
+                    var id = _this.userInfo.id
+                    for (var key in body) {
+                        body[key] || delete body[key]
+                    }
+
+                    _this.$http.post(_this.serverHostUrl + '/edit/user/' + id, body)
+                        .then((res) => {
+                            var data = JSON.parse(res.data)
+                            if (data.status) {
+                                _editUser.message = ''
+                                window.location.reload()
+                            } else {
+                                _editUser.message = data.message
+                            }
+                        }, () => {
+                            _editUser.message = '网络错误'
+                        })
+                }
+
+                var noEmpty = nickname && intro
+                if (noEmpty) {
+                    checkPassword()
+                    upload()
+                } else {
+                    _editUser.message = '用户名及个人简介不可修改为空'
+                }
             }
         }
     }

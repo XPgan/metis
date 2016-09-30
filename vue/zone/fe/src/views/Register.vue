@@ -118,8 +118,8 @@
                         })
                 }
 
-                var hasEmpty = nickname && password && cfmPassword && intro && portrait
-                if (hasEmpty) {
+                var noEmpty = nickname && password && cfmPassword && intro && portrait
+                if (noEmpty) {
                     if (password === cfmPassword) {
                         upload()
                     } else {

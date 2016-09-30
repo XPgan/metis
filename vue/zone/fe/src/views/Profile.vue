@@ -8,9 +8,12 @@
     <div class="c-mask" v-show="editUser.show">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
             <div class="form-upload">
-                <img :src="serverHostUrl + userInfo.portrait" />
+                <img
+                    :src="serverHostUrl + userInfo.portrait"
+                    v-el:upload />
                 <input
                     type="file"
+                    @change="fileAnalysis($event)"
                     v-model="editUser.body.portrait"
                     v-el:portrait />
                 <span>更改头像</span>
@@ -92,8 +95,25 @@
                 })
         },
         methods: {
+            fileAnalysis (e) {
+                var _this = this
+                var fileReader = new window.FileReader()
+                var file = e.target.files[0]
+
+                _this.editUser.formData.append('portrait', file)
+
+                // 上传图片预览
+                fileReader.onload = function (e) {
+                    var fileData = e.target.result
+                    _this.$els.upload.src = fileData
+                }
+                fileReader.readAsDataURL(file)
+            },
             toggleEditUser () {
                 publicMethods.toggleDialog(this.editUser)
+            },
+            requestEditUser () {
+
             }
         }
     }

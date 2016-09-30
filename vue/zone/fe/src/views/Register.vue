@@ -1,7 +1,9 @@
 <template>
     <form enctype="multipart/form-data" id="form_register" class="zone-form">
         <div class="form-upload">
-            <img :src="portrait" />
+            <img
+                src="../assets/img/default_upload.png"
+                v-el:upload />
             <input
                 type="file"
                 @change="fileAnalysis($event)"
@@ -45,7 +47,6 @@
         },
         data () {
             return {
-                portrait: '/static/default_upload.png',
                 register: {
                     formData: new window.FormData(),
                     body: {
@@ -69,7 +70,7 @@
                 // 上传图片预览
                 fileReader.onload = function (e) {
                     var fileData = e.target.result
-                    _this.portrait = fileData
+                    _this.$els.upload.src = fileData
                 }
                 fileReader.readAsDataURL(file)
             },

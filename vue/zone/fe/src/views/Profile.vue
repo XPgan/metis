@@ -5,7 +5,7 @@
         <articles :articles="articles"></articles>
         <div class="zone-btns"><a href="javascript:;" class="zone-more">查看更多</a></div>
     </section>
-    <div class="c-mask">
+    <div class="c-mask" v-show="editUser.show">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
             <div class="form-upload">
                 <img src="../assets/img/default_upload.png" />
@@ -19,17 +19,18 @@
                 <input type="password" placeholder="确认密码" />
                 <input type="text" id="intro" name="intro" placeholder="一句话描述自己" />
                 <span>这里是提示信息</span>
-                <div class="zone-btns"><a href="javascript:;">提交</a><a href="javascript:;">取消</a></div>
+                <div class="zone-btns"><a href="javascript:;">提交</a><a href="javascript:;" @click="toggleEditUser">取消</a></div>
             </div>
         </form>
     </div>
     <div class="zone-ctrls">
         <a href="javascript:;" class="ctrl-publish"><span></span></a>
-        <a href="javascript:;" class="ctrl-edituser"><span></span></a>
+        <a href="javascript:;" class="ctrl-edituser" @click="toggleEditUser"><span></span></a>
     </div>
 </template>
 
 <script>
+    import publicMethods from '../assets/script/public'
     import Articles from '../components/Articles'
     import UserInfo from '../components/UserInfo'
 
@@ -39,75 +40,31 @@
             Articles,
             UserInfo
         },
-
+        vuex: {
+            getters: {
+                serverHostUrl: ({constant}) => constant.serverHostUrl
+            }
+        },
         data () {
             return {
-                articles: [
-                    {
-                        title: '文章一',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
+                articles: [],
+                editUser: {
+                    show: 0,
+                    formData: new window.FormData(),
+                    body: {
+                        nickname: '',
+                        oldPassword: '',
+                        password: '',
+                        intro: '',
+                        portrait: ''
                     },
-                    {
-                        title: '文章二',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章一',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章二',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章一',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章二',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章一',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章二',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    }
-                ]
+                    message: ''
+                }
+            }
+        },
+        methods: {
+            toggleEditUser () {
+                publicMethods.toggleDialog(this.editUser)
             }
         }
     }

@@ -130,11 +130,16 @@
                 var portrait = $els.portrait.value
 
                 var checkPassword = function () {
-                    if (password && (password === cfmPassword)) {
-                        body.oldPassword = oldPassword
-                        body.password = password
+                    if (password || cfmPassword || oldPassword) {
+                        if (password && (password === cfmPassword)) {
+                            body.oldPassword = oldPassword
+                            body.password = password
+                            upload()
+                        } else {
+                            _editUser.message = '密码或确认密码有误'
+                        }
                     } else {
-                        _editUser.message = '密码或确认密码有误'
+                        upload()
                     }
                 }
                 var upload = function () {
@@ -178,7 +183,6 @@
                 var noEmpty = nickname && intro
                 if (noEmpty) {
                     checkPassword()
-                    upload()
                 } else {
                     _editUser.message = '用户名及个人简介不可修改为空'
                 }

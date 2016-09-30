@@ -9,16 +9,33 @@
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
             <div class="form-upload">
                 <img src="../assets/img/default_upload.png" />
-                <input type="file" id="portrait" name="portrait" />
+                <input
+                    type="file"
+                    v-model="editUser.body.portrait"
+                    v-el:portrait />
                 <span>更改头像</span>
             </div>
             <div class="form-info">
-                <input type="text" id="nickname" name="nickname" placeholder="昵称" />
-                <input type="password" id="old_password" name="old_password" placeholder="原密码" />
-                <input type="password" id="password" name="password" placeholder="新密码" />
-                <input type="password" placeholder="确认密码" />
-                <input type="text" id="intro" name="intro" placeholder="一句话描述自己" />
-                <span>这里是提示信息</span>
+                <input
+                    type="text" placeholder="用户名"
+                    v-model="editUser.body.nickname"
+                    v-el:nickname />
+                <input
+                    type="password" placeholder="原密码"
+                    v-model="editUser.body.oldPassword"
+                    v-el:old-password />
+                <input
+                    type="password" placeholder="新密码"
+                    v-model="editUser.body.password"
+                    v-el:password />
+                <input
+                    type="password" placeholder="确认密码"
+                    v-el:cfm-password />
+                <input
+                    type="text" placeholder="一句话描述自己"
+                    v-model="editUser.body.intro"
+                    v-el:intro />
+                <span>{{ editUser.message }}</span>
                 <div class="zone-btns"><a href="javascript:;">提交</a><a href="javascript:;" @click="toggleEditUser">取消</a></div>
             </div>
         </form>

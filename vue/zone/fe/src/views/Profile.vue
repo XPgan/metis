@@ -14,7 +14,6 @@
                 <input
                     type="file"
                     @change="fileAnalysis($event)"
-                    v-model="editUser.body.portrait"
                     v-el:portrait />
                 <span>更改头像</span>
             </div>
@@ -140,7 +139,6 @@
                         }
                     } else {
                         _editUser.message = ''
-
                         upload()
                     }
                 }
@@ -167,7 +165,6 @@
                     for (var key in body) {
                         body[key] || delete body[key]
                     }
-
                     _this.$http.post(_this.serverHostUrl + '/edit/user/' + id, body)
                         .then((res) => {
                             var data = JSON.parse(res.data)

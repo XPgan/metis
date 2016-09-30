@@ -8,7 +8,9 @@ import Profile from './views/Profile'
 import ArticleDetail from './views/ArticleDetail'
 
 Vue.use(Router)
-const router = new Router()
+const router = new Router({
+    hashbang: false
+})
 
 router.map({
     '/': {

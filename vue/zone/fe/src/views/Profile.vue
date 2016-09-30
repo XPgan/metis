@@ -8,7 +8,7 @@
     <div class="c-mask" v-show="editUser.show">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
             <div class="form-upload">
-                <img src="../assets/img/default_upload.png" />
+                <img :src="serverHostUrl + userInfo.portrait" />
                 <input
                     type="file"
                     v-model="editUser.body.portrait"
@@ -18,6 +18,7 @@
             <div class="form-info">
                 <input
                     type="text" placeholder="用户名"
+                    :value="userInfo.nickname"
                     v-model="editUser.body.nickname"
                     v-el:nickname />
                 <input
@@ -33,6 +34,7 @@
                     v-el:cfm-password />
                 <input
                     type="text" placeholder="一句话描述自己"
+                    :value="userInfo.intro"
                     v-model="editUser.body.intro"
                     v-el:intro />
                 <span>{{ editUser.message }}</span>
@@ -64,6 +66,7 @@
         },
         data () {
             return {
+                userInfo: {},
                 articles: [],
                 editUser: {
                     show: 0,
@@ -78,6 +81,15 @@
                     message: ''
                 }
             }
+        },
+        created () {
+            var _this = this
+            var hash = window.location.hash.slice(1)
+            _this.$http.get(_this.serverHostUrl + hash)
+                .then((res) => {
+                    var data = JSON.parse(res.data)
+                    data.status && (_this.userInfo = data.data)
+                })
         },
         methods: {
             toggleEditUser () {

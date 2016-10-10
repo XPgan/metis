@@ -4,6 +4,21 @@ var User = require('../models').User;
 var edit = {
     user: function (req, res) {
         var id = req.params.id;
+        var update = function () {
+            User.update({id: id}, req.body, {}, function (err) {
+                if (err) {
+                    res.end(JSON.stringify({
+                        message: '网络错误',
+                        status: 0
+                    }));
+                } else {
+                    res.end(JSON.stringify({
+                        message: '修改成功',
+                        status: 1
+                    }));
+                }
+            });
+        };
         User.find({id: id}, {portrait: 1, password: 1}, {}, function (err, result) {
             if (err) {
                 res.end(JSON.stringify({
@@ -24,21 +39,11 @@ var edit = {
                             message: '原密码有误',
                             status: 0
                         }));
+                        return;
                     }
                 }
-            }
-        });
-        User.update({id: id}, req.body, {}, function (err) {
-            if (err) {
-                res.end(JSON.stringify({
-                    message: '网络错误',
-                    status: 0
-                }));
-            } else {
-                res.end(JSON.stringify({
-                    message: '修改成功',
-                    status: 1
-                }));
+
+                update();
             }
         });
     }

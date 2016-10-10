@@ -149,50 +149,49 @@
 
                     return status
                 }
-                var upload = function () {
-                    var status = 1
+                var request = function () {
+                    var update = function () {
+                        var id = _userInfo.id
+                        for (var key in body) {
+                            body[key]
+                                ? (_userInfo[key] = body[key])
+                                : delete body[key]
+                        }
+                        _this.$http.post(_this.serverHostUrl + '/edit/user/' + id, body)
+                            .then((res) => {
+                                var data = JSON.parse(res.data)
+                                if (data.status) {
+                                    _this.userInfo = _userInfo
+                                    _this.toggleEditUser()
+                                } else {
+                                    _editUser.message = data.message
+                                }
+                            }, () => {
+                                _editUser.message = '网络错误'
+                            })
+                    }
+
                     if (portrait) {
                         _this.$http.post(_this.serverHostUrl + '/upload/portrait', formData)
                             .then((res) => {
                                 var data = JSON.parse(res.data)
                                 if (data.status) {
                                     body.portrait = data.url
+                                    update()
                                 } else {
                                     _editUser.message = data.message
-                                    status = 0
                                 }
                             }, () => {
                                 _editUser.message = '网络错误'
-                                status = 0
                             })
+                    } else {
+                        update()
                     }
-
-                    return status
-                }
-                var update = function () {
-                    var id = _userInfo.id
-                    for (var key in body) {
-                        body[key]
-                            ? (_userInfo[key] = body[key])
-                            : delete body[key]
-                    }
-                    _this.$http.post(_this.serverHostUrl + '/edit/user/' + id, body)
-                        .then((res) => {
-                            var data = JSON.parse(res.data)
-                            if (data.status) {
-                                _this.userInfo = _userInfo
-                                _this.toggleEditUser()
-                            } else {
-                                _editUser.message = data.message
-                            }
-                        }, () => {
-                            _editUser.message = '网络错误'
-                        })
                 }
 
                 var noEmpty = nickname && intro
                 if (noEmpty) {
-                    checkPassword() && upload() && update()
+                    checkPassword() && request()
                 } else {
                     _editUser.message = '用户名及个人简介不可修改为空'
                 }

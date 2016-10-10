@@ -14,7 +14,7 @@ var edit = {
                 if (req.body.portrait) {
                     var newPortrait = req.body.portrait;
                     var oldPortrait = result[0].portrait;
-                    if (newPortrait && (oldPortrait != newPortrait)) {
+                    if (oldPortrait != newPortrait) {
                         fs.unlink('../upload' + result[0].portrait);
                     }
                 }

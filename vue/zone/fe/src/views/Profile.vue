@@ -3,7 +3,9 @@
     <section>
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>
-        <div class="zone-btns"><a href="javascript:;" class="zone-more">查看更多</a></div>
+        <div class="zone-btns">
+            <a href="javascript:;" class="zone-more">查看更多</a>
+        </div>
     </section>
     <div class="c-mask" v-show="editUser.show">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">

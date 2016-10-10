@@ -7,14 +7,7 @@ var router = express.Router();
 
 router.get('/profile/:id', function (req, res) {
     var id = req.params.id;
-    var queries = {
-        id: 1,
-        nickname: 1,
-        intro: 1,
-        portrait: 1,
-        articles: 1
-    };
-    User.find({id: id}, queries, {}, function (err, result) {
+    User.find({id: id}, {}, {}, function (err, result) {
         if (err) {
             res.end(JSON.stringify({
                 message: '网络错误',

@@ -33,16 +33,6 @@ var edit = {
                         fs.unlink('../upload' + result[0].portrait);
                     }
                 }
-                if (req.body.oldPassword) {
-                    if (result[0].password != req.body.oldPassword) {
-                        res.end(JSON.stringify({
-                            message: '原密码有误',
-                            status: 0
-                        }));
-                        return;
-                    }
-                }
-
                 update();
             }
         });

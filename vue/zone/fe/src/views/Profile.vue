@@ -27,7 +27,6 @@
                     v-el:nickname />
                 <input
                     type="password" placeholder="原密码"
-                    v-model="editUser.body.oldPassword"
                     v-el:old-password />
                 <input
                     type="password" placeholder="新密码"
@@ -80,7 +79,6 @@
                     formData: new window.FormData(),
                     body: {
                         nickname: '',
-                        oldPassword: '',
                         password: '',
                         intro: '',
                         portrait: ''
@@ -118,6 +116,7 @@
             },
             requestEditUser () {
                 var _this = this
+                var _userInfo = _this.userInfo
                 var _editUser = _this.editUser
                 var body = _editUser.body
                 var formData = _editUser.formData
@@ -131,48 +130,58 @@
                 var portrait = $els.portrait.value
 
                 var checkPassword = function () {
+                    var status = 1
                     if (password || cfmPassword || oldPassword) {
-                        if (password && (password === cfmPassword)) {
-                            body.oldPassword = oldPassword
-                            body.password = password
-                            upload()
+                        if (oldPassword !== _userInfo.password) {
+                            _editUser.message = '原密码有误'
+                            status = 0
                         } else {
-                            _editUser.message = '密码或确认密码有误'
+                            if (password && (password === cfmPassword)) {
+                                body.password = password
+                            } else {
+                                _editUser.message = '密码或确认密码有误'
+                                status = 0
+                            }
                         }
                     } else {
                         _editUser.message = ''
-                        upload()
                     }
+
+                    return status
                 }
                 var upload = function () {
+                    var status = 1
                     if (portrait) {
                         _this.$http.post(_this.serverHostUrl + '/upload/portrait', formData)
                             .then((res) => {
                                 var data = JSON.parse(res.data)
                                 if (data.status) {
                                     body.portrait = data.url
-                                    editUser()
                                 } else {
                                     _editUser.message = data.message
+                                    status = 0
                                 }
                             }, () => {
                                 _editUser.message = '网络错误'
+                                status = 0
                             })
-                    } else {
-                        editUser()
                     }
+
+                    return status
                 }
-                var editUser = function () {
-                    var id = _this.userInfo.id
+                var update = function () {
+                    var id = _userInfo.id
                     for (var key in body) {
-                        body[key] || delete body[key]
+                        body[key]
+                            ? (_userInfo[key] = body[key])
+                            : delete body[key]
                     }
                     _this.$http.post(_this.serverHostUrl + '/edit/user/' + id, body)
                         .then((res) => {
                             var data = JSON.parse(res.data)
                             if (data.status) {
-                                _editUser.message = ''
-                                window.location.reload()
+                                _this.userInfo = _userInfo
+                                _this.toggleEditUser()
                             } else {
                                 _editUser.message = data.message
                             }
@@ -183,7 +192,7 @@
 
                 var noEmpty = nickname && intro
                 if (noEmpty) {
-                    checkPassword()
+                    checkPassword() && upload() && update()
                 } else {
                     _editUser.message = '用户名及个人简介不可修改为空'
                 }

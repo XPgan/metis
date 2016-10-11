@@ -89,12 +89,9 @@
         },
         created () {
             var _this = this
-            var hash = window.location.hash.slice(1)
-            _this.$http.get(_this.serverHostUrl + hash)
-                .then((res) => {
-                    var data = JSON.parse(res.data)
-                    data.status && (_this.userInfo = data.data)
-                })
+            publicMethods.getRequest(_this, function (data) {
+                _this.userInfo = data.data
+            })
         },
         methods: {
             fileAnalysis (e) {

@@ -130,26 +130,36 @@
                 var portrait = $els.portrait.value
 
                 var checkPassword = function () {
-                    var status = 1
                     if (password || cfmPassword || oldPassword) {
                         if (oldPassword !== _userInfo.password) {
                             _editUser.message = '原密码有误'
-                            status = 0
+                            return 0
                         } else {
                             if (password && (password === cfmPassword)) {
                                 body.password = password
                             } else {
                                 _editUser.message = '密码或确认密码有误'
-                                status = 0
+                                return 0
                             }
                         }
                     } else {
                         _editUser.message = ''
                     }
 
-                    return status
+                    return 1
                 }
                 var request = function () {
+                    var upload = function (callback) {
+                        var opts = {
+                            url: _this.serverHostUrl + '/upload/portrait',
+                            body: formData,
+                            action: 'editUser'
+                        }
+                        publicMethods.postRequest(_this, opts, function (data) {
+                            body.portrait = data.url
+                            callback()
+                        })
+                    }
                     var update = function () {
                         var id = _userInfo.id
                         for (var key in body) {
@@ -157,36 +167,18 @@
                                 ? (_userInfo[key] = body[key])
                                 : delete body[key]
                         }
-                        _this.$http.post(_this.serverHostUrl + '/edit/user/' + id, body)
-                            .then((res) => {
-                                var data = JSON.parse(res.data)
-                                if (data.status) {
-                                    _this.userInfo = _userInfo
-                                    _this.toggleEditUser()
-                                } else {
-                                    _editUser.message = data.message
-                                }
-                            }, () => {
-                                _editUser.message = '网络错误'
-                            })
+                        var opts = {
+                            url: _this.serverHostUrl + '/edit/user/' + id,
+                            body: body,
+                            action: 'editUser'
+                        }
+                        publicMethods.postRequest(_this, opts, function () {
+                            _this.userInfo = _userInfo
+                            _this.toggleEditUser()
+                        })
                     }
 
-                    if (portrait) {
-                        _this.$http.post(_this.serverHostUrl + '/upload/portrait', formData)
-                            .then((res) => {
-                                var data = JSON.parse(res.data)
-                                if (data.status) {
-                                    body.portrait = data.url
-                                    update()
-                                } else {
-                                    _editUser.message = data.message
-                                }
-                            }, () => {
-                                _editUser.message = '网络错误'
-                            })
-                    } else {
-                        update()
-                    }
+                    portrait ? upload(update) : update()
                 }
 
                 var noEmpty = nickname && intro

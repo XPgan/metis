@@ -15,7 +15,7 @@
                     v-el:upload />
                 <input
                     type="file"
-                    @change="fileAnalysis($event)"
+                    @change="portraitAnalysis($event)"
                     v-el:portrait />
                 <span>更改头像</span>
             </div>
@@ -94,19 +94,12 @@
             })
         },
         methods: {
-            fileAnalysis (e) {
-                var _this = this
-                var fileReader = new window.FileReader()
-                var file = e.target.files[0]
-
-                _this.editUser.formData.append('portrait', file)
-
-                // 上传图片预览
-                fileReader.onload = function (e) {
-                    var fileData = e.target.result
-                    _this.$els.upload.src = fileData
+            portraitAnalysis (event) {
+                var opts = {
+                    key: 'portrait',
+                    action: 'editUser'
                 }
-                fileReader.readAsDataURL(file)
+                publicMethods.fileAnalysis(this, event, opts)
             },
             toggleEditUser () {
                 publicMethods.toggleDialog(this.editUser)

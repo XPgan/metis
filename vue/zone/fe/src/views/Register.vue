@@ -39,6 +39,7 @@
 
 <script>
     import publicMethods from '../assets/script/public'
+    import user from '../assets/script/user'
 
     export default {
         name: 'Register',
@@ -101,8 +102,8 @@
                     }
                     publicMethods.postRequest(_this, opts, function (data) {
                         _register.message = ''
+                        user.login(data.id)
 
-                        window.localStorage.setItem('user', data.id)
                         window.location.href = '/'
                     })
                 }

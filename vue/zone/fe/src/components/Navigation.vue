@@ -37,6 +37,7 @@
 
 <script>
     import publicMethods from '../assets/script/public'
+    import user from '../assets/script/user'
 
     export default {
         name: 'Navigation',
@@ -47,7 +48,7 @@
         },
         data () {
             return {
-                currentUser: window.localStorage.getItem('user'),
+                currentUser: user.current,
                 login: {
                     show: 0,
                     body: {
@@ -76,12 +77,13 @@
                 publicMethods.postRequest(_this, opts, function (data) {
                     _this.currentUser = data.id
                     _this.toggleLogin()
-                    window.localStorage.setItem('user', data.id)
+
+                    user.login(data.id)
                 })
             },
             exitLogin () {
                 this.currentUser = ''
-                window.localStorage.setItem('user', '')
+                user.exit()
             }
         }
     }

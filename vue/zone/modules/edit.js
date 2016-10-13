@@ -19,7 +19,7 @@ var edit = {
                 }
             });
         };
-        User.find({id: id}, {portrait: 1, password: 1}, {}, function (err, result) {
+        User.find({id: id}, {portrait: 1}, {}, function (err, result) {
             if (err) {
                 res.end(JSON.stringify({
                     message: '网络错误',

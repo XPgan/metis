@@ -56,6 +56,8 @@
 
 <script>
     import publicMethods from '../assets/script/public'
+    import user from '../assets/script/user'
+
     import Articles from '../components/Articles'
     import UserInfo from '../components/UserInfo'
 
@@ -74,6 +76,7 @@
             return {
                 userInfo: {},
                 articles: [],
+                isAuthor: false,
                 editUser: {
                     show: 0,
                     formData: new window.FormData(),
@@ -96,9 +99,12 @@
         methods: {
             fetchData () {
                 var _this = this
+                var currentUser = user.current()
+                var visitedUser = _this.$route.params.id
                 publicMethods.getRequest(_this, function (data) {
                     _this.userInfo = data.data
                 })
+                _this.isAuthor = (currentUser === visitedUser)
             },
             portraitAnalysis (event) {
                 var opts = {

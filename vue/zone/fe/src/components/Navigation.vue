@@ -48,7 +48,7 @@
         },
         data () {
             return {
-                currentUser: user.current,
+                currentUser: user.current(),
                 login: {
                     show: 0,
                     body: {

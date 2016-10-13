@@ -6,7 +6,7 @@
                 v-el:upload />
             <input
                 type="file"
-                @change="fileAnalysis($event)"
+                @change="portraitAnalysis($event)"
                 v-model="register.body.portrait"
                 v-el:portrait />
             <span>上传头像</span>
@@ -38,6 +38,8 @@
 </template>
 
 <script>
+    import publicMethods from '../assets/script/public'
+
     export default {
         name: 'Register',
         vuex: {
@@ -60,19 +62,12 @@
             }
         },
         methods: {
-            fileAnalysis (e) {
-                var _this = this
-                var fileReader = new window.FileReader()
-                var file = e.target.files[0]
-
-                _this.register.formData.append('portrait', file)
-
-                // 上传图片预览
-                fileReader.onload = function (e) {
-                    var fileData = e.target.result
-                    _this.$els.upload.src = fileData
+            portraitAnalysis (event) {
+                var opts = {
+                    key: 'portrait',
+                    action: 'register'
                 }
-                fileReader.readAsDataURL(file)
+                publicMethods.fileAnalysis(this, event, opts)
             },
             requestRegister () {
                 var _this = this
@@ -87,41 +82,35 @@
                 var intro = $els.intro.value
                 var portrait = $els.portrait.value
 
-                var register = function () {
-                    _this.$http.post(_this.serverHostUrl + '/register', body)
-                        .then((res) => {
-                            var data = JSON.parse(res.data)
-                            if (data.status) {
-                                _register.message = ''
-
-                                window.localStorage.setItem('user', data.id)
-                                window.location.href = '/'
-                            } else {
-                                _register.message = data.message
-                            }
-                        }, () => {
-                            _register.message = '网络错误'
-                        })
+                var upload = function (callback) {
+                    var opts = {
+                        url: _this.serverHostUrl + '/upload/portrait',
+                        body: formData,
+                        action: 'register'
+                    }
+                    publicMethods.postRequest(_this, opts, function (data) {
+                        body.portrait = data.url
+                        callback()
+                    })
                 }
-                var upload = function () {
-                    _this.$http.post(_this.serverHostUrl + '/upload/portrait', formData)
-                        .then((res) => {
-                            var data = JSON.parse(res.data)
-                            if (data.status) {
-                                body.portrait = data.url
-                                register()
-                            } else {
-                                _register.message = data.message
-                            }
-                        }, () => {
-                            _register.message = '网络错误'
-                        })
+                var update = function () {
+                    var opts = {
+                        url: _this.serverHostUrl + '/register',
+                        body: body,
+                        action: 'register'
+                    }
+                    publicMethods.postRequest(_this, opts, function (data) {
+                        _register.message = ''
+
+                        window.localStorage.setItem('user', data.id)
+                        window.location.href = '/'
+                    })
                 }
 
                 var noEmpty = nickname && password && cfmPassword && intro && portrait
                 if (noEmpty) {
                     if (password === cfmPassword) {
-                        upload()
+                        upload(update)
                     } else {
                         _register.message = '密码或确认密码有误'
                     }

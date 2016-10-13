@@ -19,10 +19,12 @@
                 <h3>登录<a v-link="{ path: '/register' }" @click="toggleLogin">注册</a></h3>
                 <input
                     type="text" placeholder="用户名"
-                    v-model="login.body.nickname" />
+                    v-model="login.body.nickname"
+                    v-el:nickname />
                 <input
                     type="password" placeholder="密码"
-                    v-model="login.body.password" />
+                    v-model="login.body.password"
+                    v-el:password />
                 <span>{{ login.message }}</span>
                 <div class="zone-btns">
                     <a href="javascript:;" @click="requestLogin">确定</a>
@@ -58,25 +60,24 @@
         },
         methods: {
             toggleLogin () {
-                publicMethods.toggleDialog(this.login)
+                var opts = {
+                    clear: ['password'],
+                    action: 'login'
+                }
+                publicMethods.toggleDialog(this, opts)
             },
             requestLogin () {
                 var _this = this
-                _this.$http.post(_this.serverHostUrl + '/login', _this.login.body)
-                    .then((res) => {
-                        var data = JSON.parse(res.data)
-                        if (data.status) {
-                            _this.login.show = 0
-                            _this.login.message = ''
-
-                            _this.currentUser = data.id
-                            window.localStorage.setItem('user', data.id)
-                        } else {
-                            _this.login.message = data.message
-                        }
-                    }, () => {
-                        _this.login.message = '网络错误'
-                    })
+                var opts = {
+                    url: _this.serverHostUrl + '/login',
+                    body: _this.login.body,
+                    action: 'login'
+                }
+                publicMethods.postRequest(_this, opts, function (data) {
+                    _this.currentUser = data.id
+                    _this.toggleLogin()
+                    window.localStorage.setItem('user', data.id)
+                })
             },
             exitLogin () {
                 this.currentUser = ''

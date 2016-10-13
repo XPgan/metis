@@ -102,7 +102,11 @@
                 publicMethods.fileAnalysis(this, event, opts)
             },
             toggleEditUser () {
-                publicMethods.toggleDialog(this.editUser)
+                var opts = {
+                    clear: ['oldPassword', 'password', 'cfmPassword'],
+                    action: 'editUser'
+                }
+                publicMethods.toggleDialog(this, opts)
             },
             requestEditUser () {
                 var _this = this

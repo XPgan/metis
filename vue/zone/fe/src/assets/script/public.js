@@ -1,8 +1,13 @@
 export default {
-    toggleDialog (obj) {
+    toggleDialog (_this, opts) {
+        var obj = _this[opts.action]
         var status = obj.show
         obj.message = ''
         obj.show = status ? 0 : 1
+
+        for (var i in opts.clear) {
+            _this.$els[opts.clear[i]].value = ''
+        }
     },
     fileAnalysis (_this, event, opts) {
         var fileReader = new window.FileReader()

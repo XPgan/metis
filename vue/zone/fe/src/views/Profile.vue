@@ -88,12 +88,18 @@
             }
         },
         created () {
-            var _this = this
-            publicMethods.getRequest(_this, function (data) {
-                _this.userInfo = data.data
-            })
+            this.fetchData()
+        },
+        watch: {
+            '$route': 'fetchData'
         },
         methods: {
+            fetchData () {
+                var _this = this
+                publicMethods.getRequest(_this, function (data) {
+                    _this.userInfo = data.data
+                })
+            },
             portraitAnalysis (event) {
                 var opts = {
                     key: 'portrait',

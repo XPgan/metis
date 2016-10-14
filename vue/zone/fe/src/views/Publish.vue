@@ -1,7 +1,7 @@
 <template>
     <form enctype="multipart/form-data" id="form_publish" class="zone-form">
         <div class="form-upload">
-            <img src="../assets/img/default_upload.png" />
+            <img :src="portrait" />
             <input type="file" id="cover" name="cover" />
             <span>上传封面</span>
         </div>
@@ -20,7 +20,12 @@
 
 <script>
     export default {
-        name: 'Publish'
+        name: 'Publish',
+        data () {
+            return {
+                portrait: '/static/default_upload.png'
+            }
+        }
     }
 </script>
 

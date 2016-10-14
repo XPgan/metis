@@ -10,7 +10,7 @@
     <div class="c-mask">
         <form enctype="multipart/form-data" id="form_edit_article" class="zone-form form-edit c-center">
             <div class="form-upload">
-                <img src="../assets/img/default_upload.png" />
+                <img src="" />
                 <input type="file" id="cover" name="cover" />
                 <span>修改封面</span>
             </div>

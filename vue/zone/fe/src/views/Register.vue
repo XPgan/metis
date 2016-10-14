@@ -1,9 +1,7 @@
 <template>
     <form enctype="multipart/form-data" id="form_register" class="zone-form">
         <div class="form-upload">
-            <img
-                src="../assets/img/default_upload.png"
-                v-el:upload />
+            <img :src="portrait" />
             <input
                 type="file"
                 @change="portraitAnalysis($event)"
@@ -50,6 +48,7 @@
         },
         data () {
             return {
+                portrait: '/static/default_upload.png',
                 register: {
                     formData: new window.FormData(),
                     body: {

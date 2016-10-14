@@ -1,7 +1,7 @@
 <template>
     <form enctype="multipart/form-data" id="form_register" class="zone-form">
         <div class="form-upload">
-            <img :src="portrait" />
+            <img :src="register.portrait" />
             <input
                 type="file"
                 @change="portraitAnalysis($event)"
@@ -48,7 +48,6 @@
         },
         data () {
             return {
-                portrait: '/static/default_upload.png',
                 register: {
                     formData: new window.FormData(),
                     body: {
@@ -57,7 +56,8 @@
                         intro: '',
                         portrait: ''
                     },
-                    message: ''
+                    message: '',
+                    portrait: '/static/default_upload.png'
                 }
             }
         },

@@ -10,7 +10,7 @@
     <div class="c-mask" v-show="editUser.show">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
             <div class="form-upload">
-                <img :src="portrait" />
+                <img :src="editUser.portrait" />
                 <input
                     type="file"
                     @change="portraitAnalysis($event)"
@@ -84,7 +84,8 @@
                         intro: '',
                         portrait: ''
                     },
-                    message: ''
+                    message: '',
+                    portrait: ''
                 }
             }
         },
@@ -106,7 +107,7 @@
 
                     // 表单 portrait 需要特殊处理 (╯﹏╰)
                     var portrait = _this.userInfo.portrait
-                    _this.$set('portrait', _this.serverHostUrl + portrait)
+                    _this.editUser.portrait = _this.serverHostUrl + portrait
                 })
                 _this.isAuthor = (currentUser === visitedUser)
             },

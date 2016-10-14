@@ -20,7 +20,7 @@ export default {
 
         fileReader.onload = function (e) {
             var fileData = e.target.result
-            _this[opts.key] = fileData
+            _this[opts.action][opts.key] = fileData
         }
         fileReader.readAsDataURL(file)
     },

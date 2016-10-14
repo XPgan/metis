@@ -47,7 +47,7 @@
         </form>
     </div>
     <div class="zone-ctrls" v-show="currentUser === userInfo.id">
-        <a href="javascript:;" class="ctrl-publish"><span></span></a>
+        <a v-link="{ path: '/publish' }" class="ctrl-publish"><span></span></a>
         <a href="javascript:;" class="ctrl-edituser" @click="toggleEditUser"><span></span></a>
     </div>
 </template>

@@ -2,7 +2,7 @@ var fs = require('fs');
 var formidable = require('formidable');
 
 var upload = {
-    portrait: function (req, res) {
+    method: function (req, res, key) {
         var form = new formidable.IncomingForm();
         form.parse(req, function (err, fields, files) {
             if (err) {
@@ -12,8 +12,8 @@ var upload = {
                 }));
             } else {
                 var timestamp = (new Date()).valueOf();
-                var url = '/portrait/' + timestamp + '_' + files.portrait.name;
-                var tmp_path = files.portrait.path;
+                var url = '/' + key + '/' + timestamp + '_' + files[key].name;
+                var tmp_path = files[key].path;
                 var target_path = '../upload' + url;
                 fs.renameSync(tmp_path, target_path);
 
@@ -24,6 +24,12 @@ var upload = {
                 }));
             }
         });
+    },
+    portrait: function (req, res) {
+        this.method(req, res, 'portrait');
+    },
+    cover: function (req, res) {
+        this.method(req, res, 'cover');
     }
 };
 

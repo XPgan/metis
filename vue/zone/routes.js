@@ -3,6 +3,7 @@ var User = require('./models').User;
 var log = require('./modules/log');
 var upload = require('./modules/upload');
 var edit = require('./modules/edit');
+var publish = require('./modules/publish');
 var router = express.Router();
 
 router.get('/profile/:id', function (req, res) {
@@ -32,8 +33,14 @@ router.post('/register', function (req, res) {
 router.post('/upload/portrait', function (req, res) {
     upload.portrait(req, res);
 });
+router.post('/upload/cover', function (req, res) {
+    upload.cover(req, res);
+});
 router.post('/edit/user/:id', function (req, res) {
     edit.user(req, res);
+});
+router.post('/publish', function (req, res) {
+    publish(req, res);
 });
 
 module.exports = router;

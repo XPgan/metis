@@ -10,9 +10,7 @@ export default {
         obj.message = ''
         obj.show = status ? 0 : 1
 
-        for (var i in opts.clear) {
-            _this.$els[opts.clear[i]].value = ''
-        }
+        this.clearObj(_this.$els, opts.clear, 'value')
     },
     fileAnalysis (_this, event, opts) {
         var fileReader = new window.FileReader()

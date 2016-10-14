@@ -90,7 +90,7 @@
                 }
             }
         },
-        created () {
+        ready () {
             this.fetchData()
         },
         watch: {
@@ -101,8 +101,14 @@
                 var _this = this
                 var currentUser = user.current()
                 var visitedUser = _this.$route.params.id
+
+                publicMethods.clearObj(_this.$els, ['portrait'], 'value')
                 publicMethods.getRequest(_this, function (data) {
                     _this.userInfo = data.data
+
+                    // portrait 需要特殊处理 (╯﹏╰)
+                    var portrait = _this.serverHostUrl + _this.userInfo.portrait
+                    _this.$els.upload.src = portrait
                 })
                 _this.isAuthor = (currentUser === visitedUser)
             },

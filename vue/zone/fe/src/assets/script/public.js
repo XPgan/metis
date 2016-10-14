@@ -1,4 +1,9 @@
 export default {
+    clearObj (obj, lst, key) {
+        for (var i in lst) {
+            obj[lst[i]][key] = ''
+        }
+    },
     toggleDialog (_this, opts) {
         var obj = _this[opts.action]
         var status = obj.show

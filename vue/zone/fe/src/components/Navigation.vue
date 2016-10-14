@@ -38,17 +38,22 @@
 <script>
     import publicMethods from '../assets/script/public'
     import user from '../assets/script/user'
+    import {markLogin, markExit} from '../vuex/actions'
 
     export default {
         name: 'Navigation',
         vuex: {
             getters: {
-                serverHostUrl: ({constant}) => constant.serverHostUrl
+                serverHostUrl: ({constant}) => constant.serverHostUrl,
+                currentUser: ({user}) => user.current
+            },
+            actions: {
+                markLogin,
+                markExit
             }
         },
         data () {
             return {
-                currentUser: user.current(),
                 login: {
                     show: 0,
                     body: {
@@ -75,14 +80,14 @@
                     action: 'login'
                 }
                 publicMethods.postRequest(_this, opts, function (data) {
-                    _this.currentUser = data.id
                     _this.toggleLogin()
 
+                    _this.markLogin(data.id)
                     user.login(data.id)
                 })
             },
             exitLogin () {
-                this.currentUser = ''
+                this.markExit()
                 user.exit()
             }
         }

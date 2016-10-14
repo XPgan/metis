@@ -46,7 +46,7 @@
             </div>
         </form>
     </div>
-    <div class="zone-ctrls">
+    <div class="zone-ctrls" v-show="currentUser === userInfo.id">
         <a href="javascript:;" class="ctrl-publish"><span></span></a>
         <a href="javascript:;" class="ctrl-edituser" @click="toggleEditUser"><span></span></a>
     </div>
@@ -54,7 +54,6 @@
 
 <script>
     import publicMethods from '../assets/script/public'
-    import user from '../assets/script/user'
 
     import Articles from '../components/Articles'
     import UserInfo from '../components/UserInfo'
@@ -67,14 +66,14 @@
         },
         vuex: {
             getters: {
-                serverHostUrl: ({constant}) => constant.serverHostUrl
+                serverHostUrl: ({constant}) => constant.serverHostUrl,
+                currentUser: ({user}) => user.current
             }
         },
         data () {
             return {
                 userInfo: {},
                 articles: [],
-                isAuthor: false,
                 editUser: {
                     show: 0,
                     formData: new window.FormData(),
@@ -98,9 +97,6 @@
         methods: {
             fetchData () {
                 var _this = this
-                var currentUser = user.current()
-                var visitedUser = _this.$route.params.id
-
                 publicMethods.clearObj(_this.$els, ['portrait'], 'value')
                 publicMethods.getRequest(_this, function (data) {
                     _this.userInfo = data.data
@@ -109,7 +105,6 @@
                     var portrait = _this.userInfo.portrait
                     _this.editUser.portrait = _this.serverHostUrl + portrait
                 })
-                _this.isAuthor = (currentUser === visitedUser)
             },
             portraitAnalysis (event) {
                 var opts = {

@@ -38,12 +38,16 @@
 <script>
     import publicMethods from '../assets/script/public'
     import user from '../assets/script/user'
+    import {markLogin} from '../vuex/actions'
 
     export default {
         name: 'Register',
         vuex: {
             getters: {
                 serverHostUrl: ({constant}) => constant.serverHostUrl
+            },
+            actions: {
+                markLogin
             }
         },
         data () {
@@ -101,6 +105,8 @@
                     }
                     publicMethods.postRequest(_this, opts, function (data) {
                         _register.message = ''
+
+                        _this.markLogin(data.id)
                         user.login(data.id)
 
                         window.location.href = '/'

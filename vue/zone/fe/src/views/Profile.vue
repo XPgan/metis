@@ -10,9 +10,7 @@
     <div class="c-mask" v-show="editUser.show">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
             <div class="form-upload">
-                <img
-                    :src="serverHostUrl + userInfo.portrait"
-                    v-el:upload />
+                <img :src="portrait" />
                 <input
                     type="file"
                     @change="portraitAnalysis($event)"
@@ -106,9 +104,9 @@
                 publicMethods.getRequest(_this, function (data) {
                     _this.userInfo = data.data
 
-                    // portrait 需要特殊处理 (╯﹏╰)
-                    var portrait = _this.serverHostUrl + _this.userInfo.portrait
-                    _this.$els.upload.src = portrait
+                    // 表单 portrait 需要特殊处理 (╯﹏╰)
+                    var portrait = _this.userInfo.portrait
+                    _this.$set('portrait', _this.serverHostUrl + portrait)
                 })
                 _this.isAuthor = (currentUser === visitedUser)
             },

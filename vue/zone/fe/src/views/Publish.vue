@@ -5,7 +5,6 @@
             <input
                 type="file"
                 @change="coverAnalysis($event)"
-                v-model="publish.body.cover"
                 v-el:cover />
             <span>上传封面</span>
         </div>
@@ -23,7 +22,7 @@
             <span>{{ publish.message }}</span>
             <div class="zone-btns">
                 <a href="javascript:;" @click="requestPublish">提交</a>
-                <a href="javascript:;">取消</a>
+                <a v-link="{ path: '/' }">取消</a>
             </div>
         </div>
     </form>
@@ -43,7 +42,7 @@
         data () {
             return {
                 publish: {
-                    formData: new window.FormData(),
+                    formData: null,
                     body: {
                         title: '',
                         content: '',
@@ -93,7 +92,7 @@
                     }
                     publicMethods.postRequest(_this, opts, function () {
                         _publish.message = ''
-                        window.location.href = '/profile/' + _this.currentUser
+                        window.location.href = '/#/profile/' + _this.currentUser
                     })
                 }
 

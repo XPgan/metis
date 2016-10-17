@@ -13,8 +13,7 @@
                 <img :src="editUser.portrait" />
                 <input
                     type="file"
-                    @change="portraitAnalysis($event)"
-                    v-el:portrait />
+                    @change="portraitAnalysis($event)" />
                 <span>更改头像</span>
             </div>
             <div class="form-info">
@@ -28,7 +27,6 @@
                     v-el:old-password />
                 <input
                     type="password" placeholder="新密码"
-                    v-model="editUser.body.password"
                     v-el:password />
                 <input
                     type="password" placeholder="确认密码"
@@ -76,7 +74,7 @@
                 articles: [],
                 editUser: {
                     show: 0,
-                    formData: new window.FormData(),
+                    formData: null,
                     body: {
                         nickname: '',
                         password: '',
@@ -88,7 +86,7 @@
                 }
             }
         },
-        ready () {
+        created () {
             this.fetchData()
         },
         route: {
@@ -106,8 +104,8 @@
                     // 表单 portrait 需要特殊处理 (╯﹏╰)
                     var portrait = _this.userInfo.portrait
                     _this.editUser.portrait = _this.serverHostUrl + portrait
-
-                    publicMethods.clearObj(_this.$els, ['portrait'], 'value')
+                    _this.editUser.body.portrait = ''
+                    _this.editUser.formData = null
                 })
             },
             portraitAnalysis (event) {
@@ -137,7 +135,6 @@
                 var password = $els.password.value
                 var cfmPassword = $els.cfmPassword.value
                 var intro = $els.intro.value
-                var portrait = $els.portrait.value
 
                 var checkPassword = function () {
                     if (password || cfmPassword || oldPassword) {
@@ -188,7 +185,7 @@
                         })
                     }
 
-                    portrait ? upload(update) : update()
+                    formData ? upload(update) : update()
                 }
 
                 var noEmpty = nickname && intro

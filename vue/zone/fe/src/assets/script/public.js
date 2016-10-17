@@ -29,6 +29,7 @@ export default {
         var fileReader = new window.FileReader()
         var file = event.target.files[0]
 
+        _this[opts.action].formData = new window.FormData()
         _this[opts.action].formData.append(opts.key, file)
 
         fileReader.onload = function (e) {

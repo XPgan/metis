@@ -4,7 +4,8 @@
             <img :src="register.portrait" />
             <input
                 type="file"
-                @change="portraitAnalysis($event)" />
+                @change="portraitAnalysis($event)"
+                v-el:portrait />
             <span>上传头像</span>
         </div>
         <div class="form-info">
@@ -82,6 +83,7 @@
                 var password = $els.password.value
                 var cfmPassword = $els.cfmPassword.value
                 var intro = $els.intro.value
+                var portrait = $els.portrait.value
 
                 var upload = function (callback) {
                     var opts = {
@@ -110,19 +112,15 @@
                     })
                 }
 
-                if (formData) {
-                    var noEmpty = nickname && password && cfmPassword && intro
-                    if (noEmpty) {
-                        if (password === cfmPassword) {
-                            upload(update)
-                        } else {
-                            _register.message = '密码或确认密码有误'
-                        }
+                var noEmpty = nickname && password && cfmPassword && intro && portrait
+                if (noEmpty) {
+                    if (password === cfmPassword) {
+                        upload(update)
                     } else {
-                        _register.message = '注册信息不完整'
+                        _register.message = '密码或确认密码有误'
                     }
                 } else {
-                    _register.message = '请上传头像'
+                    _register.message = '注册信息不完整'
                 }
             }
         }

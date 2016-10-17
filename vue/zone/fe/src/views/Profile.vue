@@ -99,7 +99,8 @@
                 var _this = this
                 var url = _this.serverHostUrl + _this.$route.path
                 publicMethods.getRequest(_this, url, function (data) {
-                    _this.userInfo = data.data
+                    _this.userInfo = data.data.userInfo
+                    _this.articles = data.data.articles
 
                     // 表单 portrait 需要特殊处理 (╯﹏╰)
                     var portrait = _this.userInfo.portrait

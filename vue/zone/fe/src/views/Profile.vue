@@ -94,10 +94,10 @@
         route: {
             data () {
                 var _this = this
-
-                publicMethods.clearObj(_this.$els, ['portrait'], 'value')
-
                 _this.fetchData()
+
+                publicMethods.clearObj(_this.editUser.body, ['nickname', 'password', 'intro', 'portrait'], '')
+                publicMethods.clearObj(_this.$els, ['portrait'], 'value')
             }
         },
         methods: {

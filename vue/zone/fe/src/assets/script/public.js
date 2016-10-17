@@ -1,7 +1,7 @@
 export default {
     clearObj (obj, lst, key) {
         for (var i in lst) {
-            obj[lst[i]][key] = ''
+            key ? obj[lst[i]][key] = '' : obj[lst[i]] = ''
         }
     },
     toggleDialog (_this, opts) {

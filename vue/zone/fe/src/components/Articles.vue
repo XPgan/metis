@@ -4,7 +4,7 @@
             <li v-for="item in articles">
                 <a href="javascript:;">
                     <div class="article-info">
-                        <img :src="item.cover" />
+                        <img :src="serverHostUrl + item.cover" />
                         <h4>{{ item.title }}</h4>
                     </div>
                 </a>
@@ -16,6 +16,11 @@
 <script>
     export default {
         name: 'Articles',
+        vuex: {
+            getters: {
+                serverHostUrl: ({constant}) => constant.serverHostUrl
+            }
+        },
         props: {
             articles: Array
         }

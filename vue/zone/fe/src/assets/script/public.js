@@ -23,6 +23,7 @@ export default {
         obj.show = status ? 0 : 1
 
         this.clearObj(_this.$els, opts.clear, 'value')
+        this.clearObj(_this[opts.action].body, opts.clear, '')
     },
     fileAnalysis (_this, event, opts) {
         var fileReader = new window.FileReader()

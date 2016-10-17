@@ -93,11 +93,7 @@
         },
         route: {
             data () {
-                var _this = this
-                _this.fetchData()
-
-                publicMethods.clearObj(_this.editUser.body, ['nickname', 'password', 'intro', 'portrait'], '')
-                publicMethods.clearObj(_this.$els, ['portrait'], 'value')
+                this.fetchData()
             }
         },
         methods: {
@@ -110,6 +106,8 @@
                     // 表单 portrait 需要特殊处理 (╯﹏╰)
                     var portrait = _this.userInfo.portrait
                     _this.editUser.portrait = _this.serverHostUrl + portrait
+
+                    publicMethods.clearObj(_this.$els, ['portrait'], 'value')
                 })
             },
             portraitAnalysis (event) {

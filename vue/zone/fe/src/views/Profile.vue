@@ -52,7 +52,6 @@
 
 <script>
     import publicMethods from '../assets/script/public'
-
     import Articles from '../components/Articles'
     import UserInfo from '../components/UserInfo'
 

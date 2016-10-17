@@ -28,12 +28,54 @@
 </template>
 
 <script>
+    import publicMethods from '../assets/script/public'
     import UserInfo from '../components/UserInfo'
 
     export default {
         name: 'ArticleDetail',
         components: {
             UserInfo
+        },
+        vuex: {
+            getters: {
+                serverHostUrl: ({constant}) => constant.serverHostUrl,
+                currentUser: ({user}) => user.current
+            }
+        },
+        data () {
+            return {
+                userInfo: {},
+                articleInfo: {},
+                editArticle: {
+                    show: 0,
+                    formData: null,
+                    body: {
+                        title: '',
+                        content: '',
+                        cover: ''
+                    },
+                    message: '',
+                    cover: ''
+                }
+            }
+        },
+        created () {
+            this.fetchData()
+        },
+        route: {
+            data () {
+                this.fetchData()
+            }
+        },
+        methods: {
+            fetchData () {
+                var _this = this
+                var url = _this.serverHostUrl + _this.$route.path
+                publicMethods.getRequest(_this, url, function (data) {
+                    _this.userInfo = data.data.userInfo
+                    _this.articleInfo = data.data.articleInfo
+                })
+            }
         }
     }
 </script>

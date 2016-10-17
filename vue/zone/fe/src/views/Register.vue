@@ -4,9 +4,7 @@
             <img :src="register.portrait" />
             <input
                 type="file"
-                @change="portraitAnalysis($event)"
-                v-model="register.body.portrait"
-                v-el:portrait />
+                @change="portraitAnalysis($event)" />
             <span>上传头像</span>
         </div>
         <div class="form-info">
@@ -29,7 +27,7 @@
             <span>{{ register.message }}</span>
             <div class="zone-btns">
                 <a href="javascript:;" @click="requestRegister">提交</a>
-                <a href="javascript:;">取消</a>
+                <a v-link="{ path: '/' }">取消</a>
             </div>
         </div>
     </form>
@@ -53,7 +51,7 @@
         data () {
             return {
                 register: {
-                    formData: new window.FormData(),
+                    formData: null,
                     body: {
                         nickname: '',
                         password: '',
@@ -84,7 +82,6 @@
                 var password = $els.password.value
                 var cfmPassword = $els.cfmPassword.value
                 var intro = $els.intro.value
-                var portrait = $els.portrait.value
 
                 var upload = function (callback) {
                     var opts = {
@@ -113,15 +110,19 @@
                     })
                 }
 
-                var noEmpty = nickname && password && cfmPassword && intro && portrait
-                if (noEmpty) {
-                    if (password === cfmPassword) {
-                        upload(update)
+                if (formData) {
+                    var noEmpty = nickname && password && cfmPassword && intro
+                    if (noEmpty) {
+                        if (password === cfmPassword) {
+                            upload(update)
+                        } else {
+                            _register.message = '密码或确认密码有误'
+                        }
                     } else {
-                        _register.message = '密码或确认密码有误'
+                        _register.message = '注册信息不完整'
                     }
                 } else {
-                    _register.message = '注册信息不完整'
+                    _register.message = '请上传头像'
                 }
             }
         }

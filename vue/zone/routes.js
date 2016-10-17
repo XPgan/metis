@@ -38,6 +38,37 @@ router.get('/profile/:id', function (req, res) {
         }
     });
 });
+router.get('/article/:id', function (req, res) {
+    var id = req.params.id;
+    Article.find({id: id}, {}, {}, function (err, result) {
+        if (err) {
+            res.end(JSON.stringify({
+                message: '网络错误',
+                status: 0
+            }));
+        } else {
+            var articleInfo = result[0];
+            User.find({id: result[0].author}, {}, {}, function (err, result) {
+                if (err) {
+                    res.end(JSON.stringify({
+                        message: '网络错误',
+                        status: 0
+                    }));
+                } else {
+                    var userInfo = result[0];
+                    res.end(JSON.stringify({
+                        message: '请求成功',
+                        status: 1,
+                        data: {
+                            userInfo: userInfo,
+                            articleInfo: articleInfo
+                        }
+                    }));
+                }
+            });
+        }
+    });
+});
 
 router.post('/login', function (req, res) {
     log.login(req, res);

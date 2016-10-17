@@ -92,7 +92,7 @@
                     }
                     publicMethods.postRequest(_this, opts, function () {
                         _publish.message = ''
-                        window.location.href = '/#/profile/' + _this.currentUser
+                        _this.$router.go('/profile/' + _this.currentUser)
                     })
                 }
 

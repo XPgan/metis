@@ -108,7 +108,7 @@
                         _this.markLogin(data.id)
                         user.login(data.id)
 
-                        window.location.href = '/'
+                        _this.$router.go('/')
                     })
                 }
 

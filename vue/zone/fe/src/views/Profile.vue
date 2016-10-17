@@ -91,14 +91,20 @@
         ready () {
             this.fetchData()
         },
-        watch: {
-            '$route': 'fetchData'
+        route: {
+            data () {
+                var _this = this
+
+                publicMethods.clearObj(_this.$els, ['portrait'], 'value')
+
+                _this.fetchData()
+            }
         },
         methods: {
             fetchData () {
                 var _this = this
-                publicMethods.clearObj(_this.$els, ['portrait'], 'value')
-                publicMethods.getRequest(_this, function (data) {
+                var url = _this.serverHostUrl + _this.$route.path
+                publicMethods.getRequest(_this, url, function (data) {
                     _this.userInfo = data.data
 
                     // 表单 portrait 需要特殊处理 (╯﹏╰)

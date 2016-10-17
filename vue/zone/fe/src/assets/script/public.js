@@ -24,9 +24,8 @@ export default {
         }
         fileReader.readAsDataURL(file)
     },
-    getRequest (_this, callback) {
-        var hash = window.location.hash.slice(1)
-        _this.$http.get(_this.serverHostUrl + hash)
+    getRequest (_this, url, callback) {
+        _this.$http.get(url)
             .then((res) => {
                 var data = JSON.parse(res.data)
                 data.status && callback(data)

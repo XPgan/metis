@@ -3,7 +3,7 @@
         <ul>
             <li v-for="item in users">
                 <a v-link="{ path: '/profile/' + item.id }">
-                    <img :src="item.portrait" class="c-vertical" />
+                    <img :src="serverHostUrl + item.portrait" class="c-vertical" />
                     <div>
                         <h4>{{ item.nickname }}</h4>
                         <p>{{ item.intro }}</p>
@@ -17,6 +17,11 @@
 <script>
     export default {
         name: 'Users',
+        vuex: {
+            getters: {
+                serverHostUrl: ({constant}) => constant.serverHostUrl
+            }
+        },
         props: {
             users: Array
         }

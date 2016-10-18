@@ -53,9 +53,11 @@
         methods: {
             fetchData () {
                 var _this = this
-                var url = _this.serverHostUrl + '/users?page=0'
-                publicMethods.getRequest(_this, url, function (data) {
-                    console.log(data)
+                publicMethods.getRequest(_this, _this.serverHostUrl + '/users', function (data) {
+                    _this.users = data.data
+                })
+                publicMethods.getRequest(_this, _this.serverHostUrl + '/articles', function (data) {
+                    _this.articles = data.data
                 })
             }
         }

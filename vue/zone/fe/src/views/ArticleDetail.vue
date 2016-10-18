@@ -1,7 +1,13 @@
 <template>
     <user-info :user-info="userInfo"></user-info>
     <section>
-        <h4 class="article-title">{{ articleInfo.title }}<a href="javascript:;" @click="toggleEditArticle"></a></h4>
+        <h4 class="article-title">{{ articleInfo.title }}
+            <a
+                href="javascript:;"
+                @click="toggleEditArticle"
+                v-show="currentUser == articleInfo.author">
+            </a>
+        </h4>
         <div class="article-content">{{ articleInfo.content }}</div>
         <div class="zone-btns">
             <a href="javascript:;">继续阅读</a>
@@ -166,6 +172,7 @@
     h4.article-title {
         font-size: 18px;
         line-height: 30px;
+        height: 30px;
         color: #5c2b27;
 
         a {

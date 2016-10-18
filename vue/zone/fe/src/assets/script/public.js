@@ -1,19 +1,26 @@
 export default {
     clearObj (obj, lst, key) {
-        if (lst && key) {
-            for (var i in lst) {
-                obj[lst[i]][key] = ''
-            }
-        } else if (lst && !key) {
-            for (var j in lst) {
-                obj[lst[j]] = ''
-            }
-        } else if (!lst && !key) {
-            for (var k in obj) {
-                obj[k] = ''
-            }
-        } else {
-            return 0
+        var k1 = String(Boolean(lst) >> 0)
+        var k2 = String(Boolean(key) >> 0)
+
+        switch (k1 + k2) {
+            case '11':
+                for (var i in lst) {
+                    obj[lst[i]][key] = ''
+                }
+                break
+            case '10':
+                for (var j in lst) {
+                    obj[lst[j]] = ''
+                }
+                break
+            case '00':
+                for (var k in obj) {
+                    obj[k] = ''
+                }
+                break
+            default:
+                break
         }
     },
     toggleDialog (_this, opts) {
@@ -23,7 +30,7 @@ export default {
         obj.show = status ? 0 : 1
 
         this.clearObj(_this.$els, opts.clear, 'value')
-        this.clearObj(_this[opts.action].body, opts.clear, '')
+        this.clearObj(_this[opts.action].body, opts.clear)
     },
     fileAnalysis (_this, event, opts) {
         var fileReader = new window.FileReader()

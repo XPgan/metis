@@ -85,6 +85,9 @@ router.post('/upload/cover', function (req, res) {
 router.post('/edit/user/:id', function (req, res) {
     edit.user(req, res);
 });
+router.post('/edit/article/:id', function (req, res) {
+    edit.article(req, res);
+});
 router.post('/publish', function (req, res) {
     publish(req, res);
 });

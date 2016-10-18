@@ -108,7 +108,55 @@
                 publicMethods.toggleDialog(this, opts)
             },
             requestEditArticle () {
+                var _this = this
+                var _articleInfo = _this.articleInfo
+                var _editArticle = _this.editArticle
+                var body = _editArticle.body
+                var formData = _editArticle.formData
 
+                var $els = _this.$els
+                var title = $els.title.value
+                var content = $els.content.value
+
+                var request = function () {
+                    var upload = function (callback) {
+                        var opts = {
+                            url: _this.serverHostUrl + '/upload/cover',
+                            body: formData,
+                            action: 'editArticle'
+                        }
+                        publicMethods.postRequest(_this, opts, function (data) {
+                            body.cover = data.url
+                            callback()
+                        })
+                    }
+                    var update = function () {
+                        var id = _articleInfo.id
+                        for (var key in body) {
+                            body[key]
+                                ? (_articleInfo[key] = body[key])
+                                : delete body[key]
+                        }
+                        var opts = {
+                            url: _this.serverHostUrl + '/edit/article/' + id,
+                            body: body,
+                            action: 'editArticle'
+                        }
+                        publicMethods.postRequest(_this, opts, function () {
+                            _this.articleInfo = _articleInfo
+                            _this.toggleEditArticle()
+                        })
+                    }
+
+                    formData ? upload(update) : update()
+                }
+
+                var noEmpty = title && content
+                if (noEmpty) {
+                    request()
+                } else {
+                    _editArticle.message = '标题及正文不可修改为空'
+                }
             }
         }
     }

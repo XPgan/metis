@@ -1,11 +1,13 @@
 <template>
     <div class="m-userinfo">
-        <img :src="serverHostUrl + userInfo.portrait" />
-        <div>
-            {{ userInfo.nickname }}
-            <br />
-            {{ userInfo.intro }}
-        </div>
+        <a v-link="{ path: '/profile/' + userInfo.id }">
+            <img :src="serverHostUrl + userInfo.portrait" />
+            <div>
+                {{ userInfo.nickname }}
+                <br />
+                {{ userInfo.intro }}
+            </div>
+        </a>
     </div>
 </template>
 

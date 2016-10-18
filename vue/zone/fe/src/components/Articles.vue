@@ -2,7 +2,7 @@
     <div class="m-articles">
         <ul class="c-fix">
             <li v-for="item in articles">
-                <a href="javascript:;">
+                <a v-link="{ path: '/article/' + item.id }">
                     <div class="article-info">
                         <img :src="serverHostUrl + item.cover" />
                         <h4>{{ item.title }}</h4>

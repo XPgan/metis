@@ -2,7 +2,7 @@
     <div class="m-users">
         <ul>
             <li v-for="item in users">
-                <a href="javascript:;">
+                <a v-link="{ path: '/profile/' + item.id }">
                     <img :src="item.portrait" class="c-vertical" />
                     <div>
                         <h4>{{ item.nickname }}</h4>

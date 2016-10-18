@@ -1,12 +1,15 @@
 <template>
     <h1>
-        <a href="javascript:;" class="c-block">
+        <a href="https://github.com/sunmengyuan" class="c-block">
             <img src="../assets/img/logo.png" />
         </a>
     </h1>
     <section>
-        <h3 class="zone-title">推荐用户</h3>
+        <h3 class="zone-title">所有用户</h3>
         <users :users="users"></users>
+        <div class="zone-btns">
+            <a href="javascript:;">查看更多</a>
+        </div>
     </section>
     <section>
         <h3 class="zone-title">所有文章</h3>
@@ -18,6 +21,7 @@
 </template>
 
 <script>
+    import publicMethods from '../assets/script/public'
     import Articles from '../components/Articles'
     import Users from '../components/Users'
 
@@ -27,102 +31,23 @@
             Articles,
             Users
         },
-
         data () {
             return {
-                articles: [
-                    {
-                        title: '文章一',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章二',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章一',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章二',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章一',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章二',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章一',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章二',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    },
-                    {
-                        title: '文章三',
-                        cover: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466'
-                    }
-                ],
-                users: [
-                    {
-                        nickname: '用户一',
-                        portrait: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466',
-                        intro: '个人简介'
-                    },
-                    {
-                        nickname: '用户二',
-                        portrait: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466',
-                        intro: '个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介'
-                    },
-                    {
-                        nickname: '用户三',
-                        portrait: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466',
-                        intro: '个人简介'
-                    },
-                    {
-                        nickname: '用户二',
-                        portrait: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466',
-                        intro: '个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介'
-                    },
-                    {
-                        nickname: '用户三',
-                        portrait: 'https://avatars2.githubusercontent.com/u/13533886?v=3&s=466',
-                        intro: '个人简介'
-                    }
-                ]
+                articles: [],
+                users: []
+            }
+        },
+        created () {
+            this.fetchData()
+        },
+        route: {
+            data () {
+                this.fetchData()
+            }
+        },
+        methods: {
+            fetchData () {
+
             }
         }
     }

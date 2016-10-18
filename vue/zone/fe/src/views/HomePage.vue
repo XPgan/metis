@@ -31,6 +31,11 @@
             Articles,
             Users
         },
+        vuex: {
+            getters: {
+                serverHostUrl: ({constant}) => constant.serverHostUrl
+            }
+        },
         data () {
             return {
                 articles: [],
@@ -47,7 +52,11 @@
         },
         methods: {
             fetchData () {
-
+                var _this = this
+                var url = _this.serverHostUrl + '/users?page=0'
+                publicMethods.getRequest(_this, url, function (data) {
+                    console.log(data)
+                })
             }
         }
     }

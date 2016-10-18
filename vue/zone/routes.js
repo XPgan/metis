@@ -7,6 +7,26 @@ var edit = require('./modules/edit');
 var publish = require('./modules/publish');
 var router = express.Router();
 
+var paging = function (req, res, opts) {
+    var page = req.query.page >> 0;
+    var start = page * opts.num;
+    opts.model.find({}, {}, {skip: start, limit: opts.num}, function (err, result) {
+        if (err) {
+            res.end(JSON.stringify({
+                message: '网络错误',
+                status: 0
+            }));
+        } else {
+            var status = result.length ? 1 : 2;
+            res.end(JSON.stringify({
+                message: '请求成功',
+                status: status,
+                data: result
+            }));
+        }
+    });
+};
+
 router.get('/profile/:id', function (req, res) {
     var id = req.params.id;
     User.find({id: id}, {}, {}, function (err, result) {
@@ -69,6 +89,19 @@ router.get('/article/:id', function (req, res) {
         }
     });
 });
+router.get('/users', function (req, res) {
+    paging(req, res, {
+        model: User,
+        num: 4
+    });
+});
+router.get('/articles', function (req, res) {
+    paging(req, res, {
+        model: Article,
+        num: 6
+    });
+});
+
 
 router.post('/login', function (req, res) {
     log.login(req, res);

@@ -4,16 +4,16 @@ export default {
             for (var i in lst) {
                 obj[lst[i]][key] = ''
             }
-        }
-        if (lst && !key) {
+        } else if (lst && !key) {
             for (var j in lst) {
                 obj[lst[j]] = ''
             }
-        }
-        if (!lst && !key) {
+        } else if (!lst && !key) {
             for (var k in obj) {
                 obj[k] = ''
             }
+        } else {
+            return 0
         }
     },
     toggleDialog (_this, opts) {

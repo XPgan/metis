@@ -1,26 +1,37 @@
 <template>
-    <user-info></user-info>
+    <user-info :user-info="userInfo"></user-info>
     <section>
-        <h4 class="article-title">这里是标题<a href="javascript:;"></a></h4>
-        <div class="article-content">这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文这里是正文</div>
+        <h4 class="article-title">{{ articleInfo.title }}<a href="javascript:;" @click="toggleEditArticle"></a></h4>
+        <div class="article-content">{{ articleInfo.content }}</div>
         <div class="zone-btns">
             <a href="javascript:;">继续阅读</a>
         </div>
     </section>
-    <div class="c-mask">
+    <div class="c-mask" v-show="editArticle.show">
         <form enctype="multipart/form-data" id="form_edit_article" class="zone-form form-edit c-center">
             <div class="form-upload">
-                <img src="" />
-                <input type="file" id="cover" name="cover" />
+                <img :src="editArticle.cover" />
+                <input
+                    type="file"
+                    @change="coverAnalysis($event)" />
                 <span>修改封面</span>
             </div>
             <div class="form-info">
-                <input type="text" id="title" name="title" placeholder="标题" />
-                <textarea id="content" name="content" placeholder="正文"></textarea>
-                <span>这里是提示信息</span>
+                <input
+                    type="text" placeholder="请输入标题"
+                    :value="articleInfo.title"
+                    v-model="editArticle.body.title"
+                    v-el:title />
+                <textarea
+                    placeholder="请输入正文"
+                    :value="articleInfo.content"
+                    v-model="editArticle.body.content"
+                    v-el:content>
+                </textarea>
+                <span>{{ editArticle.message }}</span>
                 <div class="zone-btns">
-                    <a href="javascript:;">提交</a>
-                    <a href="javascript:;">取消</a>
+                    <a href="javascript:;" @click="requestEditArticle">提交</a>
+                    <a href="javascript:;" @click="toggleEditArticle">取消</a>
                 </div>
             </div>
         </form>
@@ -74,7 +85,30 @@
                 publicMethods.getRequest(_this, url, function (data) {
                     _this.userInfo = data.data.userInfo
                     _this.articleInfo = data.data.articleInfo
+
+                    // 表单 cover 需要特殊处理 (╯﹏╰)
+                    var cover = _this.articleInfo.cover
+                    _this.editArticle.cover = _this.serverHostUrl + cover
+                    _this.editArticle.body.cover = ''
+                    _this.editArticle.formData = null
                 })
+            },
+            coverAnalysis (event) {
+                var opts = {
+                    key: 'cover',
+                    action: 'editArticle'
+                }
+                publicMethods.fileAnalysis(this, event, opts)
+            },
+            toggleEditArticle () {
+                var opts = {
+                    clear: [],
+                    action: 'editArticle'
+                }
+                publicMethods.toggleDialog(this, opts)
+            },
+            requestEditArticle () {
+
             }
         }
     }

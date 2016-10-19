@@ -19,7 +19,7 @@ var paging = function (req, res, opts) {
                     status: 0
                 }));
             } else {
-                var status = (total - end) > 0 ? 1 : 2;
+                var status = total > end ? 1 : 2;
                 res.end(JSON.stringify({
                     message: '请求成功',
                     status: status,
@@ -115,8 +115,11 @@ router.get('/articles', function (req, res) {
     });
 });
 router.get('/article', function (req, res) {
-    var page = req.query.page >> 0;
+    var num = 100;
     var id = req.query.id;
+    var page = req.query.page >> 0;
+    var start = page * num;
+    var end = (page + 1) * num;
     Article.find({id: id}, {content: 1}, {}, function (err, result) {
         if (err) {
             res.end(JSON.stringify({
@@ -124,10 +127,14 @@ router.get('/article', function (req, res) {
                 status: 0
             }));
         } else {
+            var content = result[0].content;
+            var length = content.length;
+            var data = content.substr(start, num);
+            var status = length > end ? 1 : 2;
             res.end(JSON.stringify({
                 message: '请求成功',
-                status: 1,
-                data: result[0].content
+                status: status,
+                data: data
             }));
         }
     });

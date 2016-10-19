@@ -112,7 +112,9 @@
                 var params = {
                     id: _this.articleInfo.id
                 }
-                publicMethods.loadMore(this, event, params)
+                publicMethods.loadMore(this, event, params, function (data) {
+                    _this.articleInfo.content += data.data
+                })
             },
             coverAnalysis (event) {
                 var opts = {

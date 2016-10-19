@@ -114,6 +114,24 @@ router.get('/articles', function (req, res) {
         num: 6
     });
 });
+router.get('/article', function (req, res) {
+    var page = req.query.page >> 0;
+    var id = req.query.id;
+    Article.find({id: id}, {content: 1}, {}, function (err, result) {
+        if (err) {
+            res.end(JSON.stringify({
+                message: '网络错误',
+                status: 0
+            }));
+        } else {
+            res.end(JSON.stringify({
+                message: '请求成功',
+                status: 1,
+                data: result[0].content
+            }));
+        }
+    });
+});
 
 
 router.post('/login', function (req, res) {

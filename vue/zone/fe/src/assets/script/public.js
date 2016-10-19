@@ -32,7 +32,7 @@ export default {
                 _this[opts.action].message = '网络错误'
             })
     },
-    loadMore (_this, event, params) {
+    loadMore (_this, event, params, callback) {
         var $target = event.target
         var element = $target.getAttribute('element')
         var page = _this.load[element].page
@@ -52,8 +52,9 @@ export default {
                 _this.load[element].show = 0
                 _this.load[element].message = '没有更多了'
             }
-            _this[element] = _this[element].concat(data.data)
             _this.load[element].page = page
+
+            callback(data)
         })
     },
     toggleDialog (_this, opts) {

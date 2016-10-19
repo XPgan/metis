@@ -32,6 +32,23 @@ export default {
                 _this[opts.action].message = '网络错误'
             })
     },
+    loadMore (_this, event) {
+        var $target = event.target
+        var element = $target.getAttribute('element')
+        var page = _this.load[element].page
+        page += 1
+
+        var url = _this.serverHostUrl + '/' + element + '?page=' + page
+        this.getRequest(_this, url, function (data) {
+            var status = data.status
+            if (status === 2) {
+                _this.load[element].show = 0
+                _this.load[element].message = '没有更多了'
+            }
+            _this[element] = _this[element].concat(data.data)
+            _this.load[element].page = page
+        })
+    },
     toggleDialog (_this, opts) {
         var obj = _this[opts.action]
         var status = obj.show

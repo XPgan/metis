@@ -76,22 +76,7 @@
                 method('articles')
             },
             loadMore (event) {
-                var _this = this
-                var $target = event.target
-                var element = $target.getAttribute('element')
-                var page = _this.load[element].page
-                page += 1
-
-                var url = _this.serverHostUrl + '/' + element + '?page=' + page
-                publicMethods.getRequest(_this, url, function (data) {
-                    var status = data.status
-                    if (status === 2) {
-                        _this.load[element].show = 0
-                        _this.load[element].message = '没有更多了'
-                    }
-                    _this[element] = _this[element].concat(data.data)
-                    _this.load[element].page = page
-                })
+                publicMethods.loadMore(this, event)
             }
         }
     }

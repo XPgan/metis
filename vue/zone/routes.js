@@ -72,6 +72,7 @@ router.get('/profile/:id', function (req, res) {
     });
 });
 router.get('/article/:id', function (req, res) {
+    var num = 100;
     var id = req.params.id;
     Article.find({id: id}, {}, {}, function (err, result) {
         if (err) {
@@ -81,6 +82,11 @@ router.get('/article/:id', function (req, res) {
             }));
         } else {
             var articleInfo = result[0];
+            var content = articleInfo.content.substr(0, num);
+            var articleLength = articleInfo.content.length;
+            var status = articleLength > num ? 1 : 2;
+            articleInfo.content = content;
+
             User.find({id: result[0].author}, {}, {}, function (err, result) {
                 if (err) {
                     res.end(JSON.stringify({
@@ -91,7 +97,7 @@ router.get('/article/:id', function (req, res) {
                     var userInfo = result[0];
                     res.end(JSON.stringify({
                         message: '请求成功',
-                        status: 1,
+                        status: status,
                         data: {
                             userInfo: userInfo,
                             articleInfo: articleInfo

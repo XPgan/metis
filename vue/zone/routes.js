@@ -10,19 +10,32 @@ var router = express.Router();
 var paging = function (req, res, opts) {
     var page = req.query.page >> 0;
     var start = page * opts.num;
-    opts.model.find({}, {}, {skip: start, limit: opts.num}, function (err, result) {
+    var end = (page + 1) * opts.num;
+    var findData = function (total) {
+        opts.model.find({}, {}, {skip: start, limit: opts.num}, function (err, result) {
+            if (err) {
+                res.end(JSON.stringify({
+                    message: '网络错误',
+                    status: 0
+                }));
+            } else {
+                var status = (total - end) > 0 ? 1 : 2;
+                res.end(JSON.stringify({
+                    message: '请求成功',
+                    status: status,
+                    data: result
+                }));
+            }
+        });
+    };
+    opts.model.count({}, function (err, total) {
         if (err) {
             res.end(JSON.stringify({
                 message: '网络错误',
                 status: 0
             }));
         } else {
-            var status = result.length ? 1 : 2;
-            res.end(JSON.stringify({
-                message: '请求成功',
-                status: status,
-                data: result
-            }));
+            findData(total);
         }
     });
 };

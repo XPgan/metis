@@ -8,14 +8,14 @@
         <h3 class="zone-title">所有用户</h3>
         <users :users="users"></users>
         <div class="zone-btns">
-            <a href="javascript:;">查看更多</a>
+            <a href="javascript:;" :page="0" @click="loadMore($event)">查看更多</a>
         </div>
     </section>
     <section>
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>
         <div class="zone-btns">
-            <a href="javascript:;">查看更多</a>
+            <a href="javascript:;" :page="0" @click="loadMore($event)">查看更多</a>
         </div>
     </section>
 </template>
@@ -42,9 +42,9 @@
                 users: []
             }
         },
-        created () {
-            this.fetchData()
-        },
+//        created () {
+//            this.fetchData()
+//        },
         route: {
             data () {
                 this.fetchData()
@@ -59,6 +59,13 @@
                 publicMethods.getRequest(_this, _this.serverHostUrl + '/articles', function (data) {
                     _this.articles = data.data
                 })
+            },
+            loadMore (event) {
+                var $target = event.target
+                var page = $target.getAttribute('page') >> 0
+
+                page += 1
+                $target.setAttribute('page', page)
             }
         }
     }

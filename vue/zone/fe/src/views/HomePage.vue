@@ -10,7 +10,7 @@
         <div class="zone-btns" v-show="load.users.show">
             <a href="javascript:;" element="users" @click="loadMore($event)">查看更多</a>
         </div>
-        <div v-show="load.users.message">没有更多了</div>
+        <div v-show="load.users.message" class="zone-nomore">没有更多了</div>
     </section>
     <section>
         <h3 class="zone-title">所有文章</h3>
@@ -18,7 +18,7 @@
         <div class="zone-btns" v-show="load.articles.show">
             <a href="javascript:;" element="articles" @click="loadMore($event)">查看更多</a>
         </div>
-        <div v-show="load.articles.message">没有更多了</div>
+        <div v-show="load.articles.message" class="zone-nomore">没有更多了</div>
     </section>
 </template>
 
@@ -89,6 +89,7 @@
                         _this.load[element].show = 0
                         _this.load[element].message = '没有更多了'
                     }
+                    _this[element] = _this[element].concat(data.data)
                     _this.load[element].page = page
                 })
             }

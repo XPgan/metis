@@ -7,16 +7,18 @@
     <section>
         <h3 class="zone-title">所有用户</h3>
         <users :users="users"></users>
-        <div class="zone-btns">
-            <a href="javascript:;" :page="0" @click="loadMore($event)">查看更多</a>
+        <div class="zone-btns" v-show="load.users.show">
+            <a href="javascript:;" element="users" @click="loadMore($event)">查看更多</a>
         </div>
+        <div v-show="load.users.message">没有更多了</div>
     </section>
     <section>
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>
-        <div class="zone-btns">
-            <a href="javascript:;" :page="0" @click="loadMore($event)">查看更多</a>
+        <div class="zone-btns" v-show="load.articles.show">
+            <a href="javascript:;" element="articles" @click="loadMore($event)">查看更多</a>
         </div>
+        <div v-show="load.articles.message">没有更多了</div>
     </section>
 </template>
 
@@ -38,13 +40,22 @@
         },
         data () {
             return {
+                users: [],
                 articles: [],
-                users: []
+                load: {
+                    users: {
+                        page: 0,
+                        show: 1,
+                        message: ''
+                    },
+                    articles: {
+                        page: 0,
+                        show: 1,
+                        message: ''
+                    }
+                }
             }
         },
-//        created () {
-//            this.fetchData()
-//        },
         route: {
             data () {
                 this.fetchData()
@@ -53,19 +64,33 @@
         methods: {
             fetchData () {
                 var _this = this
-                publicMethods.getRequest(_this, _this.serverHostUrl + '/users', function (data) {
-                    _this.users = data.data
-                })
-                publicMethods.getRequest(_this, _this.serverHostUrl + '/articles', function (data) {
-                    _this.articles = data.data
-                })
+                var method = function (element) {
+                    var url = _this.serverHostUrl + '/' + element
+                    publicMethods.getRequest(_this, url, function (data) {
+                        _this[element] = data.data
+                        _this.load[element] = { page: 0, show: 1, message: '' }
+                        data.status === 2 && (_this.load[element].show = 0)
+                    })
+                }
+                method('users')
+                method('articles')
             },
             loadMore (event) {
+                var _this = this
                 var $target = event.target
-                var page = $target.getAttribute('page') >> 0
-
+                var element = $target.getAttribute('element')
+                var page = _this.load[element].page
                 page += 1
-                $target.setAttribute('page', page)
+
+                var url = _this.serverHostUrl + '/' + element + '?page=' + page
+                publicMethods.getRequest(_this, url, function (data) {
+                    var status = data.status
+                    if (status === 2) {
+                        _this.load[element].show = 0
+                        _this.load[element].message = '没有更多了'
+                    }
+                    _this.load[element].page = page
+                })
             }
         }
     }

@@ -32,13 +32,20 @@ export default {
                 _this[opts.action].message = '网络错误'
             })
     },
-    loadMore (_this, event) {
+    loadMore (_this, event, params) {
         var $target = event.target
         var element = $target.getAttribute('element')
         var page = _this.load[element].page
+        var paramStr = ''
+
+        for (var key in params) {
+            var value = params[key]
+            var tmp = '&' + key + '=' + value
+            paramStr += tmp
+        }
         page += 1
 
-        var url = _this.serverHostUrl + '/' + element + '?page=' + page
+        var url = _this.serverHostUrl + '/' + element + '?page=' + page + paramStr
         this.getRequest(_this, url, function (data) {
             var status = data.status
             if (status === 2) {

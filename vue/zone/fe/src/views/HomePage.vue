@@ -76,7 +76,7 @@
                 method('articles')
             },
             loadMore (event) {
-                publicMethods.loadMore(this, event)
+                publicMethods.loadMore(this, event, {})
             }
         }
     }

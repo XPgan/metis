@@ -77,8 +77,7 @@
             },
             loadMore (event) {
                 var _this = this
-                var $target = event.target
-                var element = $target.getAttribute('element')
+                var element = event.target.getAttribute('element')
                 publicMethods.loadMore(_this, event, {}, function (data) {
                     _this[element] = _this[element].concat(data.data)
                 })

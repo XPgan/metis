@@ -85,9 +85,6 @@
                 }
             }
         },
-        created () {
-            this.fetchData()
-        },
         route: {
             data () {
                 this.fetchData()

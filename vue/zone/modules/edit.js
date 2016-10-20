@@ -3,10 +3,21 @@ var User = require('../models').User;
 var Article = require('../models').Article;
 
 var edit = {
-    method: function (req, res, opts) {
+    method: function (req, res, element) {
+        switch (element) {
+            case 'user':
+                var model = User;
+                var fileKey = 'portrait';
+                break;
+            case 'article':
+                var model = Article;
+                var fileKey = 'cover';
+                break;
+        }
+
         var id = req.params.id;
         var update = function () {
-            opts.model.update({id: id}, req.body, {}, function (err) {
+            model.update({id: id}, req.body, {}, function (err) {
                 if (err) {
                     res.end(JSON.stringify({
                         message: '网络错误',
@@ -20,19 +31,18 @@ var edit = {
                 }
             });
         };
-        opts.model.find({id: id}, {}, {}, function (err, result) {
+        model.find({id: id}, {}, {}, function (err, result) {
             if (err) {
                 res.end(JSON.stringify({
                     message: '网络错误',
                     status: 0
                 }));
             } else {
-                var key = opts.uploadKey;
-                if (req.body[key]) {
-                    var newPic = req.body[key];
-                    var oldPic = result[0][key];
-                    if (oldPic != newPic) {
-                        fs.unlink('../upload' + result[0][key]);
+                if (req.body[fileKey]) {
+                    var newFile = req.body[fileKey];
+                    var oldFile = result[0][fileKey];
+                    if (oldFile != newFile) {
+                        fs.unlink('../upload' + result[0][fileKey]);
                     }
                 }
                 update();
@@ -40,18 +50,10 @@ var edit = {
         });
     },
     user: function (req, res) {
-        var opts = {
-            model: User,
-            uploadKey: 'portrait'
-        };
-        this.method(req, res, opts);
+        this.method(req, res, 'user');
     },
     article: function (req, res) {
-        var opts = {
-            model: Article,
-            uploadKey: 'cover'
-        };
-        this.method(req, res, opts);
+        this.method(req, res, 'article');
     }
 };
 

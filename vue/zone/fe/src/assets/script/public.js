@@ -33,8 +33,7 @@ export default {
             })
     },
     loadMore (_this, event, params, callback) {
-        var $target = event.target
-        var element = $target.getAttribute('element')
+        var element = event.target.getAttribute('element')
         var page = _this.load[element].page
         var paramStr = ''
 

@@ -8,7 +8,7 @@ var publish = require('./modules/publish');
 var router = express.Router();
 
 var paging = function (req, res, opts) {
-    var page = parseInt(req.query.page);
+    var page = req.query.page >> 0;
     var start = page * opts.unit;
     var end = (page + 1) * opts.unit;
     opts.model.count({}, function (err, total) {
@@ -114,7 +114,7 @@ router.get('/articles', function (req, res) {
 router.get('/article', function (req, res) {
     var unit = 100;
     var id = req.query.id;
-    var page = parseInt(req.query.page);
+    var page = req.query.page >> 0;
     var start = page * unit;
     var end = (page + 1) * unit;
     Article.find({id: id}, {content: 1}, {}, function (err, result) {

@@ -8,11 +8,11 @@
                 v-show="currentUser == articleInfo.author">
             </a>
         </h4>
-        <div class="article-content">{{ articleInfo.content }}</div>
+        <div class="article-content">{{ articlePaged }}</div>
         <div class="zone-btns" v-show="load.article.show">
             <a href="javascript:;" element="article" @click="loadMore($event)">继续阅读</a>
         </div>
-        <div class="zone-nomore" v-show="load.article.message"></div>
+        <div class="zone-nomore" v-show="load.article.message">沒有更多了</div>
     </section>
     <div class="c-mask" v-show="editArticle.show">
         <form enctype="multipart/form-data" id="form_edit_article" class="zone-form form-edit c-center">
@@ -64,6 +64,7 @@
             return {
                 userInfo: {},
                 articleInfo: {},
+                articlePaged: '',
                 load: {
                     article: {
                         page: 0,
@@ -92,19 +93,28 @@
         methods: {
             fetchData () {
                 var _this = this
+                var loadArticle = function (id) {
+                    var url = _this.serverHostUrl + '/article?id=' + id
+                    publicMethods.getRequest(_this, url, function (data) {
+                        _this.articlePaged = data.data
+
+                        _this.load.article = { page: 0, show: 1, message: '' }
+                        data.status === 2 && (_this.load.article.show = 0)
+                    })
+                }
+
                 var url = _this.serverHostUrl + _this.$route.path
                 publicMethods.getRequest(_this, url, function (data) {
                     _this.userInfo = data.data.userInfo
                     _this.articleInfo = data.data.articleInfo
-
-                    _this.load.article = { page: 0, show: 1, message: '' }
-                    data.status === 2 && (_this.load.article.show = 0)
 
                     // 表单 cover 需要特殊处理 (╯﹏╰)
                     var cover = _this.articleInfo.cover
                     _this.editArticle.cover = _this.serverHostUrl + cover
                     _this.editArticle.body.cover = ''
                     _this.editArticle.formData = null
+
+                    loadArticle(_this.articleInfo.id)
                 })
             },
             loadMore (event) {
@@ -113,7 +123,7 @@
                     id: _this.articleInfo.id
                 }
                 publicMethods.loadMore(this, event, params, function (data) {
-                    _this.articleInfo.content += data.data
+                    _this.articlePaged += data.data
                 })
             },
             coverAnalysis (event) {

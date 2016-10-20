@@ -177,7 +177,7 @@
                             action: 'editUser'
                         }
                         publicMethods.postRequest(_this, opts, function () {
-                            _this.userInfo = _userInfo
+                            _this.fetchData()
                             _this.toggleEditUser()
                         })
                     }

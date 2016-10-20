@@ -176,7 +176,7 @@
                             action: 'editArticle'
                         }
                         publicMethods.postRequest(_this, opts, function () {
-                            _this.articleInfo = _articleInfo
+                            _this.fetchData()
                             _this.toggleEditArticle()
                         })
                     }

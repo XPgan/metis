@@ -22,7 +22,7 @@
             <span>{{ publish.message }}</span>
             <div class="zone-btns">
                 <a href="javascript:;" @click="requestPublish">提交</a>
-                <a v-link="{ path: '/' }">取消</a>
+                <a v-link="{ path: '/profile/' + currentUser }">取消</a>
             </div>
         </div>
     </form>

@@ -11,28 +11,19 @@ var paging = function (req, res, opts) {
     var page = req.query.page >> 0;
     var start = page * opts.unit;
     var end = (page + 1) * opts.unit;
-    opts.model.count({}, function (err, total) {
+    opts.model.find(opts.record, {}, {skip: start, limit: opts.unit}, function (err, result) {
         if (err) {
             res.end(JSON.stringify({
                 message: '网络错误',
                 status: 0
             }));
         } else {
-            opts.model.find({}, {}, {skip: start, limit: opts.unit}, function (err, result) {
-                if (err) {
-                    res.end(JSON.stringify({
-                        message: '网络错误',
-                        status: 0
-                    }));
-                } else {
-                    var status = total > end ? 1 : 2;
-                    res.end(JSON.stringify({
-                        message: '请求成功',
-                        status: status,
-                        data: result
-                    }));
-                }
-            });
+            var status = opts.total > end ? 1 : 2;
+            res.end(JSON.stringify({
+                message: '请求成功',
+                status: status,
+                data: result
+            }));
         }
     });
 };
@@ -100,16 +91,60 @@ router.get('/article/:id', function (req, res) {
     });
 });
 router.get('/users', function (req, res) {
-    paging(req, res, {
-        model: User,
-        unit: 4
+    User.count({}, function (err, total) {
+        if (err) {
+            res.end(JSON.stringify({
+                message: '网络错误',
+                status: 0
+            }));
+        } else {
+            paging(req, res, {
+                model: User,
+                record: {},
+                total: total,
+                unit: 4
+            });
+        }
     });
 });
 router.get('/articles', function (req, res) {
-    paging(req, res, {
-        model: Article,
-        unit: 6
-    });
+    var user = req.query.user;
+    if (user) {
+        User.find({id: user}, {}, {}, function (err, result) {
+            if (err) {
+                res.end(JSON.stringify({
+                    message: '网络错误',
+                    status: 0
+                }));
+            } else {
+                var articles = result[0].articles;
+                var total = articles.length;
+                var record = {id: {$in: articles}};
+                paging(req, res, {
+                    model: Article,
+                    record: record,
+                    total: total,
+                    unit: 6
+                });
+            }
+        });
+    } else {
+        Article.count({}, function (err, total) {
+            if (err) {
+                res.end(JSON.stringify({
+                    message: '网络错误',
+                    status: 0
+                }));
+            } else {
+                paging(req, res, {
+                    model: Article,
+                    record: {},
+                    total: total,
+                    unit: 6
+                });
+            }
+        });
+    }
 });
 router.get('/article', function (req, res) {
     var unit = 2;

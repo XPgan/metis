@@ -1,12 +1,18 @@
 <template>
     <user-info :user-info="userInfo"></user-info>
-    <section>
+    <section v-show="articles.length">
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>
         <div class="zone-btns" v-show="load.articles.show">
             <a href="javascript:;" element="articles" @click="loadMore($event)">查看更多</a>
         </div>
         <div class="zone-nomore" v-show="load.articles.message">沒有更多了</div>
+    </section>
+    <section v-else>
+        <div class="zone-noresult">
+            <span v-if="currentUser === userInfo.id">快发布文章丰富个人空间吧~</span>
+            <span v-else>该用户还没有发布过文章~</span>
+        </div>
     </section>
     <div class="c-mask" v-show="editUser.show">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">

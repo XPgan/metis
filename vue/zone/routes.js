@@ -37,25 +37,13 @@ router.get('/profile/:id', function (req, res) {
                 status: 0
             }));
         } else {
-            var userInfo = result[0];
-            Article.find({id: {$in: userInfo.articles}}, {}, {}, function (err, result) {
-                if (err) {
-                    res.end(JSON.stringify({
-                        message: '网络错误',
-                        status: 0
-                    }));
-                } else {
-                    var articles = result;
-                    res.end(JSON.stringify({
-                        message: '请求成功',
-                        status: 1,
-                        data: {
-                            userInfo: userInfo,
-                            articles: articles
-                        }
-                    }));
+            res.end(JSON.stringify({
+                message: '请求成功',
+                status: 1,
+                data: {
+                    userInfo: result[0]
                 }
-            });
+            }));
         }
     });
 });

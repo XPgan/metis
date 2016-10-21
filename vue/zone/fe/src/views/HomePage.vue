@@ -4,7 +4,7 @@
             <img src="../assets/img/logo.png" />
         </a>
     </h1>
-    <section>
+    <section v-show="users.length">
         <h3 class="zone-title">所有用户</h3>
         <users :users="users"></users>
         <div class="zone-btns" v-show="load.users.show">
@@ -12,7 +12,7 @@
         </div>
         <div v-show="load.users.message" class="zone-nomore">没有更多了</div>
     </section>
-    <section>
+    <section v-show="articles.length">
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>
         <div class="zone-btns" v-show="load.articles.show">

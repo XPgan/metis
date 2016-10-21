@@ -3,9 +3,10 @@
     <section>
         <h3 class="zone-title">所有文章</h3>
         <articles :articles="articles"></articles>
-        <div class="zone-btns">
-            <a href="javascript:;" class="zone-more">查看更多</a>
+        <div class="zone-btns" v-show="load.articles.show">
+            <a href="javascript:;" element="articles" @click="loadMore($event)">查看更多</a>
         </div>
+        <div class="zone-nomore" v-show="load.articles.message">沒有更多了</div>
     </section>
     <div class="c-mask" v-show="editUser.show">
         <form enctype="multipart/form-data" id="form_edit_user" class="zone-form form-edit c-center">
@@ -71,6 +72,13 @@
             return {
                 userInfo: {},
                 articles: [],
+                load: {
+                    articles: {
+                        page: 0,
+                        show: 1,
+                        message: ''
+                    }
+                },
                 editUser: {
                     show: 0,
                     formData: null,
@@ -93,16 +101,36 @@
         methods: {
             fetchData () {
                 var _this = this
+                var loadArticles = function (id) {
+                    var url = _this.serverHostUrl + '/articles?user=' + id
+                    publicMethods.getRequest(_this, url, function (data) {
+                        _this.articles = data.data
+
+                        _this.load.articles = { page: 0, show: 1, message: '' }
+                        data.status === 2 && (_this.load.articles.show = 0)
+                    })
+                }
+
                 var url = _this.serverHostUrl + _this.$route.path
                 publicMethods.getRequest(_this, url, function (data) {
                     _this.userInfo = data.data.userInfo
-                    _this.articles = data.data.articles
 
                     // 表单 portrait 需要特殊处理 (╯﹏╰)
                     var portrait = _this.userInfo.portrait
                     _this.editUser.portrait = _this.serverHostUrl + portrait
                     _this.editUser.body.portrait = ''
                     _this.editUser.formData = null
+
+                    loadArticles(_this.userInfo.id)
+                })
+            },
+            loadMore (event) {
+                var _this = this
+                var params = {
+                    user: _this.userInfo.id
+                }
+                publicMethods.loadMore(this, event, params, function (data) {
+                    _this.articles = _this.articles.concat(data.data)
                 })
             },
             portraitAnalysis (event) {

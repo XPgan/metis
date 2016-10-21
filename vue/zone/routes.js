@@ -112,7 +112,7 @@ router.get('/articles', function (req, res) {
     });
 });
 router.get('/article', function (req, res) {
-    var unit = 100;
+    var unit = 2;
     var id = req.query.id;
     var page = req.query.page >> 0;
     var start = page * unit;
@@ -124,10 +124,16 @@ router.get('/article', function (req, res) {
                 status: 0
             }));
         } else {
+            var data = '';
+            var pattern = /\n(?=.)/g
             var content = result[0].content;
-            var length = content.length;
-            var data = content.substr(start, unit);
-            var status = length > end ? 1 : 2;
+            var paragraphs = content.split(pattern);
+            var total = paragraphs.length;
+            var output = paragraphs.slice(start, end);
+            var status = total > end ? 1 : 2;
+            for (var j = 0;j < output.length;j++) {
+                data += output[j] + '\n';
+            }
             res.end(JSON.stringify({
                 message: '请求成功',
                 status: status,

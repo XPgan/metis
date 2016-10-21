@@ -54,6 +54,9 @@
                 }
             }
         },
+        created () {
+            this.currentUser || this.$router.go('/')
+        },
         methods: {
             coverAnalysis (event) {
                 var opts = {

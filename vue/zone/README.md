@@ -2,7 +2,7 @@
 
 ### vue + express + mongodb + fs ###
 
-1. 启动 mongodb
+__启动 mongodb__
 
 ```bash
 cd mongodb
@@ -14,7 +14,7 @@ cd mongodb/bin
 ./mongod --dbpath ../data/db
 ```
 
-2. 启动 express
+__启动 express__
 
 ```bash
 cd zone
@@ -26,7 +26,7 @@ cd bin
 ./www
 ```
 
-3. 启动 vue
+__启动 vue__
 
 ```bash
 cd zone/fe

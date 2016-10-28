@@ -8,8 +8,6 @@
 
     [浏览器加载 CommonJS 模块的原理与实现](http://www.ruanyifeng.com/blog/2015/05/commonjs-in-browser.html)
 
-*****
-
 + __AMD__ (浏览器端) (异步) (依赖前置)
 
     [AMD 规范](https://github.com/amdjs/amdjs-api/wiki/AMD)

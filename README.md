@@ -114,9 +114,7 @@
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/webpack) ####
 
-#### 示例 ####
-
-+ [示例](https://github.com/sunmengyuan/note/tree/master/webpack/example)
+#### [示例](https://github.com/sunmengyuan/note/tree/master/webpack/example) ####
 
 *****
 

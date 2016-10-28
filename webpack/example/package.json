@@ -4,8 +4,12 @@
     "description": "学习如何使用 webpack",
     "main": "./src/entry.js",
     "author": "sunmy",
+    "scripts": {
+        "dev": "webpack-dev-server"
+    },
     "dependencies": {
         "webpack": "~1.13.3",
+        "webpack-dev-server": "1.16.2",
         "babel-core": "~6.18.0",
         "babel-loader": "~6.2.7",
         "style-loader": "~0.13.1",

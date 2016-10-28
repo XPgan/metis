@@ -18,7 +18,7 @@
 
 #### 参考资料 ####
 
-+ [Vue.js](http://cn.vuejs.org/)
++ [vue.js](http://cn.vuejs.org/)
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/vue) ####
 
@@ -107,6 +107,10 @@
 *****
 
 ### Webpack ###
+
+#### 参考资料 ####
+
++ [webpack](https://webpack.github.io/docs/)
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/webpack) ####
 

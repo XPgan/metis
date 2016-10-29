@@ -3,7 +3,6 @@
  */
 
 var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -26,16 +25,13 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract('style', 'css')
+                test: /\.less$/,
+                loader: 'style!css!less'
             },
 			{
 			    test: /\.(jpg|png|svg)$/,
                 loader: 'url'
 			}
         ]
-    },
-    plugins: [
-        new ExtractTextPlugin('style.css')
-    ]
+    }
 };

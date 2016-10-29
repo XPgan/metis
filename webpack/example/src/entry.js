@@ -1,4 +1,4 @@
-require('./style/style.css');
+import style from './style/style.css'
+import script1 from './script/script1'
 
-var script1 = require('./script/script1');
-script1.do();
+script1.main();

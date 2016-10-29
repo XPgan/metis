@@ -1,7 +1,5 @@
-var main = {
-    do: function () {
+export default {
+    main () {
         console.log('Hello Webpack');
     }
 }
-
-module.exports = main;

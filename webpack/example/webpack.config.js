@@ -20,9 +20,19 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.js$/, loader: 'babel'},
-            {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css')},
-			{test: /\.(jpg|png|svg)$/, loader: 'url'}
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract('style', 'css')
+            },
+			{
+			    test: /\.(jpg|png|svg)$/,
+                loader: 'url'
+			}
         ]
     },
     plugins: [

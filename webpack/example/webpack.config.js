@@ -3,35 +3,40 @@
  */
 
 var path = require('path');
+var htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'eval-source-map',
-    entry: './src/entry.js',
+    entry: './entry.js',
     output: {
-        path: path.join(__dirname, 'public'),
+        path: './build',
         filename: 'bundle.js',
-        publicPath: './public/'
     },
     devServer: {
         port: 8000,
         inline: true,
-        colors: true
+        contentBase: './src'
     },
     module: {
         loaders: [
             {
+                test: /\.less$/,
+                loader: 'style!css!less'
+            },
+            {
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: /node_modules/
-            },
-            {
-                test: /\.less$/,
-                loader: 'style!css!less'
             },
 			{
 			    test: /\.(jpg|png|svg)$/,
                 loader: 'url'
 			}
         ]
-    }
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            template: './src/index.html'
+        })
+    ]
 };

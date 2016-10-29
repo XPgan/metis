@@ -13,6 +13,11 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: './public/'
     },
+    devServer: {
+        port: 8000,
+        inline: true,
+        colors: true
+    },
     module: {
         loaders: [
             {test: /\.js$/, loader: 'babel'},

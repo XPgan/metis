@@ -1,4 +1,4 @@
-require('./styles/style.css');
+require('./style/style.css');
 
-var script1 = require('./scripts/script1');
+var script1 = require('./script/script1');
 script1.do();

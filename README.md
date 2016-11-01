@@ -96,6 +96,14 @@
 
 *****
 
+### Sass ###
+
+#### 参考资料 ####
+
++ [sass入门 - sass教程](http://www.w3cplus.com/sassguide/)
+
+*****
+
 ### ECMAScript ###
 
 #### 参考资料 ####
@@ -115,6 +123,20 @@
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/webpack) ####
 
 #### [示例](https://github.com/sunmengyuan/note/tree/master/webpack/example) ####
+
+*****
+
+### Karma ###
+
+#### 参考资料 ####
+
++ [Karma - Spectacular Test Runner for Javascript](http://karma-runner.github.io/0.12/index.html)
+
++ [Jasmine Documentation](http://jasmine.github.io/)
+
+#### [笔记](https://github.com/sunmengyuan/note/tree/master/karma) ####
+
+#### [示例](https://github.com/sunmengyuan/note/tree/master/karma/example) ####
 
 *****
 

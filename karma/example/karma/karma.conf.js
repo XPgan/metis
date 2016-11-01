@@ -1,6 +1,10 @@
 // Karma configuration
 // Generated on Mon Oct 31 2016 16:17:22 GMT+0800 (CST)
 
+var karmaJasmine = require('karma-jasmine');
+var karmaChromeLauncher = require('karma-chrome-launcher');
+var jasmineCore = require('jasmine-core');
+
 module.exports = function (config) {
     config.set({
 
@@ -15,7 +19,7 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            '../js/*.js'
+            '../src/*.js'
         ],
 
 
@@ -62,6 +66,12 @@ module.exports = function (config) {
 
         // Concurrency level
         // how many browser should be started simultaneous
-        concurrency: Infinity
+        concurrency: Infinity,
+
+        plugins: [
+            karmaJasmine,
+            karmaChromeLauncher,
+            jasmineCore
+        ]
     })
 }

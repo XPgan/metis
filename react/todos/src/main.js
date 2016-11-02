@@ -1,5 +1,6 @@
-import reactDom from 'react-dom';
+import React from 'react';
+import ReactDom from 'react-dom';
 
 import Welcome from './components/Welcome.jsx'
 
-reactDom.render(<Welcome />, document.getElementById('app'));
+ReactDom.render(<Welcome />, document.getElementById('app'));

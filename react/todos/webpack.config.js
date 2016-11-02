@@ -1,4 +1,5 @@
 var path = require('path');
+var htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -33,5 +34,10 @@ module.exports = {
                 loader: 'url'
 			}
         ]
-    }
+    },
+    plugins: [
+        new htmlWebpackPlugin({
+            template: './src/index.html'
+        })
+    ]
 };

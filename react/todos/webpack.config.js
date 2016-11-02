@@ -26,10 +26,7 @@ module.exports = {
             {
                 test: /\.jsx$/,
                 loader: 'babel',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015', 'react']
-                 }
+                exclude: /node_modules/
             },
 			{
 			    test: /\.(jpg|png|svg)$/,

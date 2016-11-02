@@ -2,7 +2,7 @@
     "name": "todos",
     "version": "1.0.0",
     "description": "",
-    "main": "main.js",
+    "main": "entry.js",
     "scripts": {
         "dev": "webpack-dev-server",
         "test": "karma start ./karma.conf.js",

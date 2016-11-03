@@ -53,9 +53,65 @@ export default Welcome;
 
 + __Props__
 
+    ```javascript
+    import React from 'react';
+
+    var Child = React.createClass({
+        getDefaultProps () {
+            return {
+                name: 'sunmy'
+            }
+        },
+        render () {
+            return (
+                <h4>Hello {this.props.name}</h4>
+            );
+        }
+    });
+    
+    var Parent = React.createClass({
+        getInitialState () {
+            return {
+                name: 'yaq'
+            }
+        },
+        render () {
+            return (
+                <div>
+                    <Child />
+                    <Child name={this.state.name} />
+                </div>
+            );
+        }
+    });
+    
+    export default Parent;
+    ```
+    
+*****
+
+### #生命周期 ###
+
++ __componentWillMount__
+
++ __componentDidMount__
+
+    组件已生成对应的 Dom 结构，可通过 this.getDOMNode() 或 this.refs 访问。
+    
++ __componentWillReceiveProps__
+    
++ __shouldComponentUpdate__
+    
++ __componentWillUpdate__
+    
++ __componentDidUpdate__
+    
++ __componentWillUnmount__
+    
+    组件已从 Dom 中移除，可在期间取消未完成请求。
+
 *****
 
 #### *JSX ####
 
 本质为 javascript
-

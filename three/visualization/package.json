@@ -4,7 +4,7 @@
     "description": "数据可视化",
     "main": "entry.js",
     "scripts": {
-        "dev": "webpack-dev-server",
+        "dev": "open -a '/Applications/Google Chrome.app' 'http://localhost:8000' && webpack-dev-server",
         "build": "webpack -p"
     },
     "author": "yaq",

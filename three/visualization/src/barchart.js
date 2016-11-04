@@ -5,19 +5,13 @@ export default {
         title: {
             x: 'center',
             text: '',
-            subtext: '',
-            link: ''
+            subtext: ''
         },
         tooltip: {
             trigger: 'item'
         },
         toolbox: {
-            show: true,
-            feature: {
-                dataView: {show: false, readOnly: false},
-                restore: {show: false},
-                saveAsImage: {show: false}
-            }
+            show: false
         },
         calculable: true,
         grid: {

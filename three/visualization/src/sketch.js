@@ -11,11 +11,7 @@ export default {
         _this.initThree();
         _this.initLight();
         _this.coordinate();
-
-        // 渲染场景
         _this.renderer.render(_this.scene, _this.camera);
-
-        // 开启视角切换
         control.do({
             scene: _this.scene,
             camera: _this.camera,
@@ -33,7 +29,7 @@ export default {
 
         /** 相机 **/
         var camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-        camera.position.set(0, -50, 100);
+        camera.position.set(0, 0, 100);
         camera.up.set(0, 1, 0);
         camera.lookAt({x: 0, y: 0, z: 0});
 
@@ -79,12 +75,9 @@ export default {
             _this.scene.add(new THREE.Line(geometry, material, THREE.LinePieces));
         };
 
-        // x 轴
-        drawAxis(cooX, 0x4B0082);
-        // y轴
-        drawAxis(cooY, 0x0000FF);
-        // z轴
-        drawAxis(cooZ, 0x00FA9A);
+        drawAxis(cooX, 0x4B0082); // x 轴
+        drawAxis(cooY, 0x0000FF); // y 轴
+        drawAxis(cooZ, 0x00FA9A); // z 轴
     },
     setObject: function () {
 

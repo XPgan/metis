@@ -26,12 +26,19 @@ export default {
         }
         $canvas.onmousemove = function (e) {
             if (flag) {
-                var x = (e.pageX - width / 2) * 0.1;
-                var y = (height/ 2 - e.pageY) * 0.1;
-
-                _this.camera.lookAt({x: x, y: y, z: 0});
+                var lookAtX = (e.pageX - width / 2) * 0.1;
+                var lookAtY = (height / 2 - e.pageY) * 0.1;
+                _this.camera.position.x = lookAtX;
+                _this.camera.position.y = lookAtY;
                 _this.renderer.render(_this.scene, _this.camera);
             }
+        }
+        document.onkeydown = function (e) {
+            var positionZ = _this.camera.position.z;
+            (e.keyCode == 38) && (positionZ /= 1.1); // 放大
+            (e.keyCode == 40) && (positionZ *= 1.1); // 缩小
+            _this.camera.position.z = positionZ;
+            _this.renderer.render(_this.scene, _this.camera);
         }
     }
 }

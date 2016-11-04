@@ -1,1 +1,2 @@
-require('./src/main');
+import sketch from './src/sketch'
+sketch.do();

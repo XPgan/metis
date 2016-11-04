@@ -1,4 +1,3 @@
-var path = require('path');
 var htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -16,18 +15,10 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.less$/,
-                loader: 'style!css!less'
-            },
-            {
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: /node_modules/
-            },
-			{
-			    test: /\.(jpg|png|svg)$/,
-                loader: 'url'
-			}
+            }
         ]
     },
     plugins: [

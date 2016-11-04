@@ -1,4 +1,4 @@
-var main = {
+export default {
 
     scene: null,
     camera: null,
@@ -84,5 +84,3 @@ var main = {
         _this.renderer.render(_this.scene, _this.camera);
     }
 }
-
-main.do();

@@ -1,3 +1,5 @@
+import control from '../control'
+
 export default {
 
     scene: null,
@@ -42,7 +44,14 @@ export default {
             antialias: true // 反锯齿
         });
         renderer.setSize(width, height);
-        renderer.setClearColor(0xFFFFFF);
+        renderer.setClearColor(0x000000);
+
+        /** 控制器 **/
+        control.do({
+            scene: scene,
+            camera: camera,
+            renderer: renderer
+        });
 
         _this.scene = scene;
         _this.camera = camera;

@@ -1,1 +1,1 @@
-import './src/main'
+require('./src/main');

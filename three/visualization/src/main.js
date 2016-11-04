@@ -1,5 +1,6 @@
 import barchart from './barchart'
 import radarmap from './radarmap'
+import threedi from './threedi'
 
 barchart.sketch({
     title: '条形图标题',
@@ -42,3 +43,8 @@ radarmap.sketch({
         }
     ]
 });
+
+threedi.sketch([
+    {x: 0, y: 0, z: 0},
+    {x: 5, y: 5, z: 5}
+]);

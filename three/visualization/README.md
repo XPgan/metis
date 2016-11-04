@@ -24,6 +24,27 @@ npm run build
 
 ### #目录结构 ###
 
-*****
-
-### #函数说明 ###
+```
+│
+└──── build (打包文件)
+│
+└──── src (源文件)
+│        │
+│        └──── control.js (定义鼠标及键盘操作行为)
+│        │
+│        └──── sketch.js (三维场景绘制)
+│        │
+│        └──── index.html
+│
+└──── entry.js (入口文件)
+│
+└──── webpack.config.js (webpack 配置文件)
+│
+└──── package.json (npm 配置文件)
+│
+└──── .babelrc
+│
+└──── .editorconfig
+│
+└──── .gitignore
+```

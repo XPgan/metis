@@ -48,8 +48,8 @@ export default {
     },
     initLight: function () {
         var _this = this;
-        var spot = new THREE.SpotLight(0xFFFF00, 1, 100, Math.PI / 3);
-        var directional = new THREE.DirectionalLight(0xF8F8FF);
+        var spot = new THREE.SpotLight(0xF8F8FF, 0, 5000, Math.PI / 3);
+        var directional = new THREE.DirectionalLight(0xFFFFFF);
 
         /** 聚光灯 **/
         spot.position.set(0, 0, 50);

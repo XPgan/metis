@@ -11,12 +11,6 @@ export default {
         _this.initThree();
         _this.initLight();
         _this.coordinate();
-        _this.renderer.render(_this.scene, _this.camera);
-        control.do({
-            scene: _this.scene,
-            camera: _this.camera,
-            renderer: _this.renderer
-        });
     },
     initThree () {
         var _this = this;
@@ -41,6 +35,13 @@ export default {
         renderer.setSize(width, height);
         renderer.setClearColor(0x000000);
 
+        /** 控制器 **/
+        control.do({
+            scene: scene,
+            camera: camera,
+            renderer: renderer
+        });
+
         _this.scene = scene;
         _this.camera = camera;
         _this.renderer = renderer;
@@ -62,9 +63,9 @@ export default {
     },
     coordinate: function () {
         var _this = this;
-        var cooX = new THREE.Vector3(50, 0, 0);
-        var cooY = new THREE.Vector3(0, 50, 0);
-        var cooZ = new THREE.Vector3(0, 0, 50);
+        var cooX = new THREE.Vector3(100, 0, 0);
+        var cooY = new THREE.Vector3(0, 100, 0);
+        var cooZ = new THREE.Vector3(0, 0, 100);
         var drawAxis = function (point, color) {
             var origin = new THREE.Vector3(0, 0, 0);
             var geometry = new THREE.Geometry();
@@ -79,7 +80,18 @@ export default {
         drawAxis(cooY, 0x0000FF); // y 轴
         drawAxis(cooZ, 0x00FA9A); // z 轴
     },
-    setObject: function () {
+    setItems: function (items) {
+        var _this = this;
+        for (var i = 0;i < items.length;i++) {
+            var geometry = new THREE.SphereGeometry(items[i].r, 200, 200);
+            var material = new THREE.MeshPhongMaterial({
+                color: items[i].color
+            });
+            var ball = new THREE.Mesh(geometry, material);
 
+            ball.position.set(items[i].x, items[i].y, items[i].z);
+            _this.scene.add(ball);
+        }
+        _this.renderer.render(_this.scene, _this.camera);
     }
 }

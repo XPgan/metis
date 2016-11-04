@@ -1,3 +1,5 @@
+import control from './control'
+
 export default {
 
     scene: null,
@@ -9,8 +11,16 @@ export default {
         _this.initThree();
         _this.initLight();
         _this.coordinate();
-        _this.setObject();
-        _this.renderScene();
+
+        // 渲染场景
+        _this.renderer.render(_this.scene, _this.camera);
+
+        // 开启视角切换
+        control.do({
+            scene: _this.scene,
+            camera: _this.camera,
+            renderer: _this.renderer
+        });
     },
     initThree () {
         var _this = this;
@@ -78,9 +88,5 @@ export default {
     },
     setObject: function () {
 
-    },
-    renderScene: function () {
-        var _this = this;
-        _this.renderer.render(_this.scene, _this.camera);
     }
 }

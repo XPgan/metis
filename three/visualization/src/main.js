@@ -1,6 +1,6 @@
-import barchart from './barchart'
-import radarmap from './radarmap'
-import threedi from './threedi'
+import barchart from './modules/barchart'
+import radarmap from './modules/radarmap'
+import threedi from './modules/threedi'
 
 barchart.sketch({
     title: '条形图标题',

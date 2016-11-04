@@ -1,0 +1,11 @@
+{
+    "name": "visualization",
+    "version": "1.0.0",
+    "description": "数据可视化",
+    "main": "entry.js",
+    "scripts": {
+        "dev": ""
+    },
+    "author": "yaq",
+    "license": "ISC"
+}

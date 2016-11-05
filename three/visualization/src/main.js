@@ -30,12 +30,23 @@ chinamap.sketch();
 
 // 事件
 barchart.barchart.on('click', function (params) {
-    // var index = params.dataIndex;
-    // var data = radarmapData.data[index];
-    // var indicator = radarmapData.indicator[index];
-    // radarmapData.opts.indicator = indicator;
-    // radarmapData.opts.data[0] = data;
-    // radarmap.sketch(radarmapData.opts);
+    radarmapOpts.university = [];
+    radarmapOpts.subject = [];
+    radarmapOpts.data = [];
+
+    var target = university[params.name];
+    for (let i = 0;i < target.subject.length;i++) {
+        radarmapOpts.subject.push({
+            name: target.subject[i],
+            max: 100
+        });
+    }
+    radarmapOpts.data.push({
+        name: params.name,
+        value: target.score
+    });
+    radarmapOpts.university[0] = params.name;
+    radarmap.sketch(radarmapOpts);
 });
 chinamap.chinamap.on('click', function (params) {
     barchartOpts.university = [];

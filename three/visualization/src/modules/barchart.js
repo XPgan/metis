@@ -5,8 +5,7 @@ export default {
     opts: {
         title: {
             x: 'right',
-            text: '',
-            subtext: ''
+            text: ''
         },
         tooltip: {
             trigger: 'item'
@@ -60,9 +59,8 @@ export default {
     },
     sketch (opts) {
         this.opts.title.text = opts.title;
-        this.opts.title.subtext = opts.subTitle;
-        this.opts.xAxis[0].data = opts.keys;
-        this.opts.series[0].data = opts.values;
+        this.opts.xAxis[0].data = opts.university;
+        this.opts.series[0].data = opts.score;
         this.barchart.setOption(this.opts);
     }
 }

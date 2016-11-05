@@ -25,7 +25,7 @@ export default {
             }
         ]
     },
-    sketch (opts) {
+    sketch () {
         this.chinamap.setOption(this.opts);
     }
 }

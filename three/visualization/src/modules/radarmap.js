@@ -1,11 +1,11 @@
 import echarts from 'echarts'
 
 export default {
+    radarmap: echarts.init(document.getElementById('radarmap')),
     opts: {
         title: {
             x: 'right',
-            text: '',
-            subtext: ''
+            text: ''
         },
         tooltip: {
             trigger: 'axis'
@@ -26,7 +26,6 @@ export default {
         ],
         series: [
             {
-                name: '',
                 type: 'radar',
                 itemStyle: {
                     normal: {
@@ -40,14 +39,10 @@ export default {
         ]
     },
     sketch (opts) {
-        var radarmap = echarts.init(document.getElementById('radarmap'));
         this.opts.title.text = opts.title;
-        this.opts.title.subtext = opts.subTitle;
-        this.opts.polar[0].indicator = opts.indicator;
+        this.opts.legend.data = opts.university;
+        this.opts.polar[0].indicator = opts.subject;
         this.opts.series[0].data = opts.data;
-        for (var i = 0;i < opts.data.length;i++) {
-            this.opts.legend.data[i] = opts.data[i].name;
-        }
-        radarmap.setOption(this.opts);
+        this.radarmap.setOption(this.opts);
     }
 }

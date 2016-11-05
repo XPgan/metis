@@ -94,15 +94,15 @@ var articleSchema = new Schema({
 
 ### #pages ###
 
-+ __/__ (首页) [效果图]()
++ __/__ (首页) [效果图](./materials/index.png)
 
-+ __/register__ (注册页) [效果图]()
++ __/register__ (注册页) [效果图](./materials/register.png)
 
-+ __/publish__ (发布文章页) [效果图]()
++ __/publish__ (发布文章页) [效果图](./materials/publish.png)
 
-+ __/profile/:id__ (用户主页) [效果图]()
++ __/profile/:id__ (用户主页) [效果图](./materials/profile.png)
 
-+ __/article/:id__ (文章详情页) [效果图]()
++ __/article/:id__ (文章详情页) [效果图](./materials/article.png)
 
 ### #components ###
 

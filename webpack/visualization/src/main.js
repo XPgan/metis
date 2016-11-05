@@ -1,26 +1,27 @@
 import barchart from './modules/barchart'
 import radarmap from './modules/radarmap'
 import chinamap from './modules/chinamap'
-import city from './data/city'
-import university from './data/university'
+import cityUniver from './data/city-univer'
+import univerSubject from './data/univer-subject'
 
 var barchartOpts = {
-    title: '中国大学世界排名',
+    title: '中国高校评分',
     university: [],
     score: []
 };
 var radarmapOpts = {
-    title: '学科排名分布',
+    title: '高校学科评分',
     university: [],
     subject: [],
     data: []
 };
 
 // 默认显示所有高校
-for (let key in city) {
-    for (let i = 0;i < city[key].length;i++) {
-        barchartOpts.university.push(city[key][i].university);
-        barchartOpts.score.push(city[key][i].score);
+for (let key in cityUniver) {
+    let _loop = cityUniver[key];
+    for (let i = 0;i < _loop.length;i++) {
+        barchartOpts.university.push(_loop[i].university);
+        barchartOpts.score.push(_loop[i].score);
     }
 }
 
@@ -34,7 +35,7 @@ barchart.barchart.on('click', function (params) {
     radarmapOpts.subject = [];
     radarmapOpts.data = [];
 
-    var target = university[params.name];
+    var target = univerSubject[params.name];
     for (let i = 0;i < target.subject.length;i++) {
         radarmapOpts.subject.push({
             name: target.subject[i],
@@ -52,15 +53,14 @@ chinamap.chinamap.on('click', function (params) {
     barchartOpts.university = [];
     barchartOpts.score = [];
 
-    var target = params.name;
-    var lst = city[target];
-    if (lst) {
-        for (let i = 0;i < lst.length;i++) {
-            barchartOpts.university.push(lst[i].university);
-            barchartOpts.score.push(lst[i].score);
+    var target = cityUniver[params.name];
+    if (target) {
+        for (let i = 0;i < target.length;i++) {
+            barchartOpts.university.push(target[i].university);
+            barchartOpts.score.push(target[i].score);
         }
         barchart.sketch(barchartOpts);
     } else {
-        alert(target + '不含排名前20的高校');
+        alert('暂未记录' + params.name + '的高校信息');
     }
 });

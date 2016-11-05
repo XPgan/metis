@@ -7,7 +7,7 @@
         "dev": "open -a '/Applications/Google Chrome.app' 'http://localhost:8000' && webpack-dev-server",
         "build": "webpack -p"
     },
-    "author": "yaq",
+    "author": "sunmy",
     "license": "ISC",
     "dependencies": {
         "webpack": "~1.13.3",

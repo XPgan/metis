@@ -1,9 +1,10 @@
 import echarts from 'echarts'
 
 export default {
+    barchart: echarts.init(document.getElementById('barchart')),
     opts: {
         title: {
-            x: 'center',
+            x: 'right',
             text: '',
             subtext: ''
         },
@@ -58,11 +59,10 @@ export default {
         ]
     },
     sketch (opts) {
-        var barchart = echarts.init(document.getElementById('barchart'));
         this.opts.title.text = opts.title;
         this.opts.title.subtext = opts.subTitle;
         this.opts.xAxis[0].data = opts.keys;
         this.opts.series[0].data = opts.values;
-        barchart.setOption(this.opts);
+        this.barchart.setOption(this.opts);
     }
 }

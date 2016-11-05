@@ -3,7 +3,7 @@ import echarts from 'echarts'
 export default {
     opts: {
         title: {
-            x: 'center',
+            x: 'right',
             text: '',
             subtext: ''
         },

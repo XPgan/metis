@@ -32,8 +32,15 @@ var App = React.createClass({
     },
     addTodo (obj) {
         let event = obj.nativeEvent;
-        let value = event.target.value;
-        (event.keyCode == 13 && value) && storage.set(value);
+        let target = event.target;
+        let value = target.value;
+        if (event.keyCode == 13 && value) {
+            storage.set(value);
+            this.setState({
+                todos: storage.get()
+            });
+            target.value = '';
+        }
     }
 });
 

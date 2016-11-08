@@ -8,7 +8,7 @@ var App = React.createClass({
             <div className="todos-container">
                 <h1>TODOS</h1>
                 <section className="todos-mn">
-                    <div className="todos-input"><input type="text" placeholder="请输入... 敲击回车添加待办事项" /></div>
+                    <div className="todos-input"><input type="text" placeholder="请输入... 敲击回车添加待办事项" onKeyDown={this.addTodo} /></div>
                     <ul className="todos-lst">
                         {
                             this.state.todos.map(function (loop) {
@@ -29,6 +29,11 @@ var App = React.createClass({
         return {
             todos: storage.get()
         }
+    },
+    addTodo (obj) {
+        let event = obj.nativeEvent;
+        let value = event.target.value;
+        (event.keyCode == 13 && value) && storage.set(value);
     }
 });
 

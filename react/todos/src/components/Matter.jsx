@@ -4,7 +4,7 @@ import storage from '../storage'
 var Matter = React.createClass({
     render () {
         return (
-            <li className={this.state.status} onClick={this.switchStatus}><span></span>{this.state.content}</li>
+            <li className={this.state.status} onClick={this.switchStatus}><span></span>{this.state.content}<em className="c-hidden">删除</em></li>
         );
     },
     getInitialState () {

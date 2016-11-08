@@ -11,8 +11,9 @@ var App = React.createClass({
                     <div className="todos-input"><input type="text" placeholder="请输入... 敲击回车添加待办事项" onKeyDown={this.addTodo} /></div>
                     <ul className="todos-lst">
                         {
-                            this.state.todos.map(function (loop) {
-                                return <Matter info={loop} />
+                            this.state.todos.map(function (obj, index) {
+                                obj.index = index;
+                                return <Matter info={obj} />
                             })
                         }
                     </ul>
@@ -35,11 +36,11 @@ var App = React.createClass({
         let target = event.target;
         let value = target.value;
         if (event.keyCode == 13 && value) {
-            storage.set(value);
+            target.value = '';
+            storage.set(value, 'todo');
             this.setState({
                 todos: storage.get()
             });
-            target.value = '';
         }
     }
 });

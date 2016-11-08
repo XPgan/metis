@@ -1,21 +1,21 @@
 var storage = {
-    init () {
-        window.localStorage.setItem('todos', JSON.stringify([]));
+    update (result) {
+        window.localStorage.setItem('todos', JSON.stringify(result));
     },
     get () {
         let todos = window.localStorage.getItem('todos');
         return JSON.parse(todos);
     },
-    set (value) {
+    set (value, status) {
         let todos = this.get();
         let item = {
             content: value,
-            status: 'todo'
+            status: status
         };
         todos.push(item);
-        window.localStorage.setItem('todos', JSON.stringify(todos));
+        this.update(todos);
     }
 }
-storage.get() || storage.init();
+storage.get() || storage.update([]);
 
 export default storage;

@@ -1,11 +1,24 @@
 import React from 'react'
+import storage from '../storage'
 
 var Matter = React.createClass({
     render () {
-        let info = this.props.info;
         return (
-            <li className={info.status}><span></span>{info.content}</li>
+            <li className={this.state.status} onClick={this.switchStatus}><span></span>{this.state.content}</li>
         );
+    },
+    getInitialState () {
+        return this.props.info
+    },
+    switchStatus () {
+        let index = this.state.index;
+        let status = (this.state.status == 'done') ? 'todo' : 'done';
+        let todos = storage.get();
+        todos[index].status = status;
+        storage.update(todos);
+        this.setState({
+            status: status
+        });
     }
 });
 

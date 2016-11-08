@@ -3,7 +3,7 @@ import React from 'react'
 class Matter extends React.Component {
     render () {
         return (
-            <li>待办事项</li>
+            <li className="done"><span></span>待办事项</li>
         );
     }
 }

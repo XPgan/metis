@@ -19,7 +19,7 @@ var App = React.createClass({
                     </ul>
                     <div className="todos-footer c-fix">
                         <span>1 / 10</span>
-                        <a href="javascript:;">clear all</a>
+                        <a href="javascript:;" onClick={this.clearAll}>clear all</a>
                         <a href="javascript:;">clear done</a>
                     </div>
                 </section>
@@ -47,6 +47,12 @@ var App = React.createClass({
             });
             target.value = '';
         }
+    },
+    clearAll () {
+        storage.update([]);
+        this.setState({
+            todos: storage.get()
+        });
     }
 });
 

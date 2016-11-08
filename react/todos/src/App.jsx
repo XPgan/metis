@@ -36,11 +36,16 @@ var App = React.createClass({
         let target = event.target;
         let value = target.value;
         if (event.keyCode == 13 && value) {
-            target.value = '';
-            storage.set(value, 'todo');
+            let todos = storage.get();
+            todos.push({
+                content: value,
+                status: 'todo'
+            });
+            storage.update(todos);
             this.setState({
                 todos: storage.get()
             });
+            target.value = '';
         }
     }
 });

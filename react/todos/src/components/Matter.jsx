@@ -4,7 +4,7 @@ import storage from '../storage'
 var Matter = React.createClass({
     render () {
         return (
-            <li className={this.state.status} onClick={this.switchStatus}><span></span>{this.state.content}<em className="c-hidden">删除</em></li>
+            <li className={this.state.status}><span onClick={this.switchStatus}></span>{this.state.content}<em className="c-hidden" onClick={this.deleteTodo}>删除</em></li>
         );
     },
     getInitialState () {
@@ -19,6 +19,14 @@ var Matter = React.createClass({
         this.setState({
             status: status
         });
+    },
+    deleteTodo (obj) {
+        let target = obj.nativeEvent.target;
+        let index = this.state.index;
+        let todos = storage.get();
+        todos.splice(index, 1);
+        storage.update(todos);
+        target.parentElement.remove();
     }
 });
 

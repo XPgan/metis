@@ -43,7 +43,7 @@ img{display: block;width: 100%;}
 @weakGrey: #EEE;
 @middleGrey: #CCC;
 @strongGrey: #666;
-@mainRed: #ECB5B5;
+@mainGreen: #3EB708;
 
 .todos-container {
     width: 500px;
@@ -51,7 +51,7 @@ img{display: block;width: 100%;}
 
     h1 {
         font-size: 50px;
-        color: @mainRed;
+        color: @mainGreen;
         text-align: center;
     }
     .todos-mn {
@@ -92,7 +92,7 @@ img{display: block;width: 100%;}
             padding: 10px 15px;
             border-top: 1px solid @weakGrey;
 
-            span, button {
+            span, a {
                 font-size: 14px;
                 line-height: 24px;
                 color: @strongGrey;
@@ -100,12 +100,17 @@ img{display: block;width: 100%;}
             span {
                 float: left;
             }
-            button {
+            a {
                 float: right;
                 padding: 0 10px;
                 margin-left: 7px;
                 border-radius: 20px;
-                box-shadow: inset 0 0 5px @middleGrey;
+                box-shadow: inset 0 0 5px @strongGrey;
+
+                &:hover {
+                    background-color: @strongGrey;
+                    color: #fff;
+                }
             }
         }
     }

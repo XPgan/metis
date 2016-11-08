@@ -13,8 +13,8 @@ class App extends React.Component {
                     </ul>
                     <div className="todos-footer c-fix">
                         <span>1 / 10</span>
-                        <button>clear all</button>
-                        <button>clear done</button>
+                        <a href="javascript:;">clear all</a>
+                        <a href="javascript:;">clear done</a>
                     </div>
                 </section>
             </div>

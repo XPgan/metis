@@ -1,7 +1,8 @@
 import React from 'react'
 import Matter from './components/Matter.jsx'
+import storage from './storage'
 
-class App extends React.Component {
+var App = React.createClass({
     render () {
         return (
             <div className="todos-container">
@@ -9,7 +10,11 @@ class App extends React.Component {
                 <section className="todos-mn">
                     <div className="todos-input"><input type="text" placeholder="请输入... 敲击回车添加待办事项" /></div>
                     <ul className="todos-lst">
-                        <Matter />
+                        {
+                            this.state.todos.map(function (loop) {
+                                return <Matter info={loop} />
+                            })
+                        }
                     </ul>
                     <div className="todos-footer c-fix">
                         <span>1 / 10</span>
@@ -19,7 +24,12 @@ class App extends React.Component {
                 </section>
             </div>
         );
+    },
+    getInitialState () {
+        return {
+            todos: storage.get()
+        }
     }
-}
+});
 
 export default App;

@@ -1,11 +1,12 @@
 import React from 'react'
 
-class Matter extends React.Component {
+var Matter = React.createClass({
     render () {
+        let info = this.props.info;
         return (
-            <li className="done"><span></span>待办事项</li>
+            <li className={info.status}><span></span>{info.content}</li>
         );
     }
-}
+});
 
 export default Matter;

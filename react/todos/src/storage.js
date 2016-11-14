@@ -3,7 +3,7 @@ var storage = {
         window.localStorage.setItem('todos', JSON.stringify(result));
     },
     get () {
-        let todos = window.localStorage.getItem('todos');
+        var todos = window.localStorage.getItem('todos');
         return JSON.parse(todos);
     }
 }

@@ -1,29 +1,26 @@
 import React from 'react'
-import Matter from './components/Matter.jsx'
+import Matters from './components/Matters.jsx'
 import storage from './storage'
 
 var App = React.createClass({
     render () {
         return (
-            <div className="todos-container">
+            <template>
                 <h1>TODOS</h1>
                 <section className="todos-mn">
-                    <div className="todos-input"><input type="text" placeholder="请输入... 敲击回车添加待办事项" onKeyDown={this.addTodo} /></div>
-                    <ul className="todos-lst">
-                        {
-                            this.state.todos.map(function (obj, index) {
-                                obj.index = index;
-                                return <Matter info={obj} />
-                            })
-                        }
-                    </ul>
-                    <div className="todos-footer c-fix">
-                        <span>1 / 10</span>
-                        <a href="javascript:;" onClick={this.clearAll}>clear all</a>
-                        <a href="javascript:;" onClick={this.clearDone}>clear done</a>
+                    <div className="todos-input">
+                        <input type="text" placeholder="请输入... 敲击回车添加待办事项"
+                               onKeyDown={this.addTodo} />
                     </div>
+                    <Matters todos={this.state.todos} />
                 </section>
-            </div>
+                <section className="todos-ctrls">
+                    <a href="javascript:;"
+                       onClick={this.clearDone}>clearDone</a>
+                    <a href="javascript:;"
+                       onClick={this.clearAll}>clearAll</a>
+                </section>
+            </template>
         );
     },
     getInitialState () {
@@ -32,38 +29,38 @@ var App = React.createClass({
         }
     },
     addTodo (obj) {
-        let event = obj.nativeEvent;
-        let target = event.target;
-        let value = target.value;
-        if (event.keyCode == 13 && value) {
-            let todos = storage.get();
-            todos.push({
-                content: value,
-                status: 'todo'
-            });
-            storage.update(todos);
-            this.setState({
-                todos: storage.get()
-            });
-            target.value = '';
-        }
+        // let event = obj.nativeEvent;
+        // let target = event.target;
+        // let value = target.value;
+        // if (event.keyCode == 13 && value) {
+        //     let todos = storage.get();
+        //     todos.push({
+        //         content: value,
+        //         status: 'todo'
+        //     });
+        //     storage.update(todos);
+        //     this.setState({
+        //         todos: storage.get()
+        //     });
+        //     target.value = '';
+        // }
     },
     clearAll () {
-        storage.update([]);
-        this.setState({
-            todos: storage.get()
-        });
+        // storage.update([]);
+        // this.setState({
+        //     todos: storage.get()
+        // });
     },
     clearDone () {
-        let result = [];
-        let todos = storage.get();
-        for (let i = 0;i < todos.length;i++) {
-            (todos[i].status == 'todo') && result.push(todos[i]);
-        }
-        storage.update(result);
-        this.setState({
-            todos: storage.get()
-        });
+        // let result = [];
+        // let todos = storage.get();
+        // for (let i = 0;i < todos.length;i++) {
+        //     (todos[i].status == 'todo') && result.push(todos[i]);
+        // }
+        // storage.update(result);
+        // this.setState({
+        //     todos: storage.get()
+        // });
     }
 });
 

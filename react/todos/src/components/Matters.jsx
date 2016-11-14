@@ -8,12 +8,14 @@ var Matters = React.createClass({
             <ul className="todos-lst">
                 {
                     _this.props.todos.map(function (info) {
-                        <li className={info.status}>
-                            <span onClick={_this.switchStatus}></span>
-                            {info.content}
-                            <span className="c-hidden"
-                                  onClick={_this.deleteTodo}>删除</span>
-                        </li>
+                        return (
+                            <li className={info.status}>
+                                <span onClick={_this.switchStatus}></span>
+                                {info.content}
+                                <span className="c-hidden"
+                                      onClick={_this.deleteTodo}>删除</span>
+                            </li>
+                        );
                     })
                 }
             </ul>

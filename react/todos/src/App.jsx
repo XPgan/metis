@@ -9,7 +9,8 @@ var App = React.createClass({
                 <h1>TODOS</h1>
                 <section className="todos-mn">
                     <div className="todos-input">
-                        <input type="text" placeholder="请输入... 敲击回车添加待办事项"
+                        <input type="text"
+                               placeholder="请输入... 敲击回车添加待办事项"
                                onKeyDown={this.addTodo} />
                     </div>
                     <Matters todos={this.state.todos} />
@@ -29,21 +30,21 @@ var App = React.createClass({
         }
     },
     addTodo (obj) {
-        // let event = obj.nativeEvent;
-        // let target = event.target;
-        // let value = target.value;
-        // if (event.keyCode == 13 && value) {
-        //     let todos = storage.get();
-        //     todos.push({
-        //         content: value,
-        //         status: 'todo'
-        //     });
-        //     storage.update(todos);
-        //     this.setState({
-        //         todos: storage.get()
-        //     });
-        //     target.value = '';
-        // }
+        var event = obj.nativeEvent;
+        var target = event.target;
+        var value = target.value;
+        if (event.keyCode == 13 && value) {
+            var todos = this.state.todos;
+            todos.push({
+                content:value,
+                status: 'todo'
+            });
+            this.setState({
+                todos: todos
+            });
+            storage.update(todos);
+            target.value = '';
+        }
     },
     clearAll () {
         // storage.update([]);

@@ -24,7 +24,7 @@
 
 #### 示例 ####
 
-+ 个人空间 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/zone)
++ 简易个人空间 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/zone)
 
 *****
 
@@ -140,7 +140,7 @@
 
 + 基本示例 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/basic)
 
-+ 数据可视化 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/visualization) [(demo)](http://www.miaomie.tech/demos/webpack/visualization)
++ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/visualization) [(demo)](http://www.miaomie.tech/demos/webpack/visualization)
 
 *****
 

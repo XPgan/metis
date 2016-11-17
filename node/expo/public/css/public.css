@@ -32,7 +32,6 @@ img{display: block;width: 100%;}
 .c-center{top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}
 .c-vertical{top: 50%;-webkit-transform: translate(0, -50%);transform: translate(0, -50%);}
 .c-horizontal{left: 50%;-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);}
-.c-mgn0{margin: 0 auto;}
 
 /* align */
 .vertical-align span{display: inline-block;vertical-align: middle;}

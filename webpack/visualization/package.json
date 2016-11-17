@@ -1,7 +1,7 @@
 {
     "name": "visualization",
     "version": "1.0.0",
-    "description": "数据可视化",
+    "description": "中国高校学科排名统计",
     "main": "entry.js",
     "scripts": {
         "dev": "open -a '/Applications/Google Chrome.app' 'http://localhost:8000' && webpack-dev-server",

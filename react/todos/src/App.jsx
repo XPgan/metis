@@ -9,17 +9,13 @@ var App = React.createClass({
                 <h1>TODOS</h1>
                 <section className="todos-mn">
                     <div className="todos-input">
-                        <input type="text"
-                               placeholder="请输入... 敲击回车添加待办事项"
-                               onKeyDown={this.addTodo} />
+                        <input type="text" placeholder="请输入... 敲击回车添加待办事项" onKeyDown={this.addTodo} />
                     </div>
                     <Matters todos={this.state.todos} />
                 </section>
                 <section className="todos-ctrls">
-                    <a href="javascript:;"
-                       onClick={this.clearDone}>clearDone</a>
-                    <a href="javascript:;"
-                       onClick={this.clearAll}>clearAll</a>
+                    <a href="javascript:;" onClick={this.clearDone}>clearDone</a>
+                    <a href="javascript:;" onClick={this.clearAll}>clearAll</a>
                 </section>
             </template>
         );

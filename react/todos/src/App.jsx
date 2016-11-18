@@ -52,15 +52,15 @@ var App = React.createClass({
         storage.update([]);
     },
     clearDone () {
-        // let result = [];
-        // let todos = storage.get();
-        // for (let i = 0;i < todos.length;i++) {
-        //     (todos[i].status == 'todo') && result.push(todos[i]);
-        // }
-        // storage.update(result);
-        // this.setState({
-        //     todos: storage.get()
-        // });
+        var result = [];
+        var todos = this.state.todos;
+        for (let i = 0;i < todos.length;i++) {
+            (todos[i].status == 'todo') && result.push(todos[i]);
+        }
+        this.setState({
+            todos: result
+        });
+        storage.update(result);
     }
 });
 

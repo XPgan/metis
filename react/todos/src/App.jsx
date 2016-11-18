@@ -11,7 +11,7 @@ var App = React.createClass({
                     <div className="todos-input">
                         <input type="text" placeholder="请输入... 敲击回车添加待办事项" onKeyDown={this.addTodo} />
                     </div>
-                    <Matters todos={this.state.todos} />
+                    <Matters todos={this.state.todos} reRender={this.reRender} />
                 </section>
                 <section className="todos-ctrls">
                     <a href="javascript:;" onClick={this.clearDone}>clearDone</a>
@@ -25,6 +25,9 @@ var App = React.createClass({
             todos: storage.get()
         }
     },
+    reRender (data) {
+        this.setState(data);
+    },
     addTodo (obj) {
         var event = obj.nativeEvent;
         var target = event.target;
@@ -32,7 +35,7 @@ var App = React.createClass({
         if (event.keyCode == 13 && value) {
             var todos = this.state.todos;
             todos.push({
-                content:value,
+                content: value,
                 status: 'todo'
             });
             this.setState({

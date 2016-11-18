@@ -21,24 +21,27 @@ var Matters = React.createClass({
         );
     },
     switchStatus (obj) {
-        var event = obj.nativeEvent;
-        var index = event.target.parentElement.getAttribute('data-index');
+        // var event = obj.nativeEvent;
+        // var index = event.target.parentElement.getAttribute('data-index');
+        // var todos = this.props.todos;
+        // var target = todos[index];
+        // var status = (target.status == 'done') ? 'todo' : 'done';
+        // todos[index].status = status;
+        // this.setProps({
+        //     todos: todos
+        // });
+        // storage.update(todos);
+    },
+    deleteTodo (obj) {
+        var target = obj.nativeEvent.target;
+        var parent = target.parentElement;
+        var index = parent.getAttribute('data-index');
         var todos = this.props.todos;
-        var target = todos[index];
-        var status = (target.status == 'done') ? 'todo' : 'done';
-        todos[index].status = status;
-        this.setProps({
+        todos.splice(index, 1);
+        this.props.reRender({
             todos: todos
         });
         storage.update(todos);
-    },
-    deleteTodo (obj) {
-        // let target = obj.nativeEvent.target;
-        // let index = this.state.index;
-        // let todos = storage.get();
-        // todos.splice(index, 1);
-        // storage.update(todos);
-        // target.parentElement.remove();
     }
 });
 

@@ -5,8 +5,6 @@
     "main": "entry.js",
     "scripts": {
         "dev": "webpack-dev-server",
-        "test": "karma start ./karma.conf.js",
-        "coverage": "cd ./coverage/*/. && open -a '/Applications/Google Chrome.app' 'index.html'",
         "build": "webpack -p"
     },
     "author": "sunmy",
@@ -26,12 +24,6 @@
         "babel-core": "~6.18.2",
         "babel-loader": "~6.2.7",
         "babel-preset-react": "~6.16.0",
-        "babel-preset-es2015": "~6.18.0",
-        "karma": "~1.3.0",
-        "karma-cli": "~1.0.1",
-        "karma-jasmine": "~1.0.2",
-        "karma-coverage": "~1.1.1",
-        "karma-chrome-launcher": "~2.0.0",
-        "jasmine-core": "~2.5.2"
+        "babel-preset-es2015": "~6.18.0"
     }
 }

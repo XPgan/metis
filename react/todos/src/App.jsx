@@ -46,10 +46,10 @@ var App = React.createClass({
         }
     },
     clearAll () {
-        // storage.update([]);
-        // this.setState({
-        //     todos: storage.get()
-        // });
+        this.setState({
+            todos: []
+        });
+        storage.update([]);
     },
     clearDone () {
         // let result = [];

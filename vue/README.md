@@ -1,4 +1,4 @@
-# [Vue.js](https://github.com/vuejs) #
+# [Vue](https://github.com/vuejs) #
 
 __数据驱动__ __组件系统__
 

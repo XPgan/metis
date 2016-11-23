@@ -25,7 +25,7 @@
             </div>
             <div class="form-info">
                 <input
-                    type="text" placeholder="请输入标题"
+                    type="text" placeholder="请输入标题" autofocus="autofocus"
                     :value="articleInfo.title"
                     v-model="editArticle.body.title"
                     v-el:title />
@@ -37,7 +37,10 @@
                 </textarea>
                 <span>{{ editArticle.message }}</span>
                 <div class="zone-btns">
-                    <a href="javascript:;" @click="requestEditArticle">提交</a>
+                    <a href="javascript:;" @click="requestEditArticle">
+                        提交
+                        <input class="c-hidden" type="submit" @keyup.enter="requestEditArticle" />
+                    </a>
                     <a href="javascript:;" @click="toggleEditArticle">取消</a>
                 </div>
             </div>

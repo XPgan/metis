@@ -11,7 +11,7 @@
         <div class="form-info">
             <h3>发布</h3>
             <input
-                type="text" placeholder="请输入标题"
+                type="text" placeholder="请输入标题" autofocus="autofocus"
                 v-model="publish.body.title"
                 v-el:title />
             <textarea
@@ -21,7 +21,10 @@
             </textarea>
             <span>{{ publish.message }}</span>
             <div class="zone-btns">
-                <a href="javascript:;" @click="requestPublish">提交</a>
+                <a href="javascript:;" @click="requestPublish">
+                    提交
+                    <input class="c-hidden" type="submit" @keyup.enter="requestPublish" />
+                </a>
                 <a v-link="{ path: '/profile/' + currentUser }">取消</a>
             </div>
         </div>

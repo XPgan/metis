@@ -11,7 +11,7 @@
         <div class="form-info">
             <h3>注册</h3>
             <input
-                type="text" placeholder="用户名"
+                type="text" placeholder="用户名" autofocus="autofocus"
                 v-model="register.body.nickname"
                 v-el:nickname />
             <input
@@ -27,7 +27,10 @@
                 v-el:intro />
             <span>{{ register.message }}</span>
             <div class="zone-btns">
-                <a href="javascript:;" @click="requestRegister">提交</a>
+                <a href="javascript:;" @click="requestRegister">
+                    提交
+                    <input class="c-hidden" type="submit" @keyup.enter="requestRegister" />
+                </a>
                 <a v-link="{ path: '/' }">取消</a>
             </div>
         </div>

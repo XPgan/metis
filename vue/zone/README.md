@@ -9,6 +9,7 @@ __一个使用 vue.js 开发的练习项目__
 *****
 
 ![](./materials/index.png)
+![](./materials/article.png)
 
 *****
 

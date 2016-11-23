@@ -18,7 +18,7 @@
             <div class="form-info c-center">
                 <h3>登录<a v-link="{ path: '/register' }" @click="toggleLogin">注册</a></h3>
                 <input
-                    type="text" placeholder="用户名"
+                    type="text" placeholder="用户名" autofocus="autofocus"
                     v-model="login.body.nickname"
                     v-el:nickname />
                 <input
@@ -27,7 +27,10 @@
                     v-el:password />
                 <span>{{ login.message }}</span>
                 <div class="zone-btns">
-                    <a href="javascript:;" @click="requestLogin">确定</a>
+                    <a href="javascript:;" @click="requestLogin">
+                        确定
+                        <input class="c-hidden" type="submit" @keyup.enter="requestLogin" />
+                    </a>
                     <a href="javascript:;" @click="toggleLogin">取消</a>
                 </div>
             </div>

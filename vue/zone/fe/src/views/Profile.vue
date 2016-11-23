@@ -25,7 +25,7 @@
             </div>
             <div class="form-info">
                 <input
-                    type="text" placeholder="用户名"
+                    type="text" placeholder="用户名" autofocus="autofocus"
                     :value="userInfo.nickname"
                     v-model="editUser.body.nickname"
                     v-el:nickname />
@@ -45,7 +45,10 @@
                     v-el:intro />
                 <span>{{ editUser.message }}</span>
                 <div class="zone-btns">
-                    <a href="javascript:;" @click="requestEditUser">提交</a>
+                    <a href="javascript:;" @click="requestEditUser">
+                        提交
+                        <input class="c-hidden" type="submit" @keyup.enter="requestEditUser" />
+                    </a>
                     <a href="javascript:;" @click="toggleEditUser">取消</a>
                 </div>
             </div>

@@ -67,5 +67,3 @@ _开发平台：MacOS_
     cd app
     react-native run-android
     ```        
-
-![](./sample.jpg)

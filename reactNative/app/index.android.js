@@ -9,34 +9,33 @@ import {
     AppRegistry,
     StyleSheet,
     View,
-    Text,
-    TextInput
+    ListView,
+    Text
 } from 'react-native';
 
 export default class app extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
+        const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            text: ''
-        }
+            dataSource: ds.cloneWithRows([
+                'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+            ])
+        };
     }
+
     render() {
         return (
             <View>
-                <TextInput placeholder="请输入..." onChangeText={(text) => this.changeTextHandle(text)} />
-                <Text>{this.state.text}</Text>
+                <ListView
+                    dataSource={this.state.dataSource}
+                    renderRow={(rowData) => <Text>{rowData}</Text>}
+                />
             </View>
         );
     }
-    changeTextHandle (text) {
-        this.setState({
-            text: text
-        });
-    }
 }
 
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});
 
 AppRegistry.registerComponent('app', () => app);

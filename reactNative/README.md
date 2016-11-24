@@ -86,8 +86,7 @@ AppRegistry.registerComponent('app', () => app);
     ```javascript
     import React, {Component} from 'react';
     import {
-        AppRegistry,
-        StyleSheet,
+        AppRegistry,       
         View,
         Text,
         TextInput
@@ -103,7 +102,10 @@ AppRegistry.registerComponent('app', () => app);
         render() {
             return (
                 <View>
-                    <TextInput placeholder="请输入..." onChangeText={(text) => this.changeTextHandle(text)} />
+                    <TextInput 
+                        placeholder="请输入..." 
+                        onChangeText={(text) => this.changeTextHandle(text)} 
+                    />
                     <Text>{this.state.text}</Text>
                 </View>
             );
@@ -112,6 +114,46 @@ AppRegistry.registerComponent('app', () => app);
             this.setState({
                 text: text
             });
+        }
+    }
+    
+    AppRegistry.registerComponent('app', () => app);
+    ```
+    
++ __ScrollView__ (滚动容器)
+    
++ __ListView__ (滚动列表容器)
+    
+    优先渲染可见元素非所有元素
+    
+    ```javascript
+    import React, {Component} from 'react';
+    import {
+        AppRegistry,        
+        View,
+        ListView,
+        Text
+    } from 'react-native';
+    
+    export default class app extends Component {
+        constructor(props) {
+            super(props);
+            const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+            this.state = {
+                dataSource: ds.cloneWithRows([
+                    'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+                ])
+            };
+        }  
+        render() {
+            return (
+                <View>
+                    <ListView
+                        dataSource={this.state.dataSource}
+                        renderRow={(rowData) => <Text>{rowData}</Text>}
+                    />
+                </View>
+            );
         }
     }
     

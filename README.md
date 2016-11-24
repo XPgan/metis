@@ -42,6 +42,16 @@
 
 *****
 
+### React Native ###
+
+#### 参考资料 ####
+
++ [React Native 中文网](http://reactnative.cn/)
+
+#### [笔记](https://github.com/sunmengyuan/note/tree/master/reactNative) ####
+
+*****
+
 ### Canvas ###
 
 #### 参考资料 ####

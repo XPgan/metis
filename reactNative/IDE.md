@@ -66,4 +66,4 @@ _开发平台：MacOS_
     react-native init app
     cd app
     react-native run-android
-    ```        
+    ```

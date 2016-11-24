@@ -62,10 +62,10 @@ _开发平台：MacOS_
         
 + 创建项目并启动
 
-```bash
-react-native init app
-cd app
-react-native run-android
-```        
+    ```bash
+    react-native init app
+    cd app
+    react-native run-android
+    ```        
 
 ![](./sample.jpg)

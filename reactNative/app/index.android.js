@@ -8,43 +8,35 @@ import React, {Component} from 'react';
 import {
     AppRegistry,
     StyleSheet,
-    View
+    View,
+    Text,
+    TextInput
 } from 'react-native';
 
 export default class app extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            text: ''
+        }
+    }
     render() {
         return (
-            <View style={styles.view}>
-                <View style={styles.first}></View>
-                <View style={styles.second}></View>
-                <View style={styles.third}></View>
+            <View>
+                <TextInput placeholder="请输入..." onChangeText={(text) => this.changeTextHandle(text)} />
+                <Text>{this.state.text}</Text>
             </View>
         );
+    }
+    changeTextHandle (text) {
+        this.setState({
+            text: text
+        });
     }
 }
 
 const styles = StyleSheet.create({
-    view: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'flex-end'
-    },
-    first: {
-        backgroundColor: 'yellow',
-        width: 90,
-        height: 90
-    },
-    second: {
-        backgroundColor: 'green',
-        width: 100,
-        height: 100
-    },
-    third: {
-        backgroundColor: 'blue',
-        width: 50,
-        height: 50
-    }
+
 });
 
 AppRegistry.registerComponent('app', () => app);

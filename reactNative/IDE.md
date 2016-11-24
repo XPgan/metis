@@ -59,3 +59,13 @@ _开发平台：MacOS_
     3. 设置 __ADB__
     
         1. 选择 __Use custom Android SDK tools__ -> 填写 __/Users/[用户名]/Library/Android/sdk/__
+        
++ 创建项目并启动
+
+```bash
+react-native init app
+cd app
+react-native run-android
+```        
+
+![](./sample.jpg)

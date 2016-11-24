@@ -1,38 +1,38 @@
 ## 搭建开发环境 ##
 
-__目标平台：Android__
+_目标平台：Android_
 
-__开发平台：MacOS__
+_开发平台：MacOS_
 
 *****
 
-+ 安装 Node [下载地址](https://nodejs.org/en/)
++ 安装 __Node__ [下载地址](https://nodejs.org/en/)
 
-+ 安装 Npm
++ 安装 __Npm__
 
     ```bash
     curl -L https://npmjs.com/install.sh | sh
     ```
 
-+ 安装 React Native 命令行工具
++ 安装 __react-native-cli__
 
     ```bash
     npm install react-native-cli -g
     ```
 
-+ 安装 JDK [下载地址](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
++ 安装 __JDK__ [下载地址](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-+ 安装 Android Studio [下载地址](http://www.android-studio.org/)
++ 安装 __Android Studio__ [下载地址](http://www.android-studio.org/)
 
-    1. 选择 Custom
+    1. 选择 __Custom__
     
-    2. 勾选 Performance、Android Virtual Device
+    2. 勾选 __Performance__、__Android Virtual Device__
     
-    3. 选择 Configure | SDK Manager
+    3. 选择 __Configure | SDK Manager__
     
-        1. 选择 SDK Platforms -> 勾选 Show Package Details -> 勾选 Android 6.0 (Marshmallow) 中 Google APIs、Android SDK Platform 23、Intel x86 Atom System Image、Intel x86 Atom_64 System Image、Google APIs Intel x86 Atom_64 System Image
+        1. 选择 __SDK Platforms__ -> 勾选 __Show Package Details__ -> 勾选 __Android 6.0 (Marshmallow)__ 中 __Google APIs__、__Android SDK Platform 23__、__Intel x86 Atom System Image__、__Intel x86 Atom_64 System Image__、__Google APIs Intel x86 Atom_64 System Image__
         
-        2. 选择 SDK Tools -> 勾选 Show Package Details -> 勾选 Android SDK Build Tools 中 Android SDK Build-Tools 23.0.1
+        2. 选择 __SDK Tools__ -> 勾选 __Show Package Details__ -> 勾选 __Android SDK Build Tools__ 中 __Android SDK Build-Tools 23.0.1__
         
 + 设置环境变量
 
@@ -48,14 +48,14 @@ __开发平台：MacOS__
     source ~/.bash_profile
     ```
 
-+ 安装 VirtualBox [下载地址](https://www.virtualbox.org/wiki/Downloads)
++ 安装 __VirtualBox__ [下载地址](https://www.virtualbox.org/wiki/Downloads)
 
-+ 安装 Genymotion [下载地址](./genymotion.dmg.zip)
++ 安装 __Genymotion__ [下载地址](./genymotion.dmg.zip)
 
     1. 注册账号 [注册地址](https://www.genymotion.com/account/create/)
     
-    2. 添加 Virtual Device
+    2. 添加 __Virtual Device__
     
-    3. 设置 ADB
+    3. 设置 __ADB__
     
-        1. 选择 Use custom Android SDK tools -> 填写 /Users/用户名/Library/Android/sdk/
+        1. 选择 __Use custom Android SDK tools__ -> 填写 __/Users/[用户名]/Library/Android/sdk/__

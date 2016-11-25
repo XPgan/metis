@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 export default class app extends Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
@@ -24,7 +24,7 @@ export default class app extends Component {
         };
     }
 
-    render() {
+    render () {
         return (
             <View>
                 <ListView

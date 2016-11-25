@@ -39,7 +39,7 @@ import {
 } from 'react-native';
 
 export default class app extends Component {
-    render() {
+    render () {
         return (
             <View style={styles.view}>
                 <View style={styles.first}></View>
@@ -99,7 +99,7 @@ AppRegistry.registerComponent('app', () => app);
                 text: ''
             }
         }
-        render() {
+        render () {
             return (
                 <View>
                     <TextInput 
@@ -136,7 +136,7 @@ AppRegistry.registerComponent('app', () => app);
     } from 'react-native';
     
     export default class app extends Component {
-        constructor(props) {
+        constructor (props) {
             super(props);
             const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
             this.state = {
@@ -145,7 +145,7 @@ AppRegistry.registerComponent('app', () => app);
                 ])
             };
         }  
-        render() {
+        render () {
             return (
                 <View>
                     <ListView
@@ -159,3 +159,23 @@ AppRegistry.registerComponent('app', () => app);
     
     AppRegistry.registerComponent('app', () => app);
     ```
+    
+*****
+    
+__清除定时器 防止内存泄露__
+
+```javascript
+import React, {Component} from 'react';
+
+export default class Hello extends Component {
+    componentDidMount () {
+        this.timer = setTimeout(
+            () => {console.log('定时器引用挂载至 this');},
+            500
+        );
+    }
+    componentWillUnmount () {
+        this.timer && clearTimeout(this.timer);
+    }
+};
+```

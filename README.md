@@ -26,6 +26,8 @@
 
 + 简易个人空间 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/zone)
 
++ 自定义播放器 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/mediaPlayer)
+
 *****
 
 ### React ###

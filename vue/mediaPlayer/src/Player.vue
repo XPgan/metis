@@ -32,7 +32,7 @@
 <style lang="less" scoped>
     .player {
         width: 90%;
-        margin: 50px auto;
+        margin: 5% auto;
         position: relative;
 
         .player-ctrls {

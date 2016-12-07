@@ -13,7 +13,7 @@
 <style lang="less" scoped>
     .bar-outer {
         width: 100%;
-        height: 10px;
+        height: 6px;
         background-color: gold;
     }
 </style>

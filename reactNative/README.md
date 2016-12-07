@@ -1,5 +1,9 @@
 # React Native #
 
+#### [搭建开发环境](./IDE.md) ####
+
+*****
+
 ### #布局 ###
 
 + __flexDirection__ (主轴方向)

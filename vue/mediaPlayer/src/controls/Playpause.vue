@@ -1,5 +1,5 @@
 <template>
-    <button class="playpause play"></button>
+    <button class="playpause pause"></button>
 </template>
 
 <script>
@@ -20,18 +20,22 @@
         background-color: rgba(255, 255, 255, 0.5);
         box-shadow: 0 0 1px @mainColor;
 
-        &.play:after {
+        &:before, &:after {
             content: "";
-            display: block;
+            display: inline-block;
+            text-align: center;
+        }
+        &.play:after {
             width: 0;
             height: 0;
-            margin-left: 7px;
             border: 5px solid transparent;
             border-left-color: @mainColor;
             border-left-width: 8px;
         }
-        &.pause {
-
+        &.pause:before, &.pause:after {
+            width: 2px;
+            height: 6px;
+            background-color: @mainColor;
         }
     }
 </style>

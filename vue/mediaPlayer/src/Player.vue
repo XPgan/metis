@@ -1,7 +1,7 @@
 <template>
-    <section class="video">
+    <section class="player">
         <video width="100%" height="100%" src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.mp4"></video>
-        <div class="video-ctrls">
+        <div class="player-ctrls">
             <playpause></playpause>
             <progressbar></progressbar>
             <volume></volume>
@@ -17,7 +17,7 @@
     import Fullscreen from './controls/Fullscreen'
 
     export default {
-        name: 'app',
+        name: 'player',
         components: {
             Playpause,
             Progressbar,
@@ -28,12 +28,12 @@
 </script>
 
 <style lang="less" scoped>
-    .video {
+    .player {
         width: 80%;
         margin: 50px auto;
         position: relative;
 
-        .video-ctrls {
+        .player-ctrls {
             position: absolute;
             left: 0;
             bottom: 0;

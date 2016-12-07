@@ -1,5 +1,7 @@
 <template>
-    <h2>progressbar</h2>
+    <div class="bar-outer">
+        <div class="bar-inner"></div>
+    </div>
 </template>
 
 <script>
@@ -9,5 +11,9 @@
 </script>
 
 <style lang="less" scoped>
-
+    .bar-outer {
+        width: 100%;
+        height: 10px;
+        background-color: gold;
+    }
 </style>

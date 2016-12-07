@@ -1,5 +1,5 @@
 <template>
-    <h2>volume</h2>
+    <button class="volume"></button>
 </template>
 
 <script>
@@ -9,5 +9,10 @@
 </script>
 
 <style lang="less" scoped>
-
+    button.volume {
+        width: 30px;
+        height: 30px;
+        float: right;
+        background-color: violet;
+    }
 </style>

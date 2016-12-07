@@ -1,5 +1,5 @@
 <template>
-    <h2>playpause</h2>
+    <button class="playpause play"></button>
 </template>
 
 <script>
@@ -9,5 +9,16 @@
 </script>
 
 <style lang="less" scoped>
+    button.playpause {
+        width: 30px;
+        height: 30px;
+        float: left;
 
+        &.play {
+            background-color: greenyellow;
+        }
+        &.pause {
+            background-color: red;
+        }
+    }
 </style>

@@ -1,9 +1,9 @@
 <template>
     <section class="player">
-        <video width="100%" height="100%" src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.mp4"></video>
-        <div class="player-ctrls">
-            <playpause></playpause>
+        <video width="100%" height="100%" class="c-block" src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.mp4"></video>
+        <div class="player-ctrls c-fix">
             <progressbar></progressbar>
+            <playpause></playpause>
             <volume></volume>
             <fullscreen></fullscreen>
         </div>
@@ -27,9 +27,11 @@
     }
 </script>
 
+<style src="./assets/init.less" lang="less"></style>
+<style src="./assets/public.less" lang="less"></style>
 <style lang="less" scoped>
     .player {
-        width: 80%;
+        width: 90%;
         margin: 50px auto;
         position: relative;
 
@@ -37,6 +39,7 @@
             position: absolute;
             left: 0;
             bottom: 0;
+            width: 100%;
         }
     }
 </style>

@@ -1,10 +1,33 @@
 <template>
-    <button class="fullscreen trigger"></button>
+    <button
+        class="fullscreen"
+        :class="status"
+        @click="fullscreen">
+    </button>
 </template>
 
 <script>
     export default {
-        name: 'fullscreen'
+        name: 'fullscreen',
+        data () {
+            return {
+                status: 'request'
+            }
+        },
+        methods: {
+            fullscreen () {
+                switch (this.status) {
+                    case 'request':
+                        this.status = 'cancel'
+                        this.$emit('requestFull')
+                        break
+                    case 'cancel':
+                        this.status = 'request'
+                        this.$emit('cancelFull')
+                        break
+                }
+            }
+        }
     }
 </script>
 
@@ -44,8 +67,8 @@
             border-right-color: @mainColor;
             border-right-width: 8px;
         }
-        &.trigger:before { right: 1px; top: 4px; }
-        &.trigger:after { left: 1px; bottom: 4px; }
+        &.request:before { right: 1px; top: 4px; }
+        &.request:after { left: 1px; bottom: 4px; }
         &.cancel:before { left: 3px; bottom: 6px; }
         &.cancel:after { right: 3px; top: 6px; }
     }

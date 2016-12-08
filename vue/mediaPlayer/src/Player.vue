@@ -11,7 +11,10 @@
                 @play="play"
                 @pause="pause">
             </playpause>
-            <fullscreen></fullscreen>
+            <fullscreen
+                @requestFull="requestFull"
+                @cancelFull="cancelFull">
+            </fullscreen>
             <volume
                 @deVolume="deVolume"
                 @inVolume="inVolume">
@@ -56,6 +59,12 @@
                 } else {
                     video.volume += 0.1
                 }
+            },
+            requestFull () {
+                console.log('requestFull')
+            },
+            cancelFull () {
+                console.log('cancelFull')
             }
         }
     }

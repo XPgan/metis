@@ -1,6 +1,10 @@
 <template>
     <section class="player">
-        <video width="100%" height="100%" class="c-block" src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.mp4"></video>
+        <video
+            ref="video"
+            width="100%" height="100%" class="c-block"
+            src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.mp4">
+        </video>
         <div class="player-ctrls c-fix">
             <progressbar></progressbar>
             <playpause
@@ -29,10 +33,10 @@
         },
         methods: {
             play () {
-                console.log('play')
+                this.$refs.video.play()
             },
             pause () {
-                console.log('pause')
+                this.$refs.video.pause()
             }
         }
     }

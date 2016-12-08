@@ -16,13 +16,15 @@
         },
         methods: {
             playpause () {
-                var isPlaying = this.status === 'play'
-                if (isPlaying) {
-                    this.status = 'pause'
-                    this.$emit('play')
-                } else {
-                    this.status = 'play'
-                    this.$emit('pause')
+                switch (this.status) {
+                    case 'play':
+                        this.status = 'pause'
+                        this.$emit('play')
+                        break
+                    case 'pause':
+                        this.status = 'play'
+                        this.$emit('pause')
+                        break
                 }
             }
         }

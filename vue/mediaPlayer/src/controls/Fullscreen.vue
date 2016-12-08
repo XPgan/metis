@@ -9,10 +9,15 @@
 </script>
 
 <style lang="less" scoped>
+    @mainColor: #666;
+
     button.fullscreen {
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
+        margin: 5px;
         float: right;
-        background-color: yellow;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 1px @mainColor;
     }
 </style>

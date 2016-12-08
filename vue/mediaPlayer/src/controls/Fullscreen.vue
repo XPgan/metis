@@ -33,6 +33,8 @@
             width: 0;
             height: 0;
             border: 2px solid transparent;
+
+            .rotate(-45deg);
         }
         &:before {
             border-left-color: @mainColor;
@@ -42,17 +44,9 @@
             border-right-color: @mainColor;
             border-right-width: 8px;
         }
-        &.cancel:before {
-            .rotate(-45deg);
-
-            left: 3px;
-            bottom: 6px;
-        }
-        &.cancel:after {
-            .rotate(-45deg);
-
-            right: 3px;
-            top: 6px;
-        }
+        &.trigger:before { right: 1px; top: 4px; }
+        &.trigger:after { left: 1px; bottom: 4px; }
+        &.cancel:before { left: 3px; bottom: 6px; }
+        &.cancel:after { right: 3px; top: 6px; }
     }
 </style>

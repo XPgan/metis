@@ -25,7 +25,7 @@
         .bar-outer {
             width: 100%;
             background-color: rgba(255, 255, 255, 0);
-            box-shadow: 0 0 1px #eee;
+            box-shadow: 0 0 1px #ccc;
             z-index: 2;
         }
         .bar-inner {

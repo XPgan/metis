@@ -4,8 +4,8 @@
         <div class="player-ctrls c-fix">
             <progressbar></progressbar>
             <playpause></playpause>
-            <volume></volume>
             <fullscreen></fullscreen>
+            <volume></volume>
         </div>
     </section>
 </template>
@@ -13,16 +13,16 @@
 <script>
     import Playpause from './controls/Playpause'
     import Progressbar from './controls/Progressbar'
-    import Volume from './controls/Volume'
     import Fullscreen from './controls/Fullscreen'
+    import Volume from './controls/Volume'
 
     export default {
         name: 'player',
         components: {
             Playpause,
             Progressbar,
-            Volume,
-            Fullscreen
+            Fullscreen,
+            Volume
         }
     }
 </script>

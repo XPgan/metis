@@ -35,15 +35,21 @@
             background-color: rgba(255, 255, 255, 0.5);
             box-shadow: 0 0 1px @mainColor;
         }
-        .decrease:after {
+        .decrease:after, .increase:before, .increase:after {
             content: "";
             display: block;
             position: absolute;
-            width: 6px;
-            height: 2px;
             background-color: @mainColor;
 
             .center();
+        }
+        .decrease:after, .increase:before {
+            width: 8px;
+            height: 2px;
+        }
+        .increase:after {
+            width: 2px;
+            height: 8px;
         }
     }
 </style>

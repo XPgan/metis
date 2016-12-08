@@ -1,10 +1,31 @@
 <template>
-    <button class="playpause play"></button>
+    <button
+        class="playpause"
+        :class="status"
+        @click="playpause">
+    </button>
 </template>
 
 <script>
     export default {
-        name: 'playpause'
+        name: 'playpause',
+        data () {
+            return {
+                status: 'play'
+            }
+        },
+        methods: {
+            playpause () {
+                var isPlaying = this.status === 'play'
+                if (isPlaying) {
+                    this.status = 'pause'
+                    this.$emit('play')
+                } else {
+                    this.status = 'play'
+                    this.$emit('pause')
+                }
+            }
+        }
     }
 </script>
 

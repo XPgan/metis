@@ -3,7 +3,10 @@
         <video width="100%" height="100%" class="c-block" src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.mp4"></video>
         <div class="player-ctrls c-fix">
             <progressbar></progressbar>
-            <playpause></playpause>
+            <playpause
+                @play="play"
+                @pause="pause">
+            </playpause>
             <fullscreen></fullscreen>
             <volume></volume>
         </div>
@@ -23,6 +26,14 @@
             Progressbar,
             Fullscreen,
             Volume
+        },
+        methods: {
+            play () {
+                console.log('play')
+            },
+            pause () {
+                console.log('pause')
+            }
         }
     }
 </script>

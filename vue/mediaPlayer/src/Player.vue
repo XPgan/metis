@@ -50,7 +50,12 @@
                 }
             },
             inVolume () {
-
+                var video = this.$refs.video
+                if (video.volume > 0.8) {
+                    video.volume = 1
+                } else {
+                    video.volume += 0.1
+                }
             }
         }
     }

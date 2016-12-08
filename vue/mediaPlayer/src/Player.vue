@@ -34,6 +34,7 @@
         width: 90%;
         margin: 5% auto;
         position: relative;
+        overflow: hidden;
 
         .player-ctrls {
             position: absolute;

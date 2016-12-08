@@ -11,6 +11,11 @@
 <style lang="less" scoped>
     @mainColor: #666;
 
+    .rotate (@deg) {
+        -webkit-transform: rotate(@deg);
+                transform: rotate(@deg);
+    }
+
     button.fullscreen {
         width: 20px;
         height: 20px;
@@ -21,7 +26,7 @@
         background-color: rgba(255, 255, 255, 0.5);
         box-shadow: 0 0 1px @mainColor;
 
-        &.trigger:before, &.trigger:after {
+        &:before, &:after {
             content: "";
             display: block;
             position: absolute;
@@ -29,13 +34,25 @@
             height: 0;
             border: 2px solid transparent;
         }
-        &.trigger:before {
+        &:before {
             border-left-color: @mainColor;
             border-left-width: 8px;
         }
-        &.trigger:after {
+        &:after {
             border-right-color: @mainColor;
             border-right-width: 8px;
+        }
+        &.cancel:before {
+            .rotate(-45deg);
+
+            left: 3px;
+            bottom: 6px;
+        }
+        &.cancel:after {
+            .rotate(-45deg);
+
+            right: 3px;
+            top: 6px;
         }
     }
 </style>

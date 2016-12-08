@@ -14,7 +14,6 @@
 <style lang="less" scoped>
     .progressbar {
         height: 5px;
-        margin: 0 -2px;
         position: relative;
 
         .bar-outer, .bar-inner {
@@ -26,7 +25,7 @@
         .bar-outer {
             width: 100%;
             background-color: rgba(255, 255, 255, 0);
-            box-shadow: inset 0 0 1px #999;
+            box-shadow: 0 0 1px #eee;
             z-index: 2;
         }
         .bar-inner {
@@ -35,6 +34,17 @@
             z-index: 1;
             border-bottom-right-radius: 5px;
             border-top-right-radius: 5px;
+
+            &:after {
+                content: "";
+                display: block;
+                float: right;
+                width: 5px;
+                height: 7px;
+                margin-top: -1px;
+                background-color: rgba(255, 255, 255, 0.5);
+                box-shadow: inset 0 0 1px gold;
+            }
         }
     }
 </style>

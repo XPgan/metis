@@ -12,7 +12,10 @@
                 @pause="pause">
             </playpause>
             <fullscreen></fullscreen>
-            <volume></volume>
+            <volume
+                @deVolume="deVolume"
+                @inVolume="inVolume">
+            </volume>
         </div>
     </section>
 </template>
@@ -37,6 +40,17 @@
             },
             pause () {
                 this.$refs.video.pause()
+            },
+            deVolume () {
+                var video = this.$refs.video
+                if (video.volume < 0.2) {
+                    video.volume = 0
+                } else {
+                    video.volume -= 0.1
+                }
+            },
+            inVolume () {
+
             }
         }
     }

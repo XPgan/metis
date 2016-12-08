@@ -1,13 +1,21 @@
 <template>
     <div class="volume">
-        <span class="decrease"></span>
-        <span class="increase"></span>
+        <span class="decrease" @click="deVolume"></span>
+        <span class="increase" @click="inVolume"></span>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'volume'
+        name: 'volume',
+        methods: {
+            deVolume () {
+                this.$emit('deVolume')
+            },
+            inVolume () {
+                this.$emit('inVolume')
+            }
+        }
     }
 </script>
 

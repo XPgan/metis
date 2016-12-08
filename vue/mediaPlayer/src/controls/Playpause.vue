@@ -9,21 +9,22 @@
 </script>
 
 <style lang="less" scoped>
-    @mainColor: #0e926d;
+    @mainColor: #666;
 
     button.playpause {
         width: 20px;
         height: 20px;
         float: left;
         margin: 5px;
+        padding: 6px 0;
         border-radius: 50%;
         background-color: rgba(255, 255, 255, 0.5);
         box-shadow: 0 0 1px @mainColor;
+        box-sizing: border-box;
 
         &:before, &:after {
             content: "";
-            display: inline-block;
-            text-align: center;
+            float: left;
         }
         &.play:after {
             width: 0;
@@ -34,8 +35,14 @@
         }
         &.pause:before, &.pause:after {
             width: 2px;
-            height: 6px;
+            height: 100%;
             background-color: @mainColor;
+        }
+        &.pause:before {
+            margin-left: 7px;
+        }
+        &.pause:after {
+            margin-left: 2px;
         }
     }
 </style>

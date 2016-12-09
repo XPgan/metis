@@ -89,7 +89,7 @@
                 var duration = _this.video.duration
                 this.interval = setInterval(function () {
                     var currentTime = _this.video.currentTime
-                    var percent = currentTime / duration
+                    var percent = (currentTime / duration) * 100
                     _this.percent = percent
                 }, 1000)
             }

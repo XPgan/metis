@@ -1,7 +1,7 @@
 <template>
     <div class="progressbar">
         <div class="bar-outer"></div>
-        <div class="bar-inner"></div>
+        <div ref="inner" class="bar-inner"></div>
     </div>
 </template>
 
@@ -13,7 +13,7 @@
         },
         watch: {
             percent: function (val) {
-                console.log(val)
+                this.$refs.inner.style.width = val + '%'
             }
         }
     }
@@ -37,7 +37,7 @@
             z-index: 2;
         }
         .bar-inner {
-            width: 70%;
+            width: 0%;
             background-color: gold;
             z-index: 1;
             border-bottom-right-radius: 5px;

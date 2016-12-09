@@ -9,7 +9,9 @@
             src="http://nettuts.s3.amazonaws.com/763_sammyJSIntro/trailer_test.mp4">
         </video>
         <div class="player-ctrls c-fix">
-            <progressbar></progressbar>
+            <progressbar
+                :percent="percent">
+            </progressbar>
             <playpause
                 @play="play"
                 @pause="pause">

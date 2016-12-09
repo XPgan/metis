@@ -7,7 +7,15 @@
 
 <script>
     export default {
-        name: 'progressbar'
+        name: 'progressbar',
+        props: {
+            percent: Number
+        },
+        watch: {
+            percent: function (val) {
+                console.log(val)
+            }
+        }
     }
 </script>
 

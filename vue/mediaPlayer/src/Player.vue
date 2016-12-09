@@ -53,14 +53,14 @@
                 this.video.pause()
             },
             deVolume () {
-                if (this.video.volume < 0.2) {
+                if (this.video.volume < 0.1) {
                     this.video.volume = 0
                 } else {
                     this.video.volume -= 0.1
                 }
             },
             inVolume () {
-                if (this.video.volume > 0.8) {
+                if (this.video.volume > 0.9) {
                     this.video.volume = 1
                 } else {
                     this.video.volume += 0.1

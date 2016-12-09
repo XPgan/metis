@@ -88,6 +88,10 @@
                 var _this = this
                 var duration = _this.video.duration
                 this.interval = setInterval(function () {
+                    if (_this.video.ended) {
+                        clearInterval(_this.interval)
+                        return
+                    }
                     var currentTime = _this.video.currentTime
                     var percent = (currentTime / duration) * 100
                     _this.percent = percent

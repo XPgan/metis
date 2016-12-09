@@ -1,5 +1,8 @@
 <template>
-    <section class="player">
+    <section
+        ref="player"
+        :class="fullscreen"
+        class="player">
         <video
             ref="video"
             width="100%" height="100%" class="c-block"
@@ -39,10 +42,13 @@
         },
         data () {
             return {
-                video: null
+                player: null,
+                video: null,
+                fullscreen: ''
             }
         },
         mounted () {
+            this.player = this.$refs.player
             this.video = this.$refs.video
         },
         methods: {
@@ -67,10 +73,10 @@
                 }
             },
             requestFull () {
-
+                this.fullscreen = 'fullscreen'
             },
             cancelFull () {
-
+                this.fullscreen = ''
             }
         }
     }
@@ -91,6 +97,15 @@
             bottom: 0;
             width: 100%;
             background-color: rgba(255, 255, 255, 0.8);
+        }
+        &.fullscreen {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: #000;
         }
     }
 </style>

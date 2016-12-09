@@ -86,8 +86,9 @@
 <style src="./assets/public.less" lang="less"></style>
 <style lang="less" scoped>
     .player {
-        width: 90%;
+        width: 60%;
         margin: 5% auto;
+        box-shadow: 2px 2px 5px #ccc;
         position: relative;
         overflow: hidden;
 

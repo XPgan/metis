@@ -32,7 +32,7 @@
 </script>
 
 <style lang="less" scoped>
-    @mainColor: #666;
+    @mainGrey: #666;
 
     button.playpause {
         width: 20px;
@@ -42,7 +42,7 @@
         padding: 6px 0;
         border-radius: 50%;
         background-color: rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 1px @mainColor;
+        box-shadow: 0 0 1px @mainGrey;
         box-sizing: border-box;
 
         &:before, &:after {
@@ -54,13 +54,13 @@
             height: 0;
             margin-left: 7px;
             border: 4px solid transparent;
-            border-left-color: @mainColor;
+            border-left-color: @mainGrey;
             border-left-width: 7px;
         }
         &.pause:before, &.pause:after {
             width: 2px;
             height: 100%;
-            background-color: @mainColor;
+            background-color: @mainGrey;
         }
         &.pause:before {
             margin-left: 7px;

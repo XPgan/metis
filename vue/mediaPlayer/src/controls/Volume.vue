@@ -20,7 +20,7 @@
 </script>
 
 <style lang="less" scoped>
-    @mainColor: #666;
+    @mainGrey: #666;
 
     .center () {
         top: 50%;
@@ -41,13 +41,13 @@
             margin: 0 2px;
             border-radius: 3px;
             background-color: rgba(255, 255, 255, 0.5);
-            box-shadow: 0 0 1px @mainColor;
+            box-shadow: 0 0 1px @mainGrey;
         }
         .decrease:after, .increase:before, .increase:after {
             content: "";
             display: block;
             position: absolute;
-            background-color: @mainColor;
+            background-color: @mainGrey;
 
             .center();
         }

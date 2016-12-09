@@ -32,7 +32,7 @@
 </script>
 
 <style lang="less" scoped>
-    @mainColor: #666;
+    @mainGrey: #666;
 
     .rotate (@deg) {
         -webkit-transform: rotate(@deg);
@@ -47,7 +47,7 @@
         position: relative;
         border-radius: 3px;
         background-color: rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 1px @mainColor;
+        box-shadow: 0 0 1px @mainGrey;
 
         &:before, &:after {
             content: "";
@@ -60,11 +60,11 @@
             .rotate(-45deg);
         }
         &:before {
-            border-left-color: @mainColor;
+            border-left-color: @mainGrey;
             border-left-width: 8px;
         }
         &:after {
-            border-right-color: @mainColor;
+            border-right-color: @mainGrey;
             border-right-width: 8px;
         }
         &.request:before { right: 1px; top: 4px; }

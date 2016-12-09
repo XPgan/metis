@@ -44,6 +44,8 @@
             return {
                 player: null,
                 video: null,
+                interval: null,
+                percent: 0,
                 fullscreen: ''
             }
         },
@@ -54,9 +56,11 @@
         methods: {
             play () {
                 this.video.play()
+                this.progress()
             },
             pause () {
                 this.video.pause()
+                clearInterval(this.interval)
             },
             deVolume () {
                 if (this.video.volume < 0.1) {
@@ -77,6 +81,15 @@
             },
             cancelFull () {
                 this.fullscreen = ''
+            },
+            progress () {
+                var _this = this
+                var duration = _this.video.duration
+                this.interval = setInterval(function () {
+                    var currentTime = _this.video.currentTime
+                    var percent = currentTime / duration
+                    _this.percent = percent
+                }, 1000)
             }
         }
     }

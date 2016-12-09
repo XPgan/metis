@@ -37,34 +37,40 @@
             Fullscreen,
             Volume
         },
+        data () {
+            return {
+                video: null
+            }
+        },
+        mounted () {
+            this.video = this.$refs.video
+        },
         methods: {
             play () {
-                this.$refs.video.play()
+                this.video.play()
             },
             pause () {
-                this.$refs.video.pause()
+                this.video.pause()
             },
             deVolume () {
-                var video = this.$refs.video
-                if (video.volume < 0.2) {
-                    video.volume = 0
+                if (this.video.volume < 0.2) {
+                    this.video.volume = 0
                 } else {
-                    video.volume -= 0.1
+                    this.video.volume -= 0.1
                 }
             },
             inVolume () {
-                var video = this.$refs.video
-                if (video.volume > 0.8) {
-                    video.volume = 1
+                if (this.video.volume > 0.8) {
+                    this.video.volume = 1
                 } else {
-                    video.volume += 0.1
+                    this.video.volume += 0.1
                 }
             },
             requestFull () {
-                console.log('requestFull')
+
             },
             cancelFull () {
-                console.log('cancelFull')
+
             }
         }
     }

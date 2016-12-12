@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>NewsMap</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{text-align: left;font-family: "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", Arial, Verdana;}
+        body, html{width: 100%;height: 100%;}
+        section{height: 100%;border-bottom: 1px solid #999;}
+        section.bisection > div{width: 50%;height: 100%;float: left;border-right: 1px solid #999;}
+        section:last-child, section.bisection > div:last-child{border: none;}
+
+        .c-fix:after{content: "";display: block;height: 0;clear: both;visibility: hidden;}
+    </style>
 </head>
 <body>
-
+<section id="tree"></section>
+<section class="bisection c-fix">
+    <div id="heat"></div>
+    <div id="line-bar"></div>
+</section>
+<section id="line-clusteredbar"></section>
+<section class="bisection c-fix">
+    <div id="funnel"></div>
+    <div id="radar"></div>
+</section>
 </body>
 </html>

@@ -14,6 +14,7 @@
                 @alterProgress="alterProgress">
             </progressbar>
             <playpause
+                :ended="ended"
                 @play="play"
                 @pause="pause">
             </playpause>
@@ -49,6 +50,7 @@
                 video: null,
                 interval: null,
                 percent: 0,
+                ended: false,
                 fullscreen: ''
             }
         },
@@ -92,6 +94,7 @@
                     if (_this.video.ended) {
                         clearInterval(_this.interval)
                         _this.percent = 100
+                        _this.ended = true
                         return
                     }
                     var currentTime = _this.video.currentTime

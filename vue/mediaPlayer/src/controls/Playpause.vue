@@ -9,9 +9,19 @@
 <script>
     export default {
         name: 'playpause',
+        props: {
+            ended: Boolean
+        },
         data () {
             return {
                 status: 'play'
+            }
+        },
+        watch: {
+            ended: function (val) {
+                if (val) {
+                    this.status = 'play'
+                }
             }
         },
         methods: {

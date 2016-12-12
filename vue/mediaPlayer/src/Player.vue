@@ -109,6 +109,7 @@
             alterProgress (percent) {
                 var duration = this.video.duration
                 var currentTime = duration * percent / 100
+                this.percent = percent
                 this.video.currentTime = currentTime
             }
         }

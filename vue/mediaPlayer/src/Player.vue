@@ -10,7 +10,8 @@
         </video>
         <div class="player-ctrls c-fix">
             <progressbar
-                :percent="percent">
+                :percent="percent"
+                @alterProgress="alterProgress">
             </progressbar>
             <playpause
                 @play="play"
@@ -58,7 +59,7 @@
         methods: {
             play () {
                 this.video.play()
-                this.progress()
+                this.handleProgress()
             },
             pause () {
                 this.video.pause()
@@ -84,7 +85,7 @@
             cancelFull () {
                 this.fullscreen = ''
             },
-            progress () {
+            handleProgress () {
                 var _this = this
                 var duration = _this.video.duration
                 this.interval = setInterval(function () {
@@ -96,6 +97,9 @@
                     var percent = (currentTime / duration) * 100
                     _this.percent = percent
                 }, 1000)
+            },
+            alterProgress (percent) {
+                console.log(percent)
             }
         }
     }

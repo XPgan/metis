@@ -1,5 +1,5 @@
 <template>
-    <div class="progressbar">
+    <div class="progressbar" @click="alterProgress($event)">
         <div class="bar-outer"></div>
         <div ref="inner" class="bar-inner"></div>
     </div>
@@ -14,6 +14,14 @@
         watch: {
             percent: function (val) {
                 this.$refs.inner.style.width = val + '%'
+            }
+        },
+        methods: {
+            alterProgress (event) {
+                var x = event.offsetX
+                var width = event.target.offsetWidth
+                var percent = (x / width) * 100
+                this.$emit('alterProgress', percent)
             }
         }
     }

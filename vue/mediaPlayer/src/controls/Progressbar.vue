@@ -40,12 +40,9 @@
             width: 0%;
             background-color: gold;
             z-index: 1;
-            border-bottom-right-radius: 5px;
-            border-top-right-radius: 5px;
 
             &:after {
                 content: "";
-                display: block;
                 float: right;
                 width: 5px;
                 height: 7px;

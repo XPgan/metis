@@ -91,6 +91,7 @@
                 this.interval = setInterval(function () {
                     if (_this.video.ended) {
                         clearInterval(_this.interval)
+                        _this.percent = 100
                         return
                     }
                     var currentTime = _this.video.currentTime

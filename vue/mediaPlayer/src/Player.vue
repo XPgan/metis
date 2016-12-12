@@ -99,7 +99,9 @@
                 }, 1000)
             },
             alterProgress (percent) {
-                console.log(percent)
+                var duration = this.video.duration
+                var currentTime = duration * percent / 100
+                this.video.currentTime = currentTime
             }
         }
     }

@@ -60,10 +60,12 @@
         },
         methods: {
             play () {
-                this.ended && (this.percent = 0)
-                this.ended = false
-                this.handleProgress()
-                this.video.play()
+                if (this.video.readyState === 4) {
+                    this.ended && (this.percent = 0)
+                    this.ended = false
+                    this.video.play()
+                    this.handleProgress()
+                }
             },
             pause () {
                 this.video.pause()

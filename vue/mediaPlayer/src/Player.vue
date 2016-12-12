@@ -60,8 +60,10 @@
         },
         methods: {
             play () {
-                this.video.play()
+                this.ended && (this.percent = 0)
+                this.ended = false
                 this.handleProgress()
+                this.video.play()
             },
             pause () {
                 this.video.pause()

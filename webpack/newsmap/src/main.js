@@ -1,2 +1,3 @@
-import tree from './modules/tree'
-import heat from './modules/map'
+import './modules/tree'
+import './modules/map'
+import './modules/barLine'

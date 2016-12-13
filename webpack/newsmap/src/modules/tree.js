@@ -1,6 +1,6 @@
 import '../libs/d3.v3.min'
 
-var container = document.querySelector('#tree');
+var container = document.getElementById('tree');
 var width = container.offsetWidth;
 var height = container.offsetHeight;
 

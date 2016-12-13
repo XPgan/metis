@@ -32,4 +32,15 @@
     <div id="radar"></div>
 </section>
 </body>
+<script src="./libs/heatmap.min.js"></script>
+<script src="./data/heat.js"></script>
+<script>
+    var heat = h337.create({
+        container: document.getElementById('heat')
+    });
+    heat.setData({
+        max: 5,
+        data: heatData
+    });
+</script>
 </html>

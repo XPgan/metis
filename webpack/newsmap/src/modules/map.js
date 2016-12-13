@@ -1,7 +1,7 @@
 import echarts from 'echarts'
 import '../maps/china'
 
-var container = document.getElementById('heat');
+var container = document.getElementById('map');
 var opts = {
     backgroundColor: '#1b1b1b',
     series: [

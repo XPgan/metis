@@ -1,5 +1,0 @@
-import './modules/map'
-import './modules/barLine'
-import './modules/stackedbarLine'
-import './modules/funnel'
-import './modules/radar'

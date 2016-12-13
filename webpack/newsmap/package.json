@@ -6,8 +6,7 @@
         "dev": "webpack-dev-server",
         "build": "webpack -p"
     },
-    "author": "sunmy",
-    "license": "ISC",
+    "author": "yaq",
     "dependencies": {
         "webpack": "~1.13.3",
         "webpack-dev-server": "1.16.2",

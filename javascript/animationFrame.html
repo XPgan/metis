@@ -11,41 +11,41 @@
     </style>
 </head>
 <body>
-    <div class="progress js_progress"></div>
-    <div class="percent"><span class="js_percent">0</span>%</div>
-    <div class="time js_time"></div>
-    <div class="btn"><a href="javascript:;" class="js_btn">control</a></div>
-    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
-    <script>
-        var frame;
-        var flag = true;
-        var $percent = $('.js_percent');
-        var $progress = $('.js_progress');
-        var $time = $('.js_time');
+<div class="progress js_progress"></div>
+<div class="percent"><span class="js_percent">0</span>%</div>
+<div class="time js_time"></div>
+<div class="btn"><a href="javascript:;" class="js_btn">control</a></div>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script>
+    var frame;
+    var flag = true;
+    var $percent = $('.js_percent');
+    var $progress = $('.js_progress');
+    var $time = $('.js_time');
 
-        function progress () {
-            var percent = ($percent.text() >> 0) + 1;
+    function progress () {
+        var percent = ($percent.text() >> 0) + 1;
 
-            if (percent <= 100) {
-                $percent.text(percent);
-                $progress.width(500 * percent / 100);
+        if (percent <= 100) {
+            $percent.text(percent);
+            $progress.width(500 * percent / 100);
 
-                frame = requestAnimationFrame(function (time) {
-                    $time.text(time);
-                    progress();
-                });
-            }
+            frame = requestAnimationFrame(function (time) {
+                $time.text(time);
+                progress();
+            });
+        }
+    }
+
+    $('.js_btn').on('click', function () {
+        if (flag) {
+            progress();
+        } else {
+            cancelAnimationFrame(frame);
         }
 
-        $('.js_btn').on('click', function () {
-            if (flag) {
-                progress();
-            } else {
-                cancelAnimationFrame(frame);
-            }
-
-            flag = !flag;
-        });
-    </script>
+        flag = !flag;
+    });
+</script>
 </body>
 </html>

@@ -10,49 +10,49 @@
     </style>
 </head>
 <body>
-    <div class="item"></div>
-    <div class="btn">clear</div>
-    <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
-    <script>
-        /**
-         * sessionStorage：会话级本地存储，以顶级页面为单位进行数据划分
-         * localStorage：持久化本地存储，以域名为单位进行数据划分
-         */
+<div class="item"></div>
+<div class="btn">clear</div>
+<script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script>
+    /**
+     * sessionStorage：会话级本地存储，以顶级页面为单位进行数据划分
+     * localStorage：持久化本地存储，以域名为单位进行数据划分
+     */
 
-        // example1
-        if (window.localStorage) {
-            var isExist = localStorage.getItem('color');
+    // example1
+    if (window.localStorage) {
+        var isExist = localStorage.getItem('color');
 
-            if (!isExist) {
-                localStorage.setItem('color', 1);
-            } else {
-                $('.item').addClass('red');
-            }
+        if (!isExist) {
+            localStorage.setItem('color', 1);
+        } else {
+            $('.item').addClass('red');
         }
+    }
 
-        // example2
-        var storage = window.localStorage;
-        for (var i = 0;i < storage.length;i++) {
-            var key = storage.key(i);
-            var value = localStorage.getItem(key);
+    // example2
+    var storage = window.localStorage;
+    for (var i = 0;i < storage.length;i++) {
+        var key = storage.key(i);
+        var value = localStorage.getItem(key);
 
-            console.log(key + '|' + value);
+        console.log(key + '|' + value);
+    }
+
+    // example3
+    $('.btn').on('click', function () {
+        var isExist = localStorage.getItem('color');
+        if (isExist) {
+            localStorage.clear();
+        } else {
+            localStorage.setItem('color', 1);
         }
-
-        // example3
-        $('.btn').on('click', function () {
-            var isExist = localStorage.getItem('color');
-            if (isExist) {
-                localStorage.clear();
-            } else {
-                localStorage.setItem('color', 1);
-            }
-        });
-        // storage 事件需要在同一域下的不同页面监听
-        window.addEventListener('storage', showEvent, false);
-        function showEvent (e) {
-            console.log(e);
-        }
-    </script>
+    });
+    // storage 事件需要在同一域下的不同页面监听
+    window.addEventListener('storage', showEvent, false);
+    function showEvent (e) {
+        console.log(e);
+    }
+</script>
 </body>
 </html>

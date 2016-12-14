@@ -15,45 +15,45 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <ul id="swipe-lst" class="swipe-lst"></ul>
+<div class="container">
+    <ul id="swipe-lst" class="swipe-lst"></ul>
+</div>
+<script id="module_swipe" type="text/module">
+    <div class="swipe-main">
+        <div class="swipe-title">$title</div>
+        <div class="swipe-content">$content</div>
     </div>
-    <script id="module_swipe" type="text/module">
-        <div class="swipe-main">
-            <div class="swipe-title">$title</div>
-            <div class="swipe-content">$content</div>
-        </div>
-    </script>
+</script>
 
-    <script>
-        // data
-        var swipeTitle = [
-                'swipe first',
-                'swipe second',
-                'swipe third',
-                'swipe fourth',
-                'swipe fifth'
-        ];
-        var swipeContent = [
-                'content first',
-                'content second',
-                'content third',
-                'content fourth',
-                'content fifth'
-        ];
+<script>
+    // data
+    var swipeTitle = [
+            'swipe first',
+            'swipe second',
+            'swipe third',
+            'swipe fourth',
+            'swipe fifth'
+    ];
+    var swipeContent = [
+            'content first',
+            'content second',
+            'content third',
+            'content fourth',
+            'content fifth'
+    ];
 
-        // module
-        var container = document.getElementById('swipe-lst');
-        var module = document.getElementById('module_swipe').innerHTML;
+    // module
+    var container = document.getElementById('swipe-lst');
+    var module = document.getElementById('module_swipe').innerHTML;
 
-        // create
-        for (var i = 0;i < swipeTitle.length;i++) {
-            var substance = module.replace('$title', swipeTitle[i]).replace('$content', swipeContent[i]);
-            var liElem = document.createElement('li');
+    // create
+    for (var i = 0;i < swipeTitle.length;i++) {
+        var substance = module.replace('$title', swipeTitle[i]).replace('$content', swipeContent[i]);
+        var liElem = document.createElement('li');
 
-            liElem.innerHTML = substance;
-            container.appendChild(liElem);
-        }
-    </script>
+        liElem.innerHTML = substance;
+        container.appendChild(liElem);
+    }
+</script>
 </body>
 </html>

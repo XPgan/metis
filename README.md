@@ -40,7 +40,7 @@
 
 #### 示例 ####
 
-+ 待办事项 [(code)](https://github.com/sunmengyuan/note/tree/master/react/todos) [(demo)](http://www.miaomie.tech/demos/react/todos)
++ 待办事项 [(code)](https://github.com/sunmengyuan/note/tree/master/react/todos) [(demo)](https://sunmengyuan.github.io/demos/react/todos)
 
 *****
 
@@ -64,11 +64,11 @@
 
 #### 示例 ####
 
-+ 画板 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drawing.html) [(demo)](http://www.miaomie.tech/demos/canvas/drawing.html)
++ 画板 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drawing.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drawing.html)
 
-+ 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/bezierCurve.html) [(demo)](http://www.miaomie.tech/demos/canvas/bezierCurve.html)
++ 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/bezierCurve.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/bezierCurve.html)
 
-+ 多边形 + 拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](http://www.miaomie.tech/demos/canvas/drag.html)
++ 多边形 + 拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drag.html)
 
 *****
 
@@ -78,11 +78,11 @@
 
 #### 示例 ####
 
-+ 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](http://www.miaomie.tech/demos/svg/cat.html)
++ 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](https://sunmengyuan.github.io/demos/svg/cat.html)
 
-+ 路径动画 + 蒙版 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](http://www.miaomie.tech/demos/svg/paint.html)
++ 路径动画 + 蒙版 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](https://sunmengyuan.github.io/demos/svg/paint.html)
 
-+ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](http://www.miaomie.tech/demos/svg/loading.html)
++ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
 
 *****
 
@@ -96,7 +96,7 @@
 
 #### 示例 ####
 
-+ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/three/clock.html) [(demo)](http://www.miaomie.tech/demos/three/clock.html)
++ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/three/clock.html) [(demo)](https://sunmengyuan.github.io/demos/three/clock.html)
 
 *****
 
@@ -108,7 +108,7 @@
 
 #### 示例 ####
 
-+ 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](http://www.miaomie.tech/demos/matter/seesaw.html)
++ 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](https://sunmengyuan.github.io/demos/matter/seesaw.html)
 
 *****
 
@@ -152,7 +152,7 @@
 
 + 基本示例 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/basic)
 
-+ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/visualization) [(demo)](http://www.miaomie.tech/demos/webpack/visualization)
++ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/visualization) [(demo)](https://sunmengyuan.github.io/demos/webpack/visualization)
 
 *****
 
@@ -180,6 +180,6 @@
 
 作者：呆恋小喵
 
-欢迎参观：<http://www.miaomie.tech>
+欢迎参观：<https://sunmengyuan.github.io>
 
 更多参考资料：<https://github.com/sunmengyuan/book>

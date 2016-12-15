@@ -1,13 +1,12 @@
 {
     "name": "karma-example",
     "version": "1.0.0",
+    "author": "sunmy <sunmy_meow@sina.com>",
     "description": "学习如何使用 karma",
     "scripts": {
         "test": "karma start ./karma/karma.conf.js",
         "coverage": "cd ./coverage/*/. && open -a '/Applications/Google Chrome.app' 'index.html'"
     },
-    "author": "sunmy",
-    "license": "ISC",
     "dependencies": {
         "karma": "~1.3.0",
         "karma-cli": "~1.0.1",

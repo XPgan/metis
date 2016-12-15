@@ -1,14 +1,13 @@
 {
     "name": "visualization",
     "version": "1.0.0",
+    "author": "sunmy <sunmy_meow@sina.com>",
     "description": "中国高校学科排名统计",
     "main": "entry.js",
     "scripts": {
         "dev": "webpack-dev-server",
         "build": "webpack -p"
     },
-    "author": "sunmy",
-    "license": "ISC",
     "dependencies": {
         "webpack": "~1.13.3",
         "webpack-dev-server": "1.16.2",

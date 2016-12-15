@@ -1,7 +1,6 @@
 {
     "name": "video-player",
     "version": "1.0.0",
-    "description": "A Vue.js project",
     "author": "sunmy <sunmy_meow@sina.com>",
     "private": true,
     "scripts": {

@@ -1,14 +1,12 @@
 {
     "name": "todos",
     "version": "1.0.0",
-    "description": "",
+    "author": "sunmy <sunmy_meow@sina.com>",
     "main": "entry.js",
     "scripts": {
         "dev": "webpack-dev-server",
         "build": "webpack -p"
     },
-    "author": "sunmy",
-    "license": "ISC",
     "dependencies": {
         "react": "~15.3.2",
         "react-dom": "~15.3.2",

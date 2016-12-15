@@ -9,7 +9,7 @@ module.exports = {
     devtool: 'eval-source-map',
     entry: './entry.js',
     output: {
-        path: './build',
+        path: './dist',
         filename: 'bundle.js',
     },
     devServer: {

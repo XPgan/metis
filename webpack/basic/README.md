@@ -74,7 +74,7 @@
         devtool: 'eval-source-map',              // 配置 source maps
         entry: './entry.js',                     // 入口文件
         output: {                                // 打包文件
-            path: './build',
+            path: './dist',
             filename: 'bundle.js',
         },
         devServer: {                             // 构建本地服务器

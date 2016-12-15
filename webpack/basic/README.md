@@ -44,14 +44,14 @@
     }
     ```
 
-4. 创建 src (源文件)、build (打包文件)
+4. 创建 src (源文件)、dist (打包文件)
 
     ```bash
     cd example
     
     mkdir src
     
-    mkdir build
+    mkdir dist
     ```
 
 5. 创建 entry.js (入口文件)

@@ -75,7 +75,7 @@
         entry: './entry.js',                     // 入口文件
         output: {                                // 打包文件
             path: './dist',
-            filename: 'bundle.js',
+            filename: 'bundle.min.js',
         },
         devServer: {                             // 构建本地服务器
             port: 8000,

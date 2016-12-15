@@ -5,7 +5,7 @@ module.exports = {
     entry: './entry.js',
     output: {
         path: './dist',
-        filename: 'bundle.js',
+        filename: 'bundle.min.js',
     },
     devServer: {
         port: 8000,

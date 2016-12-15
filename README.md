@@ -26,7 +26,7 @@
 
 + 简易个人空间 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/zone)
 
-+ 简易视频播放器 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/videoPlayer)
++ 简易视频播放器 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/videoPlayer) [(demo)](https://sunmengyuan.github.io/demos/vue/videoPlayer)
 
 *****
 

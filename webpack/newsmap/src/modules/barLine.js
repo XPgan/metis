@@ -3,6 +3,9 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('barLine'),
     opts: {
+        title: {
+            text: ''
+        },
         legend: {
             data: []
         },
@@ -28,9 +31,15 @@ export default {
         series: []
     },
     sketch (data) {
-        this.opts.legend.data = data.legend;
-        this.opts.xAxis[0].data = data.xAxis;
-        this.opts.series = data.series;
+        this.opts.title.text = data.title;
+        for (var key in data.data) {
+            var obj = {};
+            obj.type = key;
+            obj.name = data.data[key].name;
+            obj.data = data.data[key].value;
+            this.opts.legend.data.push(obj.name);
+            this.opts.series.push(obj);
+        }
         echarts.init(this.container).setOption(this.opts);
     }
 }

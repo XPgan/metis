@@ -195,7 +195,7 @@ var geoCoordMap = {
 };
 var convertData = function (data) {
     var res = [];
-    for (let i = 0; i < data.length; i++) {
+    for (let i in data) {
         var geoCoord = geoCoordMap[data[i].name];
         if (geoCoord) {
             res.push(geoCoord.concat(data[i].value));

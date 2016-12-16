@@ -3,6 +3,9 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('stackedbarLine'),
     opts: {
+        title: {
+            text: ''
+        },
         legend: {
             data: []
         },
@@ -34,11 +37,22 @@ export default {
         series: []
     },
     sketch (data) {
-        this.opts.legend.data = data.legend;
-        for (let i = 0;i < 2;i++) {
-            this.opts.xAxis[i].data = data.xAxis;
+        this.opts.title.text = data.title;
+        this.opts.xAxis[0].data = data.xAxis;
+        this.opts.xAxis[1].data = data.xAxis;
+        for (let i in data.data.bar) {
+            var obj = {};
+            var loop = data.data.bar[i];
+            loop.itemStyle.normal.label = {show: true};
+            obj.type = 'bar';
+            obj.name = loop.name;
+            obj.data = loop.value;
+            obj.itemStyle = loop.itemStyle;
+            this.opts.legend.data.push(obj.name);
+            this.opts.series.push(obj);
         }
-        this.opts.series = data.series;
+        data.data.line.type = 'line';
+        this.opts.series.push(data.data.line);
         echarts.init(this.container).setOption(this.opts);
     }
 }

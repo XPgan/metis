@@ -72,7 +72,7 @@ export default {
         for (let i in data.data) {
             this.opts.legend.data.push(data.data[i].name);
         }
-        for (let i = 0;i < series.length;i++) {
+        for (let i in series) {
             series[i].data = data.data;
         }
         this.opts.title.text = data.title;

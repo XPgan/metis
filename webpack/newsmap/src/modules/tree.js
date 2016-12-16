@@ -3,27 +3,32 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('tree'),
     opts: {
-        tooltip: {
-            trigger: 'item',
-            triggerOn: 'mousemove'
-        },
-        series: [{
-            type: 'sankey',
-            layout: 'none',
-            data: [],
-            links: [],
-            itemStyle: {
-                normal: {
-                    borderWidth: 1,
-                    borderColor: 'transparent'
-                }
-            },
-            lineStyle: {
-                normal: {
-                    curveness: 0.5
-                }
+        animationDurationUpdate: 1500,
+        animationEasingUpdate: 'quinticInOut',
+        series: [
+            {
+                type: 'graph',
+                layout: 'none',
+                symbolSize: 50,
+                roam: false,
+                edgeSymbol: ['circle', 'arrow'],
+                edgeSymbolSize: [4, 10],
+                lineStyle: {
+                    normal: {
+                        opacity: 1,
+                        width: 2,
+                        curveness: 0.1
+                    }
+                },
+                label: {
+                    normal: {
+                        show: true
+                    }
+                },
+                data: [],
+                links: []
             }
-        }]
+        ]
     },
     sketch (data) {
         this.opts.series[0].data = data.data;

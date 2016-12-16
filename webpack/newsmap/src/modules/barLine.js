@@ -32,11 +32,12 @@ export default {
     },
     sketch (data) {
         this.opts.title.text = data.title;
-        for (var key in data.data) {
+        for (let key in data.data) {
             var obj = {};
+            var loop = data.data[key];
             obj.type = key;
-            obj.name = data.data[key].name;
-            obj.data = data.data[key].value;
+            obj.name = loop.name;
+            obj.data = loop.value;
             this.opts.legend.data.push(obj.name);
             this.opts.series.push(obj);
         }

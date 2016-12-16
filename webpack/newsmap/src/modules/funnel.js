@@ -3,9 +3,12 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('funnel'),
     opts: {
+        title: {
+            text: ''
+        },
         legend: {
             orient: 'vertical',
-            x: 'left',
+            x: 'right',
             data: []
         },
         calculable: true,
@@ -65,10 +68,14 @@ export default {
         ]
     },
     sketch (data) {
-        this.opts.legend.data = data.legend;
-        for (let i = 0;i < 4;i++) {
-            this.opts.series[i].data = data.data;
+        var series = this.opts.series;
+        for (let i in data.data) {
+            this.opts.legend.data.push(data.data[i].name);
         }
+        for (let i = 0;i < series.length;i++) {
+            series[i].data = data.data;
+        }
+        this.opts.title.text = data.title;
         echarts.init(this.container).setOption(this.opts);
     }
 }

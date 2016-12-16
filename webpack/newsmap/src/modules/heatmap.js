@@ -195,7 +195,7 @@ var geoCoordMap = {
 };
 var convertData = function (data) {
     var res = [];
-    for (var i = 0;i < data.length;i++) {
+    for (let i = 0; i < data.length; i++) {
         var geoCoord = geoCoordMap[data[i].name];
         if (geoCoord) {
             res.push(geoCoord.concat(data[i].value));
@@ -207,6 +207,12 @@ var convertData = function (data) {
 export default {
     container: document.getElementById('heatmap'),
     opts: {
+        title: {
+            text: '',
+            textStyle: {
+                color: '#fff'
+            }
+        },
         backgroundColor: '#404a59',
         visualMap: {
             min: 0,
@@ -237,14 +243,17 @@ export default {
                 }
             }
         },
-        series: [{
-            name: 'AQI',
-            type: 'heatmap',
-            coordinateSystem: 'geo',
-            data: []
-        }]
+        series: [
+            {
+                name: 'AQI',
+                type: 'heatmap',
+                coordinateSystem: 'geo',
+                data: []
+            }
+        ]
     },
     sketch (data) {
+        this.opts.title.text = data.title;
         this.opts.series[0].data = convertData(data.data);
         echarts.init(this.container).setOption(this.opts);
     }

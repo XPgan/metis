@@ -1,4 +1,5 @@
 export default {
+    title: '事件关注度区域热力图',
     data: [
         {name: '海门', value: 9},
         {name: '鄂尔多斯', value: 12},

@@ -1,5 +1,5 @@
 export default {
-    legend: ['罗纳尔多', '舍普琴科'],
+    title: '用户画像－职业分布',
     indicator: [
         {text: '进攻', max: 100},
         {text: '防守', max: 100},

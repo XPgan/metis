@@ -26,7 +26,7 @@
 
 + 简易个人空间 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/zone)
 
-+ 简易视频播放器 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/videoPlayer) [(demo)](https://sunmengyuan.github.io/demos/vue/videoPlayer/index.min.html)
++ 简易视频播放器 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/videoPlayer) [(demo)](https://sunmengyuan.github.io/demos/vue/videoPlayer)
 
 *****
 
@@ -40,7 +40,7 @@
 
 #### 示例 ####
 
-+ 待办事项 [(code)](https://github.com/sunmengyuan/note/tree/master/react/todos) [(demo)](https://sunmengyuan.github.io/demos/react/todos/index.min.html)
++ 待办事项 [(code)](https://github.com/sunmengyuan/note/tree/master/react/todos) [(demo)](https://sunmengyuan.github.io/demos/react/todos)
 
 *****
 
@@ -64,11 +64,11 @@
 
 #### 示例 ####
 
-+ 画板 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drawing.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drawing.min.html)
++ 画板 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drawing.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drawing.html)
 
-+ 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/bezierCurve.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/bezierCurve.min.html)
++ 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/bezierCurve.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/bezierCurve.html)
 
-+ 多边形 + 拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drag.min.html)
++ 多边形 + 拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drag.html)
 
 *****
 
@@ -78,11 +78,11 @@
 
 #### 示例 ####
 
-+ 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](https://sunmengyuan.github.io/demos/svg/cat.min.html)
++ 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](https://sunmengyuan.github.io/demos/svg/cat.html)
 
-+ 路径动画 + 蒙版 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](https://sunmengyuan.github.io/demos/svg/paint.min.html)
++ 路径动画 + 蒙版 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](https://sunmengyuan.github.io/demos/svg/paint.html)
 
-+ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.min.html)
++ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
 
 *****
 
@@ -96,7 +96,7 @@
 
 #### 示例 ####
 
-+ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/three/clock.html) [(demo)](https://sunmengyuan.github.io/demos/three/clock.min.html)
++ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/three/clock.html) [(demo)](https://sunmengyuan.github.io/demos/three/clock.html)
 
 *****
 
@@ -108,7 +108,7 @@
 
 #### 示例 ####
 
-+ 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](https://sunmengyuan.github.io/demos/matter/seesaw.min.html)
++ 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](https://sunmengyuan.github.io/demos/matter/seesaw.html)
 
 *****
 
@@ -152,7 +152,7 @@
 
 + 基本示例 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/basic)
 
-+ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/visualization) [(demo)](https://sunmengyuan.github.io/demos/webpack/visualization/index.min.html)
++ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/visualization) [(demo)](https://sunmengyuan.github.io/demos/webpack/visualization)
 
 *****
 

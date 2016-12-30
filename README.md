@@ -180,6 +180,6 @@
 
 作者：呆恋小喵
 
-欢迎参观：<https://sunmengyuan.github.io>
+欢迎参观：<https://sunmengyuan.github.io/garden/>
 
 更多参考资料：<https://github.com/sunmengyuan/book>

@@ -26,7 +26,7 @@ __用户注册本站后即可发布个人日记，并可粉丝他人、收藏他
 
 作者：呆恋小喵
 
-欢迎参观：<https://sunmengyuan.github.io>
+欢迎参观：<https://sunmengyuan.github.io/garden/>
 
 *****
 

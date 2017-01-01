@@ -6,11 +6,15 @@
     <style>
         *{margin: 0;padding: 0;}
         body{text-align: left;font-family: "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", Arial, Verdana;}
+        ul, ol{list-style: none;}
         html, body{width: 100%;height: 100%;}
-        section{height: 100%;border-bottom: 1px solid #999;}
+        section{height: 100%;border-bottom: 1px solid #999;position: relative;}
         section > div{width: 100%;height: 100%;padding: 15px;box-sizing: border-box;}
         section.half > div{width: 50%;float: left;border-right: 1px solid #999;}
         section:last-child, section.half > div:last-child{border: none;}
+        section ul{position: absolute;bottom: 50px;right: 50px;}
+        section ul li{float: left;line-height: 1.5;margin: 0 10px;cursor: pointer;}
+        section ul li.active{color: indianred;}
 
         .c-fix:after {content: "";display: block;height: 0;clear: both;visibility: hidden;}
     </style>
@@ -21,6 +25,12 @@
 </section>
 <section>
     <div id="cartesian"></div>
+    <ul class="js_crt_menu c-fix">
+        <li class="active">北京</li>
+        <li>石家庄</li>
+        <li>成都</li>
+        <li>济南</li>
+    </ul>
 </section>
 <section class="half c-fix">
     <div id="heatmap"></div>

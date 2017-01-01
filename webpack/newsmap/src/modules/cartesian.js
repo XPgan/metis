@@ -8,8 +8,8 @@ export default {
         },
         animation: false,
         grid: {
-            height: '50%',
-            y: '10%'
+            height: '70%',
+            y: '5%'
         },
         xAxis: {
             type: 'category',
@@ -31,7 +31,7 @@ export default {
             calculable: true,
             orient: 'horizontal',
             left: 'center',
-            bottom: '15%'
+            bottom: '5%'
         },
         series: [
             {
@@ -60,7 +60,7 @@ export default {
             this.opts.yAxis.data.push('2015/12/' + i);
         }
 
-        var city = '北京';
+        var city = data.city || '北京';
         var result = [];
         var data = data.data[city];
         for (let i in data) {

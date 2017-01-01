@@ -14,6 +14,8 @@ import hmData from './data/hmData'
 import plData from './data/plData'
 import crtData from './data/crtData'
 
+import $ from 'npm-zepto'
+
 barLine.sketch(bLData);
 funnel.sketch(fnData);
 radar.sketch(rdData);
@@ -21,3 +23,12 @@ stackedbarLine.sketch(skbLData);
 heatmap.sketch(hmData);
 parallel.sketch(plData);
 cartesian.sketch(crtData);
+
+$('.js_crt_menu').on('click', 'li', function (e) {
+    var $target = $(e.target);
+    var city = $target.text();
+    $target.addClass('active').siblings().removeClass('active');
+
+    crtData.city = city;
+    cartesian.sketch(crtData);
+});

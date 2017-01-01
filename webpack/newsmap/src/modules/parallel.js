@@ -4,7 +4,10 @@ export default {
     container: document.getElementById('parallel'),
     opts: {
         title: {
-            text: ''
+            text: '',
+            textStyle: {
+                color: '#fff'
+            }
         },
         backgroundColor: '#333',
         legend: {

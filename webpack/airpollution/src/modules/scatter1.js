@@ -94,7 +94,7 @@ export default {
     sketch (data) {
         for (let city in data.data) {
             var vals = [];
-            var pollutant = 'pm2.5';
+            var pollutant = data.pollutant || 'pm2.5';
             vals.push(data.data[city]['population']);
             vals.push(data.data[city]['gdp']);
             vals.push(data.data[city][pollutant]);

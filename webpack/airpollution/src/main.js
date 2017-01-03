@@ -39,3 +39,12 @@ $('.js_hm_menu').on('click', 'li', function (e) {
     hmData.hour = hour;
     heatmap.sketch(hmData);
 });
+$('.js_sct_menu').on('click', 'li', function (e) {
+    var $target = $(e.target);
+    var pollutant = $target.text().toLowerCase();
+    $target.addClass('active').siblings().removeClass('active');
+
+    sctData.pollutant = pollutant;
+    scatter1.sketch(sctData);
+    scatter2.sketch(sctData);
+});

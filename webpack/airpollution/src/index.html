@@ -18,6 +18,7 @@
         section ul li.active{color: #e05656;}
 
         .c-fix:after {content: "";display: block;height: 0;clear: both;visibility: hidden;}
+        .c-horizontal{bottom: 20px;left: 50%;right: auto;-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);background-color: rgba(0, 0, 0, 0.5);padding: 0 10px;border-radius: 10px/50%;}
     </style>
 </head>
 <body>
@@ -47,6 +48,12 @@
 <section class="c-fix half">
     <div id="scatter1"></div>
     <div id="scatter2"></div>
+    <ul class="js_sct_menu c-fix c-white c-horizontal">
+        <li class="active">PM2.5</li>
+        <li>PM10</li>
+        <li>SO2</li>
+        <li>NO2</li>
+    </ul>
 </section>
 <section>
     <div id="barLine"></div>

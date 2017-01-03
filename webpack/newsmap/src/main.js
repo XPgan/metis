@@ -32,3 +32,11 @@ $('.js_crt_menu').on('click', 'li', function (e) {
     crtData.city = city;
     cartesian.sketch(crtData);
 });
+$('.js_hm_menu').on('click', 'li', function (e) {
+    var $target = $(e.target);
+    var hour = $target.text();
+    $target.addClass('active').siblings().removeClass('active');
+
+    hmData.hour = hour;
+    heatmap.sketch(hmData);
+});

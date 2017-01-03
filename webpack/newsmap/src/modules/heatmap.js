@@ -247,7 +247,8 @@ export default {
         ]
     },
     sketch (data) {
-        this.opts.series[0].data = convertData(data.data);
+        var hour = data.hour || '0时';
+        this.opts.series[0].data = convertData(data.data[hour]);
         echarts.init(this.container).setOption(this.opts);
     }
 }

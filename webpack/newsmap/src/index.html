@@ -6,14 +6,15 @@
     <style>
         *{margin: 0;padding: 0;}
         html, body{width: 100%;height: 100%;}
-        body{text-align: left;font-family: "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", Arial, Verdana;}
+        body{text-align: left;font-family: "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", Arial, Verdana;color: #333;}
         ul, ol{list-style: none;}
         section{height: 100%;border-bottom: 1px solid #999;position: relative;}
         section > div{width: 100%;height: 100%;padding: 15px;box-sizing: border-box;}
         section:last-child{border: none;}
         section ul{position: absolute;bottom: 50px;right: 50px;}
-        section ul li{float: left;line-height: 1.5;margin: 0 10px;cursor: pointer;}
-        section ul li.active{color: indianred;}
+        section ul.c-white{color: #fff;}
+        section ul li{float: left;line-height: 1.2;margin: 0 10px;cursor: pointer;}
+        section ul li.active{color: #e05656;}
 
         .c-fix:after {content: "";display: block;height: 0;clear: both;visibility: hidden;}
     </style>
@@ -33,6 +34,14 @@
 </section>
 <section>
     <div id="heatmap"></div>
+    <ul class="js_hm_menu c-fix c-white">
+        <li class="active">0时</li>
+        <li>4时</li>
+        <li>8时</li>
+        <li>12时</li>
+        <li>16时</li>
+        <li>20时</li>
+    </ul>
 </section>
 <section>
     <div id="barLine"></div>

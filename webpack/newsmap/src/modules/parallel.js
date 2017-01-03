@@ -81,7 +81,6 @@ export default {
             this.opts.legend.data.push(city);
             this.opts.series.push(obj);
         }
-
         this.opts.parallelAxis = [
             {dim: 0, name: data.schema[0].text, inverse: true, max: 31, nameLocation: 'start'},
             {dim: 1, name: data.schema[1].text},

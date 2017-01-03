@@ -1,7 +1,7 @@
 import echarts from 'echarts'
 
 export default {
-    container: document.getElementById('radar'),
+    container: document.getElementById('radar2'),
     opts: {
         legend: {
             x: 'center',
@@ -29,11 +29,20 @@ export default {
         ]
     },
     sketch (data) {
-        this.opts.polar[0].indicator = data.indicator;
-        this.opts.series[0].data = data.data;
-        for (let i in data.data) {
-            this.opts.legend.data.push(data.data[i].name);
+        for (let city in data.data) {
+            var index = 0;
+            var vals = [];
+            for (let key in data.data[city]) {
+                (index > 5) && vals.push(data.data[city][key]);
+                index++;
+            }
+            this.opts.legend.data.push(city);
+            this.opts.series[0].data.push({
+                value: vals,
+                name: city
+            });
         }
+        this.opts.polar[0].indicator = data.indicator2;
         echarts.init(this.container).setOption(this.opts);
     }
 }

@@ -3,12 +3,14 @@ import radar from './modules/radar'
 import heatmap from './modules/heatmap'
 import parallel from './modules/parallel'
 import cartesian from './modules/cartesian'
+import scatter1 from './modules/scatter1'
 
 import bLData from './data/bLData'
 import rdData from './data/rdData'
 import hmData from './data/hmData'
 import plData from './data/plData'
 import crtData from './data/crtData'
+import sctData from './data/sctData'
 
 import $ from 'npm-zepto'
 
@@ -17,6 +19,7 @@ radar.sketch(rdData);
 heatmap.sketch(hmData);
 parallel.sketch(plData);
 cartesian.sketch(crtData);
+scatter1.sketch(sctData);
 
 $('.js_crt_menu').on('click', 'li', function (e) {
     var $target = $(e.target);

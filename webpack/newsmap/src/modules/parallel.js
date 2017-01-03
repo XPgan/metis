@@ -21,6 +21,9 @@ export default {
             dimension: 2,
             inRange: {
                 color: ['#d94e5d', '#eac736', '#50a3ba'].reverse(),
+            },
+            textStyle: {
+                color: '#fff'
             }
         },
         parallel: {

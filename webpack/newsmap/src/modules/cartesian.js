@@ -9,17 +9,27 @@ export default {
             y: '5%'
         },
         xAxis: {
+            name: 'PM2.5',
             type: 'category',
             data: [],
             splitArea: {
                 show: true
+            },
+            nameTextStyle: {
+                color: '#e05656',
+                fontSize: 14
             }
         },
         yAxis: {
+            name: '日期',
             type: 'category',
             data: [],
             splitArea: {
                 show: true
+            },
+            nameTextStyle: {
+                color: '#e05656',
+                fontSize: 14
             }
         },
         visualMap: {

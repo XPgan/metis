@@ -92,6 +92,7 @@ export default {
         series: []
     },
     sketch (data) {
+        this.opts.series = [];
         for (let city in data.data) {
             var vals = [];
             var pollutant = data.pollutant || 'pm2.5';

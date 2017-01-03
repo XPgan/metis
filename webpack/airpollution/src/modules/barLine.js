@@ -7,12 +7,6 @@ export default {
             data: []
         },
         calculable: true,
-        dataZoom: {
-            show: true,
-            realtime: true,
-            start: 40,
-            end: 60
-        },
         xAxis: [
             {
                 type: 'category',

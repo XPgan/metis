@@ -10,7 +10,8 @@
         ul, ol{list-style: none;}
         section{height: 100%;border-bottom: 1px solid #999;position: relative;}
         section > div{width: 100%;height: 100%;padding: 15px;box-sizing: border-box;}
-        section:last-child{border: none;}
+        section.half > div{width: 50%;float: left;border-right: 1px solid #999;}
+        section:last-child, section.half > div:last-child{border: none;}
         section ul{position: absolute;bottom: 50px;right: 50px;}
         section ul.c-white{color: #fff;}
         section ul li{float: left;line-height: 1.2;margin: 0 10px;cursor: pointer;}
@@ -43,8 +44,9 @@
         <li>20时</li>
     </ul>
 </section>
-<section>
+<section class="c-fix half">
     <div id="scatter1"></div>
+    <div id="scatter2"></div>
 </section>
 <section>
     <div id="barLine"></div>

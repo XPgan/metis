@@ -585,7 +585,7 @@ export default {
         ]
     },
     schema: [
-        {name: 'date', index: 0, text: '日期（12月/x日）'},
+        {name: 'date', index: 0, text: '日期（2015/12/x）'},
         {name: 'aqi', index: 1, text: 'AQI'},
         {name: 'no2', index: 2, text: 'NO2（μg/m3）'},
         {name: 'co', index: 3, text: 'CO（μg/m3）'},

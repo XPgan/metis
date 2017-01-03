@@ -1,6 +1,5 @@
 import barLine from './modules/barLine'
-import radar1 from './modules/radar1'
-import radar2 from './modules/radar2'
+import radar from './modules/radar'
 import heatmap from './modules/heatmap'
 import parallel from './modules/parallel'
 import cartesian from './modules/cartesian'
@@ -17,8 +16,7 @@ import sctData from './data/sctData'
 import $ from 'npm-zepto'
 
 barLine.sketch(bLData);
-radar1.sketch(rdData);
-radar2.sketch(rdData);
+radar.sketch(rdData);
 heatmap.sketch(hmData);
 parallel.sketch(plData);
 cartesian.sketch(crtData);

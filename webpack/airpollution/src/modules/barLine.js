@@ -28,10 +28,13 @@ export default {
         series: []
     },
     sketch (data) {
-        for (let key in data.data) {
+        for (let i = 1;i < 13;i++) {
+            this.opts.xAxis[0].data.push('2015/' + i);
+        }
+        for (let figure in data.data) {
             var obj = {};
-            var loop = data.data[key];
-            obj.type = key;
+            var loop = data.data[figure];
+            obj.type = loop.type;
             obj.name = loop.name;
             obj.data = loop.value;
             this.opts.legend.data.push(obj.name);

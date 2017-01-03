@@ -585,14 +585,14 @@ export default {
         ]
     },
     schema: [
-        {name: 'date', index: 0, text: '日期（12月 / x日）'},
+        {name: 'date', index: 0, text: '日期（12月/x日）'},
         {name: 'aqi', index: 1, text: 'AQI'},
-        {name: 'no2', index: 2, text: 'NO2'},
-        {name: 'co', index: 3, text: 'CO'},
-        {name: 'o3', index: 4, text: 'O3'},
-        {name: 'so2', index: 5, text: 'SO2'},
-        {name: 'pm2.5', index: 6, text: 'PM2.5'},
-        {name: 'pm10', index: 7, text: 'PM10'},
+        {name: 'no2', index: 2, text: 'NO2（μg/m3）'},
+        {name: 'co', index: 3, text: 'CO（μg/m3）'},
+        {name: 'o3', index: 4, text: 'O3（μg/m3）'},
+        {name: 'so2', index: 5, text: 'SO2（μg/m3）'},
+        {name: 'pm2.5', index: 6, text: 'PM2.5（μg/m3）'},
+        {name: 'pm10', index: 7, text: 'PM10（μg/m3）'},
         {name: 'pripollu', index: 8, text: '首要污染物'},
         {name: 'level', index: 9, text: '污染等级'}
     ]

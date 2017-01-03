@@ -1,19 +1,19 @@
 export default {
     indicator1: [
-        {text: 'PM2.5', max: 500},
-        {text: 'PM10', max: 500},
-        {text: 'SO2', max: 500},
-        {text: 'NO2', max: 500},
-        {text: 'CO', max: 500},
-        {text: 'O3', max: 500},
+        {text: 'PM2.5（μg/m3）', max: 500},
+        {text: 'PM10（μg/m3）', max: 500},
+        {text: 'SO2（μg/m3）', max: 500},
+        {text: 'NO2（μg/m3）', max: 500},
+        {text: 'CO（μg/m3）', max: 500},
+        {text: 'O3（μg/m3）', max: 500},
     ],
     indicator2: [
-        {text: '工业二氧化硫', max: 160000},
-        {text: '工业氮氧化物', max: 160000},
-        {text: '工业粉尘', max: 160000},
-        {text: '生活二氧化硫', max: 160000},
-        {text: '生活氮氧化物', max: 160000},
-        {text: '生活粉尘', max: 160000}
+        {text: '工业二氧化硫（吨）', max: 160000},
+        {text: '工业氮氧化物（吨）', max: 160000},
+        {text: '工业粉尘（吨）', max: 160000},
+        {text: '生活二氧化硫（吨）', max: 160000},
+        {text: '生活氮氧化物（吨）', max: 160000},
+        {text: '生活粉尘（吨）', max: 160000}
     ],
     data: {
         '北京': {

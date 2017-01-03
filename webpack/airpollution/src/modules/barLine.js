@@ -16,19 +16,29 @@ export default {
         xAxis: [
             {
                 type: 'category',
+                name: '月份',
                 boundaryGap: true,
-                data: []
+                data: [],
+                nameTextStyle: {
+                    color: '#e05656',
+                    fontSize: 14
+                }
             }
         ],
         yAxis: [
             {
-                type: 'value'
+                type: 'value',
+                name: '数值',
+                nameTextStyle: {
+                    color: '#e05656',
+                    fontSize: 14
+                }
             }
         ],
         series: []
     },
     sketch (data) {
-        for (let i = 1;i < 13;i++) {
+        for (let i = 1; i < 13; i++) {
             this.opts.xAxis[0].data.push('2015/' + i);
         }
         for (let figure in data.data) {

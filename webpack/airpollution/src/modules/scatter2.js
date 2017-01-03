@@ -67,7 +67,7 @@ export default {
                 itemHeight: 120,
                 calculable: true,
                 precision: 0.1,
-                text: ['圆形大小：污染物指数'],
+                text: ['圆形大小：污染物指数（μg/m3）'],
                 textGap: 30,
                 textStyle: {
                     color: '#fff'

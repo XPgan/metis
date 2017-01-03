@@ -9,7 +9,7 @@ export default {
             y: '5%'
         },
         xAxis: {
-            name: 'PM2.5',
+            name: 'PM2.5（μg/m3）',
             type: 'category',
             data: [],
             splitArea: {

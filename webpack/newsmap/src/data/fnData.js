@@ -1,5 +1,4 @@
 export default {
-    title: '性别年龄分布',
     data: [
         {value: 60, name: '访问'},
         {value: 30, name: '咨询'},

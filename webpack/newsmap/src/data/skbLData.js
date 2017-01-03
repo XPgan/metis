@@ -1,5 +1,4 @@
 export default {
-    title: '舆论导向分布',
     xAxis: ['Line', 'Bar', 'Scatter', 'K', 'Map'],
     data: {
         bar: [

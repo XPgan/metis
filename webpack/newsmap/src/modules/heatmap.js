@@ -207,12 +207,6 @@ var convertData = function (data) {
 export default {
     container: document.getElementById('heatmap'),
     opts: {
-        title: {
-            text: '',
-            textStyle: {
-                color: '#fff'
-            }
-        },
         backgroundColor: '#404a59',
         visualMap: {
             min: 0,
@@ -253,7 +247,6 @@ export default {
         ]
     },
     sketch (data) {
-        this.opts.title.text = data.title;
         this.opts.series[0].data = convertData(data.data);
         echarts.init(this.container).setOption(this.opts);
     }

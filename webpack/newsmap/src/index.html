@@ -5,13 +5,12 @@
     <title>NewsMap</title>
     <style>
         *{margin: 0;padding: 0;}
+        html, body{width: 100%;height: 100%;}
         body{text-align: left;font-family: "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", Arial, Verdana;}
         ul, ol{list-style: none;}
-        html, body{width: 100%;height: 100%;}
         section{height: 100%;border-bottom: 1px solid #999;position: relative;}
         section > div{width: 100%;height: 100%;padding: 15px;box-sizing: border-box;}
-        section.half > div{width: 50%;float: left;border-right: 1px solid #999;}
-        section:last-child, section.half > div:last-child{border: none;}
+        section:last-child{border: none;}
         section ul{position: absolute;bottom: 50px;right: 50px;}
         section ul li{float: left;line-height: 1.5;margin: 0 10px;cursor: pointer;}
         section ul li.active{color: indianred;}
@@ -41,8 +40,10 @@
 <section>
     <div id="stackedbarLine"></div>
 </section>
-<section class="half c-fix">
+<section>
     <div id="funnel"></div>
+</section>
+<section>
     <div id="radar"></div>
 </section>
 </body>

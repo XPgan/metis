@@ -3,12 +3,6 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('parallel'),
     opts: {
-        title: {
-            text: '',
-            textStyle: {
-                color: '#fff'
-            }
-        },
         backgroundColor: '#333',
         legend: {
             bottom: 30,
@@ -110,8 +104,6 @@ export default {
                 data: ['优', '良', '轻度污染', '中度污染', '重度污染', '严重污染']
             }
         ];
-
-        this.opts.title.text = data.title;
         echarts.init(this.container).setOption(this.opts);
     }
 }

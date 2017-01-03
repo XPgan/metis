@@ -1,5 +1,4 @@
 export default {
-    title: '事件关注度',
     xAxis: [
         '2016-01',
         '2016-02',

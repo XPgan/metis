@@ -3,9 +3,6 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('cartesian'),
     opts: {
-        title: {
-            text: ''
-        },
         animation: false,
         grid: {
             height: '70%',
@@ -74,7 +71,6 @@ export default {
             return [item[1], item[0], item[2] || '-'];
         });
 
-        this.opts.title.text = data.title;
         this.opts.series[0].data = result;
         echarts.init(this.container).setOption(this.opts);
     }

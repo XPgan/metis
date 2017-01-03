@@ -1,5 +1,4 @@
 export default {
-    title: '用户画像－职业分布',
     indicator: [
         {text: '进攻', max: 100},
         {text: '防守', max: 100},

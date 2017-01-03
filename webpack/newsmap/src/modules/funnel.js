@@ -3,9 +3,6 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('funnel'),
     opts: {
-        title: {
-            text: ''
-        },
         legend: {
             orient: 'vertical',
             x: 'right',
@@ -75,7 +72,6 @@ export default {
         for (let i in series) {
             series[i].data = data.data;
         }
-        this.opts.title.text = data.title;
         echarts.init(this.container).setOption(this.opts);
     }
 }

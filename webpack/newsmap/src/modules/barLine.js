@@ -3,9 +3,6 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('barLine'),
     opts: {
-        title: {
-            text: ''
-        },
         legend: {
             data: []
         },
@@ -31,7 +28,6 @@ export default {
         series: []
     },
     sketch (data) {
-        this.opts.title.text = data.title;
         for (let key in data.data) {
             var obj = {};
             var loop = data.data[key];

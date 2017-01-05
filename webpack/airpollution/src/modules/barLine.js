@@ -32,7 +32,7 @@ export default {
         yAxis: [
             {
                 type: 'value',
-                name: '数值',
+                name: '指数',
                 nameTextStyle: {
                     color: '#e05656',
                     fontSize: 14

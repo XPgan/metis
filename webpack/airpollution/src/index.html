@@ -9,32 +9,22 @@
         body{text-align: left;font-family: "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", Arial, Verdana;color: #333;}
         ul, ol{list-style: none;}
         section{height: 100%;border-bottom: 1px solid #999;position: relative;}
-        section > div{width: 100%;height: 100%;padding: 15px;box-sizing: border-box;}
+        section > div{width: 100%;height: 100%;padding: 44px 15px 15px;box-sizing: border-box;}
         section.half > div{width: 50%;float: left;border-right: 1px solid #999;}
         section:last-child, section.half > div:last-child{border: none;}
         section ul{position: absolute;bottom: 30px;right: 40px;}
-        section ul.c-white{color: #fff;}
         section ul li{float: left;line-height: 1.6;margin: 0 10px;cursor: pointer;}
         section ul li.active{color: #e05656;}
+        section h2{position: absolute;top: 0;left: 0;z-index: 10;width: 100%;font-size: 20px;font-weight: normal;line-height: 44px;text-align: center;}
 
+        .c-white{color: #fff;}
         .c-fix:after {content: "";display: block;height: 0;clear: both;visibility: hidden;}
         .c-horizontal{bottom: 20px;left: 50%;right: auto;-webkit-transform: translate(-50%, 0);transform: translate(-50%, 0);background-color: rgba(0, 0, 0, 0.5);padding: 0 10px;border-radius: 10px/50%;}
     </style>
 </head>
 <body>
 <section>
-    <div id="parallel"></div>
-</section>
-<section>
-    <div id="cartesian"></div>
-    <ul class="js_crt_menu c-fix">
-        <li class="active">北京</li>
-        <li>石家庄</li>
-        <li>成都</li>
-        <li>济南</li>
-    </ul>
-</section>
-<section>
+    <h2 class="c-white">全国空气质量实时监测</h2>
     <div id="heatmap"></div>
     <ul class="js_hm_menu c-fix c-white">
         <li class="active">0时</li>
@@ -45,7 +35,26 @@
         <li>20时</li>
     </ul>
 </section>
+<section>
+    <h2>重点城市24小时空气质量对比</h2>
+    <div id="cartesian"></div>
+    <ul class="js_crt_menu c-fix">
+        <li class="active">北京</li>
+        <li>石家庄</li>
+        <li>成都</li>
+        <li>济南</li>
+    </ul>
+</section>
+<section>
+    <h2 class="c-white">重点城市雾霾污染物数量分布</h2>
+    <div id="parallel"></div>
+</section>
+<section>
+    <h2>重点城市雾霾污染物与产业结构分布关系</h2>
+    <div id="radar"></div>
+</section>
 <section class="c-fix half">
+    <h2 class="c-white">城市污染物 vs 人口 vs 经济 vs 车辆保有量 vs 废气治理投入关联分析</h2>
     <div id="scatter1"></div>
     <div id="scatter2"></div>
     <ul class="js_sct_menu c-fix c-white c-horizontal">
@@ -56,9 +65,7 @@
     </ul>
 </section>
 <section>
-    <div id="radar"></div>
-</section>
-<section>
+    <h2>温度及湿度与可吸入微粒传播关联分析</h2>
     <div id="barLine"></div>
 </section>
 </body>

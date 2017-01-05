@@ -48,3 +48,10 @@ $('.js_sct_menu').on('click', 'li', function (e) {
     scatter1.sketch(sctData);
     scatter2.sketch(sctData);
 });
+$('.js_show_desc').on('click', function () {
+    var $desc = $(this).parents('section').find('.js_desc');
+    $desc.show();
+});
+$('.js_desc').on('click', function () {
+    $(this).hide();
+});

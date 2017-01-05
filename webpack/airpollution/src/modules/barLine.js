@@ -16,7 +16,7 @@ export default {
         xAxis: [
             {
                 type: 'category',
-                name: '月份',
+                name: '月份（2015/X）',
                 boundaryGap: true,
                 data: [],
                 nameTextStyle: {
@@ -39,7 +39,7 @@ export default {
     },
     sketch (data) {
         for (let i = 1; i < 13; i++) {
-            this.opts.xAxis[0].data.push('2015/' + i);
+            this.opts.xAxis[0].data.push(i.toString());
         }
         for (let figure in data.data) {
             var obj = {};

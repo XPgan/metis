@@ -28,7 +28,7 @@ export default {
         },
         parallel: {
             left: '5%',
-            right: '18%',
+            right: '10%',
             bottom: 100,
             parallelAxisDefault: {
                 type: 'value',

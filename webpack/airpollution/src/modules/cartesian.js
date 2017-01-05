@@ -9,7 +9,7 @@ export default {
             y: '5%'
         },
         xAxis: {
-            name: 'PM2.5（μg/m3）',
+            name: '时间',
             type: 'category',
             data: [],
             splitArea: {
@@ -21,7 +21,7 @@ export default {
             }
         },
         yAxis: {
-            name: '日期',
+            name: '日期（2015/12/X）',
             type: 'category',
             data: [],
             splitArea: {
@@ -64,7 +64,7 @@ export default {
             this.opts.xAxis.data.push(i.toString());
         }
         for (let i = 0; i < 32; i++) {
-            this.opts.yAxis.data.push('2015/12/' + i);
+            this.opts.yAxis.data.push(i.toString());
         }
 
         var city = data.city || '北京';

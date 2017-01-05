@@ -3,6 +3,10 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('scatter2'),
     opts: {
+        tooltip: {
+            show: true,
+            formatter: '{c}'
+        },
         backgroundColor: '#404a59',
         color: [
             '#dd4444', '#fec42c', '#80f1be', '#3adbd2'

@@ -223,10 +223,12 @@ export default {
             map: 'china',
             label: {
                 emphasis: {
-                    show: false
+                    show: true,
+                    textStyle: {
+                        color: '#fff'
+                    }
                 }
             },
-            roam: true,
             itemStyle: {
                 normal: {
                     areaColor: '#323c48',

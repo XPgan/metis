@@ -3,6 +3,10 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('barLine'),
     opts: {
+        tooltip: {
+            show: true,
+            formatter: '{c}'.split(',')
+        },
         legend: {
             data: []
         },

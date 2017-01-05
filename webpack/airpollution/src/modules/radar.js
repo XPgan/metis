@@ -11,6 +11,10 @@ var itemStyle = {
 export default {
     container: document.getElementById('radar'),
     opts: {
+        tooltip: {
+            show: true,
+            formatter: '{c}'.split(',')
+        },
         legend: {
             x: 'center',
             data: []

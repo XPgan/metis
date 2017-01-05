@@ -3,6 +3,10 @@ import echarts from 'echarts'
 export default {
     container: document.getElementById('cartesian'),
     opts: {
+        tooltip: {
+            show: true,
+            formatter: '{c}'
+        },
         animation: false,
         grid: {
             height: '70%',

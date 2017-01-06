@@ -70,7 +70,6 @@ export default {
         for (let i = 0; i < 32; i++) {
             this.opts.yAxis.data.push(i.toString());
         }
-
         var city = data.city || '北京';
         var result = [];
         var data = data.data[city];

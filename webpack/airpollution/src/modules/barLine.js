@@ -5,7 +5,7 @@ export default {
     opts: {
         tooltip: {
             show: true,
-            formatter: '{c}'.split(',')
+            formatter: '{c}'
         },
         legend: {
             data: []

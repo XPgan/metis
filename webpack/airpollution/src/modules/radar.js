@@ -1,13 +1,5 @@
 import echarts from 'echarts'
 
-var itemStyle = {
-    normal: {
-        areaStyle: {
-            type: 'default'
-        }
-    }
-};
-
 export default {
     container: document.getElementById('radar'),
     opts: {
@@ -36,13 +28,25 @@ export default {
             {
                 type: 'radar',
                 radarIndex: 0,
-                itemStyle: itemStyle,
+                itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            type: 'default'
+                        }
+                    }
+                },
                 data: []
             },
             {
                 type: 'radar',
                 radarIndex: 1,
-                itemStyle: itemStyle,
+                itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            type: 'default'
+                        }
+                    }
+                },
                 data: []
             }
         ]

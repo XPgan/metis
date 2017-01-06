@@ -152,7 +152,9 @@
 
 + 基本示例 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/basic)
 
-+ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/visualization) [(demo)](https://sunmengyuan.github.io/demos/webpack/visualization)
++ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/university) [(demo)](https://sunmengyuan.github.io/demos/webpack/university)
+
++ 全国空气质量调查 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/airpollution) [(demo)](https://sunmengyuan.github.io/demos/webpack/airpollution)
 
 *****
 

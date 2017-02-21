@@ -492,3 +492,11 @@ Vue.filter('reverse', function (value) {
 + __vue-touch__
 
     + [笔记](https://github.com/sunmengyuan/note/blob/master/vue/touch.md)
+    
+*****    
+
+### #新增 ###
+
++ __render 函数__
+
+    <http://cn.vuejs.org/v2/guide/render-function.html>

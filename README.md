@@ -2,9 +2,9 @@
 
 #### 参考资料 ####
 
-+ [Node.js开发指南](https://github.com/sunmengyuan/book/blob/master/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
++ [Node.js开发指南](http://okj45byt5.bkt.clouddn.com/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
 
-+ [深入浅出Node.js](https://github.com/sunmengyuan/book/blob/master/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
++ [深入浅出Node.js](http://okj45byt5.bkt.clouddn.com/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
 
 #### 示例 ####
 
@@ -58,7 +58,7 @@
 
 #### 参考资料 ####
 
-+ [HTML5 Canvas核心技术](https://github.com/sunmengyuan/book/blob/master/HTML5%20Canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.pdf)
++ [HTML5 Canvas核心技术](http://okj45byt5.bkt.clouddn.com/HTML5%20Canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.pdf)
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/canvas) ####
 
@@ -183,5 +183,3 @@
 作者：呆恋小喵
 
 欢迎参观：<https://sunmengyuan.github.io/garden/>
-
-更多参考资料：<https://github.com/sunmengyuan/book>

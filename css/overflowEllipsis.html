@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
     <title>OverflowEllipsis</title>
     <style type="text/less">
         *{margin: 0;padding: 0;}
@@ -62,7 +63,7 @@
                         position: relative;
                         float: right;
                         font-size: @fontSize;
-                        width: @holderFontSize;
+                        width: @holderFontSize - 10;
                         height: @lineHeight;
                         margin-top: -@lineHeight;
 
@@ -74,13 +75,13 @@
             }
         }
         .ellipsis-line2 {
-            .c-ellipsis (12px, 48px, 16px, 2);
+            .c-ellipsis (12px, 58px, 16px, 2);
         }
         .ellipsis-line3 {
-            .c-ellipsis (14px, 56px, 18px, 3);
+            .c-ellipsis (14px, 66px, 18px, 3);
         }
         .ellipsis-line4 {
-            .c-ellipsis (18px, 72px, 24px, 4);
+            .c-ellipsis (18px, 82px, 24px, 4);
         }
     </style>
     <script src="https://cdn.bootcss.com/less.js/1.7.0/less.min.js"></script>

@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
     <title>OverflowEllipsis</title>
     <style type="text/less">
-        *{margin: 0;padding: 0;}
+        * {
+            margin: 0;
+            padding: 0;
+        }
         body > div {
             padding: 15px;
             margin: 15px;
@@ -19,18 +22,20 @@
             }
         }
 
-        .c-ellipsis (@fontSize: 14px, @holderFontSize: 50px, @lineHeight: 18px, @line: 3) {
+        .c-ellipsis (@fontSize: 14px, @holderFontSize: 50px, @lineHeight: 18px, @lineCount: 3) {
             .box {
                 position: relative;
                 overflow: hidden;
                 line-height: @lineHeight;
-                max-height: @line * @lineHeight;
+                max-height: @lineCount * @lineHeight;
 
                 & > div {
                     position: relative;
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
-                    -webkit-line-clamp: @line;
+                            box-orient: vertical;
+                    -webkit-line-clamp: @lineCount;
+                            line-clamp: @lineCount;
                     font-size: @holderFontSize;
                 }
                 p {
@@ -57,7 +62,7 @@
                         display: block;
                         float: right;
                         width: 50%;
-                        height: @line * @lineHeight;
+                        height: @lineCount * @lineHeight;
                     }
                     span {
                         position: relative;

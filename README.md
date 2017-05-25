@@ -150,7 +150,7 @@
 
 #### 示例 ####
 
-+ 基本示例 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/basic)
++ 基本示例 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/example)
 
 + 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/university) [(demo)](https://sunmengyuan.github.io/demos/webpack/university)
 

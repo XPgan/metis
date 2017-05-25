@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        var getRequest = function (url) {
+            var promise = new Promise(function (resolve, reject) {
+                var req = new XMLHttpRequest();
+                req.onload = function () {
+                    (req.status == 200)
+                        ? resolve(JSON.parse(req.responseText))
+                        : reject(new Error(req.statusText));
+                };
+                req.onerror = function () {
+                    reject(new Error(req.statusText));
+                };
+                req.open('GET', url, true);
+                req.send();
+            });
+            return promise;
+        };
+        getRequest('./data.json').then(function (value) {
+            console.log(value);
+        }).catch(function (error) {
+            console.error(error);
+        });
+    </script>
+</body>
+</html>

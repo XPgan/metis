@@ -18,7 +18,7 @@
 
 #### 参考资料 ####
 
-+ [vue.js](http://cn.vuejs.org/)
++ [Vue.js](http://cn.vuejs.org/)
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/vue) ####
 
@@ -68,7 +68,7 @@
 
 + 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/bezierCurve.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/bezierCurve.html)
 
-+ 多边形 + 拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drag.html)
++ 使用 Canvas 实现元素拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drag.html)
 
 *****
 
@@ -80,9 +80,9 @@
 
 + 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](https://sunmengyuan.github.io/demos/svg/cat.html)
 
-+ 路径动画 + 蒙版 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](https://sunmengyuan.github.io/demos/svg/paint.html)
++ 路径动画加蒙板实现橡皮擦特效 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](https://sunmengyuan.github.io/demos/svg/paint.html)
 
-+ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
++ loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
 
 *****
 

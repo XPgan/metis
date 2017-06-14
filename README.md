@@ -8,7 +8,7 @@
 
 #### 示例 ####
 
-+ 简易微博系统 [(code)](https://github.com/sunmengyuan/note/tree/master/node/expo)
++ 简易博客系统 [(code)](https://github.com/sunmengyuan/note/tree/master/node/expo)
 
 + 多人聊天室 [(code)](https://github.com/sunmengyuan/note/tree/master/node/chat)
 

@@ -126,7 +126,7 @@
 
 #### 参考资料 ####
 
-+ [sass入门 - sass教程](http://www.w3cplus.com/sassguide/)
++ [Sass入门 - Sass教程](http://www.w3cplus.com/sassguide/)
 
 *****
 
@@ -144,7 +144,7 @@
 
 #### 参考资料 ####
 
-+ [webpack](https://webpack.github.io/docs/)
++ [Webpack](https://webpack.github.io/docs/)
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/webpack) ####
 

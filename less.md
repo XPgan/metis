@@ -8,7 +8,7 @@ __特性__
 - 函数
 
 __解析__
-```linux
+```bash
 lessc $source.less > $target.css
 ```
 

@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "pages/loading/loading"
+  ],
+  "window": {
+    "navigationBarTitleText": "测试"
+  },
+  "debug": true
+}

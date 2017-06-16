@@ -1,30 +1,14 @@
-### Git ###
-
-+ __merge__
-
-    ```linux
-    git merge --no-ff $branch_name
-    ```
-
-+ __reset__
-
-    ```linux
-    git reset --hard origin/$branch_name
-    ```
-
-*****    
-  
 ### 插件安装 ###
 
 + __npm__
 
-    ```linux
+    ```bash
     curl -L https://npmjs.com/install.sh | sh
     ```
 
 + __express__
 
-    ```linux
+    ```bash
     npm install -g express-generator
     ```
 
@@ -36,21 +20,15 @@
 
     + __process__
     
-        ```linux
+        ```bash
         lsof -i: $port
         kill $id
         ```
 
     + __redis__
     
-        ```linux
+        ```bash
         redis-cli
         shutdown
         exit
         ```   
-
-+ search
-
-    ```linux
-    find . -name $pattern
-    ```   

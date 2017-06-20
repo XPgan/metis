@@ -2,6 +2,8 @@
 
 项目名称 __university__
 
+请欣赏 [demo](https://sunmengyuan.github.io/demos/echarts/university)。
+
 *****
 
 参考资料

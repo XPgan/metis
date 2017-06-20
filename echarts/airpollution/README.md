@@ -2,6 +2,8 @@
 
 项目名称 __airpollution__
 
+请欣赏 [demo](https://sunmengyuan.github.io/demos/echarts/airpollution)。
+
 *****
 
 参考资料

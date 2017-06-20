@@ -6,6 +6,14 @@
 
 *****
 
+参考资料
+
++ [Vue.js](http://cn.vuejs.org/)
+
++ [使用 HTML5 音频和视频 - Web开发者指南 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Using_HTML5_audio_and_video)
+
+*****
+
 启动方法：
     
 ```bash

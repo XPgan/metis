@@ -1,23 +1,33 @@
-## Build Setup ##
+# 简易视频播放器 #
 
-``` bash
-# install dependencies
+项目名称 __videoPlayer__
+
+基于 Vue.js 组件化的思想，将播放器控件封装。并尝试了 Vue.js 的打包上线流程，遇到了点小挫折，压缩后静态资源地址错误...
+
+*****
+
+启动方法：
+    
+```bash
+cd videoPlayer
 npm install
-
-# serve with hot reload at localhost:8000
 npm run dev
-
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+打包方法：
+
+```bash
+cd videoPlayer
+npm install
+npm run build
+```
+
+打包后的文件在 __dist__ 文件夹内。建议了解一下 [Npm](https://www.npmjs.com/) 及 [Webpack](https://webpack.github.io/docs/)。
+
+*****
+    
+作者：呆恋小喵
+
+欢迎参观：<https://sunmengyuan.github.io/garden/>
+
+*****

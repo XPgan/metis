@@ -1,4 +1,4 @@
-### Node ###
+### Node.js ###
 
 #### 参考资料 ####
 
@@ -14,7 +14,7 @@
 
 *****
 
-### Vue ###
+### Vue.js ###
 
 #### 参考资料 ####
 
@@ -86,7 +86,7 @@
 
 *****
 
-### Three ###
+### Three.js ###
 
 #### 参考资料 ####
 
@@ -100,7 +100,7 @@
 
 *****
 
-### Matter ###
+### Matter.js ###
 
 #### 参考资料 ####
 
@@ -130,6 +130,20 @@
 
 *****
 
+### Echarts ###
+
+#### 参考资料 ####
+
++ [Echarts](http://echarts.baidu.com/)
+
+#### 示例 ####
+
++ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/echarts/university) [(demo)](https://sunmengyuan.github.io/demos/echarts/university)
+
++ 全国空气质量调查 [(code)](https://github.com/sunmengyuan/note/tree/master/echarts/airpollution) [(demo)](https://sunmengyuan.github.io/demos/echarts/airpollution)
+
+*****
+
 ### ECMAScript ###
 
 #### 参考资料 ####
@@ -148,13 +162,7 @@
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/webpack) ####
 
-#### 示例 ####
-
-+ 基本示例 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/example)
-
-+ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/university) [(demo)](https://sunmengyuan.github.io/demos/webpack/university)
-
-+ 全国空气质量调查 [(code)](https://github.com/sunmengyuan/note/tree/master/webpack/airpollution) [(demo)](https://sunmengyuan.github.io/demos/webpack/airpollution)
+#### [示例](https://github.com/sunmengyuan/note/tree/master/webpack/example) ####
 
 *****
 

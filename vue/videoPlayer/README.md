@@ -4,6 +4,8 @@
 
 基于 Vue.js 组件化的思想，将播放器控件封装。并尝试了 Vue.js 的打包上线流程，遇到了点小挫折，压缩后静态资源地址错误...
 
+请欣赏 [demo](https://sunmengyuan.github.io/demos/vue/videoPlayer)。
+
 *****
 
 参考资料
@@ -14,7 +16,7 @@
 
 *****
 
-启动方法：
+启动方法
     
 ```bash
 cd videoPlayer
@@ -22,7 +24,7 @@ npm install
 npm run dev
 ```
 
-打包方法：
+打包方法
 
 ```bash
 cd videoPlayer

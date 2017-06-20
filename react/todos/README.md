@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-打包方法：
+打包方法
 
 ```bash
 cd todos
@@ -35,4 +35,3 @@ npm run build
 作者：呆恋小喵
 
 欢迎参观：<https://sunmengyuan.github.io/garden/>
-

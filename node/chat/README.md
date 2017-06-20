@@ -1,8 +1,12 @@
 # 多人聊天室 #
 
-### express + mongodb + websocket ###
+### Express + Mongodb + Websocket ###
 
-![](./materials/chatroom.png)
+项目名称 __chat__
+
+Node.js 结合了 [WebSocket](https://socket.io/) 的简易多人聊天室，感兴趣的同学可以自行高仿个 QQ 出来。
+
+![](http://oru3b8jlz.bkt.clouddn.com/effect-chat.jpg)
 
 *****
 
@@ -16,7 +20,7 @@
 
 + [MongoDB for GIANT Ideas | MongoDB](https://www.mongodb.com/)
 
-+ [mongoose文档](http://www.nodeclass.com/api/mongoose.html)
++ [Mongoose文档](http://www.nodeclass.com/api/mongoose.html)
 
 + [Express - 基于Node.js平台的web应用开发框架](http://www.expressjs.com.cn/)
 
@@ -24,41 +28,31 @@
 
 *****
 
-作者：呆恋小喵
+启动方法
+    
+需要[安装 MongoDB](https://www.mongodb.com/download-center?jmp=homepage#community)。不了解 MongoDB 的同学可移驾[官网](https://www.mongodb.com/)，英语欠佳的请点击[此处](http://www.runoob.com/mongodb/mongodb-tutorial.html)。
 
-欢迎参观：<https://sunmengyuan.github.io/garden/>
+需要创建数据库（database）__chat__，数据表（collection）__users__。具体方法请参见 [MongoDB 概念解析](http://www.runoob.com/mongodb/mongodb-databases-documents-collections.html)。
 
-*****
+```bash
+// 启动 mongodb
+cd mongodb
+mkdir -p data/db
+cd mongodb/bin
+./mongod --dbpath ../data/db
+```
 
-_数据库：chat_
-
-_数据表：users_
-
-```javascript
-var userSchema = new Schema({
-    id: String,
-    nickname: String,
-    password: String,
-    sex: String,
-    tel: String,
-    qq: String,
-    intro: String
-});
+```
+// 启动 chat
+cd chat
+npm install
+cd bin
+./www
 ```
 
 *****
 
-### #pages ###
-
-+ __/__ (首页) [效果图](./materials/index.png)
-
-+ __/edit/myinfo__ (个人设置页) [效果图](./materials/settings.png)
-
-+ __/chatroom__ (聊天室) [效果图](./materials/chatroom.png)
-
-*****
-
-### #emphasis ###
+### 核心代码 ###
 
 + __用户上线__
 
@@ -200,3 +194,11 @@ var userSchema = new Schema({
         }
     });
     ```
+    
+*****
+    
+作者：呆恋小喵
+
+欢迎参观：<https://sunmengyuan.github.io/garden/>
+
+*****

@@ -10,7 +10,7 @@ Node.js 结合了 Websocket 的简易多人聊天室，感兴趣的同学可以�
 
 *****
 
-##### 参考资料 #####
+#### 参考资料 ####
 
 + [Node.js 开发指南](http://okj45byt5.bkt.clouddn.com/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
 
@@ -30,8 +30,8 @@ Node.js 结合了 Websocket 的简易多人聊天室，感兴趣的同学可以�
 
 *****
 
-##### 启动方法 #####
-    
+#### 启动方法 ####
+
 需要[安装 MongoDB](https://www.mongodb.com/download-center?jmp=homepage#community)。不了解 MongoDB 的同学可移驾[官网](https://www.mongodb.com/)，英语欠佳的请点击[此处](http://www.runoob.com/mongodb/mongodb-tutorial.html)。
 
 需要创建数据库（database）__chat__，数据表（collection）__users__。具体方法请参见 [MongoDB 概念解析](http://www.runoob.com/mongodb/mongodb-databases-documents-collections.html)。
@@ -56,7 +56,7 @@ cd bin
 
 *****
 
-##### 核心代码 #####
+#### 核心代码 ####
 
 + __用户上线__
 

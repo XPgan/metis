@@ -10,7 +10,7 @@
 
 *****
 
-##### 参考资料 #####
+#### 参考资料 ####
 
 + [Vue.js](http://cn.vuejs.org/)
 
@@ -28,7 +28,7 @@
 
 *****
 
-##### 启动方法 #####
+#### 启动方法 ####
     
 需要[安装 MongoDB](https://www.mongodb.com/download-center?jmp=homepage#community)。不了解 MongoDB 的同学可移驾[官网](https://www.mongodb.com/)，英语欠佳的请点击[此处](http://www.runoob.com/mongodb/mongodb-tutorial.html)。
 

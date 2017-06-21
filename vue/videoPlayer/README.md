@@ -8,7 +8,7 @@
 
 *****
 
-##### 参考资料 #####
+#### 参考资料 ####
 
 + [Vue.js](http://cn.vuejs.org/)
 
@@ -16,7 +16,7 @@
 
 *****
 
-##### 启动方法 #####
+#### 启动方法 ####
     
 ```bash
 cd videoPlayer
@@ -24,7 +24,7 @@ npm install
 npm run dev
 ```
 
-##### 打包方法 #####
+#### 打包方法 ####
 
 ```bash
 cd videoPlayer

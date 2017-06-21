@@ -10,7 +10,7 @@
 
 *****
 
-##### 参考资料 #####
+#### 参考资料 ####
 
 + [Node.js 开发指南](http://okj45byt5.bkt.clouddn.com/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
 
@@ -28,7 +28,7 @@
 
 *****
 
-##### 启动方法 #####
+#### 启动方法 ####
     
 需要[安装 MongoDB](https://www.mongodb.com/download-center?jmp=homepage#community)。不了解 MongoDB 的同学可移驾[官网](https://www.mongodb.com/)，英语欠佳的请点击[此处](http://www.runoob.com/mongodb/mongodb-tutorial.html)。
 

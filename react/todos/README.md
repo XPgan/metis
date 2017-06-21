@@ -8,13 +8,13 @@
 
 *****
 
-##### 参考资料 #####
+#### 参考资料 ####
 
 + [A JavaScript library for building user interfaces | React](https://facebook.github.io/react/)
 
 *****
 
-##### 启动方法 #####
+#### 启动方法 ####
     
 ```bash
 cd todos
@@ -22,7 +22,7 @@ npm install
 npm run dev
 ```
 
-##### 打包方法 #####
+#### 打包方法 ####
 
 ```bash
 cd todos

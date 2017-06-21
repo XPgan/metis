@@ -2,9 +2,11 @@
 
 #### 参考资料 ####
 
-+ [Node.js开发指南](http://okj45byt5.bkt.clouddn.com/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
++ [Node.js 开发指南](http://okj45byt5.bkt.clouddn.com/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
 
-+ [深入浅出Node.js](http://okj45byt5.bkt.clouddn.com/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
++ [深入浅出 Node.js](http://okj45byt5.bkt.clouddn.com/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
+
++ [Node.js 中文网](http://nodejs.cn/)
 
 #### 示例 ####
 
@@ -58,7 +60,7 @@
 
 #### 参考资料 ####
 
-+ [HTML5 Canvas核心技术](http://okj45byt5.bkt.clouddn.com/HTML5%20Canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.pdf)
++ [HTML5 Canvas 核心技术](http://okj45byt5.bkt.clouddn.com/HTML5%20Canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.pdf)
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/canvas) ####
 
@@ -78,11 +80,11 @@
 
 #### 示例 ####
 
-+ 路径动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](https://sunmengyuan.github.io/demos/svg/cat.html)
++ 线描动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](https://sunmengyuan.github.io/demos/svg/cat.html)
 
 + 路径动画加蒙板实现橡皮擦特效 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](https://sunmengyuan.github.io/demos/svg/paint.html)
 
-+ loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
++ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
 
 *****
 
@@ -90,7 +92,7 @@
 
 #### 参考资料 ####
 
-+ [Three.js入门指南](https://read.douban.com/reader/ebook/7412854/)
++ [Three.js 入门指南](https://read.douban.com/reader/ebook/7412854/)
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/three) ####
 
@@ -116,7 +118,7 @@
 
 #### 参考资料 ###
 
-+ [Less中文网](http://lesscss.cn/)
++ [Less 中文网](http://lesscss.cn/)
 
 #### [笔记](https://github.com/sunmengyuan/note/blob/master/less.md) ####
 
@@ -126,7 +128,7 @@
 
 #### 参考资料 ####
 
-+ [Sass入门 - Sass教程](http://www.w3cplus.com/sassguide/)
++ [Sass 入门 - Sass 教程](http://www.w3cplus.com/sassguide/)
 
 *****
 
@@ -148,7 +150,7 @@
 
 #### 参考资料 ####
 
-+ [ECMAScript 6入门](http://es6.ruanyifeng.com/)
++ [ECMAScript 6 入门](http://es6.ruanyifeng.com/)
 
 #### [笔记](https://github.com/sunmengyuan/note/tree/master/ecmascript) ####
 

@@ -1,6 +1,6 @@
 # 简易个人空间 #
 
-### Vue + Express + Mongodb + Fs ###
+### Vue + Express + MongoDB + Fs ###
 
 项目名称 __zone__
 
@@ -10,38 +10,42 @@
 
 *****
 
-参考资料
+##### 参考资料 #####
 
 + [Vue.js](http://cn.vuejs.org/)
 
-+ [Node.js开发指南](http://okj45byt5.bkt.clouddn.com/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
++ [Node.js 开发指南](http://okj45byt5.bkt.clouddn.com/Node.js%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.pdf)
 
-+ [深入浅出Node.js](http://okj45byt5.bkt.clouddn.com/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
++ [深入浅出 Node.js](http://okj45byt5.bkt.clouddn.com/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BANode.js.pdf)
 
-+ [深入学习MongoDB](http://okj45byt5.bkt.clouddn.com/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0MongoDB.pdf)
++ [Node.js 中文网](http://nodejs.cn/)
+
++ [深入学习 MongoDB](http://okj45byt5.bkt.clouddn.com/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0MongoDB.pdf)
 
 + [MongoDB for GIANT Ideas | MongoDB](https://www.mongodb.com/)
 
-+ [Mongoose文档](http://www.nodeclass.com/api/mongoose.html)
++ [Mongoose 文档](http://www.nodeclass.com/api/mongoose.html)
 
 *****
 
-启动方法
+##### 启动方法 #####
     
 需要[安装 MongoDB](https://www.mongodb.com/download-center?jmp=homepage#community)。不了解 MongoDB 的同学可移驾[官网](https://www.mongodb.com/)，英语欠佳的请点击[此处](http://www.runoob.com/mongodb/mongodb-tutorial.html)。
 
 需要创建数据库（database）__zone__，数据表（collection）__users__、__articles__。具体方法请参见 [MongoDB 概念解析](http://www.runoob.com/mongodb/mongodb-databases-documents-collections.html)。
 
+启动 mongodb
+
 ```bash
-// 启动 mongodb
 cd mongodb
 mkdir -p data/db
 cd mongodb/bin
 ./mongod --dbpath ../data/db
 ```
 
+启动 zone
+
 ```
-// 启动 zone
 cd zone
 npm install
 cd bin

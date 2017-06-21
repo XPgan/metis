@@ -6,21 +6,21 @@
 
 *****
 
-##### 参考资料 #####
+### 参考资料 ###
 
 + [Echarts](http://echarts.baidu.com/)
 
 *****
 
-##### 启动方法 #####
-    
+### 启动方法 ###
+
 ```bash
 cd airpollution
 npm install
 npm run dev
 ```
 
-##### 打包方法 #####
+### 打包方法 ###
 
 ```bash
 cd airpollution

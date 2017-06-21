@@ -2,17 +2,17 @@
 
 项目名称 __airpollution__
 
-请欣赏 [demo](https://sunmengyuan.github.io/demos/echarts/airpollution)。
+请欣赏 [demo](https://sunmengyuan.github.io/demos/echarts/airpollution)
 
 *****
 
-参考资料
+##### 参考资料 #####
 
 + [Echarts](http://echarts.baidu.com/)
 
 *****
 
-启动方法
+##### 启动方法 #####
     
 ```bash
 cd airpollution
@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-打包方法
+##### 打包方法 #####
 
 ```bash
 cd airpollution
@@ -28,7 +28,7 @@ npm install
 npm run build
 ```
 
-打包后的文件在 __dist__ 文件夹内。建议了解一下 [Npm](https://www.npmjs.com/) 及 [Webpack](https://webpack.github.io/docs/)。
+打包后的文件在 __dist__ 文件夹内。建议了解一下 [Webpack](https://webpack.github.io/docs/)。
 
 *****
 

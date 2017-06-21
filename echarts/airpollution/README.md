@@ -4,11 +4,15 @@
 
 请欣赏 [demo](https://sunmengyuan.github.io/demos/echarts/airpollution)
 
+![](http://oru3b8jlz.bkt.clouddn.com/effect-airpollution.jpg)
+
 *****
 
 #### 参考资料 ####
 
 + [Echarts](http://echarts.baidu.com/)
+
++ [Webpack](https://webpack.github.io/docs/)
 
 *****
 
@@ -20,7 +24,7 @@ npm install
 npm run dev
 ```
 
-#### 打包方法 ####
+#### 构建方法 ####
 
 ```bash
 cd airpollution

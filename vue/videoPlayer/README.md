@@ -6,6 +6,8 @@
 
 请欣赏 [demo](https://sunmengyuan.github.io/demos/vue/videoPlayer)
 
+![](http://oru3b8jlz.bkt.clouddn.com/effect-videoPlayer.jpg)
+
 *****
 
 #### 参考资料 ####
@@ -13,6 +15,8 @@
 + [Vue.js](http://cn.vuejs.org/)
 
 + [使用 HTML5 音频和视频 - Web 开发者指南 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Using_HTML5_audio_and_video)
+
++ [Webpack](https://webpack.github.io/docs/)
 
 *****
 
@@ -24,7 +28,7 @@ npm install
 npm run dev
 ```
 
-#### 打包方法 ####
+#### 构建方法 ####
 
 ```bash
 cd videoPlayer

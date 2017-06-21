@@ -20,6 +20,8 @@
 
 + [Node.js 中文网](http://nodejs.cn/)
 
++ [Express - 基于 Node.js 平台的 Web 应用开发框架](http://www.expressjs.com.cn/)
+
 + [深入学习 MongoDB](http://okj45byt5.bkt.clouddn.com/%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0MongoDB.pdf)
 
 + [MongoDB for GIANT Ideas | MongoDB](https://www.mongodb.com/)

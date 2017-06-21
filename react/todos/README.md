@@ -6,11 +6,15 @@
 
 请欣赏 [demo](https://sunmengyuan.github.io/demos/react/todos)
 
+![](http://oru3b8jlz.bkt.clouddn.com/effect-todos.jpg)
+
 *****
 
 #### 参考资料 ####
 
 + [A JavaScript library for building user interfaces | React](https://facebook.github.io/react/)
+
++ [Webpack](https://webpack.github.io/docs/)
 
 *****
 
@@ -22,7 +26,7 @@ npm install
 npm run dev
 ```
 
-#### 打包方法 ####
+#### 构建方法 ####
 
 ```bash
 cd todos

@@ -1,6 +1,6 @@
 # 简易博客系统 #
 
-### Express + MongoDB+ Fs ###
+### Express + MongoDB + Fs ###
 
 项目名称 __expo__
 

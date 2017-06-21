@@ -4,7 +4,7 @@
 
 请欣赏 [demo](https://sunmengyuan.github.io/demos/echarts/university)
 
-![截图](http://oru3b8jlz.bkt.clouddn.com/screenshot-university.jpg)
+![](http://oru3b8jlz.bkt.clouddn.com/screenshot-university.jpg)
 
 *****
 

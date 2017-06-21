@@ -4,7 +4,7 @@
 
 请欣赏 [demo](https://sunmengyuan.github.io/demos/echarts/airpollution)
 
-![](http://oru3b8jlz.bkt.clouddn.com/effect-airpollution.jpg)
+![](http://oru3b8jlz.bkt.clouddn.com/screenshot-airpollution.jpg)
 
 *****
 

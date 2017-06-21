@@ -6,7 +6,7 @@
 
 请欣赏 [demo](https://sunmengyuan.github.io/demos/react/todos)
 
-![](http://oru3b8jlz.bkt.clouddn.com/effect-todos.jpg)
+![](http://oru3b8jlz.bkt.clouddn.com/screenshot-todos.jpg)
 
 *****
 

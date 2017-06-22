@@ -1,4 +1,4 @@
-text{font-size: 14px;line-height: 1.5;color: #666;}
+text{font-size: 16px;line-height: 1.5;color: #666;}
 button::after{display: none;}
 
 .c-center{top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);}

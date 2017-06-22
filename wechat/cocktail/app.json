@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/welcome/welcome",
-    "pages/loading/loading"
+    "pages/game/game",
+    "pages/loading/loading",
+    "pages/welcome/welcome"
   ],
   "window": {
     "navigationBarTitleText": "测试"

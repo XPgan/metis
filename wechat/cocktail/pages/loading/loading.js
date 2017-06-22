@@ -14,7 +14,14 @@ Page({
     var interval = setInterval(function () {
       var random = _this.createRandom(5, 15);
       var percent = (_this.data.loadingPercent + random >= 100) ? 100 : (_this.data.loadingPercent + random);
-      (percent == 100) && clearInterval(interval);
+      if (percent == 100) {
+        clearInterval(interval);
+        var timeout = setTimeout(function () {
+          wx.navigateTo({
+            url: '../welcome/welcome'
+          });
+        }, 500);
+      }
       _this.setData({
         loadingPercent: percent
       });

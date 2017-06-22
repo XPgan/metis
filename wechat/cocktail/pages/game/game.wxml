@@ -1,0 +1,60 @@
+<view class="section-game">
+  <view class="corner">
+    <view class="fst"></view>
+    <view class="scd"></view>
+    <view class="thd"></view>
+    <view class="fth"></view>
+  </view>
+  <view class="game-effect">
+    <view class="effect-glass">
+      <view class="glass1">glass1</view>
+      <view class="glass2">glass2</view>
+      <view class="glass3">glass3</view>
+    </view>
+    <view class="effect-fruit">
+      <view class="fruit1">fruit1</view>
+      <view class="fruit2">fruit2</view>
+      <view class="fruit3">fruit3</view>
+      <view class="fruit4">fruit4</view>
+      <view class="fruit5">fruit5</view>
+      <view class="fruit6">fruit6</view>
+    </view>
+  </view>
+  <view class="game-tab c-fix" bindtap="handleTab">
+    <view data-tab="glass">glass</view>
+    <view data-tab="layer">layer</view>
+    <view data-tab="color">color</view>
+    <view data-tab="fruit">fruit</view>    
+  </view>
+  <view class="game-option">
+    <view class="option-glass c-fix" wx:if="{{curTab == 'glass'}}">
+      <view class="glass1">glass1</view>
+      <view class="glass2">glass2</view>
+      <view class="glass3">glass3</view>
+    </view>
+    <view class="option-layer c-fix" wx:if="{{curTab == 'layer'}}">
+      <view class="layer1">layer1</view>
+      <view class="layer2">layer2</view>
+      <view class="layer3">layer3</view>
+      <view class="layer4">layer4</view>
+      <view class="layer5">layer5</view>
+      <view class="layer6">layer6</view>
+    </view>
+    <view class="option-color c-fix" wx:if="{{curTab == 'color'}}">
+      <view class="color1">color1</view>
+      <view class="color2">color2</view>
+      <view class="color3">color3</view>
+      <view class="color4">color4</view>
+      <view class="color5">color5</view>
+      <view class="color6">color6</view>
+    </view>
+    <view class="option-fruit c-fix" wx:if="{{curTab == 'fruit'}}">
+      <view class="fruit1">fruit1</view>
+      <view class="fruit2">fruit2</view>
+      <view class="fruit3">fruit3</view>
+      <view class="fruit4">fruit4</view>
+      <view class="fruit5">fruit5</view>
+      <view class="fruit6">fruit6</view>
+    </view>
+  </view>
+</view>

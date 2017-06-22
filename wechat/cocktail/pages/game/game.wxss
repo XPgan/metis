@@ -1,0 +1,3 @@
+.game-effect{margin-top: 80px;}
+.game-tab view{float: left;width: 25%;text-align: center;}
+.game-option view view{float: left;width: 33.33%;}

@@ -8,5 +8,5 @@
   <view class="welcome-bar c-center">
     <view class="door {{triggerStart && 'opendoor'}}"></view>
   </view>
-  <button class="btn-common btn-start c-center" bindtap="handleStart">开始</button>
+  <button class="btn-start btn-common c-center" bindtap="handleStart">开始</button>
 </view>

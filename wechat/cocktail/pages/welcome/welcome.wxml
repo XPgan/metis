@@ -1,1 +1,12 @@
-<text>pages/welcome/welcome.wxml</text>
+<view class="section-welcome">
+  <view class="corner">
+    <view class="fst"></view>
+    <view class="scd"></view>
+    <view class="thd"></view>
+    <view class="fth"></view>
+  </view>
+  <view class="welcome-bar c-center">
+    <view class="door"></view>
+  </view>
+  <button class="btn-common btn-start c-center" bindtap="handleStart">开始</button>
+</view>

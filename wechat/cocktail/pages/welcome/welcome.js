@@ -2,10 +2,9 @@ Page({
   data: {
     triggerStart: false
   },
-  onReady: function () {
-    
-  },
   handleStart: function () {
-    
+    this.setData({
+      triggerStart: true
+    });
   }
 });

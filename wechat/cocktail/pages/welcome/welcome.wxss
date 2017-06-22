@@ -2,3 +2,15 @@
 .welcome-bar .door{width: 39px;height: 120px;background: url("http://ormq8rb63.bkt.clouddn.com/door.png") no-repeat 0 0;background-size: 39px auto;position: absolute;top: 29px;left: 19px;}
 
 button.btn-start{position: fixed;margin-top: 120px;}
+
+.opendoor{-webkit-animation: opendoor 1.2s forwards;animation: opendoor 1.2s forwards;-webkit-transform-origin: right;transform-origin: right;}
+@-webkit-keyframes opendoor
+{
+from{-webkit-transform: scaleX(1);transform: scaleX(1);}
+to{-webkit-transform: scaleX(0.15);transform: scaleX(0.15);}
+}
+@keyframes opendoor
+{
+from{-webkit-transform: scaleX(1);transform: scaleX(1);}
+to{-webkit-transform: scaleX(0.15);transform: scaleX(0.15);}
+}

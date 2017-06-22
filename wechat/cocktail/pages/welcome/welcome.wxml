@@ -6,7 +6,7 @@
     <view class="fth"></view>
   </view>
   <view class="welcome-bar c-center">
-    <view class="door"></view>
+    <view class="door {{triggerStart && 'opendoor'}}"></view>
   </view>
   <button class="btn-common btn-start c-center" bindtap="handleStart">开始</button>
 </view>

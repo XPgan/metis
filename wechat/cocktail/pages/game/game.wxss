@@ -1,17 +1,43 @@
 .game-mn{position: fixed;width: 100%;top: 45%;}
 
 .game-effect{margin: 5px auto;width: 200px;}
-.effect-glass view{height: 230px;background: url("") no-repeat 50% 100%;background-size: 200px auto;}
+.effect-glass view{height: 230px;background: url("http://oij8a9ql4.bkt.clouddn.com/nothumb.png") no-repeat 50% 100%;background-size: 200px auto;}
 
 .game-tab text{float: left;width: 25%;line-height: 2.5;text-align: center;background: url("http://ormq8rb63.bkt.clouddn.com/bg-nav.png") no-repeat 50% 100%;background-size: 70px auto;}
 
 .game-option{margin: 5px 0;padding: 0 15px;}
 .option-lst{height: 0;padding-bottom: 60%;}
 .option-lst view{position: relative;float: left;width: 33.33%;height: 0;padding-bottom: 30%;}
-.option-lst icon{position: absolute;width: 70%;height: 0;padding-bottom: 70%;border: 1px solid #E5E5E5;border-radius: 5px;}
+.option-lst icon{position: absolute;width: 70%;height: 0;padding-bottom: 70%;border: 1px solid #E5E5E5;border-radius: 5px;background: url("http://oij8a9ql4.bkt.clouddn.com/nothumb.png") no-repeat 50% 50%;background-size: auto 88%;}
 .option-glass view{padding-bottom: 40%;}
 .option-glass icon{width: 80%;padding-bottom: 80%;}
 
 .effect-glass .glass1{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass1.png");}
 .effect-glass .glass2{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass2.png");}
 .effect-glass .glass3{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass3.png");}
+
+.option-glass .glass1 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass1.png");}
+.option-glass .glass2 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass2.png");}
+.option-glass .glass3 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass3.png");}
+
+.option-layer .layer1 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/layer1.png");}
+.option-layer .layer2 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/layer2.png");}
+.option-layer .layer3 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/layer3.png");}
+.option-layer .layer4 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/layer4.png");}
+.option-layer .layer5 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/layer5.png");}
+.option-layer .layer6 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/layer6.png");}
+
+.option-color .color1 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/color1.jpg");}
+.option-color .color2 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/color2.jpg");}
+.option-color .color3 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/color3.jpg");}
+.option-color .color4 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/color4.jpg");}
+.option-color .color5 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/color5.jpg");}
+.option-color .color6 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/color6.jpg");}
+.option-color .color2 icon, .option-color .color5 icon{background-size: auto 131%;background-position: 50% 117%;}
+
+.option-fruit .fruit1 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/fruit1.jpg");}
+.option-fruit .fruit2 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/fruit2.jpg");}
+.option-fruit .fruit3 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/fruit3.jpg");}
+.option-fruit .fruit4 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/fruit4.jpg");}
+.option-fruit .fruit5 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/fruit5.jpg");}
+.option-fruit .fruit6 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/fruit6.jpg");}

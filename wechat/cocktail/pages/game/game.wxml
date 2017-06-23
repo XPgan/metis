@@ -7,17 +7,17 @@
   </view>
   <view class="game-effect">
     <view class="effect-glass">
-      <view class="glass1">glass1</view>
-      <view class="glass2">glass2</view>
-      <view class="glass3">glass3</view>
+      <view class="glass1" wx:if="{{curOption.glass == 'glass1'}}">glass1</view>
+      <view class="glass2" wx:if="{{curOption.glass == 'glass2'}}">glass2</view>
+      <view class="glass3" wx:if="{{curOption.glass == 'glass3'}}">glass3</view>
     </view>
     <view class="effect-fruit">
-      <view class="fruit1">fruit1</view>
-      <view class="fruit2">fruit2</view>
-      <view class="fruit3">fruit3</view>
-      <view class="fruit4">fruit4</view>
-      <view class="fruit5">fruit5</view>
-      <view class="fruit6">fruit6</view>
+      <view class="fruit1" wx:if="{{curOption.fruit == 'fruit1'}}">fruit1</view>
+      <view class="fruit2" wx:if="{{curOption.fruit == 'fruit2'}}">fruit2</view>
+      <view class="fruit3" wx:if="{{curOption.fruit == 'fruit3'}}">fruit3</view>
+      <view class="fruit4" wx:if="{{curOption.fruit == 'fruit4'}}">fruit4</view>
+      <view class="fruit5" wx:if="{{curOption.fruit == 'fruit5'}}">fruit5</view>
+      <view class="fruit6" wx:if="{{curOption.fruit == 'fruit6'}}">fruit6</view>
     </view>
   </view>
   <view class="game-tab c-fix" bindtap="handleTab">
@@ -27,34 +27,34 @@
     <view data-tab="fruit">fruit</view>    
   </view>
   <view class="game-option">
-    <view class="option-glass c-fix" wx:if="{{curTab == 'glass'}}">
-      <view class="glass1">glass1</view>
-      <view class="glass2">glass2</view>
-      <view class="glass3">glass3</view>
+    <view class="option-glass c-fix" wx:if="{{curTab == 'glass'}}" bindtap="handleOption">
+      <view class="glass1" data-option="glass1">glass1</view>
+      <view class="glass2" data-option="glass2">glass2</view>
+      <view class="glass3" data-option="glass3">glass3</view>
     </view>
-    <view class="option-layer c-fix" wx:if="{{curTab == 'layer'}}">
-      <view class="layer1">layer1</view>
-      <view class="layer2">layer2</view>
-      <view class="layer3">layer3</view>
-      <view class="layer4">layer4</view>
-      <view class="layer5">layer5</view>
-      <view class="layer6">layer6</view>
+    <view class="option-layer c-fix" wx:if="{{curTab == 'layer'}}" bindtap="handleOption">
+      <view class="layer1" data-option="layer1">layer1</view>
+      <view class="layer2" data-option="layer2">layer2</view>
+      <view class="layer3" data-option="layer3">layer3</view>
+      <view class="layer4" data-option="layer4">layer4</view>
+      <view class="layer5" data-option="layer5">layer5</view>
+      <view class="layer6" data-option="layer6">layer6</view>
     </view>
-    <view class="option-color c-fix" wx:if="{{curTab == 'color'}}">
-      <view class="color1">color1</view>
-      <view class="color2">color2</view>
-      <view class="color3">color3</view>
-      <view class="color4">color4</view>
-      <view class="color5">color5</view>
-      <view class="color6">color6</view>
+    <view class="option-color c-fix" wx:if="{{curTab == 'color'}}" bindtap="handleOption">
+      <view class="color1" data-option="color1">color1</view>
+      <view class="color2" data-option="color2">color2</view>
+      <view class="color3" data-option="color3">color3</view>
+      <view class="color4" data-option="color4">color4</view>
+      <view class="color5" data-option="color5">color5</view>
+      <view class="color6" data-option="color6">color6</view>
     </view>
-    <view class="option-fruit c-fix" wx:if="{{curTab == 'fruit'}}">
-      <view class="fruit1">fruit1</view>
-      <view class="fruit2">fruit2</view>
-      <view class="fruit3">fruit3</view>
-      <view class="fruit4">fruit4</view>
-      <view class="fruit5">fruit5</view>
-      <view class="fruit6">fruit6</view>
+    <view class="option-fruit c-fix" wx:if="{{curTab == 'fruit'}}" bindtap="handleOption">
+      <view class="fruit1" data-option="fruit1">fruit1</view>
+      <view class="fruit2" data-option="fruit2">fruit2</view>
+      <view class="fruit3" data-option="fruit3">fruit3</view>
+      <view class="fruit4" data-option="fruit4">fruit4</view>
+      <view class="fruit5" data-option="fruit5">fruit5</view>
+      <view class="fruit6" data-option="fruit6">fruit6</view>
     </view>
   </view>
 </view>

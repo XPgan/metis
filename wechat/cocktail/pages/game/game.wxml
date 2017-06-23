@@ -8,6 +8,7 @@
   <view class="game-mn c-center">
     <view class="game-effect">
       <view class="effect-glass">
+        <view class="effect-color" style="top: {{color.colorStyle[0]}}px;height: {{color.colorStyle[1]}}px;background: none"></view>
         <view class="glass1" wx:if="{{curOption.glass == 'glass1'}}"></view>
         <view class="glass2" wx:if="{{curOption.glass == 'glass2'}}"></view>
         <view class="glass3" wx:if="{{curOption.glass == 'glass3'}}"></view>

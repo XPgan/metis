@@ -7,7 +7,12 @@ Page({
       color: '',
       fruit: ''
     },
-    color: [],
+    color: {
+      colorStyle: [20, 150],
+      glass1: [20, 150],
+      glass2: [30, 190],
+      glass3: [27, 70]
+    },
     layer: {
       layer1: [0, 1],
       layer2: [0, 0.67, 1],
@@ -58,11 +63,15 @@ Page({
     switch (this.data.curTab) {
       case 'glass':
         var fruitPosition = this.data.fruit[option][this.data.curOption.fruit];
+        var colorStyle = this.data.color[option];
         this.setData({
           'curOption.glass': option
         });
         this.setData({
           'fruit.fruitPosition': fruitPosition
+        }); 
+        this.setData({
+          'color.colorStyle': colorStyle
         }); 
         break;
       case 'fruit':
@@ -74,6 +83,9 @@ Page({
           'fruit.fruitPosition': fruitPosition
         }); 
         break; 
+      case 'color':
+
+        break;  
     }
   }
 });

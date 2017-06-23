@@ -13,12 +13,12 @@
         <view class="glass3" wx:if="{{curOption.glass == 'glass3'}}"></view>
       </view>
       <view class="effect-fruit">
-        <view class="fruit1" wx:if="{{curOption.fruit == 'fruit1'}}">fruit1</view>
-        <view class="fruit2" wx:if="{{curOption.fruit == 'fruit2'}}">fruit2</view>
-        <view class="fruit3" wx:if="{{curOption.fruit == 'fruit3'}}">fruit3</view>
-        <view class="fruit4" wx:if="{{curOption.fruit == 'fruit4'}}">fruit4</view>
-        <view class="fruit5" wx:if="{{curOption.fruit == 'fruit5'}}">fruit5</view>
-        <view class="fruit6" wx:if="{{curOption.fruit == 'fruit6'}}">fruit6</view>
+        <view class="fruit1" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit1'}}"></view>
+        <view class="fruit2" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit2'}}"></view>
+        <view class="fruit3" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit3'}}"></view>
+        <view class="fruit4" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit4'}}"></view>
+        <view class="fruit5" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit5'}}"></view>
+        <view class="fruit6" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit6'}}"></view>
       </view>
     </view>
     <view class="game-tab c-fix" bindtap="handleTab">

@@ -7,9 +7,9 @@
   </view>
   <view class="game-effect">
     <view class="effect-glass">
-      <view class="glass1" wx:if="{{curOption.glass == 'glass1'}}">glass1</view>
-      <view class="glass2" wx:if="{{curOption.glass == 'glass2'}}">glass2</view>
-      <view class="glass3" wx:if="{{curOption.glass == 'glass3'}}">glass3</view>
+      <view class="glass1" wx:if="{{curOption.glass == 'glass1'}}"></view>
+      <view class="glass2" wx:if="{{curOption.glass == 'glass2'}}"></view>
+      <view class="glass3" wx:if="{{curOption.glass == 'glass3'}}"></view>
     </view>
     <view class="effect-fruit">
       <view class="fruit1" wx:if="{{curOption.fruit == 'fruit1'}}">fruit1</view>
@@ -21,10 +21,10 @@
     </view>
   </view>
   <view class="game-tab c-fix" bindtap="handleTab">
-    <view data-tab="glass">glass</view>
-    <view data-tab="layer">layer</view>
-    <view data-tab="color">color</view>
-    <view data-tab="fruit">fruit</view>    
+    <text data-tab="glass">glass</text>
+    <text data-tab="layer">layer</text>
+    <text data-tab="color">color</text>
+    <text data-tab="fruit">fruit</text>    
   </view>
   <view class="game-option">
     <view class="option-glass c-fix" wx:if="{{curTab == 'glass'}}" bindtap="handleOption">

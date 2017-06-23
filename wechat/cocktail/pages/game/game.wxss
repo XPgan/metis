@@ -1,3 +1,6 @@
-.game-effect{margin-top: 80px;}
-.game-tab view{float: left;width: 25%;text-align: center;}
-.game-option view view{float: left;width: 33.33%;}
+.game-effect{margin: 30px auto 0;width: 200px;}
+.effect-glass view{height: 220px;background: url("") no-repeat 50% 100%;background-size: 200px auto;}
+
+.effect-glass .glass1{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass1.png");}
+.effect-glass .glass2{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass2.png");}
+.effect-glass .glass3{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass3.png");}

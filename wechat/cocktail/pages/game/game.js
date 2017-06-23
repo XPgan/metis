@@ -8,7 +8,7 @@ Page({
       fruit: ''
     },
     color: [],
-    // 记录 color 渐变参数
+    // 记录 layer 渐变参数
     layer: {
       layer1: [0, 1],
       layer2: [0, 0.67, 1],

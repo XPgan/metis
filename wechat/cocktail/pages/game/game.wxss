@@ -1,5 +1,16 @@
-.game-effect{margin: 30px auto 0;width: 200px;}
-.effect-glass view{height: 220px;background: url("") no-repeat 50% 100%;background-size: 200px auto;}
+.game-mn{position: fixed;width: 100%;top: 45%;}
+
+.game-effect{margin: 5px auto;width: 200px;}
+.effect-glass view{height: 230px;background: url("") no-repeat 50% 100%;background-size: 200px auto;}
+
+.game-tab text{float: left;width: 25%;line-height: 2.5;text-align: center;background: url("http://ormq8rb63.bkt.clouddn.com/bg-nav.png") no-repeat 50% 100%;background-size: 70px auto;}
+
+.game-option{margin: 5px 0;padding: 0 15px;}
+.option-lst{height: 0;padding-bottom: 60%;}
+.option-lst view{position: relative;float: left;width: 33.33%;height: 0;padding-bottom: 30%;}
+.option-lst icon{position: absolute;width: 70%;height: 0;padding-bottom: 70%;border: 1px solid #E5E5E5;border-radius: 5px;}
+.option-glass view{padding-bottom: 40%;}
+.option-glass icon{width: 80%;padding-bottom: 80%;}
 
 .effect-glass .glass1{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass1.png");}
 .effect-glass .glass2{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass2.png");}

@@ -32,7 +32,7 @@ Page({
       layer6: [0, 0.33, 0.66, 1]
     },
     fruit: {
-      fruitPosition: [],
+      position: [],
       glass1: {
         fruit1: [67, 78],
         fruit2: [65, 78],
@@ -78,7 +78,7 @@ Page({
           'curOption.glass': option
         });
         this.setData({
-          'fruit.fruitPosition': fruitPosition
+          'fruit.position': fruitPosition
         }); 
         this.setData({
           'color.placeholder.cur': colorPlaceholder
@@ -90,9 +90,9 @@ Page({
           'curOption.fruit': option
         }); 
         this.setData({
-          'fruit.fruitPosition': fruitPosition
+          'fruit.position': fruitPosition
         }); 
-        break; 
+        break;
       case 'layer':
         this.setData({
           'curOption.layer': option

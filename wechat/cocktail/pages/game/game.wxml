@@ -9,7 +9,7 @@
         <view class="glass glass{{item}}" wx:for="{{[1,2,3]}}" wx:if="{{curOption.glass == 'glass' + item}}"></view>
       </view>
       <view class="effect-fruit">
-        <view class="fruit{{item}}" wx:for="{{[1,2,3,4,5,6]}}" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit' + item}}"></view>
+        <view class="fruit{{item}}" wx:for="{{[1,2,3,4,5,6]}}" style="bottom: {{fruit.position[0]}}px;left: {{fruit.position[1]}}px" wx:if="{{curOption.fruit == 'fruit' + item}}"></view>
       </view>
     </view>
     <view class="game-tab c-fix" bindtap="handleTab">

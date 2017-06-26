@@ -1,7 +1,6 @@
-.welcome-bar{position: fixed !important;position: relative;width: 250px;height: 300px;background: url("http://ormq8rb63.bkt.clouddn.com/bar.jpg") no-repeat 50% 0;background-size: 250px auto;}
-.welcome-bar .door{width: 39px;height: 120px;background: url("http://ormq8rb63.bkt.clouddn.com/door.png") no-repeat 0 0;background-size: 39px auto;position: absolute;top: 29px;left: 19px;}
-
-button.btn-start{position: fixed;margin-top: 120px;}
+.welcome-mn{position: fixed;}
+.welcome-bar{position: relative;width: 250px;height: 250px;background: url("http://ormq8rb63.bkt.clouddn.com/bar.jpg") no-repeat 50% 0;background-size: 250px auto;}
+.welcome-bar .door{position: absolute;top: 29px;left: 19px;width: 39px;height: 120px;background: url("http://ormq8rb63.bkt.clouddn.com/door.png") no-repeat 0 0;background-size: 39px auto;}
 
 .opendoor{-webkit-animation: opendoor 1.2s forwards;animation: opendoor 1.2s forwards;-webkit-transform-origin: right;transform-origin: right;}
 @-webkit-keyframes opendoor

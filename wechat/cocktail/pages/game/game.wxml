@@ -1,25 +1,15 @@
 <view class="section-game">
   <view class="corner">
-    <view class="fst"></view>
-    <view class="scd"></view>
-    <view class="thd"></view>
-    <view class="fth"></view>
+    <view class="{{item}}" wx:for="{{['fst','scd','thd','fth']}}"></view>
   </view>
   <view class="game-mn c-center">
     <view class="game-effect">
       <view class="effect-glass">
-        <view class="effect-color" style="top: {{color.placeholder.cur[0]}}px;height: {{color.placeholder.cur[1]}}px;background: -webkit-gradient(linear, left bottom, left top, {{color.gradient}}"></view>
-        <view class="glass glass1" wx:if="{{curOption.glass == 'glass1'}}"></view>
-        <view class="glass glass2" wx:if="{{curOption.glass == 'glass2'}}"></view>
-        <view class="glass glass3" wx:if="{{curOption.glass == 'glass3'}}"></view>
+        <view class="effect-color" style="top: {{color.placeholder.cur[0]}}px;height: {{color.placeholder.cur[1]}}px;background: -webkit-gradient(linear,left bottom,left top,{{color.gradient}}"></view>
+        <view class="glass glass{{item}}" wx:for="{{[1,2,3]}}" wx:if="{{curOption.glass == 'glass' + item}}"></view>
       </view>
       <view class="effect-fruit">
-        <view class="fruit1" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit1'}}"></view>
-        <view class="fruit2" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit2'}}"></view>
-        <view class="fruit3" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit3'}}"></view>
-        <view class="fruit4" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit4'}}"></view>
-        <view class="fruit5" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit5'}}"></view>
-        <view class="fruit6" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit6'}}"></view>
+        <view class="fruit{{item}}" wx:for="{{[1,2,3,4,5,6]}}" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit' + item}}"></view>
       </view>
     </view>
     <view class="game-tab c-fix" bindtap="handleTab">
@@ -30,33 +20,16 @@
     </view>
     <view class="game-option">
       <view class="option-lst option-glass c-fix" wx:if="{{curTab == 'glass'}}" bindtap="handleOption">
-        <view class="glass1"><icon class="c-center" data-option="glass1"></icon></view>
-        <view class="glass2"><icon class="c-center" data-option="glass2"></icon></view>
-        <view class="glass3"><icon class="c-center" data-option="glass3"></icon></view>
+        <view class="glass{{item}}" wx:for="{{[1,2,3]}}"><icon class="c-center" data-option="glass{{item}}"></icon></view>
       </view>
       <view class="option-lst option-layer c-fix" wx:if="{{curTab == 'layer'}}" bindtap="handleOption">
-        <view class="layer1"><icon class="c-center" data-option="layer1"></icon></view>
-        <view class="layer2"><icon class="c-center" data-option="layer2"></icon></view>
-        <view class="layer3"><icon class="c-center" data-option="layer3"></icon></view>
-        <view class="layer4"><icon class="c-center" data-option="layer4"></icon></view>
-        <view class="layer5"><icon class="c-center" data-option="layer5"></icon></view>
-        <view class="layer6"><icon class="c-center" data-option="layer6"></icon></view>
+        <view class="layer{{item}}" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="layer{{item}}"></icon></view>
       </view>
       <view class="option-lst option-color c-fix" wx:if="{{curTab == 'color'}}" bindtap="handleOption">
-        <view class="color1"><icon class="c-center" data-option="color1"></icon></view>
-        <view class="color2"><icon class="c-center" data-option="color2"></icon></view>
-        <view class="color3"><icon class="c-center" data-option="color3"></icon></view>
-        <view class="color4"><icon class="c-center" data-option="color4"></icon></view>
-        <view class="color5"><icon class="c-center" data-option="color5"></icon></view>
-        <view class="color6"><icon class="c-center" data-option="color6"></icon></view>
+        <view class="color{{item}}" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="color{{item}}"></icon></view>
       </view>
       <view class="option-lst option-fruit c-fix" wx:if="{{curTab == 'fruit'}}" bindtap="handleOption">
-        <view class="fruit1"><icon class="c-center" data-option="fruit1"></icon></view>
-        <view class="fruit2"><icon class="c-center" data-option="fruit2"></icon></view>
-        <view class="fruit3"><icon class="c-center" data-option="fruit3"></icon></view>
-        <view class="fruit4"><icon class="c-center" data-option="fruit4"></icon></view>
-        <view class="fruit5"><icon class="c-center" data-option="fruit5"></icon></view>
-        <view class="fruit6"><icon class="c-center" data-option="fruit6"></icon></view>
+        <view class="fruit{{item}}" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="fruit{{item}}"></icon></view>
       </view>
     </view>
   </view>

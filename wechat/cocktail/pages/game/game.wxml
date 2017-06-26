@@ -8,10 +8,10 @@
   <view class="game-mn c-center">
     <view class="game-effect">
       <view class="effect-glass">
-        <view class="effect-color" style="top: {{color.colorStyle[0]}}px;height: {{color.colorStyle[1]}}px;background: none"></view>
-        <view class="glass1" wx:if="{{curOption.glass == 'glass1'}}"></view>
-        <view class="glass2" wx:if="{{curOption.glass == 'glass2'}}"></view>
-        <view class="glass3" wx:if="{{curOption.glass == 'glass3'}}"></view>
+        <view class="effect-color" style="top: {{color.placeholder.cur[0]}}px;height: {{color.placeholder.cur[1]}}px;background: -webkit-gradient(linear, left bottom, left top, {{color.gradient}}"></view>
+        <view class="glass glass1" wx:if="{{curOption.glass == 'glass1'}}"></view>
+        <view class="glass glass2" wx:if="{{curOption.glass == 'glass2'}}"></view>
+        <view class="glass glass3" wx:if="{{curOption.glass == 'glass3'}}"></view>
       </view>
       <view class="effect-fruit">
         <view class="fruit1" style="bottom: {{fruit.fruitPosition[0]}}px;left: {{fruit.fruitPosition[1]}}px" wx:if="{{curOption.fruit == 'fruit1'}}"></view>

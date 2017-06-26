@@ -8,10 +8,20 @@ Page({
       fruit: ''
     },
     color: {
-      colorStyle: [20, 150],
-      glass1: [20, 150],
-      glass2: [30, 190],
-      glass3: [27, 70]
+      placeholder: {
+        cur: [20, 150],
+        glass1: [20, 150],
+        glass2: [30, 190],
+        glass3: [27, 70]
+      },
+      gradient: '',
+      colors: [],
+      color1: 'red',
+      color2: 'blue',
+      color3: 'pink',
+      color4: 'yellow',
+      color5: 'green',
+      color6: 'orange'
     },
     layer: {
       layer1: [0, 1],
@@ -63,7 +73,7 @@ Page({
     switch (this.data.curTab) {
       case 'glass':
         var fruitPosition = this.data.fruit[option][this.data.curOption.fruit];
-        var colorStyle = this.data.color[option];
+        var colorPlaceholder = this.data.color.placeholder[option];
         this.setData({
           'curOption.glass': option
         });
@@ -71,7 +81,7 @@ Page({
           'fruit.fruitPosition': fruitPosition
         }); 
         this.setData({
-          'color.colorStyle': colorStyle
+          'color.placeholder.cur': colorPlaceholder
         }); 
         break;
       case 'fruit':
@@ -83,9 +93,30 @@ Page({
           'fruit.fruitPosition': fruitPosition
         }); 
         break; 
+      case 'layer':
+        this.setData({
+          'curOption.layer': option
+        }); 
+        break;
       case 'color':
-
-        break;  
+        var layerParams = this.data.layer[this.data.curOption.layer];
+        var colors = this.data.color.colors;
+        var colorLength = layerParams.length - 1;
+        var color = this.data.color[option];
+        var gradient = '';
+        if (colors.length < colorLength) {
+          colors.push(color);
+          this.setData({
+            'color.colors': colors
+          }); 
+        }
+        for (var i = 0;i < colors.length;i++) {
+          gradient += 'color-stop(' + layerParams[i] + ',' + colors[i] + '),';
+        }
+        this.setData({
+          'color.gradient': gradient.slice(0, -1)
+        }); 
+        break;
     }
   }
 });

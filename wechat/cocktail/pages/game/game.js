@@ -9,10 +9,10 @@ Page({
     },
     color: {
       placeholder: {
-        cur: [20, 150],
-        glass1: [20, 150],
-        glass2: [30, 190],
-        glass3: [27, 70]
+        cur: [30, 135],
+        glass1: [30, 135],
+        glass2: [40, 170],
+        glass3: [28, 65]
       },
       gradient: '',
       colors: [],

@@ -76,21 +76,15 @@ Page({
         var fruitPosition = this.data.fruit[option][this.data.curOption.fruit];
         var colorPlaceholder = this.data.color.placeholder[option];
         this.setData({
-          'curOption.glass': option
-        });
-        this.setData({
-          'fruit.position': fruitPosition
-        }); 
-        this.setData({
+          'curOption.glass': option,
+          'fruit.position': fruitPosition,
           'color.placeholder.cur': colorPlaceholder
-        }); 
+        });
         break;
       case 'fruit':
         var fruitPosition = this.data.fruit[this.data.curOption.glass][option];
         this.setData({
-          'curOption.fruit': option
-        }); 
-        this.setData({
+          'curOption.fruit': option,
           'fruit.position': fruitPosition
         }); 
         break;
@@ -101,16 +95,11 @@ Page({
         break;
       case 'color':
         var layerParams = this.data.layer[this.data.curOption.layer];
+        var color = this.data.color[option];
         var colors = this.data.color.colors;
         var colorLength = layerParams.length - 1;
-        var color = this.data.color[option];
         var gradient = '';
-        if (colors.length < colorLength) {
-          colors.push(color);
-          this.setData({
-            'color.colors': colors
-          }); 
-        }
+        (colors.length < colorLength) && colors.push(color);
         for (var i = 0;i < colors.length;i++) {
           gradient += 'color-stop(' + layerParams[i] + ',' + colors[i] + '),color-stop(' + layerParams[i + 1] + ',' + colors[i] + '),';
         }
@@ -118,10 +107,9 @@ Page({
           gradient += 'color-stop(' + layerParams[colors.length] + ',#fff),color-stop(1,#fff),';
         }
         this.setData({
-          'color.gradient': gradient.slice(0, -1)
-        }); 
-        this.setData({
-          'color.trigger': true
+          'color.trigger': true,
+          'color.gradient': gradient.slice(0, -1),
+          'color.colors': colors
         }); 
         break;
     }

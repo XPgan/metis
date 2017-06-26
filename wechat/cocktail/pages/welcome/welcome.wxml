@@ -1,9 +1,6 @@
 <view class="section-welcome">
   <view class="corner">
-    <view class="fst"></view>
-    <view class="scd"></view>
-    <view class="thd"></view>
-    <view class="fth"></view>
+    <view class="{{item}}" wx:for="{{['fst','scd','thd','fth']}}"></view>
   </view>
   <view class="welcome-mn c-center">
     <view class="welcome-bar">

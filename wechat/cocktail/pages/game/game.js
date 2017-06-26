@@ -25,10 +25,10 @@ Page({
     },
     layer: {
       layer1: [0, 1],
-      layer2: [0, 0.67, 1],
-      layer3: [0, 0.5, 0.75, 1],
+      layer2: [0, 0.33, 1],
+      layer3: [0, 0.25, 0.5, 1],
       layer4: [0, 0.5, 1],
-      layer5: [0, 0.25, 1],
+      layer5: [0, 0.75, 1],
       layer6: [0, 0.33, 0.66, 1]
     },
     fruit: {
@@ -111,10 +111,10 @@ Page({
           }); 
         }
         for (var i = 0;i < colors.length;i++) {
-          gradient += 'color-stop(' + layerParams[i] + ',' + colors[i] + '),';
+          gradient += 'color-stop(' + layerParams[i] + ',' + colors[i] + '),color-stop(' + layerParams[i + 1] + ',' + colors[i] + '),';
         }
-        for (var j = colorLength;j > colors.length;j--) {
-          gradient += 'color-stop(1,#fff),';
+        if (colors.length < colorLength) {
+          gradient += 'color-stop(' + layerParams[colors.length] + ',#fff),color-stop(1,#fff),';
         }
         this.setData({
           'color.gradient': gradient.slice(0, -1)

@@ -22,14 +22,8 @@
       <view class="option-lst option-glass c-fix" wx:if="{{curTab == 'glass'}}" bindtap="handleOption">
         <view class="glass{{item}}" wx:for="{{[1,2,3]}}"><icon class="c-center" data-option="glass{{item}}"></icon></view>
       </view>
-      <view class="option-lst option-layer c-fix" wx:if="{{curTab == 'layer'}}" bindtap="handleOption">
-        <view class="layer{{item}}" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="layer{{item}}"></icon></view>
-      </view>
-      <view class="option-lst option-color c-fix" wx:if="{{curTab == 'color'}}" bindtap="handleOption">
-        <view class="color{{item}}" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="color{{item}}"></icon></view>
-      </view>
-      <view class="option-lst option-fruit c-fix" wx:if="{{curTab == 'fruit'}}" bindtap="handleOption">
-        <view class="fruit{{item}}" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="fruit{{item}}"></icon></view>
+      <view class="option-lst option-{{lstname}} c-fix" wx:for="{{['layer','color','fruit']}}" wx:for-item="lstname" wx:if="{{curTab == lstname}}" bindtap="handleOption">
+        <view class="{{lstname}}{{item}}" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="{{lstname}}{{item}}"></icon></view>
       </view>
     </view>
   </view>

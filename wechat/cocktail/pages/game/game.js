@@ -8,6 +8,7 @@ Page({
       fruit: ''
     },
     color: {
+      trigger: false,
       placeholder: {
         cur: [30, 135],
         glass1: [30, 135],
@@ -94,7 +95,7 @@ Page({
         }); 
         break;
       case 'layer':
-        this.setData({
+        this.data.color.trigger || this.setData({
           'curOption.layer': option
         }); 
         break;
@@ -118,6 +119,9 @@ Page({
         }
         this.setData({
           'color.gradient': gradient.slice(0, -1)
+        }); 
+        this.setData({
+          'color.trigger': true
         }); 
         break;
     }

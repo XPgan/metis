@@ -113,6 +113,9 @@ Page({
         for (var i = 0;i < colors.length;i++) {
           gradient += 'color-stop(' + layerParams[i] + ',' + colors[i] + '),';
         }
+        for (var j = colorLength;j > colors.length;j--) {
+          gradient += 'color-stop(1,#fff),';
+        }
         this.setData({
           'color.gradient': gradient.slice(0, -1)
         }); 

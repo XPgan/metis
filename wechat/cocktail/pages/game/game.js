@@ -125,5 +125,14 @@ Page({
         }); 
         break;
     }
+  },
+  handleReset: function () {
+    this.setData({
+      'curOption.color': '',
+      'curOption.fruit': '',
+      'color.trigger': false,
+      'color.gradient': '',
+      'color.colors': []
+    }); 
   }
 });

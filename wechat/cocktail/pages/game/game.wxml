@@ -20,10 +20,10 @@
     </view>
     <view class="game-option">
       <view class="option-lst option-glass c-fix" wx:if="{{curTab == 'glass'}}" bindtap="handleOption">
-        <view class="glass{{item}}" wx:for="{{[1,2,3]}}"><icon class="c-center" data-option="glass{{item}}"></icon></view>
+        <view class="glass{{item}}" hover-class="active" wx:for="{{[1,2,3]}}"><icon class="c-center" data-option="glass{{item}}"></icon></view>
       </view>
       <view class="option-lst option-{{lstname}} c-fix" wx:for="{{['layer','color','fruit']}}" wx:for-item="lstname" wx:if="{{curTab == lstname}}" bindtap="handleOption">
-        <view class="{{lstname}}{{item}}" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="{{lstname}}{{item}}"></icon></view>
+        <view class="{{lstname}}{{item}}" hover-class="active" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="{{lstname}}{{item}}"></icon></view>
       </view>
     </view>
   </view>

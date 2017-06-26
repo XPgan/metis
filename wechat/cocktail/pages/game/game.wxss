@@ -1,4 +1,8 @@
-.game-mn{position: fixed;width: 100%;top: 45%;}
+.game-mn{position: fixed !important;position: relative;width: 100%;top: 45%;}
+
+.btn-reset{width: 65px;height: 30px;left: 15px;background: url("http://ormq8rb63.bkt.clouddn.com/btn-reset.jpg") no-repeat 50% 50%;background-size: 65px auto;}
+.btn-shake{width: 35px;height: 40px;right: 15px;background: url("http://ormq8rb63.bkt.clouddn.com/btn-shake.jpg") no-repeat 50% 50%;background-size: 35px auto;}
+.btn-reset, .btn-shake{position: absolute;top: 150px;z-index: 10;}
 
 .game-effect{position: relative;width: 200px;margin: 5px auto;}
 .effect-glass .glass{height: 230px;background: url("http://oij8a9ql4.bkt.clouddn.com/nothumb.png") no-repeat 50% 100%;background-size: 200px auto;}

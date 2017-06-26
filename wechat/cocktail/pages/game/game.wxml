@@ -3,6 +3,8 @@
     <view class="{{item}}" wx:for="{{['fst','scd','thd','fth']}}"></view>
   </view>
   <view class="game-mn c-center">
+    <button class="btn-shake"></button>
+    <button class="btn-reset"></button>
     <view class="game-effect">
       <view class="effect-glass">
         <view class="effect-color" style="top: {{color.placeholder.cur[0]}}px;height: {{color.placeholder.cur[1]}}px;background: -webkit-gradient(linear,left bottom,left top,{{color.gradient}}"></view>
@@ -16,7 +18,7 @@
       <text data-tab="glass">Glass</text>
       <text data-tab="layer">Layer</text>
       <text data-tab="color">Liquor</text>
-      <text data-tab="fruit">Fruit</text>    
+      <text data-tab="fruit">Fruit</text>
     </view>
     <view class="game-option">
       <view class="option-lst option-glass c-fix" wx:if="{{curTab == 'glass'}}" bindtap="handleOption">

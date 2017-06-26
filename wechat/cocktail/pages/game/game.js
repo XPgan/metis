@@ -17,12 +17,12 @@ Page({
       },
       gradient: '',
       colors: [],
-      color1: 'red',
-      color2: 'blue',
-      color3: 'pink',
-      color4: 'yellow',
-      color5: 'green',
-      color6: 'orange'
+      color1: '#ff9a96',
+      color2: '#bff2ff',
+      color3: '#ffbfec',
+      color4: '#fff5bd',
+      color5: '#a9ffed',
+      color6: '#ffd9ab'
     },
     layer: {
       layer1: [0, 1],

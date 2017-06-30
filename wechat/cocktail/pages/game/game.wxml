@@ -30,6 +30,6 @@
     </view>
   </view>
   <view class="game-shake">
-    <view class="shaker"></view>
+    <view class="shaker shake"></view>
   </view>
 </view>

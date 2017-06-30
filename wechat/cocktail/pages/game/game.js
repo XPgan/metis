@@ -39,7 +39,7 @@ Page({
         fruit2: [65, 78],
         fruit3: [65, 85],
         fruit4: [58, 80],
-        fruit5: [63, 87],
+        fruit5: [59, 80],
         fruit6: [60, 75]
       },
       glass2: {
@@ -47,7 +47,7 @@ Page({
         fruit2: [30, 70],
         fruit3: [30, 75],
         fruit4: [23, 70],
-        fruit5: [30, 80],
+        fruit5: [26, 73],
         fruit6: [25, 70]
       },
       glass3: {
@@ -55,7 +55,7 @@ Page({
         fruit2: [140, 78],
         fruit3: [140, 84],
         fruit4: [133, 78],
-        fruit5: [138, 86],
+        fruit5: [135, 78],
         fruit6: [135, 72]
       }
     }

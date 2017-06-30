@@ -24,11 +24,11 @@ view.effect-color{position: absolute;z-index: -2;width: 100%;}
 .effect-glass .glass3{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass3.png");}
 
 .effect-fruit .fruit1{background-image: url("http://ormq8rb63.bkt.clouddn.com/result-fruit1.png");}
-.effect-fruit .fruit2{background-image: url("http://ormq8rb63.bkt.clouddn.com/result-fruit2.png");}
+.effect-fruit .fruit2{background-image: url("http://ormq8rb63.bkt.clouddn.com/result-fruit2.png?refresh");}
 .effect-fruit .fruit3{background-image: url("http://ormq8rb63.bkt.clouddn.com/result-fruit3.png");}
 .effect-fruit .fruit4{background-image: url("http://ormq8rb63.bkt.clouddn.com/result-fruit4.png");}
-.effect-fruit .fruit5{background-image: url("http://ormq8rb63.bkt.clouddn.com/result-fruit5.png");}
-.effect-fruit .fruit6{background-image: url("http://ormq8rb63.bkt.clouddn.com/result-fruit6.png");}
+.effect-fruit .fruit5{background-image: url("http://ormq8rb63.bkt.clouddn.com/result-fruit5.png?refresh");}
+.effect-fruit .fruit6{background-image: url("http://ormq8rb63.bkt.clouddn.com/result-fruit6.png?refresh");}
 
 .option-glass .glass1 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass1.png");}
 .option-glass .glass2 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/glass2.png");}

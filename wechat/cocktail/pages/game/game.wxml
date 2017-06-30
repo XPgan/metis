@@ -29,4 +29,7 @@
       </view>
     </view>
   </view>
+  <view class="game-shake">
+    <view class="shaker"></view>
+  </view>
 </view>

@@ -1,5 +1,6 @@
 Page({
   data: {
+    name: '',
     curTab: 'glass',
     curOption: {
       glass: 'glass1',
@@ -10,6 +11,7 @@ Page({
     },
     triggerShake: false,
     triggerDecorate: false,
+    triggerName: false,
     color: {
       trigger: false,
       placeholder: {
@@ -185,6 +187,15 @@ Page({
     });
   },
   handleFinish: function () {
-    
+    this.setData({
+      'triggerName': true
+    });
+  },
+  handleName: function (e) {
+    var value = e.detail.value;
+    this.setData({
+      'name': value
+    });
+    console.log(value);
   }
 });

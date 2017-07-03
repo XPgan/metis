@@ -43,9 +43,9 @@
   <view class="game-shake" wx:if="{{ triggerShake }}">
     <view class="shaker shake"></view>
   </view>
-  <view class="game-name">
+  <view class="game-name" wx:if="{{ triggerName }}">
     <view class="dialog-name c-center">
-      <input focus maxlength="20" />
+      <input focus maxlength="20" bindconfirm="handleName" />
     </view>
   </view>
 </view>

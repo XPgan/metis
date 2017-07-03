@@ -7,6 +7,7 @@
       <button class="btn-shake" bindtap="handleShake"></button>
       <button class="btn-reset" bindtap="handleReset"></button>
     </view>
+    <button class="btn-finish"></button>
     <view class="game-effect">
       <view class="effect-glass">
         <view class="effect-color" style="top: {{color.placeholder.cur[0]}}px;height: {{color.placeholder.cur[1]}}px;background: -webkit-gradient(linear,left bottom,left top,{{color.gradient}}"></view>

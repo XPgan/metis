@@ -3,7 +3,7 @@
     <view class="{{item}}" wx:for="{{['fst','scd','thd','fth']}}"></view>
   </view>
   <view class="game-mn c-center">
-    <button class="btn-finish" wx:if="{{triggerDecorate}}"></button>
+    <button class="btn-finish" wx:if="{{triggerDecorate}}" bindtap="handleFinish"></button>
     <view class="game-btn-make" wx:else>
       <button class="btn-shake" bindtap="handleShake"></button>
       <button class="btn-reset" bindtap="handleReset"></button>
@@ -42,5 +42,10 @@
   </view>
   <view class="game-shake" wx:if="{{ triggerShake }}">
     <view class="shaker shake"></view>
+  </view>
+  <view class="game-name">
+    <view class="dialog-name c-center">
+      <input focus maxlength="20" />
+    </view>
   </view>
 </view>

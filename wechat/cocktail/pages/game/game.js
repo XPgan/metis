@@ -183,5 +183,8 @@ Page({
       'curOption.decorate': option,
       'decorate.position': decoratePosition
     });
+  },
+  handleFinish: function () {
+    
   }
 });

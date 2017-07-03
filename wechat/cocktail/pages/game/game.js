@@ -8,7 +8,7 @@ Page({
       fruit: ''
     },
     triggerShake: false,
-    triggerDecorate: true,
+    triggerDecorate: false,
     color: {
       trigger: false,
       placeholder: {
@@ -127,13 +127,24 @@ Page({
   },
   handleShake: function () {
     var _this = this;
+    var layerParams = this.data.layer[this.data.curOption.layer];
+    var colors = this.data.color.colors;
+    var colorLength = layerParams.length - 1;
+    var gradient = '';
+    for (var i = 0; i < colors.length; i++) {
+      gradient += 'color-stop(' + layerParams[i] + ',' + colors[i] + '),';
+    }
+    if (colors.length < colorLength) {
+      gradient += 'color-stop(' + layerParams[colors.length] + ',#fff),color-stop(1,#fff),';
+    }
     _this.setData({
       'triggerShake': true
     });
     var t = setTimeout(function () {
       _this.setData({
         'triggerShake': false,
-        'triggerDecorate': true
+        'triggerDecorate': true,
+        'color.gradient': gradient.slice(0, -1)
       });
     }, 600);
   }

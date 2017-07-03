@@ -30,7 +30,7 @@
         <view class="{{lstname}}{{item}}" hover-class="active" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="{{lstname}}{{item}}"></icon></view>
       </view>
     </view>
-    <view class="game-decorate option-lst c-fix">
+    <view class="game-decorate option-lst c-fix" wx:if="{{triggerDecorate}}">
       <view class="decorate{{item}}" hover-class="active" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="decorate{{item}}"></icon></view>
     </view>
   </view>

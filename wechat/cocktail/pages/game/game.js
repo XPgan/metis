@@ -9,7 +9,7 @@ Page({
       decorate: ''
     },
     triggerShake: false,
-    triggerDecorate: true,
+    triggerDecorate: false,
     color: {
       trigger: false,
       placeholder: {

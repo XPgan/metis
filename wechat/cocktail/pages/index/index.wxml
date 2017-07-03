@@ -1,0 +1,5 @@
+<view class="section-index">
+  <view class="corner">
+    <view class="{{item}}" wx:for="{{['fst','scd','thd','fth']}}"></view>
+  </view>
+</view>

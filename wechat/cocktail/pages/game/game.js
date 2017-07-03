@@ -64,12 +64,30 @@ Page({
     },
     decorate: {
       position: [],
-      decorate1: [0, 0],
-      decorate2: [0, 0],
-      decorate3: [0, 0],
-      decorate4: [0, 0],
-      decorate5: [0, 0],
-      decorate6: [0, 0]
+      glass1: {
+        decorate1: [-24, 36],
+        decorate2: [90, 78],
+        decorate3: [-15, 105],
+        decorate4: [-10, 45],
+        decorate5: [-10, 95],
+        decorate6: [-15, 100]
+      },
+      glass2: {
+        decorate1: [-15, 30],
+        decorate2: [130, 74],
+        decorate3: [-10, 115],
+        decorate4: [0, 40],
+        decorate5: [0, 100],
+        decorate6: [-5, 105]
+      },
+      glass3: {
+        decorate1: [-13, 5],
+        decorate2: [10, 72],
+        decorate3: [-17, 140],
+        decorate4: [0, 20],
+        decorate5: [-12, 122],
+        decorate6: [-10, 135]
+      }
     }
   },
   onReady: function () {
@@ -160,7 +178,7 @@ Page({
   },
   handleDecorate: function (e) {
     var option = e.target.dataset.option;
-    var decoratePosition = this.data.decorate[option];
+    var decoratePosition = this.data.decorate[this.data.curOption.glass][option];
     this.setData({
       'curOption.decorate': option,
       'decorate.position': decoratePosition

@@ -12,6 +12,7 @@ Page({
     triggerShake: false,
     triggerDecorate: false,
     triggerName: false,
+    triggerResult: false,
     color: {
       trigger: false,
       placeholder: {
@@ -194,7 +195,9 @@ Page({
   handleName: function (e) {
     var value = e.detail.value;
     this.setData({
-      'name': value
+      'name': value,
+      'triggerName': false,
+      'triggerResult': true
     });
     console.log(value);
   }

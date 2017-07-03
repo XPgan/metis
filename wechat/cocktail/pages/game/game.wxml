@@ -20,7 +20,8 @@
         <view class="decorate{{item}}" wx:for="{{[1,2,3,4,5,6]}}" style="top: {{decorate.position[0]}}px;left: {{decorate.position[1]}}px" wx:if="{{curOption.decorate == 'decorate' + item}}"></view>
       </view>
     </view>
-    <view class="game-decorate option-lst c-fix" wx:if="{{triggerDecorate}}" bindtap="handleDecorate">
+    <view wx:if="{{triggerResult}}">我调制了一杯【{{name}}】</view>
+    <view class="game-decorate option-lst c-fix" wx:elif="{{triggerDecorate}}" bindtap="handleDecorate">
       <view class="decorate{{item}}" hover-class="active" wx:for="{{[1,2,3,4,5,6]}}"><icon class="c-center" data-option="decorate{{item}}"></icon></view>
     </view>
     <view wx:else>

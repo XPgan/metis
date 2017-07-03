@@ -12,7 +12,7 @@
         <view class="effect-color" style="top: {{color.placeholder.cur[0]}}px;height: {{color.placeholder.cur[1]}}px;background: -webkit-gradient(linear,left bottom,left top,{{color.gradient}}"></view>
         <view class="glass glass{{item}}" wx:for="{{[1,2,3]}}" wx:if="{{curOption.glass == 'glass' + item}}"></view>
       </view>
-      <view class="effect-fruit">
+      <view class="effect-fruit {{triggerDecorate && 'aftershake'}}">
         <view class="fruit{{item}}" wx:for="{{[1,2,3,4,5,6]}}" style="bottom: {{fruit.position[0]}}px;left: {{fruit.position[1]}}px" wx:if="{{curOption.fruit == 'fruit' + item}}"></view>
       </view>
     </view>

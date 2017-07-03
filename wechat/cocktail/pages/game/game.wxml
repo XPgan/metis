@@ -3,7 +3,7 @@
     <view class="{{item}}" wx:for="{{['fst','scd','thd','fth']}}"></view>
   </view>
   <view class="game-mn c-center">
-    <button class="btn-shake"></button>
+    <button class="btn-shake" bindtap="handleShake"></button>
     <button class="btn-reset" bindtap="handleReset"></button>
     <view class="game-effect">
       <view class="effect-glass">
@@ -29,7 +29,7 @@
       </view>
     </view>
   </view>
-  <view class="game-shake">
+  <view class="game-shake" wx:if="{{ triggerShake }}">
     <view class="shaker shake"></view>
   </view>
 </view>

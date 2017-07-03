@@ -7,6 +7,7 @@ Page({
       color: '',
       fruit: ''
     },
+    triggerShake: false,
     color: {
       trigger: false,
       placeholder: {
@@ -122,5 +123,16 @@ Page({
       'color.gradient': '',
       'color.colors': []
     }); 
+  },
+  handleShake: function () {
+    var _this = this;
+    _this.setData({
+      'triggerShake': true
+    });
+    var t = setTimeout(function () {
+      _this.setData({
+        'triggerShake': false
+      });
+    }, 600);
   }
 });

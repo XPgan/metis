@@ -22,7 +22,7 @@ view.effect-color{position: absolute;z-index: -2;width: 100%;}
 .game-shake{position: fixed;left: 0;top: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.6);}
 .game-shake .shaker{width: 100%;height: 100%;background: url("http://ormq8rb63.bkt.clouddn.com/shaker.png?refresh") no-repeat 55% 30%;background-size: 130px auto;}
 
-.shake{-webkit-animation: shake 0.5s forwards;animation: shake 0.5s forwards;-webkit-transform-origin: center;transform-origin: center;}
+.shake{-webkit-animation: shake 0.5s forwards;animation: shake 0.5s forwards;-webkit-transform-origin: 50% 42%;transform-origin: 50% 42%;}
 @-webkit-keyframes shake
 {
 0%{-webkit-transform: rotate(-60deg);transform: rotate(-60deg);}

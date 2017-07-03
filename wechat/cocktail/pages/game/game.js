@@ -8,6 +8,7 @@ Page({
       fruit: ''
     },
     triggerShake: false,
+    triggerDecorate: false,
     color: {
       trigger: false,
       placeholder: {
@@ -131,7 +132,8 @@ Page({
     });
     var t = setTimeout(function () {
       _this.setData({
-        'triggerShake': false
+        'triggerShake': false,
+        'triggerDecorate': true
       });
     }, 600);
   }

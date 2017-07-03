@@ -5,10 +5,11 @@ Page({
       glass: 'glass1',
       layer: 'layer1',
       color: '',
-      fruit: ''
+      fruit: '',
+      decorate: ''
     },
     triggerShake: false,
-    triggerDecorate: false,
+    triggerDecorate: true,
     color: {
       trigger: false,
       placeholder: {
@@ -60,6 +61,15 @@ Page({
         fruit5: [135, 78],
         fruit6: [135, 72]
       }
+    },
+    decorate: {
+      position: [],
+      decorate1: [0, 0],
+      decorate2: [0, 0],
+      decorate3: [0, 0],
+      decorate4: [0, 0],
+      decorate5: [0, 0],
+      decorate6: [0, 0]
     }
   },
   onReady: function () {
@@ -147,5 +157,13 @@ Page({
         'color.gradient': gradient.slice(0, -1)
       });
     }, 600);
+  },
+  handleDecorate: function (e) {
+    var option = e.target.dataset.option;
+    var decoratePosition = this.data.decorate[option];
+    this.setData({
+      'curOption.decorate': option,
+      'decorate.position': decoratePosition
+    });
   }
 });

@@ -24,6 +24,8 @@ view.effect-color{position: absolute;z-index: -2;width: 100%;}
 .option-glass view{padding-bottom: 40%;}
 .option-glass icon{width: 80%;padding-bottom: 80%;}
 
+.game-sharetext{line-height: 1.5;text-align: center;width: 80%;margin: 20px auto;}
+
 .game-name, .game-shake{position: fixed;left: 0;top: 0;width: 100%;height: 100%;background-color: rgba(0,0,0,0.6);}
 
 .game-name .dialog-name{position: fixed !important;position: relative;top: 35%;width: 300px;height: 150px;background: url("http://ormq8rb63.bkt.clouddn.com/dialog-name.png") no-repeat 50% 50%;background-size: 300px auto;}

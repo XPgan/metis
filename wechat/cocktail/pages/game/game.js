@@ -199,6 +199,5 @@ Page({
       'triggerName': false,
       'triggerResult': true
     });
-    console.log(value);
   }
 });

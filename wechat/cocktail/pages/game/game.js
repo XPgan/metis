@@ -202,8 +202,8 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '调制你的专属鸡尾酒',
-      desc: '我调制了一杯【' + this.data.name + '】，你也来试试吧！',
+      title: '我调制了一杯【' + this.data.name + '】，你也来试试吧！',
+      desc: '调制你的专属鸡尾酒',
       path: '/pages/loading/loading'
     }
   }

@@ -8,7 +8,7 @@ Page({
       fruit: ''
     },
     triggerShake: false,
-    triggerDecorate: false,
+    triggerDecorate: true,
     color: {
       trigger: false,
       placeholder: {

@@ -19,14 +19,9 @@ Page({
         glass2: [40, 170],
         glass3: [28, 65]
       },
-      gradient: '',
-      colors: [],
-      color1: '#ff9a96',
-      color2: '#bff2ff',
-      color3: '#ffbfec',
-      color4: '#fff5bd',
-      color5: '#a9ffed',
-      color6: '#ffd9ab'
+      colorRef: ['#ff9a96', '#bff2ff', '#ffbfec', '#fff5bd', '#a9ffed', '#ffd9ab'],
+      colorLst: [],
+      gradient: ''
     },
     layer: {
       layer1: [0, 1],
@@ -118,22 +113,23 @@ Page({
         }); 
         break;
       case 'color':
-        var layerParams = this.data.layer[this.data.curOption.layer];
-        var color = this.data.color[option];
-        var colors = this.data.color.colors;
-        var colorLength = layerParams.length - 1;
+        var layerParam = this.data.layer[this.data.curOption.layer];
+        var index = option.split('color')[1] - 1;
+        var colorRef = this.data.color.colorRef[index];
+        var colorLst = this.data.color.colorLst;
+        var colorLength = layerParam.length - 1;
         var gradient = '';
-        (colors.length < colorLength) && colors.push(color);
-        for (var i = 0;i < colors.length;i++) {
-          gradient += 'color-stop(' + layerParams[i] + ',' + colors[i] + '),color-stop(' + layerParams[i + 1] + ',' + colors[i] + '),';
+        (colorLst.length < colorLength) && colorLst.push(colorRef);
+        for (var i = 0; i < colorLst.length;i++) {
+          gradient += 'color-stop(' + layerParam[i] + ',' + colorLst[i] + '),color-stop(' + layerParam[i + 1] + ',' + colorLst[i] + '),';
         }
-        if (colors.length < colorLength) {
-          gradient += 'color-stop(' + layerParams[colors.length] + ',#fff),color-stop(1,#fff),';
+        if (colorLst.length < colorLength) {
+          gradient += 'color-stop(' + layerParam[colorLst.length] + ',#fff),color-stop(1,#fff),';
         }
         this.setData({
           'color.trigger': true,
           'color.gradient': gradient.slice(0, -1),
-          'color.colors': colors
+          'color.colorLst': colorLst
         }); 
         break;
     }
@@ -143,21 +139,21 @@ Page({
       'curOption.color': '',
       'curOption.fruit': '',
       'color.trigger': false,
-      'color.gradient': '',
-      'color.colors': []
+      'color.colorLst': [],
+      'color.gradient': ''
     }); 
   },
   handleShake: function () {
     var _this = this;
-    var layerParams = this.data.layer[this.data.curOption.layer];
-    var colors = this.data.color.colors;
-    var colorLength = layerParams.length - 1;
+    var layerParam = this.data.layer[this.data.curOption.layer];
+    var colorLst = this.data.color.colorLst;
+    var colorLength = layerParam.length - 1;
     var gradient = '';
-    for (var i = 0; i < colors.length; i++) {
-      gradient += 'color-stop(' + layerParams[i] + ',' + colors[i] + '),';
+    for (var i = 0; i < colorLst.length; i++) {
+      gradient += 'color-stop(' + layerParam[i] + ',' + colorLst[i] + '),';
     }
-    if (colors.length < colorLength) {
-      gradient += 'color-stop(' + layerParams[colors.length] + ',#fff),color-stop(1,#fff),';
+    if (colorLst.length < colorLength) {
+      gradient += 'color-stop(' + layerParam[colorLst.length] + ',#fff),color-stop(1,#fff),';
     }
     _this.setData({
       'triggerShake': true

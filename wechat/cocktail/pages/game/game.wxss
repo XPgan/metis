@@ -1,8 +1,8 @@
 .game-mn{position: fixed !important;position: relative;width: 100%;top: 45%;}
 
-.btn-reset{width: 65px;height: 30px;left: 15px;background: url("http://ormq8rb63.bkt.clouddn.com/btn-reset.jpg") no-repeat 50% 50%;background-size: 65px auto;}
-.btn-shake{width: 35px;height: 40px;right: 15px;background: url("http://ormq8rb63.bkt.clouddn.com/btn-shake.jpg") no-repeat 50% 50%;background-size: 35px auto;}
-.btn-finish{width: 60px;height: 50px;right: 15px;background: url("http://ormq8rb63.bkt.clouddn.com/btn-finish.png") no-repeat 50% 50%;background-size: 60px auto;}
+.btn-reset{width: 80px;height: 40px;left: 15px;background: url("http://ormq8rb63.bkt.clouddn.com/btn-reset.jpg") no-repeat 50% 50%;background-size: 80px auto;}
+.btn-shake{width: 50px;height: 55px;right: 15px;background: url("http://ormq8rb63.bkt.clouddn.com/btn-shake.jpg") no-repeat 50% 50%;background-size: 50px auto;}
+.btn-finish{width: 80px;height: 80px;right: 15px;background: url("http://ormq8rb63.bkt.clouddn.com/btn-finish.png") no-repeat 50% 50%;background-size: 80px auto;}
 .btn-reset, .btn-shake, .btn-finish{position: absolute;top: 150px;z-index: 10;}
 
 .game-effect{position: relative;width: 200px;margin: 5px auto;}
@@ -14,9 +14,9 @@
 .effect-decorate .decorate2{-webkit-transform: rotate(-100deg);transform: rotate(-100deg);opacity: 0.5;}
 view.effect-color{position: absolute;z-index: -2;width: 100%;}
 
-.game-tab text{float: left;width: 25%;line-height: 2.5;text-align: center;background: url("http://ormq8rb63.bkt.clouddn.com/bg-nav.png") no-repeat 50% 100%;background-size: 70px auto;}
+.game-tab text{float: left;width: 25%;line-height: 2.5;text-align: center;font-weight: bold;background: url("http://ormq8rb63.bkt.clouddn.com/bg-nav.png") no-repeat 50% 100%;background-size: 70px auto;}
 
-.game-option{margin: 5px 0;padding: 0 15px;}
+.game-option, .game-decorate{margin: 5px 0;padding: 0 15px;}
 .option-lst{height: 0;padding-bottom: 60%;}
 .option-lst view{position: relative;float: left;width: 33.33%;height: 0;padding-bottom: 30%;}
 .option-lst icon{position: absolute;width: 70%;height: 0;padding-bottom: 70%;border: 1px solid #E5E5E5;border-radius: 5px;background: url("http://oij8a9ql4.bkt.clouddn.com/nothumb.png") no-repeat 50% 50%;background-size: auto 88%;}
@@ -98,7 +98,8 @@ view.effect-color{position: absolute;z-index: -2;width: 100%;}
 .option-color .color4 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/color4.jpg");}
 .option-color .color5 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/color5.jpg");}
 .option-color .color6 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/color6.jpg");}
-.option-color .color2 icon, .option-color .color5 icon{background-size: auto 131%;background-position: 50% 117%;}
+.option-color .color2 icon{background-size: auto 131%;background-position: 47% 117%;}
+.option-color .color5 icon{background-size: auto 134%;background-position: 54% 115%;}
 
 .option-fruit .fruit1 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/fruit1.jpg");}
 .option-fruit .fruit2 icon{background-image: url("http://ormq8rb63.bkt.clouddn.com/fruit2.jpg");}

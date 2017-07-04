@@ -31,10 +31,7 @@
     </view>
     <view wx:else>
       <view class="game-tab c-fix" bindtap="handleTab">
-        <text data-tab="glass">Glass</text>
-        <text data-tab="layer">Layer</text>
-        <text data-tab="color">Liquor</text>
-        <text data-tab="fruit">Fruit</text>
+        <text data-tab="{{item[0]}}" class="{{(curTab == item[0]) && 'active'}}" wx:for="{{[['glass','Glass'],['layer','Layer'],['color','Liquor'],['fruit','Fruit']]}}">{{item[1]}}</text>
       </view>
       <view class="game-option">
         <view class="option-lst option-glass c-fix" wx:if="{{curTab == 'glass'}}" bindtap="handleOption">

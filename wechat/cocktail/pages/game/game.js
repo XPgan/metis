@@ -128,7 +128,6 @@ Page({
           gradient += 'color-stop(' + layerParam[colorLst.length] + ',#fff),color-stop(1,#fff),';
         }
         this.setData({
-          'curOption.color': option,
           'color.trigger': true,
           'color.gradient': gradient.slice(0, -1),
           'color.colorLst': colorLst
@@ -194,7 +193,7 @@ Page({
     return {
       title: (app.globalData.userInfo.nickName || '我') + '调制了一杯【' + this.data.cocktailName + '】，你也来试试吧！',
       desc: '调制你的专属鸡尾酒',
-      path: '/pages/loading/loading'
+      path: '/pages/welcome/welcome'
     }
   }
 });

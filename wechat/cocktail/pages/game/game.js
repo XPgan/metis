@@ -1,6 +1,6 @@
 Page({
   data: {
-    name: '鸡尾酒',
+    cocktailName: '鸡尾酒',
     curTab: 'glass',
     curOption: {
       glass: 'glass1',
@@ -195,14 +195,14 @@ Page({
   handleName: function (e) {
     var value = e.detail.value;
     this.setData({
-      'name': value,
+      'cocktailName': value,
       'triggerName': false,
       'triggerResult': true
     });
   },
   onShareAppMessage: function () {
     return {
-      title: '我调制了一杯【' + this.data.name + '】，你也来试试吧！',
+      title: '我调制了一杯【' + this.data.cocktailName + '】，你也来试试吧！',
       desc: '调制你的专属鸡尾酒',
       path: '/pages/loading/loading'
     }

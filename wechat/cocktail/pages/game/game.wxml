@@ -35,7 +35,7 @@
       </view>
       <view class="game-option">
         <view class="option-lst option-{{lstname}} c-fix" wx:for="{{['glass','layer','color','fruit']}}" wx:for-item="lstname" wx:if="{{curTab == lstname}}" bindtap="handleOption">
-          <view class="{{lstname}}{{item}}" hover-class="active" wx:for="{{[1,2,3,4,5,6]}}" wx:if="{{!((index > 2) && (lstname == 'glass'))}}"><icon class="c-center" data-option="{{lstname}}{{item}}"></icon></view>
+          <view class="{{lstname}}{{item}} {{(curOption[curTab] == lstname + item) && 'active'}}" wx:for="{{[1,2,3,4,5,6]}}" wx:if="{{!((index > 2) && (lstname == 'glass'))}}"><icon class="c-center" data-option="{{lstname}}{{item}}"></icon></view>
         </view>
       </view>
     </view>

@@ -128,6 +128,7 @@ Page({
           gradient += 'color-stop(' + layerParam[colorLst.length] + ',#fff),color-stop(1,#fff),';
         }
         this.setData({
+          'curOption.color': option,
           'color.trigger': true,
           'color.gradient': gradient.slice(0, -1),
           'color.colorLst': colorLst

@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/game/game",
     "pages/welcome/welcome",
-    "pages/loading/loading",
-    "pages/game/game"
+    "pages/loading/loading"
   ],
   "window": {
     "navigationBarTitleText": "调制你的专属鸡尾酒"

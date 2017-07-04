@@ -16,7 +16,7 @@
         <view class="glass glass{{item}}" wx:for="{{[1,2,3]}}" wx:if="{{curOption.glass == 'glass' + item}}"></view>
       </view>
       <view class="effect-fruit {{triggerDecorate && 'aftershake'}}">
-        <view class="fruit{{item}}" wx:for="{{[1,2,3,4,5,6]}}" style="bottom: {{fruit.position[0]}}px;left: {{fruit.position[1]}}px" wx:if="{{curOption.fruit == 'fruit' + item}}"></view>
+        <view class="fruit{{item}}" wx:for="{{[1,2,3,4,5,6]}}" style="bottom: {{fruit[curOption.glass]['fruit' + item][0]}}px;left: {{fruit[curOption.glass]['fruit' + item][1]}}px" wx:if="{{curOption.fruit == 'fruit' + item}}"></view>
       </view>
       <view class="effect-decorate">
         <view class="decorate{{item}}" wx:for="{{[1,2,3,4,5,6]}}" style="top: {{decorate[curOption.glass]['decorate' + item][0]}}px;left: {{decorate[curOption.glass]['decorate' + item][1]}}px" wx:if="{{decorate.trigger[index]}}"></view>

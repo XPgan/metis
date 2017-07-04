@@ -37,7 +37,6 @@ Page({
       layer6: [0, 0.33, 0.66, 1]
     },
     fruit: {
-      position: [],
       glass1: {
         fruit1: [67, 78],
         fruit2: [65, 78],
@@ -104,17 +103,13 @@ Page({
     var option = e.target.dataset.option;
     switch (this.data.curTab) {
       case 'glass':
-        var fruitPosition = this.data.fruit[option][this.data.curOption.fruit];
         this.setData({
-          'curOption.glass': option,
-          'fruit.position': fruitPosition
+          'curOption.glass': option
         });
         break;
       case 'fruit':
-        var fruitPosition = this.data.fruit[this.data.curOption.glass][option];
         this.setData({
-          'curOption.fruit': option,
-          'fruit.position': fruitPosition
+          'curOption.fruit': option
         }); 
         break;
       case 'layer':

@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
   data: {
     cocktailName: '鸡尾酒',
@@ -190,7 +191,7 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '我调制了一杯【' + this.data.cocktailName + '】，你也来试试吧！',
+      title: (app.globalData.userInfo.nickName || '我') + '调制了一杯【' + this.data.cocktailName + '】，你也来试试吧！',
       desc: '调制你的专属鸡尾酒',
       path: '/pages/loading/loading'
     }

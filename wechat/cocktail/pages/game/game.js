@@ -9,13 +9,12 @@ Page({
       fruit: ''
     },
     triggerShake: false,
-    triggerDecorate: true,
+    triggerDecorate: false,
     triggerName: false,
     triggerResult: false,
     color: {
       trigger: false,
       placeholder: {
-        cur: [30, 135],
         glass1: [30, 135],
         glass2: [40, 170],
         glass3: [28, 65]
@@ -106,11 +105,9 @@ Page({
     switch (this.data.curTab) {
       case 'glass':
         var fruitPosition = this.data.fruit[option][this.data.curOption.fruit];
-        var colorPlaceholder = this.data.color.placeholder[option];
         this.setData({
           'curOption.glass': option,
-          'fruit.position': fruitPosition,
-          'color.placeholder.cur': colorPlaceholder
+          'fruit.position': fruitPosition
         });
         break;
       case 'fruit':

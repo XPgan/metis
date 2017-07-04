@@ -5,7 +5,7 @@
   <view class="game-mn c-center">
     <view wx:if="{{!triggerResult}}">
       <button class="btn-finish" wx:if="{{triggerDecorate}}" bindtap="handleFinish"></button>
-      <view class="game-btn-make" wx:else>
+      <view wx:else>
         <button class="btn-shake" bindtap="handleShake"></button>
         <button class="btn-reset" bindtap="handleReset"></button>
       </view>

@@ -8,7 +8,7 @@ Page({
     });
     var timeout = setTimeout(function () {
       wx.navigateTo({
-        url: '../game/game'
+        url: '../loading/loading'
       });
     }, 1300);
   }

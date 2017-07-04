@@ -18,7 +18,7 @@ Page({
         clearInterval(interval);
         var timeout = setTimeout(function () {
           wx.navigateTo({
-            url: '../welcome/welcome'
+            url: '../game/game'
           });
         }, 500);
       }

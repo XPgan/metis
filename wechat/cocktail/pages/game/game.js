@@ -6,11 +6,10 @@ Page({
       glass: 'glass1',
       layer: 'layer1',
       color: '',
-      fruit: '',
-      decorate: ''
+      fruit: ''
     },
     triggerShake: false,
-    triggerDecorate: false,
+    triggerDecorate: true,
     triggerName: false,
     triggerResult: false,
     color: {
@@ -66,7 +65,7 @@ Page({
       }
     },
     decorate: {
-      position: [],
+      trigger: [false, false, false, false, false, false],
       glass1: {
         decorate1: [-24, 36],
         decorate2: [90, 78],
@@ -181,10 +180,11 @@ Page({
   },
   handleDecorate: function (e) {
     var option = e.target.dataset.option;
-    var decoratePosition = this.data.decorate[this.data.curOption.glass][option];
+    var index = option.split('decorate')[1] - 1;
+    var decorateTrigger = this.data.decorate.trigger;
+    decorateTrigger[index] = !decorateTrigger[index];
     this.setData({
-      'curOption.decorate': option,
-      'decorate.position': decoratePosition
+      'decorate.trigger': decorateTrigger
     });
   },
   handleFinish: function () {

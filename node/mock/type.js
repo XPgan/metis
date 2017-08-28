@@ -17,5 +17,11 @@ module.exports = {
             }
         }
         return result;
+    },
+    figure: function (opt) {
+        return method.random(opt.min, opt.max);
+    },
+    id: function () {
+        return (new Date()).valueOf();
     }
 }

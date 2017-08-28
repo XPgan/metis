@@ -13,12 +13,15 @@ module.exports = {
             error: 0,
             data: [
                 {
-                    id: 1,
+                    id: type.id(),
                     name: type.string({
                         min: 5,
                         max: 10
                     }),
-                    price: 5000
+                    price: type.figure({
+                        min: 1000,
+                        max: 5000
+                    })
                 }
             ]
         }
@@ -31,7 +34,7 @@ module.exports = {
             error: 0,
             data: [
                 {
-                    id: 2,
+                    id: type.id(),
                     name: type.string({
                         lst: [
                             '文案一',
@@ -39,7 +42,10 @@ module.exports = {
                             '文案三'
                         ]
                     }),
-                    price: 6000,
+                    price: type.figure({
+                        min: 20,
+                        max: 55000
+                    }),
                     tag: ''
                 }
             ]

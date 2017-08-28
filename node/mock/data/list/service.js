@@ -66,6 +66,9 @@ module.exports = {
                             }
                         },
                         length: 8
+                    }),
+                    cover: type.image({
+                        type: '-half'
                     })
                 }
             ]

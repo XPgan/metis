@@ -3,6 +3,7 @@
  */
 
 var method = require('./method');
+var material = require('./material');
 
 module.exports = {
     id: function () {
@@ -23,6 +24,10 @@ module.exports = {
             }
         }
         return result;
+    },
+    image: function (opt) {
+        var imageLst = material.image;
+        return imageLst[method.random(0, imageLst.length - 1)] + opt.type;
     },
     list: function (opt) {
         var result = [];

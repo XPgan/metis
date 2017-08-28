@@ -8,10 +8,11 @@ var requestGatherLst = [
     serviceLst
 ];
 
+var getRequestCache = {};
 var createGetRequest = function (requestObj) {
     router.get(requestObj.url, function (req, res) {
         res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
-        res.end(JSON.stringify(requestObj.data));
+        res.end(JSON.stringify(requestObj.data()));
     });
 };
 var createPostRequest = function (requestObj) {

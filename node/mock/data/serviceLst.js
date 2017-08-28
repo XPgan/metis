@@ -21,6 +21,15 @@ module.exports = {
                     price: type.figure({
                         min: 1000,
                         max: 5000
+                    }),
+                    cover: type.image({
+                        lst: [
+                            'http://pic.igengmei.com/2017/01/12/1826/92409e6b2aeb-half',
+                            'http://pic.igengmei.com/2017/02/28/1051/85f098608200-half',
+                            'http://pic.igengmei.com/2016/09/23/1619/6b2c7f5e99f0-half',
+                            'http://pic.igengmei.com/2017/03/03/1529/c38af532fa4f-half',
+                            'http://pic.igengmei.com/2017/02/23/1912/b351e1dafcd4-half'
+                        ]
                     })
                 }
             ]

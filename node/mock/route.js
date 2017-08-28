@@ -26,9 +26,10 @@ var createGetRequest = function (requestObj) {
         }
 
         var start_num = req.query.start_num >> 0;
-        var count = req.query.count >> 0;
+        var count = req.query.count >> 0 || 10;
         var page = req.query.page >> 0;
-        (start_num != undefined) && (count != undefined) && (responseData.data = responseData.data.slice(start_num, start_num + count));
+        (req.query.start_num != undefined) && (responseData.data = responseData.data.slice(start_num, start_num + count));
+        (req.query.page != undefined) && (responseData.data = responseData.data.slice((page - 1) * count, (page - 1) * count + count));
 
         res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
         res.end(JSON.stringify(responseData));

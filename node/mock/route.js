@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 // 通用列表
-var serviceLst = require('./data/list/service');
+var serviceLst = require('./data/serviceLst');
 
 var requestGatherLst = [
     serviceLst

@@ -2,7 +2,7 @@
  * Created by sunmy on 2017/8/26.
  */
 
-var type = require('../../type');
+var type = require('../type');
 
 module.exports = {
     common: {

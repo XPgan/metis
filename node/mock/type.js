@@ -36,8 +36,34 @@ module.exports = {
     },
     list: function (opt) {
         var result = [];
+        var index_name = opt.index && opt.index.name;
         for (var i = 0;i < opt.length;i++) {
-            result.push(opt.value());
+            var item = opt.value();
+            var index = (i + 1).toString();
+            if (index_name) {
+                switch (opt.index.format) {
+                    case '\d':
+                        switch (opt.index.type) {
+                            case 'int':
+                                item[index_name] = i + 1;
+                                break;
+                            case 'string':
+                                item[index_name] = index;
+                                break;
+                            default:
+                                item[index_name] = i + 1;
+                                break;
+                        }
+                        break;
+                    case '0\d':
+                        item[index_name] = (index > 9) ? index : '0' + index;
+                        break;
+                    default:
+                        item[index_name] = index;
+                        break;
+                }
+            }
+            result.push(item);
         }
         return result;
     },

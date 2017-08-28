@@ -47,6 +47,11 @@ module.exports = {
             error: 0,
             data: type.list({
                 length: 22,
+                index: {
+                    name: 'index',
+                    format: '0\d',
+                    type: 'string'
+                },
                 value: function () {
                     return {
                         id: type.id(),

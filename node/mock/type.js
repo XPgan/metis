@@ -40,5 +40,8 @@ module.exports = {
             result.push(opt.value());
         }
         return result;
+    },
+    richtext: function () {
+        return material.richtext[method.random(0, material.richtext.length - 1)];
     }
 }

@@ -78,7 +78,8 @@ module.exports = {
                     }),
                     cover: type.image({
                         type: '-half'
-                    })
+                    }),
+                    content: type.richtext()
                 }
             ]
         }

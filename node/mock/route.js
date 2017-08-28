@@ -17,12 +17,18 @@ var createGetRequest = function (requestObj) {
         }
         var paramStr = '?' + paramTmp.slice(1);
         var requestUrl = requestObj.url + paramStr;
+
         var responseData = requestObj.data();
         if (getRequestCache[requestUrl]) {
             responseData = getRequestCache[requestUrl];
         } else {
             getRequestCache[requestUrl] = responseData;
         }
+
+        var start_num = req.query.start_num >> 0;
+        var count = req.query.count >> 0;
+        var page = req.query.page >> 0;
+        (start_num != undefined) && (count != undefined) && (responseData.data = responseData.data.slice(start_num, start_num + count));
 
         res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
         res.end(JSON.stringify(responseData));

@@ -54,6 +54,18 @@ module.exports = {
                             });
                         },
                         length: 10
+                    }),
+                    related_diaries: type.list({
+                        value: function () {
+                            return {
+                                id: type.id(),
+                                name: type.string({
+                                    min: 5,
+                                    max: 10
+                                })
+                            }
+                        },
+                        length: 8
                     })
                 }
             ]

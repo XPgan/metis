@@ -10,6 +10,7 @@ var requestGatherLst = [
 
 var createGetRequest = function (requestObj) {
     router.get(requestObj.url, function (req, res) {
+        res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
         res.end(JSON.stringify(requestObj.data));
     });
 };

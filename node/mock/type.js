@@ -5,6 +5,12 @@
 var method = require('./method');
 
 module.exports = {
+    id: function () {
+        return (new Date()).valueOf();
+    },
+    figure: function (opt) {
+        return method.random(opt.min, opt.max);
+    },
     string: function (opt) {
         var result = '';
         if (opt.lst) {
@@ -18,10 +24,11 @@ module.exports = {
         }
         return result;
     },
-    figure: function (opt) {
-        return method.random(opt.min, opt.max);
-    },
-    id: function () {
-        return (new Date()).valueOf();
+    list: function (opt) {
+        var result = [];
+        for (var i = 0;i < opt.length;i++) {
+            result.push(opt.value());
+        }
+        return result;
     }
 }

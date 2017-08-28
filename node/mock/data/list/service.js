@@ -46,7 +46,15 @@ module.exports = {
                         min: 20,
                         max: 55000
                     }),
-                    tag: ''
+                    tags: type.list({
+                        value: function () {
+                            return type.string({
+                                min: 2,
+                                max: 4
+                            });
+                        },
+                        length: 10
+                    })
                 }
             ]
         }

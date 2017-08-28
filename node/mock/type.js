@@ -43,5 +43,8 @@ module.exports = {
     },
     richtext: function () {
         return material.richtext[method.random(0, material.richtext.length - 1)];
+    },
+    richtext_mixed: function () {
+        return material.richtext_mixed[method.random(0, material.richtext_mixed.length - 1)];
     }
 }

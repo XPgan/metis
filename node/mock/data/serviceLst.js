@@ -30,7 +30,8 @@ module.exports = {
                             'http://pic.igengmei.com/2017/03/03/1529/c38af532fa4f-half',
                             'http://pic.igengmei.com/2017/02/23/1912/b351e1dafcd4-half'
                         ]
-                    })
+                    }),
+                    content: type.richtext_mixed()
                 }
             ]
         }

@@ -9,7 +9,7 @@ module.exports = {
     id: function () {
         return (new Date()).valueOf();
     },
-    figure: function (opt) {
+    number: function (opt) {
         return method.random(opt.min, opt.max);
     },
     string: function (opt) {
@@ -56,7 +56,16 @@ module.exports = {
                         }
                         break;
                     case '0\d':
-                        item[index_name] = (index > 9) ? index : '0' + index;
+                        item[index_name] = (index < 10) ? '0' + index : index;
+                        break;
+                    case '00\d':
+                        if (index < 10) {
+                            item[index_name] = '00' + index;
+                        } else if (index < 100) {
+                            item[index_name] = '0' + index;
+                        } else {
+                            item[index_name] = index;
+                        }
                         break;
                     default:
                         item[index_name] = index;

@@ -21,7 +21,7 @@ module.exports = {
                                 min: 5,
                                 max: 10
                             }),
-                            price: type.figure({
+                            price: type.number({
                                 min: 1000,
                                 max: 5000
                             }),
@@ -52,7 +52,7 @@ module.exports = {
                     length: 22,
                     index: {
                         name: 'index',
-                        format: '0\d',
+                        format: '00\d',
                         type: 'string'
                     },
                     value: function () {
@@ -65,7 +65,7 @@ module.exports = {
                                     '文案三'
                                 ]
                             }),
-                            price: type.figure({
+                            price: type.number({
                                 min: 20,
                                 max: 55000
                             }),

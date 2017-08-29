@@ -93,7 +93,7 @@ module.exports = {
                             cover: type.image({
                                 type: '-half'
                             }),
-                            is_soldout: true
+                            is_soldout: type.bool()
                         }
                     }
                 })

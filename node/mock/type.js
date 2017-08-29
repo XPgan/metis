@@ -12,6 +12,9 @@ module.exports = {
     number: function (opt) {
         return method.random(opt.min, opt.max);
     },
+    bool: function () {
+        return [true, false][method.random(0, 1)];
+    },
     string: function (opt) {
         var result = '';
         if (opt.lst) {

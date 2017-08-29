@@ -30,6 +30,10 @@ var createGetRequest = function (requestObj) {
         var page = req.query.page >> 0;
         (req.query.start_num != undefined) && (responseData.data = responseData.data.slice(start_num, start_num + count));
         (req.query.page != undefined) && (responseData.data = responseData.data.slice((page - 1) * count, (page - 1) * count + count));
+        if (responseData.data.length == 0) {
+            responseData.error = 1;
+            responseData.message = 'no more';
+        }
 
         res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
         res.end(JSON.stringify(responseData));

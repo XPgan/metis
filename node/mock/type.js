@@ -24,10 +24,10 @@ module.exports = {
     },
     image: function (opt) {
         var result = '';
-        if (opt.lst) {
-            result = opt.lst[method.random(0, opt.lst.length - 1)]
+        if ((opt instanceof Array) && opt.length) {
+            result = opt[method.random(0, opt.length - 1)];
         } else {
-            result = material.image[method.random(0, material.image.length - 1)] + opt.type;
+            result = material.image[method.random(0, material.image.length - 1)] + (opt && opt.type || '-half');
         }
         return result;
     },

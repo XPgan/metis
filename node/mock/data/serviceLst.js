@@ -16,7 +16,8 @@ module.exports = {
                     id: type.id(),
                     number: type.number(),
                     bool: type.bool(),
-                    string: type.string()
+                    string: type.string(),
+                    image: type.image()
                 }
             }
         }

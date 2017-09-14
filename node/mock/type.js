@@ -6,21 +6,21 @@ module.exports = {
         return (new Date()).valueOf();
     },
     number: function (opt) {
-        var min = opt && (typeof(opt.min) == "number") ? opt.min : 0;
-        var max = opt && (typeof(opt.max) == "number") ? opt.max : 10;
-        return method.random(min, max);
+        return method.random(opt && opt.min, opt && opt.max);
     },
     bool: function () {
         return [true, false][method.random(0, 1)];
     },
     string: function (opt) {
         var result = '';
-        if (opt instanceof Array) {
+        if ((opt instanceof Array) && opt.length) {
             result = opt[method.random(0, opt.length - 1)];
         } else {
-            // for (var i = 0;i < method.random(opt.min, opt.max);i++) {
-            //     result += String.fromCharCode(20000 + parseInt(Math.random() * 1000));
-            // }
+            var minL = opt && (typeof(opt.minL) == "number") ? opt.minL : 0;
+            var maxL = opt && (typeof(opt.maxL) == "number") ? opt.maxL : 10;
+            for (var i = 0;i < method.random(minL, maxL);i++) {
+                result += String.fromCharCode(20000 + parseInt(Math.random() * 1000));
+            }
         }
         return result;
     },

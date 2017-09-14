@@ -6,25 +6,15 @@ module.exports = {
     getRequestCache: {},
 
     createGetRequest: function (requestObj) {
+        var _this = this;
         this.router.get(requestObj.url, function (req, res) {
-            // var paramTmp = '';
-            // for (var key in req.query) {
-            //     paramTmp += '&' + key + '=' + req.query[key];
-            // }
-            // var paramStr = '?' + paramTmp.slice(1);
-            // var requestUrl = requestObj.url + paramStr;
-
-            var responseData = {};
-            if (requestObj.data instanceof Function) {
-                responseData = requestObj.data() || {};
+            var requestUrl = req.originalUrl;
+            var responseData = method.faultTolerant(requestObj.data);
+            if (_this.getRequestCache[requestUrl]) {
+                responseData = _this.getRequestCache[requestUrl];
             } else {
-                responseData = (requestObj.data !== undefined) ? requestObj.data : {};
+                _this.getRequestCache[requestUrl] = responseData;
             }
-            // if (this.getRequestCache[requestUrl]) {
-            //     responseData = this.getRequestCache[requestUrl];
-            // } else {
-            //     this.getRequestCache[requestUrl] = responseData;
-            // }
 
             // var start_num = req.query.start_num >> 0;
             // var count = req.query.count >> 0 || 10;

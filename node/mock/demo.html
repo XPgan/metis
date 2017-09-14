@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+</head>
+<body>
+<script>
+    // POST 请求示例
+    var postReq = new XMLHttpRequest();
+    postReq.open('POST', 'http://localhost:8000/get_coupon/_data', true);
+    postReq.send({
+        id: 100,
+        channel: 22
+    });
+
+    // GET 请求示例
+    var getReq = new XMLHttpRequest();
+    getReq.open('GET', 'http://localhost:8000/service_list/common/_data', true);
+    getReq.send();
+</script>
+</body>
+</html>

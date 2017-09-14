@@ -4,8 +4,12 @@ var router = express.Router();
 // 通用列表
 var serviceLst = require('./data/serviceLst');
 
+// POST 请求
+var postRequests = require('./data/postRequests');
+
 var requestGatherLst = [
-    serviceLst
+    serviceLst,
+    postRequests
 ];
 
 var getRequestCache = {};
@@ -34,13 +38,14 @@ var createGetRequest = function (requestObj) {
             responseData.error = 1;
             responseData.message = 'no more';
         }
-
-        res.writeHead(200, {'Content-Type': 'text/json;charset=utf-8'});
         res.end(JSON.stringify(responseData));
     });
 };
 var createPostRequest = function (requestObj) {
-    console.log(requestObj);
+    router.post(requestObj.url, function (req, res) {
+        var responseData = requestObj.data();
+        res.end(JSON.stringify(responseData));
+    });
 };
 
 for (var requestGatherLstI in requestGatherLst) {

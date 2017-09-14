@@ -33,41 +33,40 @@ module.exports = {
     },
     list: function (opt) {
         var result = [];
-        var index_name = opt.index && opt.index.name;
-        for (var i = 0;i < opt.length;i++) {
-            var item = opt.value();
+        var index_name = opt && opt.index && opt.index.name || 'index';
+        var length = opt && opt.length || 10;
+        for (var i = 0;i < length;i++) {
+            var item = opt && (opt.value instanceof Function) && opt.value() || {};
             var index = (i + 1).toString();
-            if (index_name) {
-                switch (opt.index.format) {
-                    case '\d':
-                        switch (opt.index.type) {
-                            case 'int':
-                                item[index_name] = i + 1;
-                                break;
-                            case 'string':
-                                item[index_name] = index;
-                                break;
-                            default:
-                                item[index_name] = i + 1;
-                                break;
-                        }
-                        break;
-                    case '0\d':
-                        item[index_name] = (index < 10) ? '0' + index : index;
-                        break;
-                    case '00\d':
-                        if (index < 10) {
-                            item[index_name] = '00' + index;
-                        } else if (index < 100) {
-                            item[index_name] = '0' + index;
-                        } else {
+            switch (opt && opt.index && opt.index.format) {
+                case '\d':
+                    switch (opt.index.type) {
+                        case 'int':
+                            item[index_name] = i + 1;
+                            break;
+                        case 'string':
                             item[index_name] = index;
-                        }
-                        break;
-                    default:
+                            break;
+                        default:
+                            item[index_name] = i + 1;
+                            break;
+                    }
+                    break;
+                case '0\d':
+                    item[index_name] = (index < 10) ? '0' + index : index;
+                    break;
+                case '00\d':
+                    if (index < 10) {
+                        item[index_name] = '00' + index;
+                    } else if (index < 100) {
+                        item[index_name] = '0' + index;
+                    } else {
                         item[index_name] = index;
-                        break;
-                }
+                    }
+                    break;
+                default:
+                    item[index_name] = i + 1;
+                    break;
             }
             result.push(item);
         }

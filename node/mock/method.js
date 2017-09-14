@@ -7,8 +7,6 @@ module.exports = {
             min = max;
             max = tmp;
         }
-        console.log(min);
-        console.log(max);
         return Math.ceil(Math.random() * (max - min + 1)) + min - 1;
     }
 }

@@ -1,7 +1,3 @@
-/**
- * Created by sunmy on 2017/8/26.
- */
-
 module.exports = {
     image: [
         'http://hera.s.gengmei.cc/2016/05/12/f7714d5dbd',

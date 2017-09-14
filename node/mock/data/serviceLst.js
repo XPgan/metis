@@ -17,7 +17,18 @@ module.exports = {
                     number: type.number(),
                     bool: type.bool(),
                     string: type.string(),
-                    image: type.image()
+                    image: type.image(),
+                    list: type.list({
+                        index: {
+                            name: 'idx',
+                            format: '00\d',
+                            type: 'int'
+                        },
+                        length: 22,
+                        value: function () {
+                            return {}
+                        }
+                    })
                 }
             }
         }

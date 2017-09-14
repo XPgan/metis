@@ -15,11 +15,8 @@ module.exports = {
                 data: {
                     id: type.id(),
                     number: type.number(),
-                    // bool: type.bool(),
-                    // string: type.string({
-                    //     minL: 10,
-                    //     maxL: 20
-                    // })
+                    bool: type.bool(),
+                    string: type.string()
                 }
             }
         }

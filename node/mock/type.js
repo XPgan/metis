@@ -16,9 +16,7 @@ module.exports = {
         if ((opt instanceof Array) && opt.length) {
             result = opt[method.random(0, opt.length - 1)];
         } else {
-            var minL = opt && (typeof(opt.minL) == "number") ? opt.minL : 0;
-            var maxL = opt && (typeof(opt.maxL) == "number") ? opt.maxL : 10;
-            for (var i = 0;i < method.random(minL, maxL);i++) {
+            for (var i = 0;i < method.random(opt && opt.minL, opt && opt.maxL);i++) {
                 result += String.fromCharCode(20000 + parseInt(Math.random() * 1000));
             }
         }

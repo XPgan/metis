@@ -1,6 +1,6 @@
 module.exports = {
     random: function (min, max) {
-        var min = (typeof(min) == "number") ? min : 0;
+        var min = (typeof(min) == "number") ? min : 1;
         var max = (typeof(max) == "number") ? max : 10;
         if (min > max) {
             var tmp = min;

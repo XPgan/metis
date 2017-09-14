@@ -8,7 +8,19 @@ module.exports = {
             return {
                 message: '请求成功',
                 error: 0,
-                data: {}
+                data: {
+                    id: type.id(),
+                    number: type.number(),
+                    bool: type.bool(),
+                    list: type.list({
+                        length: 10,
+                        value: function () {
+                            return {
+                                a: 111
+                            }
+                        }
+                    })
+                }
             }
         }
     }

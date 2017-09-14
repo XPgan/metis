@@ -34,9 +34,9 @@ module.exports = {
     list: function (opt) {
         var result = [];
         var index_name = opt && opt.index && opt.index.name || 'index';
-        var length = opt && opt.length || 10;
+        var length = opt && opt.length || 0;
         for (var i = 0;i < length;i++) {
-            var item = opt && (opt.value instanceof Function) && opt.value() || {};
+            var item = method.faultTolerant(opt.value);
             var index = (i + 1).toString();
             switch (opt && opt.index && opt.index.format) {
                 case '\d':

@@ -1,7 +1,3 @@
-/**
- * Created by sunmy on 2017/8/26.
- */
-
 var method = require('./method');
 var material = require('./material');
 
@@ -10,7 +6,14 @@ module.exports = {
         return (new Date()).valueOf();
     },
     number: function (opt) {
-        return method.random(opt.min, opt.max);
+        var min = opt && (typeof(opt.min) == "number") ? opt.min : 0;
+        var max = opt && (typeof(opt.max) == "number") ? opt.max : 10;
+        if (min > max) {
+            var tmp = min;
+            min = max;
+            max = tmp;
+        }
+        return method.random(min, max);
     },
     bool: function () {
         return [true, false][method.random(0, 1)];
@@ -18,11 +21,9 @@ module.exports = {
     string: function (opt) {
         var result = '';
         if (opt.lst) {
-            var selectedIndex = method.random(0, opt.lst.length - 1);
-            result = opt.lst[selectedIndex];
+            result = opt.lst[method.random(0, opt.lst.length - 1)];
         } else {
-            var stringLength = method.random(opt.min, opt.max);
-            for (var i = 0;i < stringLength;i++) {
+            for (var i = 0;i < method.random(opt.min, opt.max);i++) {
                 result += String.fromCharCode(20000 + parseInt(Math.random() * 1000));
             }
         }

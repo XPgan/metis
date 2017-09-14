@@ -14,5 +14,4 @@ app.all('*', (req, res, next) => {
 });
 
 app.use('/', route);
-
 module.exports = app;

@@ -1,16 +1,12 @@
-/**
- * Created by sunmy on 2017/9/14.
- */
-
 var type = require('../type');
 
 module.exports = {
-    getCoupon: {
-        url: '/get_coupon/_data',
+    example1: {
+        url: '/example1/_data',
         type: 'POST',
         data: function () {
             return {
-                message: '领取成功',
+                message: '请求成功',
                 error: 0,
                 data: {}
             }

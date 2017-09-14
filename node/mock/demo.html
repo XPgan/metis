@@ -2,22 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Demo</title>
+    <title>Meow Mock Demo</title>
 </head>
 <body>
 <script>
-    // POST 请求示例
-    var postReq = new XMLHttpRequest();
-    postReq.open('POST', 'http://localhost:8000/get_coupon/_data', true);
-    postReq.send({
-        id: 100,
-        channel: 22
-    });
-
-    // GET 请求示例
-    var getReq = new XMLHttpRequest();
-    getReq.open('GET', 'http://localhost:8000/service_list/common/_data', true);
-    getReq.send();
+    var req = new XMLHttpRequest();
+    req.open('POST', 'http://localhost:8888/example1/_data', true);
+    req.send();
 </script>
 </body>
 </html>

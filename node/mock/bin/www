@@ -4,13 +4,13 @@
  * Module dependencies.
  */
 var app = require('../app');
-var debug = require('debug')('mock:server');
+var debug = require('debug')('meow-mock:server');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
-var port = normalizePort(process.env.PORT || '8000');
+var port = normalizePort(process.env.PORT || '8888');
 app.set('port', port);
 
 /**

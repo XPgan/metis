@@ -14,7 +14,11 @@ module.exports = {
                 error: 0,
                 data: {
                     id: type.id(),
-                    number: type.number()
+                    number: type.number({
+                        min: 11,
+                        max: 1
+                    }),
+                    bool: type.bool()
                 }
             }
         }

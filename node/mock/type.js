@@ -8,11 +8,6 @@ module.exports = {
     number: function (opt) {
         var min = opt && (typeof(opt.min) == "number") ? opt.min : 0;
         var max = opt && (typeof(opt.max) == "number") ? opt.max : 10;
-        if (min > max) {
-            var tmp = min;
-            min = max;
-            max = tmp;
-        }
         return method.random(min, max);
     },
     bool: function () {
@@ -20,12 +15,12 @@ module.exports = {
     },
     string: function (opt) {
         var result = '';
-        if (opt.lst) {
-            result = opt.lst[method.random(0, opt.lst.length - 1)];
+        if (opt instanceof Array) {
+            result = opt[method.random(0, opt.length - 1)];
         } else {
-            for (var i = 0;i < method.random(opt.min, opt.max);i++) {
-                result += String.fromCharCode(20000 + parseInt(Math.random() * 1000));
-            }
+            // for (var i = 0;i < method.random(opt.min, opt.max);i++) {
+            //     result += String.fromCharCode(20000 + parseInt(Math.random() * 1000));
+            // }
         }
         return result;
     },

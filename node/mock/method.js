@@ -1,7 +1,7 @@
 module.exports = {
     random: function (min, max) {
         var min = (typeof(min) == "number") ? min : 1;
-        var max = (typeof(max) == "number") ? max : 10;
+        var max = (typeof(max) == "number") ? max : (min + 10);
         if (min > max) {
             var tmp = min;
             min = max;

@@ -11,9 +11,12 @@ module.exports = {
                 data: {
                     id: type.id(),
                     number: type.number(),
-                    bool: type.bool(),
+                    image: type.image(),
                     list: type.list({
-                        length: 2
+                        length: 3,
+                        value: {
+                            a: type.number()
+                        }
                     })
                 }
             }

@@ -36,7 +36,7 @@ module.exports = {
         var index_name = opt && opt.index && opt.index.name || 'index';
         var length = opt && opt.length || 0;
         for (var i = 0;i < length;i++) {
-            var item = method.faultTolerant(opt.value);
+            var item = method.faultTolerant(opt.data);
             var index = (i + 1).toString();
             switch (opt && opt.index && opt.index.format) {
                 case '\d':

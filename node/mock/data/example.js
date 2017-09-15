@@ -4,21 +4,19 @@ module.exports = {
     example1: {
         url: '/example1/_data',
         type: 'GET',
+        list_name: 'promotions',
         data: function () {
             return {
                 message: '请求成功',
                 error: 0,
-                data: {
-                    id: type.id(),
-                    number: type.number(),
-                    image: type.image(),
-                    list: type.list({
-                        length: 3,
-                        value: {
-                            a: type.number()
+                promotions: type.list({
+                    length: 22,
+                    data: function () {
+                        return {
+                            number: type.number()
                         }
-                    })
-                }
+                    }
+                })
             }
         }
     },

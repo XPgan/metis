@@ -9,22 +9,21 @@ module.exports = {
         var _this = this;
         this.router.get(requestObj.url, function (req, res) {
             var requestUrl = req.originalUrl;
-            var responseData = method.faultTolerant(requestObj.data);
             if (_this.getRequestCache[requestUrl]) {
                 responseData = _this.getRequestCache[requestUrl];
             } else {
+                var responseData = method.faultTolerant(requestObj.data);
+                var listName = requestObj.list_name || 'data';
+                if (responseData[listName] instanceof Array) {
+                    var start_num = req.query.start_num >> 0;
+                    var count = req.query.count >> 0 || 10;
+                    var page = req.query.page >> 0 || 1;
+                    (req.query.start_num !== undefined) && (responseData[listName] = responseData[listName].slice(start_num, start_num + count));
+                    (req.query.page !== undefined) && (responseData[listName] = responseData[listName].slice((page - 1) * count, (page - 1) * count + count));
+                }
                 _this.getRequestCache[requestUrl] = responseData;
             }
 
-            // var start_num = req.query.start_num >> 0;
-            // var count = req.query.count >> 0 || 10;
-            // var page = req.query.page >> 0;
-            // (req.query.start_num !== undefined) && (responseData.data = responseData.data.slice(start_num, start_num + count));
-            // (req.query.page !== undefined) && (responseData.data = responseData.data.slice((page - 1) * count, (page - 1) * count + count));
-            // if (responseData.data.length == 0) {
-            //     responseData.error = 1;
-            //     responseData.message = 'no more';
-            // }
             res.end(JSON.stringify(responseData));
         });
     },

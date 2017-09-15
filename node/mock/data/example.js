@@ -53,5 +53,30 @@ module.exports = {
                 }
             }
         }
+    },
+    example2: {
+        url: '/example2/_data',
+        type: 'GET',
+        data: function () {
+            return {
+                message: '请求成功',
+                error: 0,
+                data: type.list({
+                    length: 36,
+                    index: {
+                        name: 'idx',
+                        format: '0\d'
+                    },
+                    data: function () {
+                        return {
+                            id: type.id(),
+                            number: type.number(),
+                            string: type.string(),
+                            image: type.image()
+                        }
+                    }
+                })
+            }
+        }
     }
 }

@@ -78,5 +78,18 @@ module.exports = {
                 })
             }
         }
+    },
+    example3: {
+        url: '/example3/_data',
+        type: 'POST',
+        data: function () {
+            return {
+                message: '请求成功',
+                error: 0,
+                data: {
+                    string: type.string()
+                }
+            }
+        }
     }
 }

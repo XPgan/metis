@@ -2,8 +2,22 @@ var method = require('./method');
 var material = require('./material');
 
 module.exports = {
+
+    timestamps: {},
+
     id: function () {
-        return (new Date()).valueOf();
+        var _this = this;
+        var curtime = (new Date()).valueOf();
+        var recursion = function (key) {
+            if (_this.timestamps[key]) {
+                var tmp = recursion(key + 1);
+            } else {
+                _this.timestamps[key] = 1;
+                return key;
+            }
+            return tmp;
+        };
+        return recursion(curtime);
     },
     number: function (opt) {
         return method.random(opt && opt.min, opt && opt.max);

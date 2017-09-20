@@ -22,5 +22,13 @@ module.exports = {
                 }));
             }
         });
+    },
+    addChannel: function (req, res) {
+        console.log(req.body);
+        res.end(JSON.stringify({
+            error: 0,
+            message: '添加渠道成功',
+            data: {}
+        }));
     }
 }

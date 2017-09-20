@@ -5,7 +5,7 @@
     <title>Template</title>
 </head>
 <body>
-<div id="king" data-h3="" data-img="" data-type=""></div>
+<div id="king" data-title="" data-image="" data-type=""></div>
 <h3></h3>
 <img src="" />
 <script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
@@ -14,8 +14,8 @@
         do: function () {
             var _this = this;
             var $king = $('#king');
-            $('h3').text($king.data('h3'));
-            $('img').attr('src', $king.data('img'));
+            $('h3').text($king.data('title'));
+            $('img').attr('src', $king.data('image'));
             switch ($king.data('type')) {
                 case 'type1':
                     _this.type1();

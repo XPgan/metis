@@ -13,22 +13,32 @@ module.exports = {
                     data: []
                 }));
             } else {
-                var responsedata = files.slice(start_num, start_num + count);
+                var responseData = files.slice(start_num, start_num + count);
                 res.end(JSON.stringify({
                     error: 0,
                     message: '读取渠道目录成功',
                     total: files.length,
-                    data: responsedata
+                    data: responseData
                 }));
             }
         });
     },
     addChannel: function (req, res) {
-        console.log(req.body);
-        res.end(JSON.stringify({
-            error: 0,
-            message: '添加渠道成功',
-            data: {}
-        }));
+        var channelInfo = req.body;
+        fs.mkdir('launchs/' + channelInfo.name + '/', function (err) {
+            if (err) {
+                res.end(JSON.stringify({
+                    error: 0,
+                    message: '添加渠道失败',
+                    data: {}
+                }));
+            } else {
+                res.end(JSON.stringify({
+                    error: 0,
+                    message: '添加渠道成功',
+                    data: {}
+                }));
+            }
+        });
     }
 }

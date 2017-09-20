@@ -25,13 +25,24 @@ module.exports = {
     },
     addChannel: function (req, res) {
         var channelInfo = req.body;
-        fs.mkdir('launchs/' + channelInfo.name + '/', function (err) {
+        var filePath = 'launchs/' + channelInfo.name + '/';
+        fs.mkdir(filePath, function (err) {
             if (err) {
-                res.end(JSON.stringify({
-                    error: 0,
-                    message: '添加渠道失败',
-                    data: {}
-                }));
+                fs.exists(filePath, function (exists) {
+                    if (exists) {
+                        res.end(JSON.stringify({
+                            error: 1,
+                            message: '已存在命名相同的渠道',
+                            data: {}
+                        }));
+                    } else {
+                        res.end(JSON.stringify({
+                            error: 1,
+                            message: '添加渠道失败',
+                            data: {}
+                        }));
+                    }
+                });
             } else {
                 res.end(JSON.stringify({
                     error: 0,

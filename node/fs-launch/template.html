@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+</head>
+<body>
+<div id="king" data-h3="" data-img="" data-type=""></div>
+<h3></h3>
+<img src="" />
+<script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script>
+    var main = {
+        do: function () {
+            var _this = this;
+            var $king = $('#king');
+            $('h3').text($king.data('h3'));
+            $('img').attr('src', $king.data('img'));
+            switch ($king.data('type')) {
+                case 'type1':
+                    _this.type1();
+                    break;
+                case 'type2':
+                    _this.type2();
+                    break;
+                case 'type3':
+                    _this.type3();
+                    break;
+                default:
+                    break;
+            }
+        },
+        type1: function () {
+            console.log('type1');
+        },
+        type2: function () {
+            console.log('type2');
+        },
+        type3: function () {
+            console.log('type3');
+        }
+    };
+    main.do();
+</script>
+</body>
+</html>

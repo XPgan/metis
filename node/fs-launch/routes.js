@@ -9,7 +9,7 @@ router.get('/detail/channel/:id', function (req, res) {
     filectrl.getChannelInfo(req, res);
 });
 router.get('/list/image', function (req, res) {
-
+    filectrl.getImageList(req, res);
 });
 router.post('/add/channel', function (req, res) {
     filectrl.addChannel(req, res);

@@ -126,6 +126,32 @@ module.exports = {
             }
         });
     },
+    getImageList: function (req, res) {
+        var start_num = req.query.start_num >> 0 || 0;
+        var count = req.query.count >> 0 || 10;
+        fs.readdir('upload/images/', function (err, files) {
+            if (err) {
+                res.end(JSON.stringify({
+                    error: 1,
+                    message: '读取图片列表失败',
+                    total: 0,
+                    data: []
+                }));
+            } else {
+                var urls = [];
+                for (var i = 0;i < files.length;i++) {
+                    urls.push('/images/' + files[i]);
+                }
+                var responseData = urls.slice(start_num, start_num + count);
+                res.end(JSON.stringify({
+                    error: 0,
+                    message: '读取图片列表成功',
+                    total: urls.length,
+                    data: responseData
+                }));
+            }
+        });
+    },
     addImage: function (req, res) {
         var form = new formidable.IncomingForm();
         form.parse(req, function (err, fields, files) {

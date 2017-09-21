@@ -40,7 +40,8 @@ module.exports = {
                     name: channelId,
                     title: $markElem.attr('title'),
                     image: $markElem.attr('image'),
-                    type: $markElem.attr('type')
+                    type: $markElem.attr('type'),
+                    url: '/launchs/' + channelId + '/'
                 };
                 res.end(JSON.stringify({
                     error: 0,
@@ -90,7 +91,10 @@ module.exports = {
                             res.end(JSON.stringify({
                                 error: 0,
                                 message: '提交成功',
-                                data: {}
+                                data: {
+                                    name: channelInfo.name,
+                                    url: '/detail/channel/' + channelInfo.name
+                                }
                             }));
                         }
                     });

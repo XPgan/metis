@@ -26,12 +26,11 @@ module.exports = {
     },
     getChannelInfo: function (req, res) {
         var channelId = req.params.id;
-        var filePath = 'launchs/' + channelId + '/';
-        fs.readFile(filePath + 'index.html', 'utf8', function (err, data) {
+        fs.readFile('launchs/' + channelId + '/index.html', 'utf8', function (err, data) {
             if (err) {
                 res.end(JSON.stringify({
                     error: 1,
-                    message: '获取渠道信息失败',
+                    message: '读取渠道信息失败',
                     data: {}
                 }));
             } else {
@@ -45,7 +44,7 @@ module.exports = {
                 };
                 res.end(JSON.stringify({
                     error: 0,
-                    message: '获取渠道信息成功',
+                    message: '读取渠道信息成功',
                     data: responseData
                 }));
             }
@@ -59,14 +58,14 @@ module.exports = {
                 fs.exists(filePath, function (exists) {
                     if (exists) {
                         res.end(JSON.stringify({
-                            error: 1,
-                            message: '已存在命名相同的渠道',
+                            error: 2,
+                            message: '渠道命名重复',
                             data: {}
                         }));
                     } else {
                         res.end(JSON.stringify({
                             error: 1,
-                            message: '添加渠道失败',
+                            message: '提交失败',
                             data: {}
                         }));
                     }
@@ -84,17 +83,43 @@ module.exports = {
                         if (err) {
                             res.end(JSON.stringify({
                                 error: 1,
-                                message: '添加渠道失败',
+                                message: '提交失败',
                                 data: {}
                             }));
                         } else {
                             res.end(JSON.stringify({
                                 error: 0,
-                                message: '添加渠道成功',
+                                message: '提交成功',
                                 data: {}
                             }));
                         }
                     });
+                });
+            }
+        });
+    },
+    editChannel: function (req, res) {
+        var _this = this;
+        var channelInfo = req.body;
+        var filePath = 'launchs/' + channelInfo.name + '/';
+        fs.unlink(filePath + 'index.html', function (err) {
+            if (err) {
+                res.end(JSON.stringify({
+                    error: 1,
+                    message: '提交失败',
+                    data: {}
+                }));
+            } else {
+                fs.rmdir(filePath, function (err) {
+                    if (err) {
+                        res.end(JSON.stringify({
+                            error: 1,
+                            message: '提交失败',
+                            data: {}
+                        }));
+                    } else {
+                        _this.addChannel(req, res);
+                    }
                 });
             }
         });

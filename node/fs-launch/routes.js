@@ -11,5 +11,8 @@ router.get('/detail/channel/:id', function (req, res) {
 router.post('/add/channel', function (req, res) {
     filectrl.addChannel(req, res);
 });
+router.post('/edit/channel', function (req, res) {
+    filectrl.editChannel(req, res);
+});
 
 module.exports = router;

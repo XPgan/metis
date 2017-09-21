@@ -1,5 +1,6 @@
 var fs = require('fs');
 var cheerio = require('cheerio');
+var formidable = require('formidable');
 
 module.exports = {
     getChannelList: function (req, res) {
@@ -129,6 +130,34 @@ module.exports = {
         });
     },
     addImage: function (req, res) {
-        
+        var form = new formidable.IncomingForm();
+        form.parse(req, function (err, fields, files) {
+            if (err) {
+                res.end(JSON.stringify({
+                    error: 1,
+                    message: '上传失败',
+                    data: {}
+                }));
+            } else {
+                var timestamp = (new Date()).valueOf();
+                var tmpPath = files.image.path;
+                var targetPath = './images/' + timestamp + '_' + files.image.name;
+                fs.rename(tmpPath, targetPath, function (err) {
+                    if (err) {
+                        res.end(JSON.stringify({
+                            error: 1,
+                            message: '上传失败',
+                            data: {}
+                        }));
+                    } else {
+                        res.end(JSON.stringify({
+                            error: 0,
+                            message: '上传成功',
+                            data: {}
+                        }));
+                    }
+                });
+            }
+        });
     }
 }

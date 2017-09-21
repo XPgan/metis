@@ -50,22 +50,22 @@
 //    dataType: 'json',
 //    type: 'post'
 //});
-//$('.js_input_image').on('change', function () {
-//    var formData = new FormData($('#form_image')[0]);
-//    $.ajax({
-//        url: 'http://localhost:8888/add/image',
-//        type: 'POST',
-//        data: formData,
-//        contentType: false,
-//        processData: false,
-//        success: function (data) {
-//            console.log(data);
-//        },
-//        error: function () {
-//            console.log('上传失败');
-//        }
-//    });
-//});
+$('.js_input_image').on('change', function () {
+    var formData = new FormData($('#form_image')[0]);
+    $.ajax({
+        url: 'http://localhost:8888/add/image',
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            console.log(data);
+        },
+        error: function () {
+            console.log('上传失败');
+        }
+    });
+});
 </script>
 </body>
 </html>

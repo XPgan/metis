@@ -24,6 +24,33 @@ module.exports = {
             }
         });
     },
+    getChannelInfo: function (req, res) {
+        var channelId = req.params.id;
+        var filePath = 'launchs/' + channelId + '/';
+        fs.readFile(filePath + 'index.html', 'utf8', function (err, data) {
+            if (err) {
+                res.end(JSON.stringify({
+                    error: 1,
+                    message: '获取渠道信息失败',
+                    data: {}
+                }));
+            } else {
+                var $ = cheerio.load(data);
+                var $markElem = $('#king');
+                var responseData = {
+                    name: channelId,
+                    title: $markElem.attr('title'),
+                    image: $markElem.attr('image'),
+                    type: $markElem.attr('type')
+                };
+                res.end(JSON.stringify({
+                    error: 0,
+                    message: '获取渠道信息成功',
+                    data: responseData
+                }));
+            }
+        });
+    },
     addChannel: function (req, res) {
         var channelInfo = req.body;
         var filePath = 'launchs/' + channelInfo.name + '/';

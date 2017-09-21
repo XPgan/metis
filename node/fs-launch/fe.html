@@ -9,10 +9,30 @@
 <script>
 $.ajax('http://localhost:8888/add/channel', {
     data: {
-        name: 'channel4',
-        title: '我是渠道4',
+        name: 'channel1',
+        title: '我是渠道1',
         image: 'http://hera.s.igengmei.com/2016/05/12/f7714d5dbd-half',
         type: 1
+    },
+    dataType: 'json',
+    type: 'post'
+});
+$.ajax('http://localhost:8888/add/channel', {
+    data: {
+        name: 'channel2',
+        title: '我是渠道2',
+        image: 'http://hera.s.igengmei.com/2016/05/12/d3965a1d96-half',
+        type: 2
+    },
+    dataType: 'json',
+    type: 'post'
+});
+$.ajax('http://localhost:8888/add/channel', {
+    data: {
+        name: 'channel3',
+        title: '我是渠道3',
+        image: 'http://hera.s.igengmei.com/2016/05/12/43d8e50210-half',
+        type: 3
     },
     dataType: 'json',
     type: 'post'

@@ -140,8 +140,9 @@ module.exports = {
                 }));
             } else {
                 var timestamp = (new Date()).valueOf();
+                var url = '/images/' + timestamp + '_' + files.image.name;
                 var tmpPath = files.image.path;
-                var targetPath = './images/' + timestamp + '_' + files.image.name;
+                var targetPath = './upload' + url;
                 fs.rename(tmpPath, targetPath, function (err) {
                     if (err) {
                         res.end(JSON.stringify({
@@ -153,7 +154,9 @@ module.exports = {
                         res.end(JSON.stringify({
                             error: 0,
                             message: '上传成功',
-                            data: {}
+                            data: {
+                                url: url
+                            }
                         }));
                     }
                 });

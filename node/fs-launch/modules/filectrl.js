@@ -1,4 +1,5 @@
 var fs = require('fs');
+var cheerio = require('cheerio');
 
 module.exports = {
     getChannelList: function (req, res) {
@@ -44,11 +45,30 @@ module.exports = {
                     }
                 });
             } else {
-                res.end(JSON.stringify({
-                    error: 0,
-                    message: '添加渠道成功',
-                    data: {}
-                }));
+                fs.readFile('template.html', 'utf8', function (err, data) {
+                    var $ = cheerio.load(data);
+                    var $markElem = $('#king');
+                    $markElem.attr({
+                        'title': channelInfo.title,
+                        'image': channelInfo.image,
+                        'type': channelInfo.type
+                    });
+                    fs.writeFile(filePath + 'index.html', $.html(), function (err) {
+                        if (err) {
+                            res.end(JSON.stringify({
+                                error: 1,
+                                message: '添加渠道失败',
+                                data: {}
+                            }));
+                        } else {
+                            res.end(JSON.stringify({
+                                error: 0,
+                                message: '添加渠道成功',
+                                data: {}
+                            }));
+                        }
+                    });
+                });
             }
         });
     }

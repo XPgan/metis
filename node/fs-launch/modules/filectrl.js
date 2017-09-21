@@ -3,8 +3,8 @@ var cheerio = require('cheerio');
 
 module.exports = {
     getChannelList: function (req, res) {
-        var start_num = req.query.start_num || 0;
-        var count = req.query.count || 10;
+        var start_num = req.query.start_num >> 0 || 0;
+        var count = req.query.count >> 0 || 10;
         fs.readdir('launchs/', function (err, files) {
             if (err) {
                 res.end(JSON.stringify({

@@ -5,6 +5,9 @@
     <title>FE</title>
 </head>
 <body>
+<form enctype="multipart/form-data" id="form_image">
+    <input type="file" name="image" value="添加图片" class="js_input_image" />
+</form>
 <script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
 <script>
 //$.ajax('http://localhost:8888/add/channel', {
@@ -37,15 +40,31 @@
 //    dataType: 'json',
 //    type: 'post'
 //});
-$.ajax('http://localhost:8888/edit/channel', {
-    data: {
-        name: 'channel2',
-        title: '我是渠道2的修改版本',
-        image: 'http://hera.s.igengmei.com/2016/05/12/43d8e50210-half',
-        type: 2
-    },
-    dataType: 'json',
-    type: 'post'
+//$.ajax('http://localhost:8888/edit/channel', {
+//    data: {
+//        name: 'channel2',
+//        title: '我是渠道2的修改版本',
+//        image: 'http://hera.s.igengmei.com/2016/05/12/43d8e50210-half',
+//        type: 2
+//    },
+//    dataType: 'json',
+//    type: 'post'
+//});
+$('.js_input_image').on('change', function () {
+    var formData = new FormData($('#form_image')[0]);
+    $.ajax({
+        url: 'http://localhost:8888/add/image',
+        type: 'POST',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            console.log(data);
+        },
+        error: function () {
+            console.log('上次失败');
+        }
+    });
 });
 </script>
 </body>

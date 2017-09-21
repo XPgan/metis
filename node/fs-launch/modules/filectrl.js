@@ -127,5 +127,8 @@ module.exports = {
                 });
             }
         });
+    },
+    addImage: function (req, res) {
+        
     }
 }

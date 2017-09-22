@@ -10,9 +10,9 @@
 
 #### 示例 ####
 
-+ 简易博客系统 [(code)](https://github.com/sunmengyuan/note/tree/master/node/expo)
++ 简易博客系统 [(code)](https://github.com/sunmengyuan/metis/tree/master/node/expo)
 
-+ 多人聊天室 [(code)](https://github.com/sunmengyuan/note/tree/master/node/chat)
++ 多人聊天室 [(code)](https://github.com/sunmengyuan/metis/tree/master/node/chat)
 
 *****
 
@@ -22,13 +22,13 @@
 
 + [Vue.js](http://cn.vuejs.org/)
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/vue) ####
+#### [笔记](https://github.com/sunmengyuan/metis/tree/master/vue) ####
 
 #### 示例 ####
 
-+ 简易个人空间 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/zone)
++ 简易个人空间 [(code)](https://github.com/sunmengyuan/metis/tree/master/vue/zone)
 
-+ 简易视频播放器 [(code)](https://github.com/sunmengyuan/note/tree/master/vue/videoPlayer) [(demo)](https://sunmengyuan.github.io/demos/vue/videoPlayer)
++ 简易视频播放器 [(code)](https://github.com/sunmengyuan/metis/tree/master/vue/videoPlayer) [(demo)](https://sunmengyuan.github.io/demos/vue/videoPlayer)
 
 *****
 
@@ -38,11 +38,11 @@
 
 + [A JavaScript library for building user interfaces | React](http://reactjs.cn/react/index.html)
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/react) ####
+#### [笔记](https://github.com/sunmengyuan/metis/tree/master/react) ####
 
 #### 示例 ####
 
-+ 待办事项 [(code)](https://github.com/sunmengyuan/note/tree/master/react/todos) [(demo)](https://sunmengyuan.github.io/demos/react/todos)
++ 待办事项 [(code)](https://github.com/sunmengyuan/metis/tree/master/react/todos) [(demo)](https://sunmengyuan.github.io/demos/react/todos)
 
 *****
 
@@ -52,7 +52,7 @@
 
 + [React Native 中文网](http://reactnative.cn/)
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/reactNative) ####
+#### [笔记](https://github.com/sunmengyuan/metis/tree/master/reactNative) ####
 
 *****
 
@@ -62,29 +62,29 @@
 
 + [HTML5 Canvas 核心技术](http://okj45byt5.bkt.clouddn.com/HTML5%20Canvas%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF.pdf)
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/canvas) ####
+#### [笔记](https://github.com/sunmengyuan/metis/tree/master/canvas) ####
 
 #### 示例 ####
 
-+ 画板 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drawing.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drawing.html)
++ 画板 [(code)](https://github.com/sunmengyuan/metis/blob/master/canvas/drawing.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drawing.html)
 
-+ 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/bezierCurve.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/bezierCurve.html)
++ 贝塞尔曲线 [(code)](https://github.com/sunmengyuan/metis/blob/master/canvas/bezierCurve.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/bezierCurve.html)
 
-+ 使用 Canvas 实现元素拖拽 [(code)](https://github.com/sunmengyuan/note/blob/master/canvas/drag.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drag.html)
++ 使用 Canvas 实现元素拖拽 [(code)](https://github.com/sunmengyuan/metis/blob/master/canvas/drag.html) [(demo)](https://sunmengyuan.github.io/demos/canvas/drag.html)
 
 *****
 
 ### Svg ###
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/svg) ####
+#### [笔记](https://github.com/sunmengyuan/metis/tree/master/svg) ####
 
 #### 示例 ####
 
-+ 线描动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/cat.html) [(demo)](https://sunmengyuan.github.io/demos/svg/cat.html)
++ 线描动画 [(code)](https://github.com/sunmengyuan/metis/blob/master/svg/cat.html) [(demo)](https://sunmengyuan.github.io/demos/svg/cat.html)
 
-+ 路径动画加蒙板实现橡皮擦特效 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/paint.html) [(demo)](https://sunmengyuan.github.io/demos/svg/paint.html)
++ 路径动画加蒙板实现橡皮擦特效 [(code)](https://github.com/sunmengyuan/metis/blob/master/svg/paint.html) [(demo)](https://sunmengyuan.github.io/demos/svg/paint.html)
 
-+ Loading 动画 [(code)](https://github.com/sunmengyuan/note/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
++ Loading 动画 [(code)](https://github.com/sunmengyuan/metis/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
 
 *****
 
@@ -94,11 +94,11 @@
 
 + [Three.js 入门指南](https://read.douban.com/reader/ebook/7412854/)
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/three) ####
+#### [笔记](https://github.com/sunmengyuan/metis/tree/master/three) ####
 
 #### 示例 ####
 
-+ 三维旋转钟 [(code)](https://github.com/sunmengyuan/note/blob/master/three/clock.html) [(demo)](https://sunmengyuan.github.io/demos/three/clock.html)
++ 三维旋转钟 [(code)](https://github.com/sunmengyuan/metis/blob/master/three/clock.html) [(demo)](https://sunmengyuan.github.io/demos/three/clock.html)
 
 *****
 
@@ -110,7 +110,7 @@
 
 #### 示例 ####
 
-+ 跷跷板 [(code)](https://github.com/sunmengyuan/note/blob/master/matter/seesaw.html) [(demo)](https://sunmengyuan.github.io/demos/matter/seesaw.html)
++ 跷跷板 [(code)](https://github.com/sunmengyuan/metis/blob/master/matter/seesaw.html) [(demo)](https://sunmengyuan.github.io/demos/matter/seesaw.html)
 
 *****
 
@@ -120,7 +120,7 @@
 
 + [Less 中文网](http://lesscss.cn/)
 
-#### [笔记](https://github.com/sunmengyuan/note/blob/master/less.md) ####
+#### [笔记](https://github.com/sunmengyuan/metis/blob/master/less.md) ####
 
 *****
 
@@ -140,9 +140,9 @@
 
 #### 示例 ####
 
-+ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/note/tree/master/echarts/university) [(demo)](https://sunmengyuan.github.io/demos/echarts/university)
++ 中国高校学科排名统计 [(code)](https://github.com/sunmengyuan/metis/tree/master/echarts/university) [(demo)](https://sunmengyuan.github.io/demos/echarts/university)
 
-+ 全国空气质量调查 [(code)](https://github.com/sunmengyuan/note/tree/master/echarts/airpollution) [(demo)](https://sunmengyuan.github.io/demos/echarts/airpollution)
++ 全国空气质量调查 [(code)](https://github.com/sunmengyuan/metis/tree/master/echarts/airpollution) [(demo)](https://sunmengyuan.github.io/demos/echarts/airpollution)
 
 *****
 
@@ -152,7 +152,7 @@
 
 + [ECMAScript 6 入门](http://es6.ruanyifeng.com/)
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/ecmascript) ####
+#### [笔记](https://github.com/sunmengyuan/metis/tree/master/ecmascript) ####
 
 *****
 
@@ -162,9 +162,9 @@
 
 + [Webpack](https://webpack.github.io/docs/)
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/webpack) ####
+#### [笔记](https://github.com/sunmengyuan/metis/tree/master/webpack) ####
 
-#### [示例](https://github.com/sunmengyuan/note/tree/master/webpack/example) ####
+#### [示例](https://github.com/sunmengyuan/metis/tree/master/webpack/example) ####
 
 *****
 
@@ -176,17 +176,17 @@
 
 + [Jasmine Documentation](http://jasmine.github.io/)
 
-#### [笔记](https://github.com/sunmengyuan/note/tree/master/karma) ####
+#### [笔记](https://github.com/sunmengyuan/metis/tree/master/karma) ####
 
-#### [示例](https://github.com/sunmengyuan/note/tree/master/karma/example) ####
+#### [示例](https://github.com/sunmengyuan/metis/tree/master/karma/example) ####
 
 *****
 
 ### 基础知识 ###
 
-+ [Javascript](https://github.com/sunmengyuan/note/tree/master/javascript)
++ [Javascript](https://github.com/sunmengyuan/metis/tree/master/javascript)
 
-+ [Css](https://github.com/sunmengyuan/note/tree/master/css)
++ [Css](https://github.com/sunmengyuan/metis/tree/master/css)
 
 *****
 

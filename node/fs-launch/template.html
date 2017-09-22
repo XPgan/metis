@@ -2,42 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Template</title>
+    <title></title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .elem{position: fixed !important;position: relative;top: 50%;left: 50%;width: 320px;height: 320px;margin-left: -160px;margin-top: -160px;background-size: cover;box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);}
+        .elem:before{content: "";position: absolute;top: 0;left: 0;z-index: -1;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.5);}
+        .elem h3{font-size: 22px;color: #FFF;padding: 20px 15px;text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);}
+    </style>
 </head>
 <body>
-<div id="king" title="" image="" type=""></div>
-<h3></h3>
-<img src="" />
+<king id="king" title="渠道一" illustration="http://hera.s.igengmei.com/2016/05/12/f7714d5dbd-half"></king>
+<div class="elem">
+    <h3></h3>
+</div>
 <script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
 <script>
     var main = {
         do: function () {
-            var _this = this;
             var $king = $('#king');
-            $('h3').text($king.attr('title'));
-            $('img').attr('src', $king.attr('image'));
-            switch ($king.attr('type')) {
-                case '1':
-                    _this.type1();
-                    break;
-                case '2':
-                    _this.type2();
-                    break;
-                case '3':
-                    _this.type3();
-                    break;
-                default:
-                    break;
-            }
-        },
-        type1: function () {
-            console.log('type1');
-        },
-        type2: function () {
-            console.log('type2');
-        },
-        type3: function () {
-            console.log('type3');
+            var $elem = $('.elem');
+            var title = $king.attr('title');
+            var illustration = $king.attr('illustration');
+            $('title').text(title);
+            $elem.find('h3').text(title);
+            $elem.css('background-image', 'url("' + illustration + '")');
         }
     };
     main.do();

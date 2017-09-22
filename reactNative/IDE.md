@@ -6,7 +6,7 @@ _开发平台：MacOS_
 
 *****
 
-+ 安装 __Node__ [下载地址](https://nodejs.org/en/)
++ 安装 __node.js__ [下载地址](https://nodejs.org/en/)
 
 + 安装 __npm__
 

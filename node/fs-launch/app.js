@@ -1,16 +1,9 @@
 var express = require('express');
 var path = require('path');
-var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
 var routes = require('./routes');
 var app = express();
 
 app.use(express.static(path.join(__dirname, 'launchs')));
-app.use(express.static(path.join(__dirname, 'upload')));
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-app.use(cookieParser());
-
 app.all('*', (req, res, next) => {
     const origin = req.headers.origin;
     res.header('Access-Control-Allow-Origin', origin);

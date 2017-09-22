@@ -1,6 +1,5 @@
 var fs = require('fs');
 var cheerio = require('cheerio');
-var formidable = require('formidable');
 
 module.exports = {
     getChannelList: function (req, res) {
@@ -36,12 +35,11 @@ module.exports = {
                 }));
             } else {
                 var $ = cheerio.load(data);
-                var $markElem = $('#king');
+                var $king = $('#king');
                 var responseData = {
-                    name: channelId,
-                    title: $markElem.attr('title'),
-                    image: $markElem.attr('image'),
-                    type: $markElem.attr('type'),
+                    id: channelId,
+                    title: $king.attr('title'),
+                    illustration: $king.attr('illustration'),
                     url: '/' + channelId + '/'
                 };
                 res.end(JSON.stringify({
@@ -54,7 +52,7 @@ module.exports = {
     },
     addChannel: function (req, res) {
         var channelInfo = req.body;
-        var filePath = 'launchs/' + channelInfo.name + '/';
+        var filePath = 'launchs/' + channelInfo.id + '/';
         fs.mkdir(filePath, function (err) {
             if (err) {
                 fs.exists(filePath, function (exists) {
@@ -74,28 +72,35 @@ module.exports = {
                 });
             } else {
                 fs.readFile('template.html', 'utf8', function (err, data) {
-                    var $ = cheerio.load(data);
-                    var $markElem = $('#king');
-                    $markElem.attr({
-                        'title': channelInfo.title,
-                        'image': channelInfo.image,
-                        'type': channelInfo.type
-                    });
-                    fs.writeFile(filePath + 'index.html', $.html(), function (err) {
-                        if (err) {
-                            res.end(JSON.stringify({
-                                error: 1,
-                                message: '提交失败',
-                                data: {}
-                            }));
-                        } else {
-                            res.end(JSON.stringify({
-                                error: 0,
-                                message: '提交成功',
-                                data: {}
-                            }));
-                        }
-                    });
+                    if (err) {
+                        res.end(JSON.stringify({
+                            error: 1,
+                            message: '提交失败',
+                            data: {}
+                        }));
+                    } else {
+                        var $ = cheerio.load(data);
+                        var $king = $('#king');
+                        $king.attr({
+                            'title': channelInfo.title,
+                            'illustration': channelInfo.illustration
+                        });
+                        fs.writeFile(filePath + 'index.html', $.html(), function (err) {
+                            if (err) {
+                                res.end(JSON.stringify({
+                                    error: 1,
+                                    message: '提交失败',
+                                    data: {}
+                                }));
+                            } else {
+                                res.end(JSON.stringify({
+                                    error: 0,
+                                    message: '提交成功',
+                                    data: {}
+                                }));
+                            }
+                        });
+                    }
                 });
             }
         });
@@ -103,7 +108,7 @@ module.exports = {
     editChannel: function (req, res) {
         var _this = this;
         var channelInfo = req.body;
-        var filePath = 'launchs/' + channelInfo.name + '/';
+        var filePath = 'launchs/' + channelInfo.id + '/';
         fs.unlink(filePath + 'index.html', function (err) {
             if (err) {
                 res.end(JSON.stringify({
@@ -121,66 +126,6 @@ module.exports = {
                         }));
                     } else {
                         _this.addChannel(req, res);
-                    }
-                });
-            }
-        });
-    },
-    getImageList: function (req, res) {
-        var start_num = req.query.start_num >> 0 || 0;
-        var count = req.query.count >> 0 || 10;
-        fs.readdir('upload/images/', function (err, files) {
-            if (err) {
-                res.end(JSON.stringify({
-                    error: 1,
-                    message: '读取图片列表失败',
-                    total: 0,
-                    data: []
-                }));
-            } else {
-                var urls = [];
-                for (var i = 0;i < files.length;i++) {
-                    urls.push('/images/' + files[i]);
-                }
-                var responseData = urls.slice(start_num, start_num + count);
-                res.end(JSON.stringify({
-                    error: 0,
-                    message: '读取图片列表成功',
-                    total: urls.length,
-                    data: responseData
-                }));
-            }
-        });
-    },
-    addImage: function (req, res) {
-        var form = new formidable.IncomingForm();
-        form.parse(req, function (err, fields, files) {
-            if (err) {
-                res.end(JSON.stringify({
-                    error: 1,
-                    message: '上传失败',
-                    data: {}
-                }));
-            } else {
-                var timestamp = (new Date()).valueOf();
-                var url = '/images/' + timestamp + '_' + files.image.name;
-                var tmpPath = files.image.path;
-                var targetPath = './upload' + url;
-                fs.rename(tmpPath, targetPath, function (err) {
-                    if (err) {
-                        res.end(JSON.stringify({
-                            error: 1,
-                            message: '上传失败',
-                            data: {}
-                        }));
-                    } else {
-                        res.end(JSON.stringify({
-                            error: 0,
-                            message: '上传成功',
-                            data: {
-                                url: url
-                            }
-                        }));
                     }
                 });
             }

@@ -2,17 +2,17 @@ var express = require('express');
 var app = express();
 var git = require('simple-git');
 
-/* clone */
+// clone
 git()
     .clone('git@github.com:sunmengyuan/aphrodite.git');
 
-/* pull */
+// pull
 git('./aphrodite')
     .pull('origin', 'master', function (err, update) {
         console.log(update);
     });
 
-/* push */
+// push
 git('./aphrodite')
     .add('.')
     .commit('message')

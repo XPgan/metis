@@ -3,8 +3,10 @@ var router = express.Router();
 var createRequest = require('./createRequest');
 
 var example = require('./data/example');
+var ascle = require('./data/ascle');
 var requestGatherLst = [
-    example
+    example,
+    ascle
 ];
 
 createRequest.do(router, requestGatherLst);

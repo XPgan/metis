@@ -15,12 +15,19 @@
         border: $radius / 2 solid transparent;
         border-left-width: tan(pi() / $count) * $radius / 2;
         border-right-width: tan(pi() / $count) * $radius / 2;
-        transform: translate(-50%, 0);
+    }
+    @for $index from 0 to $count {
+        span:nth-child(#{$index + 1}) {
+            -webkit-transform: translate(-50%, 0) rotate(360deg * $index / $count);
+                    transform: translate(-50%, 0) rotate(360deg * $index / $count);
+            -webkit-transform-origin: center;
+                    transform-origin: center;
+        }
     }
 }
 
 .container {
-    @include circlePercent(200px, 4);
+    @include circlePercent(200px, 10);
 
     margin: 100px auto;
     background-color: #CCC;

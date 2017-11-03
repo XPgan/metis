@@ -10,11 +10,19 @@
         position: absolute;
         top: 0;
         left: 50%;
-        width: 0;
-        height: 0;
-        border: $radius / 2 solid transparent;
-        border-left-width: tan(pi() / $count) * $radius / 2;
-        border-right-width: tan(pi() / $count) * $radius / 2;
+        @if $count == 1 {
+            width: $radius;
+            height: $radius;
+        } @else if $count == 2 {
+            width: $radius;
+            height: $radius / 2;
+        } @else {
+            width: 0;
+            height: 0;
+            border: $radius / 2 solid transparent;
+            border-left-width: tan(pi() / $count) * $radius / 2;
+            border-right-width: tan(pi() / $count) * $radius / 2;
+        }
     }
     @for $index from 0 to $count {
         span:nth-child(#{$index + 1}) {
@@ -27,11 +35,12 @@
 }
 
 .container {
-    @include circlePercent(200px, 10);
+    @include circlePercent(200px, 2);
 
     margin: 100px auto;
     background-color: #CCC;
     span {
+        background-color: yellowgreen;
         border-top-color: yellowgreen;
     }
 }

@@ -1,4 +1,4 @@
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000329}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000337}}
 .container {
   position: relative;
   width: 200px;
@@ -12,73 +12,23 @@
     position: absolute;
     top: 0;
     left: 50%;
-    width: 0;
-    height: 0;
-    border: 100px solid transparent;
-    border-left-width: 32.4919696233px;
-    border-right-width: 32.4919696233px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
+    width: 200px;
+    height: 100px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000328}}
   .container span:nth-child(1) {
     -webkit-transform: translate(-50%, 0) rotate(0deg);
     transform: translate(-50%, 0) rotate(0deg);
     -webkit-transform-origin: center;
     transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000328}}
   .container span:nth-child(2) {
-    -webkit-transform: translate(-50%, 0) rotate(36deg);
-    transform: translate(-50%, 0) rotate(36deg);
-    -webkit-transform-origin: center;
-    transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
-  .container span:nth-child(3) {
-    -webkit-transform: translate(-50%, 0) rotate(72deg);
-    transform: translate(-50%, 0) rotate(72deg);
-    -webkit-transform-origin: center;
-    transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
-  .container span:nth-child(4) {
-    -webkit-transform: translate(-50%, 0) rotate(108deg);
-    transform: translate(-50%, 0) rotate(108deg);
-    -webkit-transform-origin: center;
-    transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
-  .container span:nth-child(5) {
-    -webkit-transform: translate(-50%, 0) rotate(144deg);
-    transform: translate(-50%, 0) rotate(144deg);
-    -webkit-transform-origin: center;
-    transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
-  .container span:nth-child(6) {
     -webkit-transform: translate(-50%, 0) rotate(180deg);
     transform: translate(-50%, 0) rotate(180deg);
     -webkit-transform-origin: center;
     transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
-  .container span:nth-child(7) {
-    -webkit-transform: translate(-50%, 0) rotate(216deg);
-    transform: translate(-50%, 0) rotate(216deg);
-    -webkit-transform-origin: center;
-    transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
-  .container span:nth-child(8) {
-    -webkit-transform: translate(-50%, 0) rotate(252deg);
-    transform: translate(-50%, 0) rotate(252deg);
-    -webkit-transform-origin: center;
-    transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
-  .container span:nth-child(9) {
-    -webkit-transform: translate(-50%, 0) rotate(288deg);
-    transform: translate(-50%, 0) rotate(288deg);
-    -webkit-transform-origin: center;
-    transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000320}}
-  .container span:nth-child(10) {
-    -webkit-transform: translate(-50%, 0) rotate(324deg);
-    transform: translate(-50%, 0) rotate(324deg);
-    -webkit-transform-origin: center;
-    transform-origin: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/sunmy\/important\/metis\/css\/sector\/style\.scss}line{font-family:\0000342}}
   .container span {
+    background-color: yellowgreen;
     border-top-color: yellowgreen; }
 
 /*# sourceMappingURL=style.css.map */

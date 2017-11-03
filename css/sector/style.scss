@@ -1,0 +1,30 @@
+@import "math";
+
+@mixin circlePercent ($radius, $count) {
+    position: relative;
+    width: $radius;
+    height: $radius;
+    border-radius: 50%;
+    overflow: hidden;
+    span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border: $radius / 2 solid transparent;
+        border-left-width: tan(pi() / $count) * $radius / 2;
+        border-right-width: tan(pi() / $count) * $radius / 2;
+        transform: translate(-50%, 0);
+    }
+}
+
+.container {
+    @include circlePercent(200px, 4);
+
+    margin: 100px auto;
+    background-color: #CCC;
+    span {
+        border-top-color: yellowgreen;
+    }
+}

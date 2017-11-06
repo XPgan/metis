@@ -1,6 +1,6 @@
 @import "math";
 
-@mixin circlePercent ($radius, $count) {
+@mixin sector ($radius, $count) {
     position: relative;
     width: $radius;
     height: $radius;
@@ -35,7 +35,7 @@
 }
 
 .container {
-    @include circlePercent(200px, 2);
+    @include sector(200px, 2);
 
     margin: 100px auto;
     background-color: #CCC;

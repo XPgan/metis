@@ -1,6 +1,6 @@
 @import "math";
 
-@mixin sector ($radius, $count) {
+@mixin sector ($radius, $count, $color) {
     $diameter: 2 * $radius;
     position: relative;
     width: $diameter;
@@ -14,15 +14,18 @@
         @if $count == 1 {
             width: $diameter;
             height: $diameter;
+            background-color: $color;
         } @else if $count == 2 {
             width: $diameter;
             height: $radius;
+            background-color: $color;
         } @else {
             width: 0;
             height: 0;
             border: $radius solid transparent;
             border-left-width: tan(pi() / $count) * $radius;
             border-right-width: tan(pi() / $count) * $radius;
+            border-top-color: $color;
         }
     }
     @for $index from 0 to $count {
@@ -36,12 +39,7 @@
 }
 
 .container {
-    @include sector(100px, 4);
-
+    @include sector(100px, 5, yellowgreen);
     margin: 100px auto;
     background-color: #CCC;
-    span {
-        background-color: yellowgreen;
-        border-top-color: yellowgreen;
-    }
 }

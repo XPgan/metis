@@ -7,8 +7,8 @@
         *{margin: 0;padding: 0;}
         body{background-color: #000;}
         .ctrl{position: fixed;top: 20px;left: 20px;}
-        .ctrl, .ctrl input{font-size: 18px;line-height: 40px;color: #ffce84;}
-        .ctrl input{width: 40px;text-align: center;padding: 0 10px;margin-right: 10px;border: 1px solid #c1ffc4;border-radius: 4px;background-color: transparent;}
+        .ctrl, .ctrl input{font-size: 18px;line-height: 40px;color: #FFCE84;}
+        .ctrl input{width: 40px;text-align: center;padding: 0 10px;margin-right: 10px;border: 1px solid #7B6C54;border-radius: 4px;background-color: transparent;}
         svg{position: fixed;top: 0;left: 0;width: 100%;height: 100%;}
         path{fill: none;stroke: #FFF;stroke-width: 4;stroke-linecap: round;stroke-dasharray: 628.4073486328125;}
     </style>
@@ -30,21 +30,25 @@
     </g>
 </svg>
 <div class="ctrl">
-    <input type="text" value="100" />%
+    <input id="input" type="text" value="100" autofocus="autofocus" />%
 </div>
 <script>
     var circlePathLength = document.getElementById('circlePath').getTotalLength();
     console.log(circlePathLength);
 
     var totalTime = 3;
-    var percent = 0.8;
-    var durTime = totalTime * percent;
     var circleAnimate = document.getElementById('circleAnimate');
     var tailAnimate = document.getElementById('tailAnimate');
-    circleAnimate.setAttribute('repeatDur', durTime + 's');
-    tailAnimate.setAttribute('repeatDur', durTime + 's');
-    circleAnimate.beginElement();
-    tailAnimate.beginElement();
+    document.getElementById('input').onkeydown = function (e) {
+        if (e.keyCode == '13') {
+            var percent = this.value / 100;
+            var durTime = totalTime * percent;
+            circleAnimate.setAttribute('repeatDur', durTime + 's');
+            tailAnimate.setAttribute('repeatDur', durTime + 's');
+            circleAnimate.beginElement();
+            tailAnimate.beginElement();
+        }
+    }
 </script>
 </body>
 </html>

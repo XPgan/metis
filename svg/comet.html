@@ -18,17 +18,27 @@
         </pattern>
     </defs>
     <path id="circlePath" d="M 300 100 a 100 100 0 0 1 0 200 a 100 100 0 0 1 0 -200 Z">
-        <animate id="circleAnimate" attributeName="stroke-dashoffset" from="628.4073486328125" to="0" dur="3s" />
+        <animate id="circleAnimate" attributeName="stroke-dashoffset" from="628.4073486328125" to="0" dur="3s" repeatDur="" fill="freeze" begin="indefinite" restart="whenNotActive" />
     </path>
     <g>
         <circle cx="0" cy="0" r="8" fill="url(#tailPattern)">
-            <animateMotion id="tailAnimate" path="M 300 100 a 100 100 0 0 1 0 200 a 100 100 0 0 1 0 -200 Z" begin="0" dur="3s" rotate="auto" />
+            <animateMotion id="tailAnimate" path="M 300 100 a 100 100 0 0 1 0 200 a 100 100 0 0 1 0 -200 Z" dur="3s" repeatDur="" fill="freeze" rotate="auto" begin="indefinite" restart="whenNotActive" />
         </circle>
     </g>
 </svg>
 <script>
     var circlePathLength = document.getElementById('circlePath').getTotalLength();
     console.log(circlePathLength);
+
+    var totalTime = 3;
+    var percent = 0.8;
+    var durTime = totalTime * percent;
+    var circleAnimate = document.getElementById('circleAnimate');
+    var tailAnimate = document.getElementById('tailAnimate');
+    circleAnimate.setAttribute('repeatDur', durTime + 's');
+    tailAnimate.setAttribute('repeatDur', durTime + 's');
+    circleAnimate.beginElement();
+    tailAnimate.beginElement();
 </script>
 </body>
 </html>

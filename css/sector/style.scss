@@ -23,17 +23,20 @@
             width: 0;
             height: 0;
             border: $radius solid transparent;
-            border-left-width: tan(pi() / $count) * $radius;
-            border-right-width: tan(pi() / $count) * $radius;
+            $borderWidth: tan(pi() / $count) * $radius;
+            border-left-width: $borderWidth;
+            border-right-width: $borderWidth;
             border-top-color: $color;
         }
     }
     @for $index from 0 to $count {
         span:nth-child(#{$index + 1}) {
-            -webkit-transform: translate(-50%, 0) rotate(360deg * $index / $count);
-                    transform: translate(-50%, 0) rotate(360deg * $index / $count);
-            -webkit-transform-origin: center;
-                    transform-origin: center;
+            $transform: translate(-50%, 0) rotate(360deg * $index / $count);
+            $origin: if($count == 2, bottom, center);
+            -webkit-transform: $transform;
+                    transform: $transform;
+            -webkit-transform-origin: $origin;
+                    transform-origin: $origin;
         }
     }
 }

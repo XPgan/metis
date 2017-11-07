@@ -42,7 +42,7 @@
 }
 
 .container {
-    @include sector(100px, 5, yellowgreen);
+    @include sector(100px, 20, yellowgreen);
     margin: 100px auto;
     background-color: #CCC;
 }

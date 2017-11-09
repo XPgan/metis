@@ -29,29 +29,30 @@
         </circle>
     </g>
 </svg>
-<div class="ctrl">旋转到哪里？<input id="input" type="text" value="100" autofocus="autofocus" />%（敲回车看效果）</div>
+<div class="ctrl">旋转到哪里？<input id="percentInput" type="text" value="100" autofocus="autofocus" />%（敲回车看效果）</div>
 <script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
 <script>
-    var circlePathLength = document.getElementById('circlePath').getTotalLength();
+    var $circlePath = $('#circlePath');
+    var circlePathLength = $circlePath[0].getTotalLength();
     console.log(circlePathLength);
 
     var totalTime = 3;
     var percent = 1;
-    var circleAnimate = document.getElementById('circleAnimate');
-    var tailAnimate = document.getElementById('tailAnimate');
-    var animate = function (target) {
-        percent = target && (target.value / 100) || percent;
+    var $circleAnimate = $('#circleAnimate');
+    var $tailAnimate = $('#tailAnimate');
+    var runAnimate = function ($target) {
+        percent = $target && ($target.val() / 100) || percent;
         var durTime = totalTime * percent;
-        circleAnimate.setAttribute('repeatDur', durTime + 's');
-        tailAnimate.setAttribute('repeatDur', durTime + 's');
-        circleAnimate.beginElement();
-        tailAnimate.beginElement();
-    }
+        $circleAnimate[0].setAttribute('repeatDur', durTime + 's');
+        $tailAnimate[0].setAttribute('repeatDur', durTime + 's');
+        $circleAnimate[0].beginElement();
+        $tailAnimate[0].beginElement();
+    };
 
-    animate();
-    document.getElementById('input').onkeydown = function (e) {
-        (e.keyCode == '13') && animate(this);
-    }
+    runAnimate();
+    $('#percentInput').on('keydown', function (e) {
+        (e.keyCode == '13') && runAnimate($(this));
+    });
 </script>
 </body>
 </html>

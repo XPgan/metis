@@ -42,7 +42,20 @@
 }
 
 .container {
-    @include sector(100px, 20, yellowgreen);
+    @include sector(100px, 5, #8AEBDC);
     margin: 100px auto;
-    background-color: #CCC;
+    background-color: rgba(231, 247, 255, 0.83);
+
+    .info {
+        width: 160px;
+        height: 160px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -80px;
+        margin-top: -80px;
+        border-radius: 50%;
+        background-color: #FFF;
+        box-shadow: 0 0 6px rgba(0, 144, 249, 0.2);
+    }
 }

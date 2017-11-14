@@ -406,5 +406,141 @@ module.exports = {
                 }
             }
         }
+    },
+    unreadNotice: {
+        url: '/unread/notice',
+        type: 'GET',
+        data: function () {
+            return {
+                message: '请求成功',
+                error: 0,
+                data: {
+                    unread_count: type.number({
+                        min: 10,
+                        max: 100
+                    }),
+                    unread_list: type.list({
+                        length: 5,
+                        data: function () {
+                            return {
+                                ids: type.list({
+                                    length: type.number({
+                                        min: 1,
+                                        max: 3
+                                    }),
+                                    data: function () {
+                                        return type.id()
+                                    }
+                                }),
+                                type: type.string([
+                                    'diary',
+                                    'statement',
+                                    'supplement',
+                                    'pm'
+                                ]),
+                                content: type.string({
+                                    minL: 10,
+                                    maxL: 40
+                                })
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    },
+    systemList: {
+        url: '/systemlist/_data',
+        type: 'GET',
+        data: function () {
+            return {
+                message: '请求成功',
+                error: 0,
+                data: {
+                    total: 56,
+                    list: type.list({
+                        length: 10,
+                        data: function () {
+                            return {
+                                ids: type.list({
+                                    length: type.number({
+                                        min: 1,
+                                        max: 3
+                                    }),
+                                    data: function () {
+                                        return type.id()
+                                    }
+                                }),
+                                type: type.string([
+                                    'diary',
+                                    'statement',
+                                    'supplement',
+                                    'pm'
+                                ]),
+                                content: type.string({
+                                    minL: 10,
+                                    maxL: 40
+                                }),
+                                is_unread: type.bool(),
+                                date: type.number({
+                                    min: 2001,
+                                    max: 2020
+                                }) + '-' + type.number({
+                                    min: 1,
+                                    max: 12
+                                })
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    },
+    unreadList: {
+        url: '/unreadlist/_data',
+        type: 'GET',
+        data: function () {
+            return {
+                message: '请求成功',
+                error: 0,
+                data: {
+                    total: 99,
+                    list: type.list({
+                        length: 10,
+                        data: function () {
+                            return {
+                                ids: type.list({
+                                    length: type.number({
+                                        min: 1,
+                                        max: 3
+                                    }),
+                                    data: function () {
+                                        return type.id()
+                                    }
+                                }),
+                                type: type.string([
+                                    'diary',
+                                    'statement',
+                                    'supplement',
+                                    'pm'
+                                ]),
+                                content: type.string({
+                                    minL: 10,
+                                    maxL: 40
+                                }),
+                                is_unread: type.bool(),
+                                date: type.number({
+                                    min: 2001,
+                                    max: 2020
+                                }) + '-' + type.number({
+                                    min: 1,
+                                    max: 12
+                                })
+                            }
+                        }
+                    })
+                }
+            }
+        }
     }
 }

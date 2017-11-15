@@ -420,27 +420,33 @@ module.exports = {
                         max: 100
                     }),
                     unread_list: type.list({
-                        length: 5,
+                        length: 3,
                         data: function () {
                             return {
-                                ids: type.list({
-                                    length: type.number({
-                                        min: 1,
-                                        max: 3
-                                    }),
-                                    data: function () {
-                                        return type.id()
-                                    }
-                                }),
+                                ids: {
+                                    id: type.id(),
+                                    id1: type.id(),
+                                    id2: type.id()
+                                },
                                 type: type.string([
-                                    'diary',
+                                    'budan',
                                     'statement',
-                                    'supplement',
-                                    'pm'
+                                    'statement_all',
+                                    'statement_finance',
+                                    'service',
+                                    'service_all',
+                                    'service_offline',
+                                    'activity_success',
+                                    'activity_failed',
+                                    'check_setting',
+                                    'check_finance',
+                                    'ad_recharge',
+                                    'ad_account',
+                                    'ad_order'
                                 ]),
                                 content: type.string({
-                                    minL: 10,
-                                    maxL: 40
+                                    minL: 40,
+                                    maxL: 100
                                 })
                             }
                         }
@@ -462,20 +468,26 @@ module.exports = {
                         length: 10,
                         data: function () {
                             return {
-                                ids: type.list({
-                                    length: type.number({
-                                        min: 1,
-                                        max: 3
-                                    }),
-                                    data: function () {
-                                        return type.id()
-                                    }
-                                }),
+                                ids: {
+                                    id: type.id(),
+                                    id1: type.id(),
+                                    id2: type.id()
+                                },
                                 type: type.string([
-                                    'diary',
+                                    'budan',
                                     'statement',
-                                    'supplement',
-                                    'pm'
+                                    'statement_all',
+                                    'statement_finance',
+                                    'service',
+                                    'service_all',
+                                    'service_offline',
+                                    'activity_success',
+                                    'activity_failed',
+                                    'check_setting',
+                                    'check_finance',
+                                    'ad_recharge',
+                                    'ad_account',
+                                    'ad_order'
                                 ]),
                                 content: type.string({
                                     minL: 10,
@@ -509,20 +521,26 @@ module.exports = {
                         length: 10,
                         data: function () {
                             return {
-                                ids: type.list({
-                                    length: type.number({
-                                        min: 1,
-                                        max: 3
-                                    }),
-                                    data: function () {
-                                        return type.id()
-                                    }
-                                }),
+                                ids: {
+                                    id: type.id(),
+                                    id1: type.id(),
+                                    id2: type.id()
+                                },
                                 type: type.string([
-                                    'diary',
+                                    'budan',
                                     'statement',
-                                    'supplement',
-                                    'pm'
+                                    'statement_all',
+                                    'statement_finance',
+                                    'service',
+                                    'service_all',
+                                    'service_offline',
+                                    'activity_success',
+                                    'activity_failed',
+                                    'check_setting',
+                                    'check_finance',
+                                    'ad_recharge',
+                                    'ad_account',
+                                    'ad_order'
                                 ]),
                                 content: type.string({
                                     minL: 10,

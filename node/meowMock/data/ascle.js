@@ -494,13 +494,7 @@ module.exports = {
                                     maxL: 40
                                 }),
                                 is_unread: type.bool(),
-                                date: type.number({
-                                    min: 2001,
-                                    max: 2020
-                                }) + '-' + type.number({
-                                    min: 1,
-                                    max: 12
-                                })
+                                date: type.id()
                             }
                         }
                     })
@@ -547,13 +541,7 @@ module.exports = {
                                     maxL: 40
                                 }),
                                 is_unread: type.bool(),
-                                date: type.number({
-                                    min: 2001,
-                                    max: 2020
-                                }) + '-' + type.number({
-                                    min: 1,
-                                    max: 12
-                                })
+                                date: type.id()
                             }
                         }
                     })

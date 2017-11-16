@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300" style="background-color: #000">
+    <defs>
+        <pattern id="tail" width="100%" height="100%" patternContentUnits="objectBoundingBox">
+            <image width="1" height="1" xlink:href="http://oz54e50y4.bkt.clouddn.com/tail.png" />
+        </pattern>
+    </defs>
+    <path d="M 150 50 a 100 100 0 0 1 0 200 a 100 100 0 0 1 0 -200 Z" fill="none" stroke="#FFF" stroke-width="4" stroke-linecap="round" stroke-dasharray="628.4073486328125">
+        <animate attributeName="stroke-dashoffset" from="628.4073486328125" to="0" dur="3s" fill="freeze" />
+    </path>
+    <g>
+        <circle cx="0" cy="0" r="10" fill="url(#tail)">
+            <animateMotion path="M 150 50 a 100 100 0 0 1 0 200 a 100 100 0 0 1 0 -200 Z" dur="3s" fill="freeze" rotate="auto" />
+        </circle>
+    </g>
+</svg>

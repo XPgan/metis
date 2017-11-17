@@ -487,7 +487,9 @@ module.exports = {
                                     'check_finance',
                                     'ad_recharge',
                                     'ad_account',
-                                    'ad_order'
+                                    'ad_order',
+                                    'bulletin',
+                                    'agreement'
                                 ]),
                                 content: type.string({
                                     minL: 10,
@@ -534,7 +536,9 @@ module.exports = {
                                     'check_finance',
                                     'ad_recharge',
                                     'ad_account',
-                                    'ad_order'
+                                    'ad_order',
+                                    'bulletin',
+                                    'agreement'
                                 ]),
                                 content: type.string({
                                     minL: 10,

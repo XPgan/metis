@@ -415,39 +415,25 @@ module.exports = {
                 message: '请求成功',
                 error: 0,
                 data: {
-                    unread_count: type.number({
+                    total: type.number({
                         min: 10,
                         max: 100
                     }),
-                    unread_list: type.list({
+                    message_list: type.list({
                         length: 3,
                         data: function () {
                             return {
-                                ids: {
-                                    id: type.id(),
-                                    id1: type.id(),
-                                    id2: type.id()
-                                },
-                                type: type.string([
-                                    'budan',
-                                    'statement',
-                                    'statement_all',
-                                    'statement_finance',
-                                    'service',
-                                    'service_all',
-                                    'service_offline',
-                                    'activity_success',
-                                    'activity_failed',
-                                    'check_setting',
-                                    'check_finance',
-                                    'ad_recharge',
-                                    'ad_account',
-                                    'ad_order'
-                                ]),
+                                id: type.id(),
+                                type: type.number({
+                                    min: 0,
+                                    max: 19
+                                }),
+                                info_id: type.id(),
                                 content: type.string({
                                     minL: 40,
                                     maxL: 100
-                                })
+                                }),
+                                can_view: type.bool()
                             }
                         }
                     })
@@ -464,39 +450,41 @@ module.exports = {
                 error: 0,
                 data: {
                     total: 56,
-                    list: type.list({
+                    message_list: type.list({
                         length: 10,
                         data: function () {
                             return {
-                                ids: {
-                                    id: type.id(),
-                                    id1: type.id(),
-                                    id2: type.id()
-                                },
-                                type: type.string([
-                                    'budan',
-                                    'statement',
-                                    'statement_all',
-                                    'statement_finance',
-                                    'service',
-                                    'service_all',
-                                    'service_offline',
-                                    'activity_success',
-                                    'activity_failed',
-                                    'check_setting',
-                                    'check_finance',
-                                    'ad_recharge',
-                                    'ad_account',
-                                    'ad_order',
-                                    'bulletin',
-                                    'agreement'
-                                ]),
-                                content: type.string({
-                                    minL: 10,
-                                    maxL: 40
+                                id: type.id(),
+                                type: type.number({
+                                    min: 0,
+                                    max: 19
                                 }),
-                                is_unread: type.bool(),
-                                date: type.id()
+                                info_id: type.id(),
+                                content: type.string({
+                                    minL: 40,
+                                    maxL: 100
+                                }),
+                                time: type.number({
+                                    min: 2001,
+                                    max: 2020
+                                }) + '-' + type.number({
+                                    min: 1,
+                                    max: 12
+                                }) + '-' + type.number({
+                                    min: 1,
+                                    max: 30
+                                }) + ' ' + type.number({
+                                    min: 0,
+                                    max: 24
+                                }) + ':' + type.number({
+                                    min: 0,
+                                    max: 59
+                                }) + ':' + type.number({
+                                    min: 0,
+                                    max: 59
+                                }),
+                                is_read: type.bool(),
+                                can_view: type.bool()
                             }
                         }
                     })
@@ -513,43 +501,55 @@ module.exports = {
                 error: 0,
                 data: {
                     total: 99,
-                    list: type.list({
+                    message_list: type.list({
                         length: 10,
                         data: function () {
                             return {
-                                ids: {
-                                    id: type.id(),
-                                    id1: type.id(),
-                                    id2: type.id()
-                                },
-                                type: type.string([
-                                    'budan',
-                                    'statement',
-                                    'statement_all',
-                                    'statement_finance',
-                                    'service',
-                                    'service_all',
-                                    'service_offline',
-                                    'activity_success',
-                                    'activity_failed',
-                                    'check_setting',
-                                    'check_finance',
-                                    'ad_recharge',
-                                    'ad_account',
-                                    'ad_order',
-                                    'bulletin',
-                                    'agreement'
-                                ]),
-                                content: type.string({
-                                    minL: 10,
-                                    maxL: 40
+                                id: type.id(),
+                                type: type.number({
+                                    min: 0,
+                                    max: 21
                                 }),
-                                is_unread: type.bool(),
-                                date: type.id()
+                                info_id: type.id(),
+                                content: type.string({
+                                    minL: 40,
+                                    maxL: 100
+                                }),
+                                time: type.number({
+                                    min: 2001,
+                                    max: 2020
+                                }) + '-' + type.number({
+                                    min: 1,
+                                    max: 12
+                                }) + '-' + type.number({
+                                    min: 1,
+                                    max: 30
+                                }) + ' ' + type.number({
+                                    min: 0,
+                                    max: 24
+                                }) + ':' + type.number({
+                                    min: 0,
+                                    max: 59
+                                }) + ':' + type.number({
+                                    min: 0,
+                                    max: 59
+                                }),
+                                can_view: type.bool()
                             }
                         }
                     })
                 }
+            }
+        }
+    },
+    readNotice: {
+        url: '/read_notice/_data',
+        type: 'POST',
+        data: function () {
+            return {
+                message: '请求成功',
+                error: 0,
+                data: {}
             }
         }
     }

@@ -30,6 +30,7 @@ module.exports = {
     createPostRequest: function (requestObj) {
         this.router.post(requestObj.url, function (req, res) {
             var responseData = method.faultTolerant(requestObj.data);
+            console.log(req.body)
             res.end(JSON.stringify(responseData));
         });
     },

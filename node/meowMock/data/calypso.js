@@ -12,8 +12,8 @@ module.exports = {
                 data: {
                     types: type.list({
                         length: type.number({
-                            min: 10,
-                            max: 30
+                            min: 3,
+                            max: 5
                         }),
                         data: function () {
                             return {

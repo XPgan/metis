@@ -4,9 +4,11 @@ var createRequest = require('./createRequest');
 
 var example = require('./data/example');
 var ascle = require('./data/ascle');
+var calypso = require('./data/calypso');
 var requestGatherLst = [
     example,
-    ascle
+    ascle,
+    calypso
 ];
 
 createRequest.do(router, requestGatherLst);

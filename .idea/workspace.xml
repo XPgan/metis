@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2502cc2-8f53-4f4e-b8be-d8884829726a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node/meowMock/data/ascle.js" afterPath="$PROJECT_DIR$/node/meowMock/data/ascle.js" />
     </list>
     <ignored path="metis.iws" />
@@ -28,8 +29,8 @@
       <file leaf-file-name="ascle.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/node/meowMock/data/ascle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="590" column="58" selection-start-line="590" selection-start-column="58" selection-end-line="590" selection-end-column="58" />
+            <state relative-caret-position="385">
+              <caret line="598" column="48" selection-start-line="598" selection-start-column="48" selection-end-line="598" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -127,18 +128,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513063852163</updated>
-      <workItem from="1513063853622" duration="2256000" />
+      <workItem from="1513063853622" duration="3332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2256000" />
+    <option name="totallyTimeSpent" value="3332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20492454" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20492454" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -174,8 +175,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node/meowMock/data/ascle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="590" column="58" selection-start-line="590" selection-start-column="58" selection-end-line="590" selection-end-column="58" />
+        <state relative-caret-position="385">
+          <caret line="598" column="48" selection-start-line="598" selection-start-column="48" selection-end-line="598" selection-end-column="48" />
           <folding />
         </state>
       </provider>

@@ -593,9 +593,10 @@ module.exports = {
                                 gm_price: type.number(),
                                 yufukuan: type.number(),
                                 date: type.id(),
+                                sixin: type.bool(),
                                 o_id: type.id(),
                                 d_id: type.id(),
-                                id: type.id()
+                                pm_id: type.id()
                             }
                         }
                     })

@@ -590,13 +590,16 @@ module.exports = {
                                 service_id: type.id(),
                                 duoshuxing: type.string(),
                                 doctor_name: type.string(),
-                                gm_price: type.number(),
-                                yufukuan: type.number(),
+                                gm_price: type.number({
+                                    min: 1000,
+                                    max: 9999
+                                }),
+                                yufukuan: type.number({
+                                    min: 1000,
+                                    max: 9999
+                                }),
                                 date: type.id(),
-                                sixin: type.bool(),
-                                o_id: type.id(),
-                                d_id: type.id(),
-                                pm_id: type.id()
+                                sixin: type.bool()
                             }
                         }
                     })

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2502cc2-8f53-4f4e-b8be-d8884829726a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node/meowMock/data/ascle.js" afterPath="$PROJECT_DIR$/node/meowMock/data/ascle.js" />
     </list>
     <ignored path="metis.iws" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="ascle.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/node/meowMock/data/ascle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="598" column="48" selection-start-line="598" selection-start-column="48" selection-end-line="598" selection-end-column="48" />
+            <state relative-caret-position="617">
+              <caret line="609" column="1" selection-start-line="609" selection-start-column="1" selection-end-line="609" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -128,12 +127,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1513063852163</updated>
-      <workItem from="1513063853622" duration="3332000" />
+      <workItem from="1513063853622" duration="3361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3332000" />
+    <option name="totallyTimeSpent" value="3361000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="708" extended-state="6" />
@@ -175,8 +174,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/node/meowMock/data/ascle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="598" column="48" selection-start-line="598" selection-start-column="48" selection-end-line="598" selection-end-column="48" />
+        <state relative-caret-position="617">
+          <caret line="609" column="1" selection-start-line="609" selection-start-column="1" selection-end-line="609" selection-end-column="1" />
           <folding />
         </state>
       </provider>

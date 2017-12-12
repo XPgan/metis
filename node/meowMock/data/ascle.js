@@ -552,5 +552,55 @@ module.exports = {
                 data: {}
             }
         }
+    },
+    submechanisms: {
+        url: '/submechanisms',
+        type: 'GET',
+        data: function () {
+            return {
+                message: '请求成功',
+                error: 0,
+                data: type.list({
+                    length: 8,
+                    data: function () {
+                        return {
+                            id: type.id(),
+                            name: type.string()
+                        }
+                    }
+                })
+            }
+        }
+    },
+    cartList: {
+        url: '/cartlist/_data',
+        type: 'GET',
+        data: function () {
+            return {
+                message: '请求成功',
+                error: 0,
+                data: {
+                    total: 198,
+                    list: type.list({
+                        length: 10,
+                        data: function () {
+                            return {
+                                user_name: type.string(),
+                                service_name: type.string(),
+                                service_id: type.id(),
+                                duoshuxing: type.string(),
+                                doctor_name: type.string(),
+                                gm_price: type.number(),
+                                yufukuan: type.number(),
+                                date: type.id(),
+                                o_id: type.id(),
+                                d_id: type.id(),
+                                id: type.id()
+                            }
+                        }
+                    })
+                }
+            }
+        }
     }
 }

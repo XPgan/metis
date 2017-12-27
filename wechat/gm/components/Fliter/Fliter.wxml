@@ -1,5 +1,5 @@
 <view class="fliter">
-    <view class="fliter-bar gm-clear" style="top: {{ top ? (top + 'rpx') : '0px' }};">
+    <view class="fliter-bar gm-clear" style="top: {{ top ? (top + 'rpx') : 0 }};">
         <view
             class="item {{ curBar == index ? 'active' : 'normal' }}"
             wx:for="{{ [selected.area.name, selected.tag.name, selected.order.name] }}"

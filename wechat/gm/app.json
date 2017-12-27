@@ -2,34 +2,8 @@
     "pages": [
         "pages/demo/demo"
     ],
-    "tabBar": {
-        "list": [
-            {
-                "pagePath": "pages/demo/demo",
-                "text": "美购",
-                "iconPath": "assets/icons/tabBar/icon_service.png",
-                "selectedIconPath": "assets/icons/tabBar/icon_service_active.png"
-            },
-            {
-                "pagePath": "pages/demo/demo",
-                "text": "订单",
-                "iconPath": "assets/icons/tabBar/icon_order.png",
-                "selectedIconPath": "assets/icons/tabBar/icon_order_active.png"
-            },
-            {
-                "pagePath": "pages/demo/demo",
-                "text": "我的",
-                "iconPath": "assets/icons/tabBar/icon_my.png",
-                "selectedIconPath": "assets/icons/tabBar/icon_my_active.png"
-            }
-        ],
-        "color": "#7F8389",
-        "selectedColor": "#4ABAB4",
-        "backgroundColor": "#F7F7FA",
-        "borderStyle": "black"
-    },
     "window": {
-        "navigationBarTitleText": "更美",
+        "navigationBarTitleText": "呆恋小喵",
         "navigationBarTextStyle": "black",
         "navigationBarBackgroundColor": "#FFF",
         "enablePullDownRefresh": true,

@@ -1,0 +1,39 @@
+<import src="../../templates/mBase.wxml"/>
+<template is="{{ reqError ? 'mError' : 'main' }}" data="{{ ...render }}" />
+
+<template name="main">
+    <view class="gm-content">
+        <fliter bindselected="triggerFliter"></fliter>
+        <view class="service-list1 gm-clear">
+            <view wx:for="{{ serviceList1 }}" class="item">
+                <view class="gm-nothumb">
+                    <image src="{{ item.image }}" mode="widthFix" lazy-load="true"></image>
+                </view>
+                <view class="bio">
+                    <text class="desc gm-ellipsis gm-row2">{{ item.desc }}</text>
+                    <view class="gm-clear">
+                        <text class="price">￥{{ item.price }}</text>
+                        <text class="appoint">{{ item.appoint_count }}人预约</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="service-list2">
+            <view wx:for="{{ serviceList2 }}" class="item">
+                <view class="gm-nothumb">
+                    <image src="{{ item.image }}" mode="widthFix" lazy-load="true"></image>
+                </view>
+                <view class="bio">
+                    <text class="desc gm-ellipsis gm-row2">{{ item.desc }}</text>
+                    <view class="gm-clear">
+                        <text class="price">￥{{ item.price }}</text>
+                        <text class="appoint">{{ item.appoint_count }}人预约</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <template is="mLoading" data="{{ loading }}" />
+        <template is="mGotop" data="{{ gotop }}" />
+    </view>
+    <template is="mToast" data="{{ ...toast }}" />
+</template>

@@ -90,12 +90,34 @@ Component({
             var type = dataset.type;
             var selected = this.data.selected;
             name = (name.length > 4) ? `${name.slice(0, 4)}...` : name;
-            selected[type] = {
-                id: id,
-                name: name
-            };
+            // 为迁就 this.setData 的 bug 不得不做出的妥协
+            switch (type) {
+                case 'area':
+                    this.setData({
+                        'selected.area': {
+                            id: id,
+                            name: name
+                        }
+                    });
+                    break;
+                case 'tag':
+                    this.setData({
+                        'selected.tag': {
+                            id: id,
+                            name: name
+                        }
+                    });
+                    break;
+                case 'order':
+                    this.setData({
+                        'selected.order': {
+                            id: id,
+                            name: name
+                        }
+                    });
+                    break;
+            }
             this.setData({
-                selected: selected,
                 curBar: null
             });
             this.triggerEvent('selected', {

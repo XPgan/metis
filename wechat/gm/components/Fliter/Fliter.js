@@ -27,15 +27,15 @@ Component({
         },
         selected: {
             area: {
-                id: null,
+                id: '',
                 name: '全部地区'
             },
             tag: {
-                id: null,
+                id: '',
                 name: '全部项目'
             },
             order: {
-                id: null,
+                id: '',
                 name: '智能推荐'
             }
         },

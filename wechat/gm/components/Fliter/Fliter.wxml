@@ -1,7 +1,7 @@
 <view class="fliter">
     <view class="fliter-bar gm-clear" style="top: {{ top ? (top + 'rpx') : 0 }};">
         <view
-            class="item {{ curBar == index ? 'active' : 'normal' }}"
+            class="item {{ curBar == index ? 'active' : '' }}"
             wx:for="{{ [selected.area.name, selected.tag.name, selected.order.name] }}"
             data-idx="{{ index }}"
             bindtap="tapBar">
@@ -18,7 +18,7 @@
         <view class="areas" hidden="{{ curBar }}">
             <scroll-view class="col1" scroll-y>
                 <text
-                    class="{{ curCol.col1_area == index ? 'active' : 'normal' }}"
+                    class="{{ curCol.col1_area == index ? 'active' : '' }}"
                     wx:for="{{ areas }}"
                     data-id="{{ item.id }}"
                     data-name="{{ item.name }}"
@@ -33,7 +33,7 @@
                 wx:if="{{ curCol.col1_area == index }}"
                 scroll-y>
                 <text
-                    class="{{ curCol.col2_area == index ? 'active' : 'normal' }}"
+                    class="{{ curCol.col2_area == index ? 'active' : '' }}"
                     wx:for="{{ area.provinces }}"
                     data-id="{{ item.id }}"
                     data-name="{{ item.name }}"
@@ -52,7 +52,7 @@
                     wx:if="{{ (curCol.col1_area == curArea) && (curCol.col2_area == index) }}"
                     scroll-y>
                     <text
-                        class="{{ selected.area.id == item.id ? 'active' : 'normal' }}"
+                        class="{{ selected.area.id == item.id ? 'active' : '' }}"
                         wx:for="{{ province.cities }}"
                         data-id="{{ item.id }}"
                         data-name="{{ item.name }}"
@@ -64,7 +64,7 @@
         <view class="tags" hidden="{{ curBar != 1 }}">
             <scroll-view class="col1" scroll-y>
                 <text
-                    class="{{ curCol.col1_tag == index ? 'active' : 'normal' }}"
+                    class="{{ curCol.col1_tag == index ? 'active' : '' }}"
                     wx:for="{{ tags }}"
                     data-id="{{ item.id }}"
                     data-name="{{ item.name }}"
@@ -79,7 +79,7 @@
                 wx:if="{{ curCol.col1_tag == index }}"
                 scroll-y>
                 <text
-                    class="{{ selected.tag.id == item.id ? 'active' : 'normal' }}"
+                    class="{{ selected.tag.id == item.id ? 'active' : '' }}"
                     wx:for="{{ tag.sub_tags }}"
                     data-id="{{ item.id }}"
                     data-name="{{ item.name }}"
@@ -90,7 +90,7 @@
         <view class="orders" hidden="{{ curBar != 2 }}">
             <scroll-view scroll-y>
                 <text
-                    class="{{ selected.order.id == item.id ? 'active' : 'normal' }}"
+                    class="{{ selected.order.id == item.id ? 'active' : '' }}"
                     wx:for="{{ orders }}"
                     data-id="{{ item.id }}"
                     data-name="{{ item.name }}"

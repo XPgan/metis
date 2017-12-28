@@ -84,7 +84,7 @@ Page({
                 /**
                  * 网络请求错误时调用通用占位页，须根据业务场景自行决定是否定义 errorFn
                  * data 内 reqError 字段名已被征用，类似于关键字，不可重复定义
-                 * 请尝试注释 page 参数体验网络请求错误时的效果
+                 * 请尝试修改 url 体验网络请求错误时的效果
                  */
                 this.setData({
                     reqError: true
@@ -95,7 +95,7 @@ Page({
     loadList1: function () {
         const _page = this;
         Loadmore.loadData({
-            url: '/hybrid/promotion/favor_service/_data',
+            url: '/hybrid/promotion/_data',
             params: {
                 service_id: 235,
                 // 筛选器参数
@@ -130,9 +130,7 @@ Page({
         Loadmore.loadData({
             url: '/hybrid/promotion/favor_service/_data',
             params: {
-                service_id: 230,
-                // 筛选器参数
-                ..._page.data.fliters
+                service_id: 230
             },
             callbackFn: (data) => {
                 var list = _page.data.render.serviceList2;

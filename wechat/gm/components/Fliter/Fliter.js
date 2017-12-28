@@ -125,7 +125,7 @@ Component({
             }
             this.triggerEvent('selected', {
                 area: selected.area.id,
-                tag: selected.tag.id,
+                field: selected.tag.id,
                 order: selected.order.id
             });
         }

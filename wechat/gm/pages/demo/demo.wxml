@@ -7,13 +7,13 @@
         <view class="service-list1 gm-clear">
             <view wx:for="{{ serviceList1 }}" class="item">
                 <view class="gm-nothumb">
-                    <image src="{{ item.image }}" mode="widthFix" lazy-load="true"></image>
+                    <image src="{{ item.service_image }}" mode="widthFix" lazy-load="true"></image>
                 </view>
                 <view class="bio">
-                    <text class="desc gm-ellipsis gm-row2">{{ item.desc }}</text>
+                    <text class="desc gm-ellipsis gm-row2">{{ item.short_description }}</text>
                     <view class="gm-clear">
-                        <text class="price">￥{{ item.price }}</text>
-                        <text class="appoint">{{ item.appoint_count }}人预约</text>
+                        <text class="price">￥{{ item.price_gengmei }}</text>
+                        <text class="appoint">{{ item.apply_num }}人预约</text>
                     </view>
                 </view>
             </view>

@@ -29,10 +29,10 @@ const Loadmore = {
                         || (JSON.stringify(data.data) == '{}')
                     if (isNull) {
                         Loadmore.flag = false;
-                        completeFn();
                         if ((Loadmore.page == 1) || (Loadmore.start_num == 0)) {
                             nodataFn();
                         }
+                        completeFn();
                     }
                 }
             });

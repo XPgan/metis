@@ -63,7 +63,9 @@ Component({
             var dataset = e.target.dataset;
             var idx = dataset.idx;
             var type = dataset.type;
+            var curCol = this.data.curCol;
             // 为迁就 this.setData 的 bug 不得不做出的妥协
+            if (curCol[type] == idx) return;
             switch (type) {
                 case 'col1_area':
                     this.setData({
@@ -90,7 +92,11 @@ Component({
             var type = dataset.type;
             var selected = this.data.selected;
             name = (name.length > 4) ? `${name.slice(0, 4)}...` : name;
+            this.setData({
+                curBar: null
+            });
             // 为迁就 this.setData 的 bug 不得不做出的妥协
+            if (selected[type].id == id) return;
             switch (type) {
                 case 'area':
                     this.setData({
@@ -117,9 +123,6 @@ Component({
                     });
                     break;
             }
-            this.setData({
-                curBar: null
-            });
             this.triggerEvent('selected', {
                 area: selected.area.id,
                 tag: selected.tag.id,

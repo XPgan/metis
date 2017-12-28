@@ -18,17 +18,20 @@
     min-height: 64rpx;
     margin-bottom: 20rpx;
 }
-.service-list1 .price,
-.service-list1 .appoint {
-    font-size: 24rpx;
-    line-height: 30rpx;
-}
 .service-list1 .price {
     float: left;
+    font-size: 36rpx;
+    line-height: 40rpx;
     color: #FF7690;
+}
+.service-list1 .price:first-letter {
+    font-size: 24rpx;
+    vertical-align: middle;
 }
 .service-list1 .appoint {
     float: right;
+    font-size: 24rpx;
+    line-height: 42rpx;
     color: #999;
 }
 

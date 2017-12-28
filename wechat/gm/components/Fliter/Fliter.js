@@ -8,22 +8,22 @@ Component({
     },
     data: {
         curBar: null,
-        status: {
+        curCol: {
             col1_area: 0,
             col2_area: 0,
             col1_tag: 0
         },
         selected: {
             area: {
-                id: '',
+                id: null,
                 name: '全部地区'
             },
             tag: {
-                id: '',
+                id: null,
                 name: '全部项目'
             },
             order: {
-                id: '',
+                id: null,
                 name: '智能推荐'
             }
         },
@@ -37,24 +37,23 @@ Component({
             url: '/api/cache/data/service_filter/v1',
             method: 'GET',
             successFn: (data) => {
+                var data = data.data;
                 _this.setData({
-                    areas: data.data.areas,
-                    tags: data.data.tags,
-                    orders: data.data.orders
+                    areas: data.areas,
+                    tags: data.tags,
+                    orders: data.orders
                 });
             }
         });
     },
     methods: {
         tapBar (e) {
-            var idx = e.currentTarget.dataset.idx;
             this.setData({
-                curBar: idx
+                curBar: e.currentTarget.dataset.idx
             });
         },
         tapWrap (e) {
-            var name = e.target.dataset.name;
-            if (!name) {
+            if (!e.target.dataset.name) {
                 this.setData({
                     curBar: null
                 });
@@ -64,22 +63,22 @@ Component({
             var dataset = e.target.dataset;
             var idx = dataset.idx;
             var type = dataset.type;
-            // 为兼容 this.setData 的 bug 不得不做出的妥协
+            // 为迁就 this.setData 的 bug 不得不做出的妥协
             switch (type) {
                 case 'col1_area':
                     this.setData({
-                        'status.col1_area': idx,
-                        'status.col2_area': 0
+                        'curCol.col1_area': idx,
+                        'curCol.col2_area': 0
                     });
                     break;
                 case 'col2_area':
                     this.setData({
-                        'status.col2_area': idx
+                        'curCol.col2_area': idx
                     });
                     break;
                 case 'col1_tag':
                     this.setData({
-                        'status.col1_tag': idx
+                        'curCol.col1_tag': idx
                     });
                     break;
             }

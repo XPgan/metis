@@ -18,7 +18,7 @@
         <view class="areas" hidden="{{ curBar }}">
             <scroll-view class="col1" scroll-y>
                 <text
-                    class="{{ status.col1_area == index ? 'active' : 'normal' }}"
+                    class="{{ curCol.col1_area == index ? 'active' : 'normal' }}"
                     wx:for="{{ areas }}"
                     data-id="{{ item.id }}"
                     data-name="{{ item.name }}"
@@ -30,10 +30,10 @@
                 class="col2"
                 wx:for="{{ areas }}"
                 wx:for-item="area"
-                wx:if="{{ status.col1_area == index }}"
+                wx:if="{{ curCol.col1_area == index }}"
                 scroll-y>
                 <text
-                    class="{{ status.col2_area == index ? 'active' : 'normal' }}"
+                    class="{{ curCol.col2_area == index ? 'active' : 'normal' }}"
                     wx:for="{{ area.provinces }}"
                     data-id="{{ item.id }}"
                     data-name="{{ item.name }}"
@@ -49,7 +49,7 @@
                     class="col3"
                     wx:for="{{ area.provinces }}"
                     wx:for-item="province"
-                    wx:if="{{ (status.col1_area == curArea) && (status.col2_area == index) }}"
+                    wx:if="{{ (curCol.col1_area == curArea) && (curCol.col2_area == index) }}"
                     scroll-y>
                     <text
                         class="{{ selected.area.id == item.id ? 'active' : 'normal' }}"
@@ -64,7 +64,7 @@
         <view class="tags" hidden="{{ curBar != 1 }}">
             <scroll-view class="col1" scroll-y>
                 <text
-                    class="{{ status.col1_tag == index ? 'active' : 'normal' }}"
+                    class="{{ curCol.col1_tag == index ? 'active' : 'normal' }}"
                     wx:for="{{ tags }}"
                     data-id="{{ item.id }}"
                     data-name="{{ item.name }}"
@@ -76,7 +76,7 @@
                 class="col2"
                 wx:for="{{ tags }}"
                 wx:for-item="tag"
-                wx:if="{{ status.col1_tag == index }}"
+                wx:if="{{ curCol.col1_tag == index }}"
                 scroll-y>
                 <text
                     class="{{ selected.tag.id == item.id ? 'active' : 'normal' }}"

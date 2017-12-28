@@ -4,6 +4,18 @@ Component({
         top: {
             type: Number,
             value: 0
+        },
+        fold: {
+            type: Boolean,
+            value: false,
+            observer: function (n, o) {
+                if (n == true) {
+                    this.setData({
+                        curBar: null,
+                        fold: false
+                    });
+                }
+            }
         }
     },
     data: {

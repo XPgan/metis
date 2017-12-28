@@ -18,7 +18,7 @@ App({
         page.onReady();
     },
     gotop: function (page, obj) {
-        if (obj.scrollTop > 1.5 * this.GLOBAL.baseInfo.winHeight) {
+        if (obj.scrollTop > this.GLOBAL.baseInfo.winHeight) {
             page.setData({
                 'render.gotop': true
             });

@@ -1,10 +1,10 @@
-import BaseInfo from 'utils/baseInfo'
+import { getBaseInfo } from 'utils/baseInfo'
 import Request from 'utils/request'
 import Toast from 'utils/toast'
 
 App({
     GLOBAL: {
-        baseInfo: BaseInfo
+        baseInfo: getBaseInfo()
     },
     request: function (params) {
         Request(params);

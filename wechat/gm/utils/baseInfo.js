@@ -37,4 +37,8 @@ function getLocation (i) {
 getMobileInfo(1);
 getLocation(1);
 
-module.exports = BaseInfo;
+module.exports = {
+    getBaseInfo: () => {
+        return BaseInfo;
+    }
+}

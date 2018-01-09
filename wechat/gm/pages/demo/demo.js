@@ -94,7 +94,7 @@ Page({
     },
     loadList1: function () {
         const _page = this;
-        Loadmore.loadData({
+        Loadmore.loadData(_page, {
             url: '/hybrid/promotion/_data',
             params: {
                 service_id: 235,
@@ -111,7 +111,7 @@ Page({
             // list1 加载完毕后加载 list2
             completeFn: () => {
                 // 联动加载必须初始化 Loadmore
-                Loadmore.clear();
+                Loadmore.clear(_page);
                 _page.setData({
                     curList: 'list2'
                 });
@@ -127,7 +127,7 @@ Page({
     },
     loadList2: function () {
         const _page = this;
-        Loadmore.loadData({
+        Loadmore.loadData(_page, {
             url: '/hybrid/promotion/favor_service/_data',
             params: {
                 service_id: 230
@@ -148,7 +148,7 @@ Page({
         });
     },
     triggerFliter (e) {
-        Loadmore.clear();
+        Loadmore.clear(this);
         this.setData({
             // 获取筛选器参数
             fliters: e.detail,

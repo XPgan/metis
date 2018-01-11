@@ -55,7 +55,9 @@ const Loadmore = {
                     failFn();
                 },
                 errorFn: () => {
-                    errorFn();
+                    if ((status.page == 1) || (status.start_num == 0)) {
+                        errorFn();
+                    }
                 }
             });
         }

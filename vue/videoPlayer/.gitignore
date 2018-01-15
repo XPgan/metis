@@ -1,4 +1,5 @@
 npm-debug.log
+package-lock.json
 node_modules/
 test/unit/coverage
 test/e2e/reports

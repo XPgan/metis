@@ -571,40 +571,5 @@ module.exports = {
                 })
             }
         }
-    },
-    cartList: {
-        url: '/cartlist/_data',
-        type: 'GET',
-        data: function () {
-            return {
-                message: '请求成功',
-                error: 0,
-                data: {
-                    total: 198,
-                    list: type.list({
-                        length: 10,
-                        data: function () {
-                            return {
-                                user_name: type.string(),
-                                service_name: type.string(),
-                                service_id: type.id(),
-                                duoshuxing: type.string(),
-                                doctor_name: type.string(),
-                                gm_price: type.number({
-                                    min: 1000,
-                                    max: 9999
-                                }),
-                                yufukuan: type.number({
-                                    min: 1000,
-                                    max: 9999
-                                }),
-                                date: type.id(),
-                                sixin: type.bool()
-                            }
-                        }
-                    })
-                }
-            }
-        }
     }
 }

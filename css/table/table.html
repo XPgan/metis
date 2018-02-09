@@ -13,6 +13,9 @@
         }
         .thead {
             display: table-header-group;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
         .tbody {
             display: table-row-group;
@@ -28,30 +31,33 @@
             border-bottom: 1px solid #F0F0F0;
             box-sizing: border-box;
         }
-        .thead .col1, .thead .th {
+        .thead .col1, .th {
             height: 50px;
             min-height: 50px;
         }
-        .thead .th, .tbody .td {
+        .th, .td {
             width: 200px;
             min-width: 200px;
         }
-        .thead .th, .tbody .col1 {
+        .th, .tbody .col1 {
             font-size: 16px;
             text-align: center;
             color: #999;
         }
-        .tbody .td {
+        .td {
             font-size: 14px;
             text-align: left;
             color: #666;
         }
-        .tbody .td.blue {
+        .td.blue {
             background-color: #F6FCFE;
         }
         .col1 {
             width: 120px;
             min-width: 120px;
+        }
+        .table1 .thead {
+            background-color: #FFF;
         }
         .table2 {
             position: fixed;
@@ -65,6 +71,9 @@
         }
         .table2 .col1 {
             background-color: #FFF;
+        }
+        .thead-holder {
+            height: 63px;
         }
     </style>
 </head>
@@ -84,6 +93,7 @@
                 {% } %}
             </div>
         </div>
+        <div class="thead-holder"></div>
         <div class="tbody">
             {% for (var prop in o.props) { %}
             <div class="tr">

@@ -46,6 +46,9 @@
             text-align: left;
             color: #666;
         }
+        .tbody .td.blue {
+            background-color: #F6FCFE;
+        }
         .col1 {
             width: 120px;
             min-width: 120px;
@@ -72,7 +75,7 @@
             <div class="tr">
                 <div class="col1">{%=o.props[prop]%}</div>
                 {% for (var item in o.items) { %}
-                <div class="td">{%=o.items[item].props[prop]%}</div>
+                <div class="td {% if (item%2 == 0) { %}blue{% } %}">{%=o.items[item].props[prop]%}</div>
                 {% } %}
             </div>
             {% } %}

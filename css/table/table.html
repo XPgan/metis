@@ -81,7 +81,6 @@
 <section class="container"></section>
 <script src="https://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
 <script src="https://oij8a9ql4.bkt.clouddn.com/tmpl.min.js"></script>
-<script src="data.js"></script>
 <script type="text/x-tmpl" id="table">
     {% for (var i=1; i<3; i++) { %}
     <div class="table table{%=i%}">
@@ -108,18 +107,50 @@
     {% } %}
 </script>
 <script>
-var curX = 0;
-var curY = 0;
-$('.container').append(tmpl('table', data));
-$('.thead-holder').height($('.table1 .thead').height());
-$(window).on('scroll', function () {
-    var scrollX = window.scrollX;
-    var scrollY = window.scrollY;
-    Math.abs(curX - scrollX) && $('.table1 .thead').css('left', -scrollX);
-    Math.abs(curY - scrollY) && $('.table2').css('top', -scrollY);
-    curX = scrollX;
-    curY = scrollY;
-});
+var main = {
+    data: {
+        props: [],
+        items: []
+    },
+    curX: 0,
+    curY: 0,
+    do: function () {
+        this.createData();
+        this.scrollEvent();
+        $('.container').append(tmpl('table', this.data));
+        $('.thead-holder').height($('.table1 .thead').height());
+    },
+    createData: function () {
+        var itemCount = 10;
+        var propCount = 20;
+        for (var i = 1;i <= itemCount;i++) {
+            var item = {
+                title: '',
+                props: []
+            };
+            item.title = '项目' + i;
+            for (var j = 1;j <= propCount;j++) {
+                item.props.push(item.title + '属性' + j);
+            }
+            this.data.items.push(item);
+        }
+        for (var k = 1;k <= propCount;k++) {
+            this.data.props.push('属性' + k);
+        }
+    },
+    scrollEvent: function () {
+        var _this = this;
+        $(window).on('scroll', function () {
+            var scrollX = window.scrollX;
+            var scrollY = window.scrollY;
+            Math.abs(_this.curX - scrollX) && $('.table1 .thead').css('left', -scrollX);
+            Math.abs(_this.curY - scrollY) && $('.table2').css('top', -scrollY);
+            _this.curX = scrollX;
+            _this.curY = scrollY;
+        });
+    }
+};
+main.do();
 </script>
 </body>
 </html>

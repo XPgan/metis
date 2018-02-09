@@ -121,8 +121,8 @@ var main = {
         $('.thead-holder').height($('.table1 .thead').height());
     },
     createData: function () {
-        var itemCount = 10;
-        var propCount = 20;
+        var itemCount = 30;
+        var propCount = 50;
         for (var i = 1;i <= itemCount;i++) {
             var item = {
                 title: '',
@@ -130,7 +130,9 @@ var main = {
             };
             item.title = '项目' + i;
             for (var j = 1;j <= propCount;j++) {
-                item.props.push(item.title + '属性' + j);
+                ((i == 2) && (j == 3)) || ((i == 4) && (j == 5))
+                    ? item.props.push('我是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的文本')
+                    : item.props.push(item.title + '属性' + j);
             }
             this.data.items.push(item);
         }

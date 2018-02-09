@@ -108,7 +108,17 @@
     {% } %}
 </script>
 <script>
+var curX = 0;
+var curY = 0;
 $('.container').append(tmpl('table', data));
+$(window).on('scroll', function () {
+    var scrollX = window.scrollX;
+    var scrollY = window.scrollY;
+    Math.abs(curX - scrollX) && $('.table1 .thead').css('left', -scrollX);
+    Math.abs(curY - scrollY) && $('.table2').css('top', -scrollY);
+    curX = scrollX;
+    curY = scrollY;
+});
 </script>
 </body>
 </html>

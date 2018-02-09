@@ -111,6 +111,7 @@
 var curX = 0;
 var curY = 0;
 $('.container').append(tmpl('table', data));
+$('.thead-holder').height($('.table1 .thead').height());
 $(window).on('scroll', function () {
     var scrollX = window.scrollX;
     var scrollY = window.scrollY;

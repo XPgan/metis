@@ -1,0 +1,18 @@
+<style lang="scss">
+
+</style>
+
+<template lang="wxml">
+    <view>{{ title }}</view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class Demo extends wepy.page {
+    data = {
+        title: 'Hello World'
+    }
+    methods = {}
+}
+</script>

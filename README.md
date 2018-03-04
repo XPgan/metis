@@ -14,6 +14,8 @@
 
 + 多人聊天室 [(code)](https://github.com/sunmengyuan/metis/tree/master/node/chat)
 
++ Mock Server [(code)](https://github.com/sunmengyuan/metis/tree/master/node/meowMock)
+
 *****
 
 ### Vue.js ###
@@ -85,6 +87,8 @@
 + 路径动画加蒙板实现橡皮擦特效 [(code)](https://github.com/sunmengyuan/metis/blob/master/svg/paint.html) [(demo)](https://sunmengyuan.github.io/demos/svg/paint.html)
 
 + Loading 动画 [(code)](https://github.com/sunmengyuan/metis/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
+
++ Loading 动画（彗星尾） [(code)](https://github.com/sunmengyuan/metis/blob/master/svg/comet.html) [(demo)](https://sunmengyuan.github.io/demos/svg/comet.html)
 
 *****
 

@@ -3,18 +3,18 @@
 </style>
 
 <script>
-    import wepy from 'wepy'
+import wepy from 'wepy'
 
-    export default class extends wepy.app {
-        config = {
-            pages: [
-                'pages/Demo'
-            ],
-            window: {
-                navigationBarTitleText: 'wepy',
-                navigationBarTextStyle: 'black',
-                navigationBarBackgroundColor: '#FFF'
-            }
+export default class extends wepy.app {
+    config = {
+        pages: [
+            'pages/Demo'
+        ],
+        window: {
+            navigationBarTitleText: 'wepy',
+            navigationBarTextStyle: 'black',
+            navigationBarBackgroundColor: '#FFF'
         }
     }
+}
 </script>

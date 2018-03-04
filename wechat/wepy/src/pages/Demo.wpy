@@ -7,11 +7,11 @@
 </template>
 
 <script>
-    import wepy from 'wepy'
+import wepy from 'wepy'
 
-    export default class Demo extends wepy.page {
-        data = {
-            title: 'Hello World'
-        }
+export default class Demo extends wepy.page {
+    data = {
+        title: 'Hello World'
     }
+}
 </script>

@@ -88,7 +88,7 @@
 
 + Loading 动画 [(code)](https://github.com/sunmengyuan/metis/blob/master/svg/loading.html) [(demo)](https://sunmengyuan.github.io/demos/svg/loading.html)
 
-+ Loading 动画（彗星尾） [(code)](https://github.com/sunmengyuan/metis/blob/master/svg/comet.html) [(demo)](https://sunmengyuan.github.io/demos/svg/comet.html)
++ Loading 动画（彗星尾）[(code)](https://github.com/sunmengyuan/metis/blob/master/svg/comet.html) [(demo)](https://sunmengyuan.github.io/demos/svg/comet.html)
 
 *****
 

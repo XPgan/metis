@@ -5,10 +5,12 @@ var createRequest = require('./createRequest');
 var example = require('./data/example');
 var ascle = require('./data/ascle');
 var calypso = require('./data/calypso');
+var pony = require('./data/pony');
 var requestGatherLst = [
     example,
     ascle,
-    calypso
+    calypso,
+    pony
 ];
 
 createRequest.do(router, requestGatherLst);

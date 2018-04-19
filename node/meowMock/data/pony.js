@@ -15,6 +15,7 @@ module.exports = {
                         data: function () {
                             return {
                                 type: 'message',
+                                time: type.id(),
                                 content: type.string({
                                     minL: 10,
                                     maxL: 100

@@ -15,6 +15,10 @@ module.exports = {
                         data: function () {
                             return {
                                 type: 'message',
+                                spoker: type.string([
+                                    'user',
+                                    'doctor'
+                                ]),
                                 time: type.id(),
                                 content: type.string({
                                     minL: 10,

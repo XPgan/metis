@@ -3,7 +3,7 @@
  */
 
 /* 使用说明
-countDown({
+countdown({
     year: 2016,
     month: 12,
     day: 6,
@@ -15,7 +15,7 @@ countDown({
 });
 */
 
-function countDown (opt) {
+function countdown (opt) {
 
     var main = {
 
@@ -31,7 +31,7 @@ function countDown (opt) {
         },
         setTime: function () {
             var _this = this;
-            var $countDown = $('.js_countdown');
+            var $countdown = $('.js_countdown');
 
             var daySplit = opt.daySplit || '天';
             var hourSplit = opt.hourSplit || '时';
@@ -42,11 +42,11 @@ function countDown (opt) {
                 _this.calculateTime();
 
                 var time = _this.day + daySplit + _this.hour + hourSplit + _this.minute + minuteSplit + _this.second + secondSplit;
-                $countDown.text(time);
+                $countdown.text(time);
 
                 if (_this.ts < 1) {
                     clearInterval(t);
-                    $countDown.hide();
+                    $countdown.hide();
                 }
             }, 1000);
         },

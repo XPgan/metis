@@ -4,13 +4,13 @@
 
 /* 使用说明
 var initLst = [10, 4, 6, 3, 14, 40, 1];
-var sortLst = bubbleSort.do({
+var sortLst = sort.do({
     initLst: initLst
 });
 console.log(sortLst);
 */
 
-var bubbleSort = {
+var sort = {
     do: function (opt) {
         var sortLst = opt.initLst;
 
